@@ -1,0 +1,2 @@
+* text=auto eol=lf
+# forcing line endings to be LF, which is used on unix machines - so that team members have consistency and no clash with their local OS
