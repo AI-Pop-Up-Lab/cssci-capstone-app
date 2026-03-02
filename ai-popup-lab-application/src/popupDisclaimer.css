@@ -1,0 +1,70 @@
+.PopupDisclaimer{
+    border-radius: 30px;
+    /* border: 1px solid #d4e4e1; */
+    background-color: #ebb3ab;
+    color: #335058;
+    opacity: 0.85;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+
+    padding: 20px 30px;
+    width: 40%;
+    max-width: 500px;
+
+    animation: popupZoomIn 0.225s ease-out;
+}
+
+#popupDisclaimerTop{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#popupDisclaimerClose{
+    aspect-ratio: 1/1;
+    width: 20px;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(19%) saturate(812%) hue-rotate(146deg) brightness(90%) contrast(89%);
+}
+
+#popupDisclaimerClose:hover{
+    cursor: pointer;
+}
+
+/* #popupDisclaimerContent{
+
+} */
+
+#popupDisclaimerContent > p{
+    font-size: 18px;
+    padding-right: 30px;
+    line-height: 2;
+}
+
+@keyframes popupZoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0.25;
+    }
+    to {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+}
+
+@keyframes popupFadeOut {
+    from {
+        opacity: 0.85;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.popupFadeOut {
+    animation: popupFadeOut 0.225s ease-out;
+}
