@@ -12,4 +12,8 @@ Run ```source deactivate``` to exit on Mac and ```deactivate``` on Windows
 
 #### Running Front-End
 
-Node.js/npm must first be installed on your computer. In the terminal make your working directory the ai-popup-lab-application folder within the repository, and run ```npm start```.
+Node.js/npm must first be installed on your computer. In the terminal make your working directory the ai-popup-lab-application folder within the repository.
+
+To download the dependent modules, run ```npm install```.
+
+To run the application, run ```npm start```.
