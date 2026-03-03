@@ -1,5 +1,5 @@
-import PopupDisclaimer from './popupDisclaimer';
-import ApiTest from './apiTest';
+import PopupDisclaimer from '../modules/popupDisclaimer';
+import ApiTest from '../modules/apiTest';
 
 import './landingPage.css';
 
