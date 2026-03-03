@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 
-import closeCross from './assets/images/closeCross.png';
+import closeCross from '../assets/images/closeCross.png';
 import './popupDisclaimer.css';
 
 function PopupDisclaimer() {
