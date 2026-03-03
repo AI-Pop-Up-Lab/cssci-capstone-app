@@ -6,7 +6,7 @@ function ApiTest() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const fetchData = async () => {
+  async function fetchData(){
     try {
       // FastAPI in testing is running on 127.0.0.1:8000
       const response = await axios.get("http://127.0.0.1:8000/api/test_endpoint/");
