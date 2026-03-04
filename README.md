@@ -39,12 +39,12 @@ Three tables from SCB's Statistics Database, all using 2024 data (latest availab
 ### Methods
 
 #### Recoding and Alignment with SNES
-Variable categories are taken from register variables (prefix V-) rather than self-reported survey responses, as the SNES questions have already been adjusted based on these register variables. Factor levels in the survey must match those in the poststratification table — the standard solution when they don't align is to use the coarser of the two categorizations. SNES categories are therefore used as the common denominator throughout.
+Variable categories are taken from register variables (prefix V-) rather than self-reported survey responses, as the SNES questions have already been adjusted based on these register variables. Factor levels in the survey must match those in the poststratification table - the standard solution when they don't align is to use the coarser of the two categorizations. SNES categories are therefore used as the common denominator throughout.
 Since proportions of predictor profiles must sum to one per geographic unit, it's better to use smaller boundary approximations than to split bins across categories.
 
-Age (V7202): The SCB 20–24 bin maps entirely into SNES 18–22, and 30–34 maps entirely into SNES 31–40 (slight approximation).
+**Age (V7202)**: The SCB 20–24 bin maps entirely into SNES 18–22, and 30–34 maps entirely into SNES 31–40 (slight approximation).
 
-Education (V7302): "Upper secondary ≤2yr" and "Upper secondary 3yr" collapse into one SNES bin as the register data makes the same collapse. For the 95–99 and 100+ age groups, education distributions are taken from SCB's 95+ aggregate bin since TAB4320 doesn't disaggregate beyond that. This affects roughly 0.28% of the population.
+**Education (V7302)**: "Upper secondary ≤2yr" and "Upper secondary 3yr" collapse into one SNES bin as the register data makes the same collapse. For the 95–99 and 100+ age groups, education distributions are taken from SCB's 95+ aggregate bin since TAB4320 doesn't disaggregate beyond that. This affects roughly 0.28% of the population.
 
 #### Combining Population, Citizenship, and Education
 Population counts (TAB638) are scaled by the citizenship share (TAB6569) to get an estimated citizen count per municipality x age x sex cell. Education shares (TAB4320) are then applied within each cell to split counts across education categories, giving the final N per cell. The 5-year age bins from TAB638 are bridged to the 10-year bins in TAB4320 before joining.
@@ -59,7 +59,10 @@ Since there is no demographic breakdown in the electoral results, past vote ente
 #### References:
 
 [Gelman et al. — MRP main paper](https://sites.stat.columbia.edu/gelman/research/published/poststrat3.pdf)
+
 [MRP Case Studies (bookdown)](https://bookdown.org/jl5522/MRP-case-studies/index.html)
+
 [Marginal Effects — MRP chapter](https://marginaleffects.com/chapters/mrp.html)
+
 [Wang et al. (2015)](https://www.sciencedirect.com/science/article/pii/S0169207014000879)
 
