@@ -54,7 +54,7 @@ Income is not included in the frame. The most recent SCB income data ([SamForvIn
 
 #### 4. Past Vote (V7000)
 SNES past vote data is only available at the constituency level (29 constituencies), so it can't be used to augment the municipality-level frame directly. Instead, past vote comes from the official 2022 Riksdag election results by electoral district. Electoral district codes are matched to municipalities via prefix, and vote shares are aggregated to the municipality level for each of the 9 parties.
-Since there is no demographic breakdown in the electoral results, past vote enters the model as a municipality-level predictor rather than an individual-level one i.e. each party's 2022 municipal vote share could be added as a fixed effect in the regression. We could take note from the approach used by [Wang et al. (2015)](https://www.sciencedirect.com/science/article/pii/S0169207014000879).
+Since there is no demographic breakdown in the electoral results, past vote enters the model as a municipality-level predictor rather than an individual-level one (each party's 2022 municipal vote share). We could take note from the approach used by [Wang et al. (2015)](https://www.sciencedirect.com/science/article/pii/S0169207014000879).
 
 #### References:
 
