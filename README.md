@@ -38,7 +38,7 @@ Three tables from SCB's Statistics Database, all using 2024 data (latest availab
 
 ### Methods
 
-#### Recoding and Alignment with SNES
+#### 1. Recoding and Alignment with SNES
 Variable categories are taken from register variables (prefix V-) rather than self-reported survey responses, as the SNES questions have already been adjusted based on these register variables. Factor levels in the survey must match those in the poststratification table - the standard solution when they don't align is to use the coarser of the two categorizations. SNES categories are therefore used as the common denominator throughout.
 Since proportions of predictor profiles must sum to one per geographic unit, it's better to use smaller boundary approximations than to split bins across categories.
 
@@ -46,13 +46,13 @@ Since proportions of predictor profiles must sum to one per geographic unit, it'
 
 **Education (V7302)**: "Upper secondary ≤2yr" and "Upper secondary 3yr" collapse into one SNES bin as the register data makes the same collapse. For the 95–99 and 100+ age groups, education distributions are taken from SCB's 95+ aggregate bin since TAB4320 doesn't disaggregate beyond that. This affects roughly 0.28% of the population.
 
-#### Combining Population, Citizenship, and Education
+#### 2. Combining Population, Citizenship, and Education
 Population counts (TAB638) are scaled by the citizenship share (TAB6569) to get an estimated citizen count per municipality x age x sex cell. Education shares (TAB4320) are then applied within each cell to split counts across education categories, giving the final N per cell. The 5-year age bins from TAB638 are bridged to the 10-year bins in TAB4320 before joining.
 
-#### Income
+#### 3. Income
 Income is not included in the frame. The most recent SCB income data ([SamForvInk1](https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__HE__HE0110__HE0110A/SamForvInk1/)) is from 2020, which would be inconsistent with the 2024 sources and could make the frame sparse. It could instead be added on the SNES side as an individual-level fixed-effect covariate using survey respondents' self-reported values.
 
-#### Past Vote (V7000)
+#### 4. Past Vote (V7000)
 SNES past vote data is only available at the constituency level (29 constituencies), so it can't be used to augment the municipality-level frame directly. Instead, past vote comes from the official 2022 Riksdag election results by electoral district. Electoral district codes are matched to municipalities via prefix, and vote shares are aggregated to the municipality level for each of the 9 parties.
 Since there is no demographic breakdown in the electoral results, past vote enters the model as a municipality-level predictor rather than an individual-level one i.e. each party's 2022 municipal vote share could be added as a fixed effect in the regression. We could take note from the approach used by [Wang et al. (2015)](https://www.sciencedirect.com/science/article/pii/S0169207014000879).
 
