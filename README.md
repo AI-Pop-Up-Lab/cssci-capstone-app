@@ -26,3 +26,6 @@ To combine the population table with the education table, we first calculate the
 Given that our table goes up to 69 years old, there are 20+ years missing from the education data. To solve this, we take the HFUDD11 data going back to 2009, when it cuts off and we assume that the 65-69 year olds of 2019 did not get any higher education than they had 5 years ago. We thus apply this logic to 2019, 2014, and 2009 to get the education of age cohorts in 2024 aged 70-74, 75-79 and 80-84 respectively. We assume that 85+ year olds have the same education as 80-84 year olds. This results in an education distribution across age and municipalities that looks like the following. This means that the data for 3.3% of the population (those above 84) is synthesised in this manner.
 
 ![education across age and municipalities](denmark_data/data/images/education.png)
+
+### Greenland and the Faroe Islands
+Both of these places are 
