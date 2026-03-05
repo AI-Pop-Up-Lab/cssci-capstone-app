@@ -27,3 +27,12 @@ body{
   color: #d4e4e1;
   background-color: #335058;
 }
+
+/* font classes */
+
+.unbounded-weight300 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300; /* can go from 200-900 */
+  font-style: normal;
+}

@@ -36,7 +36,7 @@ function PopupDisclaimer() {
             <img onClick={closePopup} src={closeCross} alt="button to close disclaimer popup" id="popupDisclaimerClose"/>
         </div>
         <div id="popupDisclaimerContent">
-            <p>This platform uses AI-simulated personas to estimate public opinion based on official census data. These personas are not real human beings, and no personally identifiable data of living individuals is used. Surveys are calibrated to ensure the reliability of the prediction results.</p>
+            <p className="unbounded-weight300">This platform uses AI-simulated personas to estimate public opinion based on official census data. These personas are not real human beings, and no personally identifiable data of living individuals is used. Surveys are calibrated to ensure the reliability of the prediction results.</p>
         </div>
     </div>
   );
