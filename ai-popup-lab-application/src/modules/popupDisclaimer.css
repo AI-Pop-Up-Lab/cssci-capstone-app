@@ -3,7 +3,7 @@
     /* border: 1px solid #d4e4e1; */
     background-color: #ebb3ab;
     color: #335058;
-    opacity: 0.85;
+    opacity: 0.9;
 
     display: flex;
     flex-direction: column;
@@ -11,6 +11,7 @@
     justify-content: center;
 
     position: fixed;
+    z-index: 1;
 
     padding: 20px 30px;
     width: 40%;

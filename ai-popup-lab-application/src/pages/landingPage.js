@@ -1,4 +1,3 @@
-import PopupDisclaimer from '../modules/popupDisclaimer';
 import ApiTest from '../modules/apiTest';
 
 import './landingPage.css';
@@ -10,8 +9,6 @@ function LandingPage() {
       <p>hey</p>
       <br></br>
       <ApiTest />
-
-      <PopupDisclaimer />
     </div>
   );
 }
