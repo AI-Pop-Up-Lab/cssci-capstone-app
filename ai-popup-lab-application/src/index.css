@@ -33,6 +33,13 @@ body{
 .unbounded-weight300 {
   font-family: "Unbounded", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 300; /* can go from 200-900 */
+  font-weight: 300; /* can go from 200-900 for this font */
+  font-style: normal;
+}
+
+.unbounded-weight400 {
+  font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
 }

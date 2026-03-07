@@ -1,29 +1,27 @@
-import React from 'react';
+import { React } from 'react';
+// eslint-disable-next-line
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import './App.css';
+import HeaderAndNavigation from './modules/headerAndNavigation';
+import PopupDisclaimer from './modules/popupDisclaimer';
+
+// other pages to route to
 import LandingPage from './pages/landingPage';
+import AboutPage from './pages/aboutPage';
 
 function App() {
+
   return (
     <Router>
-      {/* <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/other-page">Page 2</Link></li>
-          <li><Link to="/other-other-page">Page 3</Link></li>
-        </ul>
-      </nav> 
-        This would be how the navigation would work once multiple pagers exist
-      */}
-      <header>
-        <h1 className="unbounded-weight300">AI POLLSTER</h1>
-        <div>
-          
-        </div>
-      </header>
+
+      <HeaderAndNavigation />
+      <PopupDisclaimer />
+
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/data" element={<LandingPage />} />
       </Routes>
     </Router>
   );
