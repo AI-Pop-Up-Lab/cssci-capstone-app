@@ -1,0 +1,20 @@
+{
+    "denmark": {
+
+    },
+
+    "sweden": {
+        "stratification_frame_filename": "sweden_strat_frame.csv",
+        "daily_sample_filename": "sweden_daily_sample.csv",
+        "sample_column_names": [
+            "MunicipalityName",
+            "Age",
+            "Sex",
+            "Education"
+        ]
+    },
+
+    "netherlands": {
+
+    }
+}

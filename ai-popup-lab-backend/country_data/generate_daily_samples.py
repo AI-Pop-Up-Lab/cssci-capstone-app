@@ -1,0 +1,1 @@
+# this will be the file used to generate the daily samples from each stratification frame, although for the pilot a pregenerated sample will be used

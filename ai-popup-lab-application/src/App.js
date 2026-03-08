@@ -9,6 +9,7 @@ import PopupDisclaimer from './modules/popupDisclaimer';
 // other pages to route to
 import LandingPage from './pages/landingPage';
 import AboutPage from './pages/aboutPage';
+import PollingResults from './pages/pollingResults';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/data" element={<LandingPage />} />
+        <Route path="/polling" element={<PollingResults />} />
       </Routes>
     </Router>
   );

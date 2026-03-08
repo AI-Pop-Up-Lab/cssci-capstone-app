@@ -1,0 +1,38 @@
+from fastapi import APIRouter
+from pydantic import BaseModel
+import json
+from pathlib import Path
+import pandas as pd
+
+router = APIRouter(prefix="/samples")
+
+# loading data info json, finding relative filepath and opening
+base_dir = Path(__file__).parent.parent  # goes up from api_endpoints/ to project root
+json_path = base_dir / "country_data" / "country_data_info.json"
+
+with open(json_path) as f:
+    country_data = json.load(f)
+
+root_keys = list(country_data.keys())
+
+
+# ENDPOINTS BELOW
+
+# GET endpoint to retrieve sample data for a specific country
+@router.get("/country_sample")
+def get_item(country: str):
+
+    # print(f"Received request for country: {country}")
+
+    # checking if requested country is in data
+    if country not in root_keys:
+        return {"error": "Country not found in data."}
+
+    country_sample_filename = country_data[country]['daily_sample_filename']
+    country_sample_path = base_dir / "country_data" / 'daily_sample' / country_sample_filename
+
+    # reading csv to dataframe then converting to list of dicts for json response
+    df = pd.read_csv(country_sample_path)
+    dict_list_for_js = df.to_dict(orient="records")  # returns a list of row objects
+
+    return {"data": dict_list_for_js}

@@ -1,0 +1,10 @@
+# ignoring pycache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ignoring env
+env/
+venv/
+.env/
