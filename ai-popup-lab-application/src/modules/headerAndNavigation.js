@@ -20,7 +20,7 @@ function HeaderAndNavigation() {
             <div id="nav-menu-links" className='unbounded-weight400'>
                 <Link to="/" onClick={() => setNavOpen(!navOpen)}>Home</Link>
                 <Link to="/about" onClick={() => setNavOpen(!navOpen)}>About</Link>
-                <Link to="/data" onClick={() => setNavOpen(!navOpen)}>Data (placeholder name)</Link>
+                <Link to="/polling" onClick={() => setNavOpen(!navOpen)}>Polling</Link>
             </div>
         </div>
       </header>

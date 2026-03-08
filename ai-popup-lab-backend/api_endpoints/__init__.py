@@ -2,3 +2,4 @@
 # routers should be called 'router' in their respective files
 
 from .test_endpoints import router as test_router
+from .sample_endpoints import router as sample_router
