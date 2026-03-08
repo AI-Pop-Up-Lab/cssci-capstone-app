@@ -147,6 +147,8 @@ header > h1{
     height: 100%;
     padding-left: 5%;
     padding-top: 5%;
+
+    position: relative;
 }
 
 #nav-menu-links > a{
@@ -154,6 +156,19 @@ header > h1{
     text-decoration: none;
     margin-bottom: 4%;
     color: #335058;
+}
+
+#nav-menu-links > a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    background-color: #335058;
+    transition: width 0.2s;
+}
+
+#nav-menu-links > a:hover::after{
+    width: 100%;
 }
 
 #nav-menu.nav-menu-open > #nav-menu-links{
