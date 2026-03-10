@@ -16,6 +16,8 @@ First make your working directory the *ai-popup-lab-backend* folder found within
 
 To run the back-end API, run ```uvicorn main:app --reload```. This is using the python 'uvicorn' module to run the instance/variable 'app' defined in the main.py file, and --reload reloads the server/api if any changes are made.
 
+If this doesn't work on Mac, try ```uvicorn app.main:app --reload --host 127.0.0.1 --port 8000```, which specifies the host address and port for correct functionality in testing.
+
 To stop the server, press the keys **Ctrl+C** in the terminal.
 
 #### Running Front-End
