@@ -16,7 +16,7 @@ when u r done i'll add the section below to filter personas and start a chat wit
 
 each component for the charts u will work in takes the pollingData variable, which is a list of dicts/js objects where the keys are the column names and the values the cell value - representing each cell of the sample.
 
-there is a component called *demographicCharts.js*, this takes ```chosenDemographic```, which is a dict/object that looks like ```{"municipality":"all","gender":"female","age_group":"all","education":"all"}``
+there is a component called *demographicCharts.js*, this takes ```chosenDemographic```, which is a dict/object that looks like ```{"municipality":"all","gender":"female","age_group":"all","education":"all"}```
 oh yeah, good to mention i added the option to select all (which is also the default), so take note of that.
 
 what else uhhhh....
