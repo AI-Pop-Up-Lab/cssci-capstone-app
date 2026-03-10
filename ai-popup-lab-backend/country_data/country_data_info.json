@@ -15,6 +15,13 @@
     },
 
     "netherlands": {
-
+        "stratification_frame_filename": "netherlands_strat_frame.csv",
+        "daily_sample_filename": "netherlands_daily_sample.csv",
+        "sample_column_names": [
+            "municipality",
+            "gender",
+            "age_group",
+            "education"
+        ]
     }
 }

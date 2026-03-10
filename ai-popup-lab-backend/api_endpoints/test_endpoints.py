@@ -18,7 +18,7 @@ above class/model is equivalent to/expectant of a json object like this:
 # test/example for GET endpoint
 @router.get("/")
 def get_item():
-    return {"message": "Text sent from FastAPI backend :D"}
+    return {"message": "Text sent from FastAPI backend, yuhhhhh."}
 
 # test/example for POST endpoint
 @router.post("/")
