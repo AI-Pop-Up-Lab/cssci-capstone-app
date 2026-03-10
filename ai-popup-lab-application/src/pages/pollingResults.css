@@ -5,3 +5,11 @@
     justify-content: center;
 }
 
+.PollingResults > div{
+    width: 100%;
+    padding: 20px 0;
+}
+
+.PollingResults > :not(:nth-last-child(-n+2)) {
+    border-bottom: 1px solid #D1E3DD;
+}

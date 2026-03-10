@@ -17,7 +17,7 @@ function App() {
     <Router>
 
       <HeaderAndNavigation />
-      <PopupDisclaimer />
+      {/* <PopupDisclaimer /> */}
 
       <Routes>
         <Route path="/" element={<LandingPage />} />

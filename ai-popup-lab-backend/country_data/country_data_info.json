@@ -5,23 +5,13 @@
 
     "sweden": {
         "stratification_frame_filename": "sweden_strat_frame.csv",
-        "daily_sample_filename": "sweden_daily_sample.csv",
-        "sample_column_names": [
-            "MunicipalityName",
-            "Age",
-            "Sex",
-            "Education"
-        ]
+        "daily_sample_filename": "sweden_daily_sample.csv"
     },
 
     "netherlands": {
         "stratification_frame_filename": "netherlands_strat_frame.csv",
         "daily_sample_filename": "netherlands_daily_sample.csv",
-        "sample_column_names": [
-            "municipality",
-            "gender",
-            "age_group",
-            "education"
-        ]
+        "demographic_search_columns": ["municipality", "gender", "age_group", "education"],
+        "column_unique_vals": {"municipality": ["Sittard-Geleen", "Rijssen-Holten", "Bronckhorst", "Amsterdam", "Montferland", "Alphen aan den Rijn", "Emmen", "Oss", "Roosendaal", "Oldenzaal", "Wijdemeren", "Noordoostpolder", "Hoorn", "Teylingen", "Rotterdam", "Oldambt", "Leiden", "Amersfoort", "Haarlemmermeer", "Breda", "Enschede", "Almelo", "Doetinchem", "Lochem", "Voorne aan Zee", "Maastricht", "Harderwijk", "Beverwijk", "Oirschot", "Borne", "Leeuwarden", "Hillegom", "Geldrop-Mierlo", "'s-Gravenhage (gemeente)", "Leidschendam-Voorburg", "Gorinchem", "Waalwijk", "Alkmaar", "Westland", "Hoogeveen", "IJsselstein", "Ooststellingwerf", "Altena", "Wageningen", "Dordrecht", "Purmerend", "Baarn", "Barneveld", "Hollands Kroon", "Arnhem", "Oldebroek", "Utrecht (gemeente)", "Sluis", "Valkenswaard", "Zaanstad", "Leudal", "Nijkerk", "Berg en Dal", "Maasgouw", "Zeist", "Horst aan de Maas", "Valkenburg aan de Geul", "Almere", "Hof van Twente", "Dijk en Waard", "Eindhoven", "Nijmegen", "Utrechtse Heuvelrug", "Vlissingen", "Hengelo (O.)", "Apeldoorn", "Midden-Groningen", "Groningen (gemeente)", "Stichtse Vecht", "Heusden", "Amstelveen"], "gender": ["female", "male"], "age_group": ["45-55", "35-45", "65-75", "25-35", "55-65", "15-25"], "education": ["Havo, vwo, mbo2-4", "Hbo-, wo-bachelor", "Hbo-, wo-master, doctor", "Basisonderwijs", "Vmbo, havo-/vwo-onderbouw, mbo1"]}
     }
 }
