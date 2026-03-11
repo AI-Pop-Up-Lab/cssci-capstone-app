@@ -1,0 +1,31 @@
+.VoterTurnout {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 30px 40px;
+  border: 2px solid #1a3a42;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.VoterTurnout h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.vt-chart-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.vt-chart-wrapper svg path {
+  cursor: pointer;
+}

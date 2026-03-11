@@ -1,0 +1,37 @@
+.SeatVisualisation {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 30px 40px;
+  border: 2px solid #1a3a42;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SeatVisualisation h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.sv-chart-wrapper {
+  position: relative;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+circle.seat {
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+circle.seat:hover {
+  opacity: 0.7;
+}

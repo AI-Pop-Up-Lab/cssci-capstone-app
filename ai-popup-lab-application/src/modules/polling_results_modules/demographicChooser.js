@@ -4,7 +4,6 @@ import axios from "axios";
 import './demographicChooser.css';
 
 import Loader from '../loader';
-import DemographicChoiceDropdown from './demographicChoiceDropdown';
 
 function DemographicChooser({setChosenDemographic, country}) {
 
@@ -55,24 +54,46 @@ function DemographicChooser({setChosenDemographic, country}) {
   //   console.log(data);
   // }, [data]);
 
+  const allLabels = {
+    gender:       { all: "all genders" },
+    age_group:    { all: "all ages" },
+    education:    { all: "all education levels" },
+    municipality: { all: "all municipalities" },
+  };
+
+  const mkSelect = (col) => {
+    const vals = data?.column_unique_vals[col];
+    if (!vals) return null;
+    return (
+      <select
+        className="dc-inline-select"
+        value={selectedValues[col] || "all"}
+        onChange={(e) => handleDropdownChange(col, e.target.value)}
+      >
+        {vals.map(v => (
+          <option key={v} value={v}>
+            {allLabels[col]?.[v] ?? v}
+          </option>
+        ))}
+      </select>
+    );
+  };
+
   return (
     <div className="DemographicChooser">
-      {data ? 
-
-      (
-        <>
-        {data.relevant_columns.map((column) => (
-          <DemographicChoiceDropdown 
-          key={column} 
-          column={column.replace('_', ' ')} 
-          choices={data.column_unique_vals[column]}
-          onChange={(value) => handleDropdownChange(column, value)}
-          />
-        ))}
-        </>
-      )
-
-      : (<Loader />)}
+      {data ? (
+        <p className="dc-sentence">
+          What would the results look like if{' '}
+          {mkSelect('gender')}{' '}
+          voters, aged{' '}
+          {mkSelect('age_group')},
+          {' '}with{' '}
+          {mkSelect('education')}{' '}
+          education, from{' '}
+          {mkSelect('municipality')}
+          {' '}could vote?
+        </p>
+      ) : (<Loader />)}
     </div>
   );
 };
