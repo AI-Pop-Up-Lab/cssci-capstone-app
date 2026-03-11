@@ -7,9 +7,6 @@ import PollingMap from '../modules/polling_results_modules/pollingMap';
 import SeatVisualisation from '../modules/polling_results_modules/seatVisualisation';
 import VoteProjection from '../modules/polling_results_modules/voteProjection';
 import DemographicCharts from '../modules/polling_results_modules/demographicCharts';
-import VoterTurnout from '../modules/polling_results_modules/voterTurnout';
-
-import DemographicChooser from '../modules/polling_results_modules/demographicChooser';
 import Loader from "../modules/loader";
 
 
@@ -19,9 +16,6 @@ function PollingResults() {
   const [error, setError] = useState(null);
 
   const [selectedCountry, setSelectedCountry] = useState("netherlands"); // setting default selected/selectable country as netherlands for now (in final product there will be a dropdown)
-
-  const [selectedDemographic_forpersona, setSelectedDemographic_forpersona] = useState(null);
-  const [selectedDemographic_forcharts, setSelectedDemographic_forcharts] = useState(null);
 
   // Map
   // Seat visualisation (would need an algorithm across municipalities/constituencies to count)
@@ -57,16 +51,10 @@ function PollingResults() {
   return (
     <div className="PollingResults">
 
-      {data ? <VoteProjection /> : <Loader />}
+      {data ? <VoteProjection pollingData={data.data} /> : <Loader />}
+      {data ? <SeatVisualisation pollingData={data.data} /> : <Loader />}
+      {data ? <DemographicCharts pollingData={data.data} country={selectedCountry} /> : <Loader />}
       {data ? <PollingMap /> : <Loader />}
-      {data ? <SeatVisualisation /> : <Loader />}
-      {data ? <VoterTurnout /> : <Loader />}
-      {data ? <DemographicCharts chosenDemographic={selectedDemographic_forcharts}/> : <Loader />}
-
-      {data && selectedCountry && <DemographicChooser 
-        setChosenDemographic={setSelectedDemographic_forcharts} 
-        country={selectedCountry}
-      />}
     </div>
   );
 };

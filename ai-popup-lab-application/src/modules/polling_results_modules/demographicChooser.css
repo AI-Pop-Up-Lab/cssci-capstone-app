@@ -1,9 +1,40 @@
-.DemographicChooser{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+.DemographicChooser {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 10px 20px;
+}
+
+.dc-sentence {
+  font-size: 1rem;
+  line-height: 2.8;
+  color: #222;
+  text-align: center;
+  margin: 0;
+}
+
+.dc-inline-select {
+  display: inline-block;
+  background: #f4f6f8;
+  border: 2px solid #1a3a42;
+  border-radius: 0;
+  color: #1a1a2e;
+  font-size: 0.93rem;
+  padding: 3px 8px;
+  cursor: pointer;
+  height: 32px;
+  max-width: 200px;
+  vertical-align: middle;
+}
+
+.dc-inline-select:hover {
+  background: #e8edf2;
+}
+
+.dc-inline-select > option {
+  background-color: #fff;
+  color: #1a1a2e;
 }
 
 
@@ -31,7 +62,7 @@
     background-color: rgba(0,0,0,0.1);
 
     border: 2px solid #D1E3DD;
-    border-radius: 8px;
+    border-radius: 0;
 
     color: #D1E3DD;
 }

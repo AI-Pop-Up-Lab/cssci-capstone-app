@@ -1,0 +1,47 @@
+.DemographicCharts {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 30px 40px;
+  border: 2px solid #1a3a42;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+.dc-chart-wrapper {
+  position: relative;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.dc-chart-wrapper svg text {
+  fill: #111 !important;
+  font-family: inherit;
+}
+
+.dc-grid line {
+  stroke: #ebebeb;
+  stroke-dasharray: 3 3;
+}
+
+.sv-chart-wrapper circle.seat {
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.sv-chart-wrapper circle.seat:hover {
+  opacity: 0.75;
+}

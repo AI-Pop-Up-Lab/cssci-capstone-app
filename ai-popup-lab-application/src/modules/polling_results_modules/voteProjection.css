@@ -1,0 +1,64 @@
+.VoteProjection {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 30px 40px;
+  border: 2px solid #1a3a42;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.VoteProjection .vp-title,
+.VoteProjection .vp-subtitle {
+  text-align: center;
+  width: 100%;
+}
+
+.vp-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.vp-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 18px 0;
+}
+
+.vp-chart-wrapper {
+  position: relative;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.vp-chart-wrapper svg text {
+  fill: #111 !important;
+  font-family: inherit;
+}
+
+.vp-grid line {
+  stroke: #ebebeb;
+  stroke-dasharray: 3 3;
+}
+
+.chart-tooltip {
+  position: fixed;
+  background: #1a3a42;
+  color: #fff;
+  padding: 6px 11px;
+  border-radius: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 9999;
+  white-space: nowrap;
+}
