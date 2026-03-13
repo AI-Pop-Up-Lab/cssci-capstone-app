@@ -9,23 +9,25 @@
 .dc-sentence {
   font-size: 1rem;
   line-height: 2.8;
-  color: #222;
+  color: #1a3a42;
+  font-family: "Unbounded", sans-serif;
   text-align: center;
   margin: 0;
 }
 
 .dc-inline-select {
   display: inline-block;
-  background: #f4f6f8;
+  /* background: #f4f6f8; */
   border: 2px solid #1a3a42;
   border-radius: 0;
-  color: #1a1a2e;
+  color: #1a3a42;
   font-size: 0.93rem;
   padding: 3px 8px;
   cursor: pointer;
   height: 32px;
-  max-width: 200px;
+  max-width: 220px;
   vertical-align: middle;
+  font-family: "Unbounded", sans-serif;
 }
 
 .dc-inline-select:hover {
@@ -34,7 +36,7 @@
 
 .dc-inline-select > option {
   background-color: #fff;
-  color: #1a1a2e;
+  color: #1a3a42;
 }
 
 

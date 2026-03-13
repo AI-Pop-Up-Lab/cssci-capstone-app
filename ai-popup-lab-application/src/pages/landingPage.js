@@ -6,9 +6,9 @@ import './landingPage.css';
 function LandingPage() {
   return (
     <div className="LandingPage">
-      <p>hey</p>
+      <p>Placeholder text, nothin here yet</p>
       <br></br>
-      <ApiTest />
+      {/* <ApiTest /> */}
     </div>
   );
 }

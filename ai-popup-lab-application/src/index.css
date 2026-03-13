@@ -1,15 +1,6 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 /* Above code is auto-generated with a react app, most likely will be removed */
@@ -24,9 +15,27 @@ code {
 }
 
 body{
-  color: #d4e4e1;
-  background-color: #335058;
+  color: #335058;
+  background-color: #d4e4e1;
   padding: 0 3%;
+}
+
+/* Scrollbar styling */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #bac7c5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #335058;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c464d;
 }
 
 /* font classes */

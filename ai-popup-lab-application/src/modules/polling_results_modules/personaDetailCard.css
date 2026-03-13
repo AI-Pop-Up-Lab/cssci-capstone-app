@@ -1,0 +1,53 @@
+.PersonaDetailCard{
+    border: 2px solid #335058;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.PersonaDetailCard > h1{
+    margin-bottom: 5px;
+}
+
+.PersonaDetailCard > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.startChatButton{
+    width: 15%;
+    height: 60px;
+    margin: 0 2% 2% 0;
+    border: 2px solid #335058;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.startChatButton:hover{
+    background-color: rgba(0,0,0,0.175);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.personaAttributesContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.personaAttributesContainer > div{
+    display: flex;
+}
+
+.personaAttributesContainer > div > p:nth-child(1){
+    margin-right: 5px;
+}
+

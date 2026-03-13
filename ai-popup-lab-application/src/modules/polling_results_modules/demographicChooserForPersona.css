@@ -1,0 +1,48 @@
+.DemographicChooserForPersona{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+/* styling for dropdown modules DemographicChooser inserts */
+
+.DemographicChoiceDropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.DemographicChoiceDropdown > p{
+    text-transform: capitalize;
+    color: #335058;
+}
+
+.DemographicChoiceDropdown > select{
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 10px;
+
+    background-color: rgba(0,0,0,0.1);
+
+    border: 2px solid #335058;
+    border-radius: 8px;
+
+    color: #335058;
+}
+
+.DemographicChoiceDropdown > select:hover{
+    background-color: rgba(0,0,0,0.175);
+}
+
+.DemographicChoiceDropdown > select > option{
+    background-color: #D1E3DD;
+    color: #335058;
+    border: 0;
+    /* text-transform: capitalize; */
+}

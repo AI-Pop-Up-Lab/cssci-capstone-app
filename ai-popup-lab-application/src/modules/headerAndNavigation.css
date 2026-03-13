@@ -23,7 +23,7 @@ header > h1{
 }
 
 #hamburger-left{
-    background-color: #D1E3DD;
+    background-color: #335058;
     height: 8px;
     width: 30px;
     transition-duration: 0.5s;
@@ -32,7 +32,7 @@ header > h1{
 }
 
 #hamburger-right{
-    background-color: #D1E3DD;
+    background-color: #335058;
     height: 8px;
     width: 30px;
     transition-duration: 0.5s;
@@ -43,7 +43,7 @@ header > h1{
 
 #hamburger-left::before{
     content: '';
-    background-color: #D1E3DD;
+    background-color: #335058;
     height: 8px;
     width: 30px;
     transition-duration: 0.5s;
@@ -53,7 +53,7 @@ header > h1{
 
 #hamburger-right::before{
     content: '';
-    background-color: #D1E3DD;
+    background-color: #335058;
     height: 8px;
     width: 30px;
     transition-duration: 0.5s;
@@ -63,7 +63,7 @@ header > h1{
 
 #hamburger-left::after{
     content: '';
-    background-color: #D1E3DD;
+    background-color: #335058;
     height: 8px;
     width: 30px;
     transition-duration: 0.5s;
@@ -73,7 +73,7 @@ header > h1{
 
 #hamburger-right::after{
     content: '';
-    background-color: #D1E3DD;
+    background-color: #335058;
     height: 8px;
     width: 30px;
     transition-duration: 0.5s;
