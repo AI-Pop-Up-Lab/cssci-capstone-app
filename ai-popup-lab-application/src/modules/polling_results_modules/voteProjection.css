@@ -1,8 +1,8 @@
 .VoteProjection {
-  background: #ffffff;
+  /* background: #ffffff; */
   border-radius: 0;
   padding: 30px 40px;
-  border: 2px solid #1a3a42;
+  /* border: 2px solid #1a3a42; */
   width: 100%;
   max-width: 900px;
   box-sizing: border-box;
@@ -20,15 +20,17 @@
 .vp-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #335058;
   margin-bottom: 6px;
   line-height: 1.4;
+  font-family: "Unbounded", sans-serif;
 }
 
 .vp-subtitle {
   font-size: 0.9rem;
-  color: #555;
+  color: #335058;
   margin: 0 0 18px 0;
+  font-family: "Unbounded", sans-serif;
 }
 
 .vp-chart-wrapper {
@@ -40,11 +42,11 @@
 
 .vp-chart-wrapper svg text {
   fill: #111 !important;
-  font-family: inherit;
+  font-family: "Unbounded", sans-serif;
 }
 
 .vp-grid line {
-  stroke: #ebebeb;
+  stroke: #335058;
   stroke-dasharray: 3 3;
 }
 
@@ -61,4 +63,9 @@
   transition: opacity 0.1s;
   z-index: 9999;
   white-space: nowrap;
+}
+
+.tick > text{
+  fill: #335058;
+  font-family: "Unbounded", sans-serif;
 }
