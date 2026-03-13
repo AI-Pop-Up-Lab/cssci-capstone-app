@@ -8,19 +8,33 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow }) {
 
   const [index, setIndex] = useState([personaDetails.index]);
   const [filteredPersona, setFilteredPersona] = useState(
-    relevantColumnsToShow
-      ? Object.fromEntries(Object.entries(personaDetails).filter(([key]) => relevantColumnsToShow.includes(key)))
-      : {}
+
+    filterColumns(personaDetails, relevantColumnsToShow)
+
+    // relevantColumnsToShow
+    //   ? Object.fromEntries(Object.entries(personaDetails).filter(([key]) => relevantColumnsToShow.includes(key)))
+    //   : {}
   );
+
+  function filterColumns(persona, relCol){
+
+    if(!relCol){
+      return {}
+    }
+
+    relCol.push('vote_2030');
+    return Object.fromEntries(Object.entries(persona).filter(([key]) => relCol.includes(key)))
+
+  }
 
   const formatKey = (key) => {
     const withSpaces = key.replace(/_/g, ' ');
     return withSpaces.charAt(0).toUpperCase() + withSpaces.slice(1);
   };
 
-  // useEffect(() => {
-  //   console.log(personaDetails)
-  // }, [personaDetails]);
+  useEffect(() => {
+    console.log(relevantColumnsToShow)
+  }, [relevantColumnsToShow]);
 
 
   return (
