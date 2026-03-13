@@ -32,10 +32,13 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow }) {
     return withSpaces.charAt(0).toUpperCase() + withSpaces.slice(1);
   };
 
-  useEffect(() => {
-    console.log(relevantColumnsToShow)
-  }, [relevantColumnsToShow]);
+  // useEffect(() => {
+  //   console.log(relevantColumnsToShow)
+  // }, [relevantColumnsToShow]);
 
+  useEffect(() => {
+    setFilteredPersona(filterColumns(personaDetails, relevantColumnsToShow));
+  }, [relevantColumnsToShow]);
 
   return (
     <div className="PersonaDetailCard">
