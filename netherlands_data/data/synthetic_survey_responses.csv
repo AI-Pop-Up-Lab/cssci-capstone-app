@@ -1,0 +1,2001 @@
+gm_code,municipality,gender,age_group,education,N,vote_2030
+GM0297    ,Zaltbommel,male,45-55,"Hbo-, wo-bachelor",327.0,VVD
+GM0034    ,Almere,male,15-25,"Havo, vwo, mbo2-4",5933.0,Did not vote
+GM1940    ,De Fryske Marren,male,55-65,"Hbo-, wo-bachelor",760.0,CDA
+GM0610    ,Sliedrecht,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",508.0,50PLUS
+GM0988    ,Weert,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",456.0,SP
+GM1926    ,Pijnacker-Nootdorp,female,15-25,"Hbo-, wo-bachelor",322.0,D66
+GM0193    ,Zwolle,female,45-55,"Hbo-, wo-bachelor",2614.0,D66
+GM0983    ,Venlo,female,35-45,"Havo, vwo, mbo2-4",2633.0,GL-PvdA
+GM0718    ,Vlissingen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",942.0,Did not vote
+GM0935    ,Maastricht,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1240.0,PVV
+GM0080    ,Leeuwarden,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1346.0,50PLUS
+GM1507    ,Horst aan de Maas,female,25-35,"Hbo-, wo-bachelor",941.0,D66
+GM0202    ,Arnhem,male,25-35,"Havo, vwo, mbo2-4",5679.0,D66
+GM0228    ,Ede,female,25-35,"Hbo-, wo-bachelor",2536.0,GL-PvdA
+GM1783    ,Westland,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1026.0,BBB
+GM1969    ,Westerkwartier,female,25-35,"Havo, vwo, mbo2-4",1533.0,D66
+GM1982    ,Land van Cuijk,male,15-25,Basisonderwijs,668.0,Did not vote
+GM0796    ,'s-Hertogenbosch,female,55-65,"Havo, vwo, mbo2-4",4151.0,CDA
+GM0917    ,Heerlen,male,45-55,"Havo, vwo, mbo2-4",2396.0,CDA
+GM1924    ,Goeree-Overflakkee,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",941.0,Did not vote
+GM0762    ,Deurne,female,25-35,"Hbo-, wo-master, doctor",353.0,D66
+GM0794    ,Helmond,female,45-55,"Havo, vwo, mbo2-4",2667.0,CDA
+GM0402    ,Hilversum,female,35-45,"Hbo-, wo-bachelor",1787.0,D66
+GM0345    ,Veenendaal,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1773.0,Did not vote
+GM0479    ,Zaanstad,male,55-65,"Hbo-, wo-bachelor",1938.0,VVD
+GM0824    ,Oisterwijk,male,45-55,"Hbo-, wo-bachelor",533.0,VVD
+GM0796    ,'s-Hertogenbosch,female,45-55,"Havo, vwo, mbo2-4",3233.0,CDA
+GM0599    ,Rotterdam,male,55-65,"Havo, vwo, mbo2-4",15093.0,VVD
+GM0228    ,Ede,female,25-35,"Havo, vwo, mbo2-4",3344.0,D66
+GM0988    ,Weert,female,65-75,Basisonderwijs,573.0,CDA
+GM0392    ,Haarlem,male,25-35,"Hbo-, wo-bachelor",3654.0,D66
+GM0935    ,Maastricht,female,25-35,"Hbo-, wo-master, doctor",2973.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,35-45,"Hbo-, wo-master, doctor",9530.0,D66
+GM0824    ,Oisterwijk,female,65-75,Basisonderwijs,229.0,CDA
+GM0772    ,Eindhoven,male,55-65,"Havo, vwo, mbo2-4",5041.0,VVD
+GM0213    ,Brummen,male,55-65,"Havo, vwo, mbo2-4",835.0,CDA
+GM0599    ,Rotterdam,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",5117.0,SP
+GM0513    ,Gouda,female,25-35,"Hbo-, wo-bachelor",1766.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,65-75,"Havo, vwo, mbo2-4",7285.0,CDA
+GM0917    ,Heerlen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1559.0,Did not vote
+GM0873    ,Woensdrecht,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",315.0,50PLUS
+GM0158    ,Haaksbergen,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",346.0,50PLUS
+GM0402    ,Hilversum,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1880.0,Did not vote
+GM0034    ,Almere,male,35-45,Basisonderwijs,1055.0,PVV
+GM0632    ,Woerden,female,55-65,"Havo, vwo, mbo2-4",1642.0,CDA
+GM0851    ,Steenbergen,female,15-25,"Havo, vwo, mbo2-4",562.0,D66
+GM1930    ,Nissewaard,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1492.0,Did not vote
+GM0153    ,Enschede,female,15-25,"Havo, vwo, mbo2-4",5807.0,Did not vote
+GM0928    ,Kerkrade,male,55-65,"Hbo-, wo-bachelor",570.0,VVD
+GM0599    ,Rotterdam,male,45-55,Basisonderwijs,5386.0,PVV
+GM1991    ,Maashorst,male,35-45,"Havo, vwo, mbo2-4",1484.0,BBB
+GM0758    ,Breda,male,55-65,"Hbo-, wo-bachelor",2782.0,CDA
+GM0202    ,Arnhem,male,25-35,"Hbo-, wo-bachelor",3723.0,D66
+GM0867    ,Waalwijk,male,25-35,"Hbo-, wo-bachelor",791.0,VVD
+GM0537    ,Katwijk,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",660.0,VVD
+GM0668    ,West Maas en Waal,female,35-45,Basisonderwijs,41.0,BBB
+GM0392    ,Haarlem,male,35-45,Basisonderwijs,934.0,PVV
+GM0301    ,Zutphen,male,65-75,"Hbo-, wo-master, doctor",550.0,CDA
+GM0363    ,Amsterdam,male,45-55,"Havo, vwo, mbo2-4",15290.0,D66
+GM0758    ,Breda,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1527.0,CDA
+GM0840    ,Rucphen,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",539.0,CDA
+GM0230    ,Elburg,female,35-45,Basisonderwijs,116.0,Did not vote
+GM0363    ,Amsterdam,male,55-65,"Havo, vwo, mbo2-4",16062.0,VVD
+GM1525    ,Teylingen,female,25-35,"Hbo-, wo-master, doctor",437.0,D66
+GM0983    ,Venlo,male,45-55,"Hbo-, wo-master, doctor",640.0,D66
+GM0392    ,Haarlem,female,35-45,"Hbo-, wo-master, doctor",4582.0,D66
+GM0014    ,Groningen (gemeente),male,25-35,"Hbo-, wo-bachelor",7546.0,D66
+GM0441    ,Schagen,male,35-45,"Havo, vwo, mbo2-4",1190.0,VVD
+GM0758    ,Breda,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3886.0,Did not vote
+GM0228    ,Ede,female,15-25,Basisonderwijs,772.0,Did not vote
+GM0153    ,Enschede,male,55-65,"Havo, vwo, mbo2-4",4368.0,VVD
+GM0118    ,Hoogeveen,female,25-35,"Hbo-, wo-bachelor",774.0,D66
+GM0228    ,Ede,male,25-35,"Havo, vwo, mbo2-4",3536.0,VVD
+GM0513    ,Gouda,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",542.0,VVD
+GM0383    ,Castricum,male,25-35,"Hbo-, wo-bachelor",608.0,D66
+GM0513    ,Gouda,male,65-75,Basisonderwijs,444.0,CDA
+GM0034    ,Almere,female,45-55,"Hbo-, wo-bachelor",3290.0,D66
+GM1709    ,Moerdijk,male,15-25,Basisonderwijs,288.0,Did not vote
+GM0479    ,Zaanstad,male,15-25,"Havo, vwo, mbo2-4",3898.0,D66
+GM0512    ,Gorinchem,male,45-55,"Havo, vwo, mbo2-4",1062.0,CDA
+GM0344    ,Utrecht (gemeente),female,25-35,"Hbo-, wo-master, doctor",21657.0,D66
+GM0275    ,Rheden,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",520.0,50PLUS
+GM0163    ,Hellendoorn,male,15-25,"Havo, vwo, mbo2-4",981.0,BBB
+GM0518    ,'s-Gravenhage (gemeente),female,55-65,"Hbo-, wo-master, doctor",5662.0,D66
+GM1926    ,Pijnacker-Nootdorp,male,55-65,"Havo, vwo, mbo2-4",1686.0,VVD
+GM0363    ,Amsterdam,male,25-35,"Hbo-, wo-bachelor",29002.0,D66
+GM1970    ,Noardeast-Fryslân,male,55-65,"Havo, vwo, mbo2-4",1729.0,BBB
+GM0175    ,Ommen,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",328.0,CDA
+GM0363    ,Amsterdam,female,45-55,"Hbo-, wo-bachelor",12272.0,GL-PvdA
+GM0736    ,De Ronde Venen,female,65-75,"Hbo-, wo-bachelor",482.0,CDA
+GM1735    ,Hof van Twente,male,45-55,"Hbo-, wo-bachelor",552.0,BBB
+GM0479    ,Zaanstad,female,65-75,"Hbo-, wo-bachelor",1160.0,50PLUS
+GM1942    ,Gooise Meren,male,35-45,"Havo, vwo, mbo2-4",988.0,VVD
+GM0503    ,Delft,male,55-65,"Hbo-, wo-master, doctor",1487.0,D66
+GM0274    ,Renkum,female,35-45,"Hbo-, wo-bachelor",438.0,D66
+GM0361    ,Alkmaar,male,15-25,"Havo, vwo, mbo2-4",2854.0,D66
+GM0983    ,Venlo,male,35-45,Basisonderwijs,429.0,PVV
+GM1674    ,Roosendaal,female,55-65,"Havo, vwo, mbo2-4",2488.0,CDA
+GM0537    ,Katwijk,male,15-25,"Hbo-, wo-master, doctor",40.0,D66
+GM0080    ,Leeuwarden,female,15-25,Basisonderwijs,1051.0,Did not vote
+GM0772    ,Eindhoven,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1916.0,VVD
+GM0074    ,Heerenveen,female,45-55,"Havo, vwo, mbo2-4",1512.0,VVD
+GM1714    ,Sluis,male,65-75,"Havo, vwo, mbo2-4",680.0,CDA
+GM1774    ,Dinkelland,male,25-35,"Havo, vwo, mbo2-4",880.0,BBB
+GM1982    ,Land van Cuijk,female,45-55,"Havo, vwo, mbo2-4",2702.0,BBB
+GM0150    ,Deventer,female,55-65,"Havo, vwo, mbo2-4",3030.0,CDA
+GM0405    ,Hoorn,female,65-75,"Havo, vwo, mbo2-4",1940.0,50PLUS
+GM0758    ,Breda,female,65-75,"Hbo-, wo-bachelor",2078.0,CDA
+GM0268    ,Nijmegen,female,55-65,"Hbo-, wo-master, doctor",2310.0,D66
+GM0935    ,Maastricht,male,25-35,Basisonderwijs,738.0,Did not vote
+GM0363    ,Amsterdam,male,25-35,"Hbo-, wo-master, doctor",35648.0,D66
+GM0855    ,Tilburg,female,35-45,Basisonderwijs,1274.0,PVV
+GM0106    ,Assen,female,15-25,Basisonderwijs,488.0,Did not vote
+GM0285    ,Voorst,male,15-25,"Havo, vwo, mbo2-4",656.0,BBB
+GM0453    ,Velsen,female,55-65,"Havo, vwo, mbo2-4",2607.0,VVD
+GM0772    ,Eindhoven,male,45-55,"Hbo-, wo-bachelor",3611.0,VVD
+GM0269    ,Oldebroek,female,35-45,"Havo, vwo, mbo2-4",701.0,BBB
+GM1507    ,Horst aan de Maas,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",612.0,VVD
+GM0599    ,Rotterdam,female,15-25,"Havo, vwo, mbo2-4",21434.0,GL-PvdA
+GM0344    ,Utrecht (gemeente),female,65-75,"Hbo-, wo-master, doctor",2190.0,D66
+GM1896    ,Zwartewaterland,male,65-75,Basisonderwijs,176.0,50PLUS
+GM0273    ,Putten,female,15-25,"Hbo-, wo-bachelor",141.0,D66
+GM0014    ,Groningen (gemeente),male,45-55,"Hbo-, wo-bachelor",3010.0,D66
+GM0632    ,Woerden,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",911.0,PvdD
+GM1979    ,Eemsdelta,male,55-65,"Hbo-, wo-bachelor",462.0,VVD
+GM0074    ,Heerenveen,male,65-75,"Hbo-, wo-master, doctor",388.0,VVD
+GM0150    ,Deventer,male,35-45,"Hbo-, wo-bachelor",1956.0,D66
+GM0118    ,Hoogeveen,male,25-35,"Havo, vwo, mbo2-4",2152.0,BBB
+GM0307    ,Amersfoort,male,55-65,Basisonderwijs,999.0,VVD
+GM0090    ,Smallingerland,male,55-65,"Havo, vwo, mbo2-4",1841.0,BBB
+GM0392    ,Haarlem,male,45-55,"Hbo-, wo-master, doctor",3108.0,D66
+GM1963    ,Hoeksche Waard,female,45-55,"Havo, vwo, mbo2-4",2868.0,BBB
+GM0824    ,Oisterwijk,female,65-75,"Havo, vwo, mbo2-4",922.0,CDA
+GM0828    ,Oss,male,15-25,"Havo, vwo, mbo2-4",2354.0,VVD
+GM0599    ,Rotterdam,male,15-25,"Havo, vwo, mbo2-4",18750.0,D66
+GM0363    ,Amsterdam,female,25-35,"Hbo-, wo-master, doctor",43743.0,D66
+GM0397    ,Heemstede,female,15-25,"Havo, vwo, mbo2-4",712.0,D66
+GM0599    ,Rotterdam,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",11887.0,Did not vote
+GM0603    ,Rijswijk (ZH.),male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1046.0,Did not vote
+GM1655    ,Halderberge,female,65-75,"Havo, vwo, mbo2-4",756.0,50PLUS
+GM1581    ,Utrechtse Heuvelrug,female,55-65,Basisonderwijs,226.0,CDA
+GM0344    ,Utrecht (gemeente),female,25-35,"Hbo-, wo-bachelor",12840.0,D66
+GM0153    ,Enschede,male,65-75,"Havo, vwo, mbo2-4",3018.0,CDA
+GM1705    ,Lingewaard,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1049.0,CDA
+GM1963    ,Hoeksche Waard,female,15-25,"Havo, vwo, mbo2-4",2218.0,BBB
+GM0622    ,Vlaardingen,female,25-35,"Hbo-, wo-master, doctor",648.0,D66
+GM1699    ,Noordenveld,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",619.0,PVV
+GM0363    ,Amsterdam,male,65-75,"Hbo-, wo-master, doctor",7691.0,D66
+GM0355    ,Zeist,male,35-45,"Havo, vwo, mbo2-4",1181.0,VVD
+GM0748    ,Bergen op Zoom,male,65-75,"Hbo-, wo-bachelor",949.0,CDA
+GM0861    ,Veldhoven,male,45-55,"Hbo-, wo-master, doctor",685.0,D66
+GM0200    ,Apeldoorn,female,55-65,"Havo, vwo, mbo2-4",5424.0,CDA
+GM0532    ,Stede Broec,female,25-35,"Hbo-, wo-bachelor",272.0,D66
+GM0285    ,Voorst,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",120.0,BBB
+GM0518    ,'s-Gravenhage (gemeente),female,15-25,"Havo, vwo, mbo2-4",16965.0,D66
+GM0307    ,Amersfoort,female,35-45,Basisonderwijs,818.0,Did not vote
+GM1952    ,Midden-Groningen,female,25-35,"Havo, vwo, mbo2-4",1843.0,BBB
+GM1900    ,Súdwest-Fryslân,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1711.0,VVD
+GM0899    ,Brunssum,male,55-65,"Havo, vwo, mbo2-4",1060.0,CDA
+GM1883    ,Sittard-Geleen,female,45-55,"Havo, vwo, mbo2-4",2299.0,CDA
+GM0356    ,Nieuwegein,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1041.0,50PLUS
+GM0394    ,Haarlemmermeer,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",2071.0,50PLUS
+GM0988    ,Weert,male,65-75,Basisonderwijs,310.0,CDA
+GM0153    ,Enschede,male,15-25,"Havo, vwo, mbo2-4",7540.0,D66
+GM1924    ,Goeree-Overflakkee,female,45-55,"Hbo-, wo-bachelor",564.0,BBB
+GM0599    ,Rotterdam,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",6630.0,VVD
+GM0153    ,Enschede,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1324.0,50PLUS
+GM0603    ,Rijswijk (ZH.),female,65-75,Basisonderwijs,459.0,50PLUS
+GM0518    ,'s-Gravenhage (gemeente),male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",5722.0,Did not vote
+GM0034    ,Almere,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",2433.0,PVV
+GM0873    ,Woensdrecht,female,25-35,"Havo, vwo, mbo2-4",297.0,BBB
+GM0014    ,Groningen (gemeente),female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1654.0,50PLUS
+GM0114    ,Emmen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2488.0,Did not vote
+GM0383    ,Castricum,female,65-75,"Havo, vwo, mbo2-4",958.0,50PLUS
+GM0267    ,Nijkerk,male,55-65,"Havo, vwo, mbo2-4",1466.0,CDA
+GM0180    ,Staphorst,female,55-65,"Havo, vwo, mbo2-4",468.0,CDA
+GM0537    ,Katwijk,female,25-35,"Hbo-, wo-bachelor",1044.0,D66
+GM0362    ,Amstelveen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2412.0,Did not vote
+GM0503    ,Delft,male,65-75,"Hbo-, wo-bachelor",1003.0,50PLUS
+GM1963    ,Hoeksche Waard,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",442.0,BBB
+GM0344    ,Utrecht (gemeente),male,25-35,"Hbo-, wo-master, doctor",16442.0,D66
+GM0034    ,Almere,male,45-55,"Hbo-, wo-bachelor",2890.0,VVD
+GM0363    ,Amsterdam,male,15-25,"Hbo-, wo-bachelor",6960.0,D66
+GM0866    ,Waalre,male,55-65,"Hbo-, wo-bachelor",403.0,CDA
+GM0307    ,Amersfoort,male,15-25,Basisonderwijs,1336.0,Did not vote
+GM0397    ,Heemstede,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",54.0,Did not vote
+GM0796    ,'s-Hertogenbosch,female,35-45,Basisonderwijs,680.0,Did not vote
+GM0166    ,Kampen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1307.0,Did not vote
+GM0363    ,Amsterdam,female,25-35,"Havo, vwo, mbo2-4",20770.0,D66
+GM0575    ,Noordwijk,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",432.0,VVD
+GM0034    ,Almere,male,25-35,"Havo, vwo, mbo2-4",7266.0,D66
+GM0344    ,Utrecht (gemeente),male,35-45,"Havo, vwo, mbo2-4",6176.0,D66
+GM0233    ,Ermelo,female,65-75,"Hbo-, wo-bachelor",405.0,CDA
+GM0307    ,Amersfoort,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1221.0,50PLUS
+GM0599    ,Rotterdam,female,45-55,"Havo, vwo, mbo2-4",13789.0,50PLUS
+GM1966    ,Het Hogeland,male,45-55,"Havo, vwo, mbo2-4",1665.0,BBB
+GM0397    ,Heemstede,female,65-75,"Hbo-, wo-master, doctor",331.0,D66
+GM1948    ,Meierijstad,male,45-55,"Havo, vwo, mbo2-4",2597.0,BBB
+GM0163    ,Hellendoorn,female,45-55,"Havo, vwo, mbo2-4",1091.0,50PLUS
+GM0202    ,Arnhem,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1580.0,PVV
+GM0356    ,Nieuwegein,female,15-25,"Havo, vwo, mbo2-4",1581.0,D66
+GM1507    ,Horst aan de Maas,male,45-55,"Hbo-, wo-master, doctor",208.0,D66
+GM0489    ,Barendrecht,male,45-55,"Havo, vwo, mbo2-4",1401.0,VVD
+GM0513    ,Gouda,male,65-75,"Hbo-, wo-master, doctor",672.0,VVD
+GM0275    ,Rheden,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",882.0,Did not vote
+GM0222    ,Doetinchem,male,55-65,"Hbo-, wo-bachelor",918.0,VVD
+GM0537    ,Katwijk,female,45-55,"Havo, vwo, mbo2-4",2021.0,D66
+GM0226    ,Duiven,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",330.0,PVV
+GM0503    ,Delft,female,55-65,"Havo, vwo, mbo2-4",2053.0,CDA
+GM0268    ,Nijmegen,male,65-75,"Hbo-, wo-master, doctor",2245.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,15-25,"Hbo-, wo-bachelor",3221.0,D66
+GM1525    ,Teylingen,male,45-55,"Hbo-, wo-master, doctor",545.0,D66
+GM0193    ,Zwolle,male,65-75,"Havo, vwo, mbo2-4",2330.0,CDA
+GM0917    ,Heerlen,male,15-25,Basisonderwijs,828.0,Did not vote
+GM0363    ,Amsterdam,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",15223.0,GL-PvdA
+GM0177    ,Raalte,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",830.0,Did not vote
+GM0748    ,Bergen op Zoom,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",529.0,PVV
+GM0228    ,Ede,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2418.0,Did not vote
+GM1884    ,Kaag en Braassem,male,45-55,"Havo, vwo, mbo2-4",817.0,VVD
+GM1940    ,De Fryske Marren,female,45-55,"Hbo-, wo-master, doctor",333.0,D66
+GM0355    ,Zeist,female,45-55,"Havo, vwo, mbo2-4",1006.0,VVD
+GM0718    ,Vlissingen,male,35-45,"Hbo-, wo-bachelor",557.0,VVD
+GM0228    ,Ede,female,45-55,"Hbo-, wo-bachelor",1613.0,D66
+GM0855    ,Tilburg,female,25-35,Basisonderwijs,720.0,VVD
+GM0114    ,Emmen,female,15-25,"Havo, vwo, mbo2-4",2531.0,D66
+GM0230    ,Elburg,male,55-65,Basisonderwijs,129.0,CDA
+GM0405    ,Hoorn,male,35-45,"Havo, vwo, mbo2-4",2220.0,VVD
+GM0394    ,Haarlemmermeer,male,15-25,"Havo, vwo, mbo2-4",4861.0,VVD
+GM0232    ,Epe,female,65-75,"Havo, vwo, mbo2-4",805.0,CDA
+GM0546    ,Leiden,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1762.0,Did not vote
+GM0441    ,Schagen,male,45-55,"Havo, vwo, mbo2-4",1443.0,VVD
+GM0737    ,Tytsjerksteradiel,female,35-45,"Hbo-, wo-bachelor",482.0,D66
+GM0547    ,Leiderdorp,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",204.0,VVD
+GM0296    ,Wijchen,male,35-45,"Hbo-, wo-bachelor",552.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,15-25,"Havo, vwo, mbo2-4",14677.0,D66
+GM0855    ,Tilburg,female,65-75,"Hbo-, wo-bachelor",1732.0,CDA
+GM0479    ,Zaanstad,female,55-65,"Hbo-, wo-bachelor",1744.0,D66
+GM0983    ,Venlo,male,55-65,"Havo, vwo, mbo2-4",3311.0,VVD
+GM0599    ,Rotterdam,male,25-35,"Hbo-, wo-master, doctor",14811.0,D66
+GM1729    ,Gulpen-Wittem,male,55-65,"Hbo-, wo-master, doctor",118.0,VVD
+GM0758    ,Breda,male,55-65,"Hbo-, wo-master, doctor",2294.0,D66
+GM0599    ,Rotterdam,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",5171.0,50PLUS
+GM0957    ,Roermond,male,45-55,"Havo, vwo, mbo2-4",1673.0,CDA
+GM0935    ,Maastricht,female,45-55,Basisonderwijs,546.0,Did not vote
+GM0758    ,Breda,female,35-45,"Havo, vwo, mbo2-4",3236.0,D66
+GM0984    ,Venray,male,35-45,Basisonderwijs,356.0,BBB
+GM0664    ,Goes,female,35-45,"Havo, vwo, mbo2-4",929.0,D66
+GM1901    ,Bodegraven-Reeuwijk,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",515.0,50PLUS
+GM0840    ,Rucphen,male,25-35,"Havo, vwo, mbo2-4",671.0,BBB
+GM0855    ,Tilburg,male,55-65,"Havo, vwo, mbo2-4",5792.0,VVD
+GM0200    ,Apeldoorn,male,55-65,"Havo, vwo, mbo2-4",5087.0,VVD
+GM1903    ,Eijsden-Margraten,male,55-65,"Havo, vwo, mbo2-4",907.0,CDA
+GM0098    ,Weststellingwerf,female,55-65,"Havo, vwo, mbo2-4",905.0,CDA
+GM0851    ,Steenbergen,female,15-25,"Hbo-, wo-bachelor",88.0,D66
+GM0153    ,Enschede,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1768.0,50PLUS
+GM0307    ,Amersfoort,male,25-35,"Havo, vwo, mbo2-4",4514.0,D66
+GM0772    ,Eindhoven,female,35-45,"Havo, vwo, mbo2-4",4693.0,D66
+GM0590    ,Papendrecht,female,35-45,"Havo, vwo, mbo2-4",994.0,VVD
+GM1740    ,Neder-Betuwe,female,65-75,"Havo, vwo, mbo2-4",393.0,CDA
+GM0268    ,Nijmegen,female,45-55,"Havo, vwo, mbo2-4",2785.0,D66
+GM0796    ,'s-Hertogenbosch,male,45-55,"Hbo-, wo-master, doctor",1959.0,D66
+GM1969    ,Westerkwartier,female,65-75,Basisonderwijs,484.0,CDA
+GM0202    ,Arnhem,female,55-65,"Hbo-, wo-bachelor",2340.0,D66
+GM0627    ,Waddinxveen,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",504.0,CDA
+GM0797    ,Heusden,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",429.0,CDA
+GM1669    ,Roerdalen,male,45-55,"Havo, vwo, mbo2-4",623.0,BBB
+GM0363    ,Amsterdam,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",7754.0,SP
+GM0385    ,Edam-Volendam,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",426.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",3921.0,50PLUS
+GM0232    ,Epe,male,25-35,"Hbo-, wo-bachelor",430.0,D66
+GM0703    ,Reimerswaal,male,45-55,"Havo, vwo, mbo2-4",725.0,BBB
+GM0796    ,'s-Hertogenbosch,female,35-45,"Hbo-, wo-bachelor",2832.0,CDA
+GM0513    ,Gouda,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",811.0,VVD
+GM0743    ,Asten,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",274.0,CDA
+GM1930    ,Nissewaard,female,45-55,"Havo, vwo, mbo2-4",2420.0,50PLUS
+GM0344    ,Utrecht (gemeente),female,55-65,"Havo, vwo, mbo2-4",5133.0,D66
+GM1948    ,Meierijstad,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1462.0,CDA
+GM1930    ,Nissewaard,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",838.0,VVD
+GM1896    ,Zwartewaterland,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",307.0,50PLUS
+GM0301    ,Zutphen,male,15-25,"Havo, vwo, mbo2-4",1146.0,Did not vote
+GM0189    ,Wierden,male,55-65,"Hbo-, wo-bachelor",428.0,VVD
+GM0363    ,Amsterdam,male,55-65,"Hbo-, wo-bachelor",9972.0,D66
+GM0047    ,Veendam,male,65-75,Basisonderwijs,180.0,CDA
+GM1892    ,Zuidplas,male,25-35,"Havo, vwo, mbo2-4",1142.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),female,35-45,"Havo, vwo, mbo2-4",11178.0,D66
+GM0606    ,Schiedam,male,45-55,"Hbo-, wo-master, doctor",519.0,D66
+GM1708    ,Steenwijkerland,female,25-35,"Havo, vwo, mbo2-4",1166.0,PvdD
+GM0627    ,Waddinxveen,male,25-35,"Havo, vwo, mbo2-4",1038.0,VVD
+GM0175    ,Ommen,female,65-75,"Hbo-, wo-master, doctor",72.0,CDA
+GM0441    ,Schagen,male,55-65,"Havo, vwo, mbo2-4",1660.0,CDA
+GM0200    ,Apeldoorn,male,35-45,"Havo, vwo, mbo2-4",4535.0,VVD
+GM1659    ,Laarbeek,male,65-75,"Havo, vwo, mbo2-4",630.0,CDA
+GM1970    ,Noardeast-Fryslân,female,25-35,Basisonderwijs,419.0,Did not vote
+GM0147    ,Borne,female,55-65,"Havo, vwo, mbo2-4",903.0,50PLUS
+GM0772    ,Eindhoven,male,65-75,"Havo, vwo, mbo2-4",3640.0,CDA
+GM0917    ,Heerlen,female,25-35,"Hbo-, wo-master, doctor",541.0,D66
+GM0599    ,Rotterdam,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",4633.0,Did not vote
+GM0293    ,Westervoort,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",314.0,CDA
+GM0406    ,Huizen,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",203.0,PVV
+GM0268    ,Nijmegen,female,45-55,"Hbo-, wo-master, doctor",3162.0,D66
+GM0855    ,Tilburg,male,35-45,"Hbo-, wo-master, doctor",2458.0,D66
+GM0243    ,Harderwijk,female,45-55,"Havo, vwo, mbo2-4",1363.0,CDA
+GM0308    ,Baarn,male,25-35,"Hbo-, wo-master, doctor",115.0,D66
+GM1952    ,Midden-Groningen,female,15-25,"Havo, vwo, mbo2-4",1321.0,D66
+GM1734    ,Overbetuwe,female,25-35,"Hbo-, wo-bachelor",778.0,D66
+GM0363    ,Amsterdam,female,55-65,"Havo, vwo, mbo2-4",14761.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),female,35-45,"Hbo-, wo-master, doctor",10433.0,D66
+GM0147    ,Borne,male,65-75,Basisonderwijs,102.0,CDA
+GM1931    ,Krimpenerwaard,female,45-55,"Havo, vwo, mbo2-4",1652.0,VVD
+GM1930    ,Nissewaard,female,25-35,"Hbo-, wo-bachelor",1358.0,D66
+GM1992    ,Voorne aan Zee,female,65-75,"Havo, vwo, mbo2-4",1800.0,50PLUS
+GM0268    ,Nijmegen,female,15-25,"Hbo-, wo-bachelor",4294.0,D66
+GM0363    ,Amsterdam,male,35-45,"Havo, vwo, mbo2-4",18544.0,D66
+GM0400    ,Den Helder,female,25-35,"Havo, vwo, mbo2-4",1848.0,D66
+GM0202    ,Arnhem,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",1956.0,PVV
+GM0153    ,Enschede,female,55-65,"Hbo-, wo-master, doctor",870.0,D66
+GM0503    ,Delft,male,15-25,"Hbo-, wo-bachelor",3671.0,D66
+GM1771    ,Geldrop-Mierlo,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",757.0,CDA
+GM0737    ,Tytsjerksteradiel,female,15-25,"Havo, vwo, mbo2-4",797.0,FNP
+GM0556    ,Maassluis,female,55-65,"Havo, vwo, mbo2-4",715.0,50PLUS
+GM0252    ,Heumen,male,55-65,"Hbo-, wo-master, doctor",321.0,D66
+GM0163    ,Hellendoorn,male,45-55,"Havo, vwo, mbo2-4",1175.0,VVD
+GM1709    ,Moerdijk,male,45-55,"Havo, vwo, mbo2-4",1322.0,CDA
+GM0268    ,Nijmegen,female,65-75,"Havo, vwo, mbo2-4",2858.0,50PLUS
+GM0935    ,Maastricht,female,15-25,"Havo, vwo, mbo2-4",9781.0,D66
+GM0629    ,Wassenaar,female,45-55,"Hbo-, wo-bachelor",518.0,VVD
+GM1507    ,Horst aan de Maas,male,55-65,"Havo, vwo, mbo2-4",1712.0,50PLUS
+GM0518    ,'s-Gravenhage (gemeente),male,25-35,"Havo, vwo, mbo2-4",15913.0,D66
+GM1586    ,Oost Gelre,male,35-45,"Havo, vwo, mbo2-4",822.0,VVD
+GM0202    ,Arnhem,female,35-45,"Hbo-, wo-bachelor",3300.0,D66
+GM0772    ,Eindhoven,male,25-35,"Havo, vwo, mbo2-4",6877.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),male,35-45,"Havo, vwo, mbo2-4",12749.0,D66
+GM0796    ,'s-Hertogenbosch,female,45-55,"Hbo-, wo-master, doctor",2081.0,D66
+GM0034    ,Almere,female,35-45,"Havo, vwo, mbo2-4",7005.0,D66
+GM0307    ,Amersfoort,male,45-55,"Hbo-, wo-bachelor",2808.0,VVD
+GM0344    ,Utrecht (gemeente),female,35-45,"Havo, vwo, mbo2-4",4868.0,D66
+GM1963    ,Hoeksche Waard,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1865.0,CDA
+GM0183    ,Tubbergen,male,45-55,"Hbo-, wo-bachelor",290.0,CDA
+GM0637    ,Zoetermeer,male,15-25,"Havo, vwo, mbo2-4",3198.0,D66
+GM0361    ,Alkmaar,female,25-35,"Hbo-, wo-bachelor",2738.0,D66
+GM1721    ,Bernheze,female,55-65,"Havo, vwo, mbo2-4",1142.0,50PLUS
+GM0599    ,Rotterdam,female,35-45,"Hbo-, wo-bachelor",11018.0,D66
+GM1730    ,Tynaarlo,male,15-25,"Hbo-, wo-bachelor",83.0,D66
+GM1509    ,Oude IJsselstreek,male,35-45,"Havo, vwo, mbo2-4",1028.0,VVD
+GM1980    ,Dijk en Waard,male,45-55,"Havo, vwo, mbo2-4",2778.0,BBB
+GM0114    ,Emmen,male,65-75,"Hbo-, wo-bachelor",937.0,VVD
+GM0193    ,Zwolle,female,55-65,"Havo, vwo, mbo2-4",3240.0,CDA
+GM0299    ,Zevenaar,male,25-35,"Havo, vwo, mbo2-4",1230.0,VVD
+GM0268    ,Nijmegen,male,15-25,Basisonderwijs,1498.0,Did not vote
+GM0141    ,Almelo,male,35-45,"Havo, vwo, mbo2-4",2116.0,VVD
+GM0994    ,Valkenburg aan de Geul,female,45-55,"Hbo-, wo-bachelor",240.0,CDA
+GM0307    ,Amersfoort,female,45-55,"Havo, vwo, mbo2-4",3410.0,VVD
+GM0513    ,Gouda,female,35-45,"Hbo-, wo-bachelor",1214.0,D66
+GM0928    ,Kerkrade,male,35-45,"Havo, vwo, mbo2-4",1397.0,CDA
+GM1982    ,Land van Cuijk,female,25-35,"Havo, vwo, mbo2-4",2293.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,25-35,"Hbo-, wo-master, doctor",10460.0,D66
+GM0363    ,Amsterdam,female,65-75,"Hbo-, wo-master, doctor",6971.0,D66
+GM0484    ,Alphen aan den Rijn,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2312.0,Did not vote
+GM0037    ,Stadskanaal,female,65-75,"Hbo-, wo-bachelor",253.0,CDA
+GM0363    ,Amsterdam,female,15-25,"Havo, vwo, mbo2-4",30973.0,D66
+GM1507    ,Horst aan de Maas,male,45-55,Basisonderwijs,100.0,BBB
+GM0796    ,'s-Hertogenbosch,female,55-65,Basisonderwijs,1321.0,CDA
+GM0014    ,Groningen (gemeente),male,65-75,Basisonderwijs,867.0,50PLUS
+GM0489    ,Barendrecht,female,35-45,"Havo, vwo, mbo2-4",1045.0,VVD
+GM0826    ,Oosterhout,male,45-55,"Havo, vwo, mbo2-4",1562.0,VVD
+GM1509    ,Oude IJsselstreek,male,55-65,"Havo, vwo, mbo2-4",1709.0,50PLUS
+GM0150    ,Deventer,female,55-65,"Hbo-, wo-master, doctor",781.0,D66
+GM0327    ,Leusden,male,45-55,"Havo, vwo, mbo2-4",701.0,VVD
+GM0080    ,Leeuwarden,male,55-65,"Havo, vwo, mbo2-4",3477.0,CDA
+GM0957    ,Roermond,male,55-65,Basisonderwijs,396.0,50PLUS
+GM0392    ,Haarlem,male,25-35,"Hbo-, wo-master, doctor",2432.0,D66
+GM0202    ,Arnhem,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1360.0,CDA
+GM0388    ,Enkhuizen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",347.0,50PLUS
+GM0296    ,Wijchen,female,25-35,"Hbo-, wo-bachelor",684.0,D66
+GM0718    ,Vlissingen,female,65-75,"Hbo-, wo-bachelor",629.0,CDA
+GM0622    ,Vlaardingen,female,25-35,Basisonderwijs,243.0,Did not vote
+GM0086    ,Opsterland,male,25-35,"Hbo-, wo-bachelor",236.0,D66
+GM0794    ,Helmond,male,55-65,"Havo, vwo, mbo2-4",2849.0,VVD
+GM0344    ,Utrecht (gemeente),female,55-65,"Hbo-, wo-bachelor",3410.0,D66
+GM0935    ,Maastricht,male,15-25,"Havo, vwo, mbo2-4",6068.0,D66
+GM0150    ,Deventer,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",854.0,VVD
+GM0153    ,Enschede,female,15-25,"Hbo-, wo-bachelor",1844.0,D66
+GM0375    ,Beverwijk,female,35-45,"Havo, vwo, mbo2-4",1218.0,VVD
+GM0074    ,Heerenveen,male,55-65,"Havo, vwo, mbo2-4",1699.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),male,45-55,"Hbo-, wo-bachelor",7189.0,VVD
+GM0216    ,Culemborg,female,35-45,"Havo, vwo, mbo2-4",616.0,VVD
+GM0080    ,Leeuwarden,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",907.0,FNP
+GM0153    ,Enschede,male,45-55,"Hbo-, wo-bachelor",2040.0,D66
+GM0014    ,Groningen (gemeente),female,15-25,"Havo, vwo, mbo2-4",18020.0,D66
+GM1980    ,Dijk en Waard,male,55-65,"Havo, vwo, mbo2-4",2898.0,VVD
+GM1681    ,Borger-Odoorn,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",370.0,BBB
+GM0796    ,'s-Hertogenbosch,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",2124.0,CDA
+GM1640    ,Leudal,male,15-25,Basisonderwijs,346.0,Did not vote
+GM0484    ,Alphen aan den Rijn,female,15-25,Basisonderwijs,819.0,Did not vote
+GM1969    ,Westerkwartier,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",897.0,BBB
+GM1904    ,Stichtse Vecht,female,35-45,"Hbo-, wo-master, doctor",1289.0,D66
+GM0599    ,Rotterdam,female,35-45,"Havo, vwo, mbo2-4",15812.0,D66
+GM0866    ,Waalre,male,45-55,"Hbo-, wo-bachelor",301.0,VVD
+GM0984    ,Venray,female,65-75,"Hbo-, wo-bachelor",297.0,CDA
+GM0273    ,Putten,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",506.0,Did not vote
+GM0353    ,IJsselstein,male,45-55,"Havo, vwo, mbo2-4",952.0,VVD
+GM0080    ,Leeuwarden,female,25-35,Basisonderwijs,911.0,Did not vote
+GM1966    ,Het Hogeland,male,35-45,"Hbo-, wo-bachelor",481.0,BBB
+GM0307    ,Amersfoort,female,55-65,"Hbo-, wo-bachelor",2859.0,CDA
+GM1903    ,Eijsden-Margraten,female,55-65,"Havo, vwo, mbo2-4",1027.0,CDA
+GM0957    ,Roermond,male,25-35,"Hbo-, wo-bachelor",959.0,D66
+GM0599    ,Rotterdam,male,45-55,"Hbo-, wo-bachelor",6520.0,D66
+GM0228    ,Ede,male,55-65,"Havo, vwo, mbo2-4",2888.0,VVD
+GM0629    ,Wassenaar,male,55-65,"Havo, vwo, mbo2-4",504.0,VVD
+GM0202    ,Arnhem,female,45-55,Basisonderwijs,1089.0,Did not vote
+GM0828    ,Oss,male,35-45,"Hbo-, wo-bachelor",1218.0,VVD
+GM1963    ,Hoeksche Waard,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1574.0,Did not vote
+GM0014    ,Groningen (gemeente),male,65-75,"Havo, vwo, mbo2-4",3631.0,VVD
+GM0556    ,Maassluis,male,35-45,"Hbo-, wo-bachelor",466.0,VVD
+GM1892    ,Zuidplas,female,25-35,"Havo, vwo, mbo2-4",1299.0,D66
+GM0394    ,Haarlemmermeer,male,35-45,"Havo, vwo, mbo2-4",4201.0,VVD
+GM1954    ,Beekdaelen,male,25-35,"Hbo-, wo-bachelor",463.0,D66
+GM0355    ,Zeist,female,35-45,"Hbo-, wo-master, doctor",1830.0,D66
+GM0394    ,Haarlemmermeer,male,45-55,"Hbo-, wo-master, doctor",1557.0,D66
+GM0441    ,Schagen,male,15-25,"Havo, vwo, mbo2-4",1353.0,Did not vote
+GM0489    ,Barendrecht,female,25-35,"Havo, vwo, mbo2-4",867.0,VVD
+GM0772    ,Eindhoven,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",2058.0,PVV
+GM0597    ,Ridderkerk,male,55-65,"Havo, vwo, mbo2-4",1515.0,VVD
+GM0632    ,Woerden,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",562.0,VVD
+GM1969    ,Westerkwartier,male,35-45,Basisonderwijs,129.0,BBB
+GM0392    ,Haarlem,female,45-55,"Havo, vwo, mbo2-4",3266.0,50PLUS
+GM0556    ,Maassluis,female,65-75,"Havo, vwo, mbo2-4",755.0,50PLUS
+GM1734    ,Overbetuwe,female,45-55,"Hbo-, wo-master, doctor",561.0,D66
+GM0392    ,Haarlem,female,55-65,"Havo, vwo, mbo2-4",3763.0,VVD
+GM0342    ,Soest,male,35-45,"Hbo-, wo-master, doctor",599.0,D66
+GM0553    ,Lisse,female,15-25,"Havo, vwo, mbo2-4",570.0,D66
+GM1980    ,Dijk en Waard,male,35-45,"Havo, vwo, mbo2-4",2859.0,VVD
+GM0479    ,Zaanstad,male,25-35,"Havo, vwo, mbo2-4",5778.0,D66
+GM0599    ,Rotterdam,male,65-75,"Havo, vwo, mbo2-4",9786.0,50PLUS
+GM0405    ,Hoorn,female,65-75,Basisonderwijs,536.0,50PLUS
+GM1700    ,Twenterand,female,35-45,"Hbo-, wo-bachelor",494.0,D66
+GM0402    ,Hilversum,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",538.0,SP
+GM1960    ,West Betuwe,female,25-35,"Hbo-, wo-master, doctor",429.0,D66
+GM0345    ,Veenendaal,female,45-55,"Hbo-, wo-bachelor",873.0,VVD
+GM0362    ,Amstelveen,male,55-65,"Hbo-, wo-master, doctor",1534.0,D66
+GM0216    ,Culemborg,female,55-65,"Havo, vwo, mbo2-4",768.0,CDA
+GM0118    ,Hoogeveen,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1274.0,Did not vote
+GM0796    ,'s-Hertogenbosch,female,45-55,Basisonderwijs,898.0,CDA
+GM0109    ,Coevorden,female,65-75,Basisonderwijs,360.0,CDA
+GM0622    ,Vlaardingen,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1369.0,Did not vote
+GM0361    ,Alkmaar,male,25-35,"Hbo-, wo-bachelor",2128.0,D66
+GM0202    ,Arnhem,male,35-45,"Havo, vwo, mbo2-4",4177.0,VVD
+GM0168    ,Losser,female,45-55,"Hbo-, wo-bachelor",329.0,VVD
+GM1891    ,Dantumadiel,male,25-35,"Havo, vwo, mbo2-4",662.0,VVD
+GM0047    ,Veendam,female,15-25,"Havo, vwo, mbo2-4",594.0,PvdD
+GM1701    ,Westerveld,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",262.0,BBB
+GM0599    ,Rotterdam,female,65-75,Basisonderwijs,8968.0,PVV
+GM1734    ,Overbetuwe,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",987.0,Did not vote
+GM0164    ,Hengelo (O.),female,65-75,"Hbo-, wo-bachelor",950.0,CDA
+GM0268    ,Nijmegen,male,35-45,"Hbo-, wo-bachelor",2699.0,D66
+GM1895    ,Oldambt,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",776.0,CDA
+GM0355    ,Zeist,male,35-45,"Hbo-, wo-master, doctor",1328.0,D66
+GM0796    ,'s-Hertogenbosch,male,55-65,"Hbo-, wo-master, doctor",1820.0,D66
+GM0377    ,Bloemendaal,female,45-55,"Hbo-, wo-master, doctor",878.0,D66
+GM1900    ,Súdwest-Fryslân,female,35-45,"Hbo-, wo-master, doctor",614.0,D66
+GM1900    ,Súdwest-Fryslân,female,15-25,"Havo, vwo, mbo2-4",2007.0,D66
+GM0794    ,Helmond,male,35-45,Basisonderwijs,630.0,Did not vote
+GM1940    ,De Fryske Marren,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",999.0,BBB
+GM0294    ,Winterswijk,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",211.0,BBB
+GM0637    ,Zoetermeer,male,45-55,"Hbo-, wo-bachelor",1839.0,D66
+GM1721    ,Bernheze,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",699.0,Did not vote
+GM0209    ,Beuningen,female,45-55,"Hbo-, wo-master, doctor",318.0,D66
+GM0971    ,Stein (L.),male,55-65,"Havo, vwo, mbo2-4",924.0,CDA
+GM0289    ,Wageningen,female,65-75,"Hbo-, wo-master, doctor",481.0,D66
+GM0268    ,Nijmegen,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1387.0,PVV
+GM0935    ,Maastricht,female,65-75,Basisonderwijs,1470.0,CDA
+GM0599    ,Rotterdam,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",6971.0,PVV
+GM0114    ,Emmen,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1316.0,PVV
+GM0984    ,Venray,female,35-45,"Havo, vwo, mbo2-4",1015.0,CDA
+GM0344    ,Utrecht (gemeente),male,55-65,Basisonderwijs,2650.0,Did not vote
+GM0209    ,Beuningen,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",417.0,Did not vote
+GM0855    ,Tilburg,female,25-35,"Hbo-, wo-bachelor",6084.0,D66
+GM0363    ,Amsterdam,male,35-45,"Hbo-, wo-bachelor",18401.0,GL-PvdA
+GM0353    ,IJsselstein,female,35-45,Basisonderwijs,60.0,Did not vote
+GM0518    ,'s-Gravenhage (gemeente),male,45-55,Basisonderwijs,5451.0,PVV
+GM0034    ,Almere,female,35-45,"Hbo-, wo-bachelor",5016.0,D66
+GM0603    ,Rijswijk (ZH.),female,65-75,"Havo, vwo, mbo2-4",1251.0,50PLUS
+GM0642    ,Zwijndrecht,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",467.0,PVV
+GM0479    ,Zaanstad,female,35-45,"Hbo-, wo-bachelor",3062.0,D66
+GM0599    ,Rotterdam,male,45-55,"Havo, vwo, mbo2-4",15471.0,VVD
+GM0344    ,Utrecht (gemeente),female,15-25,"Havo, vwo, mbo2-4",14900.0,D66
+GM1952    ,Midden-Groningen,female,25-35,Basisonderwijs,96.0,Did not vote
+GM0439    ,Purmerend,female,45-55,"Havo, vwo, mbo2-4",2864.0,VVD
+GM0627    ,Waddinxveen,female,15-25,"Havo, vwo, mbo2-4",801.0,D66
+GM1621    ,Lansingerland,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",909.0,CDA
+GM0537    ,Katwijk,female,15-25,"Havo, vwo, mbo2-4",1836.0,D66
+GM0603    ,Rijswijk (ZH.),male,15-25,"Havo, vwo, mbo2-4",1373.0,D66
+GM0014    ,Groningen (gemeente),female,15-25,"Hbo-, wo-bachelor",5684.0,D66
+GM0546    ,Leiden,female,25-35,"Hbo-, wo-bachelor",3840.0,D66
+GM0394    ,Haarlemmermeer,female,35-45,"Hbo-, wo-bachelor",3366.0,D66
+GM0059    ,Achtkarspelen,female,35-45,"Havo, vwo, mbo2-4",896.0,CDA
+GM0301    ,Zutphen,male,45-55,"Havo, vwo, mbo2-4",1468.0,VVD
+GM0263    ,Maasdriel,female,45-55,"Havo, vwo, mbo2-4",770.0,CDA
+GM1949    ,Waadhoeke,male,65-75,"Havo, vwo, mbo2-4",1367.0,CDA
+GM0758    ,Breda,male,45-55,"Hbo-, wo-bachelor",3405.0,CDA
+GM0294    ,Winterswijk,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",470.0,CDA
+GM1774    ,Dinkelland,male,55-65,"Havo, vwo, mbo2-4",1140.0,BBB
+GM1894    ,Peel en Maas,male,45-55,"Havo, vwo, mbo2-4",1501.0,BBB
+GM1771    ,Geldrop-Mierlo,female,45-55,"Havo, vwo, mbo2-4",1042.0,VVD
+GM0392    ,Haarlem,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1463.0,50PLUS
+GM0344    ,Utrecht (gemeente),male,35-45,"Hbo-, wo-bachelor",7360.0,D66
+GM0267    ,Nijkerk,female,65-75,"Havo, vwo, mbo2-4",835.0,CDA
+GM0230    ,Elburg,female,15-25,"Havo, vwo, mbo2-4",641.0,D66
+GM0361    ,Alkmaar,male,55-65,"Hbo-, wo-bachelor",1525.0,VVD
+GM1963    ,Hoeksche Waard,female,55-65,"Hbo-, wo-bachelor",1122.0,50PLUS
+GM0534    ,Hillegom,male,45-55,"Havo, vwo, mbo2-4",643.0,VVD
+GM0917    ,Heerlen,female,35-45,Basisonderwijs,597.0,Did not vote
+GM0737    ,Tytsjerksteradiel,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",607.0,Did not vote
+GM0080    ,Leeuwarden,female,15-25,"Hbo-, wo-bachelor",896.0,D66
+GM0420    ,Medemblik,female,55-65,"Havo, vwo, mbo2-4",1720.0,CDA
+GM0193    ,Zwolle,male,35-45,"Hbo-, wo-master, doctor",1700.0,D66
+GM0363    ,Amsterdam,male,45-55,Basisonderwijs,5775.0,PVV
+GM1640    ,Leudal,female,55-65,"Havo, vwo, mbo2-4",1599.0,CDA
+GM1948    ,Meierijstad,male,35-45,"Hbo-, wo-master, doctor",562.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,55-65,"Havo, vwo, mbo2-4",11267.0,VVD
+GM0166    ,Kampen,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",428.0,CDA
+GM0505    ,Dordrecht,male,25-35,"Havo, vwo, mbo2-4",4523.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,65-75,Basisonderwijs,5080.0,50PLUS
+GM0575    ,Noordwijk,male,45-55,"Hbo-, wo-bachelor",651.0,VVD
+GM0453    ,Velsen,female,45-55,"Hbo-, wo-master, doctor",945.0,D66
+GM0603    ,Rijswijk (ZH.),male,35-45,"Hbo-, wo-master, doctor",1021.0,D66
+GM0230    ,Elburg,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",438.0,Did not vote
+GM0823    ,Oirschot,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",364.0,Did not vote
+GM0556    ,Maassluis,female,65-75,"Hbo-, wo-bachelor",334.0,CDA
+GM0202    ,Arnhem,female,25-35,"Havo, vwo, mbo2-4",4828.0,D66
+GM0622    ,Vlaardingen,male,55-65,"Havo, vwo, mbo2-4",2213.0,VVD
+GM0047    ,Veendam,male,35-45,"Havo, vwo, mbo2-4",962.0,BBB
+GM1705    ,Lingewaard,female,25-35,"Havo, vwo, mbo2-4",987.0,VVD
+GM0114    ,Emmen,female,35-45,"Havo, vwo, mbo2-4",2995.0,VVD
+GM0267    ,Nijkerk,male,35-45,"Havo, vwo, mbo2-4",1305.0,BBB
+GM0556    ,Maassluis,male,65-75,"Havo, vwo, mbo2-4",874.0,50PLUS
+GM1681    ,Borger-Odoorn,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",437.0,BBB
+GM1955    ,Montferland,female,55-65,"Hbo-, wo-master, doctor",149.0,D66
+GM0606    ,Schiedam,male,55-65,"Hbo-, wo-bachelor",737.0,VVD
+GM1859    ,Berkelland,male,45-55,"Hbo-, wo-bachelor",481.0,VVD
+GM0168    ,Losser,female,35-45,"Hbo-, wo-master, doctor",154.0,D66
+GM0177    ,Raalte,female,25-35,"Havo, vwo, mbo2-4",902.0,BBB
+GM1719    ,Drimmelen,male,35-45,"Havo, vwo, mbo2-4",938.0,BBB
+GM1892    ,Zuidplas,female,65-75,"Havo, vwo, mbo2-4",983.0,CDA
+GM0957    ,Roermond,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",504.0,Did not vote
+GM1894    ,Peel en Maas,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",814.0,Did not vote
+GM0392    ,Haarlem,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3344.0,D66
+GM0310    ,De Bilt,male,15-25,"Havo, vwo, mbo2-4",1198.0,VVD
+GM1525    ,Teylingen,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",616.0,Did not vote
+GM0164    ,Hengelo (O.),female,25-35,"Havo, vwo, mbo2-4",2138.0,D66
+GM1954    ,Beekdaelen,female,15-25,"Havo, vwo, mbo2-4",656.0,D66
+GM1963    ,Hoeksche Waard,male,65-75,"Havo, vwo, mbo2-4",2430.0,CDA
+GM0513    ,Gouda,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",907.0,CDA
+GM1940    ,De Fryske Marren,female,15-25,"Havo, vwo, mbo2-4",1172.0,PvdD
+GM0034    ,Almere,female,55-65,"Havo, vwo, mbo2-4",6751.0,CDA
+GM0928    ,Kerkrade,male,35-45,Basisonderwijs,389.0,CDA
+GM0677    ,Hulst,female,15-25,"Havo, vwo, mbo2-4",360.0,GL-PvdA
+GM0622    ,Vlaardingen,female,35-45,"Havo, vwo, mbo2-4",2194.0,D66
+GM1931    ,Krimpenerwaard,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1188.0,Did not vote
+GM0189    ,Wierden,male,55-65,"Hbo-, wo-master, doctor",157.0,VVD
+GM0405    ,Hoorn,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",524.0,SP
+GM0273    ,Putten,male,35-45,"Hbo-, wo-master, doctor",160.0,D66
+GM1706    ,Cranendonck,male,35-45,"Havo, vwo, mbo2-4",512.0,BBB
+GM1621    ,Lansingerland,male,25-35,"Hbo-, wo-bachelor",936.0,D66
+GM0622    ,Vlaardingen,female,25-35,"Havo, vwo, mbo2-4",2657.0,D66
+GM1700    ,Twenterand,female,55-65,"Havo, vwo, mbo2-4",1090.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",4407.0,CDA
+GM0957    ,Roermond,male,35-45,"Hbo-, wo-master, doctor",568.0,D66
+GM0363    ,Amsterdam,female,45-55,"Hbo-, wo-master, doctor",16181.0,D66
+GM0363    ,Amsterdam,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",7546.0,50PLUS
+GM0531    ,Hendrik-Ido-Ambacht,female,65-75,"Hbo-, wo-master, doctor",39.0,D66
+GM0599    ,Rotterdam,female,55-65,"Hbo-, wo-bachelor",5530.0,D66
+GM0344    ,Utrecht (gemeente),male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",2374.0,50PLUS
+GM0014    ,Groningen (gemeente),female,65-75,"Havo, vwo, mbo2-4",3159.0,CDA
+GM1509    ,Oude IJsselstreek,female,65-75,Basisonderwijs,347.0,CDA
+GM0654    ,Borsele,male,35-45,"Havo, vwo, mbo2-4",728.0,BBB
+GM1980    ,Dijk en Waard,male,65-75,"Havo, vwo, mbo2-4",2217.0,CDA
+GM0362    ,Amstelveen,female,55-65,"Havo, vwo, mbo2-4",1947.0,VVD
+GM0268    ,Nijmegen,female,25-35,"Hbo-, wo-master, doctor",7191.0,D66
+GM0498    ,Drechterland,female,65-75,"Hbo-, wo-bachelor",243.0,50PLUS
+GM0396    ,Heemskerk,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",742.0,50PLUS
+GM0402    ,Hilversum,female,25-35,"Hbo-, wo-bachelor",1693.0,D66
+GM0717    ,Veere,male,55-65,"Hbo-, wo-bachelor",289.0,VVD
+GM0855    ,Tilburg,female,15-25,"Hbo-, wo-bachelor",2766.0,D66
+GM0141    ,Almelo,male,25-35,"Havo, vwo, mbo2-4",2519.0,VVD
+GM0228    ,Ede,female,55-65,"Hbo-, wo-bachelor",1450.0,CDA
+GM0383    ,Castricum,female,45-55,"Hbo-, wo-bachelor",678.0,VVD
+GM0995    ,Lelystad,male,35-45,Basisonderwijs,371.0,PVV
+GM0275    ,Rheden,male,35-45,"Havo, vwo, mbo2-4",850.0,VVD
+GM0037    ,Stadskanaal,male,15-25,"Havo, vwo, mbo2-4",722.0,Did not vote
+GM0307    ,Amersfoort,female,15-25,"Havo, vwo, mbo2-4",4023.0,D66
+GM0677    ,Hulst,female,25-35,"Hbo-, wo-master, doctor",88.0,GL-PvdA
+GM0177    ,Raalte,female,15-25,"Hbo-, wo-bachelor",196.0,D66
+GM0420    ,Medemblik,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",966.0,50PLUS
+GM1731    ,Midden-Drenthe,male,25-35,"Havo, vwo, mbo2-4",1054.0,BBB
+GM0356    ,Nieuwegein,female,35-45,"Hbo-, wo-bachelor",1206.0,D66
+GM0200    ,Apeldoorn,female,45-55,Basisonderwijs,792.0,PVV
+GM1883    ,Sittard-Geleen,female,35-45,"Havo, vwo, mbo2-4",1770.0,D66
+GM1960    ,West Betuwe,female,65-75,"Havo, vwo, mbo2-4",1146.0,CDA
+GM0307    ,Amersfoort,female,65-75,"Hbo-, wo-bachelor",1886.0,CDA
+GM1969    ,Westerkwartier,male,55-65,Basisonderwijs,265.0,CDA
+GM0627    ,Waddinxveen,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",630.0,Did not vote
+GM0796    ,'s-Hertogenbosch,male,15-25,"Havo, vwo, mbo2-4",3846.0,Did not vote
+GM0518    ,'s-Gravenhage (gemeente),female,45-55,"Hbo-, wo-master, doctor",9312.0,D66
+GM0085    ,Ooststellingwerf,female,15-25,Basisonderwijs,138.0,Did not vote
+GM0599    ,Rotterdam,female,15-25,"Hbo-, wo-bachelor",6599.0,D66
+GM0840    ,Rucphen,male,45-55,"Havo, vwo, mbo2-4",810.0,BBB
+GM0505    ,Dordrecht,female,35-45,"Havo, vwo, mbo2-4",3271.0,D66
+GM0222    ,Doetinchem,female,35-45,"Hbo-, wo-bachelor",1051.0,D66
+GM0344    ,Utrecht (gemeente),female,25-35,"Havo, vwo, mbo2-4",6292.0,D66
+GM0988    ,Weert,male,25-35,"Hbo-, wo-master, doctor",554.0,D66
+GM0772    ,Eindhoven,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1486.0,CDA
+GM0345    ,Veenendaal,male,25-35,"Hbo-, wo-bachelor",1133.0,D66
+GM0034    ,Almere,male,15-25,Basisonderwijs,2232.0,Did not vote
+GM0518    ,'s-Gravenhage (gemeente),female,55-65,Basisonderwijs,6504.0,VVD
+GM1774    ,Dinkelland,male,45-55,"Havo, vwo, mbo2-4",722.0,BBB
+GM0200    ,Apeldoorn,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3692.0,Did not vote
+GM0629    ,Wassenaar,male,35-45,"Hbo-, wo-bachelor",335.0,VVD
+GM1926    ,Pijnacker-Nootdorp,male,25-35,"Havo, vwo, mbo2-4",1207.0,VVD
+GM0766    ,Dongen,male,45-55,Basisonderwijs,109.0,PVV
+GM0327    ,Leusden,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",584.0,Did not vote
+GM1982    ,Land van Cuijk,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1383.0,50PLUS
+GM0281    ,Tiel,female,25-35,"Hbo-, wo-bachelor",761.0,D66
+GM0363    ,Amsterdam,female,35-45,"Havo, vwo, mbo2-4",15481.0,D66
+GM0855    ,Tilburg,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",2310.0,PVV
+GM0772    ,Eindhoven,female,25-35,"Havo, vwo, mbo2-4",4903.0,D66
+GM1955    ,Montferland,male,65-75,"Havo, vwo, mbo2-4",1078.0,CDA
+GM0080    ,Leeuwarden,female,45-55,Basisonderwijs,459.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),female,45-55,Basisonderwijs,6518.0,PVV
+GM0294    ,Winterswijk,female,45-55,"Hbo-, wo-bachelor",322.0,D66
+GM0758    ,Breda,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",2176.0,50PLUS
+GM0352    ,Wijk bij Duurstede,female,25-35,"Hbo-, wo-bachelor",256.0,D66
+GM0569    ,Nieuwkoop,female,45-55,"Havo, vwo, mbo2-4",920.0,VVD
+GM0642    ,Zwijndrecht,male,55-65,"Hbo-, wo-bachelor",453.0,VVD
+GM0268    ,Nijmegen,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",1479.0,Did not vote
+GM0394    ,Haarlemmermeer,male,25-35,"Havo, vwo, mbo2-4",4123.0,VVD
+GM0479    ,Zaanstad,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3322.0,Did not vote
+GM1883    ,Sittard-Geleen,female,25-35,"Hbo-, wo-master, doctor",794.0,D66
+GM1952    ,Midden-Groningen,female,55-65,"Hbo-, wo-master, doctor",278.0,D66
+GM0361    ,Alkmaar,female,65-75,"Hbo-, wo-master, doctor",593.0,D66
+GM0599    ,Rotterdam,male,35-45,"Havo, vwo, mbo2-4",17804.0,VVD
+GM0402    ,Hilversum,female,45-55,"Havo, vwo, mbo2-4",2022.0,VVD
+GM1992    ,Voorne aan Zee,male,25-35,"Hbo-, wo-bachelor",824.0,D66
+GM0796    ,'s-Hertogenbosch,female,25-35,"Hbo-, wo-bachelor",4490.0,D66
+GM1659    ,Laarbeek,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",165.0,CDA
+GM0453    ,Velsen,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",491.0,SP
+GM0383    ,Castricum,male,15-25,"Hbo-, wo-bachelor",146.0,D66
+GM0363    ,Amsterdam,female,45-55,"Havo, vwo, mbo2-4",13412.0,D66
+GM0340    ,Rhenen,male,65-75,"Hbo-, wo-bachelor",212.0,VVD
+GM0758    ,Breda,female,45-55,"Hbo-, wo-bachelor",3594.0,D66
+GM0352    ,Wijk bij Duurstede,male,65-75,"Hbo-, wo-bachelor",392.0,CDA
+GM0160    ,Hardenberg,female,45-55,"Havo, vwo, mbo2-4",2184.0,BBB
+GM0718    ,Vlissingen,male,15-25,"Havo, vwo, mbo2-4",1061.0,D66
+GM0273    ,Putten,female,45-55,"Havo, vwo, mbo2-4",741.0,CDA
+GM0233    ,Ermelo,male,65-75,"Havo, vwo, mbo2-4",571.0,BBB
+GM0203    ,Barneveld,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1320.0,VVD
+GM0935    ,Maastricht,male,45-55,"Hbo-, wo-master, doctor",1248.0,D66
+GM0632    ,Woerden,female,15-25,Basisonderwijs,257.0,Did not vote
+GM0396    ,Heemskerk,female,25-35,"Hbo-, wo-bachelor",735.0,D66
+GM1926    ,Pijnacker-Nootdorp,female,25-35,"Hbo-, wo-bachelor",919.0,D66
+GM0342    ,Soest,male,45-55,"Hbo-, wo-master, doctor",651.0,D66
+GM1783    ,Westland,female,65-75,"Havo, vwo, mbo2-4",2589.0,CDA
+GM1581    ,Utrechtse Heuvelrug,male,65-75,"Hbo-, wo-bachelor",735.0,50PLUS
+GM0794    ,Helmond,female,55-65,"Havo, vwo, mbo2-4",2719.0,CDA
+GM0809    ,Loon op Zand,male,25-35,"Hbo-, wo-bachelor",343.0,VVD
+GM0344    ,Utrecht (gemeente),male,15-25,"Hbo-, wo-master, doctor",705.0,D66
+GM0296    ,Wijchen,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",416.0,CDA
+GM0392    ,Haarlem,male,25-35,"Havo, vwo, mbo2-4",4562.0,D66
+GM0014    ,Groningen (gemeente),male,65-75,"Hbo-, wo-bachelor",2224.0,50PLUS
+GM1674    ,Roosendaal,male,65-75,"Havo, vwo, mbo2-4",1835.0,CDA
+GM0233    ,Ermelo,male,65-75,"Hbo-, wo-bachelor",437.0,CDA
+GM0590    ,Papendrecht,female,45-55,"Havo, vwo, mbo2-4",1096.0,VVD
+GM1930    ,Nissewaard,male,25-35,"Havo, vwo, mbo2-4",3202.0,D66
+GM1926    ,Pijnacker-Nootdorp,female,35-45,"Hbo-, wo-master, doctor",1182.0,D66
+GM1980    ,Dijk en Waard,female,35-45,"Hbo-, wo-bachelor",1583.0,D66
+GM0363    ,Amsterdam,female,65-75,Basisonderwijs,7852.0,50PLUS
+GM0362    ,Amstelveen,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2052.0,Did not vote
+GM1674    ,Roosendaal,female,45-55,"Havo, vwo, mbo2-4",2135.0,CDA
+GM0313    ,Bunschoten,female,15-25,"Havo, vwo, mbo2-4",619.0,D66
+GM0502    ,Capelle aan den IJssel,female,55-65,"Hbo-, wo-master, doctor",456.0,D66
+GM0321    ,Houten,male,25-35,"Havo, vwo, mbo2-4",1020.0,VVD
+GM0344    ,Utrecht (gemeente),male,15-25,"Havo, vwo, mbo2-4",11928.0,D66
+GM0080    ,Leeuwarden,female,25-35,"Hbo-, wo-bachelor",3156.0,D66
+GM0047    ,Veendam,female,35-45,"Hbo-, wo-bachelor",303.0,VVD
+GM1641    ,Maasgouw,male,45-55,"Hbo-, wo-bachelor",269.0,CDA
+GM0809    ,Loon op Zand,male,65-75,"Havo, vwo, mbo2-4",716.0,BBB
+GM1924    ,Goeree-Overflakkee,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1200.0,50PLUS
+GM0893    ,Bergen (L.),male,55-65,"Havo, vwo, mbo2-4",1012.0,VVD
+GM0150    ,Deventer,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1073.0,CDA
+GM0202    ,Arnhem,male,45-55,"Hbo-, wo-bachelor",2708.0,VVD
+GM0294    ,Winterswijk,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",192.0,BBB
+GM0518    ,'s-Gravenhage (gemeente),male,65-75,"Hbo-, wo-bachelor",4315.0,VVD
+GM0575    ,Noordwijk,female,15-25,"Havo, vwo, mbo2-4",1012.0,D66
+GM1690    ,De Wolden,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",201.0,CDA
+GM0080    ,Leeuwarden,female,25-35,"Havo, vwo, mbo2-4",3386.0,D66
+GM0363    ,Amsterdam,female,65-75,"Havo, vwo, mbo2-4",10111.0,GL-PvdA
+GM0928    ,Kerkrade,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",386.0,SP
+GM0384    ,Diemen,male,35-45,"Hbo-, wo-master, doctor",713.0,D66
+GM0213    ,Brummen,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",99.0,Did not vote
+GM0399    ,Heiloo,female,55-65,"Hbo-, wo-bachelor",490.0,CDA
+GM0321    ,Houten,male,15-25,"Havo, vwo, mbo2-4",1650.0,D66
+GM0345    ,Veenendaal,male,25-35,"Havo, vwo, mbo2-4",2374.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),female,25-35,"Hbo-, wo-bachelor",12392.0,D66
+GM1978    ,Molenlanden,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",482.0,Did not vote
+GM0505    ,Dordrecht,male,65-75,"Hbo-, wo-bachelor",1279.0,50PLUS
+GM1892    ,Zuidplas,male,55-65,"Hbo-, wo-bachelor",809.0,VVD
+GM0173    ,Oldenzaal,female,25-35,"Hbo-, wo-bachelor",615.0,D66
+GM0917    ,Heerlen,male,35-45,"Havo, vwo, mbo2-4",2537.0,VVD
+GM0865    ,Vught,male,45-55,"Hbo-, wo-master, doctor",706.0,VVD
+GM0610    ,Sliedrecht,female,25-35,"Havo, vwo, mbo2-4",870.0,D66
+GM1930    ,Nissewaard,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1677.0,50PLUS
+GM0193    ,Zwolle,female,35-45,"Hbo-, wo-bachelor",3158.0,D66
+GM0772    ,Eindhoven,female,35-45,"Hbo-, wo-master, doctor",4242.0,D66
+GM0489    ,Barendrecht,male,45-55,"Hbo-, wo-master, doctor",564.0,D66
+GM0312    ,Bunnik,male,45-55,"Havo, vwo, mbo2-4",266.0,VVD
+GM0995    ,Lelystad,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2167.0,Did not vote
+GM0394    ,Haarlemmermeer,male,65-75,"Hbo-, wo-bachelor",1752.0,VVD
+GM0384    ,Diemen,male,15-25,"Havo, vwo, mbo2-4",1010.0,D66
+GM0599    ,Rotterdam,male,35-45,"Hbo-, wo-master, doctor",8902.0,D66
+GM1876    ,Bronckhorst,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",753.0,CDA
+GM1655    ,Halderberge,female,45-55,"Hbo-, wo-bachelor",450.0,CDA
+GM1507    ,Horst aan de Maas,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",802.0,Did not vote
+GM0150    ,Deventer,female,45-55,"Havo, vwo, mbo2-4",2534.0,CDA
+GM0502    ,Capelle aan den IJssel,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",695.0,50PLUS
+GM0796    ,'s-Hertogenbosch,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3294.0,Did not vote
+GM1696    ,Wijdemeren,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",395.0,Did not vote
+GM0014    ,Groningen (gemeente),female,35-45,"Hbo-, wo-master, doctor",4475.0,D66
+GM0243    ,Harderwijk,male,35-45,"Havo, vwo, mbo2-4",1485.0,VVD
+GM0356    ,Nieuwegein,male,45-55,"Hbo-, wo-bachelor",792.0,VVD
+GM0479    ,Zaanstad,male,35-45,"Hbo-, wo-master, doctor",1610.0,D66
+GM0748    ,Bergen op Zoom,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1143.0,Did not vote
+GM0748    ,Bergen op Zoom,female,45-55,"Havo, vwo, mbo2-4",1876.0,VVD
+GM1842    ,Midden-Delfland,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",396.0,BBB
+GM0047    ,Veendam,female,45-55,Basisonderwijs,121.0,Did not vote
+GM0770    ,Eersel,male,65-75,"Havo, vwo, mbo2-4",506.0,CDA
+GM1950    ,Westerwolde,female,55-65,"Havo, vwo, mbo2-4",1010.0,CDA
+GM1904    ,Stichtse Vecht,female,45-55,"Havo, vwo, mbo2-4",1548.0,VVD
+GM0358    ,Aalsmeer,female,45-55,"Hbo-, wo-bachelor",668.0,D66
+GM1963    ,Hoeksche Waard,female,45-55,"Hbo-, wo-bachelor",1410.0,VVD
+GM1883    ,Sittard-Geleen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1536.0,Did not vote
+GM0394    ,Haarlemmermeer,female,65-75,"Havo, vwo, mbo2-4",3240.0,CDA
+GM1980    ,Dijk en Waard,female,55-65,"Havo, vwo, mbo2-4",3000.0,CDA
+GM0677    ,Hulst,male,45-55,"Havo, vwo, mbo2-4",802.0,VVD
+GM0164    ,Hengelo (O.),female,65-75,"Havo, vwo, mbo2-4",1848.0,CDA
+GM1721    ,Bernheze,male,25-35,"Hbo-, wo-bachelor",532.0,D66
+GM1901    ,Bodegraven-Reeuwijk,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",626.0,Did not vote
+GM0243    ,Harderwijk,female,15-25,Basisonderwijs,344.0,Did not vote
+GM0375    ,Beverwijk,female,45-55,"Havo, vwo, mbo2-4",1184.0,D66
+GM0826    ,Oosterhout,male,35-45,"Havo, vwo, mbo2-4",1414.0,VVD
+GM0301    ,Zutphen,male,25-35,"Havo, vwo, mbo2-4",1385.0,VVD
+GM0098    ,Weststellingwerf,male,45-55,"Havo, vwo, mbo2-4",843.0,CDA
+GM1721    ,Bernheze,male,55-65,"Havo, vwo, mbo2-4",1198.0,CDA
+GM0505    ,Dordrecht,female,35-45,"Hbo-, wo-master, doctor",1138.0,D66
+GM0274    ,Renkum,male,65-75,"Hbo-, wo-bachelor",554.0,VVD
+GM0772    ,Eindhoven,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",1339.0,PVV
+GM1690    ,De Wolden,male,35-45,"Havo, vwo, mbo2-4",711.0,BBB
+GM0293    ,Westervoort,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",266.0,50PLUS
+GM0397    ,Heemstede,male,15-25,"Havo, vwo, mbo2-4",514.0,VVD
+GM0243    ,Harderwijk,female,25-35,"Havo, vwo, mbo2-4",1335.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",10488.0,Did not vote
+GM0840    ,Rucphen,female,15-25,Basisonderwijs,112.0,Did not vote
+GM0867    ,Waalwijk,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1080.0,Did not vote
+GM0556    ,Maassluis,male,25-35,"Havo, vwo, mbo2-4",1155.0,VVD
+GM1895    ,Oldambt,male,25-35,"Havo, vwo, mbo2-4",1355.0,BBB
+GM0189    ,Wierden,male,25-35,"Havo, vwo, mbo2-4",749.0,BBB
+GM0014    ,Groningen (gemeente),male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1102.0,SP
+GM0858    ,Valkenswaard,male,35-45,"Havo, vwo, mbo2-4",747.0,CDA
+GM1900    ,Súdwest-Fryslân,female,45-55,"Havo, vwo, mbo2-4",2645.0,FNP
+GM0034    ,Almere,female,15-25,"Havo, vwo, mbo2-4",5656.0,D66
+GM0823    ,Oirschot,female,55-65,"Havo, vwo, mbo2-4",784.0,CDA
+GM1901    ,Bodegraven-Reeuwijk,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",436.0,CDA
+GM0396    ,Heemskerk,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",799.0,Did not vote
+GM0302    ,Nunspeet,male,45-55,"Havo, vwo, mbo2-4",690.0,VVD
+GM0899    ,Brunssum,male,15-25,Basisonderwijs,216.0,Did not vote
+GM0363    ,Amsterdam,male,65-75,"Havo, vwo, mbo2-4",10856.0,VVD
+GM0375    ,Beverwijk,male,35-45,"Havo, vwo, mbo2-4",1418.0,VVD
+GM0484    ,Alphen aan den Rijn,male,45-55,"Havo, vwo, mbo2-4",3458.0,VVD
+GM0014    ,Groningen (gemeente),male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",4543.0,Did not vote
+GM0642    ,Zwijndrecht,male,65-75,"Havo, vwo, mbo2-4",948.0,CDA
+GM0014    ,Groningen (gemeente),male,35-45,"Hbo-, wo-master, doctor",3910.0,D66
+GM0147    ,Borne,female,35-45,"Havo, vwo, mbo2-4",584.0,VVD
+GM0420    ,Medemblik,female,25-35,"Havo, vwo, mbo2-4",1042.0,D66
+GM0847    ,Someren,male,15-25,"Havo, vwo, mbo2-4",519.0,VVD
+GM0297    ,Zaltbommel,female,25-35,"Hbo-, wo-bachelor",750.0,D66
+GM0356    ,Nieuwegein,female,35-45,"Havo, vwo, mbo2-4",1742.0,D66
+GM1980    ,Dijk en Waard,female,45-55,"Hbo-, wo-bachelor",1434.0,D66
+GM1924    ,Goeree-Overflakkee,female,15-25,"Havo, vwo, mbo2-4",1232.0,PvdD
+GM1966    ,Het Hogeland,male,55-65,"Havo, vwo, mbo2-4",1906.0,BBB
+GM0518    ,'s-Gravenhage (gemeente),male,25-35,"Hbo-, wo-bachelor",9387.0,D66
+GM0106    ,Assen,female,55-65,"Havo, vwo, mbo2-4",2479.0,CDA
+GM0995    ,Lelystad,male,35-45,"Hbo-, wo-bachelor",986.0,VVD
+GM0307    ,Amersfoort,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3243.0,PvdD
+GM0935    ,Maastricht,female,15-25,"Hbo-, wo-bachelor",2824.0,D66
+GM1979    ,Eemsdelta,male,15-25,"Havo, vwo, mbo2-4",1020.0,D66
+GM0770    ,Eersel,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",326.0,CDA
+GM0345    ,Veenendaal,male,15-25,"Havo, vwo, mbo2-4",1886.0,VVD
+GM0262    ,Lochem,female,15-25,Basisonderwijs,192.0,Did not vote
+GM0606    ,Schiedam,female,25-35,"Havo, vwo, mbo2-4",2734.0,D66
+GM1979    ,Eemsdelta,female,25-35,"Havo, vwo, mbo2-4",1131.0,D66
+GM0505    ,Dordrecht,female,25-35,Basisonderwijs,435.0,Did not vote
+GM0268    ,Nijmegen,male,35-45,"Hbo-, wo-master, doctor",3293.0,D66
+GM0703    ,Reimerswaal,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",357.0,CDA
+GM0228    ,Ede,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1696.0,50PLUS
+GM0599    ,Rotterdam,female,25-35,"Hbo-, wo-master, doctor",17464.0,D66
+GM1740    ,Neder-Betuwe,female,25-35,"Havo, vwo, mbo2-4",960.0,BBB
+GM1955    ,Montferland,female,45-55,"Havo, vwo, mbo2-4",1243.0,CDA
+GM1924    ,Goeree-Overflakkee,male,65-75,"Havo, vwo, mbo2-4",1274.0,BBB
+GM0715    ,Terneuzen,male,55-65,"Hbo-, wo-bachelor",592.0,VVD
+GM0362    ,Amstelveen,male,55-65,"Havo, vwo, mbo2-4",1771.0,VVD
+GM0166    ,Kampen,male,15-25,Basisonderwijs,559.0,Did not vote
+GM0988    ,Weert,female,35-45,"Hbo-, wo-bachelor",809.0,CDA
+GM0150    ,Deventer,male,45-55,"Hbo-, wo-bachelor",1677.0,VVD
+GM0406    ,Huizen,male,45-55,"Havo, vwo, mbo2-4",986.0,VVD
+GM1719    ,Drimmelen,male,65-75,Basisonderwijs,194.0,CDA
+GM0718    ,Vlissingen,male,65-75,"Hbo-, wo-master, doctor",255.0,D66
+GM0439    ,Purmerend,female,35-45,"Hbo-, wo-bachelor",1787.0,D66
+GM0772    ,Eindhoven,female,55-65,"Hbo-, wo-bachelor",2534.0,CDA
+GM0268    ,Nijmegen,female,25-35,"Hbo-, wo-bachelor",5465.0,D66
+GM0772    ,Eindhoven,female,15-25,Basisonderwijs,1828.0,Did not vote
+GM0642    ,Zwijndrecht,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",473.0,SP
+GM0777    ,Etten-Leur,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",489.0,VVD
+GM0202    ,Arnhem,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1078.0,Did not vote
+GM0917    ,Heerlen,male,35-45,"Hbo-, wo-bachelor",1058.0,VVD
+GM0537    ,Katwijk,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1118.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),male,45-55,"Hbo-, wo-master, doctor",9204.0,D66
+GM1859    ,Berkelland,male,15-25,"Hbo-, wo-bachelor",125.0,D66
+GM0845    ,Sint-Michielsgestel,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",623.0,Did not vote
+GM0632    ,Woerden,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",747.0,50PLUS
+GM1940    ,De Fryske Marren,female,25-35,"Hbo-, wo-bachelor",1038.0,D66
+GM0363    ,Amsterdam,female,15-25,"Hbo-, wo-bachelor",12455.0,D66
+GM0484    ,Alphen aan den Rijn,male,55-65,"Havo, vwo, mbo2-4",3540.0,VVD
+GM0344    ,Utrecht (gemeente),male,25-35,"Havo, vwo, mbo2-4",9005.0,D66
+GM0228    ,Ede,female,65-75,Basisonderwijs,845.0,50PLUS
+GM1960    ,West Betuwe,male,25-35,"Hbo-, wo-master, doctor",231.0,D66
+GM1641    ,Maasgouw,male,45-55,Basisonderwijs,470.0,BBB
+GM0014    ,Groningen (gemeente),male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1486.0,VVD
+GM0034    ,Almere,male,45-55,"Havo, vwo, mbo2-4",6162.0,VVD
+GM0307    ,Amersfoort,male,55-65,"Havo, vwo, mbo2-4",3885.0,CDA
+GM1940    ,De Fryske Marren,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",998.0,Did not vote
+GM1948    ,Meierijstad,male,35-45,"Havo, vwo, mbo2-4",2423.0,CDA
+GM0503    ,Delft,female,65-75,"Hbo-, wo-master, doctor",650.0,D66
+GM0168    ,Losser,male,25-35,"Hbo-, wo-bachelor",288.0,D66
+GM0034    ,Almere,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1674.0,50PLUS
+GM0855    ,Tilburg,female,55-65,"Havo, vwo, mbo2-4",5792.0,CDA
+GM0828    ,Oss,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1596.0,CDA
+GM0772    ,Eindhoven,male,15-25,"Havo, vwo, mbo2-4",9950.0,D66
+GM1931    ,Krimpenerwaard,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1135.0,CDA
+GM1949    ,Waadhoeke,male,25-35,"Havo, vwo, mbo2-4",1586.0,Did not vote
+GM0400    ,Den Helder,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1189.0,50PLUS
+GM0531    ,Hendrik-Ido-Ambacht,male,45-55,"Hbo-, wo-master, doctor",235.0,D66
+GM0637    ,Zoetermeer,male,25-35,"Havo, vwo, mbo2-4",3973.0,D66
+GM0014    ,Groningen (gemeente),male,25-35,"Hbo-, wo-master, doctor",6468.0,D66
+GM0034    ,Almere,female,65-75,"Hbo-, wo-bachelor",1648.0,50PLUS
+GM0344    ,Utrecht (gemeente),male,55-65,"Havo, vwo, mbo2-4",5170.0,CDA
+GM0502    ,Capelle aan den IJssel,male,35-45,"Havo, vwo, mbo2-4",1735.0,VVD
+GM0794    ,Helmond,female,15-25,"Havo, vwo, mbo2-4",2326.0,GL-PvdA
+GM1728    ,Bladel,male,35-45,"Havo, vwo, mbo2-4",588.0,CDA
+GM0163    ,Hellendoorn,male,15-25,Basisonderwijs,297.0,Did not vote
+GM1959    ,Altena,female,45-55,"Hbo-, wo-master, doctor",278.0,D66
+GM0394    ,Haarlemmermeer,male,55-65,"Havo, vwo, mbo2-4",5117.0,VVD
+GM0772    ,Eindhoven,female,45-55,Basisonderwijs,1519.0,Did not vote
+GM0228    ,Ede,female,55-65,"Havo, vwo, mbo2-4",3410.0,50PLUS
+GM1969    ,Westerkwartier,male,65-75,"Havo, vwo, mbo2-4",1562.0,CDA
+GM0228    ,Ede,male,45-55,"Havo, vwo, mbo2-4",3074.0,VVD
+GM0809    ,Loon op Zand,female,25-35,"Havo, vwo, mbo2-4",623.0,D66
+GM1721    ,Bernheze,female,25-35,"Hbo-, wo-bachelor",623.0,D66
+GM0363    ,Amsterdam,female,35-45,"Hbo-, wo-bachelor",18687.0,D66
+GM1970    ,Noardeast-Fryslân,male,35-45,"Havo, vwo, mbo2-4",1438.0,BBB
+GM0935    ,Maastricht,male,35-45,"Havo, vwo, mbo2-4",2022.0,D66
+GM0603    ,Rijswijk (ZH.),female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",360.0,VVD
+GM0394    ,Haarlemmermeer,male,25-35,"Hbo-, wo-bachelor",2290.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,25-35,"Havo, vwo, mbo2-4",14112.0,D66
+GM0344    ,Utrecht (gemeente),female,35-45,"Hbo-, wo-bachelor",7205.0,D66
+GM0361    ,Alkmaar,female,25-35,"Havo, vwo, mbo2-4",2978.0,D66
+GM0268    ,Nijmegen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2938.0,PVV
+GM0345    ,Veenendaal,male,35-45,"Hbo-, wo-master, doctor",484.0,D66
+GM0014    ,Groningen (gemeente),female,25-35,"Havo, vwo, mbo2-4",5352.0,D66
+GM1930    ,Nissewaard,male,55-65,"Havo, vwo, mbo2-4",3078.0,VVD
+GM1859    ,Berkelland,male,35-45,"Hbo-, wo-bachelor",483.0,BBB
+GM0743    ,Asten,male,65-75,"Havo, vwo, mbo2-4",469.0,CDA
+GM1901    ,Bodegraven-Reeuwijk,male,65-75,"Havo, vwo, mbo2-4",724.0,VVD
+GM0158    ,Haaksbergen,male,35-45,"Havo, vwo, mbo2-4",668.0,VVD
+GM0777    ,Etten-Leur,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",560.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",5806.0,VVD
+GM0164    ,Hengelo (O.),female,15-25,"Hbo-, wo-bachelor",403.0,D66
+GM0050    ,Zeewolde,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",166.0,VVD
+GM0086    ,Opsterland,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",190.0,BBB
+GM0479    ,Zaanstad,male,35-45,"Havo, vwo, mbo2-4",5095.0,VVD
+GM0363    ,Amsterdam,male,35-45,Basisonderwijs,4081.0,Did not vote
+GM1731    ,Midden-Drenthe,male,15-25,"Havo, vwo, mbo2-4",857.0,BBB
+GM1740    ,Neder-Betuwe,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",410.0,CDA
+GM1955    ,Montferland,male,45-55,"Hbo-, wo-bachelor",481.0,VVD
+GM0085    ,Ooststellingwerf,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",404.0,BBB
+GM1734    ,Overbetuwe,male,65-75,"Havo, vwo, mbo2-4",1058.0,CDA
+GM0879    ,Zundert,female,45-55,"Hbo-, wo-bachelor",273.0,CDA
+GM0556    ,Maassluis,female,65-75,"Hbo-, wo-master, doctor",86.0,D66
+GM0362    ,Amstelveen,male,45-55,"Hbo-, wo-bachelor",1202.0,D66
+GM1948    ,Meierijstad,female,45-55,"Hbo-, wo-bachelor",1071.0,CDA
+GM0777    ,Etten-Leur,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",998.0,PVV
+GM1942    ,Gooise Meren,female,55-65,"Hbo-, wo-bachelor",1021.0,VVD
+GM0263    ,Maasdriel,male,15-25,"Havo, vwo, mbo2-4",730.0,BBB
+GM0392    ,Haarlem,female,65-75,"Hbo-, wo-bachelor",1984.0,50PLUS
+GM0074    ,Heerenveen,female,35-45,"Havo, vwo, mbo2-4",1188.0,FNP
+GM0489    ,Barendrecht,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",176.0,Did not vote
+GM0613    ,Albrandswaard,male,35-45,"Havo, vwo, mbo2-4",755.0,VVD
+GM0363    ,Amsterdam,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",4406.0,GL-PvdA
+GM0153    ,Enschede,female,45-55,"Havo, vwo, mbo2-4",4049.0,SP
+GM1982    ,Land van Cuijk,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",476.0,BBB
+GM0363    ,Amsterdam,female,15-25,Basisonderwijs,4218.0,PvdD
+GM0794    ,Helmond,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1936.0,Did not vote
+GM1924    ,Goeree-Overflakkee,female,65-75,Basisonderwijs,534.0,CDA
+GM0355    ,Zeist,female,55-65,"Hbo-, wo-bachelor",1003.0,CDA
+GM0613    ,Albrandswaard,female,45-55,"Hbo-, wo-bachelor",516.0,VVD
+GM0397    ,Heemstede,female,65-75,"Havo, vwo, mbo2-4",639.0,CDA
+GM0717    ,Veere,female,65-75,"Havo, vwo, mbo2-4",690.0,CDA
+GM1771    ,Geldrop-Mierlo,male,15-25,Basisonderwijs,341.0,Did not vote
+GM0505    ,Dordrecht,female,25-35,"Havo, vwo, mbo2-4",3362.0,D66
+GM0396    ,Heemskerk,female,55-65,"Havo, vwo, mbo2-4",1594.0,CDA
+GM0230    ,Elburg,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",309.0,CDA
+GM0148    ,Dalfsen,male,65-75,"Havo, vwo, mbo2-4",743.0,CDA
+GM0034    ,Almere,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",5328.0,Did not vote
+GM1959    ,Altena,male,35-45,"Havo, vwo, mbo2-4",1768.0,BBB
+GM0358    ,Aalsmeer,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",525.0,50PLUS
+GM1979    ,Eemsdelta,female,55-65,"Havo, vwo, mbo2-4",1782.0,VVD
+GM0171    ,Noordoostpolder,male,25-35,"Havo, vwo, mbo2-4",1881.0,BBB
+GM0148    ,Dalfsen,male,45-55,"Havo, vwo, mbo2-4",904.0,VVD
+GM1742    ,Rijssen-Holten,female,55-65,"Havo, vwo, mbo2-4",1218.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),female,55-65,"Hbo-, wo-bachelor",5898.0,D66
+GM0984    ,Venray,female,55-65,"Hbo-, wo-bachelor",520.0,CDA
+GM0882    ,Landgraaf,male,55-65,"Havo, vwo, mbo2-4",1293.0,CDA
+GM0200    ,Apeldoorn,female,55-65,Basisonderwijs,1176.0,CDA
+GM0599    ,Rotterdam,male,65-75,"Hbo-, wo-bachelor",4448.0,50PLUS
+GM1621    ,Lansingerland,male,35-45,"Havo, vwo, mbo2-4",1579.0,VVD
+GM1876    ,Bronckhorst,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",260.0,BBB
+GM1916    ,Leidschendam-Voorburg,male,45-55,Basisonderwijs,295.0,PVV
+GM1742    ,Rijssen-Holten,female,35-45,"Havo, vwo, mbo2-4",1122.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,25-35,"Hbo-, wo-master, doctor",11510.0,D66
+GM0502    ,Capelle aan den IJssel,male,15-25,"Havo, vwo, mbo2-4",1576.0,D66
+GM0308    ,Baarn,female,15-25,"Havo, vwo, mbo2-4",478.0,D66
+GM0226    ,Duiven,female,35-45,"Havo, vwo, mbo2-4",634.0,D66
+GM0855    ,Tilburg,female,55-65,"Hbo-, wo-bachelor",2431.0,CDA
+GM0080    ,Leeuwarden,female,45-55,"Havo, vwo, mbo2-4",2953.0,VVD
+GM0851    ,Steenbergen,female,35-45,"Hbo-, wo-bachelor",379.0,CDA
+GM0599    ,Rotterdam,female,35-45,"Hbo-, wo-master, doctor",10188.0,D66
+GM0737    ,Tytsjerksteradiel,male,15-25,"Havo, vwo, mbo2-4",826.0,VVD
+GM1894    ,Peel en Maas,female,35-45,"Hbo-, wo-bachelor",829.0,VVD
+GM0546    ,Leiden,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2081.0,Did not vote
+GM0299    ,Zevenaar,male,55-65,"Hbo-, wo-bachelor",673.0,VVD
+GM1931    ,Krimpenerwaard,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",579.0,VVD
+GM0375    ,Beverwijk,male,55-65,"Havo, vwo, mbo2-4",1431.0,VVD
+GM1982    ,Land van Cuijk,male,55-65,"Havo, vwo, mbo2-4",3663.0,50PLUS
+GM0847    ,Someren,female,65-75,Basisonderwijs,269.0,CDA
+GM0392    ,Haarlem,female,35-45,"Hbo-, wo-bachelor",3930.0,D66
+GM0363    ,Amsterdam,female,25-35,"Hbo-, wo-bachelor",32939.0,D66
+GM0531    ,Hendrik-Ido-Ambacht,female,35-45,"Havo, vwo, mbo2-4",957.0,D66
+GM0599    ,Rotterdam,male,55-65,"Hbo-, wo-bachelor",5304.0,D66
+GM1735    ,Hof van Twente,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",472.0,CDA
+GM1978    ,Molenlanden,male,25-35,"Havo, vwo, mbo2-4",1801.0,BBB
+GM0637    ,Zoetermeer,female,65-75,"Havo, vwo, mbo2-4",3157.0,CDA
+GM0363    ,Amsterdam,male,15-25,"Havo, vwo, mbo2-4",25926.0,D66
+GM0014    ,Groningen (gemeente),female,45-55,"Hbo-, wo-bachelor",3194.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",4423.0,50PLUS
+GM0222    ,Doetinchem,female,55-65,Basisonderwijs,330.0,50PLUS
+GM0579    ,Oegstgeest,female,25-35,"Hbo-, wo-bachelor",353.0,D66
+GM0855    ,Tilburg,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",4532.0,Did not vote
+GM0599    ,Rotterdam,female,65-75,"Hbo-, wo-master, doctor",1946.0,D66
+GM0484    ,Alphen aan den Rijn,female,25-35,"Hbo-, wo-bachelor",2296.0,D66
+GM0034    ,Almere,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",2284.0,Did not vote
+GM1669    ,Roerdalen,female,45-55,"Havo, vwo, mbo2-4",607.0,CDA
+GM0363    ,Amsterdam,female,35-45,"Hbo-, wo-master, doctor",24757.0,D66
+GM0313    ,Bunschoten,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",489.0,Did not vote
+GM0453    ,Velsen,male,35-45,"Havo, vwo, mbo2-4",1823.0,VVD
+GM0599    ,Rotterdam,male,25-35,"Havo, vwo, mbo2-4",22702.0,D66
+GM1911    ,Hollands Kroon,male,35-45,"Hbo-, wo-bachelor",576.0,VVD
+GM0599    ,Rotterdam,female,65-75,"Hbo-, wo-bachelor",4195.0,D66
+GM0983    ,Venlo,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",922.0,VVD
+GM1931    ,Krimpenerwaard,female,25-35,"Havo, vwo, mbo2-4",1393.0,VVD
+GM0200    ,Apeldoorn,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1606.0,VVD
+GM0687    ,Middelburg (Z.),male,15-25,"Hbo-, wo-master, doctor",16.0,D66
+GM0118    ,Hoogeveen,female,55-65,"Hbo-, wo-bachelor",433.0,CDA
+GM0275    ,Rheden,female,25-35,"Hbo-, wo-bachelor",594.0,D66
+GM0642    ,Zwijndrecht,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",500.0,Did not vote
+GM0855    ,Tilburg,female,65-75,Basisonderwijs,1820.0,CDA
+GM0299    ,Zevenaar,male,65-75,"Hbo-, wo-bachelor",499.0,VVD
+GM0718    ,Vlissingen,female,35-45,"Havo, vwo, mbo2-4",1261.0,VVD
+GM0599    ,Rotterdam,female,45-55,"Hbo-, wo-master, doctor",6311.0,D66
+GM0826    ,Oosterhout,female,45-55,Basisonderwijs,337.0,CDA
+GM0358    ,Aalsmeer,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",876.0,BBB
+GM1783    ,Westland,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1814.0,50PLUS
+GM0243    ,Harderwijk,female,35-45,"Havo, vwo, mbo2-4",1414.0,D66
+GM1714    ,Sluis,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",224.0,BBB
+GM0268    ,Nijmegen,male,25-35,"Hbo-, wo-bachelor",5081.0,D66
+GM1621    ,Lansingerland,male,65-75,"Havo, vwo, mbo2-4",1047.0,CDA
+GM0228    ,Ede,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2770.0,Did not vote
+GM0202    ,Arnhem,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3562.0,Did not vote
+GM1581    ,Utrechtse Heuvelrug,female,15-25,"Havo, vwo, mbo2-4",1178.0,D66
+GM0202    ,Arnhem,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1685.0,50PLUS
+GM0148    ,Dalfsen,female,45-55,"Havo, vwo, mbo2-4",971.0,CDA
+GM1509    ,Oude IJsselstreek,male,45-55,"Havo, vwo, mbo2-4",1260.0,VVD
+GM0203    ,Barneveld,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1068.0,CDA
+GM0392    ,Haarlem,male,45-55,"Hbo-, wo-bachelor",2780.0,D66
+GM0150    ,Deventer,male,25-35,"Hbo-, wo-bachelor",1778.0,D66
+GM0384    ,Diemen,female,35-45,"Havo, vwo, mbo2-4",602.0,D66
+GM1955    ,Montferland,female,65-75,"Havo, vwo, mbo2-4",864.0,50PLUS
+GM0772    ,Eindhoven,female,55-65,Basisonderwijs,2028.0,50PLUS
+GM0784    ,Gilze en Rijen,female,55-65,"Hbo-, wo-bachelor",284.0,CDA
+GM0794    ,Helmond,male,25-35,Basisonderwijs,462.0,Did not vote
+GM0772    ,Eindhoven,male,35-45,"Hbo-, wo-master, doctor",5822.0,D66
+GM1961    ,Vijfheerenlanden,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",676.0,BBB
+GM0228    ,Ede,female,35-45,"Hbo-, wo-master, doctor",1492.0,D66
+GM0599    ,Rotterdam,male,15-25,"Hbo-, wo-bachelor",4676.0,D66
+GM1699    ,Noordenveld,male,65-75,"Hbo-, wo-bachelor",561.0,VVD
+GM0441    ,Schagen,female,55-65,"Havo, vwo, mbo2-4",1760.0,CDA
+GM0772    ,Eindhoven,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1661.0,CDA
+GM0984    ,Venray,male,55-65,"Havo, vwo, mbo2-4",1606.0,BBB
+GM0855    ,Tilburg,female,45-55,"Hbo-, wo-master, doctor",2168.0,D66
+GM0246    ,Heerde,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",196.0,CDA
+GM0772    ,Eindhoven,male,45-55,"Havo, vwo, mbo2-4",4743.0,VVD
+GM0034    ,Almere,female,25-35,"Havo, vwo, mbo2-4",6937.0,D66
+GM0785    ,Goirle,female,65-75,"Havo, vwo, mbo2-4",745.0,CDA
+GM0928    ,Kerkrade,female,55-65,"Hbo-, wo-bachelor",421.0,CDA
+GM1783    ,Westland,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1928.0,BBB
+GM0202    ,Arnhem,female,35-45,"Havo, vwo, mbo2-4",3718.0,D66
+GM0034    ,Almere,male,35-45,"Hbo-, wo-bachelor",4377.0,VVD
+GM0203    ,Barneveld,female,65-75,"Havo, vwo, mbo2-4",951.0,CDA
+GM0014    ,Groningen (gemeente),male,45-55,"Hbo-, wo-master, doctor",3010.0,D66
+GM0823    ,Oirschot,male,15-25,"Havo, vwo, mbo2-4",616.0,Did not vote
+GM0664    ,Goes,male,45-55,"Hbo-, wo-master, doctor",242.0,D66
+GM0797    ,Heusden,male,65-75,"Hbo-, wo-bachelor",613.0,CDA
+GM0441    ,Schagen,female,65-75,"Havo, vwo, mbo2-4",1155.0,50PLUS
+GM0344    ,Utrecht (gemeente),female,15-25,"Hbo-, wo-bachelor",6584.0,D66
+GM0268    ,Nijmegen,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1378.0,50PLUS
+GM0344    ,Utrecht (gemeente),female,15-25,Basisonderwijs,2205.0,Did not vote
+GM0281    ,Tiel,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",753.0,CDA
+GM0160    ,Hardenberg,male,55-65,"Havo, vwo, mbo2-4",2387.0,BBB
+GM0546    ,Leiden,male,25-35,"Hbo-, wo-bachelor",3302.0,D66
+GM1783    ,Westland,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2211.0,Did not vote
+GM0307    ,Amersfoort,male,55-65,"Hbo-, wo-bachelor",2553.0,VVD
+GM1963    ,Hoeksche Waard,male,25-35,"Havo, vwo, mbo2-4",2566.0,BBB
+GM0637    ,Zoetermeer,male,35-45,"Havo, vwo, mbo2-4",3797.0,VVD
+GM0794    ,Helmond,male,15-25,Basisonderwijs,1080.0,Did not vote
+GM0518    ,'s-Gravenhage (gemeente),male,15-25,Basisonderwijs,5490.0,Did not vote
+GM0784    ,Gilze en Rijen,female,55-65,"Hbo-, wo-master, doctor",116.0,D66
+GM0310    ,De Bilt,male,65-75,"Havo, vwo, mbo2-4",780.0,50PLUS
+GM0758    ,Breda,male,55-65,Basisonderwijs,976.0,CDA
+GM0777    ,Etten-Leur,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",595.0,CDA
+GM1948    ,Meierijstad,male,25-35,"Hbo-, wo-bachelor",1321.0,D66
+GM0622    ,Vlaardingen,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1083.0,SP
+GM0882    ,Landgraaf,female,55-65,"Havo, vwo, mbo2-4",1497.0,CDA
+GM1674    ,Roosendaal,female,25-35,"Hbo-, wo-master, doctor",534.0,D66
+GM0546    ,Leiden,female,15-25,"Havo, vwo, mbo2-4",7656.0,D66
+GM1963    ,Hoeksche Waard,female,35-45,"Havo, vwo, mbo2-4",2127.0,VVD
+GM0141    ,Almelo,female,35-45,"Havo, vwo, mbo2-4",2042.0,VVD
+GM1900    ,Súdwest-Fryslân,female,35-45,"Hbo-, wo-bachelor",1474.0,D66
+GM1676    ,Schouwen-Duiveland,female,55-65,"Havo, vwo, mbo2-4",1364.0,CDA
+GM0546    ,Leiden,female,15-25,"Hbo-, wo-bachelor",3483.0,D66
+GM0718    ,Vlissingen,female,45-55,"Hbo-, wo-bachelor",515.0,VVD
+GM0384    ,Diemen,female,35-45,"Hbo-, wo-master, doctor",883.0,D66
+GM0392    ,Haarlem,female,55-65,"Hbo-, wo-master, doctor",1919.0,D66
+GM0599    ,Rotterdam,female,25-35,"Havo, vwo, mbo2-4",19067.0,D66
+GM1734    ,Overbetuwe,male,25-35,"Havo, vwo, mbo2-4",1234.0,VVD
+GM0202    ,Arnhem,male,15-25,Basisonderwijs,1859.0,Did not vote
+GM0392    ,Haarlem,female,55-65,"Hbo-, wo-bachelor",2194.0,D66
+GM1728    ,Bladel,female,45-55,"Havo, vwo, mbo2-4",660.0,CDA
+GM1959    ,Altena,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1326.0,Did not vote
+GM1655    ,Halderberge,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",302.0,CDA
+GM1728    ,Bladel,female,35-45,"Havo, vwo, mbo2-4",505.0,CDA
+GM1959    ,Altena,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",714.0,CDA
+GM0345    ,Veenendaal,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",559.0,Did not vote
+GM0344    ,Utrecht (gemeente),male,35-45,"Hbo-, wo-master, doctor",11224.0,D66
+GM0230    ,Elburg,female,45-55,"Havo, vwo, mbo2-4",682.0,CDA
+GM0758    ,Breda,male,35-45,"Hbo-, wo-bachelor",3526.0,VVD
+GM0995    ,Lelystad,female,35-45,"Hbo-, wo-master, doctor",650.0,D66
+GM0917    ,Heerlen,female,45-55,Basisonderwijs,697.0,SP
+GM1711    ,Echt-Susteren,male,55-65,"Hbo-, wo-bachelor",585.0,CDA
+GM0163    ,Hellendoorn,male,35-45,"Hbo-, wo-bachelor",512.0,VVD
+GM0935    ,Maastricht,male,55-65,"Havo, vwo, mbo2-4",2918.0,CDA
+GM0034    ,Almere,male,35-45,"Havo, vwo, mbo2-4",7404.0,VVD
+GM0355    ,Zeist,female,55-65,"Hbo-, wo-master, doctor",1109.0,D66
+GM0344    ,Utrecht (gemeente),male,65-75,"Havo, vwo, mbo2-4",3226.0,VVD
+GM0606    ,Schiedam,male,25-35,"Havo, vwo, mbo2-4",2834.0,VVD
+GM0828    ,Oss,female,55-65,"Havo, vwo, mbo2-4",3073.0,50PLUS
+GM0537    ,Katwijk,female,35-45,"Havo, vwo, mbo2-4",2167.0,D66
+GM0785    ,Goirle,female,35-45,"Hbo-, wo-bachelor",493.0,D66
+GM1669    ,Roerdalen,female,45-55,Basisonderwijs,70.0,CDA
+GM0307    ,Amersfoort,female,45-55,"Hbo-, wo-bachelor",3003.0,D66
+GM0273    ,Putten,male,55-65,"Havo, vwo, mbo2-4",727.0,CDA
+GM0363    ,Amsterdam,male,35-45,"Hbo-, wo-master, doctor",22912.0,D66
+GM0363    ,Amsterdam,female,55-65,"Hbo-, wo-master, doctor",10638.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,35-45,"Hbo-, wo-bachelor",10557.0,D66
+GM0405    ,Hoorn,female,35-45,"Hbo-, wo-bachelor",1475.0,D66
+GM0439    ,Purmerend,male,45-55,"Hbo-, wo-bachelor",1145.0,VVD
+GM0014    ,Groningen (gemeente),female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3692.0,Did not vote
+GM0796    ,'s-Hertogenbosch,male,45-55,"Hbo-, wo-bachelor",2474.0,VVD
+GM1931    ,Krimpenerwaard,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1098.0,Did not vote
+GM0090    ,Smallingerland,female,55-65,"Hbo-, wo-bachelor",656.0,FNP
+GM0164    ,Hengelo (O.),female,35-45,"Havo, vwo, mbo2-4",2093.0,VVD
+GM0183    ,Tubbergen,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",418.0,CDA
+GM0307    ,Amersfoort,female,45-55,"Hbo-, wo-master, doctor",2662.0,D66
+GM0189    ,Wierden,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",387.0,CDA
+GM1926    ,Pijnacker-Nootdorp,male,35-45,Basisonderwijs,230.0,PVV
+GM1883    ,Sittard-Geleen,female,25-35,"Hbo-, wo-bachelor",1555.0,D66
+GM0629    ,Wassenaar,male,45-55,"Havo, vwo, mbo2-4",522.0,VVD
+GM0345    ,Veenendaal,female,15-25,"Hbo-, wo-master, doctor",476.0,D66
+GM0252    ,Heumen,female,55-65,"Hbo-, wo-master, doctor",269.0,D66
+GM1978    ,Molenlanden,male,35-45,"Havo, vwo, mbo2-4",1330.0,BBB
+GM1669    ,Roerdalen,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",423.0,CDA
+GM0183    ,Tubbergen,male,65-75,"Havo, vwo, mbo2-4",659.0,CDA
+GM0153    ,Enschede,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",856.0,Did not vote
+GM1621    ,Lansingerland,male,35-45,"Hbo-, wo-master, doctor",1004.0,D66
+GM0855    ,Tilburg,male,65-75,Basisonderwijs,1250.0,CDA
+GM0147    ,Borne,male,15-25,"Havo, vwo, mbo2-4",601.0,D66
+GM0479    ,Zaanstad,male,55-65,Basisonderwijs,1277.0,PVV
+GM0344    ,Utrecht (gemeente),female,45-55,Basisonderwijs,2420.0,Did not vote
+GM1911    ,Hollands Kroon,female,25-35,"Hbo-, wo-master, doctor",429.0,D66
+GM0222    ,Doetinchem,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",788.0,CDA
+GM1681    ,Borger-Odoorn,female,45-55,"Havo, vwo, mbo2-4",881.0,BBB
+GM0307    ,Amersfoort,female,55-65,"Havo, vwo, mbo2-4",4000.0,CDA
+GM0307    ,Amersfoort,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1188.0,Did not vote
+GM0518    ,'s-Gravenhage (gemeente),female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",4853.0,50PLUS
+GM0439    ,Purmerend,female,25-35,"Hbo-, wo-bachelor",1829.0,D66
+GM0622    ,Vlaardingen,female,45-55,"Havo, vwo, mbo2-4",1862.0,GL-PvdA
+GM1948    ,Meierijstad,female,65-75,Basisonderwijs,806.0,50PLUS
+GM0867    ,Waalwijk,male,25-35,"Havo, vwo, mbo2-4",1771.0,D66
+GM0873    ,Woensdrecht,female,35-45,"Hbo-, wo-master, doctor",224.0,D66
+GM0748    ,Bergen op Zoom,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",608.0,CDA
+GM0797    ,Heusden,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",724.0,CDA
+GM0626    ,Voorschoten,male,65-75,"Havo, vwo, mbo2-4",482.0,VVD
+GM0307    ,Amersfoort,male,15-25,"Havo, vwo, mbo2-4",4009.0,Did not vote
+GM0114    ,Emmen,female,45-55,Basisonderwijs,497.0,50PLUS
+GM0794    ,Helmond,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2106.0,Did not vote
+GM0642    ,Zwijndrecht,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",716.0,50PLUS
+GM0405    ,Hoorn,female,45-55,"Havo, vwo, mbo2-4",2130.0,VVD
+GM1734    ,Overbetuwe,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",742.0,CDA
+GM0342    ,Soest,male,45-55,"Havo, vwo, mbo2-4",1029.0,VVD
+GM0268    ,Nijmegen,female,55-65,Basisonderwijs,1628.0,50PLUS
+GM0505    ,Dordrecht,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1646.0,50PLUS
+GM0632    ,Woerden,male,45-55,"Hbo-, wo-bachelor",798.0,VVD
+GM0743    ,Asten,male,25-35,"Havo, vwo, mbo2-4",356.0,VVD
+GM0772    ,Eindhoven,male,25-35,"Hbo-, wo-bachelor",7103.0,D66
+GM0193    ,Zwolle,male,35-45,"Hbo-, wo-bachelor",2750.0,VVD
+GM1581    ,Utrechtse Heuvelrug,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",286.0,VVD
+GM1916    ,Leidschendam-Voorburg,male,15-25,"Havo, vwo, mbo2-4",1584.0,VVD
+GM0327    ,Leusden,male,15-25,"Havo, vwo, mbo2-4",787.0,D66
+GM0050    ,Zeewolde,male,35-45,"Havo, vwo, mbo2-4",642.0,VVD
+GM0983    ,Venlo,male,25-35,"Havo, vwo, mbo2-4",3424.0,D66
+GM0995    ,Lelystad,male,35-45,"Havo, vwo, mbo2-4",2935.0,VVD
+GM0828    ,Oss,female,25-35,"Hbo-, wo-bachelor",2166.0,D66
+GM1900    ,Súdwest-Fryslân,male,35-45,"Havo, vwo, mbo2-4",2575.0,VVD
+GM0362    ,Amstelveen,female,55-65,"Hbo-, wo-bachelor",1853.0,D66
+GM1948    ,Meierijstad,male,25-35,"Havo, vwo, mbo2-4",2938.0,VVD
+GM0269    ,Oldebroek,female,55-65,"Havo, vwo, mbo2-4",704.0,BBB
+GM0935    ,Maastricht,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1658.0,50PLUS
+GM0484    ,Alphen aan den Rijn,male,15-25,"Havo, vwo, mbo2-4",3022.0,Did not vote
+GM1659    ,Laarbeek,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",461.0,50PLUS
+GM0796    ,'s-Hertogenbosch,female,35-45,"Havo, vwo, mbo2-4",2884.0,D66
+GM0794    ,Helmond,male,35-45,"Havo, vwo, mbo2-4",2778.0,VVD
+GM1711    ,Echt-Susteren,female,25-35,"Havo, vwo, mbo2-4",627.0,D66
+GM0109    ,Coevorden,female,35-45,"Hbo-, wo-bachelor",483.0,D66
+GM0177    ,Raalte,female,15-25,"Havo, vwo, mbo2-4",920.0,D66
+GM0766    ,Dongen,female,35-45,"Hbo-, wo-master, doctor",293.0,D66
+GM0824    ,Oisterwijk,male,65-75,"Hbo-, wo-bachelor",468.0,CDA
+GM1991    ,Maashorst,female,25-35,"Havo, vwo, mbo2-4",1387.0,D66
+GM1980    ,Dijk en Waard,male,25-35,"Havo, vwo, mbo2-4",2915.0,VVD
+GM1709    ,Moerdijk,female,15-25,"Havo, vwo, mbo2-4",821.0,D66
+GM0406    ,Huizen,male,55-65,"Havo, vwo, mbo2-4",1128.0,50PLUS
+GM0484    ,Alphen aan den Rijn,male,25-35,"Hbo-, wo-bachelor",1761.0,D66
+GM0119    ,Meppel,male,25-35,"Havo, vwo, mbo2-4",1134.0,D66
+GM0777    ,Etten-Leur,female,65-75,"Havo, vwo, mbo2-4",1039.0,CDA
+GM0363    ,Amsterdam,male,45-55,"Hbo-, wo-bachelor",12155.0,D66
+GM0757    ,Boxtel,female,45-55,"Havo, vwo, mbo2-4",906.0,CDA
+GM1883    ,Sittard-Geleen,male,45-55,"Havo, vwo, mbo2-4",2370.0,CDA
+GM1773    ,Olst-Wijhe,female,45-55,"Hbo-, wo-bachelor",302.0,VVD
+GM0168    ,Losser,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",503.0,Did not vote
+GM0363    ,Amsterdam,male,15-25,Basisonderwijs,6496.0,Did not vote
+GM0579    ,Oegstgeest,female,65-75,"Hbo-, wo-bachelor",396.0,D66
+GM0797    ,Heusden,female,15-25,"Hbo-, wo-bachelor",653.0,D66
+GM1940    ,De Fryske Marren,male,55-65,"Havo, vwo, mbo2-4",1992.0,CDA
+GM0772    ,Eindhoven,female,35-45,Basisonderwijs,1286.0,Did not vote
+GM0453    ,Velsen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1496.0,Did not vote
+GM0344    ,Utrecht (gemeente),female,65-75,"Havo, vwo, mbo2-4",3082.0,50PLUS
+GM1771    ,Geldrop-Mierlo,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",603.0,CDA
+GM0163    ,Hellendoorn,female,55-65,"Hbo-, wo-bachelor",398.0,CDA
+GM0845    ,Sint-Michielsgestel,female,45-55,"Havo, vwo, mbo2-4",812.0,CDA
+GM1774    ,Dinkelland,female,55-65,"Hbo-, wo-bachelor",323.0,CDA
+GM1945    ,Berg en Dal,male,55-65,"Hbo-, wo-master, doctor",484.0,D66
+GM0074    ,Heerenveen,female,55-65,Basisonderwijs,319.0,CDA
+GM0153    ,Enschede,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1172.0,Did not vote
+GM0715    ,Terneuzen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1151.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),female,65-75,"Hbo-, wo-bachelor",4333.0,CDA
+GM0363    ,Amsterdam,female,55-65,Basisonderwijs,8908.0,50PLUS
+GM0119    ,Meppel,female,55-65,"Havo, vwo, mbo2-4",1198.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",3440.0,Did not vote
+GM0383    ,Castricum,male,65-75,"Hbo-, wo-bachelor",543.0,VVD
+GM0518    ,'s-Gravenhage (gemeente),male,55-65,Basisonderwijs,6213.0,VVD
+GM1916    ,Leidschendam-Voorburg,female,35-45,"Havo, vwo, mbo2-4",1177.0,VVD
+GM1655    ,Halderberge,male,15-25,"Havo, vwo, mbo2-4",741.0,D66
+GM0935    ,Maastricht,male,15-25,"Hbo-, wo-bachelor",1548.0,D66
+GM0995    ,Lelystad,female,25-35,"Havo, vwo, mbo2-4",2656.0,VVD
+GM0858    ,Valkenswaard,female,55-65,"Hbo-, wo-bachelor",450.0,CDA
+GM1896    ,Zwartewaterland,male,35-45,"Havo, vwo, mbo2-4",634.0,BBB
+GM0865    ,Vught,male,15-25,"Havo, vwo, mbo2-4",677.0,D66
+GM0269    ,Oldebroek,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",581.0,Did not vote
+GM0080    ,Leeuwarden,male,65-75,"Havo, vwo, mbo2-4",2625.0,50PLUS
+GM0632    ,Woerden,male,15-25,"Havo, vwo, mbo2-4",1523.0,D66
+GM0995    ,Lelystad,female,15-25,"Hbo-, wo-bachelor",294.0,D66
+GM0302    ,Nunspeet,female,55-65,"Havo, vwo, mbo2-4",854.0,CDA
+GM0150    ,Deventer,female,65-75,"Hbo-, wo-bachelor",1131.0,50PLUS
+GM1930    ,Nissewaard,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1044.0,50PLUS
+GM0935    ,Maastricht,female,35-45,"Hbo-, wo-master, doctor",1769.0,D66
+GM0327    ,Leusden,female,55-65,"Havo, vwo, mbo2-4",1116.0,CDA
+GM0171    ,Noordoostpolder,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",329.0,BBB
+GM0502    ,Capelle aan den IJssel,female,35-45,"Hbo-, wo-master, doctor",754.0,D66
+GM1640    ,Leudal,female,25-35,"Hbo-, wo-bachelor",662.0,D66
+GM0355    ,Zeist,male,35-45,"Hbo-, wo-bachelor",959.0,D66
+GM0957    ,Roermond,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",254.0,CDA
+GM0114    ,Emmen,female,45-55,"Havo, vwo, mbo2-4",3664.0,CDA
+GM0716    ,Tholen,female,55-65,"Havo, vwo, mbo2-4",896.0,CDA
+GM0344    ,Utrecht (gemeente),male,15-25,"Hbo-, wo-bachelor",4046.0,D66
+GM0664    ,Goes,male,65-75,"Hbo-, wo-master, doctor",334.0,VVD
+GM0606    ,Schiedam,female,55-65,Basisonderwijs,900.0,VVD
+GM0268    ,Nijmegen,female,15-25,"Havo, vwo, mbo2-4",10013.0,GL-PvdA
+GM1901    ,Bodegraven-Reeuwijk,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",798.0,BBB
+GM0603    ,Rijswijk (ZH.),female,55-65,"Hbo-, wo-master, doctor",684.0,D66
+GM1980    ,Dijk en Waard,male,45-55,"Hbo-, wo-bachelor",1404.0,VVD
+GM0637    ,Zoetermeer,female,35-45,"Hbo-, wo-master, doctor",1760.0,D66
+GM0034    ,Almere,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",5008.0,Did not vote
+GM0971    ,Stein (L.),female,35-45,"Hbo-, wo-master, doctor",203.0,D66
+GM1916    ,Leidschendam-Voorburg,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1018.0,50PLUS
+GM0758    ,Breda,male,35-45,Basisonderwijs,777.0,Did not vote
+GM0086    ,Opsterland,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",239.0,BBB
+GM0599    ,Rotterdam,female,55-65,"Havo, vwo, mbo2-4",13548.0,CDA
+GM0865    ,Vught,female,55-65,"Hbo-, wo-bachelor",566.0,CDA
+GM1970    ,Noardeast-Fryslân,female,55-65,"Hbo-, wo-bachelor",524.0,CDA
+GM0392    ,Haarlem,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2906.0,Did not vote
+GM1894    ,Peel en Maas,male,55-65,"Havo, vwo, mbo2-4",1886.0,CDA
+GM0917    ,Heerlen,female,55-65,Basisonderwijs,951.0,PVV
+GM1901    ,Bodegraven-Reeuwijk,female,25-35,"Havo, vwo, mbo2-4",719.0,VVD
+GM1978    ,Molenlanden,male,45-55,"Hbo-, wo-bachelor",456.0,VVD
+GM0610    ,Sliedrecht,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",483.0,50PLUS
+GM0098    ,Weststellingwerf,male,35-45,"Hbo-, wo-bachelor",278.0,VVD
+GM1894    ,Peel en Maas,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",440.0,CDA
+GM0772    ,Eindhoven,male,45-55,Basisonderwijs,1316.0,CDA
+GM1966    ,Het Hogeland,female,55-65,"Hbo-, wo-master, doctor",326.0,D66
+GM0014    ,Groningen (gemeente),male,55-65,"Hbo-, wo-master, doctor",2505.0,VVD
+GM0855    ,Tilburg,male,35-45,"Hbo-, wo-bachelor",3457.0,D66
+GM0392    ,Haarlem,male,35-45,"Hbo-, wo-bachelor",3520.0,VVD
+GM0114    ,Emmen,female,65-75,"Havo, vwo, mbo2-4",2759.0,50PLUS
+GM1774    ,Dinkelland,female,35-45,"Havo, vwo, mbo2-4",543.0,CDA
+GM0637    ,Zoetermeer,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1277.0,50PLUS
+GM0928    ,Kerkrade,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",730.0,SP
+GM0770    ,Eersel,female,65-75,"Hbo-, wo-bachelor",202.0,50PLUS
+GM0184    ,Urk,female,25-35,"Havo, vwo, mbo2-4",976.0,SGP
+GM0098    ,Weststellingwerf,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",403.0,CDA
+GM0358    ,Aalsmeer,female,25-35,"Hbo-, wo-bachelor",809.0,D66
+GM0439    ,Purmerend,female,15-25,"Hbo-, wo-master, doctor",90.0,D66
+GM1859    ,Berkelland,female,65-75,"Havo, vwo, mbo2-4",1268.0,CDA
+GM0451    ,Uithoorn,female,45-55,"Hbo-, wo-master, doctor",312.0,D66
+GM0779    ,Geertruidenberg,female,35-45,"Havo, vwo, mbo2-4",411.0,CDA
+GM0344    ,Utrecht (gemeente),male,25-35,"Hbo-, wo-bachelor",11658.0,D66
+GM0797    ,Heusden,female,55-65,"Hbo-, wo-master, doctor",262.0,D66
+GM1655    ,Halderberge,male,25-35,"Havo, vwo, mbo2-4",818.0,CDA
+GM0546    ,Leiden,male,55-65,"Hbo-, wo-master, doctor",2168.0,D66
+GM0828    ,Oss,male,35-45,"Havo, vwo, mbo2-4",2814.0,VVD
+GM1954    ,Beekdaelen,male,35-45,"Hbo-, wo-bachelor",604.0,VVD
+GM1924    ,Goeree-Overflakkee,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1006.0,CDA
+GM1773    ,Olst-Wijhe,female,65-75,"Havo, vwo, mbo2-4",520.0,CDA
+GM0363    ,Amsterdam,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",6006.0,50PLUS
+GM0394    ,Haarlemmermeer,female,15-25,"Havo, vwo, mbo2-4",4303.0,D66
+GM1859    ,Berkelland,female,55-65,"Hbo-, wo-bachelor",594.0,CDA
+GM0394    ,Haarlemmermeer,female,55-65,"Havo, vwo, mbo2-4",5429.0,VVD
+GM0160    ,Hardenberg,female,25-35,"Hbo-, wo-bachelor",907.0,D66
+GM0345    ,Veenendaal,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1168.0,Did not vote
+GM0106    ,Assen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",929.0,CDA
+GM1992    ,Voorne aan Zee,male,55-65,"Hbo-, wo-master, doctor",532.0,VVD
+GM1904    ,Stichtse Vecht,female,25-35,"Hbo-, wo-bachelor",1127.0,D66
+GM0301    ,Zutphen,female,65-75,"Havo, vwo, mbo2-4",1102.0,50PLUS
+GM0193    ,Zwolle,female,25-35,"Hbo-, wo-bachelor",4118.0,D66
+GM0394    ,Haarlemmermeer,female,25-35,"Havo, vwo, mbo2-4",3496.0,D66
+GM1961    ,Vijfheerenlanden,male,15-25,"Havo, vwo, mbo2-4",1771.0,VVD
+GM0983    ,Venlo,male,45-55,"Hbo-, wo-bachelor",1168.0,D66
+GM0599    ,Rotterdam,female,45-55,Basisonderwijs,6955.0,Did not vote
+GM1948    ,Meierijstad,female,35-45,"Hbo-, wo-master, doctor",710.0,D66
+GM0758    ,Breda,male,45-55,Basisonderwijs,515.0,PVV
+GM1586    ,Oost Gelre,male,45-55,"Hbo-, wo-bachelor",349.0,CDA
+GM0865    ,Vught,male,55-65,Basisonderwijs,146.0,CDA
+GM0166    ,Kampen,female,55-65,"Havo, vwo, mbo2-4",1534.0,CDA
+GM0202    ,Arnhem,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2864.0,Did not vote
+GM0716    ,Tholen,female,25-35,"Hbo-, wo-bachelor",328.0,D66
+GM1719    ,Drimmelen,female,65-75,"Havo, vwo, mbo2-4",619.0,CDA
+GM0796    ,'s-Hertogenbosch,female,15-25,"Hbo-, wo-bachelor",1046.0,D66
+GM1525    ,Teylingen,male,55-65,"Hbo-, wo-bachelor",652.0,VVD
+GM0307    ,Amersfoort,female,25-35,"Hbo-, wo-master, doctor",3306.0,D66
+GM0356    ,Nieuwegein,male,35-45,"Havo, vwo, mbo2-4",1824.0,VVD
+GM1992    ,Voorne aan Zee,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",615.0,50PLUS
+GM0034    ,Almere,male,35-45,"Hbo-, wo-master, doctor",2197.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",12700.0,Did not vote
+GM0361    ,Alkmaar,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",986.0,VVD
+GM0175    ,Ommen,female,65-75,"Havo, vwo, mbo2-4",527.0,CDA
+GM1980    ,Dijk en Waard,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1831.0,Did not vote
+GM0363    ,Amsterdam,male,45-55,"Hbo-, wo-master, doctor",15785.0,D66
+GM0632    ,Woerden,male,45-55,"Havo, vwo, mbo2-4",1418.0,VVD
+GM0226    ,Duiven,female,45-55,"Havo, vwo, mbo2-4",814.0,CDA
+GM1728    ,Bladel,female,55-65,"Havo, vwo, mbo2-4",810.0,CDA
+GM1969    ,Westerkwartier,female,35-45,"Havo, vwo, mbo2-4",1512.0,BBB
+GM0439    ,Purmerend,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1585.0,50PLUS
+GM0171    ,Noordoostpolder,female,25-35,"Hbo-, wo-bachelor",852.0,BBB
+GM0575    ,Noordwijk,female,45-55,Basisonderwijs,174.0,Did not vote
+GM1680    ,Aa en Hunze,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",414.0,BBB
+GM0014    ,Groningen (gemeente),male,35-45,Basisonderwijs,647.0,Did not vote
+GM0917    ,Heerlen,female,25-35,Basisonderwijs,250.0,Did not vote
+GM1963    ,Hoeksche Waard,male,55-65,"Havo, vwo, mbo2-4",3227.0,BBB
+GM0865    ,Vught,female,45-55,"Hbo-, wo-master, doctor",741.0,D66
+GM0851    ,Steenbergen,female,45-55,"Havo, vwo, mbo2-4",680.0,CDA
+GM0845    ,Sint-Michielsgestel,female,65-75,"Havo, vwo, mbo2-4",733.0,CDA
+GM0307    ,Amersfoort,male,45-55,"Havo, vwo, mbo2-4",3672.0,VVD
+GM0880    ,Wormerland,male,55-65,"Havo, vwo, mbo2-4",666.0,VVD
+GM0851    ,Steenbergen,female,45-55,Basisonderwijs,90.0,CDA
+GM0163    ,Hellendoorn,female,65-75,"Havo, vwo, mbo2-4",917.0,50PLUS
+GM0232    ,Epe,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",711.0,CDA
+GM0307    ,Amersfoort,female,65-75,"Havo, vwo, mbo2-4",2549.0,CDA
+GM0599    ,Rotterdam,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",6952.0,50PLUS
+GM0150    ,Deventer,female,35-45,"Hbo-, wo-master, doctor",1313.0,D66
+GM0361    ,Alkmaar,female,45-55,"Hbo-, wo-master, doctor",1124.0,D66
+GM0518    ,'s-Gravenhage (gemeente),female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",4223.0,VVD
+GM1884    ,Kaag en Braassem,female,35-45,"Havo, vwo, mbo2-4",781.0,VVD
+GM0826    ,Oosterhout,female,45-55,"Havo, vwo, mbo2-4",1484.0,CDA
+GM0402    ,Hilversum,male,45-55,"Havo, vwo, mbo2-4",1989.0,VVD
+GM0059    ,Achtkarspelen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",447.0,CDA
+GM0855    ,Tilburg,female,15-25,"Havo, vwo, mbo2-4",9027.0,D66
+GM0168    ,Losser,male,65-75,"Havo, vwo, mbo2-4",751.0,BBB
+GM0200    ,Apeldoorn,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3158.0,Did not vote
+GM0034    ,Almere,female,45-55,"Havo, vwo, mbo2-4",6564.0,D66
+GM0147    ,Borne,female,15-25,Basisonderwijs,144.0,Did not vote
+GM0828    ,Oss,male,55-65,"Hbo-, wo-bachelor",1172.0,VVD
+GM0629    ,Wassenaar,male,45-55,"Hbo-, wo-bachelor",295.0,VVD
+GM0274    ,Renkum,female,25-35,Basisonderwijs,34.0,Did not vote
+GM0267    ,Nijkerk,male,45-55,"Havo, vwo, mbo2-4",1218.0,CDA
+GM0772    ,Eindhoven,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",2096.0,VVD
+GM0109    ,Coevorden,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",735.0,50PLUS
+GM0356    ,Nieuwegein,male,35-45,"Hbo-, wo-master, doctor",696.0,D66
+GM1669    ,Roerdalen,female,65-75,"Havo, vwo, mbo2-4",651.0,CDA
+GM0479    ,Zaanstad,male,55-65,"Havo, vwo, mbo2-4",4850.0,50PLUS
+GM0575    ,Noordwijk,male,45-55,"Hbo-, wo-master, doctor",453.0,D66
+GM0889    ,Beesel,male,55-65,"Havo, vwo, mbo2-4",497.0,BBB
+GM0345    ,Veenendaal,female,55-65,"Havo, vwo, mbo2-4",1940.0,CDA
+GM0777    ,Etten-Leur,female,15-25,Basisonderwijs,415.0,Did not vote
+GM0798    ,Hilvarenbeek,male,55-65,"Havo, vwo, mbo2-4",711.0,CDA
+GM0622    ,Vlaardingen,male,55-65,Basisonderwijs,514.0,50PLUS
+GM0606    ,Schiedam,male,25-35,"Hbo-, wo-master, doctor",748.0,D66
+GM0080    ,Leeuwarden,male,25-35,"Hbo-, wo-master, doctor",780.0,D66
+GM0779    ,Geertruidenberg,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",364.0,Did not vote
+GM1948    ,Meierijstad,male,65-75,"Havo, vwo, mbo2-4",2014.0,CDA
+GM0637    ,Zoetermeer,male,45-55,"Havo, vwo, mbo2-4",3283.0,VVD
+GM0861    ,Veldhoven,female,45-55,"Havo, vwo, mbo2-4",1245.0,CDA
+GM1674    ,Roosendaal,male,25-35,"Havo, vwo, mbo2-4",2725.0,VVD
+GM0106    ,Assen,male,55-65,"Havo, vwo, mbo2-4",2215.0,VVD
+GM0858    ,Valkenswaard,female,35-45,"Havo, vwo, mbo2-4",718.0,CDA
+GM0664    ,Goes,male,45-55,"Havo, vwo, mbo2-4",1284.0,BBB
+GM0180    ,Staphorst,female,15-25,"Hbo-, wo-bachelor",133.0,CDA
+GM1774    ,Dinkelland,female,25-35,"Hbo-, wo-bachelor",560.0,D66
+GM0502    ,Capelle aan den IJssel,female,25-35,"Hbo-, wo-master, doctor",849.0,D66
+GM1669    ,Roerdalen,female,65-75,Basisonderwijs,182.0,50PLUS
+GM0090    ,Smallingerland,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",598.0,50PLUS
+GM1676    ,Schouwen-Duiveland,male,65-75,"Hbo-, wo-master, doctor",270.0,CDA
+GM0114    ,Emmen,male,35-45,"Havo, vwo, mbo2-4",3312.0,VVD
+GM0047    ,Veendam,female,55-65,Basisonderwijs,296.0,50PLUS
+GM1904    ,Stichtse Vecht,female,55-65,"Hbo-, wo-bachelor",965.0,VVD
+GM0632    ,Woerden,female,55-65,Basisonderwijs,217.0,CDA
+GM1904    ,Stichtse Vecht,male,55-65,"Hbo-, wo-bachelor",987.0,VVD
+GM1982    ,Land van Cuijk,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",735.0,CDA
+GM0267    ,Nijkerk,female,55-65,Basisonderwijs,322.0,50PLUS
+GM0355    ,Zeist,male,65-75,"Hbo-, wo-bachelor",687.0,VVD
+GM0610    ,Sliedrecht,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",345.0,VVD
+GM0402    ,Hilversum,female,35-45,"Hbo-, wo-master, doctor",2229.0,D66
+GM0202    ,Arnhem,male,45-55,"Havo, vwo, mbo2-4",3852.0,VVD
+GM0453    ,Velsen,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",585.0,Did not vote
+GM0230    ,Elburg,male,25-35,"Havo, vwo, mbo2-4",861.0,VVD
+GM0310    ,De Bilt,male,35-45,"Havo, vwo, mbo2-4",785.0,VVD
+GM0228    ,Ede,male,25-35,"Hbo-, wo-master, doctor",1336.0,D66
+GM0995    ,Lelystad,female,55-65,"Havo, vwo, mbo2-4",2055.0,CDA
+GM0202    ,Arnhem,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1571.0,50PLUS
+GM0627    ,Waddinxveen,female,35-45,"Havo, vwo, mbo2-4",986.0,D66
+GM0687    ,Middelburg (Z.),female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",882.0,Did not vote
+GM0153    ,Enschede,male,25-35,Basisonderwijs,520.0,Did not vote
+GM0222    ,Doetinchem,female,25-35,"Havo, vwo, mbo2-4",1628.0,D66
+GM0479    ,Zaanstad,male,55-65,"Hbo-, wo-master, doctor",963.0,D66
+GM1926    ,Pijnacker-Nootdorp,male,15-25,Basisonderwijs,484.0,PVV
+GM0632    ,Woerden,male,65-75,"Havo, vwo, mbo2-4",1129.0,CDA
+GM0479    ,Zaanstad,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1469.0,50PLUS
+GM1771    ,Geldrop-Mierlo,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",797.0,Did not vote
+GM1924    ,Goeree-Overflakkee,male,25-35,"Hbo-, wo-bachelor",693.0,D66
+GM0267    ,Nijkerk,male,25-35,"Havo, vwo, mbo2-4",1295.0,Did not vote
+GM1963    ,Hoeksche Waard,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",484.0,BBB
+GM0171    ,Noordoostpolder,female,65-75,"Havo, vwo, mbo2-4",1061.0,50PLUS
+GM0772    ,Eindhoven,female,15-25,"Hbo-, wo-bachelor",2512.0,D66
+GM0637    ,Zoetermeer,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1287.0,50PLUS
+GM0453    ,Velsen,male,55-65,"Hbo-, wo-bachelor",1062.0,VVD
+GM0106    ,Assen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1739.0,Did not vote
+GM0882    ,Landgraaf,female,65-75,"Havo, vwo, mbo2-4",1041.0,50PLUS
+GM1859    ,Berkelland,female,25-35,"Havo, vwo, mbo2-4",1010.0,VVD
+GM0715    ,Terneuzen,female,45-55,"Havo, vwo, mbo2-4",1841.0,BBB
+GM0983    ,Venlo,male,25-35,"Hbo-, wo-bachelor",1414.0,D66
+GM1963    ,Hoeksche Waard,male,55-65,"Hbo-, wo-bachelor",1274.0,BBB
+GM0119    ,Meppel,male,65-75,"Havo, vwo, mbo2-4",818.0,CDA
+GM1507    ,Horst aan de Maas,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",143.0,BBB
+GM0352    ,Wijk bij Duurstede,female,35-45,"Hbo-, wo-master, doctor",283.0,D66
+GM0603    ,Rijswijk (ZH.),male,45-55,"Hbo-, wo-master, doctor",816.0,D66
+GM0153    ,Enschede,female,45-55,"Hbo-, wo-bachelor",1990.0,D66
+GM0441    ,Schagen,female,25-35,"Havo, vwo, mbo2-4",1231.0,D66
+GM1721    ,Bernheze,male,15-25,"Havo, vwo, mbo2-4",922.0,Did not vote
+GM0785    ,Goirle,female,35-45,"Havo, vwo, mbo2-4",629.0,VVD
+GM0599    ,Rotterdam,male,15-25,"Hbo-, wo-master, doctor",1135.0,D66
+GM0193    ,Zwolle,female,35-45,"Havo, vwo, mbo2-4",2684.0,D66
+GM0405    ,Hoorn,female,25-35,"Hbo-, wo-master, doctor",638.0,GL-PvdA
+GM0243    ,Harderwijk,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",177.0,Did not vote
+GM0758    ,Breda,male,35-45,"Havo, vwo, mbo2-4",3886.0,VVD
+GM0406    ,Huizen,male,65-75,"Havo, vwo, mbo2-4",1029.0,VVD
+GM1966    ,Het Hogeland,male,25-35,"Hbo-, wo-bachelor",420.0,D66
+GM1735    ,Hof van Twente,male,25-35,"Havo, vwo, mbo2-4",1049.0,BBB
+GM0988    ,Weert,female,25-35,"Hbo-, wo-bachelor",663.0,D66
+GM1640    ,Leudal,female,55-65,Basisonderwijs,177.0,CDA
+GM0355    ,Zeist,male,45-55,"Hbo-, wo-master, doctor",1458.0,D66
+GM0166    ,Kampen,male,35-45,"Hbo-, wo-bachelor",731.0,VVD
+GM0268    ,Nijmegen,female,45-55,"Hbo-, wo-bachelor",2254.0,D66
+GM0772    ,Eindhoven,male,15-25,Basisonderwijs,2090.0,Did not vote
+GM0797    ,Heusden,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",908.0,Did not vote
+GM0109    ,Coevorden,female,65-75,"Havo, vwo, mbo2-4",930.0,50PLUS
+GM0613    ,Albrandswaard,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",187.0,PVV
+GM1911    ,Hollands Kroon,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",990.0,CDA
+GM0202    ,Arnhem,female,15-25,"Havo, vwo, mbo2-4",5395.0,D66
+GM0861    ,Veldhoven,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",781.0,Did not vote
+GM0153    ,Enschede,female,25-35,Basisonderwijs,428.0,Did not vote
+GM0826    ,Oosterhout,female,25-35,"Havo, vwo, mbo2-4",1503.0,D66
+GM0171    ,Noordoostpolder,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",220.0,Did not vote
+GM0855    ,Tilburg,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",2997.0,50PLUS
+GM0599    ,Rotterdam,female,25-35,"Hbo-, wo-bachelor",15979.0,D66
+GM0216    ,Culemborg,male,45-55,Basisonderwijs,211.0,CDA
+GM0222    ,Doetinchem,male,25-35,"Hbo-, wo-master, doctor",241.0,D66
+GM1586    ,Oost Gelre,female,45-55,"Havo, vwo, mbo2-4",923.0,CDA
+GM0281    ,Tiel,female,65-75,Basisonderwijs,293.0,CDA
+GM0420    ,Medemblik,male,55-65,"Havo, vwo, mbo2-4",1558.0,BBB
+GM0599    ,Rotterdam,female,55-65,"Hbo-, wo-master, doctor",4108.0,D66
+GM0858    ,Valkenswaard,male,25-35,"Havo, vwo, mbo2-4",967.0,VVD
+GM0599    ,Rotterdam,male,25-35,"Hbo-, wo-bachelor",13415.0,D66
+GM0141    ,Almelo,female,15-25,Basisonderwijs,563.0,Did not vote
+GM1742    ,Rijssen-Holten,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",921.0,Did not vote
+GM1904    ,Stichtse Vecht,male,15-25,"Havo, vwo, mbo2-4",1631.0,D66
+GM1954    ,Beekdaelen,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",639.0,Did not vote
+GM0200    ,Apeldoorn,male,25-35,"Hbo-, wo-master, doctor",1061.0,D66
+GM0385    ,Edam-Volendam,female,65-75,"Hbo-, wo-bachelor",239.0,CDA
+GM0753    ,Best,female,45-55,"Havo, vwo, mbo2-4",739.0,CDA
+GM0394    ,Haarlemmermeer,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",3880.0,PVV
+GM1696    ,Wijdemeren,female,35-45,Basisonderwijs,55.0,Did not vote
+GM0855    ,Tilburg,male,25-35,"Hbo-, wo-bachelor",5203.0,D66
+GM0484    ,Alphen aan den Rijn,female,15-25,"Havo, vwo, mbo2-4",2756.0,D66
+GM1883    ,Sittard-Geleen,female,35-45,"Hbo-, wo-master, doctor",959.0,D66
+GM0037    ,Stadskanaal,female,45-55,"Havo, vwo, mbo2-4",1012.0,VVD
+GM0109    ,Coevorden,female,65-75,"Hbo-, wo-bachelor",358.0,50PLUS
+GM1961    ,Vijfheerenlanden,female,55-65,"Hbo-, wo-master, doctor",256.0,CDA
+GM0321    ,Houten,female,35-45,"Havo, vwo, mbo2-4",904.0,VVD
+GM0796    ,'s-Hertogenbosch,male,55-65,"Havo, vwo, mbo2-4",4033.0,CDA
+GM1709    ,Moerdijk,female,65-75,Basisonderwijs,338.0,CDA
+GM1911    ,Hollands Kroon,female,25-35,"Hbo-, wo-bachelor",651.0,D66
+GM0848    ,Son en Breugel,female,55-65,"Hbo-, wo-bachelor",337.0,VVD
+GM0654    ,Borsele,male,25-35,"Havo, vwo, mbo2-4",899.0,BBB
+GM0405    ,Hoorn,male,15-25,Basisonderwijs,688.0,Did not vote
+GM1586    ,Oost Gelre,female,55-65,"Havo, vwo, mbo2-4",1258.0,50PLUS
+GM1948    ,Meierijstad,male,15-25,Basisonderwijs,691.0,Did not vote
+GM0502    ,Capelle aan den IJssel,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1324.0,Did not vote
+GM0847    ,Someren,male,35-45,"Hbo-, wo-bachelor",378.0,VVD
+GM1924    ,Goeree-Overflakkee,female,35-45,"Havo, vwo, mbo2-4",1631.0,BBB
+GM0392    ,Haarlem,female,15-25,"Havo, vwo, mbo2-4",3958.0,D66
+GM1771    ,Geldrop-Mierlo,male,35-45,"Havo, vwo, mbo2-4",915.0,VVD
+GM1509    ,Oude IJsselstreek,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",697.0,Did not vote
+GM0498    ,Drechterland,male,35-45,"Hbo-, wo-bachelor",247.0,D66
+GM0160    ,Hardenberg,male,65-75,"Havo, vwo, mbo2-4",1793.0,CDA
+GM1970    ,Noardeast-Fryslân,female,65-75,"Havo, vwo, mbo2-4",913.0,CDA
+GM0632    ,Woerden,female,25-35,"Hbo-, wo-master, doctor",856.0,D66
+GM1991    ,Maashorst,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",953.0,CDA
+GM0847    ,Someren,male,65-75,"Hbo-, wo-bachelor",188.0,CDA
+GM0014    ,Groningen (gemeente),male,25-35,"Havo, vwo, mbo2-4",8575.0,D66
+GM1709    ,Moerdijk,male,55-65,"Hbo-, wo-bachelor",574.0,VVD
+GM0753    ,Best,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",410.0,50PLUS
+GM1655    ,Halderberge,female,35-45,"Havo, vwo, mbo2-4",740.0,CDA
+GM0441    ,Schagen,male,45-55,"Hbo-, wo-bachelor",666.0,VVD
+GM0400    ,Den Helder,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",952.0,Did not vote
+GM0935    ,Maastricht,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",966.0,CDA
+GM1883    ,Sittard-Geleen,male,55-65,"Havo, vwo, mbo2-4",3030.0,CDA
+GM0703    ,Reimerswaal,female,65-75,"Havo, vwo, mbo2-4",481.0,CDA
+GM0275    ,Rheden,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",448.0,PVV
+GM1719    ,Drimmelen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",533.0,CDA
+GM0356    ,Nieuwegein,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",656.0,50PLUS
+GM1883    ,Sittard-Geleen,female,65-75,"Havo, vwo, mbo2-4",2330.0,CDA
+GM1696    ,Wijdemeren,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",426.0,CDA
+GM0202    ,Arnhem,female,65-75,"Havo, vwo, mbo2-4",2560.0,CDA
+GM0203    ,Barneveld,female,65-75,"Hbo-, wo-bachelor",354.0,CDA
+GM0171    ,Noordoostpolder,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",643.0,BBB
+GM1940    ,De Fryske Marren,male,25-35,"Havo, vwo, mbo2-4",1674.0,VVD
+GM0392    ,Haarlem,female,25-35,"Hbo-, wo-bachelor",4412.0,D66
+GM0758    ,Breda,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",598.0,Did not vote
+GM0150    ,Deventer,female,35-45,"Havo, vwo, mbo2-4",2191.0,D66
+GM1842    ,Midden-Delfland,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",302.0,CDA
+GM0556    ,Maassluis,female,65-75,Basisonderwijs,282.0,50PLUS
+GM0147    ,Borne,male,55-65,Basisonderwijs,68.0,CDA
+GM1991    ,Maashorst,female,65-75,"Hbo-, wo-bachelor",518.0,CDA
+GM0758    ,Breda,male,45-55,"Hbo-, wo-master, doctor",2551.0,D66
+GM1621    ,Lansingerland,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1583.0,Did not vote
+GM0845    ,Sint-Michielsgestel,female,55-65,"Havo, vwo, mbo2-4",1033.0,CDA
+GM0363    ,Amsterdam,female,35-45,Basisonderwijs,4228.0,Did not vote
+GM0106    ,Assen,male,65-75,"Havo, vwo, mbo2-4",1638.0,50PLUS
+GM1708    ,Steenwijkerland,female,15-25,"Havo, vwo, mbo2-4",1070.0,D66
+GM0080    ,Leeuwarden,male,25-35,"Havo, vwo, mbo2-4",5000.0,D66
+GM0613    ,Albrandswaard,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",631.0,Did not vote
+GM0362    ,Amstelveen,female,65-75,"Hbo-, wo-master, doctor",634.0,D66
+GM1641    ,Maasgouw,male,65-75,"Havo, vwo, mbo2-4",680.0,CDA
+GM0034    ,Almere,female,25-35,"Hbo-, wo-master, doctor",2214.0,D66
+GM0228    ,Ede,female,55-65,Basisonderwijs,729.0,50PLUS
+GM1509    ,Oude IJsselstreek,female,55-65,"Havo, vwo, mbo2-4",1706.0,CDA
+GM0268    ,Nijmegen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1532.0,50PLUS
+GM0297    ,Zaltbommel,female,15-25,"Havo, vwo, mbo2-4",902.0,D66
+GM0173    ,Oldenzaal,female,65-75,"Havo, vwo, mbo2-4",756.0,CDA
+GM0268    ,Nijmegen,female,25-35,"Havo, vwo, mbo2-4",4058.0,D66
+GM0907    ,Gennep,female,55-65,"Havo, vwo, mbo2-4",662.0,CDA
+GM1674    ,Roosendaal,female,45-55,"Hbo-, wo-master, doctor",465.0,D66
+GM0828    ,Oss,female,25-35,"Havo, vwo, mbo2-4",2250.0,GL-PvdA
+GM1904    ,Stichtse Vecht,male,65-75,"Havo, vwo, mbo2-4",1349.0,VVD
+GM0503    ,Delft,male,15-25,"Havo, vwo, mbo2-4",6929.0,D66
+GM0405    ,Hoorn,female,55-65,"Havo, vwo, mbo2-4",2387.0,50PLUS
+GM0037    ,Stadskanaal,male,25-35,"Havo, vwo, mbo2-4",1047.0,VVD
+GM1509    ,Oude IJsselstreek,female,65-75,"Havo, vwo, mbo2-4",1128.0,CDA
+GM0173    ,Oldenzaal,female,35-45,"Havo, vwo, mbo2-4",609.0,VVD
+GM0534    ,Hillegom,female,25-35,"Havo, vwo, mbo2-4",503.0,D66
+GM0230    ,Elburg,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",288.0,VVD
+GM0014    ,Groningen (gemeente),male,55-65,"Havo, vwo, mbo2-4",4762.0,VVD
+GM0384    ,Diemen,male,45-55,"Hbo-, wo-bachelor",396.0,VVD
+GM0796    ,'s-Hertogenbosch,male,45-55,"Havo, vwo, mbo2-4",3586.0,CDA
+GM0935    ,Maastricht,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1966.0,Did not vote
+GM0402    ,Hilversum,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",726.0,50PLUS
+GM0687    ,Middelburg (Z.),male,45-55,"Hbo-, wo-bachelor",626.0,VVD
+GM0622    ,Vlaardingen,male,15-25,"Havo, vwo, mbo2-4",1604.0,GL-PvdA
+GM1883    ,Sittard-Geleen,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",405.0,PVV
+GM1730    ,Tynaarlo,male,45-55,"Hbo-, wo-master, doctor",502.0,D66
+GM0867    ,Waalwijk,female,15-25,"Havo, vwo, mbo2-4",1121.0,D66
+GM0899    ,Brunssum,female,45-55,"Havo, vwo, mbo2-4",716.0,CDA
+GM0164    ,Hengelo (O.),female,15-25,Basisonderwijs,533.0,Did not vote
+GM1894    ,Peel en Maas,female,35-45,"Havo, vwo, mbo2-4",1076.0,BBB
+GM0014    ,Groningen (gemeente),female,35-45,Basisonderwijs,581.0,Did not vote
+GM1705    ,Lingewaard,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",346.0,BBB
+GM1959    ,Altena,male,25-35,"Havo, vwo, mbo2-4",1981.0,VVD
+GM0345    ,Veenendaal,female,15-25,"Havo, vwo, mbo2-4",1751.0,D66
+GM0983    ,Venlo,female,45-55,Basisonderwijs,975.0,Did not vote
+GM0542    ,Krimpen aan den IJssel,male,25-35,"Havo, vwo, mbo2-4",923.0,VVD
+GM0758    ,Breda,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1647.0,CDA
+GM0489    ,Barendrecht,male,25-35,"Havo, vwo, mbo2-4",1223.0,VVD
+GM0355    ,Zeist,female,35-45,"Havo, vwo, mbo2-4",986.0,D66
+GM0090    ,Smallingerland,male,35-45,"Hbo-, wo-bachelor",808.0,VVD
+GM0216    ,Culemborg,female,35-45,"Hbo-, wo-master, doctor",538.0,D66
+GM0392    ,Haarlem,male,45-55,"Havo, vwo, mbo2-4",3424.0,VVD
+GM1709    ,Moerdijk,male,55-65,Basisonderwijs,248.0,50PLUS
+GM1883    ,Sittard-Geleen,male,25-35,"Havo, vwo, mbo2-4",2424.0,VVD
+GM1952    ,Midden-Groningen,male,55-65,"Havo, vwo, mbo2-4",2426.0,BBB
+GM0498    ,Drechterland,male,25-35,"Hbo-, wo-master, doctor",75.0,D66
+GM0114    ,Emmen,male,45-55,"Havo, vwo, mbo2-4",3815.0,VVD
+GM0632    ,Woerden,female,25-35,"Havo, vwo, mbo2-4",1042.0,D66
+GM1970    ,Noardeast-Fryslân,male,65-75,"Hbo-, wo-master, doctor",160.0,FNP
+GM1955    ,Montferland,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",640.0,Did not vote
+GM0193    ,Zwolle,female,65-75,"Havo, vwo, mbo2-4",2259.0,CDA
+GM0274    ,Renkum,female,25-35,"Hbo-, wo-bachelor",377.0,D66
+GM1916    ,Leidschendam-Voorburg,female,15-25,"Havo, vwo, mbo2-4",1543.0,D66
+GM0281    ,Tiel,male,45-55,Basisonderwijs,400.0,BBB
+GM0405    ,Hoorn,male,65-75,"Havo, vwo, mbo2-4",1796.0,50PLUS
+GM0796    ,'s-Hertogenbosch,male,45-55,Basisonderwijs,747.0,CDA
+GM0119    ,Meppel,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",582.0,CDA
+GM1960    ,West Betuwe,female,55-65,Basisonderwijs,373.0,BBB
+GM0505    ,Dordrecht,female,55-65,"Hbo-, wo-bachelor",1386.0,D66
+GM1992    ,Voorne aan Zee,female,65-75,"Hbo-, wo-master, doctor",205.0,VVD
+GM0164    ,Hengelo (O.),male,55-65,"Havo, vwo, mbo2-4",2572.0,VVD
+GM0394    ,Haarlemmermeer,female,45-55,"Hbo-, wo-bachelor",3036.0,D66
+GM1991    ,Maashorst,female,55-65,"Havo, vwo, mbo2-4",1978.0,CDA
+GM0599    ,Rotterdam,male,55-65,Basisonderwijs,6708.0,PVV
+GM0267    ,Nijkerk,female,45-55,"Hbo-, wo-bachelor",691.0,D66
+GM1876    ,Bronckhorst,female,65-75,Basisonderwijs,251.0,CDA
+GM0289    ,Wageningen,male,25-35,"Hbo-, wo-bachelor",1236.0,D66
+GM0150    ,Deventer,female,35-45,"Hbo-, wo-bachelor",1768.0,D66
+GM0629    ,Wassenaar,male,25-35,"Hbo-, wo-master, doctor",146.0,VVD
+GM1950    ,Westerwolde,female,55-65,Basisonderwijs,163.0,CDA
+GM0355    ,Zeist,female,25-35,"Hbo-, wo-bachelor",1010.0,D66
+GM0518    ,'s-Gravenhage (gemeente),male,35-45,Basisonderwijs,4891.0,PVV
+GM0518    ,'s-Gravenhage (gemeente),male,35-45,"Hbo-, wo-bachelor",8611.0,D66
+GM0505    ,Dordrecht,female,45-55,"Hbo-, wo-master, doctor",975.0,D66
+GM0798    ,Hilvarenbeek,female,55-65,"Havo, vwo, mbo2-4",716.0,CDA
+GM0086    ,Opsterland,female,15-25,"Havo, vwo, mbo2-4",690.0,BBB
+GM0114    ,Emmen,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",2083.0,CDA
+GM0289    ,Wageningen,male,55-65,"Havo, vwo, mbo2-4",522.0,BBB
+GM0736    ,De Ronde Venen,male,65-75,"Havo, vwo, mbo2-4",1056.0,50PLUS
+GM0606    ,Schiedam,male,25-35,"Hbo-, wo-bachelor",1638.0,D66
+GM0855    ,Tilburg,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",2860.0,CDA
+GM0855    ,Tilburg,female,65-75,"Havo, vwo, mbo2-4",3818.0,CDA
+GM0439    ,Purmerend,female,65-75,Basisonderwijs,918.0,50PLUS
+GM0402    ,Hilversum,female,15-25,Basisonderwijs,450.0,Did not vote
+GM0861    ,Veldhoven,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",99.0,CDA
+GM0542    ,Krimpen aan den IJssel,female,55-65,Basisonderwijs,210.0,50PLUS
+GM0736    ,De Ronde Venen,female,15-25,"Havo, vwo, mbo2-4",1109.0,D66
+GM0361    ,Alkmaar,female,25-35,"Hbo-, wo-master, doctor",1118.0,D66
+GM1900    ,Súdwest-Fryslân,male,25-35,"Havo, vwo, mbo2-4",2851.0,FNP
+GM0785    ,Goirle,female,35-45,"Hbo-, wo-master, doctor",333.0,D66
+GM0569    ,Nieuwkoop,male,35-45,"Havo, vwo, mbo2-4",858.0,VVD
+GM0275    ,Rheden,female,35-45,"Hbo-, wo-bachelor",619.0,D66
+GM0299    ,Zevenaar,female,55-65,"Havo, vwo, mbo2-4",1724.0,CDA
+GM0160    ,Hardenberg,female,65-75,"Havo, vwo, mbo2-4",1250.0,CDA
+GM1894    ,Peel en Maas,male,65-75,Basisonderwijs,202.0,CDA
+GM1930    ,Nissewaard,female,25-35,"Havo, vwo, mbo2-4",2722.0,D66
+GM0847    ,Someren,female,25-35,"Havo, vwo, mbo2-4",664.0,D66
+GM0342    ,Soest,male,65-75,"Havo, vwo, mbo2-4",972.0,CDA
+GM1979    ,Eemsdelta,female,65-75,"Havo, vwo, mbo2-4",1175.0,CDA
+GM0302    ,Nunspeet,male,55-65,"Havo, vwo, mbo2-4",842.0,CDA
+GM0402    ,Hilversum,female,55-65,"Hbo-, wo-bachelor",1427.0,D66
+GM0917    ,Heerlen,male,15-25,"Havo, vwo, mbo2-4",1955.0,VVD
+GM1894    ,Peel en Maas,female,25-35,Basisonderwijs,504.0,Did not vote
+GM0193    ,Zwolle,male,25-35,"Havo, vwo, mbo2-4",4128.0,D66
+GM1969    ,Westerkwartier,male,35-45,"Havo, vwo, mbo2-4",2052.0,BBB
+GM0484    ,Alphen aan den Rijn,female,35-45,"Hbo-, wo-bachelor",2242.0,D66
+GM0935    ,Maastricht,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1825.0,PvdD
+GM0383    ,Castricum,female,45-55,"Havo, vwo, mbo2-4",902.0,VVD
+GM0267    ,Nijkerk,female,55-65,"Hbo-, wo-master, doctor",202.0,D66
+GM1859    ,Berkelland,female,45-55,"Havo, vwo, mbo2-4",1347.0,BBB
+GM1940    ,De Fryske Marren,female,45-55,"Havo, vwo, mbo2-4",1610.0,FNP
+GM0828    ,Oss,male,55-65,"Havo, vwo, mbo2-4",3167.0,CDA
+GM1901    ,Bodegraven-Reeuwijk,male,55-65,"Havo, vwo, mbo2-4",1002.0,BBB
+GM1949    ,Waadhoeke,male,45-55,"Havo, vwo, mbo2-4",1618.0,BBB
+GM1992    ,Voorne aan Zee,female,35-45,"Hbo-, wo-bachelor",1188.0,D66
+GM0575    ,Noordwijk,male,15-25,"Hbo-, wo-bachelor",142.0,D66
+GM0200    ,Apeldoorn,female,65-75,"Hbo-, wo-bachelor",1652.0,CDA
+GM1676    ,Schouwen-Duiveland,male,35-45,"Havo, vwo, mbo2-4",967.0,BBB
+GM1674    ,Roosendaal,male,15-25,Basisonderwijs,608.0,Did not vote
+GM0637    ,Zoetermeer,male,45-55,"Hbo-, wo-master, doctor",851.0,D66
+GM0637    ,Zoetermeer,female,25-35,"Havo, vwo, mbo2-4",3658.0,D66
+GM0505    ,Dordrecht,male,65-75,Basisonderwijs,662.0,CDA
+GM0610    ,Sliedrecht,female,45-55,"Havo, vwo, mbo2-4",716.0,VVD
+GM0599    ,Rotterdam,female,65-75,"Havo, vwo, mbo2-4",8938.0,50PLUS
+GM0855    ,Tilburg,male,35-45,"Havo, vwo, mbo2-4",5334.0,VVD
+GM0197    ,Aalten,male,55-65,"Havo, vwo, mbo2-4",1071.0,BBB
+GM0794    ,Helmond,female,25-35,"Havo, vwo, mbo2-4",2682.0,D66
+GM1884    ,Kaag en Braassem,female,65-75,"Hbo-, wo-bachelor",178.0,CDA
+GM0189    ,Wierden,female,25-35,"Havo, vwo, mbo2-4",580.0,D66
+GM0106    ,Assen,female,65-75,"Hbo-, wo-master, doctor",284.0,D66
+GM0995    ,Lelystad,female,65-75,"Havo, vwo, mbo2-4",1777.0,CDA
+GM0518    ,'s-Gravenhage (gemeente),female,55-65,"Havo, vwo, mbo2-4",10784.0,CDA
+GM1892    ,Zuidplas,female,45-55,"Hbo-, wo-master, doctor",409.0,D66
+GM0080    ,Leeuwarden,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1237.0,50PLUS
+GM1960    ,West Betuwe,female,15-25,Basisonderwijs,282.0,Did not vote
+GM0080    ,Leeuwarden,female,35-45,"Hbo-, wo-master, doctor",1365.0,D66
+GM0606    ,Schiedam,female,55-65,"Havo, vwo, mbo2-4",2023.0,50PLUS
+GM1900    ,Súdwest-Fryslân,female,45-55,Basisonderwijs,182.0,FNP
+GM0865    ,Vught,male,55-65,"Havo, vwo, mbo2-4",749.0,CDA
+GM0748    ,Bergen op Zoom,female,65-75,Basisonderwijs,757.0,CDA
+GM1980    ,Dijk en Waard,female,45-55,"Havo, vwo, mbo2-4",2739.0,VVD
+GM0228    ,Ede,female,15-25,"Havo, vwo, mbo2-4",3682.0,D66
+GM0546    ,Leiden,female,25-35,"Hbo-, wo-master, doctor",5824.0,D66
+GM1945    ,Berg en Dal,female,45-55,"Hbo-, wo-master, doctor",458.0,D66
+GM0531    ,Hendrik-Ido-Ambacht,male,15-25,Basisonderwijs,256.0,Did not vote
+GM1904    ,Stichtse Vecht,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",307.0,Did not vote
+GM0777    ,Etten-Leur,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",835.0,Did not vote
+GM0160    ,Hardenberg,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",448.0,BBB
+GM0153    ,Enschede,male,25-35,"Havo, vwo, mbo2-4",5655.0,D66
+GM1950    ,Westerwolde,male,35-45,"Hbo-, wo-bachelor",223.0,BBB
+GM0312    ,Bunnik,female,55-65,"Havo, vwo, mbo2-4",379.0,50PLUS
+GM0114    ,Emmen,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1264.0,CDA
+GM0995    ,Lelystad,female,35-45,"Havo, vwo, mbo2-4",2611.0,VVD
+GM0935    ,Maastricht,female,55-65,"Hbo-, wo-bachelor",1498.0,CDA
+GM0222    ,Doetinchem,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",262.0,SP
+GM0385    ,Edam-Volendam,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",671.0,SP
+GM0294    ,Winterswijk,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",614.0,Did not vote
+GM1652    ,Gemert-Bakel,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",144.0,PVV
+GM0385    ,Edam-Volendam,male,55-65,"Havo, vwo, mbo2-4",1212.0,CDA
+GM1706    ,Cranendonck,male,65-75,"Hbo-, wo-master, doctor",95.0,VVD
+GM1742    ,Rijssen-Holten,female,35-45,Basisonderwijs,84.0,Did not vote
+GM0118    ,Hoogeveen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1006.0,50PLUS
+GM0193    ,Zwolle,male,45-55,"Hbo-, wo-bachelor",2575.0,VVD
+GM0037    ,Stadskanaal,male,65-75,"Hbo-, wo-bachelor",309.0,CDA
+GM0622    ,Vlaardingen,male,45-55,Basisonderwijs,515.0,PVV
+GM0420    ,Medemblik,female,45-55,"Havo, vwo, mbo2-4",1380.0,BBB
+GM1949    ,Waadhoeke,female,35-45,Basisonderwijs,88.0,Did not vote
+GM0396    ,Heemskerk,female,65-75,"Hbo-, wo-bachelor",310.0,CDA
+GM0158    ,Haaksbergen,male,55-65,"Havo, vwo, mbo2-4",970.0,CDA
+GM0971    ,Stein (L.),male,65-75,"Havo, vwo, mbo2-4",872.0,CDA
+GM0345    ,Veenendaal,male,45-55,"Hbo-, wo-master, doctor",512.0,D66
+GM0308    ,Baarn,male,25-35,"Havo, vwo, mbo2-4",391.0,D66
+GM0957    ,Roermond,male,65-75,Basisonderwijs,354.0,CDA
+GM0150    ,Deventer,female,25-35,"Hbo-, wo-bachelor",2258.0,D66
+GM0147    ,Borne,female,65-75,"Havo, vwo, mbo2-4",578.0,CDA
+GM1948    ,Meierijstad,female,15-25,"Havo, vwo, mbo2-4",2007.0,D66
+GM0406    ,Huizen,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",278.0,50PLUS
+GM0556    ,Maassluis,male,45-55,"Hbo-, wo-bachelor",416.0,VVD
+GM0575    ,Noordwijk,male,65-75,"Havo, vwo, mbo2-4",1053.0,CDA
+GM0820    ,"Nuenen, Gerwen en Nederwetten",female,55-65,"Havo, vwo, mbo2-4",826.0,50PLUS
+GM0622    ,Vlaardingen,male,25-35,Basisonderwijs,902.0,Did not vote
+GM0603    ,Rijswijk (ZH.),male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",458.0,VVD
+GM0171    ,Noordoostpolder,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",713.0,CDA
+GM0037    ,Stadskanaal,male,45-55,"Hbo-, wo-bachelor",308.0,VVD
+GM0294    ,Winterswijk,female,15-25,"Havo, vwo, mbo2-4",677.0,D66
+GM1640    ,Leudal,male,65-75,"Hbo-, wo-bachelor",513.0,CDA
+GM0363    ,Amsterdam,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",5995.0,VVD
+GM0344    ,Utrecht (gemeente),male,45-55,"Havo, vwo, mbo2-4",5779.0,VVD
+GM0984    ,Venray,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",854.0,Did not vote
+GM0200    ,Apeldoorn,male,65-75,"Havo, vwo, mbo2-4",3754.0,VVD
+GM0396    ,Heemskerk,female,65-75,"Havo, vwo, mbo2-4",1015.0,CDA
+GM0484    ,Alphen aan den Rijn,male,65-75,"Hbo-, wo-master, doctor",738.0,D66
+GM0233    ,Ermelo,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",187.0,BBB
+GM0717    ,Veere,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",471.0,CDA
+GM0553    ,Lisse,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",303.0,50PLUS
+GM0168    ,Losser,male,35-45,Basisonderwijs,66.0,BBB
+GM1940    ,De Fryske Marren,female,35-45,"Hbo-, wo-bachelor",745.0,D66
+GM0394    ,Haarlemmermeer,male,35-45,Basisonderwijs,410.0,Did not vote
+GM0984    ,Venray,male,65-75,"Havo, vwo, mbo2-4",1137.0,CDA
+GM0273    ,Putten,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",504.0,CDA
+GM0502    ,Capelle aan den IJssel,male,25-35,"Hbo-, wo-bachelor",991.0,D66
+GM0687    ,Middelburg (Z.),female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",772.0,CDA
+GM0080    ,Leeuwarden,female,65-75,"Hbo-, wo-bachelor",1470.0,CDA
+GM0308    ,Baarn,male,15-25,"Havo, vwo, mbo2-4",467.0,D66
+GM1676    ,Schouwen-Duiveland,male,45-55,"Havo, vwo, mbo2-4",976.0,BBB
+GM1904    ,Stichtse Vecht,male,45-55,"Hbo-, wo-bachelor",966.0,D66
+GM0114    ,Emmen,male,15-25,Basisonderwijs,1115.0,Did not vote
+GM0537    ,Katwijk,male,15-25,"Havo, vwo, mbo2-4",1998.0,Did not vote
+GM0274    ,Renkum,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",263.0,VVD
+GM0226    ,Duiven,male,25-35,"Havo, vwo, mbo2-4",667.0,VVD
+GM0479    ,Zaanstad,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",2173.0,50PLUS
+GM1948    ,Meierijstad,male,55-65,"Havo, vwo, mbo2-4",2816.0,CDA
+GM1730    ,Tynaarlo,female,35-45,"Hbo-, wo-master, doctor",779.0,D66
+GM0147    ,Borne,female,25-35,"Havo, vwo, mbo2-4",532.0,VVD
+GM0200    ,Apeldoorn,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1757.0,50PLUS
+GM0758    ,Breda,male,15-25,"Havo, vwo, mbo2-4",6172.0,D66
+GM1982    ,Land van Cuijk,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",575.0,BBB
+GM1911    ,Hollands Kroon,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1100.0,Did not vote
+GM1970    ,Noardeast-Fryslân,female,25-35,"Havo, vwo, mbo2-4",1049.0,D66
+GM0489    ,Barendrecht,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",990.0,PvdD
+GM1901    ,Bodegraven-Reeuwijk,female,35-45,"Hbo-, wo-bachelor",676.0,VVD
+GM0202    ,Arnhem,female,15-25,Basisonderwijs,1321.0,Did not vote
+GM0400    ,Den Helder,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1000.0,CDA
+GM0748    ,Bergen op Zoom,female,25-35,"Hbo-, wo-bachelor",1226.0,D66
+GM0385    ,Edam-Volendam,female,45-55,"Hbo-, wo-master, doctor",280.0,D66
+GM0355    ,Zeist,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1300.0,Did not vote
+GM1952    ,Midden-Groningen,male,25-35,"Havo, vwo, mbo2-4",1962.0,BBB
+GM0080    ,Leeuwarden,male,15-25,"Havo, vwo, mbo2-4",4674.0,D66
+GM1959    ,Altena,male,45-55,"Hbo-, wo-bachelor",618.0,VVD
+GM0935    ,Maastricht,male,35-45,"Hbo-, wo-bachelor",1320.0,D66
+GM0439    ,Purmerend,female,15-25,"Havo, vwo, mbo2-4",2330.0,D66
+GM0482    ,Alblasserdam,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",332.0,50PLUS
+GM1961    ,Vijfheerenlanden,male,45-55,"Hbo-, wo-master, doctor",296.0,D66
+GM0809    ,Loon op Zand,female,55-65,"Hbo-, wo-master, doctor",68.0,D66
+GM0321    ,Houten,male,65-75,"Hbo-, wo-bachelor",787.0,VVD
+GM0275    ,Rheden,male,55-65,"Havo, vwo, mbo2-4",1328.0,CDA
+GM0228    ,Ede,female,65-75,"Hbo-, wo-master, doctor",416.0,D66
+GM0344    ,Utrecht (gemeente),female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1700.0,VVD
+GM0177    ,Raalte,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",304.0,CDA
+GM0173    ,Oldenzaal,male,55-65,"Havo, vwo, mbo2-4",939.0,VVD
+GM0757    ,Boxtel,male,65-75,"Havo, vwo, mbo2-4",832.0,BBB
+GM0957    ,Roermond,female,45-55,"Hbo-, wo-master, doctor",495.0,D66
+GM0718    ,Vlissingen,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",682.0,CDA
+GM0809    ,Loon op Zand,female,45-55,"Havo, vwo, mbo2-4",765.0,CDA
+GM0394    ,Haarlemmermeer,male,15-25,Basisonderwijs,1406.0,Did not vote
+GM0164    ,Hengelo (O.),male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",844.0,PVV
+GM0851    ,Steenbergen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",582.0,50PLUS
+GM1991    ,Maashorst,female,65-75,"Havo, vwo, mbo2-4",1350.0,CDA
+GM1942    ,Gooise Meren,female,35-45,"Havo, vwo, mbo2-4",890.0,VVD
+GM0637    ,Zoetermeer,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",1147.0,PVV
+GM1883    ,Sittard-Geleen,male,45-55,"Hbo-, wo-bachelor",1331.0,VVD
+GM0014    ,Groningen (gemeente),female,45-55,"Hbo-, wo-master, doctor",3436.0,D66
+GM1959    ,Altena,female,45-55,"Hbo-, wo-bachelor",629.0,CDA
+GM1705    ,Lingewaard,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",677.0,CDA
+GM0779    ,Geertruidenberg,female,55-65,"Hbo-, wo-bachelor",176.0,CDA
+GM0479    ,Zaanstad,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1598.0,PVV
+GM0362    ,Amstelveen,male,45-55,"Havo, vwo, mbo2-4",1623.0,VVD
+GM0153    ,Enschede,male,35-45,"Hbo-, wo-master, doctor",1646.0,D66
+GM0074    ,Heerenveen,male,45-55,"Hbo-, wo-master, doctor",367.0,D66
+GM0047    ,Veendam,female,55-65,"Havo, vwo, mbo2-4",834.0,50PLUS
+GM1900    ,Súdwest-Fryslân,male,65-75,"Hbo-, wo-master, doctor",416.0,CDA
+GM0141    ,Almelo,male,15-25,"Havo, vwo, mbo2-4",1939.0,D66
+GM0397    ,Heemstede,male,35-45,"Havo, vwo, mbo2-4",288.0,VVD
+GM1991    ,Maashorst,male,65-75,"Hbo-, wo-bachelor",648.0,CDA
+GM0148    ,Dalfsen,female,45-55,"Hbo-, wo-bachelor",458.0,D66
+GM0342    ,Soest,female,55-65,"Havo, vwo, mbo2-4",1472.0,CDA
+GM0200    ,Apeldoorn,female,55-65,"Hbo-, wo-master, doctor",1152.0,D66
+GM0637    ,Zoetermeer,female,15-25,"Havo, vwo, mbo2-4",3103.0,Did not vote
+GM0119    ,Meppel,female,35-45,"Hbo-, wo-bachelor",667.0,D66
+GM1652    ,Gemert-Bakel,male,65-75,"Hbo-, wo-bachelor",319.0,CDA
+GM1680    ,Aa en Hunze,female,45-55,"Hbo-, wo-bachelor",435.0,BBB
+GM1581    ,Utrechtse Heuvelrug,female,55-65,"Havo, vwo, mbo2-4",1357.0,CDA
+GM0361    ,Alkmaar,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1518.0,50PLUS
+GM0118    ,Hoogeveen,male,15-25,Basisonderwijs,633.0,Did not vote
+GM1900    ,Súdwest-Fryslân,male,35-45,Basisonderwijs,310.0,BBB
+GM0599    ,Rotterdam,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",6642.0,Did not vote
+GM0356    ,Nieuwegein,male,25-35,"Hbo-, wo-bachelor",1248.0,D66
+GM0402    ,Hilversum,female,15-25,"Havo, vwo, mbo2-4",2185.0,D66
+GM0047    ,Veendam,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",165.0,VVD
+GM1992    ,Voorne aan Zee,male,15-25,"Havo, vwo, mbo2-4",1848.0,VVD
+GM0297    ,Zaltbommel,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",440.0,CDA
+GM0502    ,Capelle aan den IJssel,female,25-35,"Hbo-, wo-bachelor",1043.0,D66
+GM0532    ,Stede Broec,female,35-45,"Hbo-, wo-bachelor",338.0,D66
+GM0158    ,Haaksbergen,male,45-55,"Havo, vwo, mbo2-4",696.0,VVD
+GM0995    ,Lelystad,male,45-55,"Hbo-, wo-bachelor",1054.0,VVD
+GM0758    ,Breda,male,25-35,"Hbo-, wo-bachelor",4732.0,D66
+GM0599    ,Rotterdam,female,15-25,"Hbo-, wo-master, doctor",1685.0,D66
+GM0294    ,Winterswijk,male,35-45,"Havo, vwo, mbo2-4",834.0,BBB
+GM0363    ,Amsterdam,female,55-65,"Hbo-, wo-bachelor",10587.0,D66
+GM1859    ,Berkelland,male,15-25,Basisonderwijs,390.0,Did not vote
+GM0498    ,Drechterland,male,35-45,Basisonderwijs,56.0,BBB
+GM0356    ,Nieuwegein,male,65-75,"Havo, vwo, mbo2-4",1581.0,CDA
+GM0995    ,Lelystad,female,65-75,"Hbo-, wo-bachelor",776.0,VVD
+GM0166    ,Kampen,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",704.0,PVV
+GM0505    ,Dordrecht,female,35-45,"Hbo-, wo-bachelor",1770.0,D66
+GM0050    ,Zeewolde,female,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",115.0,BBB
+GM0512    ,Gorinchem,male,15-25,"Havo, vwo, mbo2-4",973.0,VVD
+GM1640    ,Leudal,female,45-55,"Hbo-, wo-bachelor",568.0,CDA
+GM0796    ,'s-Hertogenbosch,female,55-65,"Hbo-, wo-bachelor",2231.0,CDA
+GM0119    ,Meppel,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",814.0,PVV
+GM1883    ,Sittard-Geleen,male,35-45,"Havo, vwo, mbo2-4",2155.0,VVD
+GM0703    ,Reimerswaal,male,15-25,"Havo, vwo, mbo2-4",694.0,Did not vote
+GM0820    ,"Nuenen, Gerwen en Nederwetten",female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",73.0,CDA
+GM0177    ,Raalte,female,35-45,"Hbo-, wo-bachelor",628.0,CDA
+GM0867    ,Waalwijk,female,55-65,"Havo, vwo, mbo2-4",1505.0,CDA
+GM0200    ,Apeldoorn,male,45-55,Basisonderwijs,902.0,VVD
+GM0451    ,Uithoorn,male,35-45,"Havo, vwo, mbo2-4",891.0,VVD
+GM0505    ,Dordrecht,male,45-55,"Havo, vwo, mbo2-4",3526.0,VVD
+GM0453    ,Velsen,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",520.0,VVD
+GM0356    ,Nieuwegein,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1300.0,Did not vote
+GM0106    ,Assen,male,25-35,"Havo, vwo, mbo2-4",2326.0,D66
+GM0777    ,Etten-Leur,male,15-25,Basisonderwijs,346.0,Did not vote
+GM0171    ,Noordoostpolder,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",560.0,BBB
+GM0394    ,Haarlemmermeer,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1469.0,Did not vote
+GM1640    ,Leudal,male,35-45,"Hbo-, wo-bachelor",528.0,VVD
+GM1978    ,Molenlanden,male,55-65,"Havo, vwo, mbo2-4",1546.0,CDA
+GM1771    ,Geldrop-Mierlo,female,35-45,"Hbo-, wo-master, doctor",485.0,D66
+GM0677    ,Hulst,male,45-55,"Hbo-, wo-bachelor",431.0,BBB
+GM0840    ,Rucphen,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",546.0,CDA
+GM1676    ,Schouwen-Duiveland,female,15-25,"Havo, vwo, mbo2-4",664.0,D66
+GM0532    ,Stede Broec,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",480.0,Did not vote
+GM1926    ,Pijnacker-Nootdorp,female,45-55,"Hbo-, wo-master, doctor",1026.0,D66
+GM0451    ,Uithoorn,female,25-35,"Hbo-, wo-bachelor",670.0,D66
+GM0153    ,Enschede,male,65-75,Basisonderwijs,1209.0,50PLUS
+GM1742    ,Rijssen-Holten,male,25-35,"Hbo-, wo-bachelor",616.0,VVD
+GM0664    ,Goes,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",648.0,50PLUS
+GM1783    ,Westland,female,35-45,"Hbo-, wo-bachelor",2174.0,D66
+GM0086    ,Opsterland,male,45-55,"Havo, vwo, mbo2-4",984.0,CDA
+GM1714    ,Sluis,male,15-25,Basisonderwijs,234.0,Did not vote
+GM0394    ,Haarlemmermeer,male,35-45,"Hbo-, wo-bachelor",3024.0,D66
+GM1960    ,West Betuwe,female,25-35,"Havo, vwo, mbo2-4",1447.0,BBB
+GM0014    ,Groningen (gemeente),female,65-75,"Hbo-, wo-bachelor",2777.0,D66
+GM0200    ,Apeldoorn,female,25-35,"Hbo-, wo-bachelor",2716.0,D66
+GM0603    ,Rijswijk (ZH.),female,35-45,"Havo, vwo, mbo2-4",1377.0,VVD
+GM0796    ,'s-Hertogenbosch,male,35-45,"Hbo-, wo-master, doctor",2246.0,D66
+GM0014    ,Groningen (gemeente),male,45-55,"Havo, vwo, mbo2-4",4508.0,VVD
+GM0034    ,Almere,male,55-65,Basisonderwijs,1185.0,PVV
+GM0984    ,Venray,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",320.0,CDA
+GM0047    ,Veendam,female,45-55,"Havo, vwo, mbo2-4",902.0,CDA
+GM0228    ,Ede,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1145.0,VVD
+GM0085    ,Ooststellingwerf,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",412.0,CDA
+GM0537    ,Katwijk,male,65-75,"Havo, vwo, mbo2-4",1329.0,VVD
+GM0394    ,Haarlemmermeer,male,25-35,"Vmbo, havo-/vwo-onderbouw, mbo1",1254.0,PVV
+GM0059    ,Achtkarspelen,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",526.0,50PLUS
+GM0518    ,'s-Gravenhage (gemeente),female,35-45,Basisonderwijs,4968.0,PVV
+GM1980    ,Dijk en Waard,male,25-35,"Hbo-, wo-bachelor",1402.0,D66
+GM1948    ,Meierijstad,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",1565.0,Did not vote
+GM0603    ,Rijswijk (ZH.),male,25-35,"Hbo-, wo-bachelor",1386.0,D66
+GM1652    ,Gemert-Bakel,female,65-75,Basisonderwijs,274.0,50PLUS
+GM1970    ,Noardeast-Fryslân,female,45-55,"Havo, vwo, mbo2-4",1574.0,FNP
+GM1959    ,Altena,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",1201.0,CDA
+GM0796    ,'s-Hertogenbosch,male,65-75,"Havo, vwo, mbo2-4",2975.0,CDA
+GM0014    ,Groningen (gemeente),male,35-45,"Havo, vwo, mbo2-4",4880.0,VVD
+GM0090    ,Smallingerland,male,65-75,"Hbo-, wo-bachelor",663.0,CDA
+GM1926    ,Pijnacker-Nootdorp,female,35-45,"Hbo-, wo-bachelor",1205.0,D66
+GM0222    ,Doetinchem,male,45-55,"Havo, vwo, mbo2-4",1820.0,VVD
+GM0737    ,Tytsjerksteradiel,male,25-35,"Havo, vwo, mbo2-4",1006.0,BBB
+GM0777    ,Etten-Leur,male,25-35,Basisonderwijs,58.0,Did not vote
+GM0405    ,Hoorn,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",691.0,PVV
+GM1992    ,Voorne aan Zee,male,55-65,"Havo, vwo, mbo2-4",2682.0,VVD
+GM0610    ,Sliedrecht,male,15-25,"Havo, vwo, mbo2-4",686.0,Did not vote
+GM0345    ,Veenendaal,male,55-65,"Hbo-, wo-bachelor",783.0,VVD
+GM0383    ,Castricum,female,65-75,"Hbo-, wo-bachelor",540.0,CDA
+GM0637    ,Zoetermeer,female,45-55,"Hbo-, wo-master, doctor",1132.0,D66
+GM1982    ,Land van Cuijk,female,45-55,"Hbo-, wo-bachelor",1305.0,CDA
+GM1709    ,Moerdijk,female,55-65,"Havo, vwo, mbo2-4",1455.0,CDA
+GM0209    ,Beuningen,female,45-55,"Havo, vwo, mbo2-4",712.0,CDA
+GM0737    ,Tytsjerksteradiel,male,45-55,"Hbo-, wo-bachelor",426.0,VVD
+GM0855    ,Tilburg,female,45-55,"Hbo-, wo-bachelor",3183.0,D66
+GM0400    ,Den Helder,female,15-25,"Havo, vwo, mbo2-4",1260.0,GL-PvdA
+GM0203    ,Barneveld,male,15-25,"Havo, vwo, mbo2-4",1886.0,Did not vote
+GM0531    ,Hendrik-Ido-Ambacht,female,55-65,"Hbo-, wo-bachelor",309.0,50PLUS
+GM0275    ,Rheden,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",364.0,CDA
+GM1992    ,Voorne aan Zee,female,55-65,"Havo, vwo, mbo2-4",2742.0,CDA
+GM0505    ,Dordrecht,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2401.0,Did not vote
+GM0363    ,Amsterdam,female,45-55,Basisonderwijs,7168.0,SP
+GM0826    ,Oosterhout,male,45-55,"Hbo-, wo-master, doctor",389.0,D66
+GM0163    ,Hellendoorn,male,35-45,"Havo, vwo, mbo2-4",1176.0,VVD
+GM0301    ,Zutphen,male,65-75,Basisonderwijs,326.0,CDA
+GM0748    ,Bergen op Zoom,male,55-65,"Hbo-, wo-master, doctor",582.0,VVD
+GM0213    ,Brummen,female,65-75,"Hbo-, wo-bachelor",260.0,CDA
+GM1507    ,Horst aan de Maas,female,45-55,"Hbo-, wo-master, doctor",258.0,D66
+GM0232    ,Epe,male,45-55,"Havo, vwo, mbo2-4",1000.0,CDA
+GM1911    ,Hollands Kroon,male,55-65,"Havo, vwo, mbo2-4",2158.0,BBB
+GM0160    ,Hardenberg,male,55-65,Basisonderwijs,483.0,BBB
+GM0296    ,Wijchen,female,35-45,"Hbo-, wo-bachelor",684.0,D66
+GM0344    ,Utrecht (gemeente),male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",2087.0,VVD
+GM0882    ,Landgraaf,female,35-45,"Havo, vwo, mbo2-4",916.0,CDA
+GM0080    ,Leeuwarden,male,45-55,"Havo, vwo, mbo2-4",3306.0,VVD
+GM0610    ,Sliedrecht,male,55-65,"Havo, vwo, mbo2-4",850.0,CDA
+GM0737    ,Tytsjerksteradiel,female,55-65,"Havo, vwo, mbo2-4",1175.0,50PLUS
+GM0321    ,Houten,female,15-25,"Havo, vwo, mbo2-4",1438.0,D66
+GM0193    ,Zwolle,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",970.0,50PLUS
+GM0200    ,Apeldoorn,male,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",1333.0,VVD
+GM0362    ,Amstelveen,female,45-55,"Hbo-, wo-master, doctor",2375.0,D66
+GM0396    ,Heemskerk,male,15-25,"Havo, vwo, mbo2-4",946.0,Did not vote
+GM0352    ,Wijk bij Duurstede,male,45-55,"Havo, vwo, mbo2-4",712.0,VVD
+GM0748    ,Bergen op Zoom,male,15-25,"Havo, vwo, mbo2-4",1431.0,D66
+GM0988    ,Weert,female,35-45,"Havo, vwo, mbo2-4",1151.0,VVD
+GM0654    ,Borsele,male,65-75,"Havo, vwo, mbo2-4",656.0,BBB
+GM0184    ,Urk,female,15-25,"Havo, vwo, mbo2-4",785.0,VVD
+GM1734    ,Overbetuwe,male,15-25,Basisonderwijs,567.0,Did not vote
+GM0243    ,Harderwijk,male,25-35,Basisonderwijs,105.0,Did not vote
+GM1674    ,Roosendaal,female,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",1368.0,CDA
+GM0983    ,Venlo,female,55-65,"Hbo-, wo-bachelor",1011.0,50PLUS
+GM0513    ,Gouda,female,15-25,Basisonderwijs,440.0,Did not vote
+GM1700    ,Twenterand,male,55-65,"Hbo-, wo-bachelor",288.0,50PLUS
+GM0321    ,Houten,female,25-35,"Hbo-, wo-bachelor",824.0,GL-PvdA
+GM0758    ,Breda,female,25-35,"Havo, vwo, mbo2-4",3699.0,D66
+GM1700    ,Twenterand,female,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",730.0,CDA
+GM0274    ,Renkum,female,45-55,"Hbo-, wo-bachelor",693.0,D66
+GM1954    ,Beekdaelen,male,65-75,"Hbo-, wo-bachelor",642.0,CDA
+GM1842    ,Midden-Delfland,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",67.0,VVD
+GM0983    ,Venlo,male,65-75,Basisonderwijs,760.0,CDA
+GM0402    ,Hilversum,female,25-35,Basisonderwijs,348.0,Did not vote
+GM0828    ,Oss,female,55-65,"Hbo-, wo-bachelor",1022.0,CDA
+GM0080    ,Leeuwarden,female,15-25,"Havo, vwo, mbo2-4",5737.0,D66
+GM0394    ,Haarlemmermeer,male,45-55,"Hbo-, wo-bachelor",2464.0,VVD
+GM0484    ,Alphen aan den Rijn,female,65-75,"Havo, vwo, mbo2-4",2476.0,CDA
+GM1740    ,Neder-Betuwe,female,15-25,"Hbo-, wo-bachelor",141.0,D66
+GM0935    ,Maastricht,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",825.0,50PLUS
+GM0243    ,Harderwijk,male,15-25,Basisonderwijs,465.0,Did not vote
+GM0826    ,Oosterhout,female,55-65,"Havo, vwo, mbo2-4",1932.0,CDA
+GM0361    ,Alkmaar,female,45-55,"Havo, vwo, mbo2-4",2956.0,CDA
+GM1884    ,Kaag en Braassem,male,55-65,"Havo, vwo, mbo2-4",1058.0,BBB
+GM0014    ,Groningen (gemeente),female,65-75,"Hbo-, wo-master, doctor",1622.0,D66
+GM0109    ,Coevorden,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",559.0,CDA
+GM1942    ,Gooise Meren,female,15-25,"Havo, vwo, mbo2-4",1236.0,D66
+GM0059    ,Achtkarspelen,female,55-65,"Havo, vwo, mbo2-4",984.0,CDA
+GM0770    ,Eersel,male,65-75,"Hbo-, wo-bachelor",286.0,CDA
+GM0988    ,Weert,female,45-55,"Havo, vwo, mbo2-4",1376.0,CDA
+GM1674    ,Roosendaal,female,65-75,"Havo, vwo, mbo2-4",1642.0,CDA
+GM1674    ,Roosendaal,male,55-65,"Havo, vwo, mbo2-4",2378.0,CDA
+GM0363    ,Amsterdam,male,65-75,"Hbo-, wo-bachelor",7286.0,D66
+GM0202    ,Arnhem,female,45-55,"Hbo-, wo-master, doctor",2541.0,D66
+GM0406    ,Huizen,female,55-65,"Havo, vwo, mbo2-4",1449.0,VVD
+GM0222    ,Doetinchem,male,15-25,"Hbo-, wo-bachelor",634.0,D66
+GM0622    ,Vlaardingen,male,35-45,Basisonderwijs,610.0,PVV
+GM0118    ,Hoogeveen,female,25-35,"Havo, vwo, mbo2-4",1695.0,Other
+GM0505    ,Dordrecht,female,45-55,Basisonderwijs,1022.0,Did not vote
+GM0385    ,Edam-Volendam,female,55-65,"Havo, vwo, mbo2-4",1015.0,50PLUS
+GM0392    ,Haarlem,female,35-45,"Havo, vwo, mbo2-4",2918.0,D66
+GM0177    ,Raalte,male,45-55,"Havo, vwo, mbo2-4",1111.0,BBB
+GM1586    ,Oost Gelre,female,25-35,"Havo, vwo, mbo2-4",678.0,VVD
+GM0479    ,Zaanstad,male,35-45,"Hbo-, wo-bachelor",2109.0,D66
+GM0502    ,Capelle aan den IJssel,female,55-65,"Havo, vwo, mbo2-4",2166.0,VVD
+GM0158    ,Haaksbergen,male,65-75,"Vmbo, havo-/vwo-onderbouw, mbo1",238.0,50PLUS
+GM0014    ,Groningen (gemeente),female,45-55,"Havo, vwo, mbo2-4",3727.0,GL-PvdA
+GM0345    ,Veenendaal,female,25-35,"Havo, vwo, mbo2-4",2341.0,D66
+GM0361    ,Alkmaar,female,15-25,Basisonderwijs,678.0,Did not vote
+GM0502    ,Capelle aan den IJssel,female,35-45,"Vmbo, havo-/vwo-onderbouw, mbo1",603.0,VVD
+GM0762    ,Deurne,female,25-35,"Havo, vwo, mbo2-4",788.0,VVD
+GM0014    ,Groningen (gemeente),female,35-45,"Havo, vwo, mbo2-4",3168.0,GL-PvdA
+GM0935    ,Maastricht,female,65-75,"Havo, vwo, mbo2-4",2430.0,50PLUS
+GM0855    ,Tilburg,female,45-55,"Havo, vwo, mbo2-4",5199.0,CDA
+GM1724    ,Bergeijk,male,65-75,"Havo, vwo, mbo2-4",627.0,BBB
+GM0345    ,Veenendaal,female,65-75,"Havo, vwo, mbo2-4",1535.0,CDA
+GM1904    ,Stichtse Vecht,male,25-35,"Hbo-, wo-master, doctor",544.0,D66
+GM0840    ,Rucphen,male,25-35,"Hbo-, wo-bachelor",413.0,D66
+GM0772    ,Eindhoven,male,25-35,Basisonderwijs,1230.0,Did not vote
+GM0983    ,Venlo,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2136.0,Did not vote
+GM0796    ,'s-Hertogenbosch,male,25-35,"Hbo-, wo-master, doctor",2756.0,D66
+GM1525    ,Teylingen,male,65-75,"Hbo-, wo-master, doctor",392.0,D66
+GM0243    ,Harderwijk,male,25-35,"Havo, vwo, mbo2-4",1554.0,VVD
+GM1705    ,Lingewaard,male,15-25,"Havo, vwo, mbo2-4",1365.0,BBB
+GM0080    ,Leeuwarden,female,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2513.0,BBB
+GM0313    ,Bunschoten,female,35-45,"Havo, vwo, mbo2-4",723.0,CDA
+GM0637    ,Zoetermeer,male,15-25,"Vmbo, havo-/vwo-onderbouw, mbo1",2878.0,Did not vote
+GM0893    ,Bergen (L.),male,45-55,"Hbo-, wo-bachelor",442.0,VVD
+GM0748    ,Bergen op Zoom,male,55-65,"Vmbo, havo-/vwo-onderbouw, mbo1",972.0,CDA
+GM1931    ,Krimpenerwaard,male,15-25,"Havo, vwo, mbo2-4",1580.0,D66
+GM0114    ,Emmen,male,55-65,"Hbo-, wo-master, doctor",403.0,VVD
+GM0505    ,Dordrecht,female,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1045.0,CDA
+GM1696    ,Wijdemeren,female,25-35,"Havo, vwo, mbo2-4",421.0,D66
+GM0114    ,Emmen,female,25-35,"Havo, vwo, mbo2-4",3149.0,D66
+GM0637    ,Zoetermeer,female,35-45,"Havo, vwo, mbo2-4",3326.0,D66
+GM1963    ,Hoeksche Waard,female,35-45,"Hbo-, wo-master, doctor",827.0,D66
+GM0546    ,Leiden,male,25-35,"Hbo-, wo-master, doctor",4242.0,D66
+GM0189    ,Wierden,female,15-25,"Havo, vwo, mbo2-4",780.0,Did not vote
+GM1621    ,Lansingerland,female,25-35,"Hbo-, wo-bachelor",1309.0,D66
+GM0917    ,Heerlen,male,65-75,"Havo, vwo, mbo2-4",2360.0,CDA
+GM0384    ,Diemen,male,15-25,"Hbo-, wo-bachelor",534.0,D66
+GM1783    ,Westland,male,45-55,"Vmbo, havo-/vwo-onderbouw, mbo1",1465.0,BBB

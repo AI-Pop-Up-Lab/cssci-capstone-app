@@ -1,0 +1,10 @@
+stage,party,status,n_total,n_event,fallback_prob
+1,Did not vote,fit_ok_full,2730,106,0.03882783882783883
+2,A: Socialdemokratiet,fit_ok_full,2624,703,0.26791158536585363
+3,Other - Left,fit_ok_full,1921,397,0.20666319625195212
+4,V: Venstre,fit_ok_full,1524,343,0.22506561679790027
+5,F: SF - Socialistisk Folkeparti,fit_ok_full,1181,285,0.24132091447925486
+6,Other - Right,fit_ok_full,896,272,0.30357142857142855
+7,M: Moderaterne,fit_ok_full,624,258,0.41346153846153844
+8,I: Liberal Alliance,fit_ok_full,366,167,0.4562841530054645
+9,Æ: Danmarksdemokraterne,fit_ok_full,199,156,0.7839195979899497

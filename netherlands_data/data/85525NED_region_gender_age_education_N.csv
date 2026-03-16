@@ -1,0 +1,1441 @@
+region,gender,age_group,education,N
+Achterhoek (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",11784
+Achterhoek (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10392
+Achterhoek (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1824
+Achterhoek (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3472
+Achterhoek (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",11696
+Achterhoek (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",6532
+Achterhoek (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3843
+Achterhoek (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",10458
+Achterhoek (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",6699
+Achterhoek (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5035
+Achterhoek (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",12169
+Achterhoek (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",8096
+Achterhoek (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",7935
+Achterhoek (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",16036
+Achterhoek (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",9196
+Achterhoek (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",7784
+Achterhoek (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",11928
+Achterhoek (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",8316
+Achterhoek (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",9780
+Achterhoek (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",9352
+Achterhoek (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",2268
+Achterhoek (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3457
+Achterhoek (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",8623
+Achterhoek (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",8020
+Achterhoek (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2751
+Achterhoek (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",8589
+Achterhoek (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",9639
+Achterhoek (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5148
+Achterhoek (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",11544
+Achterhoek (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",9308
+Achterhoek (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",8481
+Achterhoek (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",16269
+Achterhoek (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",8250
+Achterhoek (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",11094
+Achterhoek (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",10811
+Achterhoek (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",6396
+Agglomeratie 's-Gravenhage (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",28987
+Agglomeratie 's-Gravenhage (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",23247
+Agglomeratie 's-Gravenhage (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",5109
+Agglomeratie 's-Gravenhage (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",11794
+Agglomeratie 's-Gravenhage (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",24235
+Agglomeratie 's-Gravenhage (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",28771
+Agglomeratie 's-Gravenhage (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",14619
+Agglomeratie 's-Gravenhage (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",21123
+Agglomeratie 's-Gravenhage (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",28658
+Agglomeratie 's-Gravenhage (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",15178
+Agglomeratie 's-Gravenhage (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",19497
+Agglomeratie 's-Gravenhage (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",27025
+Agglomeratie 's-Gravenhage (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",15837
+Agglomeratie 's-Gravenhage (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",19652
+Agglomeratie 's-Gravenhage (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",22253
+Agglomeratie 's-Gravenhage (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",12138
+Agglomeratie 's-Gravenhage (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",14364
+Agglomeratie 's-Gravenhage (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",15498
+Agglomeratie 's-Gravenhage (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",23324
+Agglomeratie 's-Gravenhage (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",25277
+Agglomeratie 's-Gravenhage (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",7198
+Agglomeratie 's-Gravenhage (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",8100
+Agglomeratie 's-Gravenhage (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",21967
+Agglomeratie 's-Gravenhage (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",34733
+Agglomeratie 's-Gravenhage (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",12052
+Agglomeratie 's-Gravenhage (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",18798
+Agglomeratie 's-Gravenhage (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",34650
+Agglomeratie 's-Gravenhage (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",15062
+Agglomeratie 's-Gravenhage (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",18938
+Agglomeratie 's-Gravenhage (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",28438
+Agglomeratie 's-Gravenhage (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",17168
+Agglomeratie 's-Gravenhage (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",20880
+Agglomeratie 's-Gravenhage (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",19952
+Agglomeratie 's-Gravenhage (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",16634
+Agglomeratie 's-Gravenhage (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15594
+Agglomeratie 's-Gravenhage (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",12972
+Agglomeratie Haarlem (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6322
+Agglomeratie Haarlem (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",5129
+Agglomeratie Haarlem (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",836
+Agglomeratie Haarlem (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2045
+Agglomeratie Haarlem (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5515
+Agglomeratie Haarlem (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",6840
+Agglomeratie Haarlem (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2494
+Agglomeratie Haarlem (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4450
+Agglomeratie Haarlem (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",9356
+Agglomeratie Haarlem (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2624
+Agglomeratie Haarlem (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4420
+Agglomeratie Haarlem (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",8872
+Agglomeratie Haarlem (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3095
+Agglomeratie Haarlem (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5236
+Agglomeratie Haarlem (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",7069
+Agglomeratie Haarlem (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2369
+Agglomeratie Haarlem (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3864
+Agglomeratie Haarlem (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5267
+Agglomeratie Haarlem (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5256
+Agglomeratie Haarlem (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",5508
+Agglomeratie Haarlem (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1236
+Agglomeratie Haarlem (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1288
+Agglomeratie Haarlem (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4336
+Agglomeratie Haarlem (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",9161
+Agglomeratie Haarlem (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1680
+Agglomeratie Haarlem (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",3696
+Agglomeratie Haarlem (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",11424
+Agglomeratie Haarlem (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2392
+Agglomeratie Haarlem (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4422
+Agglomeratie Haarlem (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",9686
+Agglomeratie Haarlem (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3618
+Agglomeratie Haarlem (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5530
+Agglomeratie Haarlem (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",6652
+Agglomeratie Haarlem (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3776
+Agglomeratie Haarlem (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4237
+Agglomeratie Haarlem (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4787
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",11595
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",13805
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",3300
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",4039
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",11873
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",14688
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",4688
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",9648
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",12764
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5003
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",9872
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",11997
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6765
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",11324
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",11711
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",6307
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8401
+Agglomeratie Leiden en Bollenstreek (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",9115
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",10447
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",14818
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",5735
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2379
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",9089
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",19062
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3482
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",9030
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",14661
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4910
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",10128
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",12862
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",7921
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",12096
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",10684
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",8882
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8784
+Agglomeratie Leiden en Bollenstreek (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",6734
+Alkmaar en omgeving (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",7590
+Alkmaar en omgeving (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",6585
+Alkmaar en omgeving (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",825
+Alkmaar en omgeving (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2204
+Alkmaar en omgeving (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",7478
+Alkmaar en omgeving (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",5518
+Alkmaar en omgeving (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2880
+Alkmaar en omgeving (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",6884
+Alkmaar en omgeving (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",5636
+Alkmaar en omgeving (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3254
+Alkmaar en omgeving (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",7038
+Alkmaar en omgeving (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",6291
+Alkmaar en omgeving (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4204
+Alkmaar en omgeving (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",8026
+Alkmaar en omgeving (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5988
+Alkmaar en omgeving (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3408
+Alkmaar en omgeving (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",6177
+Alkmaar en omgeving (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",4930
+Alkmaar en omgeving (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6192
+Alkmaar en omgeving (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",6151
+Alkmaar en omgeving (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1356
+Alkmaar en omgeving (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1235
+Alkmaar en omgeving (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6145
+Alkmaar en omgeving (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",7306
+Alkmaar en omgeving (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2511
+Alkmaar en omgeving (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5626
+Alkmaar en omgeving (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",7362
+Alkmaar en omgeving (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2992
+Alkmaar en omgeving (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",7089
+Alkmaar en omgeving (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",6936
+Alkmaar en omgeving (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4440
+Alkmaar en omgeving (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",8566
+Alkmaar en omgeving (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",5494
+Alkmaar en omgeving (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5483
+Alkmaar en omgeving (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",6036
+Alkmaar en omgeving (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4282
+Arnhem/Nijmegen (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",21266
+Arnhem/Nijmegen (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",23226
+Arnhem/Nijmegen (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",4459
+Arnhem/Nijmegen (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",8010
+Arnhem/Nijmegen (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",21467
+Arnhem/Nijmegen (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",23923
+Arnhem/Nijmegen (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",8091
+Arnhem/Nijmegen (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",16769
+Arnhem/Nijmegen (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",20340
+Arnhem/Nijmegen (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",9954
+Arnhem/Nijmegen (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",18059
+Arnhem/Nijmegen (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",19339
+Arnhem/Nijmegen (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",13054
+Arnhem/Nijmegen (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",21186
+Arnhem/Nijmegen (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",19206
+Arnhem/Nijmegen (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",11742
+Arnhem/Nijmegen (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15201
+Arnhem/Nijmegen (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",15799
+Arnhem/Nijmegen (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",17391
+Arnhem/Nijmegen (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",24837
+Arnhem/Nijmegen (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",8721
+Arnhem/Nijmegen (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3900
+Arnhem/Nijmegen (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",17680
+Arnhem/Nijmegen (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",30420
+Arnhem/Nijmegen (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5728
+Arnhem/Nijmegen (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",15063
+Arnhem/Nijmegen (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",24264
+Arnhem/Nijmegen (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",8833
+Arnhem/Nijmegen (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",18056
+Arnhem/Nijmegen (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",21911
+Arnhem/Nijmegen (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",14715
+Arnhem/Nijmegen (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",21503
+Arnhem/Nijmegen (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",18082
+Arnhem/Nijmegen (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",17183
+Arnhem/Nijmegen (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15560
+Arnhem/Nijmegen (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",12357
+Delft en Westland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6048
+Delft en Westland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10714
+Delft en Westland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",4838
+Delft en Westland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2360
+Delft en Westland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6760
+Delft en Westland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",10880
+Delft en Westland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3084
+Delft en Westland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5736
+Delft en Westland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",6064
+Delft en Westland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3239
+Delft en Westland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5296
+Delft en Westland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",5352
+Delft en Westland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4232
+Delft en Westland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6184
+Delft en Westland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5084
+Delft en Westland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3801
+Delft en Westland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4502
+Delft en Westland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",3985
+Delft en Westland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5239
+Delft en Westland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",7892
+Delft en Westland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",3786
+Delft en Westland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1488
+Delft en Westland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5660
+Delft en Westland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",9952
+Delft en Westland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2220
+Delft en Westland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5290
+Delft en Westland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",7390
+Delft en Westland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2726
+Delft en Westland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5581
+Delft en Westland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",5893
+Delft en Westland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4588
+Delft en Westland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6758
+Delft en Westland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",4154
+Delft en Westland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4724
+Delft en Westland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4650
+Delft en Westland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",3026
+Delfzijl en omgeving (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",1370
+Delfzijl en omgeving (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",1020
+Delfzijl en omgeving (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",110
+Delfzijl en omgeving (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",382
+Delfzijl en omgeving (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",1695
+Delfzijl en omgeving (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",422
+Delfzijl en omgeving (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",413
+Delfzijl en omgeving (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",1555
+Delfzijl en omgeving (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",432
+Delfzijl en omgeving (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",669
+Delfzijl en omgeving (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",1546
+Delfzijl en omgeving (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",585
+Delfzijl en omgeving (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",896
+Delfzijl en omgeving (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",1967
+Delfzijl en omgeving (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",637
+Delfzijl en omgeving (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",818
+Delfzijl en omgeving (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",1513
+Delfzijl en omgeving (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",769
+Delfzijl en omgeving (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",1111
+Delfzijl en omgeving (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",939
+Delfzijl en omgeving (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",150
+Delfzijl en omgeving (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",229
+Delfzijl en omgeving (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",1131
+Delfzijl en omgeving (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",843
+Delfzijl en omgeving (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",504
+Delfzijl en omgeving (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",1164
+Delfzijl en omgeving (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",635
+Delfzijl en omgeving (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",613
+Delfzijl en omgeving (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",1498
+Delfzijl en omgeving (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",686
+Delfzijl en omgeving (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",1046
+Delfzijl en omgeving (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",1782
+Delfzijl en omgeving (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",672
+Delfzijl en omgeving (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",1432
+Delfzijl en omgeving (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",1175
+Delfzijl en omgeving (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",493
+Flevoland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",15990
+Flevoland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",12390
+Flevoland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1620
+Flevoland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",6127
+Flevoland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",15457
+Flevoland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",9517
+Flevoland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",6815
+Flevoland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",15020
+Flevoland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",10433
+Flevoland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",6622
+Flevoland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",13329
+Flevoland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",8348
+Flevoland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",7296
+Flevoland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",13156
+Flevoland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",9448
+Flevoland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5504
+Flevoland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",9396
+Flevoland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",6622
+Flevoland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",13328
+Flevoland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",11560
+Flevoland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",2312
+Flevoland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3758
+Flevoland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",14353
+Flevoland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",12690
+Flevoland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5232
+Flevoland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",13739
+Flevoland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",13129
+Flevoland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",6608
+Flevoland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",13157
+Flevoland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",9735
+Flevoland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",8786
+Flevoland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",13741
+Flevoland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",7874
+Flevoland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",9127
+Flevoland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8442
+Flevoland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4530
+Groot-Amsterdam (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",39689
+Groot-Amsterdam (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",40520
+Groot-Amsterdam (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",11999
+Groot-Amsterdam (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",15405
+Groot-Amsterdam (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",39043
+Groot-Amsterdam (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",78352
+Groot-Amsterdam (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",17679
+Groot-Amsterdam (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",31418
+Groot-Amsterdam (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",57404
+Groot-Amsterdam (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",18782
+Groot-Amsterdam (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",29438
+Groot-Amsterdam (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",41990
+Groot-Amsterdam (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",24142
+Groot-Amsterdam (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",31612
+Groot-Amsterdam (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",35347
+Groot-Amsterdam (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",17655
+Groot-Amsterdam (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",21828
+Groot-Amsterdam (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",24717
+Groot-Amsterdam (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",33197
+Groot-Amsterdam (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",45646
+Groot-Amsterdam (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",19958
+Groot-Amsterdam (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",9986
+Groot-Amsterdam (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",32558
+Groot-Amsterdam (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",94255
+Groot-Amsterdam (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",14763
+Groot-Amsterdam (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",27536
+Groot-Amsterdam (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",62296
+Groot-Amsterdam (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",18849
+Groot-Amsterdam (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",27358
+Groot-Amsterdam (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",45292
+Groot-Amsterdam (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",24585
+Groot-Amsterdam (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",31201
+Groot-Amsterdam (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",33614
+Groot-Amsterdam (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",23753
+Groot-Amsterdam (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",20533
+Groot-Amsterdam (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",22814
+Groot-Rijnmond (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",45354
+Groot-Rijnmond (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",39250
+Groot-Rijnmond (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",9390
+Groot-Rijnmond (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",18379
+Groot-Rijnmond (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",47370
+Groot-Rijnmond (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",43651
+Groot-Rijnmond (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",20685
+Groot-Rijnmond (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",41567
+Groot-Rijnmond (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",36150
+Groot-Rijnmond (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",23808
+Groot-Rijnmond (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",38967
+Groot-Rijnmond (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",30225
+Groot-Rijnmond (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",28497
+Groot-Rijnmond (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",41152
+Groot-Rijnmond (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",27048
+Groot-Rijnmond (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",23603
+Groot-Rijnmond (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",29467
+Groot-Rijnmond (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",20231
+Groot-Rijnmond (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",37771
+Groot-Rijnmond (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",41355
+Groot-Rijnmond (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",12774
+Groot-Rijnmond (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",13200
+Groot-Rijnmond (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",41441
+Groot-Rijnmond (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",53559
+Groot-Rijnmond (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",18136
+Groot-Rijnmond (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",37876
+Groot-Rijnmond (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",44188
+Groot-Rijnmond (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",25186
+Groot-Rijnmond (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",37778
+Groot-Rijnmond (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",32436
+Groot-Rijnmond (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",35335
+Groot-Rijnmond (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",40072
+Groot-Rijnmond (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",23293
+Groot-Rijnmond (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",38333
+Groot-Rijnmond (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",26453
+Groot-Rijnmond (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",14414
+Het Gooi en Vechtstreek (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6574
+Het Gooi en Vechtstreek (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",5584
+Het Gooi en Vechtstreek (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1043
+Het Gooi en Vechtstreek (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2175
+Het Gooi en Vechtstreek (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5150
+Het Gooi en Vechtstreek (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",5188
+Het Gooi en Vechtstreek (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2186
+Het Gooi en Vechtstreek (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5053
+Het Gooi en Vechtstreek (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",8262
+Het Gooi en Vechtstreek (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2882
+Het Gooi en Vechtstreek (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4943
+Het Gooi en Vechtstreek (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",8275
+Het Gooi en Vechtstreek (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3434
+Het Gooi en Vechtstreek (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5610
+Het Gooi en Vechtstreek (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",7956
+Het Gooi en Vechtstreek (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2829
+Het Gooi en Vechtstreek (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4621
+Het Gooi en Vechtstreek (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5350
+Het Gooi en Vechtstreek (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5769
+Het Gooi en Vechtstreek (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",5350
+Het Gooi en Vechtstreek (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1181
+Het Gooi en Vechtstreek (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1399
+Het Gooi en Vechtstreek (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4423
+Het Gooi en Vechtstreek (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",6779
+Het Gooi en Vechtstreek (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1891
+Het Gooi en Vechtstreek (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4499
+Het Gooi en Vechtstreek (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",9910
+Het Gooi en Vechtstreek (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2335
+Het Gooi en Vechtstreek (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5174
+Het Gooi en Vechtstreek (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",9274
+Het Gooi en Vechtstreek (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3731
+Het Gooi en Vechtstreek (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6530
+Het Gooi en Vechtstreek (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",7339
+Het Gooi en Vechtstreek (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4286
+Het Gooi en Vechtstreek (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5316
+Het Gooi en Vechtstreek (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4498
+IJmond (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5684
+IJmond (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",5139
+IJmond (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",777
+IJmond (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1798
+IJmond (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6597
+IJmond (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",4005
+IJmond (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2190
+IJmond (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5498
+IJmond (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",4224
+IJmond (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2492
+IJmond (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5729
+IJmond (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",4179
+IJmond (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3286
+IJmond (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",7285
+IJmond (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",4914
+IJmond (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2984
+IJmond (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5113
+IJmond (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",3604
+IJmond (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4651
+IJmond (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4756
+IJmond (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1102
+IJmond (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1535
+IJmond (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5426
+IJmond (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",4927
+IJmond (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1860
+IJmond (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4824
+IJmond (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",5316
+IJmond (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2735
+IJmond (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5186
+IJmond (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",4979
+IJmond (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4481
+IJmond (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",7161
+IJmond (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",3758
+IJmond (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4665
+IJmond (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4772
+IJmond (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",2463
+Kop van Noord-Holland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",11638
+Kop van Noord-Holland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10074
+Kop van Noord-Holland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1311
+Kop van Noord-Holland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3742
+Kop van Noord-Holland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",13190
+Kop van Noord-Holland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",6145
+Kop van Noord-Holland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5017
+Kop van Noord-Holland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",11503
+Kop van Noord-Holland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",6079
+Kop van Noord-Holland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5658
+Kop van Noord-Holland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",12398
+Kop van Noord-Holland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",6544
+Kop van Noord-Holland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",8009
+Kop van Noord-Holland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",13649
+Kop van Noord-Holland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",6542
+Kop van Noord-Holland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",7238
+Kop van Noord-Holland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",10552
+Kop van Noord-Holland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5710
+Kop van Noord-Holland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",9390
+Kop van Noord-Holland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",9748
+Kop van Noord-Holland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1962
+Kop van Noord-Holland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3038
+Kop van Noord-Holland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",10329
+Kop van Noord-Holland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",8333
+Kop van Noord-Holland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3712
+Kop van Noord-Holland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",9630
+Kop van Noord-Holland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",9158
+Kop van Noord-Holland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5250
+Kop van Noord-Holland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",12025
+Kop van Noord-Holland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",7725
+Kop van Noord-Holland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",8093
+Kop van Noord-Holland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",13649
+Kop van Noord-Holland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",6486
+Kop van Noord-Holland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",10266
+Kop van Noord-Holland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",9604
+Kop van Noord-Holland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4606
+Midden-Limburg (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6502
+Midden-Limburg (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",5299
+Midden-Limburg (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",998
+Midden-Limburg (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2818
+Midden-Limburg (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6862
+Midden-Limburg (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",4920
+Midden-Limburg (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2779
+Midden-Limburg (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",6422
+Midden-Limburg (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",5198
+Midden-Limburg (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3419
+Midden-Limburg (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",6438
+Midden-Limburg (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",4943
+Midden-Limburg (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",5076
+Midden-Limburg (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",8781
+Midden-Limburg (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5723
+Midden-Limburg (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5096
+Midden-Limburg (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",6922
+Midden-Limburg (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",4582
+Midden-Limburg (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5324
+Midden-Limburg (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4400
+Midden-Limburg (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1676
+Midden-Limburg (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2626
+Midden-Limburg (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5347
+Midden-Limburg (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",5427
+Midden-Limburg (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1836
+Midden-Limburg (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5277
+Midden-Limburg (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",6487
+Midden-Limburg (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3397
+Midden-Limburg (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",6318
+Midden-Limburg (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",5185
+Midden-Limburg (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",5798
+Midden-Limburg (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",9120
+Midden-Limburg (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",4282
+Midden-Limburg (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",7537
+Midden-Limburg (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",6473
+Midden-Limburg (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",2890
+Midden-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",14382
+Midden-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",16150
+Midden-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",3468
+Midden-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",5574
+Midden-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",16436
+Midden-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",13526
+Midden-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",6845
+Midden-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",13345
+Midden-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",11178
+Midden-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",7219
+Midden-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",13706
+Midden-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",10876
+Midden-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",9610
+Midden-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",15523
+Midden-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",10067
+Midden-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",8498
+Midden-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",11028
+Midden-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",7975
+Midden-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",12328
+Midden-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",15532
+Midden-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",4840
+Midden-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3240
+Midden-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",13226
+Midden-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",16967
+Midden-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5259
+Midden-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",11795
+Midden-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",13346
+Midden-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",6932
+Midden-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",13133
+Midden-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",11734
+Midden-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",11340
+Midden-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",15645
+Midden-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",8015
+Midden-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",12568
+Midden-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",10345
+Midden-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",5586
+Noord-Drenthe (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6238
+Noord-Drenthe (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4554
+Noord-Drenthe (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",508
+Noord-Drenthe (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1372
+Noord-Drenthe (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5390
+Noord-Drenthe (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",3048
+Noord-Drenthe (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1632
+Noord-Drenthe (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4995
+Noord-Drenthe (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",4473
+Noord-Drenthe (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1888
+Noord-Drenthe (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5962
+Noord-Drenthe (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",4650
+Noord-Drenthe (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3045
+Noord-Drenthe (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6930
+Noord-Drenthe (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5040
+Noord-Drenthe (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2611
+Noord-Drenthe (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5376
+Noord-Drenthe (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",4813
+Noord-Drenthe (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4822
+Noord-Drenthe (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4175
+Noord-Drenthe (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",804
+Noord-Drenthe (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1086
+Noord-Drenthe (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",3956
+Noord-Drenthe (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",4158
+Noord-Drenthe (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1010
+Noord-Drenthe (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4251
+Noord-Drenthe (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",5828
+Noord-Drenthe (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1522
+Noord-Drenthe (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5599
+Noord-Drenthe (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",5779
+Noord-Drenthe (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3188
+Noord-Drenthe (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",7115
+Noord-Drenthe (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",5097
+Noord-Drenthe (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4104
+Noord-Drenthe (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5818
+Noord-Drenthe (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",3578
+Noord-Friesland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",10399
+Noord-Friesland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10137
+Noord-Friesland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1243
+Noord-Friesland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3017
+Noord-Friesland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",11795
+Noord-Friesland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",6288
+Noord-Friesland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3647
+Noord-Friesland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",9836
+Noord-Friesland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",5898
+Noord-Friesland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4753
+Noord-Friesland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",10200
+Noord-Friesland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",5447
+Noord-Friesland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6417
+Noord-Friesland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10902
+Noord-Friesland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5681
+Noord-Friesland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",6260
+Noord-Friesland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8092
+Noord-Friesland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5148
+Noord-Friesland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",8925
+Noord-Friesland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10416
+Noord-Friesland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1938
+Noord-Friesland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2683
+Noord-Friesland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",8434
+Noord-Friesland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",8183
+Noord-Friesland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2371
+Noord-Friesland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",7946
+Noord-Friesland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",7783
+Noord-Friesland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3505
+Noord-Friesland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",9445
+Noord-Friesland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",6851
+Noord-Friesland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6348
+Noord-Friesland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10718
+Noord-Friesland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",5934
+Noord-Friesland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",7840
+Noord-Friesland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7370
+Noord-Friesland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4390
+Noord-Limburg (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",8250
+Noord-Limburg (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",7194
+Noord-Limburg (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1040
+Noord-Limburg (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3510
+Noord-Limburg (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",9126
+Noord-Limburg (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",5364
+Noord-Limburg (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3581
+Noord-Limburg (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",7889
+Noord-Limburg (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",5830
+Noord-Limburg (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4623
+Noord-Limburg (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",8427
+Noord-Limburg (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",5169
+Noord-Limburg (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6179
+Noord-Limburg (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10511
+Noord-Limburg (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",6110
+Noord-Limburg (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",6208
+Noord-Limburg (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7876
+Noord-Limburg (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5316
+Noord-Limburg (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",7053
+Noord-Limburg (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",6642
+Noord-Limburg (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1520
+Noord-Limburg (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2673
+Noord-Limburg (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6650
+Noord-Limburg (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",6976
+Noord-Limburg (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2622
+Noord-Limburg (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",7214
+Noord-Limburg (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",6864
+Noord-Limburg (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4429
+Noord-Limburg (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",8436
+Noord-Limburg (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",5435
+Noord-Limburg (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",7123
+Noord-Limburg (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10618
+Noord-Limburg (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",4659
+Noord-Limburg (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",8486
+Noord-Limburg (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7503
+Noord-Limburg (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",2911
+Noord-Overijssel (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",11985
+Noord-Overijssel (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",11296
+Noord-Overijssel (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",2193
+Noord-Overijssel (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3009
+Noord-Overijssel (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",13413
+Noord-Overijssel (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",9078
+Noord-Overijssel (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",4325
+Noord-Overijssel (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",11518
+Noord-Overijssel (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",8456
+Noord-Overijssel (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5366
+Noord-Overijssel (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",11123
+Noord-Overijssel (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",8012
+Noord-Overijssel (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6656
+Noord-Overijssel (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",11836
+Noord-Overijssel (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",7407
+Noord-Overijssel (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",6314
+Noord-Overijssel (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8549
+Noord-Overijssel (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5617
+Noord-Overijssel (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",10320
+Noord-Overijssel (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10968
+Noord-Overijssel (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",2712
+Noord-Overijssel (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2503
+Noord-Overijssel (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",9720
+Noord-Overijssel (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",12077
+Noord-Overijssel (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3165
+Noord-Overijssel (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",9591
+Noord-Overijssel (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",11067
+Noord-Overijssel (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4441
+Noord-Overijssel (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",11248
+Noord-Overijssel (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",8711
+Noord-Overijssel (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",7787
+Noord-Overijssel (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",11616
+Noord-Overijssel (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",6296
+Noord-Overijssel (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",9004
+Noord-Overijssel (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7721
+Noord-Overijssel (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",3995
+Noordoost-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",19503
+Noordoost-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",16981
+Noordoost-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",2916
+Noordoost-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",5980
+Noordoost-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",20865
+Noordoost-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",17454
+Noordoost-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",7599
+Noordoost-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",17181
+Noordoost-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",16520
+Noordoost-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",9157
+Noordoost-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",19053
+Noordoost-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",15190
+Noordoost-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",13380
+Noordoost-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",21528
+Noordoost-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",15392
+Noordoost-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",12403
+Noordoost-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15635
+Noordoost-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",12362
+Noordoost-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",15738
+Noordoost-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",16177
+Noordoost-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",4648
+Noordoost-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3762
+Noordoost-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",15424
+Noordoost-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",22572
+Noordoost-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5945
+Noordoost-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",14444
+Noordoost-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",19511
+Noordoost-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",8550
+Noordoost-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",17837
+Noordoost-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",17013
+Noordoost-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",15170
+Noordoost-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",21906
+Noordoost-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",12824
+Noordoost-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",16892
+Noordoost-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15457
+Noordoost-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",8610
+Oost-Groningen (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4658
+Oost-Groningen (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",3223
+Oost-Groningen (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",320
+Oost-Groningen (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1894
+Oost-Groningen (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4404
+Oost-Groningen (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",1401
+Oost-Groningen (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1672
+Oost-Groningen (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4358
+Oost-Groningen (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",1478
+Oost-Groningen (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2172
+Oost-Groningen (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4690
+Oost-Groningen (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",2038
+Oost-Groningen (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3143
+Oost-Groningen (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5670
+Oost-Groningen (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",1987
+Oost-Groningen (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2911
+Oost-Groningen (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4297
+Oost-Groningen (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",2092
+Oost-Groningen (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",3809
+Oost-Groningen (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",2909
+Oost-Groningen (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",482
+Oost-Groningen (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",910
+Oost-Groningen (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4039
+Oost-Groningen (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",2051
+Oost-Groningen (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1504
+Oost-Groningen (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",3672
+Oost-Groningen (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",2124
+Oost-Groningen (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2252
+Oost-Groningen (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4539
+Oost-Groningen (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",2109
+Oost-Groningen (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3910
+Oost-Groningen (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5108
+Oost-Groningen (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",1793
+Oost-Groningen (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4617
+Oost-Groningen (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3392
+Oost-Groningen (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",1492
+Oost-Zuid-Holland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",9812
+Oost-Zuid-Holland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",9098
+Oost-Zuid-Holland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1489
+Oost-Zuid-Holland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3616
+Oost-Zuid-Holland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",10871
+Oost-Zuid-Holland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",8113
+Oost-Zuid-Holland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",4446
+Oost-Zuid-Holland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",9308
+Oost-Zuid-Holland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",8147
+Oost-Zuid-Holland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4665
+Oost-Zuid-Holland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",9502
+Oost-Zuid-Holland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",7233
+Oost-Zuid-Holland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6244
+Oost-Zuid-Holland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10382
+Oost-Zuid-Holland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",7575
+Oost-Zuid-Holland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5557
+Oost-Zuid-Holland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7333
+Oost-Zuid-Holland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",6010
+Oost-Zuid-Holland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",8369
+Oost-Zuid-Holland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",8859
+Oost-Zuid-Holland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",2372
+Oost-Zuid-Holland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2597
+Oost-Zuid-Holland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",8813
+Oost-Zuid-Holland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",10789
+Oost-Zuid-Holland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3182
+Oost-Zuid-Holland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",8385
+Oost-Zuid-Holland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",9933
+Oost-Zuid-Holland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4404
+Oost-Zuid-Holland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",9439
+Oost-Zuid-Holland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",7957
+Oost-Zuid-Holland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6950
+Oost-Zuid-Holland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10570
+Oost-Zuid-Holland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",6780
+Oost-Zuid-Holland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",8116
+Oost-Zuid-Holland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7072
+Oost-Zuid-Holland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",4511
+Overig Groningen (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",11930
+Overig Groningen (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",19081
+Overig Groningen (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",4425
+Overig Groningen (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3380
+Overig Groningen (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",13926
+Overig Groningen (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",16528
+Overig Groningen (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3308
+Overig Groningen (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",10339
+Overig Groningen (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",10854
+Overig Groningen (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4296
+Overig Groningen (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",10728
+Overig Groningen (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",8976
+Overig Groningen (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6035
+Overig Groningen (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",11448
+Overig Groningen (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",8418
+Overig Groningen (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5368
+Overig Groningen (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8435
+Overig Groningen (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",7498
+Overig Groningen (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",9817
+Overig Groningen (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",21430
+Overig Groningen (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",6952
+Overig Groningen (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1747
+Overig Groningen (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",9984
+Overig Groningen (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",19469
+Overig Groningen (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2531
+Overig Groningen (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",7433
+Overig Groningen (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",12836
+Overig Groningen (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3908
+Overig Groningen (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",9056
+Overig Groningen (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",10436
+Overig Groningen (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6321
+Overig Groningen (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10810
+Overig Groningen (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",8669
+Overig Groningen (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",7577
+Overig Groningen (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7336
+Overig Groningen (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",6986
+Overig Zeeland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",8282
+Overig Zeeland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",6937
+Overig Zeeland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1164
+Overig Zeeland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3175
+Overig Zeeland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",8149
+Overig Zeeland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",4876
+Overig Zeeland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3182
+Overig Zeeland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",8544
+Overig Zeeland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",4674
+Overig Zeeland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3845
+Overig Zeeland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",9078
+Overig Zeeland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",4877
+Overig Zeeland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4892
+Overig Zeeland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",10089
+Overig Zeeland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5319
+Overig Zeeland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4428
+Overig Zeeland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7718
+Overig Zeeland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5338
+Overig Zeeland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6992
+Overig Zeeland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",6764
+Overig Zeeland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1444
+Overig Zeeland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2666
+Overig Zeeland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",7285
+Overig Zeeland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",5549
+Overig Zeeland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2689
+Overig Zeeland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",7583
+Overig Zeeland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",5844
+Overig Zeeland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3952
+Overig Zeeland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",8277
+Overig Zeeland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",5554
+Overig Zeeland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6291
+Overig Zeeland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",9886
+Overig Zeeland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",4723
+Overig Zeeland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",7430
+Overig Zeeland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",6936
+Overig Zeeland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",3916
+Twente (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",20385
+Twente (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",20975
+Twente (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",4041
+Twente (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",5392
+Twente (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",20942
+Twente (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",15466
+Twente (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",6384
+Twente (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",17860
+Twente (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",13756
+Twente (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",9198
+Twente (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",18600
+Twente (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",12902
+Twente (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",11902
+Twente (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",20839
+Twente (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",12859
+Twente (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",11217
+Twente (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15319
+Twente (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",9765
+Twente (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",16307
+Twente (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",17248
+Twente (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",5645
+Twente (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3646
+Twente (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",15773
+Twente (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",17782
+Twente (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5901
+Twente (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",15421
+Twente (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",14878
+Twente (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",8140
+Twente (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",18366
+Twente (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",13554
+Twente (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",12845
+Twente (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",21007
+Twente (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",10704
+Twente (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",16317
+Twente (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",13838
+Twente (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",6845
+Utrecht (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",39640
+Utrecht (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",38939
+Utrecht (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",9121
+Utrecht (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",12836
+Utrecht (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",35522
+Utrecht (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",51143
+Utrecht (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",14489
+Utrecht (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",30628
+Utrecht (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",46584
+Utrecht (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",16770
+Utrecht (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",30291
+Utrecht (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",40739
+Utrecht (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",20675
+Utrecht (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",33115
+Utrecht (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",35710
+Utrecht (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",16475
+Utrecht (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",24279
+Utrecht (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",26013
+Utrecht (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",33542
+Utrecht (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",39648
+Utrecht (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",15310
+Utrecht (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",7760
+Utrecht (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",27975
+Utrecht (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",66365
+Utrecht (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",11019
+Utrecht (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",26113
+Utrecht (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",55467
+Utrecht (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",16181
+Utrecht (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",29055
+Utrecht (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",44164
+Utrecht (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",22222
+Utrecht (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",34920
+Utrecht (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",33468
+Utrecht (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",25170
+Utrecht (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",24673
+Utrecht (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",21128
+Veluwe (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",22184
+Veluwe (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",20583
+Veluwe (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",4380
+Veluwe (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",7541
+Veluwe (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",21080
+Veluwe (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",15479
+Veluwe (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",8404
+Veluwe (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",19567
+Veluwe (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",15085
+Veluwe (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",10138
+Veluwe (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",18529
+Veluwe (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",15033
+Veluwe (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",13419
+Veluwe (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",20029
+Veluwe (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",16252
+Veluwe (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",11722
+Veluwe (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15127
+Veluwe (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",12751
+Veluwe (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",18470
+Veluwe (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",19492
+Veluwe (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",6438
+Veluwe (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",4698
+Veluwe (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",19050
+Veluwe (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",19395
+Veluwe (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",6560
+Veluwe (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",17253
+Veluwe (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",18787
+Veluwe (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",9277
+Veluwe (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",19669
+Veluwe (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",15655
+Veluwe (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",15457
+Veluwe (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",21470
+Veluwe (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",12773
+Veluwe (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",17426
+Veluwe (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",14426
+Veluwe (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",9206
+West-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",18154
+West-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",17312
+West-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",2872
+West-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",7221
+West-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",19422
+West-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",14857
+West-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",7176
+West-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",17043
+West-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",14781
+West-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",8467
+West-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",17796
+West-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",14837
+West-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",12288
+West-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",20688
+West-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",15024
+West-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",11461
+West-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",15495
+West-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",10744
+West-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",16597
+West-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",16082
+West-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",4122
+West-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",5307
+West-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",14883
+West-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",19711
+West-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",6963
+West-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",14510
+West-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",17427
+West-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",9220
+West-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",17050
+West-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",15830
+West-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",15520
+West-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",20932
+West-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",11448
+West-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",17272
+West-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",13848
+West-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",7780
+Zaanstreek (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5650
+Zaanstreek (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4398
+Zaanstreek (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",663
+Zaanstreek (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2141
+Zaanstreek (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6306
+Zaanstreek (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",3264
+Zaanstreek (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2416
+Zaanstreek (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5474
+Zaanstreek (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",3998
+Zaanstreek (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",3089
+Zaanstreek (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5078
+Zaanstreek (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",3533
+Zaanstreek (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3750
+Zaanstreek (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5525
+Zaanstreek (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",3225
+Zaanstreek (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2516
+Zaanstreek (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3621
+Zaanstreek (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",2363
+Zaanstreek (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4263
+Zaanstreek (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4567
+Zaanstreek (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",970
+Zaanstreek (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1058
+Zaanstreek (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4876
+Zaanstreek (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",5566
+Zaanstreek (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2154
+Zaanstreek (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4658
+Zaanstreek (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",5276
+Zaanstreek (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2785
+Zaanstreek (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5343
+Zaanstreek (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",3772
+Zaanstreek (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3506
+Zaanstreek (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5830
+Zaanstreek (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",2964
+Zaanstreek (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3492
+Zaanstreek (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3744
+Zaanstreek (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",1764
+Zeeuwsch-Vlaanderen (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",2553
+Zeeuwsch-Vlaanderen (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",2496
+Zeeuwsch-Vlaanderen (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",151
+Zeeuwsch-Vlaanderen (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1227
+Zeeuwsch-Vlaanderen (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",3127
+Zeeuwsch-Vlaanderen (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",1546
+Zeeuwsch-Vlaanderen (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1537
+Zeeuwsch-Vlaanderen (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",2934
+Zeeuwsch-Vlaanderen (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",1629
+Zeeuwsch-Vlaanderen (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1598
+Zeeuwsch-Vlaanderen (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",3284
+Zeeuwsch-Vlaanderen (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",1924
+Zeeuwsch-Vlaanderen (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2041
+Zeeuwsch-Vlaanderen (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",4351
+Zeeuwsch-Vlaanderen (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",2008
+Zeeuwsch-Vlaanderen (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2072
+Zeeuwsch-Vlaanderen (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3052
+Zeeuwsch-Vlaanderen (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",1876
+Zeeuwsch-Vlaanderen (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",3298
+Zeeuwsch-Vlaanderen (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",1049
+Zeeuwsch-Vlaanderen (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",253
+Zeeuwsch-Vlaanderen (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",788
+Zeeuwsch-Vlaanderen (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",2889
+Zeeuwsch-Vlaanderen (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",1723
+Zeeuwsch-Vlaanderen (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1119
+Zeeuwsch-Vlaanderen (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",2297
+Zeeuwsch-Vlaanderen (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",2384
+Zeeuwsch-Vlaanderen (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1476
+Zeeuwsch-Vlaanderen (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",3210
+Zeeuwsch-Vlaanderen (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",2115
+Zeeuwsch-Vlaanderen (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2565
+Zeeuwsch-Vlaanderen (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",4075
+Zeeuwsch-Vlaanderen (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",1660
+Zeeuwsch-Vlaanderen (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3189
+Zeeuwsch-Vlaanderen (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3012
+Zeeuwsch-Vlaanderen (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",1199
+Zuid-Limburg (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",15530
+Zuid-Limburg (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",15845
+Zuid-Limburg (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",3525
+Zuid-Limburg (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",8580
+Zuid-Limburg (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",14667
+Zuid-Limburg (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",12353
+Zuid-Limburg (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",7208
+Zuid-Limburg (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",13974
+Zuid-Limburg (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",12818
+Zuid-Limburg (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",8082
+Zuid-Limburg (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",14561
+Zuid-Limburg (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",11458
+Zuid-Limburg (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",12474
+Zuid-Limburg (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",19589
+Zuid-Limburg (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",14137
+Zuid-Limburg (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",12291
+Zuid-Limburg (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",16524
+Zuid-Limburg (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",11884
+Zuid-Limburg (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",13425
+Zuid-Limburg (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",18300
+Zuid-Limburg (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",5775
+Zuid-Limburg (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",4882
+Zuid-Limburg (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",13390
+Zuid-Limburg (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",15662
+Zuid-Limburg (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",6031
+Zuid-Limburg (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",12192
+Zuid-Limburg (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",14377
+Zuid-Limburg (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",7946
+Zuid-Limburg (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",14852
+Zuid-Limburg (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",11867
+Zuid-Limburg (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",15289
+Zuid-Limburg (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",20589
+Zuid-Limburg (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",11022
+Zuid-Limburg (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",19201
+Zuid-Limburg (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",14981
+Zuid-Limburg (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",8018
+Zuidoost-Drenthe (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",5282
+Zuidoost-Drenthe (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4060
+Zuidoost-Drenthe (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",758
+Zuidoost-Drenthe (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1908
+Zuidoost-Drenthe (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5480
+Zuidoost-Drenthe (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",2021
+Zuidoost-Drenthe (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1962
+Zuidoost-Drenthe (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5068
+Zuidoost-Drenthe (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",2269
+Zuidoost-Drenthe (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2725
+Zuidoost-Drenthe (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5744
+Zuidoost-Drenthe (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",2431
+Zuidoost-Drenthe (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3672
+Zuidoost-Drenthe (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6981
+Zuidoost-Drenthe (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",2747
+Zuidoost-Drenthe (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3756
+Zuidoost-Drenthe (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5487
+Zuidoost-Drenthe (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",2457
+Zuidoost-Drenthe (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4388
+Zuidoost-Drenthe (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",3827
+Zuidoost-Drenthe (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",685
+Zuidoost-Drenthe (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",980
+Zuidoost-Drenthe (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4429
+Zuidoost-Drenthe (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",3191
+Zuidoost-Drenthe (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1609
+Zuidoost-Drenthe (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4548
+Zuidoost-Drenthe (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",3134
+Zuidoost-Drenthe (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2486
+Zuidoost-Drenthe (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5588
+Zuidoost-Drenthe (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",2926
+Zuidoost-Drenthe (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4298
+Zuidoost-Drenthe (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6746
+Zuidoost-Drenthe (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",2557
+Zuidoost-Drenthe (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5405
+Zuidoost-Drenthe (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4411
+Zuidoost-Drenthe (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",1884
+Zuidoost-Friesland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6046
+Zuidoost-Friesland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4690
+Zuidoost-Friesland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",565
+Zuidoost-Friesland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2247
+Zuidoost-Friesland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5629
+Zuidoost-Friesland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",2714
+Zuidoost-Friesland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1892
+Zuidoost-Friesland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",5698
+Zuidoost-Friesland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",3399
+Zuidoost-Friesland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2420
+Zuidoost-Friesland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",6219
+Zuidoost-Friesland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",3473
+Zuidoost-Friesland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3944
+Zuidoost-Friesland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6684
+Zuidoost-Friesland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",3872
+Zuidoost-Friesland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3351
+Zuidoost-Friesland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5239
+Zuidoost-Friesland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",3210
+Zuidoost-Friesland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4890
+Zuidoost-Friesland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4260
+Zuidoost-Friesland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",850
+Zuidoost-Friesland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1230
+Zuidoost-Friesland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4680
+Zuidoost-Friesland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",4090
+Zuidoost-Friesland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1391
+Zuidoost-Friesland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4537
+Zuidoost-Friesland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",4762
+Zuidoost-Friesland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2013
+Zuidoost-Friesland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",5807
+Zuidoost-Friesland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",4380
+Zuidoost-Friesland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",4089
+Zuidoost-Friesland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",6858
+Zuidoost-Friesland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",3567
+Zuidoost-Friesland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4658
+Zuidoost-Friesland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4719
+Zuidoost-Friesland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",2735
+Zuidoost-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",22575
+Zuidoost-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",24360
+Zuidoost-Noord-Brabant (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",5565
+Zuidoost-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",10294
+Zuidoost-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",22670
+Zuidoost-Noord-Brabant (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",26537
+Zuidoost-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",9719
+Zuidoost-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",19544
+Zuidoost-Noord-Brabant (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",24137
+Zuidoost-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",10656
+Zuidoost-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",19544
+Zuidoost-Noord-Brabant (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",20301
+Zuidoost-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",14592
+Zuidoost-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",23313
+Zuidoost-Noord-Brabant (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",19095
+Zuidoost-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",13082
+Zuidoost-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",17786
+Zuidoost-Noord-Brabant (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",13933
+Zuidoost-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",18734
+Zuidoost-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",19536
+Zuidoost-Noord-Brabant (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",6230
+Zuidoost-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",5523
+Zuidoost-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",18252
+Zuidoost-Noord-Brabant (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",28825
+Zuidoost-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",7881
+Zuidoost-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",17369
+Zuidoost-Noord-Brabant (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",24899
+Zuidoost-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",9811
+Zuidoost-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",19917
+Zuidoost-Noord-Brabant (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",19572
+Zuidoost-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",16602
+Zuidoost-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",24876
+Zuidoost-Noord-Brabant (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",14478
+Zuidoost-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",18774
+Zuidoost-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",16405
+Zuidoost-Noord-Brabant (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",9521
+Zuidoost-Zuid-Holland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",11232
+Zuidoost-Zuid-Holland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",10647
+Zuidoost-Zuid-Holland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1544
+Zuidoost-Zuid-Holland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",4439
+Zuidoost-Zuid-Holland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",12896
+Zuidoost-Zuid-Holland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",7465
+Zuidoost-Zuid-Holland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",5072
+Zuidoost-Zuid-Holland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",11329
+Zuidoost-Zuid-Holland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",7300
+Zuidoost-Zuid-Holland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",5780
+Zuidoost-Zuid-Holland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",10951
+Zuidoost-Zuid-Holland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",6669
+Zuidoost-Zuid-Holland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",7198
+Zuidoost-Zuid-Holland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",11687
+Zuidoost-Zuid-Holland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",6914
+Zuidoost-Zuid-Holland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",5964
+Zuidoost-Zuid-Holland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",8106
+Zuidoost-Zuid-Holland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",5211
+Zuidoost-Zuid-Holland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",9979
+Zuidoost-Zuid-Holland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",9374
+Zuidoost-Zuid-Holland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",2246
+Zuidoost-Zuid-Holland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",3346
+Zuidoost-Zuid-Holland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",10970
+Zuidoost-Zuid-Holland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",9560
+Zuidoost-Zuid-Holland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",4248
+Zuidoost-Zuid-Holland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",11040
+Zuidoost-Zuid-Holland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",8712
+Zuidoost-Zuid-Holland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",6242
+Zuidoost-Zuid-Holland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",10604
+Zuidoost-Zuid-Holland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",7254
+Zuidoost-Zuid-Holland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",9187
+Zuidoost-Zuid-Holland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",11667
+Zuidoost-Zuid-Holland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",5246
+Zuidoost-Zuid-Holland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",9398
+Zuidoost-Zuid-Holland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",7576
+Zuidoost-Zuid-Holland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",3726
+Zuidwest-Drenthe (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4324
+Zuidwest-Drenthe (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",3544
+Zuidwest-Drenthe (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",432
+Zuidwest-Drenthe (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1240
+Zuidwest-Drenthe (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4458
+Zuidwest-Drenthe (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",2002
+Zuidwest-Drenthe (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1704
+Zuidwest-Drenthe (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4144
+Zuidwest-Drenthe (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",2152
+Zuidwest-Drenthe (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1832
+Zuidwest-Drenthe (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4257
+Zuidwest-Drenthe (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",2511
+Zuidwest-Drenthe (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2939
+Zuidwest-Drenthe (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",4494
+Zuidwest-Drenthe (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",2676
+Zuidwest-Drenthe (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2854
+Zuidwest-Drenthe (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3593
+Zuidwest-Drenthe (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",2253
+Zuidwest-Drenthe (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",3658
+Zuidwest-Drenthe (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",3471
+Zuidwest-Drenthe (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",671
+Zuidwest-Drenthe (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1589
+Zuidwest-Drenthe (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",2933
+Zuidwest-Drenthe (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",2478
+Zuidwest-Drenthe (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1063
+Zuidwest-Drenthe (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",3573
+Zuidwest-Drenthe (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",3072
+Zuidwest-Drenthe (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1636
+Zuidwest-Drenthe (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4167
+Zuidwest-Drenthe (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",2897
+Zuidwest-Drenthe (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2858
+Zuidwest-Drenthe (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",4747
+Zuidwest-Drenthe (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",2485
+Zuidwest-Drenthe (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3676
+Zuidwest-Drenthe (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3373
+Zuidwest-Drenthe (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",1860
+Zuidwest-Friesland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",3995
+Zuidwest-Friesland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4114
+Zuidwest-Friesland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",382
+Zuidwest-Friesland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",988
+Zuidwest-Friesland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4590
+Zuidwest-Friesland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",2022
+Zuidwest-Friesland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1386
+Zuidwest-Friesland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4096
+Zuidwest-Friesland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",2225
+Zuidwest-Friesland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1971
+Zuidwest-Friesland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4383
+Zuidwest-Friesland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",2646
+Zuidwest-Friesland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2531
+Zuidwest-Friesland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5672
+Zuidwest-Friesland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",2897
+Zuidwest-Friesland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3018
+Zuidwest-Friesland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3864
+Zuidwest-Friesland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",2318
+Zuidwest-Friesland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",3574
+Zuidwest-Friesland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",3182
+Zuidwest-Friesland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",651
+Zuidwest-Friesland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",566
+Zuidwest-Friesland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",3133
+Zuidwest-Friesland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",3202
+Zuidwest-Friesland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",851
+Zuidwest-Friesland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",3131
+Zuidwest-Friesland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",3618
+Zuidwest-Friesland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1323
+Zuidwest-Friesland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4248
+Zuidwest-Friesland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",3429
+Zuidwest-Friesland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2849
+Zuidwest-Friesland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5412
+Zuidwest-Friesland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",2739
+Zuidwest-Friesland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3744
+Zuidwest-Friesland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3588
+Zuidwest-Friesland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",1868
+Zuidwest-Gelderland (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",7632
+Zuidwest-Gelderland (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",7250
+Zuidwest-Gelderland (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",1034
+Zuidwest-Gelderland (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",2664
+Zuidwest-Gelderland (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",8501
+Zuidwest-Gelderland (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",4235
+Zuidwest-Gelderland (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",3152
+Zuidwest-Gelderland (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",7405
+Zuidwest-Gelderland (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",4728
+Zuidwest-Gelderland (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4366
+Zuidwest-Gelderland (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",7304
+Zuidwest-Gelderland (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",4930
+Zuidwest-Gelderland (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",5983
+Zuidwest-Gelderland (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",7971
+Zuidwest-Gelderland (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",5327
+Zuidwest-Gelderland (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",4925
+Zuidwest-Gelderland (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",5558
+Zuidwest-Gelderland (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",3917
+Zuidwest-Gelderland (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",6308
+Zuidwest-Gelderland (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",6742
+Zuidwest-Gelderland (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",1436
+Zuidwest-Gelderland (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1617
+Zuidwest-Gelderland (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",6806
+Zuidwest-Gelderland (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",6277
+Zuidwest-Gelderland (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",2805
+Zuidwest-Gelderland (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",6450
+Zuidwest-Gelderland (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",5730
+Zuidwest-Gelderland (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",4099
+Zuidwest-Gelderland (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",7358
+Zuidwest-Gelderland (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",5342
+Zuidwest-Gelderland (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",6643
+Zuidwest-Gelderland (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",7968
+Zuidwest-Gelderland (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",4589
+Zuidwest-Gelderland (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",6220
+Zuidwest-Gelderland (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",4687
+Zuidwest-Gelderland (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",3694
+Zuidwest-Overijssel (CR),Mannen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4960
+Zuidwest-Overijssel (CR),Mannen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4380
+Zuidwest-Overijssel (CR),Mannen,15 tot 25 jaar,"3 Hbo, wo",650
+Zuidwest-Overijssel (CR),Mannen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",1498
+Zuidwest-Overijssel (CR),Mannen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",5096
+Zuidwest-Overijssel (CR),Mannen,25 tot 35 jaar,"3 Hbo, wo",3806
+Zuidwest-Overijssel (CR),Mannen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1392
+Zuidwest-Overijssel (CR),Mannen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",4147
+Zuidwest-Overijssel (CR),Mannen,35 tot 45 jaar,"3 Hbo, wo",4061
+Zuidwest-Overijssel (CR),Mannen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",2101
+Zuidwest-Overijssel (CR),Mannen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4315
+Zuidwest-Overijssel (CR),Mannen,45 tot 55 jaar,"3 Hbo, wo",3774
+Zuidwest-Overijssel (CR),Mannen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",2688
+Zuidwest-Overijssel (CR),Mannen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5172
+Zuidwest-Overijssel (CR),Mannen,55 tot 65 jaar,"3 Hbo, wo",4140
+Zuidwest-Overijssel (CR),Mannen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",2217
+Zuidwest-Overijssel (CR),Mannen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3956
+Zuidwest-Overijssel (CR),Mannen,65 tot 75 jaar,"3 Hbo, wo",3027
+Zuidwest-Overijssel (CR),Vrouwen,15 tot 25 jaar,"1 Basisonderwijs, vmbo, mbo1",4057
+Zuidwest-Overijssel (CR),Vrouwen,15 tot 25 jaar,"2 Havo, vwo, mbo2-4",4149
+Zuidwest-Overijssel (CR),Vrouwen,15 tot 25 jaar,"3 Hbo, wo",984
+Zuidwest-Overijssel (CR),Vrouwen,25 tot 35 jaar,"1 Basisonderwijs, vmbo, mbo1",920
+Zuidwest-Overijssel (CR),Vrouwen,25 tot 35 jaar,"2 Havo, vwo, mbo2-4",4090
+Zuidwest-Overijssel (CR),Vrouwen,25 tot 35 jaar,"3 Hbo, wo",4990
+Zuidwest-Overijssel (CR),Vrouwen,35 tot 45 jaar,"1 Basisonderwijs, vmbo, mbo1",1520
+Zuidwest-Overijssel (CR),Vrouwen,35 tot 45 jaar,"2 Havo, vwo, mbo2-4",3458
+Zuidwest-Overijssel (CR),Vrouwen,35 tot 45 jaar,"3 Hbo, wo",4522
+Zuidwest-Overijssel (CR),Vrouwen,45 tot 55 jaar,"1 Basisonderwijs, vmbo, mbo1",1997
+Zuidwest-Overijssel (CR),Vrouwen,45 tot 55 jaar,"2 Havo, vwo, mbo2-4",4108
+Zuidwest-Overijssel (CR),Vrouwen,45 tot 55 jaar,"3 Hbo, wo",4295
+Zuidwest-Overijssel (CR),Vrouwen,55 tot 65 jaar,"1 Basisonderwijs, vmbo, mbo1",3118
+Zuidwest-Overijssel (CR),Vrouwen,55 tot 65 jaar,"2 Havo, vwo, mbo2-4",5379
+Zuidwest-Overijssel (CR),Vrouwen,55 tot 65 jaar,"3 Hbo, wo",3403
+Zuidwest-Overijssel (CR),Vrouwen,65 tot 75 jaar,"1 Basisonderwijs, vmbo, mbo1",3439
+Zuidwest-Overijssel (CR),Vrouwen,65 tot 75 jaar,"2 Havo, vwo, mbo2-4",3734
+Zuidwest-Overijssel (CR),Vrouwen,65 tot 75 jaar,"3 Hbo, wo",2337
