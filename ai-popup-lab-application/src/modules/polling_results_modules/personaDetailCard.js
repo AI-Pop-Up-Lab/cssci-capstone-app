@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import './personaDetailCard.css';
 
 import Loader from "../loader";
+import PersonaChat from "../persona_chat_modules/personaChat";
 
-function PersonaDetailCard({ personaDetails, relevantColumnsToShow }) {
+function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCountry }) {
 
-  const [index, setIndex] = useState([personaDetails.index]);
+  const [index, setIndex] = useState(personaDetails.index);
   const [filteredPersona, setFilteredPersona] = useState(
 
     filterColumns(personaDetails, relevantColumnsToShow)
@@ -15,6 +16,8 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow }) {
     //   ? Object.fromEntries(Object.entries(personaDetails).filter(([key]) => relevantColumnsToShow.includes(key)))
     //   : {}
   );
+
+  const [showPersonaChat, setShowPersonaChat] = useState(false);
 
   function filterColumns(persona, relCol){
 
@@ -52,7 +55,13 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow }) {
           )) : <Loader />}
         </div>
         
-        <button className="startChatButton">Chat</button>
+        <button className="startChatButton" onClick={() => setShowPersonaChat(!showPersonaChat)}>Chat</button>
+
+        {showPersonaChat && <PersonaChat 
+          personaDetails={{ ...filteredPersona, index: index }}
+          personaCountry={personaCountry}
+          showChat={setShowPersonaChat}
+        />}
 
       </div>
     </div>
