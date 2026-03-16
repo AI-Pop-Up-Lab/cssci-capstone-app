@@ -23,6 +23,8 @@ function PersonaChooser({ data, chosenDemographic, countryName }) {
   // filter data through chosen demographics
   useEffect(() => {
 
+    if (!chosenDemographic || Object.keys(chosenDemographic).length === 0) return; // skips if data isn't ready yet
+
     setIsLoading(true);
 
     const timeout = setTimeout(() => { // small timeout of 0ms lets the render of the loader take place
@@ -69,13 +71,14 @@ function PersonaChooser({ data, chosenDemographic, countryName }) {
             key={persona.index}
             personaDetails={persona}
             relevantColumnsToShow={relevantColumns}
+            personaCountry={countryName}
           />
         ))}
         </>
       
       }
       {isLoading && <Loader />}
-      {Object.keys(filteredData).length < 1 && !isLoading && <h2 className="unbounded-weight300">No personas match your filters.</h2>}
+      {filteredData.length < 1 && !isLoading && <h2 className="unbounded-weight300">No personas match your filters.</h2>}
     </div>
   );
 };

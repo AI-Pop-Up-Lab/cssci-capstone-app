@@ -1,0 +1,30 @@
+.UserMessage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.UserMessage > div{
+    background-color: #D1E3DD;
+    border-radius: 12px;
+    padding: 14px 18px; 
+    max-width: calc(60% - 36px);
+    position: relative;
+}
+
+.UserMessage > div > p{
+    font-size: 14px;
+}
+
+#user-message-bubbletick{
+    position: absolute;
+    bottom: 0;
+    right: -3px;
+    aspect-ratio: 1;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #D1E3DD;
+    clip-path: polygon(100% 100%, 0% 0%, 0% 100%);
+}

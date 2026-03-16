@@ -1,0 +1,30 @@
+.ReceivedMessage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.ReceivedMessage > div{
+    background-color: #FCBFB7;
+    border-radius: 12px;
+    padding: 14px 18px; 
+    max-width: calc(60% - 36px);
+    position: relative;
+}
+
+.ReceivedMessage > div > p{
+    font-size: 14px;
+}
+
+#received-message-bubbletick{
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    aspect-ratio: 1;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #FCBFB7;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}

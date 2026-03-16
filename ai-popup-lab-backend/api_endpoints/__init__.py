@@ -3,3 +3,4 @@
 
 from .test_endpoints import router as test_router
 from .sample_endpoints import router as sample_router
+from .chat_endpoints import router as chat_router

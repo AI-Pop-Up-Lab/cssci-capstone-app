@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import axios from "axios";
 
 import './pollingResults.css';
@@ -21,7 +21,11 @@ function PollingResults() {
 
   const [selectedCountry, setSelectedCountry] = useState("netherlands"); // setting default selected/selectable country as netherlands for now (in final product there will be a dropdown)
 
-  const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState(null);
+  const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState({});
+
+  const handleSetChosenPersonaDemographic = useCallback((value) => {
+    setChosenPersonaDemographic(value);
+  }, []);
 
   // function to get country sample data from backend
   async function getCountrySample(countryName){
@@ -48,15 +52,16 @@ function PollingResults() {
     getCountrySample(selectedCountry);
   }, []);
 
+  const responseData = useMemo(() => data?.data ?? [], [data]);
 
   return (
     <div className="PollingResults">
 
-      {data ? <VoteProjection pollingData={data.data} /> : <Loader />}
+      {data ? <VoteProjection pollingData={responseData} /> : <Loader />}
       <div id="polling-divider"></div>
-      {data ? <SeatVisualisation pollingData={data.data} /> : <Loader />}
+      {data ? <SeatVisualisation pollingData={responseData} /> : <Loader />}
       <div id="polling-divider"></div>
-      {data ? <DemographicCharts pollingData={data.data} country={selectedCountry} /> : <Loader />}
+      {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
       {/* {data ? <PollingMap /> : <Loader />} */}
       <div id="polling-divider"></div>
       <div id="persona-selection">
@@ -69,12 +74,12 @@ function PollingResults() {
         </div>
 
         {selectedCountry ? <DemographicChooserForPersona
-        setChosenDemographic={setChosenPersonaDemographic}
+        setChosenDemographic={handleSetChosenPersonaDemographic}
         country={selectedCountry}
         /> : <Loader />}
 
         {data && selectedCountry ? <PersonaChooser 
-        data={data.data}
+        data={responseData}
         chosenDemographic={chosenPersonaDemographic}
         countryName={selectedCountry}
         /> : <Loader />}

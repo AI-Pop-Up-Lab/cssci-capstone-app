@@ -1,0 +1,180 @@
+.PersonaChat{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(0,0,0,0.2); */
+}
+
+#chat-bubble{
+    background-color: #334E58;
+    width: calc(60% - 50px);
+    max-height: 635px;
+    height: calc(75% - 50px);
+    border-radius: 26px;
+    position: absolute;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#chat-close{
+    filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(300%) hue-rotate(109deg) brightness(99%) contrast(90%);
+    width: 28px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+#persona-chat-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#chat-with-text{
+    color: #D1E3DD;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#persona-name{
+    color: #FCBFB7;
+    font-size: 24px;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#anthro-warning{
+    color: #FCBFB7;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    width: 24px;
+    border: 2px solid #FCBFB7;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #335058;
+
+    right: -35px;
+    bottom: 0;
+    z-index: 5;
+}
+
+#anthro-warning > p{
+    font-size: 20px;
+    color: #FCBFB7;
+    z-index: 5;
+}
+
+#chat-not-real-warning{
+    color: #335058;
+    background-color: #FCBFB7;
+    position: absolute;
+    right: -167px;
+    bottom: 15px;
+    z-index: 1;
+
+    padding: 8px 12px;
+    border-radius: 16px;
+
+    font-size: 10px;
+}
+
+#persona-chat-attributes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.persona-chat-attributes-single{
+    color: #D1E3DD;
+    font-size: 12px;
+    border-radius: 12px;
+    border: 1px solid #D1E3DD;
+    padding: 6px 10px;
+    margin: 0 2px 10px 2px;
+}
+
+
+#persona-chat-history{
+    height: 50%;
+    width: 98%;
+    padding: 0 1%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* scrollbar for persona chat messages */
+
+#persona-chat-history::-webkit-scrollbar {
+  width: 8px;
+}
+
+#persona-chat-history::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+}
+
+#persona-chat-history::-webkit-scrollbar-thumb {
+  background: #D1E3DD;
+}
+
+#persona-chat-history::-webkit-scrollbar-thumb:hover {
+  background: #c5d5cf;
+}
+
+#persona-chat-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#persona-chat-input > input{
+    height: 40px;
+    border-radius: 16px;
+    background-color: transparent;
+    border: 2px solid #D1E3DD;
+    color: #D1E3DD;
+    padding: 0px 16px;
+    width: calc(85% - 10px);
+    margin-right: 10px;
+}
+
+#persona-chat-input > input::placeholder{
+    color: #D1E3DD;
+}
+
+#persona-chat-input > div{
+    background-color: #FCBFB7;
+    height: 40px;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#persona-chat-input > div:hover{
+    cursor: pointer;
+}
+
+#persona-chat-input > div > img{
+    filter: invert(26%) sepia(16%) saturate(1020%) hue-rotate(146deg) brightness(94%) contrast(86%);
+    aspect-ratio: 1;
+    height: 24px;
+}
