@@ -3,15 +3,15 @@ import axios from "axios";
 
 import './pollingResults.css';
 
-import PollingMap from '../modules/polling_results_modules/pollingMap';
-import SeatVisualisation from '../modules/polling_results_modules/seatVisualisation';
-import VoteProjection from '../modules/polling_results_modules/voteProjection';
-import DemographicCharts from '../modules/polling_results_modules/demographicCharts';
+import PollingMap from './pollingMap';
+import SeatVisualisation from './seatVisualisation';
+import VoteProjection from './voteProjection';
+import DemographicCharts from './demographicCharts';
 
-import DemographicChooserForPersona from '../modules/polling_results_modules/demographicChooserForPersona';
-import PersonaChooser from "../modules/polling_results_modules/personaChooser";
+import DemographicChooserForPersona from './demographicChooserForPersona';
+import PersonaChooser from "./personaChooser";
 
-import Loader from "../modules/loader";
+import Loader from "../loader";
 
 
 function PollingResults() {
@@ -63,8 +63,8 @@ function PollingResults() {
       <div id="polling-divider"></div>
       {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
       {/* {data ? <PollingMap /> : <Loader />} */}
-      <div id="polling-divider"></div>
-      <div id="persona-selection">
+      {/* <div id="polling-divider"></div> */}
+      {/* <div id="persona-selection">
         <div id="selection-explanation">
           <h1 className="unbounded-weight400">Chat with a persona</h1>
           <p className="unbounded-weight300">You can choose one of the synthetic persona from the list below to enter a chat, to understand motivations and reasoning behind their polled vote.<br></br>
@@ -84,7 +84,7 @@ function PollingResults() {
         countryName={selectedCountry}
         /> : <Loader />}
 
-      </div>
+      </div> */}
     </div>
   );
 };
