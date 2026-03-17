@@ -1,0 +1,216 @@
+/* persona chat example  */
+
+#landing-explore-personas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+#land-expl-pers-top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#example-persona-card{
+    background-color: #FCBFB7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 28%;
+    max-width: 300px;
+    height: 360px;
+    border-radius: 50px;
+}
+
+#example-persona-card> img{
+    border: 2px solid #334E58;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 110px;
+}
+
+
+#example-persona-name{
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-bottom: calc(25px - 12px);
+}
+
+.example-persona-attr{
+    color: #6B6D76;
+    margin-top: 12px;
+}
+
+
+#persona-warning-hover{
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background-color: #334E58;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#persona-warning-hover > p{
+    color: #FCBFB7;
+    font-size: 50px;
+    pointer-events: none;
+    z-index: 2;
+    animation: exclamation-pulse 1.3s ease-in-out infinite;
+}
+
+#persona-warning-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: #334E58;
+    opacity: 0.9;
+    border-radius: 50px;
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 35px;
+    height: calc(100% - 100px);
+    width: calc(100% - 70px);
+}
+
+#persona-warning-hover:hover ~ #persona-warning-overlay{
+    display: flex;
+}
+
+#persona-warning-overlay > p{
+    color: #FCBFB7;
+    text-align: center;
+    line-height: 2;
+    font-size: 16px;
+}
+
+#example-persona-chat{
+    width: calc(60% - 60px);
+    margin-left: 60px;
+    height: 100%;
+}
+
+#example-user-message-container, #example-response-message-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#example-user-message-container{
+    justify-content: flex-end;
+}
+
+#example-response-message-container{
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+#example-user-message{
+    background-color: #320D6D;
+    border-radius: 12px;
+    padding: 14px 18px; 
+    position: relative;
+    color: #FCBFB7;
+    width: 75%;
+}
+
+#example-response-message{
+    background-color: #FCBFB7;
+    border-radius: 12px;
+    padding: 14px 18px; 
+    position: relative;
+    width: 75%;
+}
+
+#example-user-message > p{
+    font-size: 22px;
+}
+
+#example-response-message > p{
+    font-size: 14px;
+}
+
+#example-user-message-bubbletick{
+    position: absolute;
+    bottom: 0;
+    right: -3px;
+    aspect-ratio: 1;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #320D6D;
+    clip-path: polygon(100% 100%, 0% 0%, 0% 100%);
+}
+
+#example-response-message-bubbletick{
+    position: absolute;
+    bottom: 0;
+    left: -3px;
+    aspect-ratio: 1;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #FCBFB7;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+#land-expl-pers-bottom{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+#land-expl-pers-bottom.dontShowPersonaLink {
+    display: none;
+}
+
+#land-expl-pers-bottom > a > button{
+    background-color: #334E58;
+    border-radius: 34px;
+    padding: 12px 30px;
+    color: #FCBFB7;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+#land-expl-pers-bottom > a > button:hover{
+    cursor: pointer;
+    background-color: #2b4149;
+}
+
+#land-expl-pers-bottom > a > button > span{
+    transform: scale(1.3) scaleX(2) !important;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+@keyframes exclamation-pulse{
+    0%{
+        transform: scale(1);
+        color: #FCBFB7;
+    }
+
+    50%{
+        transform: scale(1.15);
+        color: #ffa296;
+    }
+
+    100%{
+        transform: scale(1);
+        color: #FCBFB7;
+    }
+}
