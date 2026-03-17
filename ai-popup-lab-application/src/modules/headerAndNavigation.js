@@ -10,10 +10,6 @@ function HeaderAndNavigation() {
 
   const [darkModeOn, setDarkModeOn] = useState(false);
 
-  useEffect(() => {
-    console.log(darkModeOn)
-  }, [darkModeOn]);
-
   return (
       <header className={navOpen ? 'nav-menu-open' : ''}>
 

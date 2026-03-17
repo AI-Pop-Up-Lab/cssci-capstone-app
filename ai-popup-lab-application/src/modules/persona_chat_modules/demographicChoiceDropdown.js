@@ -1,4 +1,4 @@
-import './demographicChooser.css';
+import '../polling_results_modules/demographicChooser.css';
 
 function DemographicChoiceDropdown({column, choices, onChange}) {
 

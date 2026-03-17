@@ -8,9 +8,6 @@ import SeatVisualisation from './seatVisualisation';
 import VoteProjection from './voteProjection';
 import DemographicCharts from './demographicCharts';
 
-import DemographicChooserForPersona from './demographicChooserForPersona';
-import PersonaChooser from "./personaChooser";
-
 import Loader from "../loader";
 
 

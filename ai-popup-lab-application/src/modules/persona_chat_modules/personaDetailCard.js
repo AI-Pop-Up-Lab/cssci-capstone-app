@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import './personaDetailCard.css';
 
 import Loader from "../loader";
-import PersonaChat from "../persona_chat_modules/personaChat";
+import PersonaChat from "./personaChat";
 
 function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCountry }) {
 
