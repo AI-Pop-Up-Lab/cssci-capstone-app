@@ -1,6 +1,5 @@
 .PopupDisclaimer{
-    border-radius: 0;
-    /* border: 1px solid #d4e4e1; */
+    border-radius: 30px;
     background-color: #ebb3ab;
     color: #335058;
     opacity: 0.9;
@@ -18,7 +17,6 @@
     max-width: 500px;
 
     box-shadow: none;
-    border: 2px solid #1a3a42;
 
     animation: popupZoomIn 0.225s ease-out;
 }

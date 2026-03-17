@@ -1,0 +1,18 @@
+<svg width="243" height="243" viewBox="0 0 243 243" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_71_212)">
+<rect width="242.415" height="242.415" rx="121.208" fill="#FCBFB7"/>
+<rect x="225.171" y="124.585" width="102.611" height="105.932" transform="rotate(130 225.171 124.585)" fill="#D1E3DD"/>
+<circle cx="41.9453" cy="61.87" r="14.4453" transform="rotate(130.312 41.9453 61.87)" fill="#334E58"/>
+<circle cx="163.874" cy="103.436" r="12.6005" transform="rotate(130.312 163.874 103.436)" fill="#320D6D"/>
+<ellipse cx="21.6513" cy="134.694" rx="36.2555" ry="16.3479" transform="rotate(89.49 21.6513 134.694)" fill="#D1E3DD"/>
+<rect x="221.937" y="49.9185" width="26.9934" height="29.9373" transform="rotate(130.312 221.937 49.9185)" fill="#6B6D76"/>
+<ellipse cx="151.458" cy="185.214" rx="36.2555" ry="16.3479" transform="rotate(-13.6778 151.458 185.214)" fill="#334E58"/>
+<rect x="121.838" y="-2.39893" width="44.8302" height="51.8038" transform="rotate(101.004 121.838 -2.39893)" fill="#6B6D76"/>
+<rect x="181.708" y="63.1519" width="24.9538" height="45.0348" transform="rotate(130 181.708 63.1519)" fill="#320D6D"/>
+</g>
+<defs>
+<clipPath id="clip0_71_212">
+<rect width="242.415" height="242.415" rx="121.208" fill="white"/>
+</clipPath>
+</defs>
+</svg>
