@@ -143,8 +143,10 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
                 ></input>
                 <div><img onClick={handleSubmit} src={sendArrow} alt="Arrow to send text"></img></div>
             </div>
-
-            <img id="chat-close" onClick={() => showChat(false)} src={closeCross} alt="Cross button to close chat window"></img>
+                
+            <div id="chat-close" onClick={() => showChat(false)} src={closeCross} alt="Cross button to close chat window">
+              <img id="chat-close-cross" src={closeCross}></img>
+            </div>
 
         </div>
     </div>
