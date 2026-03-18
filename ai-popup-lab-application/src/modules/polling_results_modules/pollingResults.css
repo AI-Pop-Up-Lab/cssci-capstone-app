@@ -19,28 +19,3 @@
   height: 0;
   border-bottom: 2px dashed #335058;
 }
-
-#persona-selection{
-  margin-top: 30px;
-  padding: 0 5%;
-  display: flex;
-  flex-direction: column;
-}
-
-#selection-explanation{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-bottom: 50px;
-}
-
-#selection-explanation > h1{
-  
-}
-
-#selection-explanation > p{
-  margin-top: 20px;
-  max-width: 800px;
-}
-

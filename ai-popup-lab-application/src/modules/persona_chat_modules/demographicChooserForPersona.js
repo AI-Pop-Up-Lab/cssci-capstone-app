@@ -40,7 +40,7 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
       setData(null);
     }
   };
-
+  
   function handleDropdownChange(column, value) {
     const updated = { ...selectedValues, [column]: value };
     setSelectedValues(updated);

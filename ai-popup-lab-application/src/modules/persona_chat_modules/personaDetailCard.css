@@ -1,4 +1,101 @@
 .PersonaDetailCard{
+    width: calc(120px - 6px);
+    height: calc(120px - 6px);
+    margin: 24px;
+    position: relative;
+    border-radius: 100%;
+    z-index: 1
+}
+
+.personacard-fakeborder{
+    width: 120px;
+    height: 120px;
+    background-color: #D1E3DD;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    z-index: 2;
+    border-radius: 100%;
+}
+
+.PersonaDetailCard:hover{
+    z-index: 3
+}
+
+.PersonaDetailCard > img{
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: relative;
+}
+
+.persona-info-bubble{
+    display: none;
+    border: 7px solid #D1E3DD;
+    color: #D1E3DD;
+    background-color: #334E58;
+
+    opacity: 0.94;
+
+    position: absolute;
+    top: calc(50px - 7px);
+    left: calc(50px - 7px);
+
+    z-index: 1;
+    border-radius: 20px;
+    min-width: 370px;
+    padding: 10px;
+
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.PersonaDetailCard.flip .persona-info-bubble{
+    align-items: flex-start;
+    left: auto !important;
+    right: calc(50px - 7px);
+}
+
+.persona-info-bubble > div{
+    display: flex;
+    margin: 5px 0;
+}
+
+.persona-info-bubble > div > p:nth-child(1){
+    margin-right: 5px;
+}
+
+.persona-info-bubble > div > p{
+    font-size: 16px;
+}
+
+.PersonaDetailCard:hover > .persona-info-bubble{
+    display: flex;
+}
+
+.enter-personachat-button{
+    background-color: #FCBFB7;
+    padding: 6px 10px;
+    border-radius: 16px;
+    border: 0;
+    margin-top: 10px;
+}
+
+.enter-personachat-button:hover{
+    cursor: pointer;
+    background-color: #e4aca5;
+}
+
+.enter-personachat-button > span{
+    transform: scale(1.3) scaleX(2) !important;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+/* OLD MOCKUP CSS */
+
+/* .PersonaDetailCard{
     border: 2px solid #335058;
     border-radius: 8px;
     padding: 5px 10px;
@@ -50,4 +147,4 @@
 .personaAttributesContainer > div > p:nth-child(1){
     margin-right: 5px;
 }
-
+ */

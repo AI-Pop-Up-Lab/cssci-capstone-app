@@ -24,20 +24,20 @@
 
 .DemographicChoiceDropdown > select{
     width: 200px;
-    height: 30px;
     font-size: 16px;
     margin-top: 10px;
 
-    background-color: rgba(0,0,0,0.1);
+    background-color: #FCBFB7;
 
     border: 2px solid #335058;
-    border-radius: 8px;
+    border-radius: 16px;
+    padding: 4px;
 
     color: #335058;
 }
 
 .DemographicChoiceDropdown > select:hover{
-    background-color: rgba(0,0,0,0.175);
+    background-color: #e0aaa3;
 }
 
 .DemographicChoiceDropdown > select > option{
