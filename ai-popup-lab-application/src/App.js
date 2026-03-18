@@ -20,7 +20,8 @@ function App() {
     <Router>
 
       <HeaderAndNavigation />
-      {/* <PopupDisclaimer /> */}
+      <PopupDisclaimer /> 
+      {/* Comment PopupDisclaimer out if it gets annoying in dev */}
 
       <Routes>
         <Route path="/" element={<LandingPage />} />

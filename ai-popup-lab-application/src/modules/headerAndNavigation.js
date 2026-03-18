@@ -7,11 +7,18 @@ import './headerAndNavigation.css';
 function HeaderAndNavigation() {
 
   const [navOpen, setNavOpen] = useState(false);
-
   const [darkModeOn, setDarkModeOn] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // detecting if scrolled at all
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 0);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-      <header className={navOpen ? 'nav-menu-open' : ''}>
+      <header className={`${scrolled ? 'header-scrolled' : ''} ${navOpen ? 'nav-menu-open' : ''}`}>
 
         <div id='header-left'>
           <h1 className="unbounded-weight300">AI POLLSTER</h1>

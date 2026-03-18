@@ -1,6 +1,6 @@
 .PersonaChat{
     position: fixed;
-    top: 0;
+    top: 30px;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -12,6 +12,7 @@
 }
 
 #chat-bubble{
+    position: relative;
     background-color: #334E58;
     width: calc(60% - 50px);
     max-height: 635px;
@@ -27,13 +28,18 @@
 }
 
 #chat-close{
-    filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(300%) hue-rotate(109deg) brightness(99%) contrast(90%);
     width: 28px;
     aspect-ratio: 1;
     position: absolute;
     top: 25px;
     right: 25px;
     cursor: pointer;
+}
+
+#chat-close-cross{
+    width: 100%;
+    filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(300%) hue-rotate(109deg) brightness(99%) contrast(90%);
+    pointer-events: none;
 }
 
 #persona-chat-header{

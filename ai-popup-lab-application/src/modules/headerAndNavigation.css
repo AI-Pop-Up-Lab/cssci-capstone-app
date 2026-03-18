@@ -9,6 +9,10 @@ header{
     margin-bottom: 50px;
     transition: background-color 1s;
     transition: height 0.5s;
+
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 
 header > #header-left > h1{
@@ -249,6 +253,7 @@ header.nav-menu-open > #header-left{
 header.nav-menu-open > #header-left >  h1{
     font-size: 30px;
     transition: font-size 0.5s;
+    padding: 0 !important;
 }
 
 header.nav-menu-open > #header-left > p{
@@ -263,4 +268,75 @@ header.nav-menu-open > #header-left > p{
 
 header.nav-menu-open #nav-links{
     display: flex;
+}
+
+header.nav-menu-open > #header-right{
+    padding: 30px 0 0 0 !important;
+    margin: 0 !important;
+    align-items: flex-start !important;
+}
+
+/* header styling for when scrolled past absolute of page */
+
+header.header-scrolled > #header-left > h1{
+    font-size: 30px;
+    transition: font-size 0.5s;
+    color: #D1E3DD;
+    background-color: #334E58;
+    padding: 10px 14px;
+    border-radius: 20px;
+}
+
+header.header-scrolled > #header-left{
+    padding-top: 30px;
+}
+
+header.header-scrolled > #header-right{
+    background-color: #334E58;
+    padding: 10px 14px;
+    margin-top: 30px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+header.header-scrolled #modeswitch{
+    border: 2px solid #D1E3DD;
+}
+
+header.header-scrolled #modeswitch-slider{
+    /* transform: translateX(25px); */
+    border-right: 2px solid #D1E3DD;
+}
+
+header.header-scrolled #modeswitch.modeslideon #modeswitch-slider{
+    /* transform: translateX(25px); */
+    border-left: 2px solid #D1E3DD;
+    border-right: 0px;
+}
+
+
+/* hamburger color switch when scrolled */
+
+header.header-scrolled #hamburger-left{
+    background-color: #D1E3DD;
+}
+
+header.header-scrolled #hamburger-right{
+    background-color: #D1E3DD;
+}
+
+header.header-scrolled #hamburger-left::before{
+    background-color: #D1E3DD;
+}
+
+header.header-scrolled #hamburger-right::before{
+    background-color: #D1E3DD;
+}
+
+header.header-scrolled #hamburger-left::after{
+    background-color: #D1E3DD;
+}
+
+header.header-scrolled #hamburger-right::after{
+    background-color: #D1E3DD;
 }

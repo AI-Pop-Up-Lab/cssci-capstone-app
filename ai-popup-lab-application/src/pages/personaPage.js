@@ -45,6 +45,11 @@ function PersonaPage() {
   
   const responseData = useMemo(() => data?.data ?? [], [data]);
 
+  // scroll to top of page when loads, as many personas puts you at bottom of massive page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="PersonaPage">
 
