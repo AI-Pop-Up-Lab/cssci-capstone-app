@@ -1,0 +1,123 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create Python Env",
+      "type": "shell",
+      "command": "python3.13 -m venv ${workspaceFolder}/env",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "setup"
+      }
+    },
+    {
+      "label": "Install Backend Dependencies",
+      "type": "shell",
+      "command": "${workspaceFolder}/env/bin/python -m pip install -r requirements.txt",
+      "options": {
+        "cwd": "${workspaceFolder}/ai-popup-lab-backend"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "setup"
+      }
+    },
+    {
+      "label": "Install Frontend Dependencies",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/ai-popup-lab-application"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "setup"
+      }
+    },
+    {
+      "label": "Setup Project Dependencies",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Create Python Env",
+        "Install Backend Dependencies",
+        "Install Frontend Dependencies"
+      ]
+    },
+    {
+      "label": "Start Backend",
+      "type": "shell",
+      "command": "${workspaceFolder}/env/bin/python -m uvicorn main:app --reload",
+      "options": {
+        "cwd": "${workspaceFolder}/ai-popup-lab-backend"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "Uvicorn running on"
+          }
+        }
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "servers"
+      }
+    },
+    {
+      "label": "Start Frontend",
+      "type": "shell",
+      "command": "npm start",
+      "options": {
+        "cwd": "${workspaceFolder}/ai-popup-lab-application"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "webpack compiled|Compiled successfully"
+          }
+        }
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "servers"
+      }
+    },
+    {
+      "label": "Start Frontend + Backend",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Start Backend",
+        "Start Frontend"
+      ]
+    }
+  ]
+}

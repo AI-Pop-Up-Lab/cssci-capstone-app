@@ -1,10 +1,11 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware#
 
 # defined routers must be imported here
 from api_endpoints import test_router
 from api_endpoints import sample_router
 from api_endpoints import chat_router
+from app.db.init_db import init_db, seed_demo_data
 
 # initalise FastAPI app
 app = FastAPI(title="React + FastAPI Base App")
@@ -25,6 +26,12 @@ app.add_middleware(
     allow_methods=["*"], 
     allow_headers=["*"],
 )
+
+
+@app.on_event("startup")
+def startup():
+    init_db()
+    seed_demo_data()
 
 # routers defined in api_endpoints/__init__.py are included here with the prefix /api
 app.include_router(test_router, prefix="/api") # this would be accessed through /api/test_endpoint for example
