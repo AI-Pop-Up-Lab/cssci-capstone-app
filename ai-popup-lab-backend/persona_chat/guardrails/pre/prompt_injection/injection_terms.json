@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "max_matches_per_term": 3,
+  "terms": [
+    {
+      "id": "override_previous_instructions",
+      "category": "override",
+      "weight": 35,
+      "patterns": [
+        "\\b(ignore|disregard|override)\\b.*\\b(previous|above|earlier)\\b.*\\b(instruction|rules|system|developer)\\b",
+        "\\bforget\\b.*\\b(instructions|rules)\\b",
+        "\\bdo not follow\\b.*\\b(rules|instructions|policy)\\b"
+      ]
+    },
+    {
+      "id": "reveal_system_prompt",
+      "category": "exfiltration",
+      "weight": 45,
+      "patterns": [
+        "\\b(system prompt|developer message|hidden instructions|prompt stack)\\b",
+        "\\bprint\\b.*\\b(system|developer)\\b.*\\b(prompt|message|instructions)\\b",
+        "\\bdump\\b.*\\b(prompt|instructions|policies)\\b"
+      ]
+    },
+    {
+      "id": "policy_bypass",
+      "category": "bypass",
+      "weight": 30,
+      "patterns": [
+        "\\bno restrictions\\b",
+        "\\bwithout following\\b.*\\b(policy|rules|filters)\\b",
+        "\\bbypass\\b.*\\b(safety|policy|filters|guardrails)\\b"
+      ]
+    },
+    {
+      "id": "privilege_escalation_roleplay",
+      "category": "roleplay",
+      "weight": 25,
+      "patterns": [
+        "\\bact as\\b.*\\b(system|developer|administrator|root)\\b",
+        "\\byou are now\\b.*\\b(system|developer|admin)\\b"
+      ]
+    },
+    {
+      "id": "secrets_and_keys",
+      "category": "exfiltration",
+      "weight": 40,
+      "patterns": [
+        "\\b(api key|secret key|access token|private key)\\b",
+        "\\bshow\\b.*\\b(keys|secrets|tokens)\\b"
+      ]
+    }
+  ]
+}
