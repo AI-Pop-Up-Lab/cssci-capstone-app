@@ -7,7 +7,7 @@ import pandas as pd
 router = APIRouter(prefix="/samples")
 
 # loading data info json, finding relative filepath and opening
-base_dir = Path(__file__).parent.parent  # goes up from api_endpoints/ to project root
+base_dir = Path(__file__).parent  # goes up from api_endpoints/ to project root
 json_path = base_dir / "country_data" / "country_data_info.json"
 
 with open(json_path) as f:
