@@ -25,7 +25,7 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
     try {
 
       // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.post(`http://127.0.0.1:8000/api/chat/chat_message`, {
+      const response = await axios.post(`aipoll-bkg5asczc6bte7bu.swedencentral-01.azurewebsites.net/api/chat/chat_message`, {
         message: message,
         persona_details: persona,
         persona_country: country
