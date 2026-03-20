@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import * as d3 from "d3";
 import { parliamentChart } from 'd3-parliament-chart';
 import './seatVisualisation.css';
@@ -21,6 +21,7 @@ function dhondt(votes) {
 }
 
 function SeatVisualisation({ pollingData }) {
+
   const svgRef = useRef();
   const tooltipRef = useRef();
 
@@ -47,7 +48,13 @@ function SeatVisualisation({ pollingData }) {
       })
       .map(([party, seats]) => ({ seats, color: partyColours[party] || "#aaa", party }));
 
-    const svgW = 760;
+    
+    let svgW = 760
+
+    if(window.innerWidth <= 900){
+      svgW = 600;
+    }
+
 
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();

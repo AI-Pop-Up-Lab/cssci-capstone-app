@@ -19,3 +19,33 @@
   height: 0;
   border-bottom: 2px dashed #335058;
 }
+
+#exportButton{
+  background-color: #334E58;
+  border-radius: 34px;
+  padding: 12px 30px;
+  transition: background-color 0.2s;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+#exportButton > p{
+  color: #FCBFB7;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#exportButton > img{
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  filter: invert(76%) sepia(11%) saturate(871%) hue-rotate(318deg) brightness(105%) contrast(98%);
+}
+
+#exportButton:hover{
+  cursor: pointer;
+  background-color: #2b4149;
+}

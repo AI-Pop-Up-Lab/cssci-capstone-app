@@ -39,7 +39,7 @@ header > #header-left > p{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    margin-right: 40px;
+    /* margin-right: 40px; */
 }
 
 #nav-links{
@@ -339,4 +339,19 @@ header.header-scrolled #hamburger-left::after{
 
 header.header-scrolled #hamburger-right::after{
     background-color: #D1E3DD;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 780px) {
+
+    header > #header-left > h1{
+        font-size: 60px;
+    }
+
+    header > #header-left {
+        padding-top: 30px;
+    }
+
 }

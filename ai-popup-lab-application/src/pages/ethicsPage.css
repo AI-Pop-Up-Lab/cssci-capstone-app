@@ -102,3 +102,49 @@
     line-height: 1.2;
     font-size: 12px;
 }
+
+@media screen and (max-width: 780px) {
+    .carousel-card-primary{
+        height: calc(400px - 60px);
+        width: calc(200px - 60px);
+
+        margin: 0 20px;
+        padding: 30px;
+    }
+
+    .carousel-card-primary > img{
+        width: 80px;
+    }
+
+    .carousel-card-primary > h1{
+        margin: 20px 0;
+        font-size: 16px;
+    }
+
+    .carousel-card-primary > p{
+        font-size: 10px;
+    }
+
+    .carousel-card-secondary{
+        height: calc(300px - 44px);
+        width: calc(150px - 44px);
+
+        margin: 0 20px;
+        padding: 22px;
+    }
+
+    .carousel-card-secondary > img{
+        width: 60px;
+    }
+
+    .carousel-card-secondary > h1{
+        margin: 11px 0;
+        font-size: 12px;
+    }
+
+    .carousel-card-secondary > p{
+        font-size: 8px;
+        font-weight: 300;
+    }
+    
+}

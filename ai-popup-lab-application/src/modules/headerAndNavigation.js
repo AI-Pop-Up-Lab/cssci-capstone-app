@@ -38,16 +38,16 @@ function HeaderAndNavigation() {
               <Link to="/" onClick={() => setNavOpen(!navOpen)}>homepage</Link>
               <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>persona explorer</Link>
               <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethical statement</Link>
-              <Link to="/about" onClick={() => setNavOpen(!navOpen)}>about us</Link>
+              {/* <Link to="/about" onClick={() => setNavOpen(!navOpen)}>about us</Link> */}
             </div>
           </div>
 
-          <div id='lang-and-modeswitch'>
+          {/* <div id='lang-and-modeswitch'>
             <button className='unbounded-weight300'>ENGLISH</button>
             <div className={darkModeOn ? 'modeslideon' : ''} id="modeswitch" onClick={() => setDarkModeOn(!darkModeOn)}>
               <div id="modeswitch-slider"></div>
             </div>
-          </div>
+          </div> */}
         </div>  
       </header>
   );

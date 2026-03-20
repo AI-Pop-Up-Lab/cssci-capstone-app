@@ -214,3 +214,35 @@
         color: #FCBFB7;
     }
 }
+
+@media screen and (max-width: 780px) {
+
+    #example-user-message > p{
+        font-size: 18px;
+    }
+
+    #example-response-message > p{
+        font-size: 12px;
+    }
+
+    #persona-warning-overlay > p{
+        font-size: 12px;
+    }
+
+    #example-persona-card{
+        width: 30%;
+    }
+
+    #example-persona-card> img{
+        width: 90px;
+    }
+
+    #example-persona-name{
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .example-persona-attr{
+        font-size: 12px;
+    }
+}

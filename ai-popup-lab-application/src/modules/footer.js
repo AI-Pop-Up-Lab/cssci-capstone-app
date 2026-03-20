@@ -12,8 +12,8 @@ function Footer() {
     <div className='Footer unbounded-weight300'>
       <div id="footer-left">
         <Link to="/ethics">Ethical Statement</Link>
-        <Link to="/methods">Methods</Link>
-        <Link to="/about">About Us</Link>
+        {/* <Link to="/methods">Methods</Link> */}
+        {/* <Link to="/about">About Us</Link> */}
       </div>
       <div id="footer-right">
         <p id="footer-name">AI POLLSTER</p>

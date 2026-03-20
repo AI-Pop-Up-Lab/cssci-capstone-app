@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import axios from "axios";
 
 import './pollingResults.css';
+import exportIcon from '../../assets/images/export.png'
 
 import PollingMap from './pollingMap';
 import SeatVisualisation from './seatVisualisation';
@@ -51,6 +52,22 @@ function PollingResults() {
 
   const responseData = useMemo(() => data?.data ?? [], [data]);
 
+
+
+  function exportToCSV(data, filename = 'data.csv') {
+    const headers = Object.keys(data[0]);
+    const rows = data.map(obj => headers.map(h => `"${obj[h]}"`).join(','));
+    const csv = [headers.join(','), ...rows].join('\n');
+
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <div className="PollingResults">
 
@@ -82,6 +99,13 @@ function PollingResults() {
         /> : <Loader />}
 
       </div> */}
+
+      <div id="exportButton" onClick={() => {exportToCSV(responseData)}}>
+        <p>Export data</p>
+        <img src={exportIcon}></img>
+      </div>
+
+      <div id="polling-divider"></div>
     </div>
   );
 };
