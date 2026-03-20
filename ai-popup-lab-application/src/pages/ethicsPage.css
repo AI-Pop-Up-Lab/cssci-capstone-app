@@ -1,0 +1,104 @@
+.EthicsPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.EthicsPage > h1{
+    font-size: 50px;
+    font-weight: 400;
+}
+
+#values-carousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+    margin-top: 100px;
+}
+
+#carousel-left{
+    transform: rotate(180deg);
+}
+
+#carousel-left, #carousel-right{
+
+}
+
+#carousel-left:hover, #carousel-right:hover{
+    cursor: pointer;
+}
+
+.carousel-card-primary{
+    background-color: #334E58;
+    border-radius: 30px;
+    height: calc(500px - 100px);
+    width: calc(360px - 100px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 25px;
+    padding: 50px;
+}
+
+.carousel-card-primary > img{
+    filter: brightness(0) saturate(100%) invert(76%) sepia(11%) saturate(1175%) hue-rotate(316deg) brightness(108%) contrast(98%);
+    width: 120px;
+    aspect-ratio: 1;
+}
+
+.carousel-card-primary > h1{
+    color: #D1E3DD;
+    font-weight: 300;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.carousel-card-primary > p{
+    color: #FCBFB7;
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.carousel-card-secondary{
+    border: 3px solid #334E58;
+    border-radius: 30px;
+    height: calc(375px - 100);
+    width: calc(270px - 100px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 25px;
+    padding: 38px;
+}
+
+.carousel-card-secondary > img{
+    filter: brightness(0) saturate(100%) invert(27%) sepia(25%) saturate(628%) hue-rotate(150deg) brightness(89%) contrast(87%);
+    width: 90px;
+    aspect-ratio: 1;
+}
+
+.carousel-card-secondary > h1{
+    color: #334E58;
+    font-weight: 300;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+.carousel-card-secondary > p{
+    color: #334E58;
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 12px;
+}

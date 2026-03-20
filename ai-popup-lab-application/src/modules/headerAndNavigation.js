@@ -37,7 +37,7 @@ function HeaderAndNavigation() {
             <div id='nav-links' className='unbounded-weight400'>
               <Link to="/" onClick={() => setNavOpen(!navOpen)}>homepage</Link>
               <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>persona explorer</Link>
-              <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethics statement</Link>
+              <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethical statement</Link>
               <Link to="/about" onClick={() => setNavOpen(!navOpen)}>about us</Link>
             </div>
           </div>
