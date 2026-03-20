@@ -13,6 +13,10 @@ from app.services.persona_repository import (
     list_questions_for_persona,
 )
 from app.services.service import create_session, get_session, handle_user_message, list_messages
+from pathlib import Path
+
+from generate_biography import generate_biography
+from generate_response import generate_response
 
 router = APIRouter()
 
@@ -22,6 +26,8 @@ class LegacyChatMessage(BaseModel):
     persona_details: dict
     persona_country: str
 
+base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
+biographies_path = base_dir / "country_data" / "biographies.json"
 
 def _legacy_snapshot_id(country: str) -> str:
     return f"legacy_{(country or 'unknown').lower()}_bridge_v1"
@@ -195,44 +201,67 @@ def api_get_session(session_id: str):
     return {"session": session, "messages": messages}
 
 
-@router.post("/chat/{session_id}/message")
-async def api_send_message(session_id: str, payload: ChatMessageIn):
-    try:
-        return await handle_user_message(session_id, payload.content)
-    except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc)) from exc
+# @router.post("/chat/{session_id}/message")
+# async def api_send_message(session_id: str, payload: ChatMessageIn):
+#     try:
+#         return await handle_user_message(session_id, payload.content)
+#     except ValueError as exc:
+#         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
+
+# @router.post("/chat/chat_message")
+# async def api_legacy_chat_message(payload: LegacyChatMessage):
+#     source_snapshot_id = "2026_wave_1"
+#     supplemental_persona = _select_legacy_persona(source_snapshot_id, payload.persona_details)
+#     bridged_snapshot_id = _legacy_snapshot_id(payload.persona_country)
+#     bridged_persona_id = _legacy_persona_id(payload.persona_country, payload.persona_details)
+
+#     _upsert_legacy_bridge_persona(
+#         legacy_persona_id=bridged_persona_id,
+#         legacy_snapshot_id=bridged_snapshot_id,
+#         persona_details=payload.persona_details,
+#         supplemental_persona=supplemental_persona,
+#     )
+
+#     model_version = f"provider:{settings.LLM_PROVIDER}"
+#     session_id = create_session(
+#         bridged_persona_id,
+#         bridged_snapshot_id,
+#         model_version=model_version,
+#     )
+
+#     try:
+#         result = await handle_user_message(session_id, payload.message)
+#     except ValueError as exc:
+#         raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+#     return {
+#         "message": result["content"],
+#         "citations": result.get("citations", []),
+#         "trace_id": result.get("trace_id"),
+#         "persona_id": bridged_persona_id,
+#         "snapshot_id": bridged_snapshot_id,
+#     }
 
 @router.post("/chat/chat_message")
-async def api_legacy_chat_message(payload: LegacyChatMessage):
-    source_snapshot_id = "2026_wave_1"
-    supplemental_persona = _select_legacy_persona(source_snapshot_id, payload.persona_details)
-    bridged_snapshot_id = _legacy_snapshot_id(payload.persona_country)
-    bridged_persona_id = _legacy_persona_id(payload.persona_country, payload.persona_details)
+async def personaResponse(request_body: LegacyChatMessage):
 
-    _upsert_legacy_bridge_persona(
-        legacy_persona_id=bridged_persona_id,
-        legacy_snapshot_id=bridged_snapshot_id,
-        persona_details=payload.persona_details,
-        supplemental_persona=supplemental_persona,
-    )
+    persona_index = request_body.persona_details['index']
 
-    model_version = f"provider:{settings.LLM_PROVIDER}"
-    session_id = create_session(
-        bridged_persona_id,
-        bridged_snapshot_id,
-        model_version=model_version,
-    )
+    persona_details = request_body.persona_details
 
-    try:
-        result = await handle_user_message(session_id, payload.message)
-    except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    with open(biographies_path, 'r') as f:
+        data = json.load(f)
 
-    return {
-        "message": result["content"],
-        "citations": result.get("citations", []),
-        "trace_id": result.get("trace_id"),
-        "persona_id": bridged_persona_id,
-        "snapshot_id": bridged_snapshot_id,
-    }
+    if str(persona_index) in data:
+        biography = data[str(persona_index)]
+    else:
+        biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'])
+        data[str(persona_index)] = biography
+
+        with open(biographies_path, "w") as f:
+            json.dump(data, f, indent=4, sort_keys=True)
+
+    response = generate_response(persona_biography=biography, user_message=request_body.message)
+
+    return {"message": response}
