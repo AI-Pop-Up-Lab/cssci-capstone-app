@@ -16,8 +16,9 @@
 
 #landing-intro > p{
     line-height: 200%;
-    font-size: 14px;
+    font-size: 18px;
     max-width: 550px;
+    text-transform: uppercase;
 }
 
 #landing-intro > img{
