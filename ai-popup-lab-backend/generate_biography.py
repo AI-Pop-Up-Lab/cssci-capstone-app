@@ -1,7 +1,9 @@
 import random
 from openai import OpenAI
 import os
+from dotenv import load_dotenv
 
+load_dotenv() 
 
 
 # USAGE: in a separate file, import as follows:
