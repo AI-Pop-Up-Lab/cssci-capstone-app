@@ -20,8 +20,7 @@ app = FastAPI(title="Ask-the-Persona API", version="1.0.0")
 # CORS (React dev server -> FastAPI)
 # -------------------------------------------------------------------------------------------------
 origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "aipopup-mvp-byatgpamb0cpb2du.swedencentral-01.azurewebsites.net",
 ]
 
 app.add_middleware(
