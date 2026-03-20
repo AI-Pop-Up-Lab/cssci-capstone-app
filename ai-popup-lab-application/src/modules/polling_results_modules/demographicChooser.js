@@ -17,7 +17,7 @@ function DemographicChooser({setChosenDemographic, country}) {
     try {
 
       // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.get(`aipoll-bkg5asczc6bte7bu.swedencentral-01.azurewebsites.net/api/samples/columns_and_uniques?country=${countryName}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
       
       const modifiedData = response.data;
       Object.keys(modifiedData.column_unique_vals).forEach((column) => {
