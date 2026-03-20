@@ -15,6 +15,7 @@ origins = [
     # Local development URLs, for use with React application
     "http://localhost:3000",  
     "http://127.0.0.1:3000",
+    "https://ai-pollster.vercel.app/"
     # production frontend url to be added here when deployed
 ]
 
