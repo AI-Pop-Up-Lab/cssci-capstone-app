@@ -30,3 +30,16 @@
     font-size: 28px;
     margin-bottom: 100px;
 }
+
+
+@media screen and (max-width: 780px) {
+
+    #landing-intro > p{
+        font-size: 10px;
+        max-width: 50%;
+    }
+
+    #landing-intro > img{
+    width: 200px;
+    }
+}

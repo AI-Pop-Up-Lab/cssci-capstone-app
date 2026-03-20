@@ -41,3 +41,7 @@ circle.seat {
 circle.seat:hover {
   opacity: 0.7;
 }
+
+@media screen and (max-width: 780px) {
+  
+}

@@ -36,8 +36,15 @@ function DemographicCharts({ pollingData, country }) {
       .map(([party, count]) => ({ party, pct: (count / voters) * 100 }))
       .sort((a, b) => b.pct - a.pct);
 
+      
+    let svgW = 820
+
+    if(window.innerWidth <= 900){
+      svgW = 600;
+    }
+
     const margin = { top: 30, right: 20, bottom: 80, left: 50 };
-    const width = 820 - margin.left - margin.right;
+    const width = svgW - margin.left - margin.right;
     const height = 340 - margin.top - margin.bottom;
 
     const svg = d3.select(svgRef.current);
