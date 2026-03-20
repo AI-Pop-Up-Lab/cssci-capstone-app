@@ -8,7 +8,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 3%;
-    margin-top: 80px;
+
+    margin-top: auto;
 }
 
 #footer-left{
@@ -17,7 +18,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     height: calc(100% - 14%);
-    padding: 7% 0;
+    padding: 0 0;
 }
 
 #footer-left > a{

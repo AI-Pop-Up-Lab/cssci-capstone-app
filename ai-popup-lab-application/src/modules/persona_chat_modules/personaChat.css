@@ -1,3 +1,7 @@
+.PersonaChatExample{
+    margin-bottom: 50px;
+}
+
 .PersonaChat{
     position: fixed;
     top: 30px;
@@ -14,6 +18,7 @@
 #chat-bubble{
     position: relative;
     background-color: #334E58;
+    border: 2px solid #D1E3DD;
     width: calc(60% - 50px);
     max-height: 635px;
     height: calc(75% - 50px);

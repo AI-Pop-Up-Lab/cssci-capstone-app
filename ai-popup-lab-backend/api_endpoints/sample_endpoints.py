@@ -48,6 +48,13 @@ def get_country_cols_uniques(country: str):
     relevant_columns = country_data[country]['demographic_search_columns']
     column_unique_vals = country_data[country]['column_unique_vals']
 
+    for key in column_unique_vals:
+        if not isinstance(column_unique_vals[key][0], str):
+            continue
+
+        column_unique_vals[key].sort()
+    
+
     data = {"relevant_columns": relevant_columns, "column_unique_vals": column_unique_vals}
 
     return data
