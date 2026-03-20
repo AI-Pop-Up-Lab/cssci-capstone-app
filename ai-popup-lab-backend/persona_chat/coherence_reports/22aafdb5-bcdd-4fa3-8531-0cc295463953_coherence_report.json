@@ -1,0 +1,32 @@
+{
+  "session_id": "22aafdb5-bcdd-4fa3-8531-0cc295463953",
+  "persona_id": "LEGACY_netherlands_3",
+  "snapshot_id": "legacy_netherlands_bridge_v1",
+  "created_at": "2026-03-20T09:10:44.488511+00:00",
+  "turn_count": 1,
+  "prompt_to_line_consistency": null,
+  "line_to_line_consistency": null,
+  "p2l_mean_score": 0.0,
+  "l2l_mean_score": 0.0,
+  "p2l_total_violations": 0,
+  "l2l_total_contradictions": 0,
+  "l2l_turns_with_contradictions": 0,
+  "p2l_violation_type_counts": {},
+  "turns": [
+    {
+      "turn_index": 1,
+      "user_text": "why did you vote 50plus",
+      "assistant_output": "(Synthetic persona — grounded only in stored profile + survey answers.)\nI am highly concerned about inflation.\nLowering living costs is my top priority.\nNo, I do not support a carbon tax.",
+      "p2l_judge_binary": null,
+      "p2l_score": 0.0,
+      "p2l_verdict": "WARN",
+      "p2l_violation_count": 0,
+      "p2l_violations": [],
+      "l2l_judge_binary": null,
+      "l2l_score": 0.0,
+      "l2l_verdict": "WARN",
+      "l2l_contradiction_count": 0,
+      "l2l_contradictions": []
+    }
+  ]
+}
