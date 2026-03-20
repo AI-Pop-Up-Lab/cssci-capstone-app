@@ -31,3 +31,30 @@ To stop the application, press the keys **Ctrl+C** in the terminal.
 
 **Note**: For correct front-end functionality, the back-end should be running too, thus have two terminals open running both the front and back end, ideally running the back-end *first*.
 
+#### Running Both in VS Code
+
+This repository includes a VS Code task that starts both services for you.
+
+Open the repository in VS Code, then run:
+`Terminal` -> `Run Task...` -> `Start Frontend + Backend`
+
+Before first run, install dependencies with:
+`Terminal` -> `Run Task...` -> `Setup Project Dependencies`
+
+You can also run the individual tasks:
+- `Create Python Env`
+- `Setup Project Dependencies`
+- `Install Backend Dependencies`
+- `Install Frontend Dependencies`
+- `Start Backend`
+- `Start Frontend`
+
+You can also use the `Run and Debug` panel at the top of VS Code.
+Select:
+`Full Stack: Frontend + Backend`
+
+Other available debug entries:
+- `Backend: FastAPI`
+- `Frontend: React`
+
+The backend Python dependencies are listed in [ai-popup-lab-backend/requirements.txt](/Volumes/ADATA-SE900G/Documents/Jelle/Study/CulturalData&AI/MA Thesis/Repos/cssci-capstone-app/ai-popup-lab-backend/requirements.txt).
