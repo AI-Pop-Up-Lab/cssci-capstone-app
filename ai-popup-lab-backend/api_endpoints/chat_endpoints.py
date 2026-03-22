@@ -267,6 +267,11 @@ async def personaResponse(request_body: LegacyChatMessage):
         with open(biographies_path, "w") as f:
             json.dump(data, f, indent=4, sort_keys=True)
 
+    # debug commands
+    if request_body.message in chat_commands:
+        if request_body.message == '//biography':
+            return {"message": biography}
+
     response = generate_response(persona_biography=biography, user_message=request_body.message)
 
     return {"message": response}
