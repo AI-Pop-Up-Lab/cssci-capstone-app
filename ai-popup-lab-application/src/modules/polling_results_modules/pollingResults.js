@@ -28,6 +28,7 @@ function PollingResults() {
   // function to get country sample data from backend
   async function getCountrySample(countryName){
     try {
+      
 
       // console.log(`Getting polling results for ${countryName}...`);
 
