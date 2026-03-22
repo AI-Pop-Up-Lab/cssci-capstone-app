@@ -49,10 +49,12 @@ function SeatVisualisation({ pollingData }) {
       .map(([party, seats]) => ({ seats, color: partyColours[party] || "#aaa", party }));
 
     
-    let svgW = 760
+    let svgW = 760;
+    let seatRadius = 15;
 
     if(window.innerWidth <= 930){
       svgW = 570;
+      seatRadius = 12;
     }
 
 
@@ -70,7 +72,7 @@ function SeatVisualisation({ pollingData }) {
       .aggregatedData(aggregated)
       .sections(1)
       .sectionGap(44)
-      .seatRadius(15)
+      .seatRadius(seatRadius)
       .rowHeight(35);
 
     g.call(pc);
