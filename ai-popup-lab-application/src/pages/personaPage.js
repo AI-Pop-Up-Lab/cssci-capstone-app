@@ -30,7 +30,7 @@ function PersonaPage() {
       // console.log(`Getting polling results for ${countryName}...`);
 
       // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.get(`http://127.0.0.1:8000/api/samples/country_sample?country=${countryName}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/country_sample?country=${countryName}`);
       setData(response.data);
       setError(null);
     } catch (err) {
