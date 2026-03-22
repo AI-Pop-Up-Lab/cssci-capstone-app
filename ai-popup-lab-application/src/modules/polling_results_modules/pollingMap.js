@@ -56,6 +56,7 @@ function PollingMap() {
       });
   }, []);
 
+  
   return (
     <div className="PollingMap">
       <h3>Netherlands — Municipalities</h3>
