@@ -32,6 +32,7 @@ function PollingResults() {
       // console.log(`Getting polling results for ${countryName}...`);
 
       // FastAPI in testing is running on 127.0.0.1:8000
+      // In deployment, the environment variable REACT_APP_API_URL is in the github repository secrets and gets added in build from the workflow file (deploy-frontend.yml)
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/country_sample?country=${countryName}`);
       setData(response.data);
       setError(null);

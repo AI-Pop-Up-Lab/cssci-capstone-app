@@ -25,3 +25,4 @@ jobs:
           output_location: build
         env:
           CI: false
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
