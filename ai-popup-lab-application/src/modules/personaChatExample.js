@@ -45,7 +45,7 @@ function PersonaChatExample({includeLink}) {
         </div>
 
         <div id='land-expl-pers-bottom' className={includeLink ? '' : 'dontShowPersonaLink'}>
-          <Link to="/personas"><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <span>{'\u{1F782}'}</span></button></Link>
+          <Link to="/personas"><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <span>{'\u{25B6}'}</span></button></Link>
         </div>
     </div>
   );
