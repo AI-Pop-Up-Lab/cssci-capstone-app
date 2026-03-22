@@ -59,3 +59,14 @@
     font-size: 14px;
     text-align: right;
 }
+
+@media screen and (max-width: 810px) {
+    #footer-name{
+        font-size: 30px;
+    }
+
+    #footer-description{
+        font-size: 10px;
+        width: 240px;
+    }
+}

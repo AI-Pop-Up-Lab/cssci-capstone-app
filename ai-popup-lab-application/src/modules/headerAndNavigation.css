@@ -344,7 +344,7 @@ header.header-scrolled #hamburger-right::after{
 
 /* media queries */
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 810px) {
 
     header > #header-left > h1{
         font-size: 60px;

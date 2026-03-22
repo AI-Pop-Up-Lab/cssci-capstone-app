@@ -93,6 +93,20 @@
     margin-left: 12px;
 }
 
+@media screen and (max-width: 810px) {
+    .persona-info-bubble{
+        min-width: 290px;
+    }
+
+    .persona-info-bubble > div > p{
+        font-size: 12px;
+    }
+
+    .persona-info-bubble > div{
+        margin: 4px 0;
+    }
+}
+
 /* OLD MOCKUP CSS */
 
 /* .PersonaDetailCard{

@@ -33,7 +33,7 @@
 }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 810px) {
 
     #landing-intro > p{
         font-size: 10px;
@@ -41,6 +41,6 @@
     }
 
     #landing-intro > img{
-    width: 200px;
+        width: 200px;
     }
 }

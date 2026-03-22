@@ -71,3 +71,15 @@
 .popupFadeOut {
     animation: popupFadeOut 0.225s ease-out;
 }
+
+@media screen and (max-width: 810px) {
+    .PopupDisclaimer{
+        width: 70%;
+        max-width: 80%;
+    }
+
+    #popupDisclaimerContent > p{
+        font-size: 12px;
+    }
+
+}

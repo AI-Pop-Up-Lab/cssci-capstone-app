@@ -191,7 +191,7 @@
     height: 24px;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 810px) {
 
     #chat-bubble{
         width: calc(80% - 50px);
