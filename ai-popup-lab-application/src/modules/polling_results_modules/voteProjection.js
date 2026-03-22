@@ -29,8 +29,8 @@ function VoteProjection({ pollingData }) {
 
     let svgW = 820
 
-    if(window.innerWidth <= 900){
-      svgW = 600;
+    if(window.innerWidth <= 930){
+      svgW = 570;
     }
 
     const margin = { top: 30, right: 20, bottom: 80, left: 50 };

@@ -51,8 +51,8 @@ function SeatVisualisation({ pollingData }) {
     
     let svgW = 760
 
-    if(window.innerWidth <= 900){
-      svgW = 600;
+    if(window.innerWidth <= 930){
+      svgW = 570;
     }
 
 

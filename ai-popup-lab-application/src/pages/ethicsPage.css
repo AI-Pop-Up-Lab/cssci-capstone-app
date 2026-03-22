@@ -69,7 +69,7 @@
 .carousel-card-secondary{
     border: 3px solid #334E58;
     border-radius: 30px;
-    height: calc(375px - 100);
+    height: calc(375px - 100px);
     width: calc(270px - 100px);
 
     display: flex;
@@ -83,7 +83,7 @@
 
 .carousel-card-secondary > img{
     filter: brightness(0) saturate(100%) invert(27%) sepia(25%) saturate(628%) hue-rotate(150deg) brightness(89%) contrast(87%);
-    width: 90px;
+    width: 70px;
     aspect-ratio: 1;
 }
 
@@ -103,34 +103,34 @@
     font-size: 12px;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 810px) {
     .carousel-card-primary{
-        height: calc(400px - 60px);
-        width: calc(200px - 60px);
+        height: calc(335px - 24px);
+        width: calc(190px - 24px);
 
-        margin: 0 20px;
-        padding: 30px;
+        margin: 0 8px;
+        padding: 12px;
     }
 
     .carousel-card-primary > img{
-        width: 80px;
+        width: 70px;
     }
 
     .carousel-card-primary > h1{
         margin: 20px 0;
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .carousel-card-primary > p{
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .carousel-card-secondary{
-        height: calc(300px - 44px);
-        width: calc(150px - 44px);
+        height: calc(250px - 16px);
+        width: calc(145px - 16px);
 
-        margin: 0 20px;
-        padding: 22px;
+        margin: 0 8px;
+        padding: 8px;
     }
 
     .carousel-card-secondary > img{
@@ -139,11 +139,11 @@
 
     .carousel-card-secondary > h1{
         margin: 11px 0;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .carousel-card-secondary > p{
-        font-size: 8px;
+        font-size: 6px;
         font-weight: 300;
     }
     
