@@ -13,6 +13,7 @@ above class/model is equivalent to/expectant of a json object like this:
     message_text: "this is the message text!!!"
 }
 
+
 '''
 
 # test/example for GET endpoint
