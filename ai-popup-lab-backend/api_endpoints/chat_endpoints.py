@@ -26,6 +26,8 @@ class LegacyChatMessage(BaseModel):
     persona_details: dict
     persona_country: str
 
+chat_commands = ['//biography']
+
 
 # path for json file (on mounted files in deployment)
 biographies_path = '/mnt/data/biographies.json'
