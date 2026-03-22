@@ -6,6 +6,7 @@ on:
       - pilot-study-app
     paths:
       - 'ai-popup-lab-application/**'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
