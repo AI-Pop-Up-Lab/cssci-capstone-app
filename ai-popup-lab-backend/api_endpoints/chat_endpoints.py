@@ -26,8 +26,11 @@ class LegacyChatMessage(BaseModel):
     persona_details: dict
     persona_country: str
 
-base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
-biographies_path = base_dir / "country_data" / "biographies.json"
+
+# path for json file (on mounted files in deployment)
+biographies_path = '/mnt/data/biographies.json'
+# base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
+# biographies_path = base_dir / "country_data" / "biographies.json"
 
 def _legacy_snapshot_id(country: str) -> str:
     return f"legacy_{(country or 'unknown').lower()}_bridge_v1"
