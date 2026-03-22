@@ -45,7 +45,7 @@ function PersonaChooser({ data, chosenDemographic, countryName }) {
     try {
 
       // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.get(`http://127.0.0.1:8000/api/samples/columns_and_uniques?country=${countryName}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
 
 
       setRelevantColumns(response.data.relevant_columns);
