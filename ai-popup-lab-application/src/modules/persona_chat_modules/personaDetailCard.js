@@ -86,7 +86,7 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
               <div key={key}><p>{formatKey(key)}:</p><p>{value}</p></div>
             )) : <Loader />}
 
-            <button onClick={() => setShowPersonaChat(!showPersonaChat)} className="unbounded-weight300 enter-personachat-button">START THE CHAT <span>{'\u{1F782}'}</span></button>
+            <button onClick={() => setShowPersonaChat(!showPersonaChat)} className="unbounded-weight300 enter-personachat-button">START THE CHAT <span>{'\u{25B6}'}</span></button>
         </div>
 
       </div>

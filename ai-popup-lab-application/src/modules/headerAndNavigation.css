@@ -13,6 +13,7 @@ header{
     position: sticky;
     top: 0;
     z-index: 5;
+    pointer-events: none;
 }
 
 header > #header-left > h1{
@@ -56,6 +57,7 @@ header > #header-left > p{
     font-weight: 200;
     line-height: 1.9;
     font-size: 22px;
+    pointer-events: auto;
 }
 
 #nav-links > a::after{
@@ -85,6 +87,7 @@ header > #header-left > p{
     border-radius: 18px;
     transition: background-color 0.2s;
     margin-bottom: 10px;
+    pointer-events: auto;
 }
 
 #lang-and-modeswitch > button:hover{
@@ -101,6 +104,7 @@ header > #header-left > p{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    pointer-events: auto;
 }
 
 #modeswitch:hover{
@@ -128,6 +132,7 @@ header > #header-left > p{
     cursor: pointer;
     position: relative;
     z-index: 3;
+    pointer-events: auto;
 }
 
 #hamburger-left{
