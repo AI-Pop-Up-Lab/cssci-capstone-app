@@ -1,0 +1,33 @@
+name: Deploy FastAPI backend
+ 
+on:
+  push:
+    branches:
+      - pilot-study-app
+    paths:
+      - 'ai-popup-lab-backend/**'
+ 
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+ 
+      - name: Install dependencies
+        working-directory: ai-popup-lab-backend
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+ 
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'popup-lab-backend'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ai-popup-lab-backend
+
