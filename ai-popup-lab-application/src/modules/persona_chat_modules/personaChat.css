@@ -23,7 +23,6 @@
     max-height: 635px;
     height: calc(75% - 50px);
     border-radius: 26px;
-    position: absolute;
     padding: 25px;
 
     display: flex;
@@ -189,6 +188,112 @@
     filter: invert(26%) sepia(16%) saturate(1020%) hue-rotate(146deg) brightness(94%) contrast(86%);
     aspect-ratio: 1;
     height: 24px;
+}
+
+
+#chat-bubble-agree{
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 26px;
+    width: calc(100% - 32%);
+    height: calc(100% - 12%);
+    z-index: 6;
+    background-color: #334E58;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6% 16%;
+    text-align: center;
+}
+
+#chat-bubble-agree > p:nth-child(1){
+    color: #D1E3DD;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+#chat-bubble-agree > p:nth-child(2){
+    color: #FCBFB7;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+#chat-bubble-agree > p:nth-child(3){
+    color: #9BA9B0;
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fade-in-agree 0.5s ease 0.55s forwards;
+}
+
+#chat-bubble-agree > p:nth-child(4){
+    color: #D1E3DD;
+    font-weight: 400;
+    font-size: 19px;
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: fade-in-agree 0.5s ease 3s forwards;
+}
+
+#chat-bubble-agree > p:nth-child(5){
+    color: #9BA9B0;
+    font-size: 14px;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fade-in-agree 0.5s ease 5s forwards;
+}
+
+#chat-bubble-agree-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fade-in-agree 0.5s ease 8s forwards;
+}
+
+#chat-bubble-agree-buttons > div:nth-child(1), #chat-bubble-agree-buttons > div:nth-child(2){
+    color: #334E58;
+    border-radius: 20px;
+    font-weight: 400;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#chat-bubble-agree-buttons > div:nth-child(1), #chat-bubble-agree-buttons > div:nth-child(2){
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#chat-bubble-agree-buttons > div:nth-child(1){
+    background-color: #9BA9B0;
+}
+
+#chat-bubble-agree-buttons > div:nth-child(1):hover{
+    background-color: #889399;
+}
+
+#chat-bubble-agree-buttons > div:nth-child(2){
+    background-color: #FCBFB7;
+}
+
+#chat-bubble-agree-buttons > div:nth-child(2):hover{
+    background-color: #dda7a0;
+}
+
+@keyframes fade-in-agree{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 810px) {
