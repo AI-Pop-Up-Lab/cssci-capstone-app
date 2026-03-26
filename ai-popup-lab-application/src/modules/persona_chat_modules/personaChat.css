@@ -197,16 +197,17 @@
     top: 0;
     left: 0;
     border-radius: 26px;
-    width: calc(100% - 32%);
-    height: calc(100% - 12%);
+    width: calc(100% - 32% - 4px);
+    height: calc(100% - 8% - 4px);
     z-index: 6;
     background-color: #334E58;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 6% 16%;
+    padding: 4% 16%;
     text-align: center;
+    border: 2px solid #D1E3DD;
 }
 
 #chat-bubble-agree > p:nth-child(1){
@@ -236,7 +237,7 @@
     font-size: 19px;
     margin-bottom: 18px;
     opacity: 0;
-    animation: fade-in-agree 0.5s ease 3s forwards;
+    animation: fade-in-agree 0.5s ease 2s forwards;
 }
 
 #chat-bubble-agree > p:nth-child(5){
@@ -244,7 +245,7 @@
     font-size: 14px;
     margin-bottom: 50px;
     opacity: 0;
-    animation: fade-in-agree 0.5s ease 5s forwards;
+    animation: fade-in-agree 0.5s ease 4.5s forwards;
 }
 
 #chat-bubble-agree-buttons{
@@ -253,7 +254,7 @@
     align-items: center;
     justify-content: space-between;
     opacity: 0;
-    animation: fade-in-agree 0.5s ease 8s forwards;
+    animation: fade-in-agree 0.5s ease 7s forwards;
 }
 
 #chat-bubble-agree-buttons > div:nth-child(1), #chat-bubble-agree-buttons > div:nth-child(2){
@@ -263,6 +264,8 @@
     padding: 10px 20px;
     font-size: 14px;
     transition: background-color 0.2s;
+    pointer-events: none;
+    animation: fade-in-pointer-event 0.5s ease 7s forwards;
 }
 
 #chat-bubble-agree-buttons > div:nth-child(1), #chat-bubble-agree-buttons > div:nth-child(2){
@@ -293,6 +296,16 @@
 
     100%{
         opacity: 1;
+    }
+}
+
+@keyframes fade-in-pointer-event{
+    0%{
+        pointer-events: none;
+    }
+
+    100%{
+        pointer-events: auto;
     }
 }
 
@@ -329,6 +342,11 @@
     .persona-chat-attributes-single{
         font-size: 11px;
         margin: 0 3px 10px 3px;
+    }
+
+    #chat-bubble-agree-buttons > div:nth-child(1), #chat-bubble-agree-buttons > div:nth-child(2){
+        padding: 8px 10px;
+        font-size: 12px;
     }
 
 }

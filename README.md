@@ -58,3 +58,16 @@ Other available debug entries:
 - `Frontend: React`
 
 The backend Python dependencies are listed in [ai-popup-lab-backend/requirements.txt](/Volumes/ADATA-SE900G/Documents/Jelle/Study/CulturalData&AI/MA Thesis/Repos/cssci-capstone-app/ai-popup-lab-backend/requirements.txt).
+
+### .env requirements for running locally
+
+Any API calls will not work unless you have the .env file configured locally, as this is not pushed to github. Request from a group member. Along with this, the .env should have a value ```ENV="development"``` which will remove limits placed on deployment users.
+
+### datapaths when running locally
+
+Some datapaths are accessed differently in deployment and locally, only backend things. The deployment version should be commented out when working locally and vice versa when pushing/deploying.
+
+The files containing these are:
+- chat_endpoints.py
+- scheduled_routines.py
+- chat_limiting.py

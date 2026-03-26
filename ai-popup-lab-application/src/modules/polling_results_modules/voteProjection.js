@@ -114,7 +114,7 @@ function VoteProjection({ pollingData }) {
 
   return (
     <div className="VoteProjection">
-      <h3 className="vp-title">If the 2030 general election were held today, who would you vote for?</h3>
+      <h3 className="vp-title">If a general election were held today, who would you vote for?</h3>
       <p className="vp-subtitle">Turnout: <strong>{turnoutPct}%</strong> &mdash; {voted} of {total} respondents said they would vote</p>
       <div className="vp-chart-wrapper">
         <svg ref={svgRef} />

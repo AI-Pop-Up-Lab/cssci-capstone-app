@@ -25,7 +25,7 @@ BIO_SYS_PROMPT = (
     "- Keep the tone natural and human.\n"
     "- The biography should feel like something a real person might write in a short personal profile.\n"
     "- Do not mention being an AI or a synthetic persona.\n"
-    "- Length: 150–200 words.\n"
+    "- Length: 150-200 words.\n"
     "The second part, the political one, is below. \n"
     "- Write in the first person.\n"
     "- This is PART 2 of a biography.\n"
@@ -38,16 +38,17 @@ BIO_SYS_PROMPT = (
     "- Avoid slogans, campaign language, or activist rhetoric.\n"
     "- Keep the tone reflective, pragmatic, and personal.\n"
     "- Do not mention being an AI or a synthetic persona.\n"
-    "- Length: 120–180 words.\n"
+    "- State the party you voted for."
+    "- Length: 120-180 words.\n"
     "- Do not mention anything about being an AI or persona. Speak directly as yourself.\n"
-    "In total, both should be roughly 300-400 words."
+    "In total, both together should be roughly 300-400 words."
 )
 
 
 def generate_bio_prompt(age_group, gender, vote_2030, education, municipality):
     age = random.randint(int(age_group.split("-")[0]), int(age_group.split("-")[1]))
     if age < 18: age = 18
-    return f"You are a {age} year old {gender}. You have a {education} education and live in {municipality}. If the 2030 Dutch general election were held today, you will vote for {vote_2030}.\n\nWrite a detailed biography of yourself following the rules above."
+    return f"You are a {age} year old {gender}. You have a {education} education and live in {municipality}. If the 2030 Dutch general election (the next general election) were held today, you will vote for {vote_2030}. Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of yourself following the rules above."
 
 
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
