@@ -13,6 +13,10 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
 
   const [selectedValues, setSelectedValues] = useState({});
 
+  // useEffect(() => {
+  //   console.log(selectedValues);
+  // }, [selectedValues])
+
   // function to get country sample data from backend
   async function getColumnsAndUniqueVals(countryName){
     try {
@@ -30,17 +34,6 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
       modifiedData.relevant_columns.forEach((column) => {
         initialValues[column] = "all";
       });
-
-      // renaming vote_2030 to next_GE_vote below
-      modifiedData.column_unique_vals.next_GE_vote = modifiedData.column_unique_vals.vote_2030;
-      delete modifiedData.column_unique_vals.vote_2030;
-
-      modifiedData.relevant_columns = modifiedData.relevant_columns.map(col => 
-        col === "vote_2030" ? "next_GE_vote" : col
-      );
-
-      modifiedData.next_GE_vote = modifiedData.vote_2030;
-      delete modifiedData.vote_2030;
 
       setSelectedValues(initialValues);
       setChosenDemographic(initialValues);
