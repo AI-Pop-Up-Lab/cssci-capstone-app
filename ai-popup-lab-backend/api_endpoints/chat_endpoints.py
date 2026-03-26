@@ -1,6 +1,8 @@
 import json
+import os
+from pathlib import Path
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
 
 from app.db.conn import get_persona_conn
@@ -13,10 +15,10 @@ from app.services.persona_repository import (
     list_questions_for_persona,
 )
 from app.services.service import create_session, get_session, handle_user_message, list_messages
-from pathlib import Path
 
 from generate_biography import generate_biography
 from generate_response import generate_response
+from chat_limiting import response_friction, check_if_ip_limited, add_or_remove_user_requestlist, check_if_user_ongoing_request
 
 router = APIRouter()
 
@@ -25,12 +27,15 @@ class LegacyChatMessage(BaseModel):
     message: str
     persona_details: dict
     persona_country: str
+    chat_history: list
 
 chat_commands = ['//biography']
 
 
 # path for json file (on mounted files in deployment)
 # biographies_path = '/mnt/data/biographies.json'
+
+# path for json file in dev
 base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
 biographies_path = base_dir / "country_data" / "biographies.json"
 
@@ -249,7 +254,25 @@ def api_get_session(session_id: str):
 #     }
 
 @router.post("/chat/chat_message")
-async def personaResponse(request_body: LegacyChatMessage):
+async def personaResponse(request: Request, request_body: LegacyChatMessage):
+
+    if os.getenv('ENV') == 'development':
+        ip = "dev-ip"
+    else:
+        forwarded_for = request.headers.get("x-forwarded-for")
+        ip = forwarded_for.split(",")[0] if forwarded_for else request.client.host
+
+    user_has_ongoing_request = check_if_user_ongoing_request(ip)
+
+    if user_has_ongoing_request:
+        return {"message": "Message request already ongoing."}
+    
+    user_ip_is_limited = check_if_ip_limited(ip)
+
+    if user_ip_is_limited == True:
+        return {"message": "Sorry, you have reached your limit for messages today."}
+    
+    add_or_remove_user_requestlist('add', ip)
 
     persona_index = request_body.persona_details['index']
 
@@ -272,6 +295,11 @@ async def personaResponse(request_body: LegacyChatMessage):
         if request_body.message == '//biography':
             return {"message": biography}
 
-    response = generate_response(persona_biography=biography, user_message=request_body.message)
+    response = generate_response(persona_biography=biography, user_message=request_body.message, chat_history=request_body.chat_history)
+
+    if ip != 'dev-ip':
+        response_friction(15) #wait 15 secs to give response
+
+    add_or_remove_user_requestlist('remove', ip)
 
     return {"message": response}

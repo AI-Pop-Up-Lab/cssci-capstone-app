@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import personaPic_1 from '../assets/svgs/personaPic_1.svg'
 import personaPic_2 from '../assets/svgs/personaPic_2.svg'
+import linkArrow from '../assets/images/linkArrow.png'
 
 function PersonaChatExample({includeLink}) {
   return (
@@ -45,7 +46,7 @@ function PersonaChatExample({includeLink}) {
         </div>
 
         <div id='land-expl-pers-bottom' className={includeLink ? '' : 'dontShowPersonaLink'}>
-          <Link to="/personas"><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <span>{'\u{25B6}'}</span></button></Link>
+          <Link to="/personas"><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
         </div>
     </div>
   );

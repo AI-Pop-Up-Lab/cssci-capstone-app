@@ -25,11 +25,14 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
   async function sendAndReceiveMessage(persona, country, message){
     try {
 
+      const chat_history = gatherChatHistory();
+
       // FastAPI in testing is running on 127.0.0.1:8000
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/chat/chat_message`, {
         message: message,
         persona_details: persona,
-        persona_country: country
+        persona_country: country,
+        chat_history: chat_history
       });
       
       setData(response.data);
@@ -64,6 +67,20 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
     "persona": ReceivedMessage,
     "awaiting": AwaitingMessage
   }
+
+  function gatherChatHistory(){
+    const chatContainer = document.getElementById("persona-chat-history");
+    const messageDivs = chatContainer.querySelectorAll(".UserMessage, .ReceivedMessage");
+
+    const history = Array.from(messageDivs).map((div) => ({
+      role: div.classList.contains("UserMessage") ? "user" : "assistant",
+      content: div.textContent
+    }));
+
+    history.pop();
+
+    return history;
+  };
 
   function addMessage(messageType, text=null){
 

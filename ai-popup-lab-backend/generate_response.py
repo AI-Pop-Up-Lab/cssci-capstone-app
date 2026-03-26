@@ -15,6 +15,7 @@ RESPONSE_SYS_PROMPT = (
     "- If the user asks you a question about a characteristic of yours which is not in your biography, do NOT respond as if their statement is true (e.g. asking why you voted for party A, if you actually voted for party B).\n"
     "- Stick only with the vote that is in your persona. Do not invent another vote, or contradict it.\n"
     "- If the user greets you, greet them and ask what they would like to ask.\n"
+    "- Always respond in English.\n"
     "Your biography is:"
 )
 
@@ -42,12 +43,13 @@ def get_AI_response(messages,  json_mode=False):
 def create_system_prompt(biography):
     return f'{RESPONSE_SYS_PROMPT}\n{biography}'
 
-def generate_response(persona_biography, user_message):
+def generate_response(persona_biography, user_message, chat_history):
 
     sys_prompt = create_system_prompt(persona_biography)
 
     messages = [
         {"role":"system", "content":sys_prompt},
+        *chat_history,
         {"role":"user","content":user_message}
         ]
     return get_AI_response(messages)

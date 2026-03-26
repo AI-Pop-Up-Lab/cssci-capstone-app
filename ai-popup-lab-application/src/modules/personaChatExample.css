@@ -192,8 +192,9 @@
     background-color: #2b4149;
 }
 
-#land-expl-pers-bottom > a > button > span{
-    transform: scale(1.1) scaleX(1) !important;
+#land-expl-pers-bottom > a > button > img{
+    height: 10px;
+    transform: scale(2);
     display: inline-block;
     margin-left: 12px;
 }

@@ -7,6 +7,7 @@ import PersonaChat from "./personaChat";
 
 import personaPic_1 from '../../assets/svgs/personaPic_1.svg'
 import personaPic_2 from '../../assets/svgs/personaPic_2.svg'
+import linkArrow from '../../assets/images/linkArrow.png'
 
 function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCountry }) {
 
@@ -79,14 +80,14 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
 
         <div className="personacard-fakeborder"></div>
 
-        <img src={randompfp}></img>
+        <img alt='persona icon' src={randompfp}></img>
 
         <div className="unbounded-weight300 persona-info-bubble">
           {filteredPersona ? Object.entries(filteredPersona).map(([key, value]) => (
               <div key={key}><p>{formatKey(key)}:</p><p>{value}</p></div>
             )) : <Loader />}
 
-            <button onClick={() => setShowPersonaChat(!showPersonaChat)} className="unbounded-weight300 enter-personachat-button">START THE CHAT <span>{'\u{25B6}'}</span></button>
+            <button onClick={() => setShowPersonaChat(!showPersonaChat)} className="unbounded-weight300 enter-personachat-button">START THE CHAT <img alt='right facing arrow' src={linkArrow}></img></button>
         </div>
 
       </div>
