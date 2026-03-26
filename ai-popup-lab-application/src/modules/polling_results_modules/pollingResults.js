@@ -79,28 +79,6 @@ function PollingResults() {
       <div id="polling-divider"></div>
       {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
       {/* {data ? <PollingMap /> : <Loader />} */}
-      {/* <div id="polling-divider"></div> */}
-      {/* <div id="persona-selection">
-        <div id="selection-explanation">
-          <h1 className="unbounded-weight400">Chat with a persona</h1>
-          <p className="unbounded-weight300">You can choose one of the synthetic persona from the list below to enter a chat, to understand motivations and reasoning behind their polled vote.<br></br>
-          <br></br>
-          You can select various demographics below to filter through personas.
-          </p>
-        </div>
-
-        {selectedCountry ? <DemographicChooserForPersona
-        setChosenDemographic={handleSetChosenPersonaDemographic}
-        country={selectedCountry}
-        /> : <Loader />}
-
-        {data && selectedCountry ? <PersonaChooser 
-        data={responseData}
-        chosenDemographic={chosenPersonaDemographic}
-        countryName={selectedCountry}
-        /> : <Loader />}
-
-      </div> */}
 
       <div id="exportButton" onClick={() => {exportToCSV(responseData)}}>
         <p>Export data</p>

@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware#
 from api_endpoints import test_router
 from api_endpoints import sample_router
 from api_endpoints import chat_router
+from api_endpoints import dynamic_data_router
 
 from app.db.init_db import init_db, seed_demo_data
 
@@ -82,3 +83,4 @@ app.add_middleware(
 app.include_router(test_router, prefix="/api") # this would be accessed through /api/test_endpoint for example
 app.include_router(sample_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
+app.include_router(dynamic_data_router, prefix="/api")
