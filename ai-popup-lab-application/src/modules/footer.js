@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div className='Footer unbounded-weight300'>
       <div id="footer-left">
-        <Link to="/ethics">Ethical Statement</Link>
+        <Link to="/ethics">Ethics</Link>
         {/* <Link to="/methods">Methods</Link> */}
         {/* <Link to="/about">About Us</Link> */}
       </div>
