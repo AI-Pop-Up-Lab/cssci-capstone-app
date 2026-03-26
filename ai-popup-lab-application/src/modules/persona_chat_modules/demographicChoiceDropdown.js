@@ -5,9 +5,9 @@ function DemographicChoiceDropdown({column, choices, onChange}) {
 
     let modifiedColumn;
 
-    useEffect(() => {
-        console.log(column)
-    }, [column])
+    // useEffect(() => {
+    //     console.log(column)
+    // }, [column])
 
     if(column == 'vote 2030'){
         modifiedColumn = 'next GE vote'
