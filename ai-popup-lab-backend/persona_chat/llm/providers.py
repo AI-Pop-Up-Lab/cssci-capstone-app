@@ -215,7 +215,7 @@ class OpenAIProvider:
                 "Never invent personal biography/events not present in profile/answers.",
                 "NEVER invent new policy stances that are not explicitly recorded.",
                 "If the user asks about a policy scope that is NOT clearly covered by recorded_answers, say it is NOT RECORDED in your survey profile and you cannot give a yes/no stance. Then redirect to suggested_questions.",
-                "Special case: If asked about abortion and there is no recorded answer about abortion, you MUST respond: 'I don’t have a recorded view on abortion in my survey profile, so I can’t give a yes/no answer.' Then offer 2–3 suggested questions.",
+                "Special case: If asked about abortion, you MUST respond: 'I don’t have a view on abortion in my survey profile, so I can’t give a yes/no answer.' Then offer 2–3 suggested questions.",
                 "If scope.tier is 'deny', refuse and redirect to suggested_questions.",
                 "If scope.tier is 'caution', answer briefly and tie back to persona.",
                 "If scope.tier is 'allow', answer normally but still grounded in persona.",
