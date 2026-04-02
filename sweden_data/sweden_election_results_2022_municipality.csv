@@ -1,0 +1,2901 @@
+municipality_code,municipality,party,vote_pct
+0114,Upplands Väsby,Moderate Party (M),0.1538834804233767
+0115,Vallentuna,Moderate Party (M),0.2163954434499593
+0117,Österåker,Moderate Party (M),0.2284915234690347
+0120,Värmdö,Moderate Party (M),0.20055603206057201
+0123,Järfälla,Moderate Party (M),0.1554424771102688
+0125,Ekerö,Moderate Party (M),0.22189960629921263
+0126,Huddinge,Moderate Party (M),0.1630974590745461
+0127,Botkyrka,Moderate Party (M),0.11728274013792202
+0128,Salem,Moderate Party (M),0.18442383220523104
+0136,Haninge,Moderate Party (M),0.15714727722772276
+0138,Tyresö,Moderate Party (M),0.19787705057614804
+0139,Upplands-Bro,Moderate Party (M),0.16489153801055306
+0140,Nykvarn,Moderate Party (M),0.210373594486761
+0160,Täby,Moderate Party (M),0.28720953802495075
+0162,Danderyd,Moderate Party (M),0.34731502103439743
+0163,Sollentuna,Moderate Party (M),0.20095145297185762
+0180,Stockholm,Moderate Party (M),0.15094308525468728
+0181,Södertälje,Moderate Party (M),0.1394773326972674
+0182,Nacka,Moderate Party (M),0.22401859504132232
+0183,Sundbyberg,Moderate Party (M),0.14991366228873423
+0184,Solna,Moderate Party (M),0.16409865158476108
+0186,Lidingö,Moderate Party (M),0.28374724754020686
+0187,Vaxholm,Moderate Party (M),0.24439313984168864
+0188,Norrtälje,Moderate Party (M),0.1691957808885229
+0191,Sigtuna,Moderate Party (M),0.16415379957614293
+0192,Nynäshamn,Moderate Party (M),0.14103874384465298
+0305,Håbo,Moderate Party (M),0.1974514488758194
+0319,Älvkarleby,Moderate Party (M),0.11050328227571116
+0330,Knivsta,Moderate Party (M),0.1768677528254807
+0331,Heby,Moderate Party (M),0.12115931395028891
+0360,Tierp,Moderate Party (M),0.11875193080012357
+0380,Uppsala,Moderate Party (M),0.14432390214980814
+0381,Enköping,Moderate Party (M),0.17603863077890164
+0382,Östhammar,Moderate Party (M),0.15162599302737614
+0428,Vingåker,Moderate Party (M),0.13635040745052388
+0461,Gnesta,Moderate Party (M),0.15298897272199652
+0480,Nyköping,Moderate Party (M),0.16045812389543027
+0481,Oxelösund,Moderate Party (M),0.13657407407407407
+0482,Flen,Moderate Party (M),0.12118946756375115
+0483,Katrineholm,Moderate Party (M),0.13404206147446268
+0484,Eskilstuna,Moderate Party (M),0.14469523080846722
+0486,Strängnäs,Moderate Party (M),0.1977172834254927
+0488,Trosa,Moderate Party (M),0.20715973105578775
+0509,Ödeshög,Moderate Party (M),0.13531272815770262
+0512,Ydre,Moderate Party (M),0.14054426455390975
+0513,Kinda,Moderate Party (M),0.13844172569220864
+0560,Boxholm,Moderate Party (M),0.12444857209194335
+0561,Åtvidaberg,Moderate Party (M),0.1322314049586777
+0562,Finspång,Moderate Party (M),0.12523263492825837
+0563,Valdemarsvik,Moderate Party (M),0.13523654159869494
+0580,Linköping,Moderate Party (M),0.1732344876938787
+0581,Norrköping,Moderate Party (M),0.16264627291992997
+0582,Söderköping,Moderate Party (M),0.1852176197565461
+0583,Motala,Moderate Party (M),0.152217590787777
+0584,Vadstena,Moderate Party (M),0.1767178658043654
+0586,Mjölby,Moderate Party (M),0.16657326982347997
+0604,Aneby,Moderate Party (M),0.1357324467044788
+0617,Gnosjö,Moderate Party (M),0.16425120772946858
+0642,Mullsjö,Moderate Party (M),0.13401142041399
+0643,Habo,Moderate Party (M),0.17033147358057105
+0662,Gislaved,Moderate Party (M),0.15238451818224366
+0665,Vaggeryd,Moderate Party (M),0.13500047005734697
+0680,Jönköping,Moderate Party (M),0.15951777595587688
+0682,Nässjö,Moderate Party (M),0.12389496145973959
+0683,Värnamo,Moderate Party (M),0.16818984716995622
+0684,Sävsjö,Moderate Party (M),0.14481852913085005
+0685,Vetlanda,Moderate Party (M),0.14581619319556696
+0686,Eksjö,Moderate Party (M),0.1484800956008664
+0687,Tranås,Moderate Party (M),0.14974655026753028
+0760,Uppvidinge,Moderate Party (M),0.1286120676748016
+0761,Lessebo,Moderate Party (M),0.12395169406239516
+0763,Tingsryd,Moderate Party (M),0.12222464083587287
+0764,Alvesta,Moderate Party (M),0.1458361915214707
+0765,Älmhult,Moderate Party (M),0.15652818991097922
+0767,Markaryd,Moderate Party (M),0.1212615551930397
+0780,Växjö,Moderate Party (M),0.1792753868745058
+0781,Ljungby,Moderate Party (M),0.15709499315747252
+0821,Högsby,Moderate Party (M),0.09077231695085256
+0834,Torsås,Moderate Party (M),0.11907347086500182
+0840,Mörbylånga,Moderate Party (M),0.17131408945948157
+0860,Hultsfred,Moderate Party (M),0.09948458621024993
+0861,Mönsterås,Moderate Party (M),0.11771665187814256
+0862,Emmaboda,Moderate Party (M),0.11737361998837885
+0880,Kalmar,Moderate Party (M),0.1729009737277237
+0881,Nybro,Moderate Party (M),0.12398387416562025
+0882,Oskarshamn,Moderate Party (M),0.15765506662831943
+0883,Västervik,Moderate Party (M),0.14276448298228248
+0884,Vimmerby,Moderate Party (M),0.14440192979537514
+0885,Borgholm,Moderate Party (M),0.14671857619577308
+0980,Gotland,Moderate Party (M),0.139453950366657
+1060,Olofström,Moderate Party (M),0.10159323367427221
+1080,Karlskrona,Moderate Party (M),0.1577600629859266
+1081,Ronneby,Moderate Party (M),0.13486527150868555
+1082,Karlshamn,Moderate Party (M),0.1451212679100296
+1083,Sölvesborg,Moderate Party (M),0.15665251493128013
+1214,Svalöv,Moderate Party (M),0.1165583776333924
+1230,Staffanstorp,Moderate Party (M),0.2251220029705071
+1231,Burlöv,Moderate Party (M),0.1257325124248943
+1233,Vellinge,Moderate Party (M),0.3141960237181723
+1256,Östra Göinge,Moderate Party (M),0.14147909967845662
+1257,Örkelljunga,Moderate Party (M),0.10338517840805124
+1260,Bjuv,Moderate Party (M),0.11285180799708534
+1261,Kävlinge,Moderate Party (M),0.21272273246709272
+1262,Lomma,Moderate Party (M),0.25991975033437364
+1263,Svedala,Moderate Party (M),0.18809079414775123
+1264,Skurup,Moderate Party (M),0.16689711264741763
+1265,Sjöbo,Moderate Party (M),0.14475005019072473
+1266,Hörby,Moderate Party (M),0.13363476513438835
+1267,Höör,Moderate Party (M),0.14557950640424866
+1270,Tomelilla,Moderate Party (M),0.13657740666090798
+1272,Bromölla,Moderate Party (M),0.12752168913975123
+1273,Osby,Moderate Party (M),0.12651699029126215
+1275,Perstorp,Moderate Party (M),0.09780283881003304
+1276,Klippan,Moderate Party (M),0.1214197720973206
+1277,Åstorp,Moderate Party (M),0.12616106051041573
+1278,Båstad,Moderate Party (M),0.2153968253968254
+1280,Malmö,Moderate Party (M),0.13344242192601086
+1281,Lund,Moderate Party (M),0.1381880795268601
+1282,Landskrona,Moderate Party (M),0.1316338831554497
+1283,Helsingborg,Moderate Party (M),0.16791497060153776
+1284,Höganäs,Moderate Party (M),0.21254927726675424
+1285,Eslöv,Moderate Party (M),0.14087102848671823
+1286,Ystad,Moderate Party (M),0.18255006940313306
+1287,Trelleborg,Moderate Party (M),0.16143640034612056
+1290,Kristianstad,Moderate Party (M),0.1753017300720481
+1291,Simrishamn,Moderate Party (M),0.15383634160341858
+1292,Ängelholm,Moderate Party (M),0.1864386861742758
+1293,Hässleholm,Moderate Party (M),0.14262917933130698
+1315,Hylte,Moderate Party (M),0.10978231658156411
+1380,Halmstad,Moderate Party (M),0.16761654429883865
+1381,Laholm,Moderate Party (M),0.15189243027888447
+1382,Falkenberg,Moderate Party (M),0.16190900981266726
+1383,Varberg,Moderate Party (M),0.1769901287305894
+1384,Kungsbacka,Moderate Party (M),0.2520296121185729
+1401,Härryda,Moderate Party (M),0.19496011858544507
+1402,Partille,Moderate Party (M),0.17595276815385705
+1407,Öckerö,Moderate Party (M),0.1694682001376192
+1415,Stenungsund,Moderate Party (M),0.1870004814636495
+1419,Tjörn,Moderate Party (M),0.17073170731707318
+1421,Orust,Moderate Party (M),0.14587670136108885
+1427,Sotenäs,Moderate Party (M),0.182116166251475
+1430,Munkedal,Moderate Party (M),0.12042796715600897
+1435,Tanum,Moderate Party (M),0.17714619427681524
+1438,Dals-Ed,Moderate Party (M),0.12100456621004567
+1439,Färgelanda,Moderate Party (M),0.10635331607249551
+1440,Ale,Moderate Party (M),0.1494803122439298
+1441,Lerum,Moderate Party (M),0.18729683217540952
+1442,Vårgårda,Moderate Party (M),0.12670586929990013
+1443,Bollebygd,Moderate Party (M),0.16564843099139126
+1444,Grästorp,Moderate Party (M),0.1600441501103753
+1445,Essunga,Moderate Party (M),0.16415525114155252
+1446,Karlsborg,Moderate Party (M),0.1356847219722872
+1447,Gullspång,Moderate Party (M),0.10275502606105733
+1452,Åmål,Moderate Party (M),0.15365772185725418
+1460,Lilla Edet,Moderate Party (M),0.11032531824611033
+1461,Mellerud,Moderate Party (M),0.14033819916172857
+1462,Bengtsfors,Moderate Party (M),0.1056504103386473
+1463,Mariestad,Moderate Party (M),0.13685393258426967
+1465,Lidköping,Moderate Party (M),0.13955773955773956
+1466,Götene,Moderate Party (M),0.12484616436482975
+1470,Tibro,Moderate Party (M),0.17734675505360503
+1471,Töreboda,Moderate Party (M),0.13664233576642337
+1472,Vara,Moderate Party (M),0.12938317324383752
+1473,Skara,Moderate Party (M),0.1342310418143161
+1480,Göteborg,Moderate Party (M),0.14208113329633665
+1481,Mölndal,Moderate Party (M),0.17699149340205786
+1482,Kungälv,Moderate Party (M),0.17444757365684574
+1484,Lysekil,Moderate Party (M),0.13158822492508374
+1485,Uddevalla,Moderate Party (M),0.14325855742882354
+1486,Strömstad,Moderate Party (M),0.1328794201625302
+1487,Västra Götaland,Moderate Party (M),0.12905470329014943
+1488,Trollhättan,Moderate Party (M),0.1518180369299424
+1489,Alingsås,Moderate Party (M),0.1523642182548398
+1490,Borås,Moderate Party (M),0.16061155801685245
+1491,Ulricehamn,Moderate Party (M),0.16276618174151383
+1492,Tranemo,Moderate Party (M),0.1238393322900365
+1493,Bengtsfors,Moderate Party (M),0.1675684031535013
+1494,Lidköping,Moderate Party (M),0.15064885617285909
+1495,Skara,Moderate Party (M),0.1513722730471499
+1496,Skövde,Moderate Party (M),0.1715162198667613
+1497,Hjo,Moderate Party (M),0.15691710562794567
+1498,Tidaholm,Moderate Party (M),0.11117800521774032
+1499,Falköping,Moderate Party (M),0.14313276257084287
+1715,Kil,Moderate Party (M),0.1404754221791976
+1730,Eda,Moderate Party (M),0.10040307805056799
+1737,Torsby,Moderate Party (M),0.12616929044033767
+1760,Storfors,Moderate Party (M),0.11028460543337645
+1761,Hammarö,Moderate Party (M),0.17192186106833104
+1762,Munkfors,Moderate Party (M),0.08179808400884303
+1763,Forshaga,Moderate Party (M),0.11729374433363556
+1764,Grums,Moderate Party (M),0.1119102416570771
+1765,Årjäng,Moderate Party (M),0.09599767981438516
+1766,Sunne,Moderate Party (M),0.15625902049456364
+1780,Karlstad,Moderate Party (M),0.16134550362836944
+1781,Kristinehamn,Moderate Party (M),0.12277645816838216
+1782,Filipstad,Moderate Party (M),0.11361587015329125
+1783,Hagfors,Moderate Party (M),0.07501129688206055
+1784,Arvika,Moderate Party (M),0.13718883580588384
+1785,Säffle,Moderate Party (M),0.13484783540505788
+1814,Lekeberg,Moderate Party (M),0.14860827174083976
+1860,Laxå,Moderate Party (M),0.09485157699443413
+1861,Hallsberg,Moderate Party (M),0.11986588432523052
+1862,Degerfors,Moderate Party (M),0.09924892703862662
+1863,Hällefors,Moderate Party (M),0.10179640718562874
+1864,Ljusnarsberg,Moderate Party (M),0.09557174887892377
+1880,Örebro,Moderate Party (M),0.14181787349499747
+1881,Kumla,Moderate Party (M),0.1435342732134176
+1882,Askersund,Moderate Party (M),0.12478127734033247
+1883,Karlskoga,Moderate Party (M),0.15267272881788052
+1884,Nora,Moderate Party (M),0.12033345415005436
+1885,Lindesberg,Moderate Party (M),0.12567912185386407
+1904,Skinnskatteberg,Moderate Party (M),0.08286805759623861
+1907,Surahammar,Moderate Party (M),0.10700466977985323
+1960,Kungsör,Moderate Party (M),0.12452077902162245
+1961,Hallstahammar,Moderate Party (M),0.11645281793081047
+1962,Norberg,Moderate Party (M),0.1091452205882353
+1980,Västerås,Moderate Party (M),0.1769369894482398
+1981,Sala,Moderate Party (M),0.1380315500685871
+1982,Fagersta,Moderate Party (M),0.1124180285208702
+1983,Köping,Moderate Party (M),0.11601307189542484
+1984,Arboga,Moderate Party (M),0.14313134082807788
+2021,Vansbro,Moderate Party (M),0.11234684260131951
+2023,Malung-Sälen,Moderate Party (M),0.1501941625955155
+2026,Gagnef,Moderate Party (M),0.12270014917951269
+2029,Leksand,Moderate Party (M),0.15567593028732926
+2031,Rättvik,Moderate Party (M),0.13515004413062665
+2034,Orsa,Moderate Party (M),0.10256877391145927
+2039,Älvdalen,Moderate Party (M),0.08447363619777414
+2061,Smedjebacken,Moderate Party (M),0.1127297953520638
+2062,Mora,Moderate Party (M),0.13175820803927585
+2080,Falun,Moderate Party (M),0.1551019520890396
+2081,Borlänge,Moderate Party (M),0.13509612906551208
+2082,Säter,Moderate Party (M),0.1400614404369098
+2083,Hedemora,Moderate Party (M),0.1254222972972973
+2084,Avesta,Moderate Party (M),0.12299310264881469
+2085,Ludvika,Moderate Party (M),0.1136664966853646
+2101,Ockelbo,Moderate Party (M),0.09540558364475708
+2104,Hofors,Moderate Party (M),0.09816949152542372
+2121,Ovanåker,Moderate Party (M),0.113477537437604
+2132,Nordanstig,Moderate Party (M),0.1037467875016908
+2161,Ljusdal,Moderate Party (M),0.12683388547089444
+2180,Gävle,Moderate Party (M),0.1552087031495664
+2181,Sandviken,Moderate Party (M),0.12538835607186277
+2182,Söderhamn,Moderate Party (M),0.11325460653568158
+2183,Bollnäs,Moderate Party (M),0.11192615982511536
+2184,Hudiksvall,Moderate Party (M),0.11789181692094312
+2260,Ånge,Moderate Party (M),0.09558420186505759
+2262,Timrå,Moderate Party (M),0.10299074804561428
+2280,Härnösand,Moderate Party (M),0.09987960006281736
+2281,Sundsvall,Moderate Party (M),0.13716819930868063
+2282,Kramfors,Moderate Party (M),0.07588617074388418
+2283,Sollefteå,Moderate Party (M),0.05901028366346883
+2284,Örnsköldsvik,Moderate Party (M),0.11701410676520486
+2303,Ragunda,Moderate Party (M),0.0705498368064273
+2305,Bräcke,Moderate Party (M),0.0987551867219917
+2309,Krokom,Moderate Party (M),0.12906915361604784
+2313,Strömsund,Moderate Party (M),0.09183557920960253
+2321,Åre,Moderate Party (M),0.12670780079330102
+2326,Berg,Moderate Party (M),0.12592726614800073
+2361,Härjedalen,Moderate Party (M),0.10363076923076923
+2380,Östersund,Moderate Party (M),0.1250931802155737
+2401,Nordmaling,Moderate Party (M),0.10773130544993663
+2403,Bjurholm,Moderate Party (M),0.14792576419213974
+2404,Vindeln,Moderate Party (M),0.1297971156196529
+2409,Robertsfors,Moderate Party (M),0.10382830626450117
+2417,Norsjö,Moderate Party (M),0.10564304461942257
+2418,Malå,Moderate Party (M),0.0628596724214254
+2421,Storuman,Moderate Party (M),0.09413067552602437
+2422,Sorsele,Moderate Party (M),0.08138903960933261
+2425,Dorotea,Moderate Party (M),0.04697986577181208
+2460,Vännäs,Moderate Party (M),0.11598746081504702
+2462,Vilhelmina,Moderate Party (M),0.07598664834086001
+2463,Åsele,Moderate Party (M),0.08466603951081844
+2480,Umeå,Moderate Party (M),0.12605567089270958
+2481,Lycksele,Moderate Party (M),0.11437236001299686
+2482,Skellefteå,Moderate Party (M),0.10947827309801715
+2505,Arvidsjaur,Moderate Party (M),0.08445096395641241
+2506,Arjeplog,Moderate Party (M),0.07102539981185324
+2510,Jokkmokk,Moderate Party (M),0.07500662602703419
+2513,Överkalix,Moderate Party (M),0.07964257964257965
+2514,Kalix,Moderate Party (M),0.10155057443560697
+2518,Kiruna,Moderate Party (M),0.06903043614684656
+2521,Gällivare,Moderate Party (M),0.06592226755421945
+2523,Pajala,Moderate Party (M),0.10123058892469969
+2560,Älvsbyn,Moderate Party (M),0.10590894413948983
+2580,Luleå,Moderate Party (M),0.1316659573771565
+2581,Piteå,Moderate Party (M),0.1081275258194881
+2582,Älvsbyn,Moderate Party (M),0.11860866406320951
+2583,Haparanda,Moderate Party (M),0.08373668925459826
+2584,Övertorneå,Moderate Party (M),0.08675340035481964
+0114,Upplands Väsby,Centre Party (C),0.04439996360658721
+0115,Vallentuna,Centre Party (C),0.0659072416598861
+0117,Österåker,Centre Party (C),0.06247837619651713
+0120,Värmdö,Centre Party (C),0.06787731803259295
+0123,Järfälla,Centre Party (C),0.04474098689790055
+0125,Ekerö,Centre Party (C),0.0797736220472441
+0126,Huddinge,Centre Party (C),0.052762960821925005
+0127,Botkyrka,Centre Party (C),0.031735137431774356
+0128,Salem,Centre Party (C),0.05306258878582769
+0136,Haninge,Centre Party (C),0.03994430693069306
+0138,Tyresö,Centre Party (C),0.05435091105182494
+0139,Upplands-Bro,Centre Party (C),0.04040453390658589
+0140,Nykvarn,Centre Party (C),0.04255833635594245
+0160,Täby,Centre Party (C),0.08410267750198094
+0162,Danderyd,Centre Party (C),0.0846737606203085
+0163,Sollentuna,Centre Party (C),0.07653655833858734
+0180,Stockholm,Centre Party (C),0.0676153602100842
+0181,Södertälje,Centre Party (C),0.030277732226181065
+0182,Nacka,Centre Party (C),0.08716425619834711
+0183,Sundbyberg,Centre Party (C),0.05559625346658992
+0184,Solna,Centre Party (C),0.06652513558787919
+0186,Lidingö,Centre Party (C),0.08632271371630851
+0187,Vaxholm,Centre Party (C),0.08608179419525065
+0188,Norrtälje,Centre Party (C),0.05130768929145591
+0191,Sigtuna,Centre Party (C),0.03860127157129882
+0192,Nynäshamn,Centre Party (C),0.03604942859797454
+0305,Håbo,Centre Party (C),0.043496906205967044
+0319,Älvkarleby,Centre Party (C),0.025574398249452956
+0330,Knivsta,Centre Party (C),0.06612358725965066
+0331,Heby,Centre Party (C),0.06566999908282124
+0360,Tierp,Centre Party (C),0.059190608588198954
+0380,Uppsala,Centre Party (C),0.06400396782413874
+0381,Enköping,Centre Party (C),0.05400308589062231
+0382,Östhammar,Centre Party (C),0.04343601760301766
+0428,Vingåker,Centre Party (C),0.04263678696158324
+0461,Gnesta,Centre Party (C),0.06035983749274522
+0480,Nyköping,Centre Party (C),0.05669168445454337
+0481,Oxelösund,Centre Party (C),0.029872134038800707
+0482,Flen,Centre Party (C),0.04975496303679707
+0483,Katrineholm,Centre Party (C),0.049033202372698564
+0484,Eskilstuna,Centre Party (C),0.03995154297373119
+0486,Strängnäs,Centre Party (C),0.05547284843329079
+0488,Trosa,Centre Party (C),0.05524259494821007
+0509,Ödeshög,Centre Party (C),0.06035531759552203
+0512,Ydre,Centre Party (C),0.09782983120909404
+0513,Kinda,Centre Party (C),0.06580811332904056
+0560,Boxholm,Centre Party (C),0.05015091711167866
+0561,Åtvidaberg,Centre Party (C),0.04914600550964188
+0562,Finspång,Centre Party (C),0.03968301614936663
+0563,Valdemarsvik,Centre Party (C),0.05138662316476346
+0580,Linköping,Centre Party (C),0.06651979190955945
+0581,Norrköping,Centre Party (C),0.04038514696397309
+0582,Söderköping,Centre Party (C),0.06138891321481741
+0583,Motala,Centre Party (C),0.04126308213632411
+0584,Vadstena,Centre Party (C),0.05739692805173807
+0586,Mjölby,Centre Party (C),0.0471187073876903
+0604,Aneby,Centre Party (C),0.07705847838842167
+0617,Gnosjö,Centre Party (C),0.05767823159127507
+0642,Mullsjö,Centre Party (C),0.04746609564596716
+0643,Habo,Centre Party (C),0.0590744995077125
+0662,Gislaved,Centre Party (C),0.05588056348574906
+0665,Vaggeryd,Centre Party (C),0.06223559274231456
+0680,Jönköping,Centre Party (C),0.06212268018185884
+0682,Nässjö,Centre Party (C),0.04925314636589296
+0683,Värnamo,Centre Party (C),0.06881191920743415
+0684,Sävsjö,Centre Party (C),0.05742597898758357
+0685,Vetlanda,Centre Party (C),0.06320476213521754
+0686,Eksjö,Centre Party (C),0.07468817686160281
+0687,Tranås,Centre Party (C),0.05111236271472825
+0760,Uppvidinge,Centre Party (C),0.04955831711334032
+0761,Lessebo,Centre Party (C),0.037403555853740354
+0763,Tingsryd,Centre Party (C),0.051371353939921635
+0764,Alvesta,Centre Party (C),0.04986966662093566
+0765,Älmhult,Centre Party (C),0.05258819650511045
+0767,Markaryd,Centre Party (C),0.03099510603588907
+0780,Växjö,Centre Party (C),0.05269400203320908
+0781,Ljungby,Centre Party (C),0.045113491576612715
+0821,Högsby,Centre Party (C),0.06168505516549649
+0834,Torsås,Centre Party (C),0.05989866087585957
+0840,Mörbylånga,Centre Party (C),0.06738081609289394
+0860,Hultsfred,Centre Party (C),0.05932120976368764
+0861,Mönsterås,Centre Party (C),0.05294291629695356
+0862,Emmaboda,Centre Party (C),0.05665310865775712
+0880,Kalmar,Centre Party (C),0.05355502480249862
+0881,Nybro,Centre Party (C),0.0506245456347895
+0882,Oskarshamn,Centre Party (C),0.03460837887067395
+0883,Västervik,Centre Party (C),0.05004608609565425
+0884,Vimmerby,Centre Party (C),0.0655464980868408
+0885,Borgholm,Centre Party (C),0.07241379310344828
+0980,Gotland,Centre Party (C),0.09837593735758379
+1060,Olofström,Centre Party (C),0.03383162863886703
+1080,Karlskrona,Centre Party (C),0.04481842338352524
+1081,Ronneby,Centre Party (C),0.03775133360689372
+1082,Karlshamn,Centre Party (C),0.03870167293684463
+1083,Sölvesborg,Centre Party (C),0.029790602288263652
+1214,Svalöv,Centre Party (C),0.04685961803504627
+1230,Staffanstorp,Centre Party (C),0.05134733715255676
+1231,Burlöv,Centre Party (C),0.03449299013426303
+1233,Vellinge,Centre Party (C),0.05354028601325427
+1256,Östra Göinge,Centre Party (C),0.035086060147531684
+1257,Örkelljunga,Centre Party (C),0.03332897660436544
+1260,Bjuv,Centre Party (C),0.02213316331177703
+1261,Kävlinge,Centre Party (C),0.060100732213145984
+1262,Lomma,Centre Party (C),0.07551270619705751
+1263,Svedala,Centre Party (C),0.04106207477873443
+1264,Skurup,Centre Party (C),0.042212281415209434
+1265,Sjöbo,Centre Party (C),0.0348658234624908
+1266,Hörby,Centre Party (C),0.04588461860504061
+1267,Höör,Centre Party (C),0.04381443298969072
+1270,Tomelilla,Centre Party (C),0.046357615894039736
+1272,Bromölla,Centre Party (C),0.01871014947214383
+1273,Osby,Centre Party (C),0.03802588996763754
+1275,Perstorp,Centre Party (C),0.02838810033054637
+1276,Klippan,Centre Party (C),0.0317215891592239
+1277,Åstorp,Centre Party (C),0.024168094508071062
+1278,Båstad,Centre Party (C),0.06412698412698413
+1280,Malmö,Centre Party (C),0.04079276352459669
+1281,Lund,Centre Party (C),0.0717089291252687
+1282,Landskrona,Centre Party (C),0.02828496662844374
+1283,Helsingborg,Centre Party (C),0.03832654907281773
+1284,Höganäs,Centre Party (C),0.05570677679744697
+1285,Eslöv,Centre Party (C),0.0405064305460956
+1286,Ystad,Centre Party (C),0.041086654768986715
+1287,Trelleborg,Centre Party (C),0.03591000865301413
+1290,Kristianstad,Centre Party (C),0.03681948204916403
+1291,Simrishamn,Centre Party (C),0.04853625868996747
+1292,Ängelholm,Centre Party (C),0.04700628709089841
+1293,Hässleholm,Centre Party (C),0.040704154002026344
+1315,Hylte,Centre Party (C),0.05912389142703574
+1380,Halmstad,Centre Party (C),0.04908192536615571
+1381,Laholm,Centre Party (C),0.060707171314741036
+1382,Falkenberg,Centre Party (C),0.06813113291703836
+1383,Varberg,Centre Party (C),0.06673209028459273
+1384,Kungsbacka,Centre Party (C),0.05762232106752931
+1401,Härryda,Centre Party (C),0.061304439895531866
+1402,Partille,Centre Party (C),0.05479742628862335
+1407,Öckerö,Centre Party (C),0.04118745699400374
+1415,Stenungsund,Centre Party (C),0.04848338950409244
+1419,Tjörn,Centre Party (C),0.04737335834896811
+1421,Orust,Centre Party (C),0.052922337870296245
+1427,Sotenäs,Centre Party (C),0.04536515012455749
+1430,Munkedal,Centre Party (C),0.04827071410798706
+1435,Tanum,Centre Party (C),0.06949581467782752
+1438,Dals-Ed,Centre Party (C),0.0653538812785388
+1439,Färgelanda,Centre Party (C),0.056562437761402115
+1440,Ale,Centre Party (C),0.043127614611635834
+1441,Lerum,Centre Party (C),0.056026515392950484
+1442,Vårgårda,Centre Party (C),0.08010651281482303
+1443,Bollebygd,Centre Party (C),0.05359622327131352
+1444,Grästorp,Centre Party (C),0.07593818984547461
+1445,Essunga,Centre Party (C),0.06575342465753425
+1446,Karlsborg,Centre Party (C),0.0581248875292424
+1447,Gullspång,Centre Party (C),0.041201290642839415
+1452,Åmål,Centre Party (C),0.06936866718628215
+1460,Lilla Edet,Centre Party (C),0.04554455445544555
+1461,Mellerud,Centre Party (C),0.060268824974707334
+1462,Bengtsfors,Centre Party (C),0.03924158098292614
+1463,Mariestad,Centre Party (C),0.06269662921348314
+1465,Lidköping,Centre Party (C),0.052457002457002466
+1466,Götene,Centre Party (C),0.07302064816080951
+1470,Tibro,Centre Party (C),0.061789017104509375
+1471,Töreboda,Centre Party (C),0.06364963503649634
+1472,Vara,Centre Party (C),0.04976275893993751
+1473,Skara,Centre Party (C),0.051736357193479805
+1480,Göteborg,Centre Party (C),0.04485657639319046
+1481,Mölndal,Centre Party (C),0.05975933497393765
+1482,Kungälv,Centre Party (C),0.05356369150779896
+1484,Lysekil,Centre Party (C),0.03745813502555966
+1485,Uddevalla,Centre Party (C),0.041312526125121915
+1486,Strömstad,Centre Party (C),0.04469580496376016
+1487,Västra Götaland,Centre Party (C),0.045525330505947446
+1488,Trollhättan,Centre Party (C),0.042303226247125514
+1489,Alingsås,Centre Party (C),0.058736782655078285
+1490,Borås,Centre Party (C),0.04729907144391664
+1491,Ulricehamn,Centre Party (C),0.07484714315833861
+1492,Tranemo,Centre Party (C),0.03912363067292645
+1493,Bengtsfors,Centre Party (C),0.04493224094398928
+1494,Lidköping,Centre Party (C),0.055017926833137665
+1495,Skara,Centre Party (C),0.05158339197748065
+1496,Skövde,Centre Party (C),0.05276893844005403
+1497,Hjo,Centre Party (C),0.05641807596340449
+1498,Tidaholm,Centre Party (C),0.042544651816175
+1499,Falköping,Centre Party (C),0.058684030708629764
+1715,Kil,Centre Party (C),0.05539421318704959
+1730,Eda,Centre Party (C),0.04452180285818981
+1737,Torsby,Centre Party (C),0.04631530914898471
+1760,Storfors,Centre Party (C),0.0352522639068564
+1761,Hammarö,Centre Party (C),0.05884736970089974
+1762,Munkfors,Centre Party (C),0.04384672070744289
+1763,Forshaga,Centre Party (C),0.0401178603807797
+1764,Grums,Centre Party (C),0.04027617951668584
+1765,Årjäng,Centre Party (C),0.05365429234338747
+1766,Sunne,Centre Party (C),0.07803329163860291
+1780,Karlstad,Centre Party (C),0.053643738222834
+1781,Kristinehamn,Centre Party (C),0.048878332013723935
+1782,Filipstad,Centre Party (C),0.023830993172742496
+1783,Hagfors,Centre Party (C),0.03445549028468142
+1784,Arvika,Centre Party (C),0.04792557203922555
+1785,Säffle,Centre Party (C),0.07312473210458638
+1814,Lekeberg,Centre Party (C),0.08177386381506527
+1860,Laxå,Centre Party (C),0.037569573283858994
+1861,Hallsberg,Centre Party (C),0.04970662196144174
+1862,Degerfors,Centre Party (C),0.031518240343347645
+1863,Hällefors,Centre Party (C),0.033133732534930134
+1864,Ljusnarsberg,Centre Party (C),0.020179372197309416
+1880,Örebro,Centre Party (C),0.05703747668305919
+1881,Kumla,Centre Party (C),0.04703451628585319
+1882,Askersund,Centre Party (C),0.051837270341207345
+1883,Karlskoga,Centre Party (C),0.032846095011472766
+1884,Nora,Centre Party (C),0.04880995529781322
+1885,Lindesberg,Centre Party (C),0.049007650515578226
+1904,Skinnskatteberg,Centre Party (C),0.02850426094622392
+1907,Surahammar,Centre Party (C),0.020413609072715142
+1960,Kungsör,Centre Party (C),0.039104431835608036
+1961,Hallstahammar,Centre Party (C),0.03353906123111905
+1962,Norberg,Centre Party (C),0.022288602941176468
+1980,Västerås,Centre Party (C),0.046321455817182826
+1981,Sala,Centre Party (C),0.05944215820759031
+1982,Fagersta,Centre Party (C),0.02487769334859998
+1983,Köping,Centre Party (C),0.038449754901960786
+1984,Arboga,Centre Party (C),0.04213508820034732
+2021,Vansbro,Centre Party (C),0.06616399622997172
+2023,Malung-Sälen,Centre Party (C),0.04321683577602405
+2026,Gagnef,Centre Party (C),0.06601193436101442
+2029,Leksand,Centre Party (C),0.06617993405558173
+2031,Rättvik,Centre Party (C),0.056707855251544564
+2034,Orsa,Centre Party (C),0.05155766077609766
+2039,Älvdalen,Centre Party (C),0.05199781061850027
+2061,Smedjebacken,Centre Party (C),0.03260492542490461
+2062,Mora,Centre Party (C),0.05799324946302547
+2080,Falun,Centre Party (C),0.0677144471979479
+2081,Borlänge,Centre Party (C),0.04242049378897995
+2082,Säter,Centre Party (C),0.06690180907953124
+2083,Hedemora,Centre Party (C),0.049493243243243244
+2084,Avesta,Centre Party (C),0.038659943198284356
+2085,Ludvika,Centre Party (C),0.03702192758796532
+2101,Ockelbo,Centre Party (C),0.05825456144207518
+2104,Hofors,Centre Party (C),0.028610169491525422
+2121,Ovanåker,Centre Party (C),0.08197448696616749
+2132,Nordanstig,Centre Party (C),0.05653997024212093
+2161,Ljusdal,Centre Party (C),0.06361976877831113
+2180,Gävle,Centre Party (C),0.04048536795658569
+2181,Sandviken,Centre Party (C),0.03829528569498852
+2182,Söderhamn,Centre Party (C),0.048304998472971594
+2183,Bollnäs,Centre Party (C),0.06043235365557446
+2184,Hudiksvall,Centre Party (C),0.06762288149927269
+2260,Ånge,Centre Party (C),0.043198025233132195
+2262,Timrå,Centre Party (C),0.04102416983432546
+2280,Härnösand,Centre Party (C),0.062974401926399
+2281,Sundsvall,Centre Party (C),0.05239679123459206
+2282,Kramfors,Centre Party (C),0.06725625846943871
+2283,Sollefteå,Centre Party (C),0.07115742977431154
+2284,Örnsköldsvik,Centre Party (C),0.08017848427804504
+2303,Ragunda,Centre Party (C),0.06954556866683403
+2305,Bräcke,Centre Party (C),0.061203319502074686
+2309,Krokom,Centre Party (C),0.09044518740102059
+2313,Strömsund,Centre Party (C),0.052768655871362244
+2321,Åre,Centre Party (C),0.09541648303217276
+2326,Berg,Centre Party (C),0.07001990229781076
+2361,Härjedalen,Centre Party (C),0.06178461538461538
+2380,Östersund,Centre Party (C),0.0728921124206709
+2401,Nordmaling,Centre Party (C),0.07477820025348542
+2403,Bjurholm,Centre Party (C),0.061135371179039305
+2404,Vindeln,Centre Party (C),0.07724272793937913
+2409,Robertsfors,Centre Party (C),0.10576179427687549
+2417,Norsjö,Centre Party (C),0.04822834645669292
+2418,Malå,Centre Party (C),0.02611775121735281
+2421,Storuman,Centre Party (C),0.047176079734219264
+2422,Sorsele,Centre Party (C),0.05154639175257732
+2425,Dorotea,Centre Party (C),0.054723799690242644
+2460,Vännäs,Centre Party (C),0.07135393342289893
+2462,Vilhelmina,Centre Party (C),0.050265069703514624
+2463,Åsele,Centre Party (C),0.07102539981185324
+2480,Umeå,Centre Party (C),0.06705903694596174
+2481,Lycksele,Centre Party (C),0.040940106141015925
+2482,Skellefteå,Centre Party (C),0.061120095626494154
+2505,Arvidsjaur,Centre Party (C),0.0450544844928751
+2506,Arjeplog,Centre Party (C),0.03574788334901223
+2510,Jokkmokk,Centre Party (C),0.03233501192684866
+2513,Överkalix,Centre Party (C),0.04700854700854701
+2514,Kalix,Centre Party (C),0.04049168474331164
+2518,Kiruna,Centre Party (C),0.08283652337621587
+2521,Gällivare,Centre Party (C),0.025767661584711186
+2523,Pajala,Centre Party (C),0.02168180486375623
+2560,Älvsbyn,Centre Party (C),0.0539231514368744
+2580,Luleå,Centre Party (C),0.04933381346777098
+2581,Piteå,Centre Party (C),0.050890585241730284
+2582,Älvsbyn,Centre Party (C),0.03918808464263009
+2583,Haparanda,Centre Party (C),0.03920619554695062
+2584,Övertorneå,Centre Party (C),0.022235363690124188
+0114,Upplands Väsby,The Liberals (L),0.033208989172959696
+0115,Vallentuna,The Liberals (L),0.04963384865744508
+0117,Österåker,The Liberals (L),0.05307922961596125
+0120,Värmdö,The Liberals (L),0.045576883262843454
+0123,Järfälla,The Liberals (L),0.03773127715180781
+0125,Ekerö,The Liberals (L),0.054527559055118115
+0126,Huddinge,The Liberals (L),0.03647160837690832
+0127,Botkyrka,The Liberals (L),0.021341961630225184
+0128,Salem,The Liberals (L),0.04069524525779226
+0136,Haninge,The Liberals (L),0.02939356435643564
+0138,Tyresö,The Liberals (L),0.04580802633819606
+0139,Upplands-Bro,The Liberals (L),0.033760015634160645
+0140,Nykvarn,The Liberals (L),0.03627130939426914
+0160,Täby,The Liberals (L),0.08198352589971807
+0162,Danderyd,The Liberals (L),0.10475954796667492
+0163,Sollentuna,The Liberals (L),0.06243671309298639
+0180,Stockholm,The Liberals (L),0.05461008200920492
+0181,Södertälje,The Liberals (L),0.02403136600128207
+0182,Nacka,The Liberals (L),0.06313274793388429
+0183,Sundbyberg,The Liberals (L),0.044372351002040705
+0184,Solna,The Liberals (L),0.05350538205098437
+0186,Lidingö,The Liberals (L),0.08860830058254593
+0187,Vaxholm,The Liberals (L),0.0679419525065963
+0188,Norrtälje,The Liberals (L),0.03438811120260362
+0191,Sigtuna,The Liberals (L),0.029851650015137756
+0192,Nynäshamn,The Liberals (L),0.026804794202359934
+0305,Håbo,The Liberals (L),0.036084053176499424
+0319,Älvkarleby,The Liberals (L),0.017505470459518602
+0330,Knivsta,The Liberals (L),0.04645530603258476
+0331,Heby,The Liberals (L),0.019535907548381182
+0360,Tierp,The Liberals (L),0.020698177324683348
+0380,Uppsala,The Liberals (L),0.048565939422271116
+0381,Enköping,The Liberals (L),0.029430253157323276
+0382,Östhammar,The Liberals (L),0.027261816311367662
+0428,Vingåker,The Liberals (L),0.017171129220023285
+0461,Gnesta,The Liberals (L),0.022867092280905398
+0480,Nyköping,The Liberals (L),0.03204113016135326
+0481,Oxelösund,The Liberals (L),0.020282186948853618
+0482,Flen,The Liberals (L),0.024254506188221614
+0483,Katrineholm,The Liberals (L),0.02434327093444265
+0484,Eskilstuna,The Liberals (L),0.02829635297118082
+0486,Strängnäs,The Liberals (L),0.037749893662271376
+0488,Trosa,The Liberals (L),0.03461748137379611
+0509,Ödeshög,The Liberals (L),0.016549038695546362
+0512,Ydre,The Liberals (L),0.026868756458835685
+0513,Kinda,The Liberals (L),0.02086284610431423
+0560,Boxholm,The Liberals (L),0.021128395635012773
+0561,Åtvidaberg,The Liberals (L),0.024683195592286503
+0562,Finspång,The Liberals (L),0.025935042324548234
+0563,Valdemarsvik,The Liberals (L),0.02137030995106036
+0580,Linköping,The Liberals (L),0.048870699290016
+0581,Norrköping,The Liberals (L),0.029835068644614392
+0582,Söderköping,The Liberals (L),0.03748139066468167
+0583,Motala,The Liberals (L),0.028638258314091225
+0584,Vadstena,The Liberals (L),0.03233629749393695
+0586,Mjölby,The Liberals (L),0.03315587933127861
+0604,Aneby,The Liberals (L),0.02679444553099941
+0617,Gnosjö,The Liberals (L),0.024008197921241398
+0642,Mullsjö,The Liberals (L),0.02569593147751606
+0643,Habo,The Liberals (L),0.03249097472924188
+0662,Gislaved,The Liberals (L),0.023587775541723217
+0665,Vaggeryd,The Liberals (L),0.028485475227977813
+0680,Jönköping,The Liberals (L),0.03638108369978386
+0682,Nässjö,The Liberals (L),0.02495318555937813
+0683,Värnamo,The Liberals (L),0.027071653482835422
+0684,Sävsjö,The Liberals (L),0.01862464183381089
+0685,Vetlanda,The Liberals (L),0.023859071770798046
+0686,Eksjö,The Liberals (L),0.031891851519904396
+0687,Tranås,The Liberals (L),0.028161081385525203
+0760,Uppvidinge,The Liberals (L),0.017068423416679142
+0761,Lessebo,The Liberals (L),0.012579671251257966
+0763,Tingsryd,The Liberals (L),0.016325642141924248
+0764,Alvesta,The Liberals (L),0.019138427767869393
+0765,Älmhult,The Liberals (L),0.020853939993405866
+0767,Markaryd,The Liberals (L),0.014138118542686245
+0780,Växjö,The Liberals (L),0.03350559132497458
+0781,Ljungby,The Liberals (L),0.019819734793072533
+0821,Högsby,The Liberals (L),0.008776328986960883
+0834,Torsås,The Liberals (L),0.02298226565327543
+0840,Mörbylånga,The Liberals (L),0.030746585984136068
+0860,Hultsfred,The Liberals (L),0.015559661577360693
+0861,Mönsterås,The Liberals (L),0.022084195997239476
+0862,Emmaboda,The Liberals (L),0.019610691458454385
+0880,Kalmar,The Liberals (L),0.03251883152673159
+0881,Nybro,The Liberals (L),0.022007798559249222
+0882,Oskarshamn,The Liberals (L),0.026507525644712877
+0883,Västervik,The Liberals (L),0.028778206397432834
+0884,Vimmerby,The Liberals (L),0.014806188654134087
+0885,Borgholm,The Liberals (L),0.024471635150166853
+0980,Gotland,The Liberals (L),0.023076604383311928
+1060,Olofström,The Liberals (L),0.015538945712037766
+1080,Karlskrona,The Liberals (L),0.035468949906505266
+1081,Ronneby,The Liberals (L),0.027264852049423246
+1082,Karlshamn,The Liberals (L),0.024933963019290805
+1083,Sölvesborg,The Liberals (L),0.02432179607109448
+1214,Svalöv,The Liberals (L),0.025300255955896828
+1230,Staffanstorp,The Liberals (L),0.045671546785486954
+1231,Burlöv,The Liberals (L),0.025665751798827977
+1233,Vellinge,The Liberals (L),0.06616672479944191
+1256,Östra Göinge,The Liberals (L),0.01711745791564214
+1257,Örkelljunga,The Liberals (L),0.018036857927068356
+1260,Bjuv,The Liberals (L),0.013207031605792877
+1261,Kävlinge,The Liberals (L),0.04549879375290981
+1262,Lomma,The Liberals (L),0.07913508693713776
+1263,Svedala,The Liberals (L),0.029321452224697453
+1264,Skurup,The Liberals (L),0.027084180561203736
+1265,Sjöbo,The Liberals (L),0.023957705949273905
+1266,Hörby,The Liberals (L),0.030059449049652517
+1267,Höör,The Liberals (L),0.03553577007185254
+1270,Tomelilla,The Liberals (L),0.020827334677032346
+1272,Bromölla,The Liberals (L),0.02100972091564754
+1273,Osby,The Liberals (L),0.0186084142394822
+1275,Perstorp,The Liberals (L),0.013805172078553371
+1276,Klippan,The Liberals (L),0.01670773021250385
+1277,Åstorp,The Liberals (L),0.01605194336730093
+1278,Båstad,The Liberals (L),0.05174603174603175
+1280,Malmö,The Liberals (L),0.033614415619575434
+1281,Lund,The Liberals (L),0.0695699603221287
+1282,Landskrona,The Liberals (L),0.04642615624356826
+1283,Helsingborg,The Liberals (L),0.03405698778833107
+1284,Höganäs,The Liberals (L),0.050028158438145294
+1285,Eslöv,The Liberals (L),0.02808606114027004
+1286,Ystad,The Liberals (L),0.038151893714059096
+1287,Trelleborg,The Liberals (L),0.03014133256417652
+1290,Kristianstad,The Liberals (L),0.03850213390849433
+1291,Simrishamn,The Liberals (L),0.03788506920084189
+1292,Ängelholm,The Liberals (L),0.03155297020976555
+1293,Hässleholm,The Liberals (L),0.028723404255319145
+1315,Hylte,The Liberals (L),0.02002149959688256
+1380,Halmstad,The Liberals (L),0.0354592900559817
+1381,Laholm,The Liberals (L),0.03212151394422311
+1382,Falkenberg,The Liberals (L),0.03194692239072257
+1383,Varberg,The Liberals (L),0.04054340087359772
+1384,Kungsbacka,The Liberals (L),0.05552272232417804
+1401,Härryda,The Liberals (L),0.054104609303310514
+1402,Partille,The Liberals (L),0.0481510287774871
+1407,Öckerö,The Liberals (L),0.03853337265310135
+1415,Stenungsund,The Liberals (L),0.04102070293692826
+1419,Tjörn,The Liberals (L),0.05479987492182614
+1421,Orust,The Liberals (L),0.03538831064851882
+1427,Sotenäs,The Liberals (L),0.04536515012455749
+1430,Munkedal,The Liberals (L),0.019656631002737
+1435,Tanum,The Liberals (L),0.03630523651936928
+1438,Dals-Ed,The Liberals (L),0.018835616438356163
+1439,Färgelanda,The Liberals (L),0.022704640509858594
+1440,Ale,The Liberals (L),0.027084141976107305
+1441,Lerum,The Liberals (L),0.053859391930652055
+1442,Vårgårda,The Liberals (L),0.02840341728614224
+1443,Bollebygd,The Liberals (L),0.03360177728408775
+1444,Grästorp,The Liberals (L),0.025827814569536423
+1445,Essunga,The Liberals (L),0.014840182648401827
+1446,Karlsborg,The Liberals (L),0.034371063523483895
+1447,Gullspång,The Liberals (L),0.016381236038719285
+1452,Åmål,The Liberals (L),0.022491927402293728
+1460,Lilla Edet,The Liberals (L),0.01867043847241867
+1461,Mellerud,The Liberals (L),0.019077901430842606
+1462,Bengtsfors,The Liberals (L),0.01999811338552967
+1463,Mariestad,The Liberals (L),0.02614232209737828
+1465,Lidköping,The Liberals (L),0.023955773955773956
+1466,Götene,The Liberals (L),0.028442499658143033
+1470,Tibro,The Liberals (L),0.02136017677387675
+1471,Töreboda,The Liberals (L),0.02705596107055961
+1472,Vara,The Liberals (L),0.03286656636963314
+1473,Skara,The Liberals (L),0.018851878100637844
+1480,Göteborg,The Liberals (L),0.044964803245884505
+1481,Mölndal,The Liberals (L),0.0535586257678222
+1482,Kungälv,The Liberals (L),0.043110918544194105
+1484,Lysekil,The Liberals (L),0.03569539925965098
+1485,Uddevalla,The Liberals (L),0.029585249175607262
+1486,Strömstad,The Liberals (L),0.03744783659125851
+1487,Västra Götaland,The Liberals (L),0.030151419767403334
+1488,Trollhättan,The Liberals (L),0.026889187404658364
+1489,Alingsås,The Liberals (L),0.04326817482978256
+1490,Borås,The Liberals (L),0.03357362805241926
+1491,Ulricehamn,The Liberals (L),0.03257432005060089
+1492,Tranemo,The Liberals (L),0.022848200312989047
+1493,Bengtsfors,The Liberals (L),0.01983820271036224
+1494,Lidköping,The Liberals (L),0.03337881143509852
+1495,Skara,The Liberals (L),0.025545390570021115
+1496,Skövde,The Liberals (L),0.03253130651770793
+1497,Hjo,The Liberals (L),0.02883282506237871
+1498,Tidaholm,The Liberals (L),0.02498494882600843
+1499,Falköping,The Liberals (L),0.025925479319908355
+1715,Kil,The Liberals (L),0.028826503173066582
+1730,Eda,The Liberals (L),0.015390252839868085
+1737,Torsby,The Liberals (L),0.018024184348619667
+1760,Storfors,The Liberals (L),0.015523932729624837
+1761,Hammarö,The Liberals (L),0.046931993191213425
+1762,Munkfors,The Liberals (L),0.018422991893883564
+1763,Forshaga,The Liberals (L),0.019152311876699912
+1764,Grums,The Liberals (L),0.013808975834292287
+1765,Årjäng,The Liberals (L),0.021026682134570766
+1766,Sunne,The Liberals (L),0.028192052342923123
+1780,Karlstad,The Liberals (L),0.03914362462747404
+1781,Kristinehamn,The Liberals (L),0.03800475059382422
+1782,Filipstad,The Liberals (L),0.019064794538194
+1783,Hagfors,The Liberals (L),0.017058291911432443
+1784,Arvika,The Liberals (L),0.023334171486044757
+1785,Säffle,The Liberals (L),0.021431633090441493
+1814,Lekeberg,The Liberals (L),0.032866802956439685
+1860,Laxå,The Liberals (L),0.022263450834879406
+1861,Hallsberg,The Liberals (L),0.02347024308466052
+1862,Degerfors,The Liberals (L),0.019179184549356222
+1863,Hällefors,The Liberals (L),0.016566866267465067
+1864,Ljusnarsberg,The Liberals (L),0.011771300448430493
+1880,Örebro,The Liberals (L),0.04782092589452264
+1881,Kumla,The Liberals (L),0.0398031113271755
+1882,Askersund,The Liberals (L),0.022856517935258093
+1883,Karlskoga,The Liberals (L),0.024560210758902013
+1884,Nora,The Liberals (L),0.029720913374411018
+1885,Lindesberg,The Liberals (L),0.02173189932365007
+1904,Skinnskatteberg,The Liberals (L),0.029091977666764617
+1907,Surahammar,The Liberals (L),0.019079386257505004
+1960,Kungsör,The Liberals (L),0.027449777641466035
+1961,Hallstahammar,The Liberals (L),0.02216988793243463
+1962,Norberg,The Liberals (L),0.023667279411764705
+1980,Västerås,The Liberals (L),0.04045841440730994
+1981,Sala,The Liberals (L),0.023719707361682673
+1982,Fagersta,The Liberals (L),0.01790361194962007
+1983,Köping,The Liberals (L),0.021854575163398695
+1984,Arboga,The Liberals (L),0.028059592359016543
+2021,Vansbro,The Liberals (L),0.014891611687087653
+2023,Malung-Sälen,The Liberals (L),0.025679569084304143
+2026,Gagnef,The Liberals (L),0.023371456986573846
+2029,Leksand,The Liberals (L),0.030146019783325484
+2031,Rättvik,The Liberals (L),0.02173433362753751
+2034,Orsa,The Liberals (L),0.020586627801056658
+2039,Älvdalen,The Liberals (L),0.01477832512315271
+2061,Smedjebacken,The Liberals (L),0.015608740894901146
+2062,Mora,The Liberals (L),0.02344277385701135
+2080,Falun,The Liberals (L),0.0331072562062519
+2081,Borlänge,The Liberals (L),0.02847791350961291
+2082,Säter,The Liberals (L),0.021617931505290705
+2083,Hedemora,The Liberals (L),0.01613175675675676
+2084,Avesta,The Liberals (L),0.020807975424563845
+2085,Ludvika,The Liberals (L),0.023508414074451808
+2101,Ockelbo,The Liberals (L),0.014728511760826554
+2104,Hofors,The Liberals (L),0.016677966101694915
+2121,Ovanåker,The Liberals (L),0.01674986134220743
+2132,Nordanstig,The Liberals (L),0.017719464358176656
+2161,Ljusdal,The Liberals (L),0.024001081738895272
+2180,Gävle,The Liberals (L),0.030595425267535628
+2181,Sandviken,The Liberals (L),0.023639065243820073
+2182,Söderhamn,The Liberals (L),0.017713529471648174
+2183,Bollnäs,The Liberals (L),0.02113189215448142
+2184,Hudiksvall,The Liberals (L),0.019789587632353438
+2260,Ånge,The Liberals (L),0.013576522216127263
+2262,Timrå,The Liberals (L),0.01757154127519185
+2280,Härnösand,The Liberals (L),0.021043815107574727
+2281,Sundsvall,The Liberals (L),0.03010500228265832
+2282,Kramfors,The Liberals (L),0.0126952428500107
+2283,Sollefteå,The Liberals (L),0.012078128235212919
+2284,Örnsköldsvik,The Liberals (L),0.01945199749006484
+2303,Ragunda,The Liberals (L),0.00928948029123776
+2305,Bräcke,The Liberals (L),0.00933609958506224
+2309,Krokom,The Liberals (L),0.01680450466303009
+2313,Strömsund,The Liberals (L),0.011550220813044956
+2321,Åre,The Liberals (L),0.028536800352578228
+2326,Berg,The Liberals (L),0.009589288945178217
+2361,Härjedalen,The Liberals (L),0.02252307692307692
+2380,Östersund,The Liberals (L),0.025002518384204694
+2401,Nordmaling,The Liberals (L),0.02100307803729857
+2403,Bjurholm,The Liberals (L),0.022379912663755462
+2404,Vindeln,The Liberals (L),0.019799560009777558
+2409,Robertsfors,The Liberals (L),0.017014694508894045
+2417,Norsjö,The Liberals (L),0.028543307086614178
+2418,Malå,The Liberals (L),0.033200531208499334
+2421,Storuman,The Liberals (L),0.029678848283499443
+2422,Sorsele,The Liberals (L),0.016277807921866522
+2425,Dorotea,The Liberals (L),0.026329375322663915
+2460,Vännäs,The Liberals (L),0.017316017316017316
+2462,Vilhelmina,The Liberals (L),0.011388179854702533
+2463,Åsele,The Liberals (L),0.020696142991533394
+2480,Umeå,The Liberals (L),0.030153387217060044
+2481,Lycksele,The Liberals (L),0.02209466045705621
+2482,Skellefteå,The Liberals (L),0.021779637181830964
+2505,Arvidsjaur,The Liberals (L),0.02514668901927913
+2506,Arjeplog,The Liberals (L),0.023047977422389464
+2510,Jokkmokk,The Liberals (L),0.015107341637953882
+2513,Överkalix,The Liberals (L),0.014374514374514374
+2514,Kalix,The Liberals (L),0.016550172732385314
+2518,Kiruna,The Liberals (L),0.010982114841543772
+2521,Gällivare,The Liberals (L),0.010951256173502254
+2523,Pajala,The Liberals (L),0.010621154409610315
+2560,Älvsbyn,The Liberals (L),0.01759767516951889
+2580,Luleå,The Liberals (L),0.03031394244934036
+2581,Piteå,The Liberals (L),0.016883700044903457
+2582,Älvsbyn,The Liberals (L),0.0188447915720643
+2583,Haparanda,The Liberals (L),0.010809938689899967
+2584,Övertorneå,The Liberals (L),0.013601419278533412
+0114,Upplands Väsby,Christian Democrats (KD),0.03739423164407242
+0115,Vallentuna,Christian Democrats (KD),0.04304312449145647
+0117,Österåker,Christian Democrats (KD),0.03984546188444239
+0120,Värmdö,Christian Democrats (KD),0.03785750199639171
+0123,Järfälla,Christian Democrats (KD),0.03129272894058189
+0125,Ekerö,Christian Democrats (KD),0.049557086614173226
+0126,Huddinge,Christian Democrats (KD),0.029022256089549885
+0127,Botkyrka,Christian Democrats (KD),0.044759290126482984
+0128,Salem,Christian Democrats (KD),0.043452828612016374
+0136,Haninge,Christian Democrats (KD),0.03154393564356435
+0138,Tyresö,Christian Democrats (KD),0.03232672986320032
+0139,Upplands-Bro,Christian Democrats (KD),0.0427985147547391
+0140,Nykvarn,Christian Democrats (KD),0.04267924072059002
+0160,Täby,Christian Democrats (KD),0.04433633700038697
+0162,Danderyd,Christian Democrats (KD),0.050482553823311065
+0163,Sollentuna,Christian Democrats (KD),0.0365105748839342
+0180,Stockholm,Christian Democrats (KD),0.025126049150584612
+0181,Södertälje,Christian Democrats (KD),0.056008586890084824
+0182,Nacka,Christian Democrats (KD),0.033277376033057846
+0183,Sundbyberg,Christian Democrats (KD),0.026817016378002198
+0184,Solna,Christian Democrats (KD),0.029754697891960922
+0186,Lidingö,Christian Democrats (KD),0.043593388521894254
+0187,Vaxholm,Christian Democrats (KD),0.04496481970096746
+0188,Norrtälje,Christian Democrats (KD),0.03887777908481355
+0191,Sigtuna,Christian Democrats (KD),0.0439297608234938
+0192,Nynäshamn,Christian Democrats (KD),0.04064851807116975
+0305,Håbo,Christian Democrats (KD),0.04999081051277339
+0319,Älvkarleby,Christian Democrats (KD),0.033233041575492346
+0330,Knivsta,Christian Democrats (KD),0.07082049023924848
+0331,Heby,Christian Democrats (KD),0.06823809960561314
+0360,Tierp,Christian Democrats (KD),0.048872412727834415
+0380,Uppsala,Christian Democrats (KD),0.04446129376150869
+0381,Enköping,Christian Democrats (KD),0.051745814046516944
+0382,Östhammar,Christian Democrats (KD),0.06538263702348975
+0428,Vingåker,Christian Democrats (KD),0.043946449359720606
+0461,Gnesta,Christian Democrats (KD),0.03412652350551364
+0480,Nyköping,Christian Democrats (KD),0.03989074800890542
+0481,Oxelösund,Christian Democrats (KD),0.02722663139329806
+0482,Flen,Christian Democrats (KD),0.0398704211313232
+0483,Katrineholm,Christian Democrats (KD),0.03755488791310377
+0484,Eskilstuna,Christian Democrats (KD),0.03704412139760265
+0486,Strängnäs,Christian Democrats (KD),0.04111725506876507
+0488,Trosa,Christian Democrats (KD),0.04224968199164092
+0509,Ödeshög,Christian Democrats (KD),0.10391822827938671
+0512,Ydre,Christian Democrats (KD),0.09438511884257664
+0513,Kinda,Christian Democrats (KD),0.06799742433998712
+0560,Boxholm,Christian Democrats (KD),0.0513118179707453
+0561,Åtvidaberg,Christian Democrats (KD),0.05168044077134987
+0562,Finspång,Christian Democrats (KD),0.04562646334874227
+0563,Valdemarsvik,Christian Democrats (KD),0.059380097879282216
+0580,Linköping,Christian Democrats (KD),0.04430364479894508
+0581,Norrköping,Christian Democrats (KD),0.048419791762646276
+0582,Söderköping,Christian Democrats (KD),0.06121376652946842
+0583,Motala,Christian Democrats (KD),0.04477164362611329
+0584,Vadstena,Christian Democrats (KD),0.053516572352465645
+0586,Mjölby,Christian Democrats (KD),0.050387596899224806
+0604,Aneby,Christian Democrats (KD),0.0919225503618228
+0617,Gnosjö,Christian Democrats (KD),0.10291318986971161
+0642,Mullsjö,Christian Democrats (KD),0.10546038543897217
+0643,Habo,Christian Democrats (KD),0.09539437698282463
+0662,Gislaved,Christian Democrats (KD),0.06168390508728413
+0665,Vaggeryd,Christian Democrats (KD),0.0852684027451349
+0680,Jönköping,Christian Democrats (KD),0.07520310054408585
+0682,Nässjö,Christian Democrats (KD),0.06723860122806254
+0683,Värnamo,Christian Democrats (KD),0.07422624990400123
+0684,Sävsjö,Christian Democrats (KD),0.12404489016236868
+0685,Vetlanda,Christian Democrats (KD),0.07917533755988966
+0686,Eksjö,Christian Democrats (KD),0.06609903652251849
+0687,Tranås,Christian Democrats (KD),0.056322162771050406
+0760,Uppvidinge,Christian Democrats (KD),0.06033837400808504
+0761,Lessebo,Christian Democrats (KD),0.04729956390472996
+0763,Tingsryd,Christian Democrats (KD),0.0675881584675664
+0764,Alvesta,Christian Democrats (KD),0.05981616133900398
+0765,Älmhult,Christian Democrats (KD),0.056462248598747114
+0767,Markaryd,Christian Democrats (KD),0.07517672648178358
+0780,Växjö,Christian Democrats (KD),0.04909352761775669
+0781,Ljungby,Christian Democrats (KD),0.06285687320088718
+0821,Högsby,Christian Democrats (KD),0.08550651955867603
+0834,Torsås,Christian Democrats (KD),0.06333695258776693
+0840,Mörbylånga,Christian Democrats (KD),0.06558181372148172
+0860,Hultsfred,Christian Democrats (KD),0.0832441894388797
+0861,Mönsterås,Christian Democrats (KD),0.06783003056294981
+0862,Emmaboda,Christian Democrats (KD),0.05069726902963392
+0880,Kalmar,Christian Democrats (KD),0.049182436156531326
+0881,Nybro,Christian Democrats (KD),0.05439164628907541
+0882,Oskarshamn,Christian Democrats (KD),0.06188284919950149
+0883,Västervik,Christian Democrats (KD),0.0504557402792476
+0884,Vimmerby,Christian Democrats (KD),0.06330061553818
+0885,Borgholm,Christian Democrats (KD),0.06129032258064516
+0980,Gotland,Christian Democrats (KD),0.033247710983137925
+1060,Olofström,Christian Democrats (KD),0.038158929976396534
+1080,Karlskrona,Christian Democrats (KD),0.04956205097923432
+1081,Ronneby,Christian Democrats (KD),0.044681530114439434
+1082,Karlshamn,Christian Democrats (KD),0.04046265908908989
+1083,Sölvesborg,Christian Democrats (KD),0.04821184428293876
+1214,Svalöv,Christian Democrats (KD),0.043217168734002755
+1230,Staffanstorp,Christian Democrats (KD),0.03782092085720348
+1231,Burlöv,Christian Democrats (KD),0.023588754543431494
+1233,Vellinge,Christian Democrats (KD),0.05559818625741192
+1256,Östra Göinge,Christian Democrats (KD),0.04955551352373747
+1257,Örkelljunga,Christian Democrats (KD),0.08456410926676251
+1260,Bjuv,Christian Democrats (KD),0.031150377994352853
+1261,Kävlinge,Christian Democrats (KD),0.040673805392136116
+1262,Lomma,Christian Democrats (KD),0.042521176995095854
+1263,Svedala,Christian Democrats (KD),0.04611957372508881
+1264,Skurup,Christian Democrats (KD),0.042212281415209434
+1265,Sjöbo,Christian Democrats (KD),0.05694974235427959
+1266,Hörby,Christian Democrats (KD),0.05609980741857154
+1267,Höör,Christian Democrats (KD),0.04920337394564198
+1270,Tomelilla,Christian Democrats (KD),0.044054131874460126
+1272,Bromölla,Christian Democrats (KD),0.041078708058952654
+1273,Osby,Christian Democrats (KD),0.05198220064724919
+1275,Perstorp,Christian Democrats (KD),0.038110052498541706
+1276,Klippan,Christian Democrats (KD),0.05150908530951647
+1277,Åstorp,Christian Democrats (KD),0.03805573090449996
+1278,Båstad,Christian Democrats (KD),0.0573015873015873
+1280,Malmö,Christian Democrats (KD),0.02239899351838581
+1281,Lund,Christian Democrats (KD),0.02799910163310268
+1282,Landskrona,Christian Democrats (KD),0.027226485548793037
+1283,Helsingborg,Christian Democrats (KD),0.034916327453640886
+1284,Höganäs,Christian Democrats (KD),0.04862023653088042
+1285,Eslöv,Christian Democrats (KD),0.03718097680195521
+1286,Ystad,Christian Democrats (KD),0.04993059686694428
+1287,Trelleborg,Christian Democrats (KD),0.045601384482261316
+1290,Kristianstad,Christian Democrats (KD),0.04428433757055665
+1291,Simrishamn,Christian Democrats (KD),0.0441992474009822
+1292,Ängelholm,Christian Democrats (KD),0.05182443151771549
+1293,Hässleholm,Christian Democrats (KD),0.05552178318135765
+1315,Hylte,Christian Democrats (KD),0.05401773716742811
+1380,Halmstad,Christian Democrats (KD),0.0447348135417588
+1381,Laholm,Christian Democrats (KD),0.05981075697211155
+1382,Falkenberg,Christian Democrats (KD),0.04379460303300624
+1383,Varberg,Christian Democrats (KD),0.050780272854971234
+1384,Kungsbacka,Christian Democrats (KD),0.05622258857196181
+1401,Härryda,Christian Democrats (KD),0.04305781040446108
+1402,Partille,Christian Democrats (KD),0.04422682599165666
+1407,Öckerö,Christian Democrats (KD),0.12100658606114223
+1415,Stenungsund,Christian Democrats (KD),0.050890707751564755
+1419,Tjörn,Christian Democrats (KD),0.08669480925578488
+1421,Orust,Christian Democrats (KD),0.05324259407526021
+1427,Sotenäs,Christian Democrats (KD),0.06372099121541891
+1430,Munkedal,Christian Democrats (KD),0.06394625528738493
+1435,Tanum,Christian Democrats (KD),0.061319836480436055
+1438,Dals-Ed,Christian Democrats (KD),0.08019406392694065
+1439,Färgelanda,Christian Democrats (KD),0.05496912965544712
+1440,Ale,Christian Democrats (KD),0.04606029240522707
+1441,Lerum,Christian Democrats (KD),0.052489005035375104
+1442,Vårgårda,Christian Democrats (KD),0.08676356374126262
+1443,Bollebygd,Christian Democrats (KD),0.054429325187447926
+1444,Grästorp,Christian Democrats (KD),0.05364238410596026
+1445,Essunga,Christian Democrats (KD),0.04657534246575343
+1446,Karlsborg,Christian Democrats (KD),0.07036170595645133
+1447,Gullspång,Christian Democrats (KD),0.03673368081409779
+1452,Åmål,Christian Democrats (KD),0.05211001002115577
+1460,Lilla Edet,Christian Democrats (KD),0.05219236209335219
+1461,Mellerud,Christian Democrats (KD),0.055788408729585195
+1462,Bengtsfors,Christian Democrats (KD),0.043297802094142065
+1463,Mariestad,Christian Democrats (KD),0.057078651685393264
+1465,Lidköping,Christian Democrats (KD),0.06228501228501229
+1466,Götene,Christian Democrats (KD),0.07548201832353342
+1470,Tibro,Christian Democrats (KD),0.05295032326704313
+1471,Töreboda,Christian Democrats (KD),0.06841849148418491
+1472,Vara,Christian Democrats (KD),0.06816340701307719
+1473,Skara,Christian Democrats (KD),0.042948263642806524
+1480,Göteborg,Christian Democrats (KD),0.03387961029122234
+1481,Mölndal,Christian Democrats (KD),0.040808417462747305
+1482,Kungälv,Christian Democrats (KD),0.05556759098786828
+1484,Lysekil,Christian Democrats (KD),0.04345143662964921
+1485,Uddevalla,Christian Democrats (KD),0.053690028331243325
+1486,Strömstad,Christian Democrats (KD),0.04908851306830662
+1487,Västra Götaland,Christian Democrats (KD),0.047513336204897116
+1488,Trollhättan,Christian Democrats (KD),0.03790897292866738
+1489,Alingsås,Christian Democrats (KD),0.06181167832826081
+1490,Borås,Christian Democrats (KD),0.05049769651254386
+1491,Ulricehamn,Christian Democrats (KD),0.05924520345772717
+1492,Tranemo,Christian Democrats (KD),0.044861763171622326
+1493,Bengtsfors,Christian Democrats (KD),0.047714742103364766
+1494,Lidköping,Christian Democrats (KD),0.05638226988609322
+1495,Skara,Christian Democrats (KD),0.04806474313863476
+1496,Skövde,Christian Democrats (KD),0.0581259586547927
+1497,Hjo,Christian Democrats (KD),0.08053784308289438
+1498,Tidaholm,Christian Democrats (KD),0.06181015452538632
+1499,Falköping,Christian Democrats (KD),0.0633064029904739
+1715,Kil,Christian Democrats (KD),0.04711197160374314
+1730,Eda,Christian Democrats (KD),0.06705753023085378
+1737,Torsby,Christian Democrats (KD),0.05019393109742186
+1760,Storfors,Christian Democrats (KD),0.03492884864165589
+1761,Hammarö,Christian Democrats (KD),0.043932884818027075
+1762,Munkfors,Christian Democrats (KD),0.03537214443625645
+1763,Forshaga,Christian Democrats (KD),0.04884406165004534
+1764,Grums,Christian Democrats (KD),0.034378596087456845
+1765,Årjäng,Christian Democrats (KD),0.13602088167053367
+1766,Sunne,Christian Democrats (KD),0.05898200712017704
+1780,Karlstad,Christian Democrats (KD),0.03971828350729015
+1781,Kristinehamn,Christian Democrats (KD),0.041435735022433355
+1782,Filipstad,Christian Democrats (KD),0.038129589076388
+1783,Hagfors,Christian Democrats (KD),0.03976502485314053
+1784,Arvika,Christian Democrats (KD),0.0453105355795826
+1785,Säffle,Christian Democrats (KD),0.060694384912130306
+1814,Lekeberg,Christian Democrats (KD),0.06966504167321906
+1860,Laxå,Christian Democrats (KD),0.048701298701298704
+1861,Hallsberg,Christian Democrats (KD),0.038139145012573344
+1862,Degerfors,Christian Democrats (KD),0.03420064377682404
+1863,Hällefors,Christian Democrats (KD),0.024950099800399198
+1864,Ljusnarsberg,Christian Democrats (KD),0.028307174887892375
+1880,Örebro,Christian Democrats (KD),0.04585382397829405
+1881,Kumla,Christian Democrats (KD),0.04654837141468157
+1882,Askersund,Christian Democrats (KD),0.045713035870516186
+1883,Karlskoga,Christian Democrats (KD),0.031826293872694825
+1884,Nora,Christian Democrats (KD),0.04554790382989005
+1885,Lindesberg,Christian Democrats (KD),0.04390730679676239
+1904,Skinnskatteberg,Christian Democrats (KD),0.03849544519541581
+1907,Surahammar,Christian Democrats (KD),0.0342895263509006
+1960,Kungsör,Christian Democrats (KD),0.04539181107192148
+1961,Hallstahammar,Christian Democrats (KD),0.03808673055059282
+1962,Norberg,Christian Democrats (KD),0.035845588235294115
+1980,Västerås,Christian Democrats (KD),0.037998337090594275
+1981,Sala,Christian Democrats (KD),0.04543895747599452
+1982,Fagersta,Christian Democrats (KD),0.03674404080358073
+1983,Köping,Christian Democrats (KD),0.05009191176470589
+1984,Arboga,Christian Democrats (KD),0.03829631660725711
+2021,Vansbro,Christian Democrats (KD),0.08557964184731386
+2023,Malung-Sälen,Christian Democrats (KD),0.05323813102843543
+2026,Gagnef,Christian Democrats (KD),0.07434112381899553
+2029,Leksand,Christian Democrats (KD),0.06704349191395823
+2031,Rättvik,Christian Democrats (KD),0.061672550750220656
+2034,Orsa,Christian Democrats (KD),0.05429039897977774
+2039,Älvdalen,Christian Democrats (KD),0.06349206349206349
+2061,Smedjebacken,Christian Democrats (KD),0.032836166030754996
+2062,Mora,Christian Democrats (KD),0.0533906106167536
+2080,Falun,Christian Democrats (KD),0.046237120125211945
+2081,Borlänge,Christian Democrats (KD),0.03858048554198237
+2082,Säter,Christian Democrats (KD),0.05552395039253613
+2083,Hedemora,Christian Democrats (KD),0.048986486486486486
+2084,Avesta,Christian Democrats (KD),0.043876427288007884
+2085,Ludvika,Christian Democrats (KD),0.03819479857215706
+2101,Ockelbo,Christian Democrats (KD),0.03890965047263135
+2104,Hofors,Christian Democrats (KD),0.030779661016949154
+2121,Ovanåker,Christian Democrats (KD),0.0951747088186356
+2132,Nordanstig,Christian Democrats (KD),0.05194102529419722
+2161,Ljusdal,Christian Democrats (KD),0.044824555472922724
+2180,Gävle,Christian Democrats (KD),0.034602119997971297
+2181,Sandviken,Christian Democrats (KD),0.03265568012967716
+2182,Söderhamn,Christian Democrats (KD),0.03792120533441922
+2183,Bollnäs,Christian Democrats (KD),0.05027932960893855
+2184,Hudiksvall,Christian Democrats (KD),0.04296201075741687
+2260,Ånge,Christian Democrats (KD),0.04827207899067471
+2262,Timrå,Christian Democrats (KD),0.040665566951158284
+2280,Härnösand,Christian Democrats (KD),0.038161545307019845
+2281,Sundsvall,Christian Democrats (KD),0.0407617556903411
+2282,Kramfors,Christian Democrats (KD),0.03722986948149205
+2283,Sollefteå,Christian Democrats (KD),0.04851956656774104
+2284,Örnsköldsvik,Christian Democrats (KD),0.05507913267796137
+2303,Ragunda,Christian Democrats (KD),0.04745166959578207
+2305,Bräcke,Christian Democrats (KD),0.03568464730290456
+2309,Krokom,Christian Democrats (KD),0.05085342248812247
+2313,Strömsund,Christian Democrats (KD),0.04280375948363719
+2321,Åre,Christian Democrats (KD),0.03933450859409431
+2326,Berg,Christian Democrats (KD),0.04161389542247151
+2361,Härjedalen,Christian Democrats (KD),0.05267692307692307
+2380,Östersund,Christian Democrats (KD),0.04112017729424801
+2401,Nordmaling,Christian Democrats (KD),0.049248596777113886
+2403,Bjurholm,Christian Democrats (KD),0.0665938864628821
+2404,Vindeln,Christian Democrats (KD),0.04937668051821071
+2409,Robertsfors,Christian Democrats (KD),0.040409899458623354
+2417,Norsjö,Christian Democrats (KD),0.06824146981627296
+2418,Malå,Christian Democrats (KD),0.03585657370517928
+2421,Storuman,Christian Democrats (KD),0.05625692137320044
+2422,Sorsele,Christian Democrats (KD),0.04612045577862181
+2425,Dorotea,Christian Democrats (KD),0.036654620547238004
+2460,Vännäs,Christian Democrats (KD),0.03716972682489924
+2462,Vilhelmina,Christian Democrats (KD),0.06597290398586295
+2463,Åsele,Christian Democrats (KD),0.03574788334901223
+2480,Umeå,Christian Democrats (KD),0.030405337310785478
+2481,Lycksele,Christian Democrats (KD),0.0810137550092061
+2482,Skellefteå,Christian Democrats (KD),0.03651033609900155
+2505,Arvidsjaur,Christian Democrats (KD),0.04149203688181056
+2506,Arjeplog,Christian Democrats (KD),0.07008466603951083
+2510,Jokkmokk,Christian Democrats (KD),0.033660217333686716
+2513,Överkalix,Christian Democrats (KD),0.04623154623154623
+2514,Kalix,Christian Democrats (KD),0.03679601510404113
+2518,Kiruna,Christian Democrats (KD),0.05898964543457798
+2521,Gällivare,Christian Democrats (KD),0.05840669959201202
+2523,Pajala,Christian Democrats (KD),0.03296220334016994
+2560,Älvsbyn,Christian Democrats (KD),0.043590571520826606
+2580,Luleå,Christian Democrats (KD),0.04470160735915147
+2581,Piteå,Christian Democrats (KD),0.033976949558449335
+2582,Älvsbyn,Christian Democrats (KD),0.03673599128144583
+2583,Haparanda,Christian Democrats (KD),0.03275250080671184
+2584,Övertorneå,Christian Democrats (KD),0.05286812536960379
+0114,Upplands Väsby,Green Party (MP),0.027143420374245598
+0115,Vallentuna,Green Party (MP),0.04340927583401139
+0117,Österåker,Green Party (MP),0.038605697151424284
+0120,Värmdö,Green Party (MP),0.053828635651119464
+0123,Järfälla,Green Party (MP),0.03534278346054658
+0125,Ekerö,Green Party (MP),0.0531496062992126
+0126,Huddinge,Green Party (MP),0.04309325485456026
+0127,Botkyrka,Green Party (MP),0.026669281302088437
+0128,Salem,Green Party (MP),0.03877329322303
+0136,Haninge,Green Party (MP),0.027629950495049505
+0138,Tyresö,Green Party (MP),0.044275415791564965
+0139,Upplands-Bro,Green Party (MP),0.025942935313660345
+0140,Nykvarn,Green Party (MP),0.021158263813323662
+0160,Täby,Green Party (MP),0.038679123592606925
+0162,Danderyd,Green Party (MP),0.03398498721438588
+0163,Sollentuna,Green Party (MP),0.046349897785674714
+0180,Stockholm,Green Party (MP),0.08013031373911707
+0181,Södertälje,Green Party (MP),0.03224556120395354
+0182,Nacka,Green Party (MP),0.06160898760330578
+0183,Sundbyberg,Green Party (MP),0.047407252367746316
+0184,Solna,Green Party (MP),0.053737581477120065
+0186,Lidingö,Green Party (MP),0.045014912060651675
+0187,Vaxholm,Green Party (MP),0.05145118733509235
+0188,Norrtälje,Green Party (MP),0.03248637415206054
+0191,Sigtuna,Green Party (MP),0.024462609748713296
+0192,Nynäshamn,Green Party (MP),0.031636160921676114
+0305,Håbo,Green Party (MP),0.022422348832935125
+0319,Älvkarleby,Green Party (MP),0.02160831509846827
+0330,Knivsta,Green Party (MP),0.051592543666519886
+0331,Heby,Green Party (MP),0.023479776208383013
+0360,Tierp,Green Party (MP),0.0266295953042941
+0380,Uppsala,Green Party (MP),0.07296007662005234
+0381,Enköping,Green Party (MP),0.026744385393451055
+0382,Östhammar,Green Party (MP),0.02148939818254558
+0428,Vingåker,Green Party (MP),0.026338766006984864
+0461,Gnesta,Green Party (MP),0.04677887405687754
+0480,Nyköping,Green Party (MP),0.038857903555280134
+0481,Oxelösund,Green Party (MP),0.023037918871252207
+0482,Flen,Green Party (MP),0.032560843923913944
+0483,Katrineholm,Green Party (MP),0.029196517987828366
+0484,Eskilstuna,Green Party (MP),0.026766131089007904
+0486,Strängnäs,Green Party (MP),0.0338508436126471
+0488,Trosa,Green Party (MP),0.03897873886970744
+0509,Ödeshög,Green Party (MP),0.02993429058165004
+0512,Ydre,Green Party (MP),0.033758181191870476
+0513,Kinda,Green Party (MP),0.03670315518351577
+0560,Boxholm,Green Party (MP),0.0213605758068261
+0561,Åtvidaberg,Green Party (MP),0.025013774104683195
+0562,Finspång,Green Party (MP),0.023353545056132557
+0563,Valdemarsvik,Green Party (MP),0.015497553017944534
+0580,Linköping,Green Party (MP),0.05230403074721193
+0581,Norrköping,Green Party (MP),0.034248594858564456
+0582,Söderköping,Green Party (MP),0.031701550048165335
+0583,Motala,Green Party (MP),0.021891024679881247
+0584,Vadstena,Green Party (MP),0.04042037186742118
+0586,Mjölby,Green Party (MP),0.023395909218268424
+0604,Aneby,Green Party (MP),0.02170936827694113
+0617,Gnosjö,Green Party (MP),0.012882447665056359
+0642,Mullsjö,Green Party (MP),0.029978586723768737
+0643,Habo,Green Party (MP),0.026692921999781204
+0662,Gislaved,Green Party (MP),0.014414751719941967
+0665,Vaggeryd,Green Party (MP),0.020212465920842342
+0680,Jönköping,Green Party (MP),0.03421033017813222
+0682,Nässjö,Green Party (MP),0.023733832687366632
+0683,Värnamo,Green Party (MP),0.019314952768604562
+0684,Sävsjö,Green Party (MP),0.012893982808022923
+0685,Vetlanda,Green Party (MP),0.018196776847505203
+0686,Eksjö,Green Party (MP),0.024647098364328927
+0687,Tranås,Green Party (MP),0.02590819487468319
+0760,Uppvidinge,Green Party (MP),0.017218146429106154
+0761,Lessebo,Green Party (MP),0.018953371351895336
+0763,Tingsryd,Green Party (MP),0.018611232041793643
+0764,Alvesta,Green Party (MP),0.020853340650294965
+0765,Älmhult,Green Party (MP),0.02316188592152984
+0767,Markaryd,Green Party (MP),0.011011419249592171
+0780,Växjö,Green Party (MP),0.037557889980797475
+0781,Ljungby,Green Party (MP),0.02029163324052664
+0821,Högsby,Green Party (MP),0.014543630892678034
+0834,Torsås,Green Party (MP),0.02298226565327543
+0840,Mörbylånga,Green Party (MP),0.041049963202224225
+0860,Hultsfred,Green Party (MP),0.01390644753476612
+0861,Mönsterås,Green Party (MP),0.01774622892635315
+0862,Emmaboda,Green Party (MP),0.02106333527019175
+0880,Kalmar,Green Party (MP),0.03854492008083777
+0881,Nybro,Green Party (MP),0.017249355627519662
+0882,Oskarshamn,Green Party (MP),0.015099223468507334
+0883,Västervik,Green Party (MP),0.026149592052708837
+0884,Vimmerby,Green Party (MP),0.023124272167692562
+0885,Borgholm,Green Party (MP),0.03581757508342603
+0980,Gotland,Green Party (MP),0.05271989062435266
+1060,Olofström,Green Party (MP),0.015047206923682138
+1080,Karlskrona,Green Party (MP),0.028087786635173702
+1081,Ronneby,Green Party (MP),0.020106688551497744
+1082,Karlshamn,Green Party (MP),0.026855038821740174
+1083,Sölvesborg,Green Party (MP),0.01374397351946463
+1214,Svalöv,Green Party (MP),0.0291395944083481
+1230,Staffanstorp,Green Party (MP),0.028485041374920434
+1231,Burlöv,Green Party (MP),0.026333358059491132
+1233,Vellinge,Green Party (MP),0.018311824206487616
+1256,Östra Göinge,Green Party (MP),0.015320597692453189
+1257,Örkelljunga,Green Party (MP),0.015814926153443994
+1260,Bjuv,Green Party (MP),0.009745878495309227
+1261,Kävlinge,Green Party (MP),0.029246201379777372
+1262,Lomma,Green Party (MP),0.04001337494427107
+1263,Svedala,Green Party (MP),0.023180203504124273
+1264,Skurup,Green Party (MP),0.019438796258641724
+1265,Sjöbo,Green Party (MP),0.02195007695911129
+1266,Hörby,Green Party (MP),0.02168634346479109
+1267,Höör,Green Party (MP),0.05115588878475476
+1270,Tomelilla,Green Party (MP),0.028217679239850274
+1272,Bromölla,Green Party (MP),0.014006480610431693
+1273,Osby,Green Party (MP),0.019619741100323624
+1275,Perstorp,Green Party (MP),0.011666342601594399
+1276,Klippan,Green Party (MP),0.01793963658761934
+1277,Åstorp,Green Party (MP),0.010460817025881504
+1278,Båstad,Green Party (MP),0.034444444444444444
+1280,Malmö,Green Party (MP),0.05577452900801046
+1281,Lund,Green Party (MP),0.09043560099675946
+1282,Landskrona,Green Party (MP),0.02302196348240275
+1283,Helsingborg,Green Party (MP),0.026313885119855267
+1284,Höganäs,Green Party (MP),0.03693448470058194
+1285,Eslöv,Green Party (MP),0.0281661925557915
+1286,Ystad,Green Party (MP),0.02958556414832441
+1287,Trelleborg,Green Party (MP),0.01854629362561292
+1290,Kristianstad,Green Party (MP),0.020742508375017208
+1291,Simrishamn,Green Party (MP),0.050130748134447345
+1292,Ängelholm,Green Party (MP),0.027116751865562016
+1293,Hässleholm,Green Party (MP),0.022315096251266462
+1315,Hylte,Green Party (MP),0.018812147272238646
+1380,Halmstad,Green Party (MP),0.029064991849165327
+1381,Laholm,Green Party (MP),0.02201195219123506
+1382,Falkenberg,Green Party (MP),0.027876895628902765
+1383,Varberg,Green Party (MP),0.03253862879793723
+1384,Kungsbacka,Green Party (MP),0.032551556813586735
+1401,Härryda,Green Party (MP),0.048528269923060634
+1402,Partille,Green Party (MP),0.050060100403026234
+1407,Öckerö,Green Party (MP),0.03774697729283397
+1415,Stenungsund,Green Party (MP),0.033702455464612424
+1419,Tjörn,Green Party (MP),0.03392745465916198
+1421,Orust,Green Party (MP),0.03971176941553243
+1427,Sotenäs,Green Party (MP),0.026747082732398057
+1430,Munkedal,Green Party (MP),0.019283403831798954
+1435,Tanum,Green Party (MP),0.03533190578158458
+1438,Dals-Ed,Green Party (MP),0.01084474885844749
+1439,Färgelanda,Green Party (MP),0.013543118900617409
+1440,Ale,Green Party (MP),0.02867986371673783
+1441,Lerum,Green Party (MP),0.053923130856013766
+1442,Vårgårda,Green Party (MP),0.033063352934649945
+1443,Bollebygd,Green Party (MP),0.03207442377117467
+1444,Grästorp,Green Party (MP),0.018322295805739516
+1445,Essunga,Green Party (MP),0.01940639269406393
+1446,Karlsborg,Green Party (MP),0.01943494691380241
+1447,Gullspång,Green Party (MP),0.016629436584760487
+1452,Åmål,Green Party (MP),0.02316000445384701
+1460,Lilla Edet,Green Party (MP),0.02333804809052334
+1461,Mellerud,Green Party (MP),0.021101315218962278
+1462,Bengtsfors,Green Party (MP),0.01773417602113008
+1463,Mariestad,Green Party (MP),0.027752808988764043
+1465,Lidköping,Green Party (MP),0.02063882063882064
+1466,Götene,Green Party (MP),0.020374675235881306
+1470,Tibro,Green Party (MP),0.014158278091496848
+1471,Töreboda,Green Party (MP),0.033479318734793186
+1472,Vara,Green Party (MP),0.018863557458627476
+1473,Skara,Green Party (MP),0.01644223954642098
+1480,Göteborg,Green Party (MP),0.060611642906650894
+1481,Mölndal,Green Party (MP),0.05105896486910691
+1482,Kungälv,Green Party (MP),0.03617850953206239
+1484,Lysekil,Green Party (MP),0.034108937070333155
+1485,Uddevalla,Green Party (MP),0.03260415215271004
+1486,Strömstad,Green Party (MP),0.0329453107840984
+1487,Västra Götaland,Green Party (MP),0.027235678075610482
+1488,Trollhättan,Green Party (MP),0.027572231961931648
+1489,Alingsås,Green Party (MP),0.049010071852153995
+1490,Borås,Green Party (MP),0.029324708185138326
+1491,Ulricehamn,Green Party (MP),0.02862112586970272
+1492,Tranemo,Green Party (MP),0.023787167449139283
+1493,Bengtsfors,Green Party (MP),0.025506260627608593
+1494,Lidköping,Green Party (MP),0.03299806453659929
+1495,Skara,Green Party (MP),0.02821956368754398
+1496,Skövde,Green Party (MP),0.028959959707882146
+1497,Hjo,Green Party (MP),0.03659550873301913
+1498,Tidaholm,Green Party (MP),0.02117198474814369
+1499,Falköping,Green Party (MP),0.02809598456529603
+1715,Kil,Green Party (MP),0.028611380015058623
+1730,Eda,Green Party (MP),0.009527299377061194
+1737,Torsby,Green Party (MP),0.01597079625827059
+1760,Storfors,Green Party (MP),0.016494178525226392
+1761,Hammarö,Green Party (MP),0.036556699359649836
+1762,Munkfors,Green Party (MP),0.016212232866617538
+1763,Forshaga,Green Party (MP),0.022665457842248417
+1764,Grums,Green Party (MP),0.013952819332566167
+1765,Årjäng,Green Party (MP),0.014066125290023202
+1766,Sunne,Green Party (MP),0.024728182430482054
+1780,Karlstad,Green Party (MP),0.04181645662661873
+1781,Kristinehamn,Green Party (MP),0.026656109791501712
+1782,Filipstad,Green Party (MP),0.012623985572587917
+1783,Hagfors,Green Party (MP),0.01378219611387257
+1784,Arvika,Green Party (MP),0.03303997988433492
+1785,Säffle,Green Party (MP),0.01577368195456494
+1814,Lekeberg,Green Party (MP),0.029564396917754365
+1860,Laxå,Green Party (MP),0.015538033395176253
+1861,Hallsberg,Green Party (MP),0.023386420787929588
+1862,Degerfors,Green Party (MP),0.019045064377682403
+1863,Hällefors,Green Party (MP),0.020758483033932136
+1864,Ljusnarsberg,Green Party (MP),0.014573991031390133
+1880,Örebro,Green Party (MP),0.04161438019331864
+1881,Kumla,Green Party (MP),0.02120807000486145
+1882,Askersund,Green Party (MP),0.023075240594925633
+1883,Karlskoga,Green Party (MP),0.021075890201410725
+1884,Nora,Green Party (MP),0.03467439893681286
+1885,Lindesberg,Green Party (MP),0.026111542299589754
+1904,Skinnskatteberg,Green Party (MP),0.01939465177784308
+1907,Surahammar,Green Party (MP),0.014676450967311542
+1960,Kungsör,Green Party (MP),0.01886213770894035
+1961,Hallstahammar,Green Party (MP),0.019652428130583075
+1962,Norberg,Green Party (MP),0.021599264705882353
+1980,Västerås,Green Party (MP),0.029040912714399594
+1981,Sala,Green Party (MP),0.023719707361682673
+1982,Fagersta,Green Party (MP),0.018215884251066933
+1983,Köping,Green Party (MP),0.017463235294117647
+1984,Arboga,Green Party (MP),0.027602595740791522
+2021,Vansbro,Green Party (MP),0.014326107445805843
+2023,Malung-Sälen,Green Party (MP),0.014405611925341351
+2026,Gagnef,Green Party (MP),0.0299602187966186
+2029,Leksand,Green Party (MP),0.03501334589417491
+2031,Rättvik,Green Party (MP),0.02945719329214475
+2034,Orsa,Green Party (MP),0.028420477318272908
+2039,Älvdalen,Green Party (MP),0.014960773581463237
+2061,Smedjebacken,Green Party (MP),0.01930859058850734
+2062,Mora,Green Party (MP),0.026081620128873887
+2080,Falun,Green Party (MP),0.051736881005173686
+2081,Borlänge,Green Party (MP),0.029611875676511523
+2082,Säter,Green Party (MP),0.024803731937649336
+2083,Hedemora,Green Party (MP),0.027618243243243246
+2084,Avesta,Green Party (MP),0.017156436561757377
+2085,Ludvika,Green Party (MP),0.02233554309026007
+2101,Ockelbo,Green Party (MP),0.027038909650472627
+2104,Hofors,Green Party (MP),0.015322033898305085
+2121,Ovanåker,Green Party (MP),0.019523017193566278
+2132,Nordanstig,Green Party (MP),0.02285946165291492
+2161,Ljusdal,Green Party (MP),0.027381515786627002
+2180,Gävle,Green Party (MP),0.03207891667089314
+2181,Sandviken,Green Party (MP),0.020295826016479803
+2182,Söderhamn,Green Party (MP),0.022091010892802607
+2183,Bollnäs,Green Party (MP),0.0243866893368958
+2184,Hudiksvall,Green Party (MP),0.03413281012144379
+2260,Ånge,Green Party (MP),0.011519473395501918
+2262,Timrå,Green Party (MP),0.01721293839202467
+2280,Härnösand,Green Party (MP),0.049049887452232634
+2281,Sundsvall,Green Party (MP),0.031083284419226507
+2282,Kramfors,Green Party (MP),0.024106697097211326
+2283,Sollefteå,Green Party (MP),0.01835875491752364
+2284,Örnsköldsvik,Green Party (MP),0.023751423458597692
+2303,Ragunda,Green Party (MP),0.020085362791865426
+2305,Bräcke,Green Party (MP),0.01867219917012448
+2309,Krokom,Green Party (MP),0.04240717930670421
+2313,Strömsund,Green Party (MP),0.013475257615219114
+2321,Åre,Green Party (MP),0.06875275451740855
+2326,Berg,Green Party (MP),0.02297810747240818
+2361,Härjedalen,Green Party (MP),0.02326153846153846
+2380,Östersund,Green Party (MP),0.0473657701218898
+2401,Nordmaling,Green Party (MP),0.020459894984609813
+2403,Bjurholm,Green Party (MP),0.014737991266375547
+2404,Vindeln,Green Party (MP),0.022732828159374236
+2409,Robertsfors,Green Party (MP),0.03402938901778809
+2417,Norsjö,Green Party (MP),0.00951443569553806
+2418,Malå,Green Party (MP),0.008853474988933156
+2421,Storuman,Green Party (MP),0.02236987818383167
+2422,Sorsele,Green Party (MP),0.016277807921866522
+2425,Dorotea,Green Party (MP),0.011357769747031494
+2460,Vännäs,Green Party (MP),0.03463203463203463
+2462,Vilhelmina,Green Party (MP),0.014922442568230906
+2463,Åsele,Green Party (MP),0.010818438381937912
+2480,Umeå,Green Party (MP),0.06400540181000948
+2481,Lycksele,Green Party (MP),0.016895916820101806
+2482,Skellefteå,Green Party (MP),0.032572774574602725
+2505,Arvidsjaur,Green Party (MP),0.009849119865884326
+2506,Arjeplog,Green Party (MP),0.025870178739416747
+2510,Jokkmokk,Green Party (MP),0.08613835144447389
+2513,Överkalix,Green Party (MP),0.011655011655011656
+2514,Kalix,Green Party (MP),0.0212902707479714
+2518,Kiruna,Green Party (MP),0.008471917163476624
+2521,Gällivare,Green Party (MP),0.014816405411208933
+2523,Pajala,Green Party (MP),0.027615001464986817
+2560,Älvsbyn,Green Party (MP),0.012108492089118503
+2580,Luleå,Green Party (MP),0.03604281926212067
+2581,Piteå,Green Party (MP),0.025205807513845234
+2582,Älvsbyn,Green Party (MP),0.02025247479792934
+2583,Haparanda,Green Party (MP),0.011939335269441754
+2584,Övertorneå,Green Party (MP),0.028444707273802484
+0114,Upplands Väsby,Social Democrats (S),0.22542686440420953
+0115,Vallentuna,Social Democrats (S),0.20089503661513428
+0117,Österåker,Social Democrats (S),0.20753084995963555
+0120,Värmdö,Social Democrats (S),0.2262873029487445
+0123,Järfälla,Social Democrats (S),0.2266472817903318
+0125,Ekerö,Social Democrats (S),0.20098425196850395
+0126,Huddinge,Social Democrats (S),0.2300759387234937
+0127,Botkyrka,Social Democrats (S),0.21799522829035525
+0128,Salem,Social Democrats (S),0.21684632740035095
+0136,Haninge,Social Democrats (S),0.22532487623762376
+0138,Tyresö,Social Democrats (S),0.2491059771811319
+0139,Upplands-Bro,Social Democrats (S),0.21770568692593315
+0140,Nykvarn,Social Democrats (S),0.20686736791198163
+0160,Täby,Social Democrats (S),0.16816850019348775
+0162,Danderyd,Social Democrats (S),0.10500701146580879
+0163,Sollentuna,Social Democrats (S),0.21694274087235627
+0180,Stockholm,Social Democrats (S),0.2246662152566513
+0181,Södertälje,Social Democrats (S),0.193831154310589
+0182,Nacka,Social Democrats (S),0.2125129132231405
+0183,Sundbyberg,Social Democrats (S),0.2381089424938517
+0184,Solna,Social Democrats (S),0.233542865672632
+0186,Lidingö,Social Democrats (S),0.14808930512584667
+0187,Vaxholm,Social Democrats (S),0.19118293755496923
+0188,Norrtälje,Social Democrats (S),0.2401678233933263
+0191,Sigtuna,Social Democrats (S),0.20278534665455647
+0192,Nynäshamn,Social Democrats (S),0.2518349902443557
+0305,Håbo,Social Democrats (S),0.2060895668688354
+0319,Älvkarleby,Social Democrats (S),0.2761214442013129
+0330,Knivsta,Social Democrats (S),0.20805812417437253
+0331,Heby,Social Democrats (S),0.2284692286526644
+0360,Tierp,Social Democrats (S),0.2811862835959221
+0380,Uppsala,Social Democrats (S),0.24208858053371793
+0381,Enköping,Social Democrats (S),0.22695582604720266
+0382,Östhammar,Social Democrats (S),0.24935703263416586
+0428,Vingåker,Social Democrats (S),0.27342840512223515
+0461,Gnesta,Social Democrats (S),0.22843876958792805
+0480,Nyköping,Social Democrats (S),0.2851109733985173
+0481,Oxelösund,Social Democrats (S),0.3148148148148148
+0482,Flen,Social Democrats (S),0.2790929479192624
+0483,Katrineholm,Social Democrats (S),0.3005546568061012
+0484,Eskilstuna,Social Democrats (S),0.25886253506758483
+0486,Strängnäs,Social Democrats (S),0.22798809017439386
+0488,Trosa,Social Democrats (S),0.23187352353261856
+0509,Ödeshög,Social Democrats (S),0.18836699926989536
+0512,Ydre,Social Democrats (S),0.2252841887702377
+0513,Kinda,Social Democrats (S),0.25138441725692207
+0560,Boxholm,Social Democrats (S),0.3060134664499652
+0561,Åtvidaberg,Social Democrats (S),0.2898071625344353
+0562,Finspång,Social Democrats (S),0.2939905144984091
+0563,Valdemarsvik,Social Democrats (S),0.23686786296900492
+0580,Linköping,Social Democrats (S),0.24932258038578745
+0581,Norrköping,Social Democrats (S),0.23328112042753157
+0582,Söderköping,Social Democrats (S),0.21105175584552063
+0583,Motala,Social Democrats (S),0.28071490688817585
+0584,Vadstena,Social Democrats (S),0.2651576394502829
+0586,Mjölby,Social Democrats (S),0.26543382833660223
+0604,Aneby,Social Democrats (S),0.20222961079601018
+0617,Gnosjö,Social Democrats (S),0.19616454399063094
+0642,Mullsjö,Social Democrats (S),0.216452533904354
+0643,Habo,Social Democrats (S),0.22437370090799694
+0662,Gislaved,Social Democrats (S),0.22773435671830392
+0665,Vaggeryd,Social Democrats (S),0.24640406129547807
+0680,Jönköping,Social Democrats (S),0.24790377878810466
+0682,Nässjö,Social Democrats (S),0.23559639419936418
+0683,Värnamo,Social Democrats (S),0.23704016588587667
+0684,Sävsjö,Social Democrats (S),0.18899235912129894
+0685,Vetlanda,Social Democrats (S),0.22620142283308328
+0686,Eksjö,Social Democrats (S),0.239002165957129
+0687,Tranås,Social Democrats (S),0.2806955787102225
+0760,Uppvidinge,Social Democrats (S),0.21410390777062435
+0761,Lessebo,Social Democrats (S),0.2908419993290842
+0763,Tingsryd,Social Democrats (S),0.21898127993034391
+0764,Alvesta,Social Democrats (S),0.2355604335299767
+0765,Älmhult,Social Democrats (S),0.25848994394988456
+0767,Markaryd,Social Democrats (S),0.2122077215878195
+0780,Växjö,Social Democrats (S),0.27276064610866374
+0781,Ljungby,Social Democrats (S),0.2357604643480723
+0821,Högsby,Social Democrats (S),0.24172517552657974
+0834,Torsås,Social Democrats (S),0.22240318494390154
+0840,Mörbylånga,Social Democrats (S),0.26159129937034914
+0860,Hultsfred,Social Democrats (S),0.27083535933093456
+0861,Mönsterås,Social Democrats (S),0.26698215518091295
+0862,Emmaboda,Social Democrats (S),0.26961069145845434
+0880,Kalmar,Social Democrats (S),0.26810582399412086
+0881,Nybro,Social Democrats (S),0.26191262970061463
+0882,Oskarshamn,Social Democrats (S),0.2607132585562267
+0883,Västervik,Social Democrats (S),0.28255897313351314
+0884,Vimmerby,Social Democrats (S),0.2452171019797039
+0885,Borgholm,Social Democrats (S),0.2275862068965517
+0980,Gotland,Social Democrats (S),0.29003190123047606
+1060,Olofström,Social Democrats (S),0.255507474429583
+1080,Karlskrona,Social Democrats (S),0.2682019486271036
+1081,Ronneby,Social Democrats (S),0.25304335932157024
+1082,Karlshamn,Social Democrats (S),0.25946530056831824
+1083,Sölvesborg,Social Democrats (S),0.21939987047564222
+1214,Svalöv,Social Democrats (S),0.1997440441031699
+1230,Staffanstorp,Social Democrats (S),0.22018883938043707
+1231,Burlöv,Social Democrats (S),0.23262369260440618
+1233,Vellinge,Social Democrats (S),0.13069410533658876
+1256,Östra Göinge,Social Democrats (S),0.20767921316436544
+1257,Örkelljunga,Social Democrats (S),0.1608940007842112
+1260,Bjuv,Social Democrats (S),0.20402586756535204
+1261,Kävlinge,Social Democrats (S),0.22114529986879417
+1262,Lomma,Social Democrats (S),0.2071444493981275
+1263,Svedala,Social Democrats (S),0.21458245529532183
+1264,Skurup,Social Democrats (S),0.1972346482309882
+1265,Sjöbo,Social Democrats (S),0.1569965870307167
+1266,Hörby,Social Democrats (S),0.17139747132211336
+1267,Höör,Social Democrats (S),0.19259606373008434
+1270,Tomelilla,Social Democrats (S),0.18821384009981765
+1272,Bromölla,Social Democrats (S),0.22692589108393435
+1273,Osby,Social Democrats (S),0.21652508090614886
+1275,Perstorp,Social Democrats (S),0.18024499319463347
+1276,Klippan,Social Democrats (S),0.1836310440406529
+1277,Åstorp,Social Democrats (S),0.20966723780322843
+1278,Båstad,Social Democrats (S),0.17484126984126985
+1280,Malmö,Social Democrats (S),0.22071727740353225
+1281,Lund,Social Democrats (S),0.2366768980674417
+1282,Landskrona,Social Democrats (S),0.23801123166034518
+1283,Helsingborg,Social Democrats (S),0.21906829488919044
+1284,Höganäs,Social Democrats (S),0.20715224328890558
+1285,Eslöv,Social Democrats (S),0.22436796346007454
+1286,Ystad,Social Democrats (S),0.22938726948245095
+1287,Trelleborg,Social Democrats (S),0.2161811364291895
+1290,Kristianstad,Social Democrats (S),0.20638489896440426
+1291,Simrishamn,Social Democrats (S),0.21270489189361566
+1292,Ängelholm,Social Democrats (S),0.21258593336858803
+1293,Hässleholm,Social Democrats (S),0.19865754812563322
+1315,Hylte,Social Democrats (S),0.22735823703305563
+1380,Halmstad,Social Democrats (S),0.256378502015594
+1381,Laholm,Social Democrats (S),0.20607569721115537
+1382,Falkenberg,Social Democrats (S),0.25454393398751113
+1383,Varberg,Social Democrats (S),0.267986684369528
+1384,Kungsbacka,Social Democrats (S),0.184609163582071
+1401,Härryda,Social Democrats (S),0.2362885579162843
+1402,Partille,Social Democrats (S),0.23350774234603694
+1407,Öckerö,Social Democrats (S),0.2145876339329598
+1415,Stenungsund,Social Democrats (S),0.23606162734713532
+1419,Tjörn,Social Democrats (S),0.22021575984990618
+1421,Orust,Social Democrats (S),0.23506805444355483
+1427,Sotenäs,Social Democrats (S),0.22682575062278745
+1430,Munkedal,Social Democrats (S),0.21522766857427222
+1435,Tanum,Social Democrats (S),0.19885146972941403
+1438,Dals-Ed,Social Democrats (S),0.170662100456621
+1439,Färgelanda,Social Democrats (S),0.2208723361880104
+1440,Ale,Social Democrats (S),0.24630180704705223
+1441,Lerum,Social Democrats (S),0.23162725476448467
+1442,Vårgårda,Social Democrats (S),0.2175746144458005
+1443,Bollebygd,Social Democrats (S),0.2136906414884754
+1444,Grästorp,Social Democrats (S),0.2050772626931567
+1445,Essunga,Social Democrats (S),0.2134703196347032
+1446,Karlsborg,Social Democrats (S),0.25895267230520064
+1447,Gullspång,Social Democrats (S),0.2469595433109953
+1452,Åmål,Social Democrats (S),0.23215677541476448
+1460,Lilla Edet,Social Democrats (S),0.2547383309759547
+1461,Mellerud,Social Democrats (S),0.21029050440815147
+1462,Bengtsfors,Social Democrats (S),0.23261956419205737
+1463,Mariestad,Social Democrats (S),0.2552808988764045
+1465,Lidköping,Social Democrats (S),0.20073710073710074
+1466,Götene,Social Democrats (S),0.19855052645972923
+1470,Tibro,Social Democrats (S),0.20427203535477537
+1471,Töreboda,Social Democrats (S),0.2767883211678832
+1472,Vara,Social Democrats (S),0.2508968869343826
+1473,Skara,Social Democrats (S),0.22806520198440822
+1480,Göteborg,Social Democrats (S),0.21454937332046894
+1481,Mölndal,Social Democrats (S),0.23640203848315153
+1482,Kungälv,Social Democrats (S),0.24092829289428075
+1484,Lysekil,Social Democrats (S),0.27666137845936895
+1485,Uddevalla,Social Democrats (S),0.2537039617295992
+1486,Strömstad,Social Democrats (S),0.22303975400834614
+1487,Västra Götaland,Social Democrats (S),0.2680494350750472
+1488,Trollhättan,Social Democrats (S),0.2865599599280526
+1489,Alingsås,Social Democrats (S),0.2534906341187914
+1490,Borås,Social Democrats (S),0.2431193755520015
+1491,Ulricehamn,Social Democrats (S),0.2234345351043643
+1492,Tranemo,Social Democrats (S),0.2608242044861763
+1493,Bengtsfors,Social Democrats (S),0.28335136806307
+1494,Lidköping,Social Democrats (S),0.292889551670527
+1495,Skara,Social Democrats (S),0.2566502463054187
+1496,Skövde,Social Democrats (S),0.2577321947757606
+1497,Hjo,Social Democrats (S),0.2514555031882451
+1498,Tidaholm,Social Democrats (S),0.28496889424041744
+1499,Falköping,Social Democrats (S),0.24582981631094497
+1715,Kil,Social Democrats (S),0.2747122727761644
+1730,Eda,Social Democrats (S),0.2456943935507512
+1737,Torsby,Social Democrats (S),0.2566735112936345
+1760,Storfors,Social Democrats (S),0.2846054333764554
+1761,Hammarö,Social Democrats (S),0.31701386074410315
+1762,Munkfors,Social Democrats (S),0.34708916728076633
+1763,Forshaga,Social Democrats (S),0.31595648232094287
+1764,Grums,Social Democrats (S),0.3012082853855006
+1765,Årjäng,Social Democrats (S),0.18140951276102088
+1766,Sunne,Social Democrats (S),0.2277494467430001
+1780,Karlstad,Social Democrats (S),0.28861239926764404
+1781,Kristinehamn,Social Democrats (S),0.30097651095275796
+1782,Filipstad,Social Democrats (S),0.28494138863841295
+1783,Hagfors,Social Democrats (S),0.34715318572074105
+1784,Arvika,Social Democrats (S),0.28554186572793566
+1785,Säffle,Social Democrats (S),0.22743249035576513
+1814,Lekeberg,Social Democrats (S),0.2195313728573675
+1860,Laxå,Social Democrats (S),0.260204081632653
+1861,Hallsberg,Social Democrats (S),0.290360435875943
+1862,Degerfors,Social Democrats (S),0.32644849785407726
+1863,Hällefors,Social Democrats (S),0.3029940119760479
+1864,Ljusnarsberg,Social Democrats (S),0.23598654708520178
+1880,Örebro,Social Democrats (S),0.2650161098863829
+1881,Kumla,Social Democrats (S),0.27813563441905687
+1882,Askersund,Social Democrats (S),0.2612642169728784
+1883,Karlskoga,Social Democrats (S),0.3048780487804878
+1884,Nora,Social Democrats (S),0.26724658692763076
+1885,Lindesberg,Social Democrats (S),0.24670140813837454
+1904,Skinnskatteberg,Social Democrats (S),0.2383191301792536
+1907,Surahammar,Social Democrats (S),0.2712474983322215
+1960,Kungsör,Social Democrats (S),0.25425548228799266
+1961,Hallstahammar,Social Democrats (S),0.27537761897027774
+1962,Norberg,Social Democrats (S),0.2899816176470588
+1980,Västerås,Social Democrats (S),0.2480820825797382
+1981,Sala,Social Democrats (S),0.24885688157293098
+1982,Fagersta,Social Democrats (S),0.2662641823670241
+1983,Köping,Social Democrats (S),0.2558721405228758
+1984,Arboga,Social Democrats (S),0.27502056484782017
+2021,Vansbro,Social Democrats (S),0.2290292177191329
+2023,Malung-Sälen,Social Democrats (S),0.21044720030063888
+2026,Gagnef,Social Democrats (S),0.21854798607657883
+2029,Leksand,Social Democrats (S),0.24831213691317316
+2031,Rättvik,Social Democrats (S),0.23918799646954986
+2034,Orsa,Social Democrats (S),0.2126070322463108
+2039,Älvdalen,Social Democrats (S),0.224229155263638
+2061,Smedjebacken,Social Democrats (S),0.2969129379118973
+2062,Mora,Social Democrats (S),0.2432034366370052
+2080,Falun,Social Democrats (S),0.2636189730881266
+2081,Borlänge,Social Democrats (S),0.2753208597494975
+2082,Säter,Social Democrats (S),0.26032540675844806
+2083,Hedemora,Social Democrats (S),0.234375
+2084,Avesta,Social Democrats (S),0.28545760157653743
+2085,Ludvika,Social Democrats (S),0.28643549209586944
+2101,Ockelbo,Social Democrats (S),0.2629149263574412
+2104,Hofors,Social Democrats (S),0.2680677966101695
+2121,Ovanåker,Social Democrats (S),0.2589018302828619
+2132,Nordanstig,Social Democrats (S),0.25375355065602595
+2161,Ljusdal,Social Democrats (S),0.2554255966466094
+2180,Gävle,Social Democrats (S),0.27065476492366997
+2181,Sandviken,Social Democrats (S),0.29731190058084556
+2182,Söderhamn,Social Democrats (S),0.2912552173470427
+2183,Bollnäs,Social Democrats (S),0.2921059023560845
+2184,Hudiksvall,Social Democrats (S),0.2951523967389466
+2260,Ånge,Social Democrats (S),0.28935820076796487
+2262,Timrå,Social Democrats (S),0.34017069497238756
+2280,Härnösand,Social Democrats (S),0.3267026121551589
+2281,Sundsvall,Social Democrats (S),0.31282853975086417
+2282,Kramfors,Social Democrats (S),0.33506882533342847
+2283,Sollefteå,Social Democrats (S),0.3172061563945061
+2284,Örnsköldsvik,Social Democrats (S),0.34558088730855935
+2303,Ragunda,Social Democrats (S),0.3095656540296259
+2305,Bräcke,Social Democrats (S),0.28526970954356845
+2309,Krokom,Social Democrats (S),0.2781101530881577
+2313,Strömsund,Social Democrats (S),0.29543653040425777
+2321,Åre,Social Democrats (S),0.2603569854561481
+2326,Berg,Social Democrats (S),0.23683734394789216
+2361,Härjedalen,Social Democrats (S),0.25513846153846154
+2380,Östersund,Social Democrats (S),0.30790772640274
+2401,Nordmaling,Social Democrats (S),0.30382038747057755
+2403,Bjurholm,Social Democrats (S),0.2237991266375546
+2404,Vindeln,Social Democrats (S),0.2669274016132975
+2409,Robertsfors,Social Democrats (S),0.31921887084300077
+2417,Norsjö,Social Democrats (S),0.32644356955380577
+2418,Malå,Social Democrats (S),0.28463922089420096
+2421,Storuman,Social Democrats (S),0.25758582502768546
+2422,Sorsele,Social Democrats (S),0.2664134563212154
+2425,Dorotea,Social Democrats (S),0.2942694889003614
+2460,Vännäs,Social Democrats (S),0.2894461859979101
+2462,Vilhelmina,Social Democrats (S),0.26506970351462794
+2463,Åsele,Social Democrats (S),0.24694261523988711
+2480,Umeå,Social Democrats (S),0.33855037994074133
+2481,Lycksele,Social Democrats (S),0.31918119787717963
+2482,Skellefteå,Social Democrats (S),0.37505273519898746
+2505,Arvidsjaur,Social Democrats (S),0.34681475272422463
+2506,Arjeplog,Social Democrats (S),0.29633113828786456
+2510,Jokkmokk,Social Democrats (S),0.2639809170421415
+2513,Överkalix,Social Democrats (S),0.3422688422688423
+2514,Kalix,Social Democrats (S),0.3601671085402105
+2518,Kiruna,Social Democrats (S),0.2507059930969564
+2521,Gällivare,Social Democrats (S),0.2576766158471119
+2523,Pajala,Social Democrats (S),0.302666276003516
+2560,Älvsbyn,Social Democrats (S),0.3474329996771069
+2580,Luleå,Social Democrats (S),0.3336988902347202
+2581,Piteå,Social Democrats (S),0.4113156713066906
+2582,Älvsbyn,Social Democrats (S),0.3461084370175279
+2583,Haparanda,Social Democrats (S),0.2307195869635366
+2584,Övertorneå,Social Democrats (S),0.3331164991129509
+0114,Upplands Väsby,Left Party (V),0.05504503684833045
+0115,Vallentuna,Left Party (V),0.02933279088689992
+0117,Österåker,Left Party (V),0.030273324876023525
+0120,Värmdö,Left Party (V),0.03921800597438704
+0123,Järfälla,Left Party (V),0.06504318327362099
+0125,Ekerö,Left Party (V),0.03154527559055118
+0126,Huddinge,Left Party (V),0.061999106603253015
+0127,Botkyrka,Left Party (V),0.06848710657907638
+0128,Salem,Left Party (V),0.03518007854934403
+0136,Haninge,Left Party (V),0.053558168316831675
+0138,Tyresö,Left Party (V),0.0423170800930919
+0139,Upplands-Bro,Left Party (V),0.0508110220832519
+0140,Nykvarn,Left Party (V),0.020191028896143152
+0160,Täby,Left Party (V),0.022334015147327104
+0162,Danderyd,Left Party (V),0.016827517941103688
+0163,Sollentuna,Left Party (V),0.04866166103054967
+0180,Stockholm,Left Party (V),0.09336495950357718
+0181,Södertälje,Left Party (V),0.04713844869482252
+0182,Nacka,Left Party (V),0.043995351239669425
+0183,Sundbyberg,Left Party (V),0.0819684998168594
+0184,Solna,Left Party (V),0.06839931667026024
+0186,Lidingö,Left Party (V),0.025141455528611648
+0187,Vaxholm,Left Party (V),0.023197009674582235
+0188,Norrtälje,Left Party (V),0.03760341920558365
+0191,Sigtuna,Left Party (V),0.043838934302149565
+0192,Nynäshamn,Left Party (V),0.040973706215739106
+0305,Håbo,Left Party (V),0.030570360840531764
+0319,Älvkarleby,Left Party (V),0.03419037199124726
+0330,Knivsta,Left Party (V),0.03816233670923235
+0331,Heby,Left Party (V),0.039255250848390356
+0360,Tierp,Left Party (V),0.038059932035835645
+0380,Uppsala,Left Party (V),0.08226394011778052
+0381,Enköping,Left Party (V),0.033373335619178233
+0382,Östhammar,Left Party (V),0.029433617191518543
+0428,Vingåker,Left Party (V),0.035651920838183936
+0461,Gnesta,Left Party (V),0.05351131746952988
+0480,Nyköping,Left Party (V),0.04073997567077509
+0481,Oxelösund,Left Party (V),0.05434303350970018
+0482,Flen,Left Party (V),0.04011961126339397
+0483,Katrineholm,Left Party (V),0.036591942069178034
+0484,Eskilstuna,Left Party (V),0.045422086202499365
+0486,Strängnäs,Left Party (V),0.032858358145470015
+0488,Trosa,Left Party (V),0.027803016536434674
+0509,Ödeshög,Left Party (V),0.02092966658554393
+0512,Ydre,Left Party (V),0.025146400275576988
+0513,Kinda,Left Party (V),0.03219575016097875
+0560,Boxholm,Left Party (V),0.034362665428372415
+0561,Åtvidaberg,Left Party (V),0.02975206611570248
+0562,Finspång,Left Party (V),0.04376538392267515
+0563,Valdemarsvik,Left Party (V),0.03230016313213703
+0580,Linköping,Left Party (V),0.048774212223303234
+0581,Norrköping,Left Party (V),0.053763936238827977
+0582,Söderköping,Left Party (V),0.03529205709781943
+0583,Motala,Left Party (V),0.03589528293399706
+0584,Vadstena,Left Party (V),0.037186742118027485
+0586,Mjölby,Left Party (V),0.03236200616419165
+0604,Aneby,Left Party (V),0.02034030901623313
+0617,Gnosjö,Left Party (V),0.020055628751280922
+0642,Mullsjö,Left Party (V),0.03140613847251963
+0643,Habo,Left Party (V),0.02286401925391095
+0662,Gislaved,Left Party (V),0.026676650910282214
+0665,Vaggeryd,Left Party (V),0.02632321143179468
+0680,Jönköping,Left Party (V),0.03902698069613178
+0682,Nässjö,Left Party (V),0.031093498236293166
+0683,Värnamo,Left Party (V),0.02772444512710237
+0684,Sävsjö,Left Party (V),0.02447468958930277
+0685,Vetlanda,Left Party (V),0.023617093355272713
+0686,Eksjö,Left Party (V),0.029651206214056314
+0687,Tranås,Left Party (V),0.03020275978597578
+0760,Uppvidinge,Left Party (V),0.030393771522683032
+0761,Lessebo,Left Party (V),0.05149278765514928
+0763,Tingsryd,Left Party (V),0.030256856769699608
+0764,Alvesta,Left Party (V),0.03217176567430374
+0765,Älmhult,Left Party (V),0.03066271018793274
+0767,Markaryd,Left Party (V),0.02406199021207178
+0780,Växjö,Left Party (V),0.04971478594826612
+0781,Ljungby,Left Party (V),0.029729602189608798
+0821,Högsby,Left Party (V),0.03134403209628887
+0834,Torsås,Left Party (V),0.03112558812884546
+0840,Mörbylånga,Left Party (V),0.03614359309837272
+0860,Hultsfred,Left Party (V),0.03685694836137314
+0861,Mönsterås,Left Party (V),0.029182687567780734
+0862,Emmaboda,Left Party (V),0.03457292271934921
+0880,Kalmar,Left Party (V),0.04468124196215322
+0881,Nybro,Left Party (V),0.03667966426541537
+0882,Oskarshamn,Left Party (V),0.036286070367174766
+0883,Västervik,Left Party (V),0.036459222339808146
+0884,Vimmerby,Left Party (V),0.03668274829479288
+0885,Borgholm,Left Party (V),0.03014460511679644
+0980,Gotland,Left Party (V),0.051766996727016616
+1060,Olofström,Left Party (V),0.03481510621557828
+1080,Karlskrona,Left Party (V),0.03767345733687629
+1081,Ronneby,Left Party (V),0.03747777321843797
+1082,Karlshamn,Left Party (V),0.03758104538541583
+1083,Sölvesborg,Left Party (V),0.02604878750809527
+1214,Svalöv,Left Party (V),0.03612915928332349
+1230,Staffanstorp,Left Party (V),0.025196265648207088
+1231,Burlöv,Left Party (V),0.0493286848156665
+1233,Vellinge,Left Party (V),0.010568538542029996
+1256,Östra Göinge,Left Party (V),0.025534329487421983
+1257,Örkelljunga,Left Party (V),0.01751405045092145
+1260,Bjuv,Left Party (V),0.026414063211585754
+1261,Kävlinge,Left Party (V),0.021670123164176578
+1262,Lomma,Left Party (V),0.019170753455193937
+1263,Svedala,Left Party (V),0.0255885363357216
+1264,Skurup,Left Party (V),0.030012200081333876
+1265,Sjöbo,Left Party (V),0.02108010439670749
+1266,Hörby,Left Party (V),0.02913840743531776
+1267,Höör,Left Party (V),0.042018119337706966
+1270,Tomelilla,Left Party (V),0.031097034264324794
+1272,Bromölla,Left Party (V),0.02508623392913139
+1273,Osby,Left Party (V),0.02649676375404531
+1275,Perstorp,Left Party (V),0.026443709896947304
+1276,Klippan,Left Party (V),0.026947951955651365
+1277,Åstorp,Left Party (V),0.02867706736405447
+1278,Båstad,Left Party (V),0.020555555555555556
+1280,Malmö,Left Party (V),0.09249836765244535
+1281,Lund,Left Party (V),0.07489599264194731
+1282,Landskrona,Left Party (V),0.035841345447061246
+1283,Helsingborg,Left Party (V),0.03857982813206694
+1284,Höganäs,Left Party (V),0.026140416744884553
+1285,Eslöv,Left Party (V),0.03750150246404103
+1286,Ystad,Left Party (V),0.0297838588141979
+1287,Trelleborg,Left Party (V),0.027776175367753102
+1290,Kristianstad,Left Party (V),0.03492267449864623
+1291,Simrishamn,Left Party (V),0.040946488934243255
+1292,Ängelholm,Left Party (V),0.02456078500499442
+1293,Hässleholm,Left Party (V),0.0364741641337386
+1315,Hylte,Left Party (V),0.02472453641494222
+1380,Halmstad,Left Party (V),0.03901027384277103
+1381,Laholm,Left Party (V),0.024402390438247015
+1382,Falkenberg,Left Party (V),0.03320138269402319
+1383,Varberg,Left Party (V),0.03748388462352557
+1384,Kungsbacka,Left Party (V),0.02598836666770351
+1401,Härryda,Left Party (V),0.04108138632032188
+1402,Partille,Left Party (V),0.0515802870678074
+1407,Öckerö,Left Party (V),0.035191192371965004
+1415,Stenungsund,Left Party (V),0.03529128550794415
+1419,Tjörn,Left Party (V),0.03181676047529706
+1421,Orust,Left Party (V),0.036909527622097676
+1427,Sotenäs,Left Party (V),0.024911498623311917
+1430,Munkedal,Left Party (V),0.033839263498382684
+1435,Tanum,Left Party (V),0.032606579715787426
+1438,Dals-Ed,Left Party (V),0.018835616438356163
+1439,Färgelanda,Left Party (V),0.02469627564230233
+1440,Ale,Left Party (V),0.05447017725449606
+1441,Lerum,Left Party (V),0.04550959270826694
+1442,Vårgårda,Left Party (V),0.03439476311993787
+1443,Bollebygd,Left Party (V),0.03457372951957789
+1444,Grästorp,Left Party (V),0.02097130242825607
+1445,Essunga,Left Party (V),0.026712328767123285
+1446,Karlsborg,Left Party (V),0.027892747885549754
+1447,Gullspång,Left Party (V),0.03251427153139737
+1452,Åmål,Left Party (V),0.03128827524774524
+1460,Lilla Edet,Left Party (V),0.034370579915134376
+1461,Mellerud,Left Party (V),0.026448908801849975
+1462,Bengtsfors,Left Party (V),0.0460333930761249
+1463,Mariestad,Left Party (V),0.04374531835205992
+1465,Lidköping,Left Party (V),0.027395577395577398
+1466,Götene,Left Party (V),0.03514289621222481
+1470,Tibro,Left Party (V),0.030117030853588675
+1471,Töreboda,Left Party (V),0.03717761557177616
+1472,Vara,Left Party (V),0.028468927207499134
+1473,Skara,Left Party (V),0.0296243798724309
+1480,Göteborg,Left Party (V),0.09924402392043714
+1481,Mölndal,Left Party (V),0.05755033231925902
+1482,Kungälv,Left Party (V),0.04148613518197573
+1484,Lysekil,Left Party (V),0.040542922615899875
+1485,Uddevalla,Left Party (V),0.04584088059077609
+1486,Strömstad,Left Party (V),0.03744783659125851
+1487,Västra Götaland,Left Party (V),0.0447632616546834
+1488,Trollhättan,Left Party (V),0.048632772477857966
+1489,Alingsås,Left Party (V),0.05399893319946033
+1490,Borås,Left Party (V),0.0486835509512329
+1491,Ulricehamn,Left Party (V),0.03600042167404596
+1492,Tranemo,Left Party (V),0.0406885758998435
+1493,Bengtsfors,Left Party (V),0.036327098469624355
+1494,Lidköping,Left Party (V),0.042453279182663325
+1495,Skara,Left Party (V),0.036523574947220264
+1496,Skövde,Left Party (V),0.03843776470318903
+1497,Hjo,Left Party (V),0.032852786248960354
+1498,Tidaholm,Left Party (V),0.03200883002207505
+1499,Falköping,Left Party (V),0.03935045620804695
+1715,Kil,Left Party (V),0.031945788964181994
+1730,Eda,Left Party (V),0.021436423598387686
+1737,Torsby,Left Party (V),0.03262605521332421
+1760,Storfors,Left Party (V),0.03492884864165589
+1761,Hammarö,Left Party (V),0.0282888870876226
+1762,Munkfors,Left Party (V),0.038688282977155486
+1763,Forshaga,Left Party (V),0.03558476881233001
+1764,Grums,Left Party (V),0.03481012658227848
+1765,Årjäng,Left Party (V),0.017836426914153134
+1766,Sunne,Left Party (V),0.02713364764745502
+1780,Karlstad,Left Party (V),0.050182420783941625
+1781,Kristinehamn,Left Party (V),0.0467669569807337
+1782,Filipstad,Left Party (V),0.0387736699729486
+1783,Hagfors,Left Party (V),0.04371893357433348
+1784,Arvika,Left Party (V),0.04309781242142319
+1785,Säffle,Left Party (V),0.027089584226318044
+1814,Lekeberg,Left Party (V),0.030350684069822297
+1860,Laxå,Left Party (V),0.03525046382189239
+1861,Hallsberg,Left Party (V),0.03746856663872589
+1862,Degerfors,Left Party (V),0.06410944206008584
+1863,Hällefors,Left Party (V),0.044910179640718556
+1864,Ljusnarsberg,Left Party (V),0.036154708520179366
+1880,Örebro,Left Party (V),0.05871629642190945
+1881,Kumla,Left Party (V),0.034941662615459404
+1882,Askersund,Left Party (V),0.026574803149606297
+1883,Karlskoga,Left Party (V),0.040239653267612814
+1884,Nora,Left Party (V),0.03648664975232572
+1885,Lindesberg,Left Party (V),0.04085818826920944
+1904,Skinnskatteberg,Left Party (V),0.03526300323244196
+1907,Surahammar,Left Party (V),0.03962641761174116
+1960,Kungsör,Left Party (V),0.03373715687777948
+1961,Hallstahammar,Left Party (V),0.04563910995614747
+1962,Norberg,Left Party (V),0.05767463235294117
+1980,Västerås,Left Party (V),0.05057301800913743
+1981,Sala,Left Party (V),0.04223822588020119
+1982,Fagersta,Left Party (V),0.05766628500052046
+1983,Köping,Left Party (V),0.049172794117647065
+1984,Arboga,Left Party (V),0.038204917283612104
+2021,Vansbro,Left Party (V),0.039019792648444865
+2023,Malung-Sälen,Left Party (V),0.03231867718902668
+2026,Gagnef,Left Party (V),0.03804077573346594
+2029,Leksand,Left Party (V),0.04223582980059664
+2031,Rättvik,Left Party (V),0.029126213592233007
+2034,Orsa,Left Party (V),0.04044452541446529
+2039,Älvdalen,Left Party (V),0.027002371829958037
+2061,Smedjebacken,Left Party (V),0.04139206844721933
+2062,Mora,Left Party (V),0.034305001534212946
+2080,Falun,Left Party (V),0.0499326116255815
+2081,Borlänge,Left Party (V),0.04816762022576156
+2082,Säter,Left Party (V),0.03766071225395381
+2083,Hedemora,Left Party (V),0.04341216216216216
+2084,Avesta,Left Party (V),0.035819857416101546
+2085,Ludvika,Left Party (V),0.04915859255481897
+2101,Ockelbo,Left Party (V),0.04088810727632446
+2104,Hofors,Left Party (V),0.05884745762711865
+2121,Ovanåker,Left Party (V),0.029062673322240714
+2132,Nordanstig,Left Party (V),0.04855944812660625
+2161,Ljusdal,Left Party (V),0.03542694882022852
+2180,Gävle,Left Party (V),0.05180808439417762
+2181,Sandviken,Left Party (V),0.045454545454545456
+2182,Söderhamn,Left Party (V),0.03955003563066273
+2183,Bollnäs,Left Party (V),0.04104930774836046
+2184,Hudiksvall,Left Party (V),0.05026893542167044
+2260,Ånge,Left Party (V),0.037301151947339545
+2262,Timrå,Left Party (V),0.041741375600659825
+2280,Härnösand,Left Party (V),0.052190755378736325
+2281,Sundsvall,Left Party (V),0.046057522989630215
+2282,Kramfors,Left Party (V),0.06276299835960346
+2283,Sollefteå,Left Party (V),0.0668093036096349
+2284,Örnsköldsvik,Left Party (V),0.036533500662344
+2303,Ragunda,Left Party (V),0.04318353000251067
+2305,Bräcke,Left Party (V),0.034854771784232366
+2309,Krokom,Left Party (V),0.044518740102058765
+2313,Strömsund,Left Party (V),0.04099196014041445
+2321,Åre,Left Party (V),0.04219920669898634
+2326,Berg,Left Party (V),0.03130088655690248
+2361,Härjedalen,Left Party (V),0.04283076923076923
+2380,Östersund,Left Party (V),0.04813135892011686
+2401,Nordmaling,Left Party (V),0.045265254390729676
+2403,Bjurholm,Left Party (V),0.020196506550218343
+2404,Vindeln,Left Party (V),0.04082131508188707
+2409,Robertsfors,Left Party (V),0.04988399071925754
+2417,Norsjö,Left Party (V),0.0505249343832021
+2418,Malå,Left Party (V),0.06020362992474546
+2421,Storuman,Left Party (V),0.053599114064230347
+2422,Sorsele,Left Party (V),0.053716766142159526
+2425,Dorotea,Left Party (V),0.05833763551884357
+2460,Vännäs,Left Party (V),0.06194954470816539
+2462,Vilhelmina,Left Party (V),0.05752994305910073
+2463,Åsele,Left Party (V),0.03857008466603951
+2480,Umeå,Left Party (V),0.08882752504383931
+2481,Lycksele,Left Party (V),0.04072349182280949
+2482,Skellefteå,Left Party (V),0.05459850935170862
+2505,Arvidsjaur,Left Party (V),0.05804694048616932
+2506,Arjeplog,Left Party (V),0.060677328316086555
+2510,Jokkmokk,Left Party (V),0.07023588656241717
+2513,Överkalix,Left Party (V),0.06099456099456099
+2514,Kalix,Left Party (V),0.03567124608339359
+2518,Kiruna,Left Party (V),0.04267336052714151
+2521,Gällivare,Left Party (V),0.10929783122181662
+2523,Pajala,Left Party (V),0.06460591854673309
+2560,Älvsbyn,Left Party (V),0.04940264772360349
+2580,Luleå,Left Party (V),0.060496939142960025
+2581,Piteå,Left Party (V),0.05828468792096992
+2582,Älvsbyn,Left Party (V),0.04254836073017891
+2583,Haparanda,Left Party (V),0.02387867053888351
+2584,Övertorneå,Left Party (V),0.06339444115907747
+0114,Upplands Väsby,Sweden Democrats (SD),0.15879659115033512
+0115,Vallentuna,Sweden Democrats (SD),0.1723352318958503
+0117,Österåker,Sweden Democrats (SD),0.16108292007842231
+0120,Värmdö,Sweden Democrats (SD),0.1672236845996865
+0123,Järfälla,Sweden Democrats (SD),0.12188240995551863
+0125,Ekerö,Sweden Democrats (SD),0.16850393700787403
+0126,Huddinge,Sweden Democrats (SD),0.13094831437054943
+0127,Botkyrka,Sweden Democrats (SD),0.12520835376017256
+0128,Salem,Sweden Democrats (SD),0.1509985794267569
+0136,Haninge,Sweden Democrats (SD),0.17218440594059406
+0138,Tyresö,Sweden Democrats (SD),0.15785888630300277
+0139,Upplands-Bro,Sweden Democrats (SD),0.1775454367793629
+0140,Nykvarn,Sweden Democrats (SD),0.2327409019465603
+0160,Täby,Sweden Democrats (SD),0.10958777894484677
+0162,Danderyd,Sweden Democrats (SD),0.09358244658912811
+0163,Sollentuna,Sweden Democrats (SD),0.10492730364341529
+0180,Stockholm,Sweden Democrats (SD),0.08505141541762065
+0181,Södertälje,Sweden Democrats (SD),0.14148988506089832
+0182,Nacka,Sweden Democrats (SD),0.09883780991735536
+0183,Sundbyberg,Sweden Democrats (SD),0.09622730364711421
+0184,Solna,Sweden Democrats (SD),0.09836962831506145
+0186,Lidingö,Sweden Democrats (SD),0.10011985394542465
+0187,Vaxholm,Sweden Democrats (SD),0.13093667546174143
+0188,Norrtälje,Sweden Democrats (SD),0.20679920009410657
+0191,Sigtuna,Sweden Democrats (SD),0.16536481986073268
+0192,Nynäshamn,Sweden Democrats (SD),0.21806187865836665
+0305,Håbo,Sweden Democrats (SD),0.23862035165104456
+0319,Älvkarleby,Sweden Democrats (SD),0.23974288840262584
+0330,Knivsta,Sweden Democrats (SD),0.16255687655951856
+0331,Heby,Sweden Democrats (SD),0.24332752453453177
+0360,Tierp,Sweden Democrats (SD),0.2187828236021007
+0380,Uppsala,Sweden Democrats (SD),0.10787236832353728
+0381,Enköping,Sweden Democrats (SD),0.20072575575747184
+0382,Östhammar,Sweden Democrats (SD),0.22180945304909414
+0428,Vingåker,Sweden Democrats (SD),0.24010477299185098
+0461,Gnesta,Sweden Democrats (SD),0.17376668601276843
+0480,Nyköping,Sweden Democrats (SD),0.16814707705019624
+0481,Oxelösund,Sweden Democrats (SD),0.18110670194003528
+0482,Flen,Sweden Democrats (SD),0.19852147188304678
+0483,Katrineholm,Sweden Democrats (SD),0.17498651875818505
+0484,Eskilstuna,Sweden Democrats (SD),0.19005355776587604
+0486,Strängnäs,Sweden Democrats (SD),0.19587409612930667
+0488,Trosa,Sweden Democrats (SD),0.19662002544066873
+0509,Ödeshög,Sweden Democrats (SD),0.2102701387198832
+0512,Ydre,Sweden Democrats (SD),0.2115053393041681
+0513,Kinda,Sweden Democrats (SD),0.2128783000643915
+0560,Boxholm,Sweden Democrats (SD),0.22614348734618064
+0561,Åtvidaberg,Sweden Democrats (SD),0.21013774104683194
+0562,Finspång,Sweden Democrats (SD),0.21582517860359005
+0563,Valdemarsvik,Sweden Democrats (SD),0.23572593800978794
+0580,Linköping,Sweden Democrats (SD),0.13214707845202583
+0581,Norrköping,Sweden Democrats (SD),0.18109278540495716
+0582,Söderköping,Sweden Democrats (SD),0.23084333128995532
+0583,Motala,Sweden Democrats (SD),0.2020271688607671
+0584,Vadstena,Sweden Democrats (SD),0.1652384801940178
+0586,Mjölby,Sweden Democrats (SD),0.20332492761744653
+0604,Aneby,Sweden Democrats (SD),0.209270486993937
+0617,Gnosjö,Sweden Democrats (SD),0.21138925486751575
+0642,Mullsjö,Sweden Democrats (SD),0.22555317630264096
+0643,Habo,Sweden Democrats (SD),0.20479159829340335
+0662,Gislaved,Sweden Democrats (SD),0.2181401226189919
+0665,Vaggeryd,Sweden Democrats (SD),0.20701325561718528
+0680,Jönköping,Sweden Democrats (SD),0.16076619214429455
+0682,Nässjö,Sweden Democrats (SD),0.22139964290380176
+0683,Värnamo,Sweden Democrats (SD),0.1804008908685969
+0684,Sävsjö,Sweden Democrats (SD),0.24880611270296085
+0685,Vetlanda,Sweden Democrats (SD),0.23036345158011906
+0686,Eksjö,Sweden Democrats (SD),0.20330121741728285
+0687,Tranås,Sweden Democrats (SD),0.19121374260771615
+0760,Uppvidinge,Sweden Democrats (SD),0.24854020062883667
+0761,Lessebo,Sweden Democrats (SD),0.2091580006709158
+0763,Tingsryd,Sweden Democrats (SD),0.260557248585111
+0764,Alvesta,Sweden Democrats (SD),0.23213060776512556
+0765,Älmhult,Sweden Democrats (SD),0.2007088691064952
+0767,Markaryd,Sweden Democrats (SD),0.2805872756933116
+0780,Växjö,Sweden Democrats (SD),0.15031627696825933
+0781,Ljungby,Sweden Democrats (SD),0.23019206266811384
+0821,Högsby,Sweden Democrats (SD),0.23996990972918758
+0834,Torsås,Sweden Democrats (SD),0.2862830256967065
+0840,Mörbylånga,Sweden Democrats (SD),0.1996074903916919
+0860,Hultsfred,Sweden Democrats (SD),0.21161139745210542
+0861,Mönsterås,Sweden Democrats (SD),0.2592921226461599
+0862,Emmaboda,Sweden Democrats (SD),0.22704822777454967
+0880,Kalmar,Sweden Democrats (SD),0.1691346683814073
+0881,Nybro,Sweden Democrats (SD),0.21664133236402086
+0882,Oskarshamn,Sweden Democrats (SD),0.2314734924743553
+0883,Västervik,Sweden Democrats (SD),0.1898405762468849
+0884,Vimmerby,Sweden Democrats (SD),0.20004990850108134
+0885,Borgholm,Sweden Democrats (SD),0.2043381535038932
+0980,Gotland,Sweden Democrats (SD),0.1305671790197622
+1060,Olofström,Sweden Democrats (SD),0.26603068450039336
+1080,Karlskrona,Sweden Democrats (SD),0.20537348686152937
+1081,Ronneby,Sweden Democrats (SD),0.2581954133041536
+1082,Karlshamn,Sweden Democrats (SD),0.2378131753782118
+1083,Sölvesborg,Sweden Democrats (SD),0.29027847736921636
+1214,Svalöv,Sweden Democrats (SD),0.2982870643827525
+1230,Staffanstorp,Sweden Democrats (SD),0.19430299172501592
+1231,Burlöv,Sweden Democrats (SD),0.17402269861286254
+1233,Vellinge,Sweden Democrats (SD),0.22253226369026854
+1256,Östra Göinge,Sweden Democrats (SD),0.3098165311140534
+1257,Örkelljunga,Sweden Democrats (SD),0.2932949941184159
+1260,Bjuv,Sweden Democrats (SD),0.31879041807086256
+1261,Kävlinge,Sweden Democrats (SD),0.23468912684640456
+1262,Lomma,Sweden Democrats (SD),0.1568769505127062
+1263,Svedala,Sweden Democrats (SD),0.280209524956349
+1264,Skurup,Sweden Democrats (SD),0.2892232614884099
+1265,Sjöbo,Sweden Democrats (SD),0.3510673894131031
+1266,Hörby,Sweden Democrats (SD),0.3191827848949175
+1267,Höör,Sweden Democrats (SD),0.2550765385816932
+1270,Tomelilla,Sweden Democrats (SD),0.2986850945388233
+1272,Bromölla,Sweden Democrats (SD),0.31702728127939794
+1273,Osby,Sweden Democrats (SD),0.29358818770226536
+1275,Perstorp,Sweden Democrats (SD),0.2784367100913863
+1276,Klippan,Sweden Democrats (SD),0.3132121958731136
+1277,Åstorp,Sweden Democrats (SD),0.29146000541076744
+1278,Båstad,Sweden Democrats (SD),0.20666666666666667
+1280,Malmö,Sweden Democrats (SD),0.12270476008472284
+1281,Lund,Sweden Democrats (SD),0.1075794359539266
+1282,Landskrona,Sweden Democrats (SD),0.21010849431066417
+1283,Helsingborg,Sweden Democrats (SD),0.20574400723654457
+1284,Höganäs,Sweden Democrats (SD),0.2004880795945185
+1285,Eslöv,Sweden Democrats (SD),0.24576305140430307
+1286,Ystad,Sweden Democrats (SD),0.2252230814991077
+1287,Trelleborg,Sweden Democrats (SD),0.2593885203345832
+1290,Kristianstad,Sweden Democrats (SD),0.23264956480504184
+1291,Simrishamn,Sweden Democrats (SD),0.2306269532495695
+1292,Ängelholm,Sweden Democrats (SD),0.2303014278159704
+1293,Hässleholm,Sweden Democrats (SD),0.27178318135764945
+1315,Hylte,Sweden Democrats (SD),0.22964256920182746
+1380,Halmstad,Sweden Democrats (SD),0.17555255076895857
+1381,Laholm,Sweden Democrats (SD),0.2539840637450199
+1382,Falkenberg,Sweden Democrats (SD),0.17506690454950935
+1383,Varberg,Sweden Democrats (SD),0.17335334526352247
+1384,Kungsbacka,Sweden Democrats (SD),0.19670907337708796
+1401,Härryda,Sweden Democrats (SD),0.17904284605068116
+1402,Partille,Sweden Democrats (SD),0.14569044757123667
+1407,Öckerö,Sweden Democrats (SD),0.19247026442543988
+1415,Stenungsund,Sweden Democrats (SD),0.2021665864227251
+1419,Tjörn,Sweden Democrats (SD),0.21083489681050657
+1421,Orust,Sweden Democrats (SD),0.21176941553242595
+1427,Sotenäs,Sweden Democrats (SD),0.2003408941916874
+1430,Munkedal,Sweden Democrats (SD),0.24894252301567557
+1435,Tanum,Sweden Democrats (SD),0.1980728051391863
+1438,Dals-Ed,Sweden Democrats (SD),0.23630136986301373
+1439,Färgelanda,Sweden Democrats (SD),0.3126867157936666
+1440,Ale,Sweden Democrats (SD),0.21093716306551083
+1441,Lerum,Sweden Democrats (SD),0.16938619414876666
+1442,Vårgårda,Sweden Democrats (SD),0.20071008543215355
+1443,Bollebygd,Sweden Democrats (SD),0.22785337406276035
+1444,Grästorp,Sweden Democrats (SD),0.2373068432671082
+1445,Essunga,Sweden Democrats (SD),0.2317351598173516
+1446,Karlsborg,Sweden Democrats (SD),0.2213424509627497
+1447,Gullspång,Sweden Democrats (SD),0.2141970712335567
+1452,Åmål,Sweden Democrats (SD),0.19407638347622758
+1460,Lilla Edet,Sweden Democrats (SD),0.23437057991513438
+1461,Mellerud,Sweden Democrats (SD),0.26232114467408585
+1462,Bengtsfors,Sweden Democrats (SD),0.28440713140269785
+1463,Mariestad,Sweden Democrats (SD),0.20659176029962548
+1465,Lidköping,Sweden Democrats (SD),0.25024570024570025
+1466,Götene,Sweden Democrats (SD),0.20415698071926705
+1470,Tibro,Sweden Democrats (SD),0.24363695883460187
+1471,Töreboda,Sweden Democrats (SD),0.19912408759124087
+1472,Vara,Sweden Democrats (SD),0.20437449369285962
+1473,Skara,Sweden Democrats (SD),0.2304748405386251
+1480,Göteborg,Sweden Democrats (SD),0.11359214134887503
+1481,Mölndal,Sweden Democrats (SD),0.14796442343092991
+1482,Kungälv,Sweden Democrats (SD),0.19386373483535527
+1484,Lysekil,Sweden Democrats (SD),0.20676890534108938
+1485,Uddevalla,Sweden Democrats (SD),0.20110538293623148
+1486,Strömstad,Sweden Democrats (SD),0.19756204700197671
+1487,Västra Götaland,Sweden Democrats (SD),0.2119876743646665
+1488,Trollhättan,Sweden Democrats (SD),0.16579768220213564
+1489,Alingsås,Sweden Democrats (SD),0.16281258824636818
+1490,Borås,Sweden Democrats (SD),0.1722244766428759
+1491,Ulricehamn,Sweden Democrats (SD),0.19671094244149273
+1492,Tranemo,Sweden Democrats (SD),0.22274387063119458
+1493,Bengtsfors,Sweden Democrats (SD),0.1868398000721389
+1494,Lidköping,Sweden Democrats (SD),0.18424976996541548
+1495,Skara,Sweden Democrats (SD),0.19985925404644617
+1496,Skövde,Sweden Democrats (SD),0.17119571438382822
+1497,Hjo,Sweden Democrats (SD),0.19101746603825895
+1498,Tidaholm,Sweden Democrats (SD),0.2276740919125025
+1499,Falköping,Sweden Democrats (SD),0.20748422364242936
+1715,Kil,Sweden Democrats (SD),0.23491448854469185
+1730,Eda,Sweden Democrats (SD),0.21271528032246242
+1737,Torsby,Sweden Democrats (SD),0.22575861282226783
+1760,Storfors,Sweden Democrats (SD),0.23965071151358344
+1761,Hammarö,Sweden Democrats (SD),0.13609467455621302
+1762,Munkfors,Sweden Democrats (SD),0.1956521739130435
+1763,Forshaga,Sweden Democrats (SD),0.22189483227561196
+1764,Grums,Sweden Democrats (SD),0.2321634062140391
+1765,Årjäng,Sweden Democrats (SD),0.23448375870069604
+1766,Sunne,Sweden Democrats (SD),0.1986914269219667
+1780,Karlstad,Sweden Democrats (SD),0.14326379515415558
+1781,Kristinehamn,Sweden Democrats (SD),0.1916072842438638
+1782,Filipstad,Sweden Democrats (SD),0.2357336081411825
+1783,Hagfors,Sweden Democrats (SD),0.22209670131043832
+1784,Arvika,Sweden Democrats (SD),0.18687452853909983
+1785,Säffle,Sweden Democrats (SD),0.236262323189027
+1814,Lekeberg,Sweden Democrats (SD),0.23793049221575718
+1860,Laxå,Sweden Democrats (SD),0.23654916512059368
+1861,Hallsberg,Sweden Democrats (SD),0.22305113160100584
+1862,Degerfors,Sweden Democrats (SD),0.220225321888412
+1863,Hällefors,Sweden Democrats (SD),0.23333333333333334
+1864,Ljusnarsberg,Sweden Democrats (SD),0.23766816143497754
+1880,Örebro,Sweden Democrats (SD),0.13861285399355605
+1881,Kumla,Sweden Democrats (SD),0.21414681575109382
+1882,Askersund,Sweden Democrats (SD),0.24048556430446194
+1883,Karlskoga,Sweden Democrats (SD),0.19176510580436817
+1884,Nora,Sweden Democrats (SD),0.21058354476259514
+1885,Lindesberg,Sweden Democrats (SD),0.24537088368998777
+1904,Skinnskatteberg,Sweden Democrats (SD),0.21392888627681456
+1907,Surahammar,Sweden Democrats (SD),0.2620413609072715
+1960,Kungsör,Sweden Democrats (SD),0.22726575678576907
+1961,Hallstahammar,Sweden Democrats (SD),0.2191814195224947
+1962,Norberg,Sweden Democrats (SD),0.1985294117647059
+1980,Västerås,Sweden Democrats (SD),0.159965027472292
+1981,Sala,Sweden Democrats (SD),0.22182213077274807
+1982,Fagersta,Sweden Democrats (SD),0.21047153117518477
+1983,Köping,Sweden Democrats (SD),0.23207720588235298
+1984,Arboga,Sweden Democrats (SD),0.20546567955397133
+2021,Vansbro,Sweden Democrats (SD),0.22205466540999058
+2023,Malung-Sälen,Sweden Democrats (SD),0.2610547413253163
+2026,Gagnef,Sweden Democrats (SD),0.2222774738935853
+2029,Leksand,Sweden Democrats (SD),0.17962003454231434
+2031,Rättvik,Sweden Democrats (SD),0.24084289496910857
+2034,Orsa,Sweden Democrats (SD),0.2566952085990162
+2039,Älvdalen,Sweden Democrats (SD),0.27659186279875936
+2061,Smedjebacken,Sweden Democrats (SD),0.24731182795698922
+2062,Mora,Sweden Democrats (SD),0.23780300705737956
+2080,Falun,Sweden Democrats (SD),0.15516716664492847
+2081,Borlänge,Sweden Democrats (SD),0.19764445131694244
+2082,Säter,Sweden Democrats (SD),0.2241438161338036
+2083,Hedemora,Sweden Democrats (SD),0.2293918918918919
+2084,Avesta,Sweden Democrats (SD),0.2251202689387353
+2085,Ludvika,Sweden Democrats (SD),0.22661907190209077
+2101,Ockelbo,Sweden Democrats (SD),0.24269070125302264
+2104,Hofors,Sweden Democrats (SD),0.20176271186440678
+2121,Ovanåker,Sweden Democrats (SD),0.19944536882972821
+2132,Nordanstig,Sweden Democrats (SD),0.22940619504937104
+2161,Ljusdal,Sweden Democrats (SD),0.20918125887363936
+2180,Gävle,Sweden Democrats (SD),0.18366130750114115
+2181,Sandviken,Sweden Democrats (SD),0.2095434283398622
+2182,Söderhamn,Sweden Democrats (SD),0.19138755980861247
+2183,Bollnäs,Sweden Democrats (SD),0.19834831187758076
+2184,Hudiksvall,Sweden Democrats (SD),0.17157741619025066
+2260,Ånge,Sweden Democrats (SD),0.23601206801974767
+2262,Timrå,Sweden Democrats (SD),0.21623753854980995
+2280,Härnösand,Sweden Democrats (SD),0.16154530701983982
+2281,Sundsvall,Sweden Democrats (SD),0.16611230678927802
+2282,Kramfors,Sweden Democrats (SD),0.17466657157121462
+2283,Sollefteå,Sweden Democrats (SD),0.203257643729726
+2284,Örnsköldsvik,Sweden Democrats (SD),0.14160217527713867
+2303,Ragunda,Sweden Democrats (SD),0.21491338187296008
+2305,Bräcke,Sweden Democrats (SD),0.21037344398340246
+2309,Krokom,Sweden Democrats (SD),0.1787788140066866
+2313,Strömsund,Sweden Democrats (SD),0.2114143358623033
+2321,Åre,Sweden Democrats (SD),0.13585279858968707
+2326,Berg,Sweden Democrats (SD),0.17912068029672518
+2361,Härjedalen,Sweden Democrats (SD),0.1948307692307692
+2380,Östersund,Sweden Democrats (SD),0.1357711292434774
+2401,Nordmaling,Sweden Democrats (SD),0.17255114973746152
+2403,Bjurholm,Sweden Democrats (SD),0.17958515283842794
+2404,Vindeln,Sweden Democrats (SD),0.16817404057687607
+2409,Robertsfors,Sweden Democrats (SD),0.12316318638824439
+2417,Norsjö,Sweden Democrats (SD),0.14566929133858267
+2418,Malå,Sweden Democrats (SD),0.15050907481186365
+2421,Storuman,Sweden Democrats (SD),0.17386489479512734
+2422,Sorsele,Sweden Democrats (SD),0.15138361367335865
+2425,Dorotea,Sweden Democrats (SD),0.16417139907072795
+2460,Vännäs,Sweden Democrats (SD),0.14420062695924765
+2462,Vilhelmina,Sweden Democrats (SD),0.18927940310229727
+2463,Åsele,Sweden Democrats (SD),0.14346190028222014
+2480,Umeå,Sweden Democrats (SD),0.09186100417229355
+2481,Lycksele,Sweden Democrats (SD),0.14155745694790425
+2482,Skellefteå,Sweden Democrats (SD),0.12682815356489943
+2505,Arvidsjaur,Sweden Democrats (SD),0.19488683989941324
+2506,Arjeplog,Sweden Democrats (SD),0.19473189087488244
+2510,Jokkmokk,Sweden Democrats (SD),0.1704214153193745
+2513,Överkalix,Sweden Democrats (SD),0.18453768453768454
+2514,Kalix,Sweden Democrats (SD),0.1977986663453041
+2518,Kiruna,Sweden Democrats (SD),0.12676498274239095
+2521,Gällivare,Sweden Democrats (SD),0.1640541120893279
+2523,Pajala,Sweden Democrats (SD),0.2135218283035453
+2560,Älvsbyn,Sweden Democrats (SD),0.16289958023894094
+2580,Luleå,Sweden Democrats (SD),0.14602088584803743
+2581,Piteå,Sweden Democrats (SD),0.1359676695105523
+2582,Älvsbyn,Sweden Democrats (SD),0.18467895740623014
+2583,Haparanda,Sweden Democrats (SD),0.1940948693126815
+2584,Övertorneå,Sweden Democrats (SD),0.17279716144293317
+0114,Upplands Väsby,Other party,0.013617201953113153
+0115,Vallentuna,Other party,0.009723352318958503
+0117,Österåker,Other party,0.009831622650213354
+0120,Värmdö,Other party,0.00866581881636154
+0123,Järfälla,Other party,0.0173425411495924
+0125,Ekerö,Other party,0.009301181102362206
+0126,Huddinge,Other party,0.016225661507738392
+0127,Botkyrka,Other party,0.022518547570023202
+0128,Salem,Other party,0.01019470209743461
+0136,Haninge,Other party,0.016120049504950495
+0138,Tyresö,Other party,0.0097349151387864
+0139,Upplands-Bro,Other party,0.013679890560875513
+0140,Nykvarn,Other party,0.005803409503083061
+0160,Täby,Other party,0.008513461219525679
+0162,Danderyd,Other party,0.007547636723583271
+0163,Sollentuna,Other party,0.013106360214745613
+0180,Stockholm,Other party,0.015234401288853424
+0181,Södertälje,Other party,0.011628080323201001
+0182,Nacka,Other party,0.010614669421487602
+0183,Sundbyberg,Other party,0.012401234890900528
+0184,Solna,Other party,0.013169024596553499
+0186,Lidingö,Other party,0.008501268221980657
+0187,Vaxholm,Other party,0.0079155672823219
+0188,Norrtälje,Other party,0.009018546837626946
+0191,Sigtuna,Other party,0.020133212231304876
+0192,Nynäshamn,Other party,0.011149307813806561
+0305,Håbo,Other party,0.009066960730257919
+0319,Älvkarleby,Other party,0.010667396061269147
+0330,Knivsta,Other party,0.01284309408483781
+0331,Heby,Other party,0.013023938365587455
+0360,Tierp,Other party,0.010379981464318814
+0380,Uppsala,Other party,0.014896443210517014
+0381,Enköping,Other party,0.01168638207897594
+0382,Östhammar,Other party,0.008172829627936218
+0428,Vingåker,Other party,0.009458672875436554
+0461,Gnesta,Other party,0.01044689495066744
+0480,Nyköping,Other party,0.010236636140375038
+0481,Oxelösund,Other party,0.016754850088183424
+0482,Flen,Other party,0.009552288396046183
+0483,Katrineholm,Other party,0.00932131576920114
+0484,Eskilstuna,Other party,0.011183371588880386
+0486,Strängnäs,Other party,0.010669218772153693
+0488,Trosa,Other party,0.008722514991822642
+0509,Ödeshög,Other party,0.013628620102214651
+0512,Ydre,Other party,0.010678608336203927
+0513,Kinda,Other party,0.012363168061815841
+0560,Boxholm,Other party,0.010912468075226375
+0561,Åtvidaberg,Other party,0.007493112947658403
+0562,Finspång,Other party,0.01158672029777271
+0563,Valdemarsvik,Other party,0.010440456769983687
+0580,Linköping,Other party,0.011851828027884764
+0581,Norrköping,Other party,0.010227586842347739
+0582,Söderköping,Other party,0.009282774323495927
+0583,Motala,Other party,0.007856778720724503
+0584,Vadstena,Other party,0.005497170573969281
+0586,Mjölby,Other party,0.008125525357242926
+0604,Aneby,Other party,0.013886172501466851
+0617,Gnosjö,Other party,0.005709266578831795
+0642,Mullsjö,Other party,0.011955745895788721
+0643,Habo,Other party,0.01093972213105787
+0662,Gislaved,Other party,0.006832966724388076
+0665,Vaggeryd,Other party,0.012691548368901006
+0680,Jönköping,Other party,0.010397257211000968
+0682,Nässjö,Other party,0.009841919609807081
+0683,Värnamo,Other party,0.008409492358497812
+0684,Sävsjö,Other party,0.017191977077363897
+0685,Vetlanda,Other party,0.01059865460000968
+0686,Eksjö,Other party,0.015236388079766973
+0687,Tranås,Other party,0.008941143339904253
+0760,Uppvidinge,Other party,0.011229225932025752
+0761,Lessebo,Other party,0.008889634350888964
+0763,Tingsryd,Other party,0.010230735742272528
+0764,Alvesta,Other party,0.016257374125394432
+0765,Älmhult,Other party,0.009231783712495879
+0767,Markaryd,Other party,0.012642740619902122
+0780,Växjö,Other party,0.012171015474980233
+0781,Ljungby,Other party,0.010428955688735784
+0821,Högsby,Other party,0.010280842527582748
+0834,Torsås,Other party,0.01031487513572204
+0840,Mörbylånga,Other party,0.006460053970071143
+0860,Hultsfred,Other party,0.01303121657103958
+0861,Mönsterås,Other party,0.009859016070196194
+0862,Emmaboda,Other party,0.010894828588030215
+0880,Kalmar,Other party,0.009737277236817932
+0881,Nybro,Other party,0.011830017844160993
+0882,Oskarshamn,Other party,0.009874412807976225
+0883,Västervik,Other party,0.012562728296862731
+0884,Vimmerby,Other party,0.013142571951422391
+0885,Borgholm,Other party,0.010456062291434929
+0980,Gotland,Other party,0.01257405642789079
+1060,Olofström,Other party,0.006589299763965381
+1080,Karlskrona,Other party,0.010254896171636649
+1081,Ronneby,Other party,0.012674964665116492
+1082,Karlshamn,Other party,0.008684863523573201
+1083,Sölvesborg,Other party,0.008850831114629056
+1214,Svalöv,Other party,0.013880685174246897
+1230,Staffanstorp,Other party,0.00732017823042648
+1231,Burlöv,Other party,0.01854461835175432
+1233,Vellinge,Other party,0.006243460062783397
+1256,Östra Göinge,Other party,0.010970304520522035
+1257,Örkelljunga,Other party,0.015292118677297085
+1260,Bjuv,Other party,0.013662446488751253
+1261,Kävlinge,Other party,0.007152833622550472
+1262,Lomma,Other party,0.006576014266607223
+1263,Svedala,Other party,0.008128123306640977
+1264,Skurup,Other party,0.010736071573810492
+1265,Sjöbo,Other party,0.009502777220103058
+1266,Hörby,Other party,0.007786988193921125
+1267,Höör,Other party,0.013980006248047485
+1270,Tomelilla,Other party,0.009693828582397543
+1272,Bromölla,Other party,0.008571129925786559
+1273,Osby,Other party,0.007382686084142395
+1275,Perstorp,Other party,0.006222049387517014
+1276,Klippan,Other party,0.012550046196489067
+1277,Åstorp,Other party,0.00919830462620615
+1278,Båstad,Other party,0.009047619047619049
+1280,Malmö,Other party,0.023720796904113516
+1281,Lund,Other party,0.011935445921521235
+1282,Landskrona,Other party,0.0214342418629267
+1283,Helsingborg,Other party,0.013224785165083673
+1284,Höganäs,Other party,0.00971466116012765
+1285,Eslöv,Other party,0.012380303698064827
+1286,Ystad,Other party,0.008962918897481657
+1287,Trelleborg,Other party,0.01023940005768676
+1290,Kristianstad,Other party,0.011763266180227312
+1291,Simrishamn,Other party,0.0130110338669558
+1292,Ängelholm,Other party,0.008490510605793524
+1293,Hässleholm,Other party,0.009650455927051672
+1315,Hylte,Other party,0.0067186240257995165
+1380,Halmstad,Other party,0.01162599673966613
+1381,Laholm,Other party,0.008764940239043825
+1382,Falkenberg,Other party,0.00786128456735058
+1383,Varberg,Other party,0.008659008254921203
+1384,Kungsbacka,Other party,0.00891163022177984
+1401,Härryda,Other party,0.0092468412507941
+1402,Partille,Other party,0.00894435409743336
+1407,Öckerö,Other party,0.009928241423375601
+1415,Stenungsund,Other party,0.011699566682715455
+1419,Tjörn,Other party,0.007739212007504691
+1421,Orust,Other party,0.010408326661329063
+1427,Sotenäs,Other party,0.007342336436344565
+1430,Munkedal,Other party,0.012067678526996766
+1435,Tanum,Other party,0.008759976640062292
+1438,Dals-Ed,Other party,0.013127853881278538
+1439,Färgelanda,Other party,0.00936068512248556
+1440,Ale,Other party,0.013628326217276924
+1441,Lerum,Other party,0.008126712983619095
+1442,Vårgårda,Other party,0.011427937423721292
+1443,Bollebygd,Other party,0.009164121077478478
+1444,Grästorp,Other party,0.009713024282560706
+1445,Essunga,Other party,0.007077625570776255
+1446,Karlsborg,Other party,0.007558034910923159
+1447,Gullspång,Other party,0.012906428394142468
+1452,Åmål,Other party,0.010689232824852466
+1460,Lilla Edet,Other party,0.006647807637906649
+1461,Mellerud,Other party,0.014308426073131956
+1462,Bengtsfors,Other party,0.014432600698047355
+1463,Mariestad,Other party,0.013895131086142324
+1465,Lidköping,Other party,0.008476658476658478
+1466,Götene,Other party,0.012443593600437576
+1470,Tibro,Other party,0.006629020378099681
+1471,Töreboda,Other party,0.009635036496350365
+1472,Vara,Other party,0.009836824441615554
+1473,Skara,Other party,0.015733522324592488
+1480,Göteborg,Other party,0.01823046793146247
+1481,Mölndal,Other party,0.011141899354738699
+1482,Kungälv,Other party,0.012592071057192374
+1484,Lysekil,Other party,0.011105235325224748
+1485,Uddevalla,Other party,0.016139519762203337
+1486,Strömstad,Other party,0.011091587963979794
+1487,Västra Götaland,Other party,0.009542427354958416
+1488,Trollhättan,Other party,0.010541654333917716
+1489,Alingsås,Other party,0.012142700260424837
+1490,Borås,Other party,0.013355453178335282
+1491,Ulricehamn,Other party,0.010120177103099304
+1492,Tranemo,Other party,0.009285341679707878
+1493,Bengtsfors,Other party,0.008811253671355697
+1494,Lidköping,Other party,0.009962877177396325
+1495,Skara,Other party,0.009500351864883884
+1496,Skövde,Other party,0.011263478400219774
+1497,Hjo,Other party,0.010396451344607708
+1498,Tidaholm,Other party,0.00852899859522376
+1499,Falköping,Other party,0.012902447847582299
+1715,Kil,Other party,0.006131010003226848
+1730,Eda,Other party,0.006412605349945035
+1737,Torsby,Other party,0.00889801505817933
+1760,Storfors,Other party,0.011642949547218628
+1761,Hammarö,Other party,0.007943584339790874
+1762,Munkfors,Other party,0.008843036109064112
+1763,Forshaga,Other party,0.008952855847688124
+1764,Grums,Other party,0.007623705408515534
+1765,Årjäng,Other party,0.006090487238979118
+1766,Sunne,Other party,0.00827480034638699
+1780,Karlstad,Other party,0.00898071551712617
+1781,Kristinehamn,Other party,0.008392715756136183
+1782,Filipstad,Other party,0.009403581089784877
+1783,Hagfors,Other party,0.009263443289652055
+1784,Arvika,Other party,0.006738747799849133
+1785,Säffle,Other party,0.008572653236176597
+1814,Lekeberg,Other party,0.014153168737222834
+1860,Laxå,Other party,0.009972170686456401
+1861,Hallsberg,Other party,0.010310142497904443
+1862,Degerfors,Other party,0.01059549356223176
+1863,Hällefors,Other party,0.0093812375249501
+1864,Ljusnarsberg,Other party,0.013733183856502242
+1880,Örebro,Other party,0.01392233338985925
+1881,Kumla,Other party,0.009783665532328635
+1882,Askersund,Other party,0.012139107611548556
+1883,Karlskoga,Other party,0.010070536245432141
+1884,Nora,Other party,0.014377189803068744
+1885,Lindesberg,Other party,0.013693314114646854
+1904,Skinnskatteberg,Other party,0.007934175727299441
+1907,Surahammar,Other party,0.008005336891260841
+1960,Kungsör,Other party,0.007054132801717529
+1961,Hallstahammar,Other party,0.011856423582913757
+1962,Norberg,Other party,0.012408088235294119
+1980,Västerås,Other party,0.01061176208395121
+1981,Sala,Other party,0.010745313214449017
+1982,Fagersta,Other party,0.00801498907046945
+1983,Köping,Other party,0.008169934640522876
+1984,Arboga,Other party,0.009048533040855499
+2021,Vansbro,Other party,0.012064090480678606
+2023,Malung-Sälen,Other party,0.013403482400100213
+2026,Gagnef,Other party,0.0072103431128791645
+2029,Leksand,Other party,0.009577641701994034
+2031,Rättvik,Other party,0.011363636363636362
+2034,Orsa,Other party,0.01530333394060849
+2039,Älvdalen,Other party,0.021711366538952746
+2061,Smedjebacken,Other party,0.00948086483986588
+2062,Mora,Other party,0.010616753605400429
+2080,Falun,Other party,0.012282074692404677
+2081,Borlänge,Other party,0.01195814648729447
+2082,Säter,Other party,0.01058140857890545
+2083,Hedemora,Other party,0.013344594594594595
+2084,Avesta,Other party,0.011244421260070712
+2085,Ludvika,Other party,0.01081081081081081
+2101,Ockelbo,Other party,0.007913827214772478
+2104,Hofors,Other party,0.007864406779661017
+2121,Ovanåker,Other party,0.006988352745424292
+2132,Nordanstig,Other party,0.011226836196402003
+2161,Ljusdal,Other party,0.00872151984314786
+2180,Gävle,Other party,0.01072678399350814
+2181,Sandviken,Other party,0.008881534513035255
+2182,Söderhamn,Other party,0.010129288404764328
+2183,Bollnäs,Other party,0.008112703424823902
+2184,Hudiksvall,Other party,0.00967490950915057
+2260,Ånge,Other party,0.00836533187054306
+2262,Timrå,Other party,0.007100337086710176
+2280,Härnösand,Other party,0.009893733968486626
+2281,Sundsvall,Other party,0.008582795278158221
+2282,Kramfors,Other party,0.010555595178660582
+2283,Sollefteå,Other party,0.011871074608323555
+2284,Örnsköldsvik,Other party,0.009853819517069883
+2303,Ragunda,Other party,0.011046949535525985
+2305,Bräcke,Other party,0.00954356846473029
+2309,Krokom,Other party,0.008798169980644026
+2313,Strömsund,Other party,0.008379571962405163
+2321,Åre,Other party,0.009034817100044073
+2326,Berg,Other party,0.01067486882576443
+2361,Härjedalen,Other party,0.010215384615384614
+2380,Östersund,Other party,0.01053691951244082
+2401,Nordmaling,Other party,0.007785623755205505
+2403,Bjurholm,Other party,0.007096069868995633
+2404,Vindeln,Other party,0.007577609386458078
+2409,Robertsfors,Other party,0.00908739365815932
+2417,Norsjö,Other party,0.00853018372703412
+2418,Malå,Other party,0.004426737494466578
+2421,Storuman,Other party,0.005758582502768549
+2422,Sorsele,Other party,0.0065111231687466084
+2425,Dorotea,Other party,0.008260196179659268
+2460,Vännäs,Other party,0.010150768771458426
+2462,Vilhelmina,Other party,0.013351659139996072
+2463,Åsele,Other party,0.009877704609595485
+2480,Umeå,Other party,0.009312075464092072
+2481,Lycksele,Other party,0.0061735080688833524
+2482,Skellefteå,Other party,0.008507945436647447
+2505,Arvidsjaur,Other party,0.007334450963956411
+2506,Arjeplog,Other party,0.0051740357478833494
+2510,Jokkmokk,Other party,0.01086668433607209
+2513,Överkalix,Other party,0.008547008547008548
+2514,Kalix,Other party,0.0069896360568811764
+2518,Kiruna,Other party,0.006903043614684657
+2521,Gällivare,Other party,0.008803951041442989
+2523,Pajala,Other party,0.008643422209200119
+2560,Älvsbyn,Other party,0.008395221181788828
+2580,Luleå,Other party,0.009133466461518315
+2581,Piteå,Other party,0.008890884598114056
+2582,Älvsbyn,Other party,0.008491508491508492
+2583,Haparanda,Other party,0.006292352371732817
+2584,Övertorneå,Other party,0.011472501478415139
+0114,Upplands Väsby,Did not vote,0.2510842204227701
+0115,Vallentuna,Did not vote,0.16932465419039866
+0117,Österåker,Did not vote,0.16878099411832548
+0120,Värmdö,Did not vote,0.15290881665730083
+0123,Järfälla,Did not vote,0.26453433026983053
+0125,Ekerö,Did not vote,0.130757874015748
+0126,Huddinge,Did not vote,0.2363034395774759
+0127,Botkyrka,Did not vote,0.32400235317187964
+0128,Salem,Did not vote,0.22637252444221612
+0136,Haninge,Did not vote,0.2471534653465347
+0138,Tyresö,Did not vote,0.1663450076630527
+0139,Upplands-Bro,Did not vote,0.23246042603087747
+0140,Nykvarn,Did not vote,0.18135654697134562
+0160,Täby,Did not vote,0.15508504247516908
+0162,Danderyd,Did not vote,0.15581951662129834
+0163,Sollentuna,Did not vote,0.19357673716589285
+0180,Stockholm,Did not vote,0.20325811816961936
+0181,Södertälje,Did not vote,0.32387185259172024
+0182,Nacka,Did not vote,0.16483729338842978
+0183,Sundbyberg,Did not vote,0.2471874836481608
+0184,Solna,Did not vote,0.2188977161527872
+0186,Lidingö,Did not vote,0.1708615547565292
+0187,Vaxholm,Did not vote,0.1519349164467898
+0188,Norrtälje,Did not vote,0.1801552758499
+0191,Sigtuna,Did not vote,0.26687859521646984
+0192,Nynäshamn,Did not vote,0.2018024714298987
+0305,Håbo,Did not vote,0.16620719230533598
+0319,Älvkarleby,Did not vote,0.2308533916849015
+0330,Knivsta,Did not vote,0.16651988844855425
+0331,Heby,Did not vote,0.17784096120333848
+0360,Tierp,Did not vote,0.17744825455668833
+0380,Uppsala,Did not vote,0.17856348803666822
+0381,Enköping,Did not vote,0.18929653123035606
+0382,Östhammar,Did not vote,0.18203120534948847
+0428,Vingåker,Did not vote,0.17491268917345748
+0461,Gnesta,Did not vote,0.2167150319210679
+0480,Nyköping,Did not vote,0.16782574766462388
+0481,Oxelösund,Did not vote,0.19598765432098764
+0482,Flen,Did not vote,0.2050834786942437
+0483,Katrineholm,Did not vote,0.20437562591479852
+0484,Eskilstuna,Did not vote,0.21772507013516962
+0486,Strängnäs,Did not vote,0.1667021125762087
+0488,Trosa,Did not vote,0.1567326912593131
+0509,Ödeshög,Did not vote,0.22073497201265513
+0512,Ydre,Did not vote,0.13399931105752672
+0513,Kinda,Did not vote,0.16136509980682545
+0560,Boxholm,Did not vote,0.1541676340840492
+0561,Åtvidaberg,Did not vote,0.18005509641873274
+0562,Finspång,Did not vote,0.17500150087050492
+0563,Valdemarsvik,Did not vote,0.20179445350734093
+0580,Linköping,Did not vote,0.17267164647138755
+0581,Norrköping,Did not vote,0.20609969593660737
+0582,Söderköping,Did not vote,0.13652684122952974
+0583,Motala,Did not vote,0.18472426305214862
+0584,Vadstena,Did not vote,0.16653193209377526
+0586,Mjölby,Did not vote,0.17012234986457453
+0604,Aneby,Did not vote,0.20105613142968903
+0617,Gnosjö,Did not vote,0.2049480310349876
+0642,Mullsjö,Did not vote,0.17201998572448252
+0643,Habo,Did not vote,0.15304671261349967
+0662,Gislaved,Did not vote,0.21266438901109186
+0665,Vaggeryd,Did not vote,0.17636551659302435
+0680,Jönköping,Did not vote,0.17447082060073038
+0682,Nässjö,Did not vote,0.21299481775029394
+0683,Värnamo,Did not vote,0.18881038322709465
+0684,Sävsjö,Did not vote,0.16272683858643744
+0685,Vetlanda,Did not vote,0.17896723612253784
+0686,Eksjö,Did not vote,0.16700276346254384
+0687,Tranås,Did not vote,0.17769642354266402
+0760,Uppvidinge,Did not vote,0.22293756550381794
+0761,Lessebo,Did not vote,0.19942972156994299
+0763,Tingsryd,Did not vote,0.20385285154549415
+0764,Alvesta,Did not vote,0.18836603100562488
+0765,Älmhult,Did not vote,0.19131223211341908
+0767,Markaryd,Did not vote,0.21791734638390425
+0780,Växjö,Did not vote,0.16291087766858692
+0781,Ljungby,Did not vote,0.1887121891368977
+0821,Högsby,Did not vote,0.2153961885656971
+0834,Torsås,Did not vote,0.16159971045964527
+0840,Mörbylånga,Did not vote,0.12012429470929753
+0860,Hultsfred,Did not vote,0.1961489837596032
+0861,Mönsterås,Did not vote,0.15636399487331165
+0862,Emmaboda,Did not vote,0.1924753050552005
+0880,Kalmar,Did not vote,0.16163880213117765
+0881,Nybro,Did not vote,0.2046791355495341
+0882,Oskarshamn,Did not vote,0.16589972198255198
+0883,Västervik,Did not vote,0.1803843921756051
+0884,Vimmerby,Did not vote,0.19372816503077694
+0885,Borgholm,Did not vote,0.1867630700778643
+0980,Gotland,Did not vote,0.16818577287981107
+1060,Olofström,Did not vote,0.23288749016522425
+1080,Karlskrona,Did not vote,0.16279893711248894
+1081,Ronneby,Did not vote,0.17393881365978203
+1082,Karlshamn,Did not vote,0.1803810133674858
+1083,Sölvesborg,Did not vote,0.18270130243937543
+1214,Svalöv,Did not vote,0.19088403228982087
+1230,Staffanstorp,Did not vote,0.1645448758752387
+1231,Burlöv,Did not vote,0.2896669386544025
+1233,Vellinge,Did not vote,0.12214858737356127
+1256,Östra Göinge,Did not vote,0.1874408927558161
+1257,Örkelljunga,Did not vote,0.2578747876094628
+1260,Bjuv,Did not vote,0.24801894525913104
+1261,Kävlinge,Did not vote,0.12710035129301223
+1262,Lomma,Did not vote,0.1131297369594293
+1263,Svedala,Did not vote,0.14371726172557042
+1264,Skurup,Did not vote,0.17494916632777557
+1265,Sjöbo,Did not vote,0.1788797430234893
+1266,Hörby,Did not vote,0.18512936448128614
+1267,Höör,Did not vote,0.17104029990627934
+1270,Tomelilla,Did not vote,0.19627603416834627
+1272,Bromölla,Did not vote,0.2000627155848228
+1273,Osby,Did not vote,0.2012540453074434
+1275,Perstorp,Did not vote,0.318880031110247
+1276,Klippan,Did not vote,0.2243609485679089
+1277,Åstorp,Did not vote,0.24609973847957434
+1278,Båstad,Did not vote,0.16587301587301584
+1280,Malmö,Did not vote,0.2543356743586068
+1281,Lund,Did not vote,0.17101055581104352
+1282,Landskrona,Did not vote,0.2380112316603452
+1283,Helsingborg,Did not vote,0.22185436454093166
+1284,Höganäs,Did not vote,0.15266566547775484
+1285,Eslöv,Did not vote,0.20517648944268596
+1286,Ystad,Did not vote,0.16533809240531427
+1287,Trelleborg,Did not vote,0.19477934813960196
+1290,Kristianstad,Did not vote,0.19862940357640002
+1291,Simrishamn,Did not vote,0.1681229670259583
+1292,Ängelholm,Did not vote,0.18012221634643633
+1293,Hässleholm,Did not vote,0.19354103343465046
+1315,Hylte,Did not vote,0.249798441279226
+1380,Halmstad,Did not vote,0.19147511152111008
+1381,Laholm,Did not vote,0.18022908366533863
+1382,Falkenberg,Did not vote,0.19566793041926855
+1383,Varberg,Did not vote,0.14493255594681442
+1384,Kungsbacka,Did not vote,0.1298329652555289
+1401,Härryda,Did not vote,0.1323851203501094
+1402,Partille,Did not vote,0.18708901930283528
+1407,Öckerö,Did not vote,0.13988007470755925
+1415,Stenungsund,Did not vote,0.15368319691863264
+1419,Tjörn,Did not vote,0.1358661663539712
+1421,Orust,Did not vote,0.1787029623698959
+1427,Sotenäs,Did not vote,0.1772649796774617
+1430,Munkedal,Did not vote,0.2183378949987559
+1435,Tanum,Did not vote,0.18211018103951726
+1438,Dals-Ed,Did not vote,0.2648401826484018
+1439,Färgelanda,Did not vote,0.17825134435371437
+1440,Ale,Did not vote,0.18023030146202612
+1441,Lerum,Did not vote,0.1417553700044617
+1442,Vårgårda,Did not vote,0.1808498835016088
+1443,Bollebygd,Did not vote,0.17536795334629274
+1444,Grästorp,Did not vote,0.19315673289183222
+1445,Essunga,Did not vote,0.21027397260273972
+1446,Karlsborg,Did not vote,0.16627676804030955
+1447,Gullspång,Did not vote,0.2797220153884339
+1452,Åmål,Did not vote,0.21100100211557737
+1460,Lilla Edet,Did not vote,0.21980198019801978
+1461,Mellerud,Did not vote,0.1900563665269548
+1462,Bengtsfors,Did not vote,0.19658522780869725
+1463,Mariestad,Did not vote,0.16996254681647938
+1465,Lidköping,Did not vote,0.2142506142506142
+1466,Götene,Did not vote,0.2275399972651443
+1470,Tibro,Did not vote,0.18774040428840333
+1471,Töreboda,Did not vote,0.14802919708029194
+1472,Vara,Did not vote,0.20738340469853023
+1473,Skara,Did not vote,0.23189227498228204
+1480,Göteborg,Did not vote,0.22799022734547159
+1481,Mölndal,Did not vote,0.16476446993624894
+1482,Kungälv,Did not vote,0.14826148180242638
+1484,Lysekil,Did not vote,0.18261942534814035
+1485,Uddevalla,Did not vote,0.18275974176768384
+1486,Strömstad,Did not vote,0.23380188886448494
+1487,Västra Götaland,Did not vote,0.18617673370663668
+1488,Trollhättan,Did not vote,0.20197627558571074
+1489,Alingsås,Did not vote,0.1523642182548398
+1490,Borås,Did not vote,0.2013104814646839
+1491,Ulricehamn,Did not vote,0.17567994939911447
+1492,Tranemo,Did not vote,0.2119979134063641
+1493,Bengtsfors,Did not vote,0.17911063018498485
+1494,Lidköping,Did not vote,0.14201859314021004
+1495,Skara,Did not vote,0.1926812104152006
+1496,Skövde,Did not vote,0.17746846454980425
+1497,Hjo,Did not vote,0.15497643471028555
+1498,Tidaholm,Did not vote,0.18512944009632748
+1499,Falköping,Did not vote,0.17528839583584555
+1715,Kil,Did not vote,0.1518769495536194
+1730,Eda,Did not vote,0.2768413338219128
+1737,Torsby,Did not vote,0.2193702943189596
+1760,Storfors,Did not vote,0.2166882276843467
+1761,Hammarö,Did not vote,0.15246818513414928
+1762,Munkfors,Did not vote,0.2140751658069271
+1763,Forshaga,Did not vote,0.1695376246600181
+1764,Grums,Did not vote,0.20986766398158807
+1765,Årjäng,Did not vote,0.23941415313225056
+1766,Sunne,Did not vote,0.19195612431444242
+1780,Karlstad,Did not vote,0.17329306266454625
+1781,Kristinehamn,Did not vote,0.17450514647664295
+1782,Filipstad,Did not vote,0.22388251964446737
+1783,Hagfors,Did not vote,0.19769543605964757
+1784,Arvika,Did not vote,0.19094795071662052
+1785,Säffle,Did not vote,0.19477068152593224
+1814,Lekeberg,Did not vote,0.13555590501651205
+1860,Laxå,Did not vote,0.239100185528757
+1861,Hallsberg,Did not vote,0.18424140821458512
+1862,Degerfors,Did not vote,0.1754291845493562
+1863,Hällefors,Did not vote,0.21217564870259487
+1864,Ljusnarsberg,Did not vote,0.3060538116591929
+1880,Örebro,Did not vote,0.18958792606410035
+1881,Kumla,Did not vote,0.16486387943607195
+1882,Askersund,Did not vote,0.19127296587926512
+1883,Karlskoga,Did not vote,0.19006543723973823
+1884,Nora,Did not vote,0.1922194031653981
+1885,Lindesberg,Did not vote,0.18693868499833688
+1904,Skinnskatteberg,Did not vote,0.3062004114017044
+1907,Surahammar,Did not vote,0.22361574382921945
+1960,Kungsör,Did not vote,0.22235853396718297
+1961,Hallstahammar,Did not vote,0.21804450219262628
+1962,Norberg,Did not vote,0.22886029411764708
+1980,Västerås,Did not vote,0.20001200037715472
+1981,Sala,Did not vote,0.18598536808413346
+1982,Fagersta,Did not vote,0.24742375351306334
+1983,Köping,Did not vote,0.2108353758169934
+1984,Arboga,Did not vote,0.19303537153825057
+2021,Vansbro,Did not vote,0.20452403393025442
+2023,Malung-Sälen,Did not vote,0.1960415883752975
+2026,Gagnef,Did not vote,0.1975385380407757
+2029,Leksand,Did not vote,0.1661956351075522
+2031,Rättvik,Did not vote,0.1747572815533981
+2034,Orsa,Did not vote,0.21752596101293498
+2039,Älvdalen,Did not vote,0.22076263455573797
+2061,Smedjebacken,Did not vote,0.19181408255289634
+2062,Mora,Did not vote,0.1814053390610617
+2080,Falun,Did not vote,0.16510151732533374
+2081,Borlänge,Did not vote,0.19272202463790522
+2082,Säter,Did not vote,0.15837979292297188
+2083,Hedemora,Did not vote,0.2118243243243243
+2084,Avesta,Did not vote,0.19886396568712683
+2085,Ludvika,Did not vote,0.19224885262621116
+2101,Ockelbo,Did not vote,0.21125522092767646
+2104,Hofors,Did not vote,0.2738983050847458
+2121,Ovanåker,Did not vote,0.17870216306156406
+2132,Nordanstig,Did not vote,0.20424726092249423
+2161,Ljusdal,Did not vote,0.20458386856872424
+2180,Gävle,Did not vote,0.190178526144951
+2181,Sandviken,Did not vote,0.19853437795488316
+2182,Söderhamn,Did not vote,0.22839254810139464
+2183,Bollnäs,Did not vote,0.19222735001214475
+2184,Hudiksvall,Did not vote,0.19092723520855182
+2260,Ånge,Did not vote,0.21681294569391119
+2262,Timrå,Did not vote,0.17528508929211795
+2280,Härnösand,Did not vote,0.17855834162173478
+2281,Sundsvall,Did not vote,0.17490380225657076
+2282,Kramfors,Did not vote,0.19977177091505594
+2283,Sollefteå,Did not vote,0.19173165849955143
+2284,Örnsköldsvik,Did not vote,0.17095447256501428
+2303,Ragunda,Did not vote,0.20436856640723078
+2305,Bräcke,Did not vote,0.23630705394190876
+2309,Krokom,Did not vote,0.16021467534752776
+2313,Strömsund,Did not vote,0.23134412863775333
+2321,Åre,Did not vote,0.19380784486557956
+2326,Berg,Did not vote,0.27193776008684634
+2361,Härjedalen,Did not vote,0.23310769230769235
+2380,Östersund,Did not vote,0.18617910748463784
+2401,Nordmaling,Did not vote,0.19735650914358138
+2403,Bjurholm,Did not vote,0.2565502183406113
+2404,Vindeln,Did not vote,0.21755072109508677
+2409,Robertsfors,Did not vote,0.19760247486465587
+2417,Norsjö,Did not vote,0.2086614173228346
+2418,Malå,Did not vote,0.33333333333333337
+2421,Storuman,Did not vote,0.2595791805094131
+2422,Sorsele,Did not vote,0.31036353771025504
+2425,Dorotea,Did not vote,0.2989158492514197
+2460,Vännäs,Did not vote,0.21779370055232128
+2462,Vilhelmina,Did not vote,0.25623404673080696
+2463,Åsele,Did not vote,0.3381937911571026
+2480,Umeå,Did not vote,0.1537701812025074
+2481,Lycksele,Did not vote,0.21704754684284633
+2482,Skellefteå,Did not vote,0.17355153986781047
+2505,Arvidsjaur,Did not vote,0.18692372170997484
+2506,Arjeplog,Did not vote,0.21730950141110061
+2510,Jokkmokk,Did not vote,0.2422475483699974
+2513,Överkalix,Did not vote,0.2047397047397047
+2514,Kalix,Did not vote,0.1826946252108942
+2518,Kiruna,Did not vote,0.34264198305616567
+2521,Gällivare,Did not vote,0.2843031994846468
+2523,Pajala,Did not vote,0.21645180193378255
+2560,Älvsbyn,Did not vote,0.19874071682273164
+2580,Luleå,Did not vote,0.158591678397224
+2581,Piteå,Did not vote,0.15045651848525665
+2582,Älvsbyn,Did not vote,0.1845427299972755
+2583,Haparanda,Did not vote,0.3665698612455631
+2584,Övertorneå,Did not vote,0.2153163808397398
