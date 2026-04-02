@@ -69,3 +69,21 @@
   fill: #335058;
   font-family: "Unbounded", sans-serif;
 }
+
+@media screen and (max-width: 450px) {
+  .vp-chart-wrapper svg text{
+    font-size: 8px;
+  }
+
+  .VoteProjection{
+    padding: 0;
+  }
+
+  .vp-title{
+    font-size: 0.8rem;
+  }
+
+  .vp-subtitle{
+    font-size: 0.6rem;
+  }
+}

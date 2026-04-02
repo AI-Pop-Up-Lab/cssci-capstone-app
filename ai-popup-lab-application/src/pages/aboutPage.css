@@ -8,11 +8,21 @@
 
 .AboutPage > h1{
     font-size: 50px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .AboutPage > p{
     font-size: 20px;
     margin: 20px 0;
     line-height: 1.5;
+}
+
+@media screen and (max-width: 450px){
+    .AboutPage > h1{
+        font-size: 30px;
+    }
+
+    .AboutPage > p{
+        font-size: 10px;
+    }
 }

@@ -12,6 +12,19 @@ function DemographicCharts({ pollingData, country }) {
   useEffect(() => {
     if (!pollingData || pollingData.length === 0) return;
 
+    let isTablet = false;
+    let isMobile = false;
+    let isSmallMobile = false;
+
+    if (window.innerWidth <= 390) {
+      isSmallMobile = true;
+    } else if (window.innerWidth <= 545) {
+      isMobile = true;
+    } else if (window.innerWidth <= 930) {
+      isTablet = true;
+    }
+
+
     // Filter rows based on chosen demographic values (skip "all")
     const filtered = chosenDemographic
       ? pollingData.filter(row =>
@@ -39,9 +52,13 @@ function DemographicCharts({ pollingData, country }) {
       
     let svgW = 820
 
-    if(window.innerWidth <= 930){
+    if(isSmallMobile){
+      svgW = 310;
+    } else if(isMobile){
+      svgW = 370;
+    } else if(isTablet){
       svgW = 570;
-    }
+    };
 
     const margin = { top: 30, right: 20, bottom: 80, left: 50 };
     const width = svgW - margin.left - margin.right;
@@ -65,7 +82,24 @@ function DemographicCharts({ pollingData, country }) {
       .select(".domain").remove();
 
     // X axis
-    g.append("g")
+    if(isMobile || isSmallMobile){
+      const xAxis = g.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x).tickSize(0));
+
+      xAxis.select(".domain").remove();
+
+      xAxis.selectAll("text")
+        .attr("font-size", "13px")
+        .attr("font-weight", "700")
+        .attr("fill", "#111")
+        .attr("transform", "rotate(-45)")
+        .style("text-anchor", "end")
+        .attr("dx", "-0.6em")
+        .attr("dy", "0.15em");
+
+    } else{
+      g.append("g")
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x).tickSize(0))
       .select(".domain").remove()
@@ -73,6 +107,7 @@ function DemographicCharts({ pollingData, country }) {
       .attr("font-size", "13px")
       .attr("font-weight", "700")
       .attr("fill", "#111");
+    }
 
     // Y axis
     g.append("g")

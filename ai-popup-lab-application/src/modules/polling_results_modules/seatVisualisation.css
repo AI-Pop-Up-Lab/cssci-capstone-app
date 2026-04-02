@@ -45,3 +45,17 @@ circle.seat:hover {
 @media screen and (max-width: 780px) {
   
 }
+
+@media screen and (max-width: 450px) {
+  .SeatVisualisation{
+    padding-top: 20px;
+  }
+
+  .SeatVisualisation > h3{
+    font-size: 0.8rem;
+  }
+
+  .sv-chart-wrapper svg text{
+    font-size: 9px;
+  }
+}

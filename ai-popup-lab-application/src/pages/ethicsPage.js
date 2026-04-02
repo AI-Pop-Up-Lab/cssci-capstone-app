@@ -18,7 +18,7 @@ function EthicsPage() {
     {
       name: "Algorithmic Bias",
       text: "Post-stratification weighting is applied to align synthetic outputs with real population distributions. Red-teaming tests are run to identify systematic distortions before deployment.",
-      icon: transparencyIcon
+      icon: biasIcon
     },
     {
       name: "Privacy / Consent",
@@ -75,7 +75,7 @@ function EthicsPage() {
 
   return (
     <div className="EthicsPage unbounded-weight300">
-      <h1>EHICAL CONSIDERATIONS</h1>
+      <h1>ETHICAL CONSIDERATIONS</h1>
       <div id='values-carousel'>
         <img alt="left arrow" src={carouselArrow} onClick={() => {switchCard('left')}} id="carousel-left"></img>
 

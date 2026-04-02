@@ -50,3 +50,21 @@
   cursor: pointer;
   background-color: #2b4149;
 }
+
+@media screen and (max-width: 450px) {
+  #exportButton{
+    padding: 6px 15px;
+    width: 140px;
+  }
+
+  #exportButton > p{
+    font-size: 10px;
+  }
+
+  #exportButton > img{
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+  }
+
+}

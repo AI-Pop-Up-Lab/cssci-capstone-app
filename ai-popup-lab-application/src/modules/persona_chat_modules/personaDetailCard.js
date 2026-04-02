@@ -71,6 +71,12 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
     const rect = cardRef.current.getBoundingClientRect();
     const middle = rect.left + rect.width / 2;
     setFlipBubble((middle + 370) > window.innerWidth); // 370px is set min-width of attribute bubble (.persona-info-bubble)
+
+    let isMobile = window.innerWidth <= 545;
+
+    if(isMobile){
+      setFlipBubble(middle > window.innerWidth / 2); // 290px is reduced min-width for mobile and tablet
+    };
   }, []);
 
   return (

@@ -30,3 +30,14 @@
     background-color: #FCBFB7;
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
 }
+
+@media screen and (max-width: 450px){
+    .AwaitingMessage > div{
+        padding: 10px 8px; 
+        max-width: calc(70% - 36px);
+    }
+
+    .AwaitingMessage > div > .Loader{
+        transform: translateY(5px) scale(0.6);
+    }
+}

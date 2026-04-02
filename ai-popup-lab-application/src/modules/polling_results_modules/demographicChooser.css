@@ -80,5 +80,23 @@
     /* text-transform: capitalize; */
 }
 
+@media screen and (max-width: 450px) {
 
+  .dc-sentence{
+    font-size: 0.6rem !important;
+  }
+
+  .dc-inline-select {
+    font-size: 0.6rem;
+    padding: 2px 4px;
+    height: auto;
+    width: auto;
+    max-width: 160px;
+  }
+
+  .DemographicChooser {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
 

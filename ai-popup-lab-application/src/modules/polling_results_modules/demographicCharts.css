@@ -46,3 +46,19 @@
 .sv-chart-wrapper circle.seat:hover {
   opacity: 0.75;
 }
+
+@media screen and (max-width: 450px) {
+  .dc-chart-wrapper svg text{
+    font-size: 8px;
+  }
+
+  .dc-title{
+    font-size: 0.8rem;
+  }
+
+  .DemographicCharts{
+    padding: 0;
+    padding-top: 20px;
+  }
+
+}
