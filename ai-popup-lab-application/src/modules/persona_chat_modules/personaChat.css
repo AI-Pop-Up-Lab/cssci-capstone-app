@@ -350,3 +350,92 @@
     }
 
 }
+
+@media screen and (max-width: 450px) {
+    #chat-bubble{
+        width: calc(90% - 24px);
+        height: calc(75% - 24px);
+        padding: 12px;
+    }
+
+    #persona-name{
+        font-size: 18px;
+    }
+
+    #chat-close{
+        width: 20px;
+    }
+
+    .persona-chat-attributes-single{
+        font-size: 8px;
+        margin: 0 1.5px 8px 1.5px;
+    }
+
+    #chat-not-real-warning{
+        left: -72px;
+        bottom: 23px;
+        font-size: 6px;
+        width: 75px;
+        transform: rotate(-20deg);
+    }
+
+    #persona-chat-input > input{
+        height: 26px;
+        border-radius: 16px;
+        padding: 0px 10px;
+        font-size: 10px;
+        width: calc(85% - 20px);
+        margin-right: 5px;
+    }
+
+    #persona-chat-input > div{
+        height: 26px;
+        border-radius: 8px;
+    }
+
+    #persona-chat-input > div > img{
+        height: 15px;
+    }
+
+    #persona-chat-history{
+        height: 57%;
+    }
+
+    /* agree styling */
+
+    #chat-bubble-agree{
+        top: -1px;
+        padding: 2% 10%;
+        width: calc(100% - 20%);
+        height: calc(100% - 4% + 3px);
+    }
+
+    #chat-bubble-agree > p:nth-child(1){
+        font-size: 20px;
+    }
+
+    #chat-bubble-agree > p:nth-child(2){
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    #chat-bubble-agree > p:nth-child(3){
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    #chat-bubble-agree > p:nth-child(4){
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+
+    #chat-bubble-agree > p:nth-child(5){
+        font-size: 8px;
+        margin-bottom: 30px;
+    }
+
+    #chat-bubble-agree-buttons > div:nth-child(1), #chat-bubble-agree-buttons > div:nth-child(2){
+        padding: 4px 6px;
+        font-size: 8px;
+    }
+}

@@ -151,3 +151,54 @@
         font-size: 30px;
     }
 }
+
+@media screen and (max-width: 450px){
+
+    .EthicsPage > h1{
+        font-size: 18px;
+    }
+
+    #values-carousel{
+        flex-direction: column;
+    }
+
+    .carousel-card-primary{
+        height: calc(210px - 20px);
+        width: calc(90% - 20px);
+
+        padding: 10px;
+    }
+
+    .carousel-card-primary > img{
+        width: 60px;
+    }
+
+    .carousel-card-secondary{
+        height: calc(110px - 14px);
+        width: calc(70% - 14px);
+
+        margin: 14px 0;
+        padding: 7px;
+    }
+
+    .carousel-card-secondary > img{
+        width: 40px;
+    }
+
+    .carousel-card-secondary > h1{
+        margin: 6px 0;
+        font-size: 8px;
+    }
+
+    .carousel-card-secondary > p{
+        font-size: 5px;
+    }
+
+    #carousel-left{
+        transform: rotate(270deg);
+    }
+
+    #carousel-right{
+        transform: rotate(90deg);
+    }
+}

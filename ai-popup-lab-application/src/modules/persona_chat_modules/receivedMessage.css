@@ -28,3 +28,14 @@
     background-color: #FCBFB7;
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
 }
+
+@media screen and (max-width: 450px){
+    .ReceivedMessage > div{
+        padding: 10px 12px; 
+        max-width: calc(70% - 36px);
+    }
+
+    .ReceivedMessage > div > p{
+        font-size: 10px;
+    }
+}

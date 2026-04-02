@@ -75,7 +75,7 @@ function EthicsPage() {
 
   return (
     <div className="EthicsPage unbounded-weight300">
-      <h1>EHICAL CONSIDERATIONS</h1>
+      <h1>ETHICAL CONSIDERATIONS</h1>
       <div id='values-carousel'>
         <img alt="left arrow" src={carouselArrow} onClick={() => {switchCard('left')}} id="carousel-left"></img>
 

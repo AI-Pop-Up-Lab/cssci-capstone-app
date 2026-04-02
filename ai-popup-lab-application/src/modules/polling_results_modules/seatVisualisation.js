@@ -28,6 +28,18 @@ function SeatVisualisation({ pollingData }) {
   useEffect(() => {
     if (!pollingData || pollingData.length === 0) return;
 
+    let isTablet = false;
+    let isMobile = false;
+    let isSmallMobile = false;
+
+    if (window.innerWidth <= 390) {
+      isSmallMobile = true;
+    } else if (window.innerWidth <= 545) {
+      isMobile = true;
+    } else if (window.innerWidth <= 930) {
+      isTablet = true;
+    }
+
     const voteCounts = {};
     pollingData.forEach(row => {
       if (row.vote_2030 !== "Did not vote") {
@@ -52,9 +64,15 @@ function SeatVisualisation({ pollingData }) {
     let svgW = 760;
     let seatRadius = 15;
 
-    if(window.innerWidth <= 930){
+    if (isSmallMobile) {
+      svgW = 300;
+      seatRadius = 5;
+    } else if (isMobile) {
+      svgW = 320;
+      seatRadius = 6;
+    } else if (isTablet) {
       svgW = 570;
-      seatRadius = 12;
+      seatRadius = 10;
     }
 
 
@@ -67,17 +85,20 @@ function SeatVisualisation({ pollingData }) {
     const tooltip = d3.select(tooltipRef.current);
 
     // Call parliament chart on the group
+    const rowHeight = seatRadius * 2.5;
+    const sectionGap = isMobile ? 22 : isTablet ? 33 : 44;
+
     const pc = parliamentChart()
       .width(svgW)
       .aggregatedData(aggregated)
       .sections(1)
-      .sectionGap(44)
+      .sectionGap(sectionGap)
       .seatRadius(seatRadius)
-      .rowHeight(35);
+      .rowHeight(rowHeight);
 
     g.call(pc);
 
-    const svgH = svgW / 2 + 44 / 4 + 16 + 20;
+    const svgH = svgW / 2 + sectionGap / 4 + 16 + 20;
     svg.attr("height", svgH);
 
     // Add tooltips to the rendered circles
@@ -99,8 +120,13 @@ function SeatVisualisation({ pollingData }) {
       .filter(([, s]) => s > 0)
       .sort((a, b) => b[1] - a[1]);
 
-    const legendG = svg.append("g").attr("transform", `translate(30, ${svgW / 2 + 44 / 4 + 16 + 30})`);
-    const colW = 145, rowH = 22, perCol = Math.ceil(legendData.length / 4);
+    const legendG = svg.append("g")
+    .attr("transform", `translate(30, ${svgW / 2 + sectionGap / 4 + 16 + 30})`);
+      
+    const maxCols = isSmallMobile ? 2 : isMobile ? 2 : isTablet ? 3 : 4;
+    const colW = Math.floor((svgW - 30) / maxCols);
+    const perCol = Math.ceil(legendData.length / maxCols);
+    const rowH = 20;
 
     legendData.forEach(([party, seats], i) => {
       const col = Math.floor(i / perCol);
@@ -115,8 +141,8 @@ function SeatVisualisation({ pollingData }) {
         .text(`${party} — ${seats}`);
     });
 
-    const legendRows = Math.ceil(legendData.length / 4);
-    svg.attr("height", svgW / 2 + 44 / 4 + 16 + 40 + legendRows * rowH);
+    const legendRows = Math.ceil(legendData.length / maxCols);
+    svg.attr("height", svgW / 2 + sectionGap / 4 + 16 + 40 + legendRows * rowH);
 
   }, [pollingData]);
 

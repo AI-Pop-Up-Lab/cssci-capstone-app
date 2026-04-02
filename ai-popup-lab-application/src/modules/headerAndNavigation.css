@@ -360,3 +360,42 @@ header.header-scrolled #hamburger-right::after{
     }
 
 }
+
+@media screen and (max-width: 450px) {
+    header > #header-left > h1{
+        font-size: 30px;
+    }
+
+    #nav-links > a{
+        font-size: 14px;
+    }
+
+    header.nav-menu-open > #header-left > p{
+        font-size: 10px;
+    }
+
+    header.header-scrolled > #header-left > h1{
+        font-size: 23px;
+    }
+
+    header{
+        min-height: 0px;
+    }
+    
+}
+
+@media screen and (max-width: 330px) {
+    header.nav-menu-open > #header-left > p{
+        font-size: 8px;
+        max-width: 180px;
+    }
+
+    header.nav-menu-open > #header-left > h1{
+        font-size: 20px;
+    }
+
+    #nav-links > a{
+        font-size: 12px;
+    }
+
+}

@@ -70,3 +70,22 @@
         width: 240px;
     }
 }
+
+@media screen and (max-width: 450px){
+    #footer-name{
+        font-size: 20px;
+    }
+
+    #footer-description{
+        font-size: 8px;
+        width: 160px;
+    }
+
+    #footer-left > a{
+        font-size: 10px;
+    }
+
+    .Footer{
+        height: 100px;
+    }
+}

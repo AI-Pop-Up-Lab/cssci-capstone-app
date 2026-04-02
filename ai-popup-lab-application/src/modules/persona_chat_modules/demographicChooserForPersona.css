@@ -46,3 +46,15 @@
     border: 0;
     /* text-transform: capitalize; */
 }
+
+@media screen and (max-width: 450px){
+    .DemographicChoiceDropdown > p{
+        font-size: 12px;
+    }
+
+    .DemographicChoiceDropdown > select{
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 2px 4px;
+    }
+}

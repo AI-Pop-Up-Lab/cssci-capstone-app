@@ -44,3 +44,23 @@
         width: 200px;
     }
 }
+
+@media screen and (max-width: 450px) {
+    #landing-intro > p{
+        font-size: 9px;
+        max-width: 90%;
+    }
+
+    #landing-intro > img{
+        display: none;
+    }
+
+    #landing-explorevotes{
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    #landing-intro{
+        margin-bottom: 80px;
+    }
+}
