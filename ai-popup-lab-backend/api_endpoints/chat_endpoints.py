@@ -292,6 +292,10 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
 
     # debug commands
     if request_body.message in chat_commands:
+
+        # remove ip from requestlist if command used
+        add_or_remove_user_requestlist('remove', ip)
+
         if request_body.message == '//biography':
             return {"message": biography}
 
