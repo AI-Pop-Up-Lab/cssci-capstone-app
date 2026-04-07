@@ -43,6 +43,8 @@ def get_AI_response(messages,  json_mode=False):
     )
     
     for chunk in response:
+        if not chunk.choices:  # ← skip empty chunks
+            continue
         delta = chunk.choices[0].delta
         if delta and delta.content:
             yield delta.content
