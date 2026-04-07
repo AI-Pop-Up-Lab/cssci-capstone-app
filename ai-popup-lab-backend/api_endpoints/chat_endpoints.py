@@ -33,11 +33,11 @@ chat_commands = ['//biography']
 
 
 # path for json file (on mounted files in deployment)
-biographies_path = '/mnt/data/biographies.json'
+# biographies_path = '/mnt/data/biographies.json'
 
 # path for json file in dev
-# base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
-# biographies_path = base_dir / "country_data" / "biographies.json"
+base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
+biographies_path = base_dir / "country_data" / "biographies.json"
 
 def _legacy_snapshot_id(country: str) -> str:
     return f"legacy_{(country or 'unknown').lower()}_bridge_v1"
@@ -277,21 +277,29 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
     persona_index = request_body.persona_details['index']
 
     persona_details = request_body.persona_details
+    persona_country = request_body.persona_country
 
     with open(biographies_path, 'r') as f:
         data = json.load(f)
 
-    if str(persona_index) in data:
-        biography = data[str(persona_index)]
+    # checking if country exists as root key in biographies data, and if not, adding it
+    if str(persona_country) not in data:
+        data[persona_country] = {}
+
+    if str(persona_index) in data[persona_country]:
+        biography = data[persona_country][str(persona_index)]
     else:
-        biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'])
-        data[str(persona_index)] = biography
+        biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'], country=persona_country)
+        data[persona_country][str(persona_index)] = biography
 
         with open(biographies_path, "w") as f:
             json.dump(data, f, indent=4, sort_keys=True)
 
     # debug commands
     if request_body.message in chat_commands:
+
+        add_or_remove_user_requestlist('remove', ip)
+
         if request_body.message == '//biography':
             return {"message": biography}
 
