@@ -13,9 +13,25 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
 
   const [selectedValues, setSelectedValues] = useState({});
 
-  // useEffect(() => {
-  //   console.log(selectedValues);
-  // }, [selectedValues])
+  const [columnToRename, setColumnToRename] = useState(null);
+  const [columnToRenameError, setColumnToRenameError] = useState(null); 
+
+  async function getColumnToRename(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/nextGE_col_name?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const next_GE_colname = response_data.column_to_rename;
+
+      setColumnToRename(next_GE_colname);
+      setColumnToRenameError(null);
+    } catch (err) {
+      setColumnToRenameError(err.message);
+      setColumnToRename(null);
+    }
+  };
 
   // function to get country sample data from backend
   async function getColumnsAndUniqueVals(countryName){
@@ -54,15 +70,18 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
 
   useEffect(() => {
     getColumnsAndUniqueVals(country);
+    getColumnToRename(country);
   }, []);
 
   // useEffect(() => {
   //   console.log(data);
   // }, [data]);
 
+  const allNotNull = (...args) => args.every(v => v != null);
+
   return (
     <div className="DemographicChooserForPersona">
-      {data ? 
+      {allNotNull(data, columnToRename) ? 
 
       (
         <>
@@ -72,6 +91,7 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
           column={column.replace(/_/g, ' ')} 
           choices={data.column_unique_vals[column]}
           onChange={(value) => handleDropdownChange(column, value)}
+          columnToRename={columnToRename}
           />
         ))}
         </>

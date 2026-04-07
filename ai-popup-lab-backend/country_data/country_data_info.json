@@ -1,11 +1,34 @@
 {
     "denmark": {
+        "stratification_frame_filename": "denmark_strat_frame.csv",
+        "daily_sample_filename": "denmark_daily_sample.csv",
+        "demographic_search_columns": [],
+        "column_unique_vals": {},      
+        "next_GE_vote_colname": null,
+        "all_placeholder": {},
+        "column_sentences": {},
+        "search_sentence_order": [],
+        "party_colours": {
 
+        },
+        "seat_allocation_function_name": null,
+        "total_seats": null
     },
 
     "sweden": {
         "stratification_frame_filename": "sweden_strat_frame.csv",
-        "daily_sample_filename": "sweden_daily_sample.csv"
+        "daily_sample_filename": "sweden_daily_sample.csv",
+        "demographic_search_columns": [],
+        "column_unique_vals": {},      
+        "next_GE_vote_colname": null,
+        "all_placeholder": {},
+        "column_sentences": {},
+        "search_sentence_order": [],
+        "party_colours": {
+
+        },
+        "seat_allocation_function_name": null,
+        "total_seats": null
     },
 
     "netherlands": {
@@ -13,6 +36,24 @@
         "daily_sample_filename": "netherlands_daily_sample.csv",
         "demographic_search_columns": ["municipality", "gender", "age_group", "education", "vote_2030"],
         "column_unique_vals": {"municipality": ["Zaltbommel", "Almere", "De Fryske Marren", "Sliedrecht", "Weert", "Pijnacker-Nootdorp", "Zwolle", "Venlo", "Vlissingen", "Maastricht", "Leeuwarden", "Horst aan de Maas", "Arnhem", "Ede", "Westland", "Westerkwartier", "Land van Cuijk", "'s-Hertogenbosch", "Heerlen", "Goeree-Overflakkee", "Deurne", "Helmond", "Hilversum", "Veenendaal", "Zaanstad", "Oisterwijk", "Rotterdam", "Haarlem", "'s-Gravenhage (gemeente)", "Eindhoven", "Brummen", "Gouda", "Woensdrecht", "Haaksbergen", "Woerden", "Steenbergen", "Nissewaard", "Enschede", "Kerkrade", "Maashorst", "Breda", "Waalwijk", "Katwijk", "West Maas en Waal", "Zutphen", "Amsterdam", "Rucphen", "Elburg", "Teylingen", "Groningen (gemeente)", "Schagen", "Hoogeveen", "Castricum", "Moerdijk", "Gorinchem", "Utrecht (gemeente)", "Rheden", "Hellendoorn", "Noardeast-Frysl\u00e2n", "Ommen", "De Ronde Venen", "Hof van Twente", "Gooise Meren", "Delft", "Renkum", "Alkmaar", "Roosendaal", "Heerenveen", "Sluis", "Dinkelland", "Deventer", "Hoorn", "Nijmegen", "Tilburg", "Assen", "Voorst", "Velsen", "Oldebroek", "Zwartewaterland", "Putten", "Eemsdelta", "Amersfoort", "Smallingerland", "Hoeksche Waard", "Oss", "Heemstede", "Rijswijk (ZH.)", "Halderberge", "Utrechtse Heuvelrug", "Lingewaard", "Vlaardingen", "Noordenveld", "Zeist", "Bergen op Zoom", "Veldhoven", "Apeldoorn", "Stede Broec", "Midden-Groningen", "S\u00fadwest-Frysl\u00e2n", "Brunssum", "Sittard-Geleen", "Nieuwegein", "Haarlemmermeer", "Emmen", "Nijkerk", "Staphorst", "Amstelveen", "Waalre", "Kampen", "Noordwijk", "Ermelo", "Het Hogeland", "Meierijstad", "Barendrecht", "Doetinchem", "Duiven", "Raalte", "Kaag en Braassem", "Epe", "Leiden", "Tytsjerksteradiel", "Leiderdorp", "Wijchen", "Gulpen-Wittem", "Roermond", "Venray", "Goes", "Bodegraven-Reeuwijk", "Eijsden-Margraten", "Weststellingwerf", "Papendrecht", "Neder-Betuwe", "Waddinxveen", "Heusden", "Roerdalen", "Edam-Volendam", "Reimerswaal", "Asten", "Wierden", "Veendam", "Zuidplas", "Schiedam", "Steenwijkerland", "Laarbeek", "Borne", "Westervoort", "Huizen", "Harderwijk", "Baarn", "Overbetuwe", "Krimpenerwaard", "Voorne aan Zee", "Den Helder", "Geldrop-Mierlo", "Maassluis", "Heumen", "Wassenaar", "Oost Gelre", "Tubbergen", "Zoetermeer", "Bernheze", "Tynaarlo", "Oude IJsselstreek", "Dijk en Waard", "Zevenaar", "Almelo", "Valkenburg aan de Geul", "Alphen aan den Rijn", "Stadskanaal", "Oosterhout", "Leusden", "Enkhuizen", "Opsterland", "Beverwijk", "Culemborg", "Borger-Odoorn", "Leudal", "Stichtse Vecht", "IJsselstein", "Beekdaelen", "Ridderkerk", "Soest", "Lisse", "Twenterand", "West Betuwe", "Coevorden", "Losser", "Dantumadiel", "Westerveld", "Hengelo (O.)", "Oldambt", "Bloemendaal", "Winterswijk", "Beuningen", "Stein (L.)", "Wageningen", "Zwijndrecht", "Purmerend", "Lansingerland", "Achtkarspelen", "Maasdriel", "Waadhoeke", "Peel en Maas", "Hillegom", "Medemblik", "Dordrecht", "Oirschot", "Montferland", "Berkelland", "Drimmelen", "De Bilt", "Hulst", "Cranendonck", "Hendrik-Ido-Ambacht", "Borsele", "Drechterland", "Heemskerk", "Veere", "Lelystad", "Midden-Drenthe", "Ooststellingwerf", "Dongen", "Tiel", "Wijk bij Duurstede", "Nieuwkoop", "Rhenen", "Hardenberg", "Barneveld", "Loon op Zand", "Bunschoten", "Capelle aan den IJssel", "Houten", "Maasgouw", "Bergen (L.)", "De Wolden", "Diemen", "Heiloo", "Molenlanden", "Oldenzaal", "Vught", "Bunnik", "Bronckhorst", "Wijdemeren", "Midden-Delfland", "Eersel", "Westerwolde", "Aalsmeer", "Valkenswaard", "Nunspeet", "Someren", "Lochem", "Terneuzen", "Etten-Leur", "Sint-Michielsgestel", "Bladel", "Altena", "Zeewolde", "Zundert", "Albrandswaard", "Dalfsen", "Noordoostpolder", "Rijssen-Holten", "Landgraaf", "Leidschendam-Voorburg", "Oegstgeest", "Hollands Kroon", "Middelburg (Z.)", "Gilze en Rijen", "Vijfheerenlanden", "Heerde", "Goirle", "Schouwen-Duiveland", "Echt-Susteren", "Voorschoten", "Meppel", "Boxtel", "Olst-Wijhe", "Berg en Dal", "Tholen", "Urk", "Uithoorn", "Geertruidenberg", "Aa en Hunze", "Wormerland", "Beesel", "Hilvarenbeek", "Best", "Son en Breugel", "Gennep", "Krimpen aan den IJssel", "Aalten", "Gemert-Bakel", "Nuenen, Gerwen en Nederwetten", "Alblasserdam", "Bergeijk"], "gender": ["male", "female"], "age_group": ["45-55", "15-25", "55-65", "25-35", "35-45", "65-75"], "education": ["Hbo-, wo-bachelor", "Havo, vwo, mbo2-4", "Vmbo, havo-/vwo-onderbouw, mbo1", "Basisonderwijs", "Hbo-, wo-master, doctor"], "vote_2030": ["VVD", "Did not vote", "CDA", "50PLUS", "SP", "D66", "GL-PvdA", "PVV", "BBB", "PvdD", "FNP", "SGP", "Other"]},
-        "next_GE_vote_colname": "vote_2030"
+        "next_GE_vote_colname": "vote_2030",
+        "all_placeholder": {"municipality": "all municipalities", "gender": "all genders", "age_group": "all ages", "education": "all education levels"},
+        "column_sentences": {"municipality": "from REPLACE", "gender": "REPLACE", "age_group": "aged REPLACE", "education": "with REPLACE education"},
+        "search_sentence_order": ["gender", "age_group", "education", "municipality"],
+        "party_colours": {
+            "D66": "#2cc800",
+            "CDA": "#339933",
+            "VVD": "#0e2783",
+            "50PLUS": "#ccaa88",
+            "SP": "#FF0000",
+            "GL-PvdA": "#44ff00",
+            "PVV": "#bbbbbb",
+            "PvdD": "#44aa44",
+            "FNP": "#000080",
+            "BBB": "#80FF00",
+            "SGP": "#FFA500"
+        },
+        "seat_allocation_function_name": "dhondt",
+        "total_seats": 150
     }
 }

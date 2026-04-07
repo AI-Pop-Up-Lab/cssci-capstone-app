@@ -1,16 +1,45 @@
 import { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import './demographicCharts.css';
-import partyColours from '../../assets/partyColours';
+import axios from "axios";
+// import partyColours from '../../assets/partyColours';
 import DemographicChooser from './demographicChooser';
+
 
 function DemographicCharts({ pollingData, country }) {
   const svgRef = useRef();
   const tooltipRef = useRef();
   const [chosenDemographic, setChosenDemographic] = useState(null);
 
+  const [partyColours, setPartyColours] = useState(null);
+  const [partyColoursError, setPartyColoursError] = useState(null); 
+
+  async function getPartyColours(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const partyColoursData = response_data.party_colours;
+
+      setPartyColours(partyColoursData);
+      setPartyColoursError(null);
+    } catch (err) {
+      setPartyColoursError(err.message);
+      setPartyColours(null);
+    }
+  };
+
+  useEffect(() => {
+
+    getPartyColours(country);
+
+  }, [country]);
+
   useEffect(() => {
     if (!pollingData || pollingData.length === 0) return;
+    if (!partyColours) return;
 
     let isTablet = false;
     let isMobile = false;
@@ -160,7 +189,7 @@ function DemographicCharts({ pollingData, country }) {
       .transition().delay(600).duration(200)
       .attr("opacity", 1);
 
-  }, [pollingData, chosenDemographic]);
+  }, [pollingData, chosenDemographic, partyColours]);
 
   return (
     <div className="DemographicCharts">

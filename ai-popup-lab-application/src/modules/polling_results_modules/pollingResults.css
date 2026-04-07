@@ -21,47 +21,47 @@
   margin: 5px 0;
 }
 
-#exportButton{
+.exportButton{
   background-color: #334E58;
   border-radius: 34px;
   padding: 12px 30px;
   transition: background-color 0.2s;
-  width: 250px;
+  width: 220px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-bottom: 20px;
+  margin: 20px 5px;
 }
 
-#exportButton > p{
+.exportButton > p{
   color: #FCBFB7;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
 }
 
-#exportButton > img{
-  width: 30px;
-  height: 30px;
-  margin-left: 15px;
+.exportButton > img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
   filter: invert(76%) sepia(11%) saturate(871%) hue-rotate(318deg) brightness(105%) contrast(98%);
 }
 
-#exportButton:hover{
+.exportButton:hover{
   cursor: pointer;
   background-color: #2b4149;
 }
 
 @media screen and (max-width: 450px) {
-  #exportButton{
+  .exportButton{
     padding: 6px 15px;
     width: 140px;
   }
 
-  #exportButton > p{
+  .exportButton > p{
     font-size: 10px;
   }
 
-  #exportButton > img{
+  .exportButton > img{
     width: 15px;
     height: 15px;
     margin-left: 8px;

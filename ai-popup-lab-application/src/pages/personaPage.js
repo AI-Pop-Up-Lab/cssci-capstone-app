@@ -6,7 +6,7 @@ import './personaPage.css';
 import PersonaChatExample from '../modules/personaChatExample.js';
 import DemographicChooserForPersona from '../modules/persona_chat_modules/demographicChooserForPersona.js';
 import PersonaChooser from "../modules/persona_chat_modules/personaChooser.js";
-
+import CountrySwitch from '../modules/countrySwitch';
 
 import Loader from "../modules/loader";
 
@@ -53,7 +53,12 @@ function PersonaPage() {
   return (
     <div className="PersonaPage">
 
-      <PersonaChatExample includeLink={false} />
+      <CountrySwitch setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
+
+      { selectedCountry && 
+        <PersonaChatExample includeLink={false} country={selectedCountry} />
+      }
+
 
       <div id="persona-selection">
         <div id="selection-explanation">

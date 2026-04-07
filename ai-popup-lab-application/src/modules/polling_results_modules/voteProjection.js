@@ -1,9 +1,10 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import './voteProjection.css';
+import axios from "axios";
 import partyColours from '../../assets/partyColours';
 
-function VoteProjection({ pollingData }) {
+function VoteProjection({ pollingData, country }) {
   const svgRef = useRef();
   const tooltipRef = useRef();
 
@@ -12,8 +13,35 @@ function VoteProjection({ pollingData }) {
   const voted = total - didNotVote;
   const turnoutPct = total > 0 ? ((voted / total) * 100).toFixed(1) : 0;
 
+  const [partyColours, setPartyColours] = useState(null);
+  const [partyColoursError, setPartyColoursError] = useState(null); 
+
+  async function getPartyColours(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const partyColoursData = response_data.party_colours;
+
+      setPartyColours(partyColoursData);
+      setPartyColoursError(null);
+    } catch (err) {
+      setPartyColoursError(err.message);
+      setPartyColours(null);
+    }
+  };
+
+  useEffect(() => {
+
+    getPartyColours(country);
+
+  }, [country]);
+
   useEffect(() => {
     if (!pollingData || pollingData.length === 0) return;
+    if (!partyColours) return;
 
     let isTablet = false;
     let isMobile = false;
@@ -145,7 +173,7 @@ function VoteProjection({ pollingData }) {
       .transition().delay(800).duration(200)
       .attr("opacity", 1);
 
-  }, [pollingData]);
+  }, [pollingData, partyColours]);
 
   return (
     <div className="VoteProjection">

@@ -12,12 +12,13 @@ import DemographicCharts from './demographicCharts';
 import Loader from "../loader";
 
 
-function PollingResults() {
+function PollingResults({ selectedCountry, setSelectedCountry }) {
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
-  const [selectedCountry, setSelectedCountry] = useState("netherlands"); // setting default selected/selectable country as netherlands for now (in final product there will be a dropdown)
+  const [stratFrameData, setStratFrameData] = useState(null);
+  const [stratFrameDataError, setStratFrameDataError] = useState(null);
 
   const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState({});
 
@@ -43,6 +44,18 @@ function PollingResults() {
     }
   };
 
+  async function getCountryStratFrame(countryName){
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/country_stratification_frame?country=${countryName}`);
+      
+      setStratFrameData(response.data);
+      setStratFrameDataError(null);
+    } catch (err) {
+      setStratFrameDataError(err.message);
+      setStratFrameData(null);
+    }
+  };
+
   // use to log data when data variable changes if wanted
   // useEffect(() => {
   //   console.log(data);
@@ -50,13 +63,14 @@ function PollingResults() {
 
   useEffect(() => {
     getCountrySample(selectedCountry);
+    getCountryStratFrame(selectedCountry);
   }, []);
 
   const responseData = useMemo(() => data?.data ?? [], [data]);
+  const stratFrameResponseData = useMemo(() => stratFrameData?.data ?? [], [stratFrameData]);
 
 
-
-  function exportToCSV(data, filename = 'data.csv') {
+  function exportToCSV(data, filename='data.csv') {
     const headers = Object.keys(data[0]);
     const rows = data.map(obj => headers.map(h => `"${obj[h]}"`).join(','));
     const csv = [headers.join(','), ...rows].join('\n');
@@ -73,16 +87,24 @@ function PollingResults() {
   return (
     <div className="PollingResults">
 
-      {data ? <VoteProjection pollingData={responseData} /> : <Loader />}
+      {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
       <div id="polling-divider"></div>
-      {data ? <SeatVisualisation pollingData={responseData} /> : <Loader />}
+      {data ? <SeatVisualisation pollingData={responseData} country={selectedCountry} /> : <Loader />}
       <div id="polling-divider"></div>
       {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
       {/* {data ? <PollingMap /> : <Loader />} */}
 
-      <div id="exportButton" onClick={() => {exportToCSV(responseData)}}>
-        <p>Export data</p>
-        <img src={exportIcon}></img>
+      <div id="polling-divider"></div>
+
+      <div id="exportButtons">
+        <div className="exportButton" onClick={() => {exportToCSV(responseData, `${selectedCountry}_sample_data.csv`)}}>
+          <p>Export sample data</p>
+          <img src={exportIcon}></img>
+        </div>
+        <div className="exportButton" onClick={() => {exportToCSV(stratFrameResponseData, `${selectedCountry}_frame_data.csv`)}}>
+          <p>Export frame data</p>
+          <img src={exportIcon}></img>
+        </div>
       </div>
 
       <div id="polling-divider"></div>

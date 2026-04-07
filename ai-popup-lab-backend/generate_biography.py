@@ -54,7 +54,6 @@ def generate_bio_prompt(age_group, gender, vote_2030, education, municipality):
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_MODEL = os.getenv("AZURE_OPENAI_MODEL")
 AZURE_OPENAI_BASE_URL = os.getenv("AZURE_OPENAI_BASE_URL")
-print(AZURE_OPENAI_BASE_URL)
 
 
 def get_AI_response(messages,  json_mode=False):

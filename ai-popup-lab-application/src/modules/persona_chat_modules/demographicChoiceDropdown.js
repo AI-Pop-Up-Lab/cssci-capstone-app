@@ -1,15 +1,12 @@
 import { useEffect } from 'react';
+import axios from "axios";
 import '../polling_results_modules/demographicChooser.css';
 
-function DemographicChoiceDropdown({column, choices, onChange}) {
+function DemographicChoiceDropdown({column, choices, onChange, columnToRename}) {
 
     let modifiedColumn;
 
-    // useEffect(() => {
-    //     console.log(column)
-    // }, [column])
-
-    if(column == 'vote 2030'){
+    if(column == columnToRename){
         modifiedColumn = 'next GE vote'
     }else{
         modifiedColumn = column;

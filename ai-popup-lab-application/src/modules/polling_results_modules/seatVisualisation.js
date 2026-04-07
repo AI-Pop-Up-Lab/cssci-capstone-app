@@ -2,15 +2,17 @@ import { useState, useRef, useEffect } from "react";
 import * as d3 from "d3";
 import { parliamentChart } from 'd3-parliament-chart';
 import './seatVisualisation.css';
-import partyColours from '../../assets/partyColours';
+import axios from "axios";
+// import partyColours from '../../assets/partyColours';
 
 // const TOTAL_SEATS = 150;
 
 // D'Hondt proportional seat allocation
-function dhondt(votes, total_seats) {
+function dhondt(votes, totalSeats) {
+
   const seats = {};
   Object.keys(votes).forEach(p => { seats[p] = 0; });
-  for (let i = 0; i < total_seats; i++) {
+  for (let i = 0; i < totalSeats; i++) {
     const winner = Object.entries(votes).reduce((best, [party, v]) => {
       const score = v / (seats[party] + 1);
       return score > best.score ? { party, score } : best;
@@ -20,12 +22,92 @@ function dhondt(votes, total_seats) {
   return seats;
 }
 
-function SeatVisualisation({ pollingData, total_seats = 150 }) {
+function chooseSeatAllocationFunction(method) {
+  if(method === 'dhondt'){
+    return dhondt;
+  } else{
+    return dhondt; // cause don't have any other method specified yet
+  }
+};
+
+function SeatVisualisation({ pollingData, country }) {
+
+  const [total_seats, set_total_seats] = useState(null);
+  const [total_seats_error, set_total_seats_error] = useState(null);
+
+  const [partyColours, setPartyColours] = useState(null);
+  const [partyColoursError, setPartyColoursError] = useState(null); 
+
+  const [seatAllocationMethod, setSeatAllocationMethod] = useState(null);
+  const [seatAllocationMethodError, setSeatAllocationMethodError] = useState(null); 
+
   const svgRef = useRef(null);
   const tooltipRef = useRef(null);
 
+  async function getTotalSeats(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/total_seats?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const total_seats_data = response_data.total_seats;
+
+      set_total_seats(total_seats_data);
+      set_total_seats_error(null);
+    } catch (err) {
+      set_total_seats_error(err.message);
+      set_total_seats(null);
+    }
+  };
+
+  async function getPartyColours(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const partyColoursData = response_data.party_colours;
+
+      setPartyColours(partyColoursData);
+      setPartyColoursError(null);
+    } catch (err) {
+      setPartyColoursError(err.message);
+      setPartyColours(null);
+    }
+  };
+
+  async function getSeatAllocationMethod(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/seat_allocation_method?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const seatAllocationMethodData = response_data.seat_allocation_method;
+
+      setSeatAllocationMethod(seatAllocationMethodData);
+      setSeatAllocationMethodError(null);
+    } catch (err) {
+      setSeatAllocationMethodError(err.message);
+      setSeatAllocationMethod(null);
+    }
+  };
+
+  useEffect(() => {
+
+    getTotalSeats(country);
+    getPartyColours(country);
+    getSeatAllocationMethod(country);
+
+  }, [country]);
+
   useEffect(() => {
     if (!pollingData || pollingData.length === 0 || !svgRef.current) return;
+    if (!total_seats || !partyColours || !seatAllocationMethod) return;
+
+    const seatAllocationFunction = chooseSeatAllocationFunction(seatAllocationMethod);
 
     const renderChart = () => {
       const voteCounts = {};
@@ -36,21 +118,9 @@ function SeatVisualisation({ pollingData, total_seats = 150 }) {
         }
       });
 
-      const seatsByParty = dhondt(voteCounts, total_seats);
+      const seatsByParty = seatAllocationFunction(voteCounts, total_seats);
 
-      const SPECTRUM = [
-        "GL-PvdA",
-        "SP",
-        "PvdD",
-        "D66",
-        "FNP",
-        "BBB",
-        "CDA",
-        "VVD",
-        "SGP",
-        "PVV",
-        "50PLUS",
-      ];
+      const SPECTRUM = Object.keys(partyColours); 
 
       const aggregated = Object.entries(seatsByParty)
         .filter(([, seats]) => seats > 0)
@@ -164,7 +234,7 @@ function SeatVisualisation({ pollingData, total_seats = 150 }) {
     return () => {
       window.removeEventListener("resize", renderChart);
     };
-  }, [pollingData, total_seats]);
+  }, [pollingData, total_seats, partyColours, seatAllocationMethod]);
 
   return (
     <div className="SeatVisualisation">

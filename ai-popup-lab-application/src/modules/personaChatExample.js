@@ -6,7 +6,24 @@ import personaPic_1 from '../assets/svgs/personaPic_1.svg'
 import personaPic_2 from '../assets/svgs/personaPic_2.svg'
 import linkArrow from '../assets/images/linkArrow.png'
 
-function PersonaChatExample({includeLink}) {
+function PersonaChatExample({includeLink, country}) {
+
+  function modifyCountryNameEdgeCases(country){
+    let modifiedCountry;
+
+    if(country === 'netherlands'){
+      modifiedCountry = 'the Netherlands';
+    }else{
+      modifiedCountry = country;
+    }
+
+    return modifiedCountry
+  }
+
+  let modifiedCountry = modifyCountryNameEdgeCases(country)
+  modifiedCountry = modifiedCountry.charAt(0).toUpperCase() + modifiedCountry.slice(1);
+
+
   return (
     <div className="PersonaChatExample unbounded-weight300">
         <div id='land-expl-pers-top'>
@@ -31,13 +48,13 @@ function PersonaChatExample({includeLink}) {
           <div id="example-persona-chat">
             <div id='example-user-message-container'>
               <div id="example-user-message">
-                <p>How do you feel about current economic situation in The Netherlands?</p>
+                <p>How do you feel about current economic situation in {modifiedCountry}?</p>
                 <div id="example-user-message-bubbletick"></div>
               </div>
             </div>
             <div id='example-response-message-container'>
               <div id="example-response-message">
-                <p>Honestly, it feels pretty stressful right now. As someone who’s unemployed, it seems like everything is getting more expensive while finding stable work is still tough. I worry a lot about paying rent and basic things like groceries. The Netherlands is still a good country in many ways, but the economic situation makes it feel uncertain and a bit overwhelming sometimes.</p>
+                <p>Honestly, it feels pretty stressful right now. As someone who’s unemployed, it seems like everything is getting more expensive while finding stable work is still tough. I worry a lot about paying rent and basic things like groceries. {modifiedCountry} is still a good country in many ways, but the economic situation makes it feel uncertain and a bit overwhelming sometimes.</p>
                 <div id="example-response-message-bubbletick"></div>
               </div>
             </div>

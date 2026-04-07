@@ -37,7 +37,25 @@ def get_country_sample(country: str):
 
     return {"data": dict_list_for_js}
 
-# GET endpoint to retrieve sample data for a specific country
+# GET endpoint to retrieve stratification frame for a specific country
+@router.get("/country_stratification_frame")
+def get_country_stratification_frame(country: str):
+
+    # checking if requested country is in data
+    if country not in root_keys:
+        return {"error": "Country not found in data."}
+
+    country_frame_filename = country_data[country]['stratification_frame_filename']
+    country_frame_path = base_dir / "country_data" / 'stratification_frames' / country_frame_filename
+
+    # reading csv to dataframe then converting to list of dicts for json response
+    df = pd.read_csv(country_frame_path)
+    df = df.astype(object).where(pd.notna(df), other=None)
+    dict_list_for_js = df.to_dict(orient="records")  # returns a list of row objects
+
+    return {"data": dict_list_for_js}
+
+# GET endpoint to retrieve columns and respective unique values for a specific country
 @router.get("/columns_and_uniques")
 def get_country_cols_uniques(country: str):
 
