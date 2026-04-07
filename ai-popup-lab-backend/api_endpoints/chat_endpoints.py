@@ -263,8 +263,12 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
 
     def stream_generator():
         try:
+            """
             if ip != 'dev-ip':
                 response_friction(15)
+
+                disabled for now so that response streaming works, and other safeguards for attacks are in place such as limiting messages to 25 per day, and only allowing one request at a time
+            """
             for chunk in generate_response(
                 persona_biography=biography,
                 user_message=request_body.message,
@@ -334,8 +338,8 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
         add_or_remove_user_requestlist('remove', ip)
         return {"message": "Sorry, there was an error generating the response. Please try again."}
 
-    if ip != 'dev-ip':
-        response_friction(15) #wait 15 secs to give response
+    # if ip != 'dev-ip':
+        # response_friction(15) #wait 15 secs to give response
 
     add_or_remove_user_requestlist('remove', ip)
 
