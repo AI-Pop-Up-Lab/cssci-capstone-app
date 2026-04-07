@@ -58,7 +58,8 @@ def add_or_remove_user_requestlist(add_or_remove, ip):
         ongoing_request_ips.append(ip)
 
     elif add_or_remove.lower() == "remove":
-        ongoing_request_ips.remove(ip)
+        if ip in ongoing_request_ips:
+            ongoing_request_ips.remove(ip)
     else:
         return ValueError
 

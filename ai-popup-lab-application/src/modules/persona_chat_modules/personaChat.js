@@ -22,29 +22,57 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
   const { index, ...personaWithoutIndex } = personaDetails;
 
   // function to post message and receive message from backend
-  async function sendAndReceiveMessage(persona, country, message){
+  async function sendAndReceiveMessage(persona, country, message) {
     try {
-
       const chat_history = gatherChatHistory();
 
-      // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/chat/chat_message`, {
-        message: message,
-        persona_details: persona,
-        persona_country: country,
-        chat_history: chat_history
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/chat/chat_message`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: message,
+          persona_details: persona,
+          persona_country: country,
+          chat_history: chat_history
+        })
       });
-      
-      setData(response.data);
-      setError(null);
 
+      // instead of using awaiting bubble, using an empty persona message
       setMessages(prev => prev.slice(0, -1));
-      addMessage("persona", response.data.message)
+      addMessage("persona", "");
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const raw = decoder.decode(value);
+        const lines = raw.split("\n\n").filter(Boolean);
+
+        for (const line of lines) {
+          if (!line.startsWith("data: ")) continue;
+          const payload = line.slice(6);
+          if (payload === "[DONE]") break;
+
+          const { text } = JSON.parse(payload);
+
+          // append each chunk to the last message
+          setMessages(prev => {
+            const updated = [...prev];
+            const last = updated[updated.length - 1];
+            updated[updated.length - 1] = { ...last, text: (last.text || "") + text };
+            return updated;
+          });
+        }
+      }
+
+      setError(null);
     } catch (err) {
       setError(err.message);
-      setData(null);
       setMessages(prev => prev.slice(0, -1));
-    } finally{
+    } finally {
       setWaitingForResponse(false);
     }
   };

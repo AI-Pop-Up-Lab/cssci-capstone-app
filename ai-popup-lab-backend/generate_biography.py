@@ -48,7 +48,7 @@ BIO_SYS_PROMPT = (
 def generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country):
     age = random.randint(int(age_group.split("-")[0]), int(age_group.split("-")[1]))
     if age < 18: age = 18
-    return f"You are a {age} year old {gender}. You have a {education} education and live in {municipality}, in the country {country}. If the 2030 Dutch general election (the next general election) were held today, you will vote for {vote_2030}. Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of yourself following the rules above."
+    return f"You are a {age} year old {gender}. You have a {education} education and live in {municipality}, in the country {country}. If the next general election (the next general election) were held today, you will vote for {vote_2030}. Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of yourself following the rules above."
 
 
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
