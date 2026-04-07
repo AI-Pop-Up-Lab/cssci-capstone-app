@@ -31,14 +31,21 @@ def get_AI_response(messages,  json_mode=False):
     api_key=AZURE_OPENAI_API_KEY,
     base_url=AZURE_OPENAI_BASE_URL
     )
+
     format_type = {"type": "json_object"} if json_mode else None
+
     response = client.chat.completions.create(
         model=AZURE_OPENAI_MODEL,
         messages=messages,
         response_format=format_type,
-        temperature=0.67
+        temperature=0.67,
+        stream=True
     )
-    return response.choices[0].message.content
+    
+    for chunk in response:
+        delta = chunk.choices[0].delta
+        if delta and delta.content:
+            yield delta.content
 
 def create_system_prompt(biography):
     return f'{RESPONSE_SYS_PROMPT}\n{biography}'

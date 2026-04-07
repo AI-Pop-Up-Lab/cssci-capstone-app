@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Request
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from app.db.conn import get_persona_conn
@@ -256,6 +257,24 @@ def api_get_session(session_id: str):
 @router.post("/chat/chat_message")
 async def personaResponse(request: Request, request_body: LegacyChatMessage):
 
+    """
+    FUNCTION BELOW IS FOR STREAMING THE LLM RESPONSE BACK TO THE FRONTEND, AND ALSO INCLUDES LOGIC FOR CHECKING IF THE USER HAS AN ONGOING REQUEST OR HAS REACHED THEIR LIMIT FOR THE DAY, AS WELL AS LOGIC FOR GENERATING THE BIOGRAPHY IF IT DOES NOT ALREADY EXIST IN THE JSON FILE.
+    """
+
+    def stream_generator():
+        try:
+            if ip != 'dev-ip':
+                response_friction(15)
+            for chunk in generate_response(
+                persona_biography=biography,
+                user_message=request_body.message,
+                chat_history=request_body.chat_history
+            ):
+                yield f"data: {json.dumps({'text': chunk})}\n\n"
+        finally:
+            add_or_remove_user_requestlist('remove', ip)
+        yield "data: [DONE]\n\n"
+
     if os.getenv('ENV') == 'development':
         ip = "dev-ip"
     else:
@@ -289,7 +308,12 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
     if str(persona_index) in data[persona_country]:
         biography = data[persona_country][str(persona_index)]
     else:
-        biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'], country=persona_country)
+        try:
+            biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'], country=persona_country)
+        except:
+            add_or_remove_user_requestlist('remove', ip)
+            return {"message": "Sorry, there was an error generating the persona biography. Please try again."}
+        
         data[persona_country][str(persona_index)] = biography
 
         with open(biographies_path, "w") as f:
@@ -304,11 +328,19 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
         if request_body.message == '//biography':
             return {"message": biography}
 
-    response = generate_response(persona_biography=biography, user_message=request_body.message, chat_history=request_body.chat_history)
+    try:
+        response = generate_response(persona_biography=biography, user_message=request_body.message, chat_history=request_body.chat_history)
+    except:
+        add_or_remove_user_requestlist('remove', ip)
+        return {"message": "Sorry, there was an error generating the response. Please try again."}
 
     if ip != 'dev-ip':
         response_friction(15) #wait 15 secs to give response
 
     add_or_remove_user_requestlist('remove', ip)
 
-    return {"message": response}
+    return StreamingResponse(
+        stream_generator(),
+        media_type="text/event-stream",
+        headers={"X-Accel-Buffering": "no"}  # important if behind nginx
+    )
