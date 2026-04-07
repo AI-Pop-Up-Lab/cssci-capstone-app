@@ -277,15 +277,20 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
     persona_index = request_body.persona_details['index']
 
     persona_details = request_body.persona_details
+    persona_country = request_body.persona_country
 
     with open(biographies_path, 'r') as f:
         data = json.load(f)
 
-    if str(persona_index) in data:
-        biography = data[str(persona_index)]
+    # checking if country exists as root key in biographies data, and if not, adding it
+    if str(persona_country) not in data:
+        data[persona_country] = {}
+
+    if str(persona_index) in data[persona_country]:
+        biography = data[persona_country][str(persona_index)]
     else:
-        biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'])
-        data[str(persona_index)] = biography
+        biography = generate_biography(age_group=persona_details['age_group'], gender=persona_details['gender'], vote_2030=persona_details['vote_2030'], education=persona_details['education'], municipality=persona_details['municipality'], country=persona_country)
+        data[persona_country][str(persona_index)] = biography
 
         with open(biographies_path, "w") as f:
             json.dump(data, f, indent=4, sort_keys=True)

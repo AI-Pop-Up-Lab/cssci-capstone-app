@@ -45,10 +45,10 @@ BIO_SYS_PROMPT = (
 )
 
 
-def generate_bio_prompt(age_group, gender, vote_2030, education, municipality):
+def generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country):
     age = random.randint(int(age_group.split("-")[0]), int(age_group.split("-")[1]))
     if age < 18: age = 18
-    return f"You are a {age} year old {gender}. You have a {education} education and live in {municipality}. If the 2030 Dutch general election (the next general election) were held today, you will vote for {vote_2030}. Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of yourself following the rules above."
+    return f"You are a {age} year old {gender}. You have a {education} education and live in {municipality}, in the country {country}. If the 2030 Dutch general election (the next general election) were held today, you will vote for {vote_2030}. Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of yourself following the rules above."
 
 
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
@@ -71,7 +71,7 @@ def get_AI_response(messages,  json_mode=False):
     )
     return response.choices[0].message.content
 
-def generate_biography(age_group, gender, vote_2030, education, municipality):
-    prompt = generate_bio_prompt(age_group, gender, vote_2030, education, municipality)
+def generate_biography(age_group, gender, vote_2030, education, municipality, country):
+    prompt = generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country)
     messages = [{"role":"system", "content":BIO_SYS_PROMPT},{"role":"user","content":prompt}]
     return get_AI_response(messages)
