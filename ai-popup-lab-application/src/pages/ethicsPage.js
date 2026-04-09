@@ -16,27 +16,27 @@ function EthicsPage() {
 
   const cardValues = [
     {
-      name: "Algorithmic Bias",
+      name: "Algorithmic Fairness",
       text: "Post-stratification weighting is applied to align synthetic outputs with real population distributions. Red-teaming tests are run to identify systematic distortions before deployment.",
       icon: biasIcon
     },
     {
-      name: "Privacy / Consent",
+      name: "Ethical Data Use",
       text: "Survey data is collected under informed consent protocols following ethical research standards. No personally identifiable information is used in persona construction.",
       icon: privacyIcon
     },
     {
-      name: "Epistemic Harm",
+      name: "Epistemic Responsibility",
       text: "Persona responses are designed to be grounded in stored survey answers, with citation indicators built into the response pipeline. Weak evidence warnings appear automatically when outputs are based on small subgroups.",
       icon: epistemicIcon
     },
     {
-      name: "Democratic Harm",
+      name: "Preventing Democratic Harm",
       text: "The tool is designed to democratise access to polling insights, helping users understand why different voter groups hold the views they do. Synthetic status is permanently visible throughout all interactions to prevent misuse.",
       icon: democracyIcon
     },
     {
-      name: "Representational Harm",
+      name: "Fair Representation",
       text: 'Each demographic group includes multiple personas to show the range of views within it, not just one "typical" voter. Avatars are kept abstract as a reminder that these are simulations, not real people.',
       icon: representationIcon
     },
@@ -46,12 +46,12 @@ function EthicsPage() {
       icon: transparencyIcon
     },
     {
-      name: "Security / Robustness",
+      name: "Robustness & Security",
       text: "Automated checks run before and after every response to catch misuse or out-of-scope inputs. The system is regularly stress-tested to find and fix weaknesses.",
       icon: securityIcon
     },
     {
-      name: "Governance",
+      name: "Transparent Governance",
       text: "Who funds the project and the ethical principles behind it are publicly listed in our section on Funding. All changes to the system are logged so decisions can be reviewed and held accountable.",
       icon: governanceIcon
     }

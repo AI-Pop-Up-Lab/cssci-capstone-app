@@ -22,7 +22,7 @@ function HeaderAndNavigation() {
 
         <div id='header-left'>
           <h1 className="unbounded-weight300">AI POLLSTER</h1>
-          <p className="unbounded-weight300">Reporting survey-style opinion estimates generated from synthetic personas</p>
+          <p className="unbounded-weight300">Estimating public opinion from synthetic personae</p>
         </div>
 
         <div id='header-right'>
@@ -37,8 +37,8 @@ function HeaderAndNavigation() {
             <div id='nav-links' className='unbounded-weight400'>
               <Link to="/" onClick={() => setNavOpen(!navOpen)}>homepage</Link>
               <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>persona explorer</Link>
-              <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethics</Link>
               <Link to="/about" onClick={() => setNavOpen(!navOpen)}>about us</Link>
+              <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethics</Link>
             </div>
           </div>
 

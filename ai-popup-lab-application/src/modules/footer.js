@@ -17,7 +17,7 @@ function Footer() {
       </div>
       <div id="footer-right">
         <p id="footer-name">AI POLLSTER</p>
-        <p id="footer-description">Reporting survey-style opinion estimates generated from synthetic personas</p>
+        <p id="footer-description">Estimating public opinion from synthetic personae</p>
       </div>
     </div>
   );

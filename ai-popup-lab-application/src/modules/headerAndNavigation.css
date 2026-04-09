@@ -359,6 +359,16 @@ header.header-scrolled #hamburger-right::after{
         padding-top: 30px;
     }
 
+    #nav-links > a{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 540px){
+    #nav-links > a{
+        font-size: 17px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -384,7 +394,19 @@ header.header-scrolled #hamburger-right::after{
     
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 420px){
+    #nav-links > a{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #nav-links > a{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
     header.nav-menu-open > #header-left > p{
         font-size: 8px;
         max-width: 180px;
@@ -395,7 +417,7 @@ header.header-scrolled #hamburger-right::after{
     }
 
     #nav-links > a{
-        font-size: 12px;
+        font-size: 10px;
     }
 
 }
