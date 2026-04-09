@@ -18,6 +18,12 @@ function VoteProjection({ pollingData, country }) {
   const [partyColours, setPartyColours] = useState(null);
   const [partyColoursError, setPartyColoursError] = useState(null); 
 
+  const [partyInfo, setPartyInfo] = useState(null);
+  const [partyInfoError, setPartyInfoError] = useState(null); 
+
+  const [partyInfoAlternative, setPartyInfoAlternative] = useState(null);
+  const [partyInfoAlternativeError, setPartyInfoAlternativeError] = useState(null); 
+
   const [nextGEcolname, setNextGEcolname] = useState(null);
   const [nextGEcolnameError, setNextGEcolnameError] = useState(null); 
 
@@ -55,13 +61,42 @@ function VoteProjection({ pollingData, country }) {
     }
   };
 
+  async function getPartyInfo(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_info?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const partyInfoData = response_data.data;
+      const partyInfoAlternativeData = response_data.alternative_data;
+
+      setPartyInfo(partyInfoData);
+      setPartyInfoAlternative(partyInfoAlternativeData);
+      setPartyInfoError(null);
+    } catch (err) {
+      setPartyInfo(null);
+      setPartyInfoAlternative(null);
+      setPartyInfoError(err);
+    }
+  };
+
+  useEffect(() => {
+    console.log("Party info and alternative format (outputted from voteprojection.js)")
+    console.log(partyInfo);
+    console.log(partyInfoAlternative);
+  }, [partyInfo])
+
   useEffect(() => {
 
     setPartyColours(null);
     setNextGEcolname(null);
+    setPartyInfo(null);
+    setPartyInfoAlternative(null);
 
     getPartyColours(country);
     getNextGEcolname(country);
+    getPartyInfo(country);
 
   }, [country]);
 

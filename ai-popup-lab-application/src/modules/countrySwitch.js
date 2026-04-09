@@ -24,7 +24,7 @@ function CountrySwitch({setCountry, selectedCountry}) {
             src={require(`../assets/images/flags/${name}.png`)} // flag icons must be stored in this directory
             alt={name}
           />
-          <div className="label">{abbreviation}</div>
+          <div className="countryswitch-label">{abbreviation}</div>
         </button>
       ))}
     </div>

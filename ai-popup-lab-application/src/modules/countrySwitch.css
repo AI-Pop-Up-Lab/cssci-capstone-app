@@ -30,10 +30,26 @@
     transition: transform 0.1s ease-in-out;
 }
 
-.countrySwitchItem > .label{
+.countrySwitchItem > .countryswitch-label{
     font-size: 0.95rem;
     font-weight: 700;
+    color: #334E58;
     line-height: 1;
+}
+
+.countrySwitchItem > .countryswitch-label::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #334E58;
+    transition: width 0.1s ease-in-out;
+    
+}
+
+.countrySwitchItem.selectedIcon > .countryswitch-label::after{
+    width: 100%;
+    transition: width 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 810px) {

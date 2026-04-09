@@ -11,9 +11,9 @@ function Footer() {
   return (
     <div className='Footer unbounded-weight300'>
       <div id="footer-left">
+        <Link to="/about">About Us</Link>
         <Link to="/ethics">Ethics</Link>
         {/* <Link to="/methods">Methods</Link> */}
-        {/* <Link to="/about">About Us</Link> */}
       </div>
       <div id="footer-right">
         <p id="footer-name">AI POLLSTER</p>

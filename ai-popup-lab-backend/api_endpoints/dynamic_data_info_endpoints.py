@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 import json
 from pathlib import Path
+import pandas as pd
 
 router = APIRouter(prefix="/dynamicdata")
 
@@ -40,6 +41,28 @@ def get_party_colours(country: str):
     party_colours = country_data[country]['party_colours']
 
     return {"party_colours": party_colours}
+
+# GET endpoint to retrieve party colours for a specific country
+@router.get("/party_info")
+def get_party_info(country: str):
+
+    # checking if requested country is in data
+    if country not in root_keys:
+        return {"error": "Country not found in data."}
+
+    country_info_filename = country_data[country]['party_info_filename']
+    country_info_path = base_dir / "country_data" / 'country_parties' / country_info_filename
+
+    # reading csv to dataframe then converting to list of dicts for json response
+    df = pd.read_csv(country_info_path, sep=';')
+    dict_list_for_js = json.loads(df.to_json(orient="records")) # returns a list of row objects
+
+    alternative_data = {
+        row['party']: {k: v for k, v in row.items() if k != 'party'}
+        for row in dict_list_for_js
+    }
+
+    return {"data": dict_list_for_js, "alternative_data": alternative_data}
 
 # GET endpoint to retrieve sentences for columns in the chart demographic search for a specific country
 @router.get("/column_sentences")
