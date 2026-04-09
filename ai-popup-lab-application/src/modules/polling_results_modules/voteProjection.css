@@ -70,6 +70,10 @@
   font-family: "Unbounded", sans-serif;
 }
 
+.vp-xaxis text{
+  font-size: 0.5rem;
+}
+
 @media screen and (max-width: 450px) {
   .vp-chart-wrapper svg text{
     font-size: 8px;

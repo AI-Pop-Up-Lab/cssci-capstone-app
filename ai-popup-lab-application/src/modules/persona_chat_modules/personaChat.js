@@ -37,34 +37,62 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
         })
       });
 
-      // instead of using awaiting bubble, using an empty persona message
-      setMessages(prev => prev.slice(0, -1));
-      addMessage("persona", "");
-
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
+
+      let currentEvent = "message"
+      let firstChunk = true;
 
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
 
         const raw = decoder.decode(value);
-        const lines = raw.split("\n\n").filter(Boolean);
+        const blocks = raw.split("\n\n").filter(Boolean);
 
-        for (const line of lines) {
-          if (!line.startsWith("data: ")) continue;
-          const payload = line.slice(6);
-          if (payload === "[DONE]") break;
+        for (const block of blocks) {
+          const lines = block.split("\n");
 
-          const { text } = JSON.parse(payload);
+          for (const line of lines) {
+            if (line.startsWith("event: ")) {
+              currentEvent = line.slice(7).trim();
+            } else if (line.startsWith("data: ")) {
+              const payload = line.slice(6);
+              if (payload === "[DONE]") break;
 
-          // append each chunk to the last message
-          setMessages(prev => {
-            const updated = [...prev];
-            const last = updated[updated.length - 1];
-            updated[updated.length - 1] = { ...last, text: (last.text || "") + text };
-            return updated;
-          });
+
+              const { text } = JSON.parse(payload);
+
+              if (currentEvent === "error") {
+                setError(text);
+                if (firstChunk) {
+                  setMessages(prev => prev.slice(0, -1)); // remove awaiting bubble
+                  addMessage("persona", ""); // add empty persona bubble
+                  firstChunk = false;
+                }
+                setMessages(prev => {
+                  const updated = [...prev];
+                  const last = updated[updated.length - 1];
+                  updated[updated.length - 1] = { ...last, text };
+                  return updated;
+                });
+              } else {
+                if (firstChunk) {
+                  setMessages(prev => prev.slice(0, -1)); // remove awaiting bubble
+                  addMessage("persona", ""); // add empty persona bubble
+                  firstChunk = false;
+                }
+                setMessages(prev => {
+                  const updated = [...prev];
+                  const last = updated[updated.length - 1];
+                  updated[updated.length - 1] = { ...last, text: (last.text || "") + text };
+                  return updated;
+                });
+              }
+
+            currentEvent = "message";
+            }
+          }
         }
       }
 

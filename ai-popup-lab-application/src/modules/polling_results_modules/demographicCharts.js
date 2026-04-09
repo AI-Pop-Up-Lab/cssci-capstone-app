@@ -4,6 +4,7 @@ import './demographicCharts.css';
 import axios from "axios";
 // import partyColours from '../../assets/partyColours';
 import DemographicChooser from './demographicChooser';
+import Loader from '../loader';
 
 
 function DemographicCharts({ pollingData, country }) {
@@ -13,6 +14,26 @@ function DemographicCharts({ pollingData, country }) {
 
   const [partyColours, setPartyColours] = useState(null);
   const [partyColoursError, setPartyColoursError] = useState(null); 
+
+  const [nextGEcolname, setNextGEcolname] = useState(null);
+  const [nextGEcolnameError, setNextGEcolnameError] = useState(null); 
+
+  async function getNextGEcolname(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/nextGE_col_name?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const next_GE_colname = response_data.column_to_rename;
+
+      setNextGEcolname(next_GE_colname);
+      setNextGEcolnameError(null);
+    } catch (err) {
+      setNextGEcolnameError(err.message);
+      setNextGEcolname(null);
+    }
+  };
 
   async function getPartyColours(countryName){
     try {
@@ -33,7 +54,11 @@ function DemographicCharts({ pollingData, country }) {
 
   useEffect(() => {
 
+    setPartyColours(null);
+    setNextGEcolname(null);
+
     getPartyColours(country);
+    getNextGEcolname(country);
 
   }, [country]);
 
@@ -67,12 +92,12 @@ function DemographicCharts({ pollingData, country }) {
 
     const voteCounts = {};
     filtered.forEach(row => {
-      if (row.vote_2030 !== "Did not vote") {
-        voteCounts[row.vote_2030] = (voteCounts[row.vote_2030] || 0) + 1;
+      if (row[nextGEcolname] !== "Did not vote") {
+        voteCounts[row[nextGEcolname]] = (voteCounts[row[nextGEcolname]] || 0) + 1;
       }
     });
 
-    const voters = filtered.filter(r => r.vote_2030 !== "Did not vote").length;
+    const voters = filtered.filter(r => r[nextGEcolname] !== "Did not vote").length;
     if (voters === 0) return;
     const chartData = Object.entries(voteCounts)
       .map(([party, count]) => ({ party, pct: (count / voters) * 100 }))
@@ -111,32 +136,51 @@ function DemographicCharts({ pollingData, country }) {
       .select(".domain").remove();
 
     // X axis
-    if(isMobile || isSmallMobile){
-      const xAxis = g.append("g")
-        .attr("transform", `translate(0,${height})`)
-        .call(d3.axisBottom(x).tickSize(0));
-
-      xAxis.select(".domain").remove();
-
-      xAxis.selectAll("text")
-        .attr("font-size", "13px")
-        .attr("font-weight", "700")
-        .attr("fill", "#111")
-        .attr("transform", "rotate(-45)")
-        .style("text-anchor", "end")
-        .attr("dx", "-0.6em")
-        .attr("dy", "0.15em");
-
-    } else{
-      g.append("g")
+    const xAxis = g.append("g")
+      .attr("class", "dc-xaxis")
       .attr("transform", `translate(0,${height})`)
-      .call(d3.axisBottom(x).tickSize(0))
-      .select(".domain").remove()
-      .selection().selectAll("text")
+      .call(d3.axisBottom(x).tickSize(0));
+
+    xAxis.select(".domain").remove();
+
+    xAxis.selectAll("text")
       .attr("font-size", "13px")
       .attr("font-weight", "700")
-      .attr("fill", "#111");
-    }
+      .attr("fill", "#111")
+      .attr("transform", "rotate(-45)")
+      .style("text-anchor", "end")
+      .attr("dx", "-0.6em")
+      .attr("dy", "0.15em");
+
+      
+    // BELOW CODE WAS FOR CHANGING X AXIS LABEL IF DEVICE WAS SMALLER, BUT DECIDED TO ALWAYS TO SO AS LONGER NAMES OF DANISH PARTIES MADE ME RETHINK
+
+    // if(isMobile || isSmallMobile){
+    //   const xAxis = g.append("g")
+    //     .attr("transform", `translate(0,${height})`)
+    //     .call(d3.axisBottom(x).tickSize(0));
+
+    //   xAxis.select(".domain").remove();
+
+    //   xAxis.selectAll("text")
+    //     .attr("font-size", "13px")
+    //     .attr("font-weight", "700")
+    //     .attr("fill", "#111")
+    //     .attr("transform", "rotate(-45)")
+    //     .style("text-anchor", "end")
+    //     .attr("dx", "-0.6em")
+    //     .attr("dy", "0.15em");
+
+    // } else{
+    //   g.append("g")
+    //   .attr("transform", `translate(0,${height})`)
+    //   .call(d3.axisBottom(x).tickSize(0))
+    //   .select(".domain").remove()
+    //   .selection().selectAll("text")
+    //   .attr("font-size", "13px")
+    //   .attr("font-weight", "700")
+    //   .attr("fill", "#111");
+    // }
 
     // Y axis
     g.append("g")
@@ -200,10 +244,14 @@ function DemographicCharts({ pollingData, country }) {
           country={country}
         />
       )}
+      {partyColours && nextGEcolname ? (
       <div className="dc-chart-wrapper">
         <svg ref={svgRef} />
         <div ref={tooltipRef} className="chart-tooltip" />
       </div>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

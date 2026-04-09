@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, use } from "react";
 import axios from "axios";
 
 import './pollingResults.css';
@@ -16,6 +16,10 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+
+  const [responseData, setResponseData] = useState(null);
+  const [stratframeResponseData, setStratframeResponseData] = useState(null);
+
 
   const [stratFrameData, setStratFrameData] = useState(null);
   const [stratFrameDataError, setStratFrameDataError] = useState(null);
@@ -62,12 +66,20 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
   // }, [data]);
 
   useEffect(() => {
+    setData(null);
+    setStratFrameData(null);
+
     getCountrySample(selectedCountry);
     getCountryStratFrame(selectedCountry);
-  }, []);
+  }, [selectedCountry]);
 
-  const responseData = useMemo(() => data?.data ?? [], [data]);
-  const stratFrameResponseData = useMemo(() => stratFrameData?.data ?? [], [stratFrameData]);
+  useEffect(() => {
+    setResponseData(data?.data ?? []);
+  }, [data]);
+
+  useEffect(() => {
+    setStratframeResponseData(stratFrameData?.data ?? []);
+  }, [stratFrameData]);
 
 
   function exportToCSV(data, filename='data.csv') {
@@ -96,16 +108,20 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
 
       <div id="polling-divider"></div>
 
-      <div id="exportButtons">
-        <div className="exportButton" onClick={() => {exportToCSV(responseData, `${selectedCountry}_sample_data.csv`)}}>
-          <p>Export sample data</p>
-          <img src={exportIcon}></img>
+      {data && stratFrameData ? (
+        <div id="exportButtons">
+          <div className="exportButton" onClick={() => {exportToCSV(responseData, `${selectedCountry}_sample_data.csv`)}}>
+            <p>Export sample data</p>
+            <img src={exportIcon}></img>
+          </div>
+          <div className="exportButton" onClick={() => {exportToCSV(stratframeResponseData, `${selectedCountry}_frame_data.csv`)}}>
+            <p>Export frame data</p>
+            <img src={exportIcon}></img>
+          </div>
         </div>
-        <div className="exportButton" onClick={() => {exportToCSV(stratFrameResponseData, `${selectedCountry}_frame_data.csv`)}}>
-          <p>Export frame data</p>
-          <img src={exportIcon}></img>
-        </div>
-      </div>
+      ) : (
+        <Loader />
+      )}
 
       <div id="polling-divider"></div>
     </div>

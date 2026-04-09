@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import { parliamentChart } from 'd3-parliament-chart';
 import './seatVisualisation.css';
 import axios from "axios";
+import Loader from '../loader';
 // import partyColours from '../../assets/partyColours';
 
 // const TOTAL_SEATS = 150;
@@ -41,8 +42,28 @@ function SeatVisualisation({ pollingData, country }) {
   const [seatAllocationMethod, setSeatAllocationMethod] = useState(null);
   const [seatAllocationMethodError, setSeatAllocationMethodError] = useState(null); 
 
+  const [nextGEcolname, setNextGEcolname] = useState(null);
+  const [nextGEcolnameError, setNextGEcolnameError] = useState(null); 
+
   const svgRef = useRef(null);
   const tooltipRef = useRef(null);
+
+  async function getNextGEcolname(countryName){
+    try {
+
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/nextGE_col_name?country=${countryName}`);
+      
+      const response_data = response.data;
+
+      const next_GE_colname = response_data.column_to_rename;
+
+      setNextGEcolname(next_GE_colname);
+      setNextGEcolnameError(null);
+    } catch (err) {
+      setNextGEcolnameError(err.message);
+      setNextGEcolname(null);
+    }
+  };
 
   async function getTotalSeats(countryName){
     try {
@@ -96,10 +117,15 @@ function SeatVisualisation({ pollingData, country }) {
   };
 
   useEffect(() => {
+    set_total_seats(null);
+    setPartyColours(null);
+    setSeatAllocationMethod(null);
+    setNextGEcolname(null);
 
     getTotalSeats(country);
     getPartyColours(country);
     getSeatAllocationMethod(country);
+    getNextGEcolname(country);
 
   }, [country]);
 
@@ -107,16 +133,30 @@ function SeatVisualisation({ pollingData, country }) {
     if (!pollingData || pollingData.length === 0 || !svgRef.current) return;
     if (!total_seats || !partyColours || !seatAllocationMethod) return;
 
+    let isTablet = false;
+    let isMobile = false;
+    let isSmallMobile = false;
+
+    if (window.innerWidth <= 390) {
+      isSmallMobile = true;
+    } else if (window.innerWidth <= 545) {
+      isMobile = true;
+    } else if (window.innerWidth <= 930) {
+      isTablet = true;
+    }
+
     const seatAllocationFunction = chooseSeatAllocationFunction(seatAllocationMethod);
 
     const renderChart = () => {
       const voteCounts = {};
 
       pollingData.forEach((row) => {
-        if (row.vote_2030 && row.vote_2030 !== "Did not vote") {
-          voteCounts[row.vote_2030] = (voteCounts[row.vote_2030] || 0) + 1;
+        if (row[nextGEcolname] && row[nextGEcolname] !== "Did not vote") {
+          voteCounts[row[nextGEcolname]] = (voteCounts[row[nextGEcolname]] || 0) + 1;
         }
       });
+
+      if (Object.keys(voteCounts).length === 0) return;
 
       const seatsByParty = seatAllocationFunction(voteCounts, total_seats);
 
@@ -135,8 +175,20 @@ function SeatVisualisation({ pollingData, country }) {
           party,
         }));
 
-      const svgW = window.innerWidth <= 930 ? 570 : 760;
-      const seatRadius = window.innerWidth <= 930 ? 12 : 15;
+      let svgW = 760;
+      let seatRadius = 11;
+
+      if (isSmallMobile) {
+        svgW = 300;
+        seatRadius = 4;
+      } else if (isMobile) {
+        svgW = 320;
+        seatRadius = 5;
+      } else if (isTablet) {
+        svgW = 570;
+        seatRadius = 9;
+      }
+      
       const rowHeight = window.innerWidth <= 930 ? 30 : 35;
 
       const svg = d3.select(svgRef.current);
@@ -158,6 +210,7 @@ function SeatVisualisation({ pollingData, country }) {
       // Measure the actual rendered parliament so the SVG is never too short
       const chartBox = g.node().getBBox();
       const chartBottom = chartBox.y + chartBox.height;
+
 
       // Tooltips
       g.selectAll("circle")
@@ -186,8 +239,19 @@ function SeatVisualisation({ pollingData, country }) {
         .filter(([, seats]) => seats > 0)
         .sort((a, b) => b[1] - a[1]);
 
+      const tempText = svg.append("text").attr("font-size", "12px");
+
+      // for dynamically measuring how much the width of legend labels shuld be
+      const maxLabelWidth = d3.max(legendData, ([party, seats]) => {
+        tempText.text(`${party} — ${seats}`);
+        return tempText.node().getComputedTextLength();
+      }) ?? 120;;
+      tempText.remove();
+
+      const colW = maxLabelWidth + 30; // 30 for swatch, gap and padding
+      // const colW = window.innerWidth <= 930 ? 120 : 145;
+
       const rowH = 22;
-      const colW = window.innerWidth <= 930 ? 120 : 145;
       const maxLegendWidth = svgW - 60;
       const columns = Math.max(1, Math.floor(maxLegendWidth / colW));
       const perCol = Math.ceil(legendData.length / columns);
@@ -239,11 +303,16 @@ function SeatVisualisation({ pollingData, country }) {
   return (
     <div className="SeatVisualisation">
       <h3>Seat Projection</h3>
-      <div className="sv-chart-wrapper">
-        <svg ref={svgRef} />
-        <div ref={tooltipRef} className="chart-tooltip" />
-      </div>
+      {total_seats && partyColours && seatAllocationMethod && nextGEcolname ? (
+        <div className="sv-chart-wrapper">
+          <svg ref={svgRef} />
+          <div ref={tooltipRef} className="chart-tooltip" />
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
+    
   );
 }
 

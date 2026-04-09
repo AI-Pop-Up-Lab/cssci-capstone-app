@@ -12,6 +12,8 @@ function DemographicChoiceDropdown({column, choices, onChange, columnToRename}) 
         modifiedColumn = column;
     }
 
+    modifiedColumn = modifiedColumn.replace(/_/g, ' ')
+
     return (
     <div className="DemographicChoiceDropdown">
         <p className="unbounded-weight300">{modifiedColumn}</p>

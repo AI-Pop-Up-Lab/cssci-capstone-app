@@ -39,6 +39,10 @@
   color: #1a3a42;
 }
 
+.dc-xaxis text{
+  font-size: 0.5rem;
+}
+
 
 /* styling for dropdown modules DemographicChooser inserts */
 

@@ -33,7 +33,7 @@ def get_country_sample(country: str):
 
     # reading csv to dataframe then converting to list of dicts for json response
     df = pd.read_csv(country_sample_path)
-    dict_list_for_js = df.to_dict(orient="records")  # returns a list of row objects
+    dict_list_for_js = json.loads(df.to_json(orient="records")) # returns a list of row objects
 
     return {"data": dict_list_for_js}
 

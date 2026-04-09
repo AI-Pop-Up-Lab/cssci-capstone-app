@@ -130,11 +130,18 @@ function DemographicChooser({setChosenDemographic, country}) {
   }
 
   useEffect(() => {
+    setData(null);
+    setDynamicSentences(null);
+    setSearchSentenceOrder(null);
+    setAllPlaceholders(null);
+    setAllLabels(null);
+    setSelectedValues({});
+
     getColumnsAndUniqueVals(country);
     getDynamicSentences(country);
     getSearchSentenceOrder(country);
     getAllPlaceholders(country);
-  }, []);
+  }, [country]);
 
   useEffect(() => {
 

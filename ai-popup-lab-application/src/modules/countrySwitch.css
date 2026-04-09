@@ -22,3 +22,18 @@
 .CountrySwitch > img.selectedIcon{
     /* styling for if one is selected */
 }
+
+@media screen and (max-width: 810px) {
+    .CountrySwitch > img{
+        width: 40px;
+        margin: 0 6px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .CountrySwitch > img{
+        width: 30px;
+        margin: 0 4px;
+    }
+
+}

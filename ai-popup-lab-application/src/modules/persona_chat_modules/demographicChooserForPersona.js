@@ -69,13 +69,11 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
   }
 
   useEffect(() => {
+    setData(null);
+    setColumnToRename(null);
     getColumnsAndUniqueVals(country);
     getColumnToRename(country);
-  }, []);
-
-  // useEffect(() => {
-  //   console.log(data);
-  // }, [data]);
+  }, [country]);
 
   const allNotNull = (...args) => args.every(v => v != null);
 
@@ -88,7 +86,7 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
         {data.relevant_columns.map((column) => (
           <DemographicChoiceDropdown 
           key={column} 
-          column={column.replace(/_/g, ' ')} 
+          column={column} 
           choices={data.column_unique_vals[column]}
           onChange={(value) => handleDropdownChange(column, value)}
           columnToRename={columnToRename}

@@ -38,7 +38,7 @@ function PersonaChooser({ data, chosenDemographic, countryName }) {
     }, 0);
 
     return () => clearTimeout(timeout); // cleanup if chosenDemographic changes mid-filter, gets called if data or chosenDemographic updates
-  }, [data, chosenDemographic]);
+  }, [data, chosenDemographic, relevantColumns]);
 
 
   async function getRelevantColumns(){
@@ -51,14 +51,16 @@ function PersonaChooser({ data, chosenDemographic, countryName }) {
       setRelevantColumns(response.data.relevant_columns);
       setError(null);
     } catch (err) {
-      setRelevantColumns(err.message);
+      setError(err.message);
       setRelevantColumns(null);
     }
   }
 
   useEffect(() => {
+    setFilteredData([]);
+    setRelevantColumns(null);
     getRelevantColumns(countryName);
-  }, []);
+  }, [countryName]);
 
 
   return (

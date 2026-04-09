@@ -15,6 +15,8 @@ function PersonaPage() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
+  const [responseData, setResponseData] = useState(null);
+
   const [selectedCountry, setSelectedCountry] = useState("netherlands"); // setting default selected/selectable country as netherlands for now (in final product there will be a dropdown)
 
   const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState({});
@@ -41,9 +43,11 @@ function PersonaPage() {
 
   useEffect(() => {
     getCountrySample(selectedCountry);
-  }, []);
+  }, [selectedCountry]);
   
-  const responseData = useMemo(() => data?.data ?? [], [data]);
+  useEffect(() => {
+    setResponseData(data?.data ?? []);
+  }, [data]);
 
   // scroll to top of page when loads, as many personas puts you at bottom of massive page
   useEffect(() => {
