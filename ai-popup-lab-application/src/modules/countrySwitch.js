@@ -1,9 +1,9 @@
 import './countrySwitch.css';
 
 const countryOptions = [
-  "netherlands",
-  "sweden",
-  "denmark"
+  { name: "netherlands", abbreviation: "NL" },
+  { name: "sweden", abbreviation: "SE" },
+  { name: "denmark", abbreviation: "DK" }
 ];
 
 function CountrySwitch({setCountry, selectedCountry}) {
@@ -12,15 +12,20 @@ function CountrySwitch({setCountry, selectedCountry}) {
 
   return (
     <div className="CountrySwitch">
-      {countryOptions.map((country) => (
-        <img
-          key={country}
-          src={require(`../assets/images/flags/${country}.png`)} // flag icons must be stored in this directory
-          alt={country}
-          className={selectedCountry === country ? "selectedIcon" : ""}
-          onClick={() => setCountry(country)}
-          title={country.charAt(0).toUpperCase() + country.slice(1)}
-        />
+      {countryOptions.map(({ name, abbreviation }) => (
+        <button
+          key={name}
+          type="button"
+          className={`countrySwitchItem ${selectedCountry === name ? "selectedIcon" : ""}`}
+          onClick={() => setCountry(name)}
+          title={name.charAt(0).toUpperCase() + name.slice(1)}
+        >
+          <img
+            src={require(`../assets/images/flags/${name}.png`)} // flag icons must be stored in this directory
+            alt={name}
+          />
+          <div className="label">{abbreviation}</div>
+        </button>
       ))}
     </div>
   );

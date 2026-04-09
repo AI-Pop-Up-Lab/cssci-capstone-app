@@ -26,10 +26,10 @@ function LandingPage() {
 
   return (
     <div className="LandingPage unbounded-weight300">
-      <div id='landing-intro'>
+      {/* <div id='landing-intro'>
         <p>This is the AI Pollster, where public opinion is visualised through synthetic personas. Explore graphs which visualise the results of the AI polling, and chat with the personas which form the polling data on the persona chat page, to understand intentions and motivations behind polling decisions.</p>
         <img src={chartGraphic}></img>
-      </div>
+      </div> */}
 
       <CountrySwitch setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
       
