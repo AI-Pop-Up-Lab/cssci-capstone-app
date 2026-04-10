@@ -166,6 +166,10 @@ function SeatVisualisation({ pollingData, country }) {
     let isMobile = false;
     let isSmallMobile = false;
 
+    let seatRadiusMultiplier = 1;
+
+    if(country==="sweden"){seatRadiusMultiplier = 0.7};
+
     if (window.innerWidth <= 390) {
       isSmallMobile = true;
     } else if (window.innerWidth <= 545) {
@@ -231,7 +235,7 @@ function SeatVisualisation({ pollingData, country }) {
         .aggregatedData(aggregated)
         .sections(1)
         .sectionGap(44)
-        .seatRadius(seatRadius)
+        .seatRadius(seatRadius * seatRadiusMultiplier)
         .rowHeight(rowHeight);
 
       g.call(pc);
