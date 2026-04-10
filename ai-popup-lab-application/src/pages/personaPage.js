@@ -10,12 +10,27 @@ import CountrySwitch from '../modules/countrySwitch';
 
 import Loader from "../modules/loader";
 
+function modifyCountryNameEdgeCases(country){
+  let modifiedCountry;
+
+  if(country === 'netherlands'){
+    modifiedCountry = 'the Netherlands';
+  }else{
+    modifiedCountry = country;
+  }
+
+  return modifiedCountry
+}
+
 function PersonaPage() {
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   const [responseData, setResponseData] = useState(null);
+
+  const [modifiedCountry, setModifiedCountry] = useState(null);
+  const dataLength = useMemo(() => responseData?.length ?? 0, [responseData]);
 
   const [selectedCountry, setSelectedCountry] = useState("netherlands"); // setting default selected/selectable country as netherlands for now (in final product there will be a dropdown)
 
@@ -44,6 +59,15 @@ function PersonaPage() {
   useEffect(() => {
     getCountrySample(selectedCountry);
   }, [selectedCountry]);
+
+  useEffect(() => {
+
+    let modCountry = modifyCountryNameEdgeCases(selectedCountry);
+    modCountry = modCountry.charAt(0).toUpperCase() + modCountry.slice(1);
+
+    setModifiedCountry(modCountry);
+
+  }, [selectedCountry])
   
   useEffect(() => {
     setResponseData(data?.data ?? []);
@@ -67,9 +91,12 @@ function PersonaPage() {
       <div id="persona-selection">
         <div id="selection-explanation">
           <h1 className="unbounded-weight400">Chat with a persona</h1>
-          <p className="unbounded-weight300">You can choose one of the synthetic persona from the list below to enter a chat, to understand motivations and reasoning behind their polled vote.<br></br>
-          <br></br>
-          You can select various demographics below to filter through personas. Hover over a persona icon to view its details and if you wish to, then enter a chat.
+          <p className="unbounded-weight300">
+          We have randomly sampled {dataLength} 'types' of individuals who live in {modifiedCountry}. We use AI to impersonate each individual, and respond to an Opinion Poll. The estimates you see are based on this sample of 'synthetic personae'.
+          <br></br><br></br>
+          Would you like to chat with one of the synthetic personae ?
+          <br></br><br></br>
+          By chatting, you can explore the underlying motivations and reasoning behind their beliefs. You can select various demographics below to filter through personae. Hover over a persona icon to view its details and if you wish to, then enter a chat.
           </p>
         </div>
 

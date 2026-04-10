@@ -6,38 +6,41 @@ import './popupDisclaimer.css';
 function PopupDisclaimer() {
 
   const [closed, setClosed] = useState(false);
+  const [unmounted, setUnmounted] = useState(false);
   const popupRef = useRef(null);
 
-  useEffect(() => {
-    if (popupRef.current) {
-      const width = popupRef.current.offsetWidth;
-      const height = popupRef.current.offsetHeight;
+  // useEffect(() => {
+  //   if (popupRef.current) {
+  //     const width = popupRef.current.offsetWidth;
+  //     const height = popupRef.current.offsetHeight;
 
-      popupRef.current.style.left = `calc(50% - ${width / 2}px)`;
-      popupRef.current.style.top = `calc(50% - ${height / 2}px)`;
-    }
-  }, []);
+  //     popupRef.current.style.left = `calc(50% - ${width / 2}px)`;
+  //     popupRef.current.style.top = `calc(50% - ${height / 2}px)`;
+  //   }
+  // }, []);
 
   function closePopup(){
-    if (popupRef.current) {
-      setClosed(true);
-    };
+    setClosed(true);
   };
 
   function handleAnimationEnd(){
-    if (closed && popupRef.current) {
-      popupRef.current.remove();
+    if (closed) {
+      setUnmounted(true);
     };
   };
 
+  if (unmounted) return null;
+
   return (
-    <div ref={popupRef} onAnimationEnd={handleAnimationEnd} className={`PopupDisclaimer ${closed ? 'popupFadeOut' : ''}`}>
+    <div ref={popupRef} className={`PopupDisclaimer ${closed ? 'popupFadeOut' : ''}`}  onAnimationEnd={handleAnimationEnd}>
+      <div id="popupDisclaimerBox" >
         <div id="popupDisclaimerTop">
             <img onClick={closePopup} src={closeCross} alt="button to close disclaimer popup" id="popupDisclaimerClose"/>
         </div>
         <div id="popupDisclaimerContent">
-            <p className="unbounded-weight300">This platform uses AI-simulated personas to estimate public opinion based on official census data. These personas are not real human beings, and no personally identifiable data of living individuals is used. Surveys are calibrated to ensure the reliability of the prediction results.</p>
+            <p className="unbounded-weight300">This platform uses AI-simulated personae based on public census data. These personae are not real humans, and no personal data of individuals is used.</p>
         </div>
+      </div>
     </div>
   );
 }

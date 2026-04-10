@@ -1,4 +1,17 @@
 .PopupDisclaimer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+}
+
+#popupDisclaimerBox{
     border-radius: 30px;
     background-color: #ebb3ab;
     color: #335058;
@@ -9,8 +22,9 @@
     align-items: center;
     justify-content: center;
 
-    position: fixed;
-    z-index: 7;
+    /* position: fixed; */
+    position: relative;
+    z-index: 8;
 
     padding: 20px 30px;
     width: 40%;
@@ -59,27 +73,29 @@
     }
 }
 
-@keyframes popupFadeOut {
+@keyframes popupFadeOutOverlay {
     from {
-        opacity: 0.85;
+        opacity: 0.3;
     }
     to {
         opacity: 0;
     }
 }
 
-.popupFadeOut {
-    animation: popupFadeOut 0.225s ease-out;
+.popupFadeOut{
+    animation: popupFadeOutOverlay 0.225s ease-out forwards;
 }
 
 @media screen and (max-width: 810px) {
-    .PopupDisclaimer{
-        width: 70%;
-        max-width: 80%;
-    }
 
     #popupDisclaimerContent > p{
         font-size: 12px;
     }
 
+}
+
+@media screen and (max-width: 500px){
+    #popupDisclaimerBox{
+        width: 70%;
+    }
 }
