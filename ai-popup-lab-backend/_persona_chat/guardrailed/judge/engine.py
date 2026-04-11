@@ -19,6 +19,7 @@ log = get_logger(__name__)
 def _build_judge_user_message(*, guardrail_input: GuardrailInput, signals: GuardrailSignals) -> str:
     """Build the structured judge prompt input."""
     lexical_terms = ", ".join(signals.lexical.matched_terms) if signals.lexical.matched_terms else "None"
+    user_word_count = len(guardrail_input.user_message.split())
     if guardrail_input.chat_history:
         chat_history = "\n".join(
             f"- {message.get('role', 'unknown')}: {message.get('content', '')}"
@@ -34,6 +35,9 @@ def _build_judge_user_message(*, guardrail_input: GuardrailInput, signals: Guard
         f"{chat_history}\n\n"
         "User message:\n"
         f"{guardrail_input.user_message}\n\n"
+        "Question length signal:\n"
+        f"- User message word count: {user_word_count}\n"
+        "- Treat this as a conversational-length clue, not as a hard rule.\n\n"
         "Lexical signal:\n"
         f"- Triggered: {signals.lexical.triggered}\n"
         f"- Risk level: {signals.lexical.risk_level}\n"
@@ -47,6 +51,13 @@ def _build_judge_user_message(*, guardrail_input: GuardrailInput, signals: Guard
         "- Strong grounds means at least one of: relevant education, relevant job exposure, substantial lived experience, or a clearly stated domain hobby/interest.\n"
         "- If the topic is far from the persona's interests, work, or educational direction, set detail_allowed to false and expertise_basis to none.\n"
         "- When detail_allowed is false, the persona should stay at a very basic layperson level even if the user asks for a super detailed explanation.\n\n"
+        "Response length rule:\n"
+        "- Return response_length_target as one of: very_short, short, medium, long.\n"
+        "- Short user questions should usually lead to very_short or short answers unless the topic is strongly grounded in the biography and genuinely invites more.\n"
+        "- Phrases like 'in detail', 'fully', 'extensively', or 'super detail' may raise length by at most one level, and only when detail_allowed is true.\n"
+        "- Do not let detail wording alone justify a long answer.\n"
+        "- If the topic is far from the persona's real background, the answer should not exceed short.\n"
+        "- Prefer natural conversation over essay-like structure.\n\n"
         "Dynamic style modulation rule:\n"
         "- Start from the stylometric profile as the persona's baseline speaking style.\n"
         "- If the topic strongly resonates with the persona's work, hobbies, study, or lived experience, you may raise confidence_style and lower hedging_style somewhat.\n"
@@ -59,6 +70,7 @@ def _build_judge_user_message(*, guardrail_input: GuardrailInput, signals: Guard
         '  "relevance_score": 0.0,\n'
         '  "epistemic_score": 0.0,\n'
         '  "knowledge_level": "very_limited | limited | moderate | high",\n'
+        '  "response_length_target": "very_short | short | medium | long",\n'
         '  "detail_allowed": false,\n'
         '  "expertise_basis": "none | biography_interest | lived_experience | work_exposure | education_background | domain_expert",\n'
         '  "hedging_style": "low | medium | high",\n'
@@ -118,6 +130,13 @@ def _normalize_confidence_style(value: str | None) -> str:
     if value in {"tentative", "balanced", "assured"}:
         return value
     return "balanced"
+
+
+def _normalize_response_length_target(value: str | None) -> str:
+    """Normalize response length target into a supported category."""
+    if value in {"very_short", "short", "medium", "long"}:
+        return value
+    return "short"
 
 
 def _safe_bool(value, fallback: bool) -> bool:
@@ -193,6 +212,7 @@ def _parse_judge_response(raw_response: str, signals: GuardrailSignals) -> Polic
             action="limited_answer",
             rationale="The judge response could not be parsed cleanly, so the system falls back to a cautious answer.",
             response_guidance="Answer gently and cautiously from the persona's perspective. Stay grounded in the biography, keep the language plain, and avoid overclaiming.",
+            response_length_target="short",
             detail_allowed=False,
             expertise_basis="none",
             hedging_style="medium",
@@ -219,6 +239,7 @@ def _parse_judge_response(raw_response: str, signals: GuardrailSignals) -> Polic
             action="limited_answer",
             rationale="The judge response used an unexpected structure, so the system falls back to a cautious answer.",
             response_guidance="Answer gently and cautiously from the persona's perspective. Stay grounded in the biography, keep the language plain, and avoid overclaiming.",
+            response_length_target="short",
             detail_allowed=False,
             expertise_basis="none",
             hedging_style="medium",
@@ -244,6 +265,7 @@ def _parse_judge_response(raw_response: str, signals: GuardrailSignals) -> Polic
             "response_guidance",
             "Answer cautiously from the persona's perspective and stay grounded in the biography.",
         ),
+        response_length_target=_normalize_response_length_target(payload.get("response_length_target")),
         detail_allowed=_safe_bool(payload.get("detail_allowed"), False),
         expertise_basis=_normalize_expertise_basis(payload.get("expertise_basis")),
         hedging_style=_normalize_hedging_style(payload.get("hedging_style")),
@@ -316,6 +338,7 @@ def decide_policy(*, guardrail_input: GuardrailInput, signals: GuardrailSignals)
     log.info("  Relevance score: %s", decision.relevance_score)
     log.info("  Epistemic score: %s", decision.epistemic_score)
     log.info("  Knowledge level: %s", decision.knowledge_level)
+    log.info("  Response length target: %s", decision.response_length_target)
     log.info("  Language level: %s", decision.language_level)
     log.info("  Register style: %s", decision.register_style)
     log.info("  Sentence style: %s", decision.sentence_style)
@@ -334,6 +357,7 @@ def decide_policy(*, guardrail_input: GuardrailInput, signals: GuardrailSignals)
             ("Relevance score", decision.relevance_score),
             ("Epistemic score", decision.epistemic_score),
             ("Knowledge level", decision.knowledge_level),
+            ("Response length target", decision.response_length_target),
             ("Detail allowed", decision.detail_allowed),
             ("Expertise basis", decision.expertise_basis),
             ("Hedging style", decision.hedging_style),

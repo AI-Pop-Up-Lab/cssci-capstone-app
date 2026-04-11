@@ -84,6 +84,7 @@ class PolicyDecision:
     action: str
     rationale: str
     response_guidance: str
+    response_length_target: str = "short"
     detail_allowed: bool = False
     expertise_basis: str = "none"
     hedging_style: str = "medium"

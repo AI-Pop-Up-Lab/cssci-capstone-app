@@ -230,6 +230,7 @@ def run_judge_step(
     log.info("  Relevance score: %s", policy.relevance_score)
     log.info("  Epistemic score: %s", policy.epistemic_score)
     log.info("  Knowledge level: %s", policy.knowledge_level)
+    log.info("  Response length target: %s", policy.response_length_target)
     log.info("  Language level: %s", policy.language_level)
     log.info("  Register style: %s", policy.register_style)
     log.info("  Sentence style: %s", policy.sentence_style)
