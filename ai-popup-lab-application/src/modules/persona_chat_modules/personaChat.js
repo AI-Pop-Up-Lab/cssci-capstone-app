@@ -21,11 +21,18 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
 
   const { index, ...personaWithoutIndex } = personaDetails;
 
-  // function to post message and receive message from backend
-  async function sendAndReceiveMessage(persona, country, message) {
-    try {
-      const chat_history = gatherChatHistory();
+  function buildChatHistory(messageList) {
+    return messageList
+      .filter((message) => message.type === "user" || message.type === "persona")
+      .map((message) => ({
+        role: message.type === "user" ? "user" : "assistant",
+        content: message.text,
+      }));
+  }
 
+  // function to post message and receive message from backend
+  async function sendAndReceiveMessage(persona, country, message, chatHistory) {
+    try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/chat/chat_message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -33,7 +40,7 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
           message: message,
           persona_details: persona,
           persona_country: country,
-          chat_history: chat_history
+          chat_history: chatHistory
         })
       });
 
@@ -106,10 +113,11 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
   };
 
   function sendMessage(message){
+    const chatHistory = buildChatHistory(messages);
     setWaitingForResponse(true);
     addMessage("user", message);
     addMessage("awaiting")
-    sendAndReceiveMessage(personaDetails, personaCountry, message)
+    sendAndReceiveMessage(personaDetails, personaCountry, message, chatHistory)
   }
 
 
@@ -123,20 +131,6 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
     "persona": ReceivedMessage,
     "awaiting": AwaitingMessage
   }
-
-  function gatherChatHistory(){
-    const chatContainer = document.getElementById("persona-chat-history");
-    const messageDivs = chatContainer.querySelectorAll(".UserMessage, .ReceivedMessage");
-
-    const history = Array.from(messageDivs).map((div) => ({
-      role: div.classList.contains("UserMessage") ? "user" : "assistant",
-      content: div.textContent
-    }));
-
-    history.pop();
-
-    return history;
-  };
 
   function addMessage(messageType, text=null){
 

@@ -1,11 +1,15 @@
 import json
 import os
-from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
+from _persona_chat.services.chat_flow import (
+    generate_chat_response,
+    handle_chat_command,
+    resolve_biography,
+)
 from app.db.conn import get_persona_conn
 from app.core.config import settings
 from app.schemas import ChatMessageIn, ChatSessionCreate
@@ -17,8 +21,6 @@ from app.services.persona_repository import (
 )
 from app.services.service import create_session, get_session, handle_user_message, list_messages
 
-from generate_biography import generate_biography
-from generate_response import generate_response
 from chat_limiting import response_friction, check_if_ip_limited, add_or_remove_user_requestlist, check_if_user_ongoing_request
 
 router = APIRouter()
@@ -29,16 +31,6 @@ class LegacyChatMessage(BaseModel):
     persona_details: dict
     persona_country: str
     chat_history: list
-
-chat_commands = ['//biography']
-
-
-# path for json file (on mounted files in deployment)
-# biographies_path = '/mnt/data/biographies.json'
-
-# path for json file in dev
-base_dir = Path(__file__).resolve().parent.parent  # goes up from api_endpoints to root
-biographies_path = base_dir / "country_data" / "biographies.json"
 
 def _legacy_snapshot_id(country: str) -> str:
     return f"legacy_{(country or 'unknown').lower()}_bridge_v1"
@@ -273,10 +265,13 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
 
                 disabled for now so that response streaming works, and other safeguards for attacks are in place such as limiting messages to 25 per day, and only allowing one request at a time
             """
-            for chunk in generate_response(
+            for chunk in generate_chat_response(
                 persona_biography=biography,
                 user_message=request_body.message,
-                chat_history=request_body.chat_history
+                chat_history=request_body.chat_history,
+                persona_details=persona_details,
+                persona_country=persona_country,
+                client_id=ip,
             ):
                 yield f"event: message\ndata: {json.dumps({'text': chunk})}\n\n"
         except Exception as e:
@@ -312,47 +307,32 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
     
     add_or_remove_user_requestlist('add', ip)
 
-    persona_index = request_body.persona_details['index']
-
     persona_details = request_body.persona_details
     persona_country = request_body.persona_country
-
-    with open(biographies_path, 'r') as f:
-        data = json.load(f)
-
-    # checking if country exists as root key in biographies data, and if not, adding it
-    if str(persona_country) not in data:
-        data[persona_country] = {}
-
-    if str(persona_index) in data[persona_country]:
-        biography = data[persona_country][str(persona_index)]
-    else:
-        try:
-            biography = generate_biography(persona_details=persona_details, country=persona_country)
-        except:
-            add_or_remove_user_requestlist('remove', ip)
-            return StreamingResponse(
-                single_message_stream("Sorry, there was an error generating the persona biography. Please try again."),
-                media_type="text/event-stream",
-                headers={"X-Accel-Buffering": "no"}
-            )
-
-        data[persona_country][str(persona_index)] = biography
-
-        with open(biographies_path, "w") as f:
-            json.dump(data, f, indent=4, sort_keys=True)
-
-    # debug commands
-    if request_body.message in chat_commands:
-
+    try:
+        biography = resolve_biography(
+            persona_details=persona_details,
+            persona_country=persona_country,
+        )
+    except Exception:
         add_or_remove_user_requestlist('remove', ip)
+        return StreamingResponse(
+            single_message_stream("Sorry, there was an error generating the persona biography. Please try again."),
+            media_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no"}
+        )
 
-        if request_body.message == '//biography':
-            return StreamingResponse(
-                single_message_stream(biography, event="system"),
-                media_type="text/event-stream",
-                headers={"X-Accel-Buffering": "no"}
-            )
+    command_response = handle_chat_command(
+        message=request_body.message,
+        biography=biography,
+    )
+    if command_response is not None:
+        add_or_remove_user_requestlist('remove', ip)
+        return StreamingResponse(
+            single_message_stream(command_response, event="system"),
+            media_type="text/event-stream",
+            headers={"X-Accel-Buffering": "no"}
+        )
 
     # if ip != 'dev-ip':
         # response_friction(15) #wait 15 secs to give response

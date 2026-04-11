@@ -1,0 +1,85 @@
+{
+    "netherlands": {
+        "2": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [
+                "overseeing the maintenance of dikes and drainage canals",
+                "I value reliable, long\u2011term stewardship of our natural resources",
+                "I\u2019m wary of sudden policy shifts that could jeopardize the safety of our farms and homes",
+                "My mornings begin with a walk along the dike, a cup of black coffee, and the day\u2019s edition of Friesch Dagblad",
+                "I want a system that honors the contributions of people who have spent their lives in the fields and factories"
+            ],
+            "explanation_style": "example_first",
+            "hedging_style": "medium",
+            "profile_summary": "A seasoned water\u2011management professional who speaks plainly yet thoughtfully, mixing concrete anecdotes with broader reflections. He balances confidence with modest caution, showing warmth for family and community while grounding arguments in practical experience.",
+            "reasoning_style": "blended",
+            "register": "plain",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
+        "24": {
+            "abstraction_level": "mixed",
+            "confidence_style": "assured",
+            "evidence": [
+                "I value punctuality, practical solutions",
+                "my days usually start at 6\u202fam with a jog",
+                "I volunteer at the local library",
+                "I intend to vote for the VVD, believing its approach best balances economic stability with the modest public investment I consider essential"
+            ],
+            "explanation_style": "balanced",
+            "hedging_style": "low",
+            "profile_summary": "The speaker uses a polished, everyday tone with a mix of short and longer sentences, balancing concrete details about daily life with broader reflections on policy. Vocabulary is moderate, avoiding jargon while still conveying clear, confident arguments. He expresses warmth through family and community references, yet remains practical and assured in his reasoning. Overall, his communication blends practical examples with abstract concepts in a balanced, confident manner.",
+            "reasoning_style": "blended",
+            "register": "polished",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
+        "25": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [
+                "I value reliability and practicality; I enjoy fixing things myself",
+                "Managing a logistics hub has shown me how quickly a small increase in taxes ... can tighten cash flow",
+                "Volunteering at the community centre\u2019s recycling drive gives me a sense of contribution",
+                "I try to stay informed by reading the national newspapers and listening to the local radio news each evening"
+            ],
+            "explanation_style": "example_first",
+            "hedging_style": "low",
+            "profile_summary": "He speaks in clear, everyday language, mixing short statements with occasional longer, detail\u2011rich sentences. His talk is grounded in concrete examples from work and community life, yet he can shift to broader ideas when needed. Vocabulary is comfortable for a well\u2011educated adult, avoiding jargon while still using some business terms. He conveys his points with confidence, a warm tone, and little hedging, often illustrating concepts with real\u2011world anecdotes.",
+            "reasoning_style": "practical",
+            "register": "everyday",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
+        "4": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [],
+            "explanation_style": "balanced",
+            "hedging_style": "medium",
+            "profile_summary": "The persona speaks in an everyday, grounded way with a balance of warmth and practical explanation.",
+            "reasoning_style": "blended",
+            "register": "everyday",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
+        "43": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [],
+            "explanation_style": "balanced",
+            "hedging_style": "medium",
+            "profile_summary": "The persona speaks in an everyday, grounded way with a balance of warmth and practical explanation.",
+            "reasoning_style": "blended",
+            "register": "everyday",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        }
+    }
+}

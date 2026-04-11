@@ -1,16 +1,17 @@
-import random
-from openai import OpenAI
+"""LLM-backed biography generation for synthetic personas."""
+
 import os
+import random
+
 from dotenv import load_dotenv
+from openai import OpenAI
 
-load_dotenv() 
+load_dotenv()
 
 
-# USAGE: in a separate file, import as follows:
-# from generate_biography import generate_biography
-# then call generate_biography with the appropriate parameters, e.g.:
-# bio = generate_biography(FILL IN PARAMETERS)
-
+# =============================================================================
+# Prompt Definition
+# =============================================================================
 
 BIO_SYS_PROMPT = (
     "You generate rich, realistic biographies for synthetic voters used in social and political simulations.\n\n"
@@ -45,44 +46,58 @@ BIO_SYS_PROMPT = (
 )
 
 
-def generate_bio_prompt(persona_details, country):
-
-    persona_age_group = persona_details['age_group']
-
-    age = random.randint(int(persona_age_group.split("-")[0]), int(persona_age_group.split("-")[1]))
-    if age < 18: age = 18
-
-    details = f"country: {country}\n"
-
-    for detail in persona_details:
-
-        if detail == "age_group":
-            details += f"age: {age}\n"
-        else:
-            details += f"{detail}: {persona_details[detail]}\n"
-
-    return f"These are your base details:\n {details}\n\nWrite a detailed biography of yourself following the rules above."
-
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_MODEL = os.getenv("AZURE_OPENAI_MODEL")
 AZURE_OPENAI_BASE_URL = os.getenv("AZURE_OPENAI_BASE_URL")
 
 
-def get_AI_response(messages,  json_mode=False):
+# =============================================================================
+# Prompt Construction
+# =============================================================================
+
+def generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country):
+    """Build the user prompt used to generate a single persona biography."""
+    age = random.randint(int(age_group.split("-")[0]), int(age_group.split("-")[1]))
+    if age < 18:
+        age = 18
+    return (
+        f"You are a {age} year old {gender}. You have a {education} education and live in "
+        f"{municipality}, in the country {country}. If the 2030 Dutch general election "
+        f"(the next general election) were held today, you will vote for {vote_2030}. "
+        f"Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of "
+        "yourself following the rules above."
+    )
+
+
+# =============================================================================
+# Model Invocation
+# =============================================================================
+
+def get_ai_response(messages, json_mode=False):
+    """Request a non-streaming biography completion from the configured model."""
     client = OpenAI(
-    api_key=AZURE_OPENAI_API_KEY,
-    base_url=AZURE_OPENAI_BASE_URL
+        api_key=AZURE_OPENAI_API_KEY,
+        base_url=AZURE_OPENAI_BASE_URL,
     )
     format_type = {"type": "json_object"} if json_mode else None
     response = client.chat.completions.create(
         model=AZURE_OPENAI_MODEL,
         messages=messages,
         response_format=format_type,
-        temperature=0.67
+        temperature=0.67,
     )
     return response.choices[0].message.content
 
-def generate_biography(persona_details, country):
-    prompt = generate_bio_prompt(persona_details, country)
-    messages = [{"role":"system", "content":BIO_SYS_PROMPT},{"role":"user","content":prompt}]
-    return get_AI_response(messages)
+
+# =============================================================================
+# Public Engine Entry Point
+# =============================================================================
+
+def generate_biography(age_group, gender, vote_2030, education, municipality, country):
+    """Generate a biography string from demographic and voting attributes."""
+    prompt = generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country)
+    messages = [
+        {"role": "system", "content": BIO_SYS_PROMPT},
+        {"role": "user", "content": prompt},
+    ]
+    return get_ai_response(messages)
