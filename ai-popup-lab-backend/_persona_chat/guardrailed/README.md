@@ -101,7 +101,7 @@
                                |
                                v                                                                     
 +------------------------------------------------------------------+
-| STEP 1C: Epistemic preparation                                   |
+| STEP 1C: Epistemic Boundary Enforcement                          |
 | SCRIPT: _persona_chat/guardrailed/epistemic/engine.py            |
 | NOTE: Builds knowledge-boundary guidance for the judge.          |
 +------------------------------------------------------------------+
