@@ -53,11 +53,7 @@ def get_or_create_biography(*, persona_details: dict, persona_country: str) -> s
         return data[persona_country][persona_index]
 
     biography = generate_biography(
-        age_group=persona_details["age_group"],
-        gender=persona_details["gender"],
-        vote_2030=persona_details["vote_2030"],
-        education=persona_details["education"],
-        municipality=persona_details["municipality"],
+        persona_details=persona_details,
         country=persona_country,
     )
 

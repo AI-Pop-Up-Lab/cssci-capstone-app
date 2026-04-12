@@ -10,18 +10,18 @@ from _persona_chat.services.chat_flow import (
     handle_chat_command,
     resolve_biography,
 )
-from app.db.conn import get_persona_conn
-from app.core.config import settings
-from app.schemas import ChatMessageIn, ChatSessionCreate
-from app.services.persona_repository import (
-    get_answer_exact,
-    get_persona_profile,
-    list_personas,
-    list_questions_for_persona,
-)
-from app.services.service import create_session, get_session, handle_user_message, list_messages
+# from app.db.conn import get_persona_conn
+# from app.core.config import settings
+# from app.schemas import ChatMessageIn, ChatSessionCreate
+# from app.services.persona_repository import (
+#     get_answer_exact,
+#     get_persona_profile,
+#     list_personas,
+#     list_questions_for_persona,
+# )
+# from app.services.service import create_session, get_session, handle_user_message, list_messages
 
-from chat_limiting import response_friction, check_if_ip_limited, add_or_remove_user_requestlist, check_if_user_ongoing_request
+from user_limiting.chat_limiting import response_friction, check_if_ip_limited, add_or_remove_user_requestlist, check_if_user_ongoing_request
 
 router = APIRouter()
 
@@ -32,176 +32,176 @@ class LegacyChatMessage(BaseModel):
     persona_country: str
     chat_history: list
 
-def _legacy_snapshot_id(country: str) -> str:
-    return f"legacy_{(country or 'unknown').lower()}_bridge_v1"
+# def _legacy_snapshot_id(country: str) -> str:
+#     return f"legacy_{(country or 'unknown').lower()}_bridge_v1"
 
 
-def _legacy_persona_id(country: str, persona_details: dict) -> str:
-    raw_index = persona_details.get("index", 0)
-    try:
-        index = int(raw_index)
-    except Exception:
-        index = 0
+# def _legacy_persona_id(country: str, persona_details: dict) -> str:
+#     raw_index = persona_details.get("index", 0)
+#     try:
+#         index = int(raw_index)
+#     except Exception:
+#         index = 0
 
-    normalized_country = "".join(ch for ch in (country or "unknown").lower() if ch.isalnum() or ch == "_")
-    return f"LEGACY_{normalized_country}_{index}"
-
-
-def _select_legacy_persona(snapshot_id: str, persona_details: dict) -> dict:
-    personas = list_personas(snapshot_id)
-    if not personas:
-        raise HTTPException(status_code=404, detail="No personas available")
-
-    raw_index = persona_details.get("index", 0)
-    try:
-        persona_index = int(raw_index)
-    except Exception:
-        persona_index = 0
-
-    return personas[persona_index % len(personas)]
+#     normalized_country = "".join(ch for ch in (country or "unknown").lower() if ch.isalnum() or ch == "_")
+#     return f"LEGACY_{normalized_country}_{index}"
 
 
-def _merge_legacy_profile(persona_details: dict, supplemental_profile: dict) -> dict:
-    raw_index = persona_details.get("index", 0)
-    try:
-        persona_number = int(raw_index) + 1
-    except Exception:
-        persona_number = 1
+# def _select_legacy_persona(snapshot_id: str, persona_details: dict) -> dict:
+#     personas = list_personas(snapshot_id)
+#     if not personas:
+#         raise HTTPException(status_code=404, detail="No personas available")
 
-    merged = {
-        "display_name": f"Persona {persona_number}",
-        "municipality": persona_details.get("municipality"),
-        "municipality_code": persona_details.get("gm_code"),
-        "gender": persona_details.get("gender"),
-        "age_band": persona_details.get("age_group"),
-        "education_level": persona_details.get("education"),
-        "vote_2030": persona_details.get("vote_2030"),
-    }
+#     raw_index = persona_details.get("index", 0)
+#     try:
+#         persona_index = int(raw_index)
+#     except Exception:
+#         persona_index = 0
 
-    for key, value in supplemental_profile.items():
-        if key in merged and merged[key] not in (None, ""):
-            continue
-        merged[key] = value
-
-    merged["disclosure"] = supplemental_profile.get(
-        "disclosure",
-        "Synthetic persona composed from survey sample attributes and supplemental persona evidence.",
-    )
-
-    return {key: value for key, value in merged.items() if value not in (None, "")}
+#     return personas[persona_index % len(personas)]
 
 
-def _upsert_legacy_bridge_persona(
-    *,
-    legacy_persona_id: str,
-    legacy_snapshot_id: str,
-    persona_details: dict,
-    supplemental_persona: dict,
-) -> None:
-    profile = _merge_legacy_profile(persona_details, supplemental_persona["profile"])
+# def _merge_legacy_profile(persona_details: dict, supplemental_profile: dict) -> dict:
+#     raw_index = persona_details.get("index", 0)
+#     try:
+#         persona_number = int(raw_index) + 1
+#     except Exception:
+#         persona_number = 1
 
-    with get_persona_conn() as conn:
-        conn.execute(
-            """
-            INSERT OR REPLACE INTO personas (persona_id, snapshot_id, profile_json, created_at)
-            VALUES (?, ?, ?, datetime('now'))
-            """,
-            (
-                legacy_persona_id,
-                legacy_snapshot_id,
-                json.dumps(profile, ensure_ascii=False),
-            ),
-        )
+#     merged = {
+#         "display_name": f"Persona {persona_number}",
+#         "municipality": persona_details.get("municipality"),
+#         "municipality_code": persona_details.get("gm_code"),
+#         "gender": persona_details.get("gender"),
+#         "age_band": persona_details.get("age_group"),
+#         "education_level": persona_details.get("education"),
+#         "vote_2030": persona_details.get("vote_2030"),
+#     }
 
-        conn.execute(
-            "DELETE FROM survey_answers WHERE persona_id=? AND snapshot_id=?",
-            (legacy_persona_id, legacy_snapshot_id),
-        )
+#     for key, value in supplemental_profile.items():
+#         if key in merged and merged[key] not in (None, ""):
+#             continue
+#         merged[key] = value
 
-        source_answers = conn.execute(
-            """
-            SELECT question_id, answer_value, answer_text, wave, confidence, source, calibration_tag
-            FROM survey_answers
-            WHERE persona_id=? AND snapshot_id=?
-            ORDER BY question_id, wave
-            """,
-            (supplemental_persona["persona_id"], supplemental_persona["snapshot_id"]),
-        ).fetchall()
+#     merged["disclosure"] = supplemental_profile.get(
+#         "disclosure",
+#         "Synthetic persona composed from survey sample attributes and supplemental persona evidence.",
+#     )
 
-        for row in source_answers:
-            conn.execute(
-                """
-                INSERT OR REPLACE INTO survey_answers (
-                    persona_id, snapshot_id, question_id, answer_value, answer_text, wave,
-                    confidence, source, calibration_tag, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
-                """,
-                (
-                    legacy_persona_id,
-                    legacy_snapshot_id,
-                    row["question_id"],
-                    row["answer_value"],
-                    row["answer_text"],
-                    row["wave"],
-                    row["confidence"],
-                    row["source"],
-                    row["calibration_tag"],
-                ),
-            )
-
-        conn.commit()
+#     return {key: value for key, value in merged.items() if value not in (None, "")}
 
 
-@router.get("/personas")
-def api_list_personas(snapshot_id: str = "2026_wave_1"):
-    personas = list_personas(snapshot_id)
-    return {"snapshot_id": snapshot_id, "personas": personas}
+# def _upsert_legacy_bridge_persona(
+#     *,
+#     legacy_persona_id: str,
+#     legacy_snapshot_id: str,
+#     persona_details: dict,
+#     supplemental_persona: dict,
+# ) -> None:
+#     profile = _merge_legacy_profile(persona_details, supplemental_persona["profile"])
+
+#     with get_persona_conn() as conn:
+#         conn.execute(
+#             """
+#             INSERT OR REPLACE INTO personas (persona_id, snapshot_id, profile_json, created_at)
+#             VALUES (?, ?, ?, datetime('now'))
+#             """,
+#             (
+#                 legacy_persona_id,
+#                 legacy_snapshot_id,
+#                 json.dumps(profile, ensure_ascii=False),
+#             ),
+#         )
+
+#         conn.execute(
+#             "DELETE FROM survey_answers WHERE persona_id=? AND snapshot_id=?",
+#             (legacy_persona_id, legacy_snapshot_id),
+#         )
+
+#         source_answers = conn.execute(
+#             """
+#             SELECT question_id, answer_value, answer_text, wave, confidence, source, calibration_tag
+#             FROM survey_answers
+#             WHERE persona_id=? AND snapshot_id=?
+#             ORDER BY question_id, wave
+#             """,
+#             (supplemental_persona["persona_id"], supplemental_persona["snapshot_id"]),
+#         ).fetchall()
+
+#         for row in source_answers:
+#             conn.execute(
+#                 """
+#                 INSERT OR REPLACE INTO survey_answers (
+#                     persona_id, snapshot_id, question_id, answer_value, answer_text, wave,
+#                     confidence, source, calibration_tag, created_at
+#                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+#                 """,
+#                 (
+#                     legacy_persona_id,
+#                     legacy_snapshot_id,
+#                     row["question_id"],
+#                     row["answer_value"],
+#                     row["answer_text"],
+#                     row["wave"],
+#                     row["confidence"],
+#                     row["source"],
+#                     row["calibration_tag"],
+#                 ),
+#             )
+
+#         conn.commit()
 
 
-@router.get("/persona/{persona_id}/profile")
-def api_get_persona_profile(persona_id: str, snapshot_id: str = "2026_wave_1"):
-    profile = get_persona_profile(persona_id, snapshot_id)
-    if not profile:
-        raise HTTPException(status_code=404, detail="Persona not found")
-
-    questions = list_questions_for_persona(persona_id, snapshot_id)
-    return {
-        "persona_id": persona_id,
-        "snapshot_id": snapshot_id,
-        "profile": profile,
-        "questions": questions,
-    }
+# @router.get("/personas")
+# def api_list_personas(snapshot_id: str = "2026_wave_1"):
+#     personas = list_personas(snapshot_id)
+#     return {"snapshot_id": snapshot_id, "personas": personas}
 
 
-@router.get("/persona/{persona_id}/answers")
-def api_get_answers(persona_id: str, snapshot_id: str = "2026_wave_1", question_id: str | None = None):
-    if not question_id:
-        raise HTTPException(status_code=400, detail="question_id is required")
+# @router.get("/persona/{persona_id}/profile")
+# def api_get_persona_profile(persona_id: str, snapshot_id: str = "2026_wave_1"):
+#     profile = get_persona_profile(persona_id, snapshot_id)
+#     if not profile:
+#         raise HTTPException(status_code=404, detail="Persona not found")
 
-    return {"answers": get_answer_exact(persona_id, snapshot_id, question_id)}
-
-
-@router.post("/chat/session")
-def api_create_session(payload: ChatSessionCreate):
-    model_version = f"provider:{settings.LLM_PROVIDER}"
-    session_id = create_session(payload.persona_id, payload.snapshot_id, model_version=model_version)
-
-    return {
-        "session_id": session_id,
-        "persona_id": payload.persona_id,
-        "snapshot_id": payload.snapshot_id,
-        "model_version": model_version,
-    }
+#     questions = list_questions_for_persona(persona_id, snapshot_id)
+#     return {
+#         "persona_id": persona_id,
+#         "snapshot_id": snapshot_id,
+#         "profile": profile,
+#         "questions": questions,
+#     }
 
 
-@router.get("/chat/{session_id}")
-def api_get_session(session_id: str):
-    session = get_session(session_id)
-    if not session:
-        raise HTTPException(status_code=404, detail="Session not found")
+# @router.get("/persona/{persona_id}/answers")
+# def api_get_answers(persona_id: str, snapshot_id: str = "2026_wave_1", question_id: str | None = None):
+#     if not question_id:
+#         raise HTTPException(status_code=400, detail="question_id is required")
 
-    messages = list_messages(session_id)
-    return {"session": session, "messages": messages}
+#     return {"answers": get_answer_exact(persona_id, snapshot_id, question_id)}
+
+
+# @router.post("/chat/session")
+# def api_create_session(payload: ChatSessionCreate):
+#     model_version = f"provider:{settings.LLM_PROVIDER}"
+#     session_id = create_session(payload.persona_id, payload.snapshot_id, model_version=model_version)
+
+#     return {
+#         "session_id": session_id,
+#         "persona_id": payload.persona_id,
+#         "snapshot_id": payload.snapshot_id,
+#         "model_version": model_version,
+#     }
+
+
+# @router.get("/chat/{session_id}")
+# def api_get_session(session_id: str):
+#     session = get_session(session_id)
+#     if not session:
+#         raise HTTPException(status_code=404, detail="Session not found")
+
+#     messages = list_messages(session_id)
+#     return {"session": session, "messages": messages}
 
 
 # @router.post("/chat/{session_id}/message")
@@ -314,7 +314,8 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
             persona_details=persona_details,
             persona_country=persona_country,
         )
-    except Exception:
+    except Exception as e:
+        print(e)
         add_or_remove_user_requestlist('remove', ip)
         return StreamingResponse(
             single_message_stream("Sorry, there was an error generating the persona biography. Please try again."),

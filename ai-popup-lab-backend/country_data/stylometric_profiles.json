@@ -1,4 +1,25 @@
 {
+    "denmark": {
+        "17": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [
+                "a brisk walk along the river at sunrise, followed by a strong cup of black coffee",
+                "my garden\u2014mostly carrots, kale, and a few rose bushes\u2014keeps my hands busy",
+                "I\u2019m an active volunteer at the community centre, helping organise the weekly bingo night",
+                "I want to know that I can rely on the system that has taken care of me for decades",
+                "I appreciate policies that help small farmers adapt while protecting the countryside"
+            ],
+            "explanation_style": "example_first",
+            "hedging_style": "low",
+            "profile_summary": "She speaks in an everyday, approachable tone, mixing short statements with longer, descriptive sentences. Her language stays concrete, anchored in personal experiences like gardening, coffee rituals, and community volunteering, while occasionally touching on broader ideas. Vocabulary is moderate\u2014clear and familiar without being overly technical. She conveys confidence in a balanced way, showing warmth and genuine concern for family and neighbours, often illustrating points with concrete examples.",
+            "reasoning_style": "practical",
+            "register": "everyday",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        }
+    },
     "netherlands": {
         "2": {
             "abstraction_level": "mixed",

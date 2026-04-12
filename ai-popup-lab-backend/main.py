@@ -12,7 +12,7 @@ from api_endpoints import sample_router
 from api_endpoints import chat_router
 from api_endpoints import dynamic_data_router
 
-from app.db.init_db import init_db, seed_demo_data
+# from app.db.init_db import init_db, seed_demo_data
 
 from scheduled_routines import weekly_data_generation, reset_ip_request_limits
 
@@ -49,8 +49,8 @@ async def run_daily():
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    init_db()
-    seed_demo_data()
+    # init_db()
+    # seed_demo_data()
     asyncio.create_task(run_daily())
     # asyncio.create_task(run_weekly())
     yield

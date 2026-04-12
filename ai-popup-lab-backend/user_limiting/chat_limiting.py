@@ -8,9 +8,9 @@ from pathlib import Path
 # active_request_users_path = '/mnt/data/users_request_active.json'
 
 # path for json files in dev
-base_dir = Path(__file__).resolve().parent  # goes up from file to ai-popup-lab-backend (backend root)
-ip_requests_path = base_dir / "user_limiting" / "day_ip_requests.json"
-active_request_users_path = base_dir / "user_limiting" / "users_request_active.json"
+base_dir = Path(__file__).resolve().parent  # goes up from file to folder it is in, user_limiting
+ip_requests_path = base_dir / "day_ip_requests.json"
+active_request_users_path = base_dir / "users_request_active.json"
 
 def response_friction(friction_time_secs):
 

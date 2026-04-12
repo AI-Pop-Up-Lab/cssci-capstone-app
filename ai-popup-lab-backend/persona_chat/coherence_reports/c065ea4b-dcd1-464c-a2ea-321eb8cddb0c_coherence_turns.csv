@@ -1,2 +1,0 @@
-session_id,persona_id,snapshot_id,turn_index,p2l_judge_binary,p2l_score,p2l_verdict,p2l_violation_count,l2l_judge_binary,l2l_score,l2l_verdict,l2l_contradiction_count
-c065ea4b-dcd1-464c-a2ea-321eb8cddb0c,P_0001,2026_wave_1,1,,0.0,WARN,0,,0.0,WARN,0

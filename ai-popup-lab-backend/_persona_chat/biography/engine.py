@@ -55,17 +55,26 @@ AZURE_OPENAI_BASE_URL = os.getenv("AZURE_OPENAI_BASE_URL")
 # Prompt Construction
 # =============================================================================
 
-def generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country):
+def generate_bio_prompt(persona_details, country):
     """Build the user prompt used to generate a single persona biography."""
-    age = random.randint(int(age_group.split("-")[0]), int(age_group.split("-")[1]))
-    if age < 18:
-        age = 18
-    return (
-        f"You are a {age} year old {gender}. You have a {education} education and live in "
-        f"{municipality}, in the country {country}. If the 2030 Dutch general election "
-        f"(the next general election) were held today, you will vote for {vote_2030}. "
-        f"Thus your (intended vote is) {vote_2030}\n\nWrite a detailed biography of "
-        "yourself following the rules above."
+
+    persona_age_group = persona_details['age_group']
+
+    age = random.randint(int(persona_age_group.split("-")[0]), int(persona_age_group.split("-")[1]))
+    if age < 18: age = 18
+
+    details = f"country: {country}\n"
+
+    for detail in persona_details:
+
+        if detail == "age_group":
+            details += f"age: {age}\n"
+        else:
+            details += f"{detail}: {persona_details[detail]}\n"
+
+    return (f"These are your base details:\n"
+            f"{details}\n\n"
+            "Write a detailed biography of yourself following the rules above."
     )
 
 
@@ -93,9 +102,9 @@ def get_ai_response(messages, json_mode=False):
 # Public Engine Entry Point
 # =============================================================================
 
-def generate_biography(age_group, gender, vote_2030, education, municipality, country):
+def generate_biography(persona_details, country):
     """Generate a biography string from demographic and voting attributes."""
-    prompt = generate_bio_prompt(age_group, gender, vote_2030, education, municipality, country)
+    prompt = generate_bio_prompt(persona_details, country)
     messages = [
         {"role": "system", "content": BIO_SYS_PROMPT},
         {"role": "user", "content": prompt},

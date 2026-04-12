@@ -1,5 +1,0 @@
-session_id,persona_id,snapshot_id,turn_index,p2l_judge_binary,p2l_score,p2l_verdict,p2l_violation_count,l2l_judge_binary,l2l_score,l2l_verdict,l2l_contradiction_count
-f4b86e93-c343-4193-b0f2-c34f3be90d63,P_0001,2026_wave_1,1,,0.0,WARN,0,,0.0,WARN,0
-f4b86e93-c343-4193-b0f2-c34f3be90d63,P_0001,2026_wave_1,2,,0.0,WARN,0,,0.0,WARN,0
-f4b86e93-c343-4193-b0f2-c34f3be90d63,P_0001,2026_wave_1,3,,0.0,WARN,0,,0.0,WARN,0
-f4b86e93-c343-4193-b0f2-c34f3be90d63,P_0001,2026_wave_1,4,,0.0,WARN,0,,0.0,WARN,0

@@ -1,2 +1,0 @@
-session_id,persona_id,snapshot_id,turn_index,p2l_judge_binary,p2l_score,p2l_verdict,p2l_violation_count,l2l_judge_binary,l2l_score,l2l_verdict,l2l_contradiction_count
-5054ecb7-454a-4135-94d3-bd2ba8c9950c,LEGACY_netherlands_3,legacy_netherlands_bridge_v1,1,,0.0,WARN,0,,0.0,WARN,0
