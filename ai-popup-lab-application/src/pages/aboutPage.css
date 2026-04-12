@@ -18,13 +18,14 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    width: 840px;
 }
 
 #about-title > h1{
     width: 100%;
     text-align: justify;
     text-align-last: justify;
-    font-size: 56px;
+    font-size: 80px;
 }
 
 #about-title > h1:nth-child(1){
@@ -34,16 +35,17 @@
 }
 
 #about-title > h1:nth-child(1) > span{
-    font-size: 16px;
+    font-size: 20px;
     text-transform: uppercase;
     color: #6B6D76;
 }
 
 #about-briefing{
+    margin-top: 20px;
     line-height: 1.8;
     margin-bottom: 40px;
-    max-width: 600px;
-    font-size: 18px;
+    /* max-width: 600px; */
+    font-size: 22px;
 }
 
 .about-header{
@@ -56,15 +58,19 @@
 .about-header::after{
     content: "";
     display: block;
-    width: 100%;
+    width: 0;
     height: 2.5px;
     background-color: #335058;
     margin-top: 3px;
 }
 
+.header-underline-appear::after{
+    animation: header-underline 0.69420s ease-in-out forwards;
+}
+
 .about-sectiontext{
     margin-bottom: 40px;
-    max-width: 750px;
+    max-width: 1000px;
     line-height: 1.5;
     font-size: 16px;
 }
@@ -81,18 +87,27 @@
 }
 
 .about-whatwedo-item{
+    padding: 0 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .whatwedo-item-photo{
     border-radius: 50%;
     background-color: #FCBFB7;
     aspect-ratio: 1;
-    height: 150px;
+    height: 140px;
     margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatwedo-item-photo > img{
+    aspect-ratio: 1;
+    height: 70px;
 }
 
 .whatwedo-item-text{
@@ -137,7 +152,6 @@
 #about-commitments{
     display: flex;
     flex-direction: column;
-    margin-bottom: 80px;
 }
 
 #about-commitments > p{
@@ -153,17 +167,55 @@
     margin-right: 15px;
 }
 
-@media screen and (max-width: 810px){
-    #about-title > h1{
-        font-size: 36px;
+#about-team{
+    margin-bottom: 80px;
+}
+
+@keyframes header-underline{
+    0%{
+        width: 0;
     }
 
-    #about-briefing{
-        font-size: 13px;
+    100%{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 920px){
+    #about-title{
+        width: 630px;
+    }
+
+    #about-title > h1{
+        font-size: 60px;
     }
 
     #about-title > h1:nth-child(1) > span{
-        font-size: 12px;
+        font-size: 16px;
+    }
+
+    #about-briefing{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 810px){
+
+    #about-title{
+        width: 480px;
+    }
+
+    #about-title > h1{
+        font-size: 46px;
+    }
+
+    #about-briefing{
+        font-size: 17px;
+    }
+
+    #about-title > h1:nth-child(1) > span{
+        font-size: 13px;
     }
 
     .about-header{
@@ -176,10 +228,15 @@
 
     .about-whatwedo-item{
         margin-bottom: 40px;
+        padding: 5%;
     }
 
     .whatwedo-item-photo{
         height: 100px;
+    }
+
+    .whatwedo-item-photo > img{
+        height: 45px;
     }
 
     .whatwedo-item-text > p{
@@ -209,7 +266,30 @@
     }
 }
 
+@media screen and (max-width: 540px){
+    #about-title{
+        width: 378px;
+    }
+
+    #about-title > h1{
+        font-size: 36px;
+    }
+
+    #about-briefing{
+        font-size: 14px;
+    }
+
+    #about-title > h1:nth-child(1) > span{
+        font-size: 10px;
+    }
+}
+
 @media screen and (max-width: 450px) {
+
+    #about-title{
+        width: 273px;
+    }
+
     #about-title > h1{
         font-size: 26px;
     }
@@ -236,6 +316,10 @@
 
     .whatwedo-item-photo{
         height: 50px;
+    }
+
+    .whatwedo-item-photo > img{
+        height: 20px;
     }
 
     .whatwedo-item-text > p{
@@ -265,6 +349,23 @@
     }
 }
 
+@media screen and (max-width: 300px){
+    #about-title{
+        width: 187px;
+    }
+
+    #about-title > h1{
+        font-size: 18px;
+    }
+
+    #about-title > h1:nth-child(1) > span{
+        font-size: 5px;
+    }
+
+    #about-briefing{
+        font-size: 8px;
+    }
+}
 
 /* old temp css */
 

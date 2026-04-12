@@ -1,4 +1,7 @@
 /* persona chat example  */
+.PersonaChatExample.addExampleMargin{
+    margin-top: 60px;
+}
 
 #landing-explore-personas{
     width: 100%;
@@ -170,7 +173,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 15px;
 }
 
@@ -194,9 +197,10 @@
 
 #land-expl-pers-bottom > a > button > img{
     height: 10px;
-    transform: scale(2);
+    transform: scale(1.7) translateY(-0.5px);
     display: inline-block;
     margin-left: 12px;
+    filter: invert(65%) sepia(7%) saturate(1391%) hue-rotate(318deg) brightness(123%) contrast(98%);
 }
 
 @keyframes exclamation-pulse{

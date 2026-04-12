@@ -1,6 +1,6 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 // eslint-disable-next-line
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation  } from 'react-router-dom';
 
 import './App.css';
 import HeaderAndNavigation from './modules/headerAndNavigation';
@@ -13,11 +13,23 @@ import AboutPage from './pages/aboutPage';
 import MethodsPage from './pages/methodsPage.js'
 import PersonaPage from './pages/personaPage.js'
 import EthicsPage from './pages/ethicsPage.js'
+import PollPage from './pages/pollPage.js';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
 
   return (
     <Router>
+      <ScrollToTop />
 
       <HeaderAndNavigation />
       <PopupDisclaimer /> 
@@ -29,6 +41,7 @@ function App() {
         <Route path="/ethics" element={<EthicsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/methods" element={<MethodsPage />} />
+        <Route path="/polling" element={<PollPage />} />
       </Routes>
 
       <Footer />

@@ -14,7 +14,7 @@ from api_endpoints import dynamic_data_router
 
 from app.db.init_db import init_db, seed_demo_data
 
-from scheduled_routines import weekly_sample_generation, reset_ip_request_limits
+from scheduled_routines import weekly_data_generation, reset_ip_request_limits
 
 # timezone data for amsterdam
 AMSTERDAM = ZoneInfo("Europe/Amsterdam")
@@ -43,7 +43,7 @@ async def run_daily():
 #             hour=0, minute=0, second=0, microsecond=0
 #         )
 #         await asyncio.sleep((next_monday - now).total_seconds())
-#         weekly_sample_generation()
+#         weekly_data_generation()
 
 
 
@@ -84,3 +84,5 @@ app.include_router(test_router, prefix="/api") # this would be accessed through 
 app.include_router(sample_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
 app.include_router(dynamic_data_router, prefix="/api")
+
+# weekly_data_generation()
