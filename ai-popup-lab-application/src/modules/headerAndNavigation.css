@@ -6,6 +6,7 @@ header{
     background-color: transparent;
 
     padding: 0 3%;
+    padding-top: 15px;
     margin-bottom: 50px;
     transition: background-color 1s;
     transition: height 0.5s;
@@ -16,13 +17,29 @@ header{
     pointer-events: none;
 }
 
-header > #header-left > h1{
-    font-size: 100px;
-    transition: color 0.5s;
-    transition: font-size 0.5s;
+#header-left{
+    margin-right: 15px;
+    padding: 14px 22px;
+    border-radius: 20px;
+    background-color: #334E58;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
-header > #header-left > p{
+#header-text-left > h1{
+    color: #D1E3DD;
+    transition: font-size 0.5s;
+    font-weight: 200;
+    font-size: 32px;
+}
+
+#header-text-left > h1 > span{
+    font-weight: 400;
+}
+
+#header-text-left > p{
     display: none;
     opacity: 0;
     transition: opacity 0.5s;
@@ -30,9 +47,10 @@ header > #header-left > p{
 
 #header-right{
     display: flex;
-    height: calc(100% - 30px);
-    align-items: flex-start;
-    padding-top: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 65px;
+    margin-top: 15p;
 }
 
 #hamburger-and-nav{
@@ -58,6 +76,7 @@ header > #header-left > p{
     line-height: 1.9;
     font-size: 22px;
     pointer-events: auto;
+    text-align: right;
 }
 
 #nav-links > a::after{
@@ -78,6 +97,7 @@ header > #header-left > p{
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+    height: 100%;
 }
 
 #lang-and-modeswitch > button{
@@ -86,7 +106,6 @@ header > #header-left > p{
     border: 2px solid #334E58;
     border-radius: 18px;
     transition: background-color 0.2s;
-    margin-bottom: 10px;
     pointer-events: auto;
 }
 
@@ -100,7 +119,7 @@ header > #header-left > p{
     border: 2px solid #334E58;
     background-color: #334E58;
     width: 60px;
-    height: 26px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -115,7 +134,7 @@ header > #header-left > p{
     border-radius: 18px;
     background-color: #FCBFB7;
     width: 35px;
-    height: 26px;
+    height: 22px;
     transition: transform 0.2s;
 }
 
@@ -136,7 +155,7 @@ header > #header-left > p{
 }
 
 #hamburger-left{
-    background-color: #335058;
+    background-color: #c6d7d2;
     height: 4px;
     width: 15px;
     transition: transform 0.5s;
@@ -145,7 +164,7 @@ header > #header-left > p{
 }
 
 #hamburger-right{
-    background-color: #335058;
+    background-color: #c6d7d2;
     height: 4px;
     width: 15px;
     transition: transform 0.5s;
@@ -156,7 +175,7 @@ header > #header-left > p{
 
 #hamburger-left::before{
     content: '';
-    background-color: #335058;
+    background-color: #c6d7d2;
     height: 4px;
     width: 15px;
     transition: transform 0.5s;
@@ -166,7 +185,7 @@ header > #header-left > p{
 
 #hamburger-right::before{
     content: '';
-    background-color: #335058;
+    background-color: #c6d7d2;
     height: 4px;
     width: 15px;
     transition: transform 0.5s;
@@ -176,7 +195,7 @@ header > #header-left > p{
 
 #hamburger-left::after{
     content: '';
-    background-color: #335058;
+    background-color: #c6d7d2;
     height: 4px;
     width: 15px;
     transition: transform 0.5s;
@@ -186,7 +205,7 @@ header > #header-left > p{
 
 #hamburger-right::after{
     content: '';
-    background-color: #335058;
+    background-color: #c6d7d2;
     height: 4px;
     width: 15px;
     transition: transform 0.5s;
@@ -249,19 +268,16 @@ header.nav-menu-open #modeswitch.modeslideon #modeswitch-slider{
 
 header.nav-menu-open > #header-left{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
     height: calc(100% - 30px);
-    padding-top: 30px;
 }
 
-header.nav-menu-open > #header-left >  h1{
-    font-size: 30px;
+header.nav-menu-open > #header-left  #header-text-left >  h1{
     transition: font-size 0.5s;
-    padding: 0 !important;
 }
 
-header.nav-menu-open > #header-left > p{
+header.nav-menu-open > #header-left > #header-text-left > p{
     color: #FCBFB7;
     font-size: 14px;
     width: 250px;
@@ -276,32 +292,21 @@ header.nav-menu-open #nav-links{
 }
 
 header.nav-menu-open > #header-right{
-    padding: 30px 0 0 0 !important;
+    padding: 10px 0 0 0 !important;
     margin: 0 !important;
     align-items: flex-start !important;
 }
 
 /* header styling for when scrolled past absolute of page */
 
-header.header-scrolled > #header-left > h1{
-    font-size: 30px;
-    transition: font-size 0.5s;
-    color: #D1E3DD;
-    background-color: #334E58;
-    padding: 10px 14px;
-    border-radius: 20px;
+/* header.header-scrolled > #header-left > h1{
 }
 
 header.header-scrolled > #header-left{
-    padding-top: 30px;
 }
 
 header.header-scrolled > #header-right{
-    background-color: #334E58;
-    padding: 10px 14px;
-    margin-top: 30px;
-    border-radius: 20px;
-    align-items: center;
+    
 }
 
 header.header-scrolled #modeswitch{
@@ -309,20 +314,18 @@ header.header-scrolled #modeswitch{
 }
 
 header.header-scrolled #modeswitch-slider{
-    /* transform: translateX(25px); */
     border-right: 2px solid #D1E3DD;
 }
 
 header.header-scrolled #modeswitch.modeslideon #modeswitch-slider{
-    /* transform: translateX(25px); */
     border-left: 2px solid #D1E3DD;
     border-right: 0px;
-}
+} */
 
 
 /* hamburger color switch when scrolled */
 
-header.header-scrolled #hamburger-left{
+/* header.header-scrolled #hamburger-left{
     background-color: #D1E3DD;
 }
 
@@ -344,80 +347,155 @@ header.header-scrolled #hamburger-left::after{
 
 header.header-scrolled #hamburger-right::after{
     background-color: #D1E3DD;
-}
+} */
 
 
 /* media queries */
 
-@media screen and (max-width: 810px) {
-
-    header > #header-left > h1{
-        font-size: 60px;
-    }
-
-    header > #header-left {
-        padding-top: 30px;
-    }
-
+@media screen and (max-width: 920px){
     #nav-links > a{
         font-size: 20px;
     }
 
-}
-
-@media screen and (max-width: 540px){
-    #nav-links > a{
-        font-size: 17px;
+    header.nav-menu-open > #header-left > #header-text-left >  h1{
+        font-size: 26px;
     }
 }
 
-@media screen and (max-width: 450px) {
-    header > #header-left > h1{
-        font-size: 30px;
+@media screen and (max-width: 810px) {
+
+    #header-text-left > h1{
+        font-size: 26px;
     }
 
-    #nav-links > a{
-        font-size: 14px;
+    header.nav-menu-open > #header-left > #header-text-left >  h1{
+        font-size: 22px;
     }
 
-    header.nav-menu-open > #header-left > p{
+    header.nav-menu-open > #header-left > #header-text-left > p{
         font-size: 10px;
     }
 
-    header.header-scrolled > #header-left > h1{
-        font-size: 23px;
+    #header-right{
+        height: 60px;
     }
 
-    header{
-        min-height: 0px;
+    
+}
+
+@media screen and (max-width: 730px){
+    header.nav-menu-open > #header-left > #header-text-left >  h1{
+        font-size: 19px;
+    }
+
+    #nav-links > a{
+        font-size: 16px;
+    }
+
+    header.nav-menu-open > #header-left > #header-text-left{
+        max-width: 180px;
+    }
+
+    header.nav-menu-open > #header-left > #header-text-left > p{
+        width: 120px;
+    }
+
+    #modeswitch{
+        width: 40px;
+        height: 15px;
+    }
+
+    #modeswitch-slider{
+        width: 22px;
+        height: 15px;
+    }
+
+    #modeswitch.modeslideon #modeswitch-slider{
+        transform: translateX(16px);
+    }
+
+    #lang-and-modeswitch > button{
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+
+    header.nav-menu-open > #header-left{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 640px){
+    #header-text-left > h1{
+        font-size: 20px;
+    }
+
+    #hamburger-left{
+        height: 2px;
+    }
+
+    #hamburger-right{
+        height: 2px;
+    }
+
+    #hamburger-left::before{
+        height: 2px;
+    }
+
+    #hamburger-right::before{
+        height: 2px;
+    }
+
+    #hamburger-left::after{
+        height: 2px;
+    }
+
+    #hamburger-right::after{
+        height: 2px;
+    }
+
+    #header-right{
+        height: 58px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    #header-text-left > h1{
+        font-size: 16px;
+    }
+
+    #header-right{
+        height: 58px;
+    }
+
+    #nav-links > a{
+        font-size: 12px;
     }
     
 }
 
-@media screen and (max-width: 420px){
-    #nav-links > a{
+@media screen and (max-width: 470px){
+    #header-text-left > h1{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    header.nav-menu-open > #header-left > #header-text-left > h1{
         font-size: 12px;
     }
-}
 
-@media screen and (max-width: 400px){
-    #nav-links > a{
-        font-size: 10px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    header.nav-menu-open > #header-left > p{
-        font-size: 8px;
-        max-width: 180px;
-    }
-
-    header.nav-menu-open > #header-left > h1{
-        font-size: 20px;
+    header.nav-menu-open > #header-left > #header-text-left > p{
+        font-size: 7px;
     }
 
     #nav-links > a{
         font-size: 10px;
     }
+}
 
+@media screen and (max-width: 380px){
+    #header-text-left > h1{
+        font-size: 9px;
+    }
 }

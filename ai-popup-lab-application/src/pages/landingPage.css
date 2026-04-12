@@ -6,7 +6,114 @@
     padding: 0 3%;
 }
 
-#landing-intro{
+.landingPageTop{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+.landingPageMessageSection{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.landingPageMessage{
+    border: 2px solid #334E58;
+    border-radius: 16px;
+    padding: 14px 18px;
+    max-width: 500px;
+    margin: 8px 0;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.landingPageTop > .landingPageMessageSection > .landingPageMessage:nth-child(2){
+    margin-bottom: 12px;
+}
+
+#landingVoteProjContainer a > button{
+    background-color: #334E58;
+    border-radius: 34px;
+    padding: 12px 30px;
+    color: #FCBFB7;
+    border: none;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+
+#landingVoteProjContainer a > button:hover{
+    cursor: pointer;
+    background-color: #2b4149;
+}
+
+#landingVoteProjContainer a > button > img{
+    height: 10px;
+    transform: scale(1.7) translateY(-0.5px);
+    display: inline-block;
+    margin-left: 12px;
+    filter: invert(65%) sepia(7%) saturate(1391%) hue-rotate(318deg) brightness(123%) contrast(98%);
+}
+
+#landingVoteProjContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+#landingPageBottomMessages{
+    margin-bottom: 60px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.pollie{
+    height: 150px;
+    margin:  0 50px 0 10px;
+}
+
+@media screen and (max-width: 810px){
+    .pollie{
+        height: 100px;
+    }
+
+    .landingPageMessage{
+        max-width: calc(100% - 38px);
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+
+    .pollie{
+        height: 80px;
+    }
+
+    .landingPageMessage{
+        font-size: 9px;
+    }
+
+    #landingVoteProjContainer a > button{
+        font-size: 10px;
+        padding: 10px 20px;
+    }
+
+    #landingVoteProjContainer a > button > img{
+        height: 10px;
+        transform: scale(1.3);
+        margin-left: 10px;
+    }
+
+}
+
+/* OLD CSS BELOW */
+
+/* #landing-intro{
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -63,4 +170,4 @@
     #landing-intro{
         margin-bottom: 80px;
     }
-}
+} */

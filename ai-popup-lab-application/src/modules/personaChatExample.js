@@ -25,7 +25,7 @@ function PersonaChatExample({includeLink, country}) {
 
 
   return (
-    <div className="PersonaChatExample unbounded-weight300">
+    <div className={`PersonaChatExample unbounded-weight300 ${includeLink ? '' : 'addExampleMargin'}`}>
         <div id='land-expl-pers-top'>
           
 

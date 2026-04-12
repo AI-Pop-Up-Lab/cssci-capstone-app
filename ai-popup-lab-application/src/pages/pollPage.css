@@ -1,0 +1,5 @@
+.PollPage{
+    padding: 0 3%;
+    display: flex;
+    flex-direction: column;
+}

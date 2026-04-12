@@ -10,8 +10,13 @@ function VoteProjection({ pollingData, country }) {
   const svgRef = useRef();
   const tooltipRef = useRef();
 
+  const [nextGEcolname, setNextGEcolname] = useState(null);
+  const [nextGEcolnameError, setNextGEcolnameError] = useState(null); 
+
   const total = pollingData?.length || 0;
-  const didNotVote = pollingData?.filter(r => r.vote_2030 === "Did not vote").length || 0;
+  const didNotVote = (nextGEcolname && pollingData)
+  ? pollingData.filter(r => r[nextGEcolname] === "Did not vote").length
+  : 0;
   const voted = total - didNotVote;
   const turnoutPct = total > 0 ? ((voted / total) * 100).toFixed(1) : 0;
 
@@ -23,9 +28,6 @@ function VoteProjection({ pollingData, country }) {
 
   const [partyInfoAlternative, setPartyInfoAlternative] = useState(null);
   const [partyInfoAlternativeError, setPartyInfoAlternativeError] = useState(null); 
-
-  const [nextGEcolname, setNextGEcolname] = useState(null);
-  const [nextGEcolnameError, setNextGEcolnameError] = useState(null); 
 
   async function getNextGEcolname(countryName){
     try {
@@ -103,6 +105,7 @@ function VoteProjection({ pollingData, country }) {
   useEffect(() => {
     if (!pollingData || pollingData.length === 0) return;
     if (!partyColours) return;
+    if (!nextGEcolname) return;
 
     let isTablet = false;
     let isMobile = false;
@@ -253,14 +256,14 @@ function VoteProjection({ pollingData, country }) {
       .transition().delay(800).duration(200)
       .attr("opacity", 1);
 
-  }, [pollingData, partyColours]);
+  }, [pollingData, partyColours, nextGEcolname]);
 
   return (
     <div className="VoteProjection">
       <h3 className="vp-title">If a general election were held today, who would you vote for?</h3>
       {partyColours && nextGEcolname ? (
         <>
-          <p className="vp-subtitle">...</p>
+          <p className="vp-subtitle">Turnout: <strong>{turnoutPct}%</strong> &mdash; {voted} of {total} respondents said they would vote</p>
           <div className="vp-chart-wrapper">
             <svg ref={svgRef} />
             <div ref={tooltipRef} className="chart-tooltip" />

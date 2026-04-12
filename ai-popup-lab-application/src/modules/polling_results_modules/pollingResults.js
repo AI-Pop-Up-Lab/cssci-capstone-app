@@ -106,7 +106,6 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
       {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
       {/* {data ? <PollingMap /> : <Loader />} */}
 
-      <div id="polling-divider"></div>
 
       {data && stratFrameData ? (
         <div id="exportButtons">
@@ -123,7 +122,6 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
         <Loader />
       )}
 
-      <div id="polling-divider"></div>
     </div>
   );
 };

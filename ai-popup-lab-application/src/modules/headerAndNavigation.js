@@ -21,11 +21,11 @@ function HeaderAndNavigation() {
       <header className={`${scrolled ? 'header-scrolled' : ''} ${navOpen ? 'nav-menu-open' : ''}`}>
 
         <div id='header-left'>
-          <h1 className="unbounded-weight300">AI POLLSTER</h1>
-          <p className="unbounded-weight300">Estimating public opinion from synthetic personae</p>
-        </div>
 
-        <div id='header-right'>
+          <div id="header-text-left">
+            <h1 className="unbounded-weight300">MECHANICAL <span>POLLSTER</span></h1>
+            <p className="unbounded-weight300">Estimating public opinion from synthetic personae</p>
+          </div>
 
           <div id='hamburger-and-nav'>
 
@@ -36,18 +36,23 @@ function HeaderAndNavigation() {
 
             <div id='nav-links' className='unbounded-weight400'>
               <Link to="/" onClick={() => setNavOpen(!navOpen)}>homepage</Link>
+              <Link to="/polling" onClick={() => setNavOpen(!navOpen)}>poll results</Link>
               <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>persona explorer</Link>
               <Link to="/about" onClick={() => setNavOpen(!navOpen)}>about us</Link>
               <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethics</Link>
             </div>
           </div>
+        
+        </div>
 
-          {/* <div id='lang-and-modeswitch'>
+        <div id='header-right'>
+
+          <div id='lang-and-modeswitch'>
             <button className='unbounded-weight300'>ENGLISH</button>
             <div className={darkModeOn ? 'modeslideon' : ''} id="modeswitch" onClick={() => setDarkModeOn(!darkModeOn)}>
               <div id="modeswitch-slider"></div>
             </div>
-          </div> */}
+          </div>
         </div>  
       </header>
   );
