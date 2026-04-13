@@ -43,10 +43,17 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
       // FastAPI in testing is running on 127.0.0.1:8000
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
       
-      const modifiedData = response.data;
-      Object.keys(modifiedData.column_unique_vals).forEach((column) => {
-        modifiedData.column_unique_vals[column].unshift("all");
-      });
+      const modifiedData = {
+        ...response.data,
+        column_unique_vals: Object.fromEntries(
+          Object.entries(response.data.column_unique_vals).map(([column, vals]) => [
+            column,
+            ["all", ...vals]  // prepend "all" to a new array
+          ])
+        )
+      };
+
+      Object.freeze(modifiedData.relevant_columns);
 
       // initialising values of all dropdowns to 'all'
       const initialValues = {};
@@ -57,8 +64,11 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
       setSelectedValues(initialValues);
       setChosenDemographic(initialValues);
 
-      setRelevantColumns(response.data.relevant_columns);
-      setData(modifiedData);
+      setRelevantColumns([...modifiedData.relevant_columns]);
+      setData({
+        ...modifiedData,
+        relevant_columns: [...modifiedData.relevant_columns]
+      });
       setDataCountry(countryName);
       setError(null);
     } catch (err) {
@@ -96,9 +106,9 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
         <>
         {data.relevant_columns.map((column) => (
           <DemographicChoiceDropdown 
-          key={`${country}_${column}`} 
+          key={`${dataCountry}_${column}`} 
           column={column} 
-          choices={data.column_unique_vals[column]}
+          choices={data.column_unique_vals[column] ?? []}
           onChange={(value) => handleDropdownChange(column, value)}
           columnToRename={columnToRename}
           />

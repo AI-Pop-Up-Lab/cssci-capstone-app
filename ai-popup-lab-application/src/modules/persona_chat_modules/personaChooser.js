@@ -62,7 +62,7 @@ function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns 
         <>
         {filteredData.map((persona) => (
           <PersonaDetailCard
-            key={persona.index}
+            key={`${countryName}_${persona.index}`}
             personaDetails={persona}
             relevantColumnsToShow={relevantColumns}
             personaCountry={countryName}

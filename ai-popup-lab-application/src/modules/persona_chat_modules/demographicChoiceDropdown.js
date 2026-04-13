@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import axios from "axios";
 import '../polling_results_modules/demographicChooser.css';
 
-function DemographicChoiceDropdown({column, choices, onChange, columnToRename}) {
+function DemographicChoiceDropdown({column, choices = [], onChange, columnToRename}) {
 
     let modifiedColumn;
 

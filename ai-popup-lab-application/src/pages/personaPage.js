@@ -117,6 +117,7 @@ function PersonaPage() {
         </div>
 
         {selectedCountry ? <DemographicChooserForPersona
+        key={selectedCountry}
         setChosenDemographic={handleSetChosenPersonaDemographic}
         country={selectedCountry}
         setRelevantColumns={setRelevantColumns}
@@ -126,7 +127,7 @@ function PersonaPage() {
         data={responseData}
         chosenDemographic={chosenPersonaDemographic}
         countryName={selectedCountry}
-        relevantColumns={relevantColumns}
+        relevantColumns={relevantColumns ? [...relevantColumns] : null}
         /> : <Loader />}
 
       </div>
