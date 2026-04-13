@@ -73,7 +73,7 @@
 
 @media screen and (max-width: 450px){
     #footer-name{
-        font-size: 20px;
+        font-size: 15px;
     }
 
     #footer-description{
@@ -82,7 +82,7 @@
     }
 
     #footer-left > a{
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .Footer{
