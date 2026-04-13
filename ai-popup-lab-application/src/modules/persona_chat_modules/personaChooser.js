@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo, useMemo } from "react";
 import axios from "axios";
 
 import './personaChooser.css';
@@ -32,7 +32,7 @@ function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns 
     }, 0);
 
     return () => clearTimeout(timeout); // cleanup if chosenDemographic changes mid-filter, gets called if data or chosenDemographic updates
-  }, [data, chosenDemographic, relevantColumns]);
+  }, [data, chosenDemographic]);
 
 
   // async function getRelevantColumns(){
@@ -50,29 +50,35 @@ function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns 
   //   }
   // }
 
-  useEffect(() => {
-    setFilteredData([]);
-  }, [countryName]);
+  // useEffect(() => {
+  //   setFilteredData([]);
+  // }, [countryName]);
 
+  const cards = useMemo(() =>
+    filteredData.map((persona) => (
+      <PersonaDetailCard
+        key={`${countryName}_${persona.index}`}
+        personaDetails={persona}
+        relevantColumnsToShow={relevantColumns}
+        personaCountry={countryName}
+      />
+    )),
+    [filteredData, relevantColumns, countryName]
+  );
 
   return (
     <div className="PersonaChooser">
       {!isLoading && 
       
         <>
-        {filteredData.map((persona) => (
-          <PersonaDetailCard
-            key={`${countryName}_${persona.index}`}
-            personaDetails={persona}
-            relevantColumnsToShow={relevantColumns}
-            personaCountry={countryName}
-          />
-        ))}
+        {cards}
         </>
       
       }
-      {isLoading && <Loader />}
-      {filteredData.length < 1 && !isLoading && <h2 className="unbounded-weight300">No personas match your filters.</h2>}
+      {(isLoading || data.length === 0) && <Loader />}
+      {filteredData.length < 1 && !isLoading && data.length > 0 && (
+        <h2 className="unbounded-weight300">No personas match your filters.</h2>
+      )}
     </div>
   );
 };

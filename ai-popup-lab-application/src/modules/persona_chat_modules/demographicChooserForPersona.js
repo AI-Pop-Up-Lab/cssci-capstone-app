@@ -82,6 +82,8 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
   };
   
   function handleDropdownChange(column, value) {
+    if (selectedValues[column] === value) return; 
+
     const updated = { ...selectedValues, [column]: value };
     setSelectedValues(updated);
     setChosenDemographic(updated);

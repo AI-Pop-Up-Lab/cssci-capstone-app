@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef, memo} from "react";
 
 import './personaDetailCard.css';
 
@@ -108,4 +108,4 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
   );
 };
 
-export default PersonaDetailCard;
+export default memo(PersonaDetailCard);
