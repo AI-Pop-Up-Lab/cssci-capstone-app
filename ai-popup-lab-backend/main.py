@@ -57,7 +57,6 @@ async def lifespan(app: FastAPI):
 
 # initalise FastAPI app
 app = FastAPI(title="React + FastAPI Base App", lifespan=lifespan)
-
 # origins to allow CORS requests from react frontend
 origins = [
     # Local development URLs, for use with React application

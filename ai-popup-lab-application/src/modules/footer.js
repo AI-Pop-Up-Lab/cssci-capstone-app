@@ -16,7 +16,7 @@ function Footer() {
         {/* <Link to="/methods">Methods</Link> */}
       </div>
       <div id="footer-right">
-        <p id="footer-name">AI POLLSTER</p>
+        <p id="footer-name">MECHANICAL POLLSTER</p>
         <p id="footer-description">Estimating public opinion from synthetic personae</p>
       </div>
     </div>

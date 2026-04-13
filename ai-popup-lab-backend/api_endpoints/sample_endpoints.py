@@ -55,6 +55,38 @@ def get_country_stratification_frame(country: str):
 
     return {"data": dict_list_for_js}
 
+@router.get("/country_extended_frame")
+def get_country_extended_frame(country: str):
+
+    # checking if requested country is in data
+    if country not in root_keys:
+        return {"error": "Country not found in data."}
+
+    country_extended_filename = country_data[country]['extended_frame_filename']
+    country_extended_path = base_dir / "country_data" / 'extended_frames' / country_extended_filename
+
+    # reading csv to dataframe then converting to list of dicts for json response
+    df = pd.read_csv(country_extended_path)
+    df = df.astype(object).where(pd.notna(df), other=None)
+    dict_list_for_js = df.to_dict(orient="records")  # returns a list of row objects
+
+    return {"data": dict_list_for_js}
+
+@router.get("/map_aggregates")
+def get_map_aggregates(country: str):
+    if country not in root_keys:
+        return {"error": "Country not found in data."}
+
+    map_aggregates_filename = country_data[country]['map_aggregates_filename']
+    map_aggregates_path = base_dir / "country_data" / 'map_aggregates' / map_aggregates_filename
+
+    # reading csv to dataframe then converting to list of dicts for json response
+    df = pd.read_csv(map_aggregates_path)
+    df = df.astype(object).where(pd.notna(df), other=None)
+    dict_list_for_js = df.to_dict(orient="records")  # returns a list of row objects
+
+    return {"data": dict_list_for_js}
+
 # GET endpoint to retrieve columns and respective unique values for a specific country
 @router.get("/columns_and_uniques")
 def get_country_cols_uniques(country: str):

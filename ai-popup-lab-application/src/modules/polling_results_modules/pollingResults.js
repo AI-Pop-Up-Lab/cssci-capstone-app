@@ -60,6 +60,8 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
     }
   };
 
+  
+
   // use to log data when data variable changes if wanted
   // useEffect(() => {
   //   console.log(data);
@@ -98,8 +100,9 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
 
   return (
     <div className="PollingResults">
-
       {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
+      <div id="polling-divider"></div>
+      {data ? <PollingMap pollingData={responseData} country={selectedCountry} /> : <Loader />}
       <div id="polling-divider"></div>
       {data ? <SeatVisualisation pollingData={responseData} country={selectedCountry} /> : <Loader />}
       <div id="polling-divider"></div>

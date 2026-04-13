@@ -40,7 +40,10 @@ function AboutPage() {
       </div>
     
       <h1 ref={ref1} className={`about-header ${inView1 ? 'header-underline-appear' : ''}`}>Our Mission</h1>
-      <p className='about-sectiontext'>The AI Pollster is not a traditional polling organization. Our goal is not to persuade, but to support public understanding through transparent, auditable outputs. We believe that every citizen should be able to get access to how data is used to represent their community.</p>
+      <p className='about-sectiontext'>The Mechanical Pollster is a tool developed by the AI Pop-up Lab @ the University of Amsterdam, an academic, not-for-profit teaching and research hub within the Computational Social Science (CSSci) Programme.
+We teach, study, and build AI for public opinion research with a clear public purpose: to create tools that support democratic functioning for the benefit of the public.
+Our work is non-commercial by design and is best understood as a form of digital activism. Our core premise is that a polity that is better informed about the shape of public opinion is better equipped to address collective action problems. We also hope this work can foster greater understanding across social groups.
+We are committed to research that is transparent, socially useful, and guided by the public good.</p>
 
       <h1 ref={ref2} className={`about-header ${inView2 ? 'header-underline-appear' : ''}`}>What We Do</h1>
       <p className='about-sectiontext'>We bridge the gap between complex social science and everyday conversation. By using <strong>synthetic personas</strong>, we create a "living" representation of census data that users can interact with directly.</p>
@@ -50,7 +53,7 @@ function AboutPage() {
           <div className='whatwedo-item-photo'><img src={personaGeneration} alt='persona generation'></img></div>
           <div className='whatwedo-item-text'>
             <h2>Persona Generation</h2>
-            <p>We build a panel of 10,000 simulated individuals based on official, non-identifiable census and survey data.</p>
+            <p>We build a panel of thousands of simulated individuals based on official, non-identifiable census and survey data.</p>
           </div>
         </div>
         <div className='about-whatwedo-item'>

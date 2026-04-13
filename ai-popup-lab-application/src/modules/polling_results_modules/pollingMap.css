@@ -1,36 +1,17 @@
-.PollingMap {
-  background: #ffffff;
-  border-radius: 0;
-  padding: 30px 40px;
-  border: 2px solid #1a3a42;
-  width: 100%;
-  max-width: 900px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.vp-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #335058;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  font-family: "Unbounded", sans-serif;
+  text-align:center;
 }
-
-.PollingMap h3 {
-  margin: 0 0 20px 0;
-  font-size: 1.1rem;
-  color: #1a1a2e;
-  font-weight: 600;
+.h3 {
   text-align: center;
-  width: 100%;
 }
 
-.map-error {
-  color: #c0392b;
-  font-size: 0.9rem;
-  margin: 0 0 12px;
-}
-
-.map-wrapper {
-  position: relative;
-}
-
-.map-wrapper svg {
-  display: block;
-  margin: 0 auto;
+.pollingMap {
+  display: flex;
+  justify-content: center;
 }
