@@ -6,15 +6,18 @@ import './demographicChooserForPersona.css';
 import Loader from '../loader';
 import DemographicChoiceDropdown from './demographicChoiceDropdown';
 
-function DemographicChooserForPersona({setChosenDemographic, country}) {
+function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns, country}) {
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [dataCountry, setDataCountry] = useState(null); 
 
   const [selectedValues, setSelectedValues] = useState({});
 
   const [columnToRename, setColumnToRename] = useState(null);
   const [columnToRenameError, setColumnToRenameError] = useState(null); 
+
+  const [loading, setLoading] = useState(false);
 
   async function getColumnToRename(countryName){
     try {
@@ -35,8 +38,8 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
 
   // function to get country sample data from backend
   async function getColumnsAndUniqueVals(countryName){
+    setLoading(true);   
     try {
-
       // FastAPI in testing is running on 127.0.0.1:8000
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
       
@@ -54,11 +57,17 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
       setSelectedValues(initialValues);
       setChosenDemographic(initialValues);
 
+      setRelevantColumns(response.data.relevant_columns);
       setData(modifiedData);
+      setDataCountry(countryName);
       setError(null);
     } catch (err) {
       setError(err.message);
+      setRelevantColumns(null);
       setData(null);
+      setDataCountry(null);
+    } finally{
+      setLoading(false);   
     }
   };
   
@@ -70,6 +79,8 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
 
   useEffect(() => {
     setData(null);
+    setSelectedValues({});
+    setRelevantColumns(null);
     setColumnToRename(null);
     getColumnsAndUniqueVals(country);
     getColumnToRename(country);
@@ -79,13 +90,13 @@ function DemographicChooserForPersona({setChosenDemographic, country}) {
 
   return (
     <div className="DemographicChooserForPersona">
-      {allNotNull(data, columnToRename) ? 
+      {allNotNull(data, columnToRename) && !loading && dataCountry === country ?
 
       (
         <>
         {data.relevant_columns.map((column) => (
           <DemographicChoiceDropdown 
-          key={column} 
+          key={`${country}_${column}`} 
           column={column} 
           choices={data.column_unique_vals[column]}
           onChange={(value) => handleDropdownChange(column, value)}

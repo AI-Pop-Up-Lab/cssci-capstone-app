@@ -45,7 +45,7 @@ function HeaderAndNavigation() {
         
         </div>
 
-        <div id='header-right'>
+        {/* <div id='header-right'>
 
           <div id='lang-and-modeswitch'>
             <button className='unbounded-weight300'>ENGLISH</button>
@@ -53,7 +53,7 @@ function HeaderAndNavigation() {
               <div id="modeswitch-slider"></div>
             </div>
           </div>
-        </div>  
+        </div>   */}
       </header>
   );
 }

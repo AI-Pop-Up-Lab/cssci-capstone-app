@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 
 import './pollPage.css';
@@ -6,9 +7,20 @@ import './pollPage.css';
 import PollingResults from '../modules/polling_results_modules/pollingResults';
 import CountrySwitch2 from '../modules/countrySwitch2';
 
+const countryOptions = [
+  'netherlands',
+  'sweden',
+  'denmark'
+]
+
 function PollPage() {
 
-  const [selectedCountry, setSelectedCountry] = useState("netherlands");
+  const [searchParams] = useSearchParams();
+
+  const paramCountry = countryOptions.includes(searchParams.get('country'))
+  ? searchParams.get('country')
+  : countryOptions[0];
+  const [selectedCountry, setSelectedCountry] = useState(paramCountry);
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);

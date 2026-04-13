@@ -7,18 +7,12 @@ import Loader from "../loader";
 import PersonaDetailCard from "./personaDetailCard";
 
 
-function PersonaChooser({ data, chosenDemographic, countryName }) {
+function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns }) {
 
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const [relevantColumns, setRelevantColumns] = useState(null);
   const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   console.log(data)
-  // }, [data])
-
 
   // filter data through chosen demographics
   useEffect(() => {
@@ -41,25 +35,23 @@ function PersonaChooser({ data, chosenDemographic, countryName }) {
   }, [data, chosenDemographic, relevantColumns]);
 
 
-  async function getRelevantColumns(){
-    try {
+  // async function getRelevantColumns(){
+  //   try {
 
-      // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
+  //     // FastAPI in testing is running on 127.0.0.1:8000
+  //     const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
 
 
-      setRelevantColumns(response.data.relevant_columns);
-      setError(null);
-    } catch (err) {
-      setError(err.message);
-      setRelevantColumns(null);
-    }
-  }
+  //     setRelevantColumns(response.data.relevant_columns);
+  //     setError(null);
+  //   } catch (err) {
+  //     setError(err.message);
+  //     setRelevantColumns(null);
+  //   }
+  // }
 
   useEffect(() => {
     setFilteredData([]);
-    setRelevantColumns(null);
-    getRelevantColumns(countryName);
   }, [countryName]);
 
 

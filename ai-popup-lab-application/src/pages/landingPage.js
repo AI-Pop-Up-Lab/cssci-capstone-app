@@ -142,7 +142,7 @@ function LandingPage() {
 
       <div id="landingVoteProjContainer">
         {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
-        <Link to="/polling"><button className='unbounded-weight300'>EXPLORE MORE POLLS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
+        <Link to={`/polling/?country=${selectedCountry}`}><button className='unbounded-weight300'>EXPLORE MORE POLLS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
       </div>
 
       <div id="landingPageBottomMessages">

@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
+import { useSearchParams } from 'react-router-dom';
 import axios from "axios";
 
 import './personaPage.css';
@@ -9,6 +10,12 @@ import PersonaChooser from "../modules/persona_chat_modules/personaChooser.js";
 import CountrySwitch2 from '../modules/countrySwitch2';
 
 import Loader from "../modules/loader";
+
+const countryOptions = [
+  'netherlands',
+  'sweden',
+  'denmark'
+]
 
 function modifyCountryNameEdgeCases(country){
   let modifiedCountry;
@@ -32,7 +39,14 @@ function PersonaPage() {
   const [modifiedCountry, setModifiedCountry] = useState(null);
   const dataLength = useMemo(() => responseData?.length ?? 0, [responseData]);
 
-  const [selectedCountry, setSelectedCountry] = useState("netherlands"); // setting default selected/selectable country as netherlands for now (in final product there will be a dropdown)
+  const [searchParams] = useSearchParams();
+
+  const paramCountry = countryOptions.includes(searchParams.get('country'))
+  ? searchParams.get('country')
+  : countryOptions[0];
+  const [selectedCountry, setSelectedCountry] = useState(paramCountry); 
+
+  const [relevantColumns, setRelevantColumns] = useState(null);
 
   const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState({});
 
@@ -57,6 +71,8 @@ function PersonaPage() {
   };
 
   useEffect(() => {
+    setData(null);      
+    setResponseData([]); 
     getCountrySample(selectedCountry);
   }, [selectedCountry]);
 
@@ -103,12 +119,14 @@ function PersonaPage() {
         {selectedCountry ? <DemographicChooserForPersona
         setChosenDemographic={handleSetChosenPersonaDemographic}
         country={selectedCountry}
+        setRelevantColumns={setRelevantColumns}
         /> : <Loader />}
 
         {data && selectedCountry ? <PersonaChooser 
         data={responseData}
         chosenDemographic={chosenPersonaDemographic}
         countryName={selectedCountry}
+        relevantColumns={relevantColumns}
         /> : <Loader />}
 
       </div>

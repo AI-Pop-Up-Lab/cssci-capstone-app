@@ -63,7 +63,7 @@ function PersonaChatExample({includeLink, country}) {
         </div>
 
         <div id='land-expl-pers-bottom' className={includeLink ? '' : 'dontShowPersonaLink'}>
-          <Link to="/personas"><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
+          <Link to={`/personas/?country=${country}`}><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
         </div>
     </div>
   );
