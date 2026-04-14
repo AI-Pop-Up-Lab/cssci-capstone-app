@@ -4,3 +4,5 @@ __pycache__/
 *.pyo
 *.pyd
 .env
+country_data/extended_frames/
+data_generation/output/
