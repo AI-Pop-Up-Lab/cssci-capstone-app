@@ -84,4 +84,4 @@ app.include_router(sample_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
 app.include_router(dynamic_data_router, prefix="/api")
 
-weekly_data_generation()
+# weekly_data_generation()
