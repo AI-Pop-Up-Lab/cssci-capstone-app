@@ -1,7 +1,7 @@
 {
     "denmark": {
         "stratification_frame_filename": "denmark_strat_frame.csv",
-        "daily_sample_filename": "denmark_daily_sample.csv",
+        "survey_filename": "denmark_survey.csv",
         "extended_frame_filename": "denmark_extended_frame.csv",
         "party_info_filename": "denmark_parties.csv",
         "map_aggregates_filename": "denmark_agg.csv",
@@ -30,7 +30,7 @@
 
     "sweden": {
         "stratification_frame_filename": "sweden_strat_frame.csv",
-        "daily_sample_filename": "sweden_daily_sample.csv",
+        "survey_filename": "sweden_survey.csv",
         "extended_frame_filename": "sweden_extended_frame.csv",
         "party_info_filename": "sweden_parties.csv",
         "map_aggregates_filename": "sweden_agg.csv",
@@ -56,7 +56,7 @@
 
     "netherlands": {
         "stratification_frame_filename": "netherlands_strat_frame.csv",
-        "daily_sample_filename": "netherlands_daily_sample.csv",
+        "survey_filename": "netherlands_survey.csv",
         "extended_frame_filename": "netherlands_extended_frame.csv",
         "party_info_filename": "netherlands_parties.csv",
         "demographic_search_columns": ["municipality", "gender", "age_group", "education", "vote_2030"],

@@ -28,8 +28,8 @@ def get_country_sample(country: str):
     if country not in root_keys:
         return {"error": "Country not found in data."}
 
-    country_sample_filename = country_data[country]['daily_sample_filename']
-    country_sample_path = base_dir / "country_data" / 'daily_sample' / country_sample_filename
+    country_sample_filename = country_data[country]['survey_filename']
+    country_sample_path = base_dir / "country_data" / 'surveys' / country_sample_filename
 
     # reading csv to dataframe then converting to list of dicts for json response
     df = pd.read_csv(country_sample_path)

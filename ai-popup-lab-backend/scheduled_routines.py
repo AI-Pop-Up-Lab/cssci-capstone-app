@@ -4,7 +4,7 @@
 
 import json
 from pathlib import Path
-# from data_generation.generate_data import generate_data
+from data_generation.generate_data import generate_data
 
 
 # path for json files (on mounted files in deployment)
@@ -16,7 +16,7 @@ ip_requests_path = base_dir / "user_limiting" / "day_ip_requests.json"
 
 
 def weekly_data_generation():
-    # generate_data()
+    generate_data()
     return
 
 def reset_ip_request_limits():
