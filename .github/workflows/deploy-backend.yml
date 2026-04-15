@@ -3,7 +3,7 @@ name: Deploy FastAPI backend
 on:
   push:
     branches:
-      - pilot-study-app
+      - main
     paths:
       - 'ai-popup-lab-backend/**'
   workflow_dispatch:
