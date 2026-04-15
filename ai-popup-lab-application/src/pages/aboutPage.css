@@ -79,6 +79,25 @@
     font-weight: 600;
 }
 
+#about-first-paragraph{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#about-first-paragraph > p{
+    width: 70%;
+}
+
+#about-first-paragraph > img{
+    display: inline;
+    width: 20%;
+    aspect-ratio: 2/3;
+    flex-shrink: 0;
+    object-fit: contain; 
+    height: auto;
+}
+
 #about-whatwedo{
     display: flex;
     flex-direction: column;
@@ -225,6 +244,21 @@
     .about-sectiontext{
         font-size: 14px;
     }
+    
+    #about-first-paragraph{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #about-first-paragraph > img{
+        /* display: none; */
+        width: 20%;
+    }
+
+    #about-first-paragraph > p {
+        width: 100%;
+    }
 
     .about-whatwedo-item{
         margin-bottom: 40px;
@@ -281,6 +315,10 @@
 
     #about-title > h1:nth-child(1) > span{
         font-size: 10px;
+    }
+
+    #about-first-paragraph > img{
+        display: none;
     }
 }
 

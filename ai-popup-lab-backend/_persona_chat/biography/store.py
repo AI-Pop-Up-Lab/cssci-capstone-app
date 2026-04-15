@@ -42,20 +42,26 @@ def save_biographies(data: dict) -> None:
 
 def get_or_create_biography(*, persona_details: dict, persona_country: str) -> str:
     """Return a cached biography or generate and store one when missing."""
+
+    
     persona_index = str(persona_details["index"])
     data = load_biographies()
+
 
     # The cache is grouped by country and then persona index.
     if str(persona_country) not in data:
         data[persona_country] = {}
 
+
     if persona_index in data[persona_country]:
         return data[persona_country][persona_index]
+    
 
     biography = generate_biography(
         persona_details=persona_details,
         country=persona_country,
     )
+
 
     data[persona_country][persona_index] = biography
     save_biographies(data)

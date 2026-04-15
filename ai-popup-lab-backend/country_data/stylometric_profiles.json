@@ -21,6 +21,24 @@
         }
     },
     "netherlands": {
+        "0": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [
+                "I manage operations for a regional freight company",
+                "Weekends often find us cycling along the banks of the Waal",
+                "My voting choices are shaped by the everyday realities I encounter",
+                "Balancing fiscal responsibility with community well\u2011being"
+            ],
+            "explanation_style": "example_first",
+            "hedging_style": "medium",
+            "profile_summary": "The speaker combines clear, articulate language with a practical, down\u2011to\u2011earth tone. He mixes concrete personal anecdotes\u2014like cycling by the Waal or managing freight logistics\u2014with broader reflections on policy and community. His vocabulary is moderate, showing professional competence without excessive jargon, and he balances confidence with occasional hedging. Overall, his communication feels warm, family\u2011oriented, and pragmatically analytical.",
+            "reasoning_style": "blended",
+            "register": "articulate",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
         "2": {
             "abstraction_level": "mixed",
             "confidence_style": "balanced",

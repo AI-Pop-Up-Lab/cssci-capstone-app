@@ -6,6 +6,8 @@ import personaGeneration from '../assets/svgs/personaGeneration.svg'
 import publicAccess from '../assets/svgs/publicAccess.svg'
 import scientificGrounding from '../assets/svgs/scientificGrounding.svg'
 
+import popupLabLogo from '../assets/images/pop_up_logo.png' 
+
 function AboutPage() {
 
   const useInViewAnimation = (threshold = 1) => {
@@ -40,10 +42,13 @@ function AboutPage() {
       </div>
     
       <h1 ref={ref1} className={`about-header ${inView1 ? 'header-underline-appear' : ''}`}>Our Mission</h1>
-      <p className='about-sectiontext'>The Mechanical Pollster is a tool developed by the AI Pop-up Lab @ the University of Amsterdam, an academic, not-for-profit teaching and research hub within the Computational Social Science (CSSci) Programme.
-We teach, study, and build AI for public opinion research with a clear public purpose: to create tools that support democratic functioning for the benefit of the public.
-Our work is non-commercial by design and is best understood as a form of digital activism. Our core premise is that a polity that is better informed about the shape of public opinion is better equipped to address collective action problems. We also hope this work can foster greater understanding across social groups.
-We are committed to research that is transparent, socially useful, and guided by the public good.</p>
+      <div id="about-first-paragraph">
+        <p className='about-sectiontext'>Opinion polls are at dire straits. Nonresponse rates are as high as 94%, and nonignorable nonresponse plagues the field. This means that it is increasingly more difficult to build get representative samples of public opinion. We believe getting a good sense of the public's views on politics is important for the quality of democracy. It informs researchers of societal trends, politicians of public sentiment, and citizens of where they stand relative to those around them.<br></br><br></br>
+        Our work is non-commercial by design and is best understood as a form of digital activism. Our core premise is that a polity that is better informed about the shape of public opinion is better equipped to address collective action problems. We also hope this work can foster greater understanding across social groups.
+        We are committed to research that is transparent, socially useful, and guided by the public good.
+        </p>
+        <img src={popupLabLogo}></img>
+      </div>
 
       <h1 ref={ref2} className={`about-header ${inView2 ? 'header-underline-appear' : ''}`}>What We Do</h1>
       <p className='about-sectiontext'>We bridge the gap between complex social science and everyday conversation. By using <strong>synthetic personas</strong>, we create a "living" representation of census data that users can interact with directly.</p>
@@ -60,7 +65,7 @@ We are committed to research that is transparent, socially useful, and guided by
           <div className='whatwedo-item-photo'><img src={scientificGrounding} alt='scientific grounding'></img></div>
           <div className='whatwedo-item-text'>
             <h2>Scientific Grounding</h2>
-            <p>Every persona's answer is strictly limited to recorded survey data, they cannot "hallucinate" opinions outside of the data contract.</p>
+            <p>The synthetic respondents are treated under the same real-world survey science we would use with real participants. Survey data is post-stratified with MrP to produce rich estimates.</p>
           </div>
         </div>
         <div className='about-whatwedo-item'>
@@ -90,7 +95,10 @@ We are committed to research that is transparent, socially useful, and guided by
       </div>
 
       <h1 ref={ref3} className={`about-header ${inView3 ? 'header-underline-appear' : ''}`}>Our Team</h1>
-      <p id='about-team' className='about-sectiontext'>Ava Ali, Alexandra Roskam, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi, and Xuan Miao.</p>
+      <p id='about-team' className='about-sectiontext'>
+        The Mechanical Pollster is a tool developed by the AI Pop-up Lab @ the University of Amsterdam, an academic, not-for-profit teaching and research hub within the Computational Social Science (CSSci) Programme.
+        We teach, study, and build AI for public opinion research with a clear public purpose: to create tools that support democratic functioning for the benefit of the public.<br></br><br></br>
+        Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi, and Xuan Miao.</p>
 
     </div>
   );

@@ -83,7 +83,6 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
     setStratframeResponseData(stratFrameData?.data ?? []);
   }, [stratFrameData]);
 
-
   function exportToCSV(data, filename='data.csv') {
     const headers = Object.keys(data[0]);
     const rows = data.map(obj => headers.map(h => `"${obj[h]}"`).join(','));
@@ -102,8 +101,12 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
     <div className="PollingResults">
       {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
       <div id="polling-divider"></div>
-      {data ? <PollingMap pollingData={responseData} country={selectedCountry} /> : <Loader />}
-      <div id="polling-divider"></div>
+      {selectedCountry !== "netherlands" && (
+        <>
+        {data ? <PollingMap pollingData={responseData} country={selectedCountry} /> : <Loader />}
+        <div id="polling-divider"></div>
+        </>
+      )}
       {data ? <SeatVisualisation pollingData={responseData} country={selectedCountry} /> : <Loader />}
       <div id="polling-divider"></div>
       {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}

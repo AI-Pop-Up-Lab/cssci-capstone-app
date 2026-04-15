@@ -275,6 +275,7 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
             ):
                 yield f"event: message\ndata: {json.dumps({'text': chunk})}\n\n"
         except Exception as e:
+            print(e)
             yield f"event: error\ndata: {json.dumps({'text': 'Sorry, there was an error generating the response. Please try again.'})}\n\n"
         finally:
             add_or_remove_user_requestlist('remove', ip)

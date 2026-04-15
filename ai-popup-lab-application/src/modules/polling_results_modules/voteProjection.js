@@ -83,11 +83,11 @@ function VoteProjection({ pollingData, country }) {
     }
   };
 
-  useEffect(() => {
-    console.log("Party info and alternative format (outputted from voteprojection.js)")
-    console.log(partyInfo);
-    console.log(partyInfoAlternative);
-  }, [partyInfo])
+  // useEffect(() => {
+  //   console.log("Party info and alternative format (outputted from voteprojection.js)")
+  //   console.log(partyInfo);
+  //   console.log(partyInfoAlternative);
+  // }, [partyInfo])
 
   useEffect(() => {
 
