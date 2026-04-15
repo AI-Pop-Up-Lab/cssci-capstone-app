@@ -288,7 +288,8 @@ async def personaResponse(request: Request, request_body: LegacyChatMessage):
         ip = forwarded_for.split(",")[0] if forwarded_for else request.client.host
 
 
-    user_has_ongoing_request = check_if_user_ongoing_request(ip)
+    # user_has_ongoing_request = check_if_user_ongoing_request(ip)
+    user_has_ongoing_request = False
 
     if user_has_ongoing_request:
         return StreamingResponse(
