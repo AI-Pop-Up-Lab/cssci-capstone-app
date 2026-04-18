@@ -39,6 +39,27 @@
             "vocabulary_level": "moderate",
             "warmth_style": "warm"
         },
+        "1": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [
+                "I\u2019m an 18\u2011year\u2011old guy living in Almere",
+                "most weekdays I\u2019m at school until about 3\u202fp.m.",
+                "I help with the early\u2011morning shifts, pulling fresh croissants",
+                "I\u2019m a regular volunteer at the community centre, teaching basic computer skills to seniors",
+                "I love music\u2014especially indie rock",
+                "I\u2019ve seen how quickly housing can become scarce and expensive",
+                "working at the bakery gave me a front\u2011row seat to the challenges of low\u2011wage workers"
+            ],
+            "explanation_style": "example_first",
+            "hedging_style": "medium",
+            "profile_summary": "The speaker uses an everyday register with a mix of short and longer sentences, weaving concrete personal anecdotes together with broader ideas. Their vocabulary is moderate, and they hedge moderately while maintaining balanced confidence. Warmth appears through a friendly, expressive tone, and explanations often begin with personal examples before moving to concepts. Their reasoning blends practical experience with reflective insight.",
+            "reasoning_style": "blended",
+            "register": "everyday",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
         "2": {
             "abstraction_level": "mixed",
             "confidence_style": "balanced",

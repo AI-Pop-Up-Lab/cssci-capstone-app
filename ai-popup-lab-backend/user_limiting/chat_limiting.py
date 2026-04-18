@@ -40,14 +40,14 @@ def check_if_ip_limited(ip):
         with open(ip_requests_path, 'r+') as f:
             ip_requests = json.load(f)
 
-        if ip in ip_requests:
-            if ip_requests[ip] == daily_request_limit:
-                ip_limited = True
-            else:
-                ip_requests[ip] += 1
+            if ip in ip_requests:
+                if ip_requests[ip] >= daily_request_limit:
+                    ip_limited = True
+                else:
+                    ip_requests[ip] += 1
 
-        else:
-            ip_requests[ip] = 1
+            else:
+                ip_requests[ip] = 1
 
             f.seek(0)
             f.truncate()
