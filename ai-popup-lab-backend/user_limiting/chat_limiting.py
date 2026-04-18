@@ -49,9 +49,9 @@ def check_if_ip_limited(ip):
         else:
             ip_requests[ip] = 1
 
-        f.seek(0)
-        f.truncate()
-        json.dump(ip_requests, f, indent=4)
+            f.seek(0)
+            f.truncate()
+            json.dump(ip_requests, f, indent=4)
 
     return ip_limited
 
