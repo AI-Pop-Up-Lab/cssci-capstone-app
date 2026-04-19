@@ -53,6 +53,7 @@ function SeatVisualisation({ pollingData, country }) {
 
   const svgRef = useRef(null);
   const tooltipRef = useRef(null);
+  const containerRef = useRef(null);
 
   async function getNextGEcolname(countryName){
     try {
@@ -161,28 +162,31 @@ function SeatVisualisation({ pollingData, country }) {
   useEffect(() => {
     if (!pollingData || pollingData.length === 0 || !svgRef.current) return;
     if (!total_seats || !partyColours || !seatAllocationMethod) return;
-
-    let isTablet = false;
-    let isMobile = false;
-    let isSmallMobile = false;
+    if (!containerRef.current) return;
 
     let seatRadiusMultiplier = 1;
-
-    if(country==="sweden"){seatRadiusMultiplier = 0.7};
-
-    if (window.innerWidth <= 390) {
-      isSmallMobile = true;
-    } else if (window.innerWidth <= 545) {
-      isMobile = true;
-    } else if (window.innerWidth <= 930) {
-      isTablet = true;
-    }
+    if (country === "sweden") { seatRadiusMultiplier = 0.5; }
 
     const seatAllocationFunction = chooseSeatAllocationFunction(seatAllocationMethod);
 
     const renderChart = () => {
-      const voteCounts = {};
+      const containerWidth = containerRef.current?.getBoundingClientRect().width;
+      if (!containerWidth || containerWidth === 0) return;
 
+      let seatRadius = 10;
+      let svgW = containerWidth;
+
+      if (containerWidth <= 300) {
+        seatRadius = 3;
+      } else if (containerWidth <= 440) {
+        seatRadius = 4;
+      } else if (containerWidth <= 570) {
+        seatRadius = 8;
+      }
+
+      const rowHeight = containerWidth <= 930 ? 30 : 35;
+
+      const voteCounts = {};
       pollingData.forEach((row) => {
         if (row[nextGEcolname] && row[nextGEcolname] !== "Did not vote") {
           voteCounts[row[nextGEcolname]] = (voteCounts[row[nextGEcolname]] || 0) + 1;
@@ -193,7 +197,7 @@ function SeatVisualisation({ pollingData, country }) {
 
       const seatsByParty = seatAllocationFunction(voteCounts, total_seats);
 
-      const SPECTRUM = Object.keys(partyColours); 
+      const SPECTRUM = Object.keys(partyColours);
 
       const aggregated = Object.entries(seatsByParty)
         .filter(([, seats]) => seats > 0)
@@ -207,22 +211,6 @@ function SeatVisualisation({ pollingData, country }) {
           color: partyColours[party] || "#aaa",
           party,
         }));
-
-      let svgW = 760;
-      let seatRadius = 11;
-
-      if (isSmallMobile) {
-        svgW = 300;
-        seatRadius = 4;
-      } else if (isMobile) {
-        svgW = 320;
-        seatRadius = 5;
-      } else if (isTablet) {
-        svgW = 570;
-        seatRadius = 9;
-      }
-      
-      const rowHeight = window.innerWidth <= 930 ? 30 : 35;
 
       const svg = d3.select(svgRef.current);
       svg.selectAll("*").remove();
@@ -240,10 +228,8 @@ function SeatVisualisation({ pollingData, country }) {
 
       g.call(pc);
 
-      // Measure the actual rendered parliament so the SVG is never too short
       const chartBox = g.node().getBBox();
       const chartBottom = chartBox.y + chartBox.height;
-
 
       // Tooltips
       g.selectAll("circle")
@@ -251,12 +237,9 @@ function SeatVisualisation({ pollingData, country }) {
           const d = d3.select(this).datum();
           const entry = aggregated.find((a) => a.color === d.color);
           if (!entry) return;
-
           tooltip
             .style("opacity", 1)
-            .html(
-              `<strong>${entry.party}</strong><br/>${seatsByParty[entry.party]} seats`
-            );
+            .html(`<strong>${entry.party}</strong><br/>${seatsByParty[entry.party]} seats`);
         })
         .on("mousemove", function (event) {
           tooltip
@@ -273,17 +256,13 @@ function SeatVisualisation({ pollingData, country }) {
         .sort((a, b) => b[1] - a[1]);
 
       const tempText = svg.append("text").attr("font-size", "12px");
-
-      // for dynamically measuring how much the width of legend labels shuld be
       const maxLabelWidth = d3.max(legendData, ([party, seats]) => {
         tempText.text(`${party} — ${seats}`);
         return tempText.node().getComputedTextLength();
-      }) ?? 120;;
+      }) ?? 120;
       tempText.remove();
 
-      const colW = maxLabelWidth + 30; // 30 for swatch, gap and padding
-      // const colW = window.innerWidth <= 930 ? 120 : 145;
-
+      const colW = maxLabelWidth + 30;
       const rowH = 22;
       const maxLegendWidth = svgW - 60;
       const columns = Math.max(1, Math.floor(maxLegendWidth / colW));
@@ -326,18 +305,28 @@ function SeatVisualisation({ pollingData, country }) {
     };
 
     renderChart();
-    window.addEventListener("resize", renderChart);
 
-    return () => {
-      window.removeEventListener("resize", renderChart);
-    };
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.contentRect.width > 0) {
+          clearTimeout(observer._debounce);
+          observer._debounce = setTimeout(() => {
+            renderChart();
+          }, 100);
+        }
+      }
+    });
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+
   }, [pollingData, total_seats, partyColours, seatAllocationMethod]);
 
   return (
     <div className="SeatVisualisation">
       <h3>Seat Projection</h3>
       {total_seats && partyColours && seatAllocationMethod && nextGEcolname ? (
-        <div className="sv-chart-wrapper">
+        <div className="sv-chart-wrapper" ref={containerRef}>
           <svg ref={svgRef} />
           <div ref={tooltipRef} className="chart-tooltip" />
         </div>

@@ -6,10 +6,11 @@
   line-height: 1.4;
   font-family: "Unbounded", sans-serif;
   text-align:center;
+  width: 100%;
 }
-.h3 {
+/* .h3 {
   text-align: center;
-}
+} */
 
 .pollingMap {
   display: flex;

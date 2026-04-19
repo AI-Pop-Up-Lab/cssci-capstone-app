@@ -1,7 +1,7 @@
 .VoteProjection {
   /* background: #ffffff; */
   border-radius: 0;
-  padding: 30px 40px;
+  padding: 30px 15px;
   /* border: 2px solid #1a3a42; */
   width: 100%;
   max-width: 900px;
@@ -38,6 +38,7 @@
   overflow-x: auto;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .vp-chart-wrapper svg text {
