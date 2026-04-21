@@ -64,7 +64,8 @@ origins = [
     "http://127.0.0.1:3000",
 
     # production urls
-    "https://ai-pollster.vercel.app",
+    # "https://ai-pollster.vercel.app",
+    "https://www.mechanical-pollster.com/"
     "https://delightful-bay-00709f403.6.azurestaticapps.net"
 ]
 
