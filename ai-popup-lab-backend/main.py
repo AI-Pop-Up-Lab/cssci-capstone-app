@@ -65,7 +65,7 @@ origins = [
 
     # production urls
     # "https://ai-pollster.vercel.app",
-    "https://www.mechanical-pollster.com/"
+    "https://www.mechanical-pollster.com/",
     "https://delightful-bay-00709f403.6.azurestaticapps.net"
 ]
 
