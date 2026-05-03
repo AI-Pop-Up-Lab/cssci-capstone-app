@@ -37,7 +37,7 @@ function AboutPage() {
           <h1>DATA <span className='unbounded-weight300'>The AI Pop-Up Lab</span> AND</h1>
           <h1>TRANSPARENCY</h1>
           <h1>THROUGH AI</h1>
-          <div id='about-briefing'>We are a team of researchers and students dedicated to making public opinion transparent, auditable, and easy to understand.</div>
+          <div id='about-briefing'>We are a team of researchers and students dedicated to making public opinion transparent, auditable, and easy to understand through AI.</div>
         </div>
       </div>
     

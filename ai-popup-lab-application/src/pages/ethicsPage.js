@@ -17,27 +17,27 @@ function EthicsPage() {
   const cardValues = [
     {
       name: "Algorithmic Fairness",
-      text: "Post-stratification weighting is applied to align synthetic outputs with real population distributions. Red-teaming tests are run to identify systematic distortions before deployment.",
+      text: "Subgroup predictions are calibrated to minimise errors for granular segments of the population. A constitutional AI approach is implemented in the chat to ensure our personae behave in ways that are representative but not stereotypical.",
       icon: biasIcon
     },
     {
       name: "Ethical Data Use",
-      text: "Survey data is collected under informed consent protocols following ethical research standards. No personally identifiable information is used in persona construction.",
+      text: <>Survey data is collected to calibrate our AI under informed consent protocols following the ethical research standards of the <a href='https://aihr.uva.nl/about-aihr/ethics-committee/ethics-committee.html' target='_blank' rel='noopener noreferrer'>FGw</a> at the UvA. No personally identifiable information is used in persona construction.</>,
       icon: privacyIcon
     },
     {
       name: "Epistemic Responsibility",
-      text: "Persona responses are designed to be grounded in stored survey answers, with citation indicators built into the response pipeline. Weak evidence warnings appear automatically when outputs are based on small subgroups.",
+      text: "Persona responses are designed to be grounded in stored synthetic profiles, with epistemic boundaries built in to the chat pipeline.",
       icon: epistemicIcon
     },
     {
       name: "Preventing Democratic Harm",
-      text: "The tool is designed to democratise access to polling insights, helping users understand why different voter groups hold the views they do. Synthetic status is permanently visible throughout all interactions to prevent misuse.",
+      text: "The tool is designed to democratise access to polling insights, helping users understand why different voter groups hold the views they do. Synthetic status is permanently visible throughout all interactions to prevent misuse. Avatars are kept abstract as a reminder that these are simulations, not real people.",
       icon: democracyIcon
     },
     {
       name: "Fair Representation",
-      text: 'Each demographic group includes multiple personas to show the range of views within it, not just one "typical" voter. Avatars are kept abstract as a reminder that these are simulations, not real people.',
+      text: 'Census data and other representative surveys are used to generate random samples of the population of interest, these are then analysed with statistical tools such as MrP (multi-level regression and post-stratification) to ensure representative inference across demographic subgroups.',
       icon: representationIcon
     },
     {
@@ -47,12 +47,12 @@ function EthicsPage() {
     },
     {
       name: "Robustness & Security",
-      text: "Automated checks run before and after every response to catch misuse or out-of-scope inputs. The system is regularly stress-tested to find and fix weaknesses.",
+      text: "Automated checks powered by LLMs are embedded in the chat interface to detect misuse or out-of-scope inputs.  The system is regularly stress tested via redteaming to find and fix  vulnerabilities.",
       icon: securityIcon
     },
     {
       name: "Transparent Governance",
-      text: "Who funds the project and the ethical principles behind it are publicly listed in our section on Funding. All changes to the system are logged so decisions can be reviewed and held accountable.",
+      text: "Our work is non-commercial and is best understood as a form of digital activism. We work with a selected number of partners who help us deliver for the public.",
       icon: governanceIcon
     }
   ]

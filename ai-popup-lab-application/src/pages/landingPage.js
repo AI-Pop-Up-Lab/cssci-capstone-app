@@ -99,7 +99,7 @@ function LandingPage() {
 
   // text for elements
 
-  const msg1 = "Hello! Welcome to the Mechanical Pollster, statistically powered aggregator of the polls and synthetic personae generator.";
+  const msg1 = "Hello! Welcome to Mechanical Pollster. We use AI to explore how people think about important issues, so voters can better understand public opinion and the perspectives around them.";
   const msg2 = "Choose a country to explore the votes:";
   const msg3 = "You can also chat with one of synthetically generated personae to discover the reasoning behind their vote.";
   const msg4 = "Here is an example:";
