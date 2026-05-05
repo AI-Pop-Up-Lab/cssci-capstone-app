@@ -1,4 +1,5 @@
 import { useState, useEffect, memo, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 
 import './personaChooser.css';
@@ -8,6 +9,8 @@ import PersonaDetailCard from "./personaDetailCard";
 
 
 function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns }) {
+
+  const { t } = useTranslation();
 
   const [filteredData, setFilteredData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -77,7 +80,7 @@ function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns 
       }
       {(isLoading || data.length === 0) && <Loader />}
       {filteredData.length < 1 && !isLoading && data.length > 0 && (
-        <h2 className="unbounded-weight300">No personas match your filters.</h2>
+        <h2 className="unbounded-weight300">{t('personaPage.noPersonaMatch')}</h2>
       )}
     </div>
   );

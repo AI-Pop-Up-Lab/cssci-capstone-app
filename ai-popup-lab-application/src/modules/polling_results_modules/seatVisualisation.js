@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import * as d3 from "d3";
 import { parliamentChart } from 'd3-parliament-chart';
 import './seatVisualisation.css';
@@ -32,6 +33,8 @@ function chooseSeatAllocationFunction(method) {
 };
 
 function SeatVisualisation({ pollingData, country }) {
+
+  const { t } = useTranslation();
 
   const [total_seats, set_total_seats] = useState(null);
   const [total_seats_error, set_total_seats_error] = useState(null);
@@ -324,7 +327,7 @@ function SeatVisualisation({ pollingData, country }) {
 
   return (
     <div className="SeatVisualisation">
-      <h3>Seat Projection</h3>
+      <h3>{t('pollingResults.seatVisualisation.title')}</h3>
       {total_seats && partyColours && seatAllocationMethod && nextGEcolname ? (
         <div className="sv-chart-wrapper" ref={containerRef}>
           <svg ref={svgRef} />

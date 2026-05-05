@@ -1,5 +1,25 @@
 {
     "denmark": {
+        "0": {
+            "abstraction_level": "mixed",
+            "confidence_style": "balanced",
+            "evidence": [
+                "I helped craft crowns and bridges for patients across the region",
+                "I took the opportunity to open a small workshop in my garage",
+                "I volunteer twice a week at the local senior centre, teaching basic computer skills",
+                "lively debates about everything from football to climate reports",
+                "Working in a dental lab taught me the importance of reliable supply chains and fair pricing",
+                "Running my own repair shop reinforced the need for a tax system that rewards reinvestment"
+            ],
+            "explanation_style": "balanced",
+            "hedging_style": "medium",
+            "profile_summary": "She speaks in an everyday, approachable register, mixing short and longer sentences that weave concrete personal anecdotes with broader ideas. Her language is moderately varied, showing practical confidence while occasionally hedging to reflect nuance. Warmth comes through in her community\u2011focused storytelling, and she balances concrete examples with conceptual explanations, blending practical and reflective reasoning.",
+            "reasoning_style": "blended",
+            "register": "everyday",
+            "sentence_style": "mixed",
+            "vocabulary_level": "moderate",
+            "warmth_style": "warm"
+        },
         "17": {
             "abstraction_level": "mixed",
             "confidence_style": "balanced",

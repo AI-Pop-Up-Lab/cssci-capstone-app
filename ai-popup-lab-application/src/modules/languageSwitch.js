@@ -1,0 +1,50 @@
+import { useState, useRef, React, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import './languageSwitch.css';
+import closeCross from '../assets/images/closeCross.png';
+
+const languageOptions = [
+  { name: "english", abbreviation: "en", flagFile: require(`../assets/images/flags/united_kingdom.png`)},
+  { name: "nederlands", abbreviation: "nl", flagFile: require(`../assets/images/flags/netherlands.png`)},
+]
+
+function LanguageSwitch() {
+
+  const { i18n } = useTranslation();
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('lang', lang);
+    setPopupOpen(false);
+  };
+
+  const togglePopup = () => {
+    setPopupOpen(!popupOpen);
+  };
+
+  return (
+      <div className='LanguageSwitch'>
+        <button className='unbounded-weight300' onClick={togglePopup}>{i18n.language.toUpperCase()}</button>
+        <div className={popupOpen ? "langPopupOpen" : ""} id='langSwitch-popup'>
+
+          <div id='langSwitch-popup-top'>
+            <img onClick={togglePopup} src={closeCross} alt="button to close language selection popup" />
+          </div>
+
+          <div className='unbounded-weight400' id='langSwitch-popup-bottom'>
+            {languageOptions.map((lang) => (
+              <div onClick={() => changeLanguage(lang.abbreviation)} className='langOption' key={lang.abbreviation} onClick={() => changeLanguage(lang.abbreviation)}>
+                <img src={lang.flagFile} alt={lang.name} />
+                <p>{lang.name.toUpperCase()}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+  );
+}
+
+export default LanguageSwitch;

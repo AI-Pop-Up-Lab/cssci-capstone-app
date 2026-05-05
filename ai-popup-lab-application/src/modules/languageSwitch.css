@@ -1,0 +1,128 @@
+.LanguageSwitch{
+    position: relative;
+    z-index: 11;
+}
+
+.LanguageSwitch > button{
+    background-color: #D1E3DD;
+    padding: 5px 12px;
+    border: 2px solid #334E58;
+    border-radius: 18px;
+    transition: background-color 0.2s;
+    pointer-events: auto;
+}
+
+.LanguageSwitch > button:hover{
+    cursor: pointer;
+    background-color: #c6d7d2;
+}
+
+#langSwitch-popup{
+    position: fixed;
+
+    padding: 20px 30px;
+
+    top: 30%;
+    left: calc(50% - 180px);
+    
+
+    border-radius: 30px;
+    background-color: #ebb3ab;
+    color: #335058;
+    height: fit-content;
+    width: 300px;
+
+    z-index: 12;
+
+    pointer-events: auto;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#langSwitch-popup.langPopupOpen{
+    display: flex;
+}
+
+#langSwitch-popup-top{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#langSwitch-popup-top > img{
+    aspect-ratio: 1/1;
+    width: 20px;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(19%) saturate(812%) hue-rotate(146deg) brightness(90%) contrast(89%);
+}
+
+#langSwitch-popup-top > img{
+    cursor: pointer;
+}
+
+#langSwitch-popup-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.langOption{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.langOption:hover{
+    cursor: pointer;
+}
+
+.langOption > img{
+    height: 20px;
+    margin-right: 10px;
+}
+
+.langOption > p{
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.langOption > p::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2.5px;
+    background-color: #335058;
+    transition: width 0.2s;
+}
+
+.langOption:hover > p::after{
+    width: 100%;
+}
+
+@media screen and (max-width: 450px){
+
+    #langSwitch-popup{
+        padding: 15px 20px;
+        top: 30%;
+        left: calc(50% - 120px);
+        width: 200px;
+    }
+
+    .langOption > img{
+        height: 14px;
+        margin-right: 8px;
+    }
+
+    .langOption > p{
+        font-size: 12px;
+    }
+
+    #langSwitch-popup-top > img{
+        width: 18px;
+    }
+}

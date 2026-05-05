@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, memo} from "react";
+import { useTranslation } from "react-i18next";
 
 import './personaDetailCard.css';
 
@@ -10,6 +11,8 @@ import personaPic_2 from '../../assets/svgs/personaPic_2.svg'
 import linkArrow from '../../assets/images/linkArrow.png'
 
 function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCountry }) {
+
+  const { t } = useTranslation();
 
   const [index, setIndex] = useState(personaDetails.index);
   const [filteredPersona, setFilteredPersona] = useState(
@@ -93,7 +96,7 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
               <div key={key}><p>{formatKey(key)}:</p><p>{value}</p></div>
             )) : <Loader />}
 
-            <button onClick={() => setShowPersonaChat(!showPersonaChat)} className="unbounded-weight300 enter-personachat-button">START THE CHAT <img alt='right facing arrow' src={linkArrow}></img></button>
+            <button onClick={() => setShowPersonaChat(!showPersonaChat)} className="unbounded-weight300 enter-personachat-button">{t('personaPage.startChatButton')} <img alt='right facing arrow' src={linkArrow}></img></button>
         </div>
 
       </div>

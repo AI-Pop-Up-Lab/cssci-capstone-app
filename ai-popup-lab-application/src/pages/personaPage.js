@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
 import axios from "axios";
 
 import './personaPage.css';
@@ -30,6 +31,8 @@ function modifyCountryNameEdgeCases(country){
 }
 
 function PersonaPage() {
+
+  const { t } = useTranslation();
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -106,13 +109,13 @@ function PersonaPage() {
 
       <div id="persona-selection">
         <div id="selection-explanation">
-          <h1 className="unbounded-weight400">Chat with a persona</h1>
+          <h1 className="unbounded-weight400">{t('personaPage.title')}</h1>
           <p className="unbounded-weight300">
-          We have randomly sampled {dataLength} 'types' of individuals who live in {modifiedCountry}. We use AI to impersonate each individual, and respond to an Opinion Poll. The estimates you see are based on this sample of 'synthetic personae'.
-          <br></br><br></br>
-          Would you like to chat with one of the synthetic personae ?
-          <br></br><br></br>
-          By chatting, you can explore the underlying motivations and reasoning behind their beliefs. You can select various demographics below to filter through personae. Hover over a persona icon to view its details and if you wish to, then enter a chat.
+            <Trans
+              i18nKey="personaPage.description"
+              values={{ dataLength, modifiedCountry }}
+              components={{ br: <br/> }}
+            />
           </p>
         </div>
 

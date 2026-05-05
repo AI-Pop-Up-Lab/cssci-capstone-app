@@ -1,12 +1,15 @@
 import './personaChatExample.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import personaPic_1 from '../assets/svgs/personaPic_1.svg'
 import personaPic_2 from '../assets/svgs/personaPic_2.svg'
 import linkArrow from '../assets/images/linkArrow.png'
 
 function PersonaChatExample({includeLink, country}) {
+
+  const { t } = useTranslation();
 
   function modifyCountryNameEdgeCases(country){
     let modifiedCountry;
@@ -31,30 +34,30 @@ function PersonaChatExample({includeLink, country}) {
 
           <div id="example-persona-card">
             <img src={personaPic_1}></img>
-            <p className='unbounded-weight400' id="example-persona-name">Synthetic Persona</p>
-            <p className='example-persona-attr'>Age: 26</p>
-            <p className='example-persona-attr'>Education: High school</p>
-            <p className='example-persona-attr'>Occupation: Unemployed</p>
+            <p className='unbounded-weight400' id="example-persona-name">{t('personaChatExample.exampleName')}</p>
+            <p className='example-persona-attr'>{t('personaChatExample.exampleAge')}</p>
+            <p className='example-persona-attr'>{t('personaChatExample.exampleEducation')}</p>
+            <p className='example-persona-attr'>{t('personaChatExample.exampleOccupation')}</p>
           
             <div id="persona-warning-hover">
               <p className='unbounded-weight400'>!</p>
             </div>
 
             <div id="persona-warning-overlay">
-              <p className='unbounded-weight400'>THESE PERSONAS ARE  <span style={{fontWeight: 600}}>NOT REAL HUMAN BEINGS</span>, AND NO PERSONALLY IDENTIFIABLE DATA OF LIVING INDIVIDUALS IS USED. </p>
+              <p className='unbounded-weight400'>{t('personaChatExample.warningPart1')}<span style={{fontWeight: 600}}>{t('personaChatExample.warningPart2')}</span>{t('personaChatExample.warningPart3')}</p>
             </div>
           </div>
 
           <div id="example-persona-chat">
             <div id='example-user-message-container'>
               <div id="example-user-message">
-                <p>How do you feel about current economic situation in {modifiedCountry}?</p>
+                <p>{t('personaChatExample.exampleUserMessage', { country: modifiedCountry})}</p>
                 <div id="example-user-message-bubbletick"></div>
               </div>
             </div>
             <div id='example-response-message-container'>
               <div id="example-response-message">
-                <p>Honestly, it feels pretty stressful right now. As someone who’s unemployed, it seems like everything is getting more expensive while finding stable work is still tough. I worry a lot about paying rent and basic things like groceries. {modifiedCountry} is still a good country in many ways, but the economic situation makes it feel uncertain and a bit overwhelming sometimes.</p>
+                <p>{t('personaChatExample.exampleResponse', { country: modifiedCountry})}</p>
                 <div id="example-response-message-bubbletick"></div>
               </div>
             </div>
@@ -63,7 +66,7 @@ function PersonaChatExample({includeLink, country}) {
         </div>
 
         <div id='land-expl-pers-bottom' className={includeLink ? '' : 'dontShowPersonaLink'}>
-          <Link to={`/personas/?country=${country}`}><button className='unbounded-weight300'>EXPLORE MORE PERSONAS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
+          <Link to={`/personas/?country=${country}`}><button className='unbounded-weight300'>{t('personaChatExample.explorePersonas')} <img alt='right facing arrow' src={linkArrow}></img></button></Link>
         </div>
     </div>
   );

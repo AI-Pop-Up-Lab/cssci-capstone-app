@@ -1,0 +1,154 @@
+{
+    "disclaimerPopup": "Dit platform maakt gebruik van AI gesimuleerde persona's op basis van openbare volkstellinggegevens. Deze persona's zijn geen echte personen en er worden geen persoonsgegevens van individuen gebruikt.",
+    "header": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "home": "startpagina",
+            "polling": "peilingen",
+            "personas": "persona explorer",
+            "about": "over ons",
+            "ethics": "ethiek"
+        }
+    },
+    "footer": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "about": "Over Ons",
+            "ethics": "Ethiek"
+        }
+    },
+    "landingPage": {
+        "msg1": "Hallo! Welkom bij Mechanical Pollster. Wij maken gebruik van AI om te onderzoeken hoe mensen denken over belangrijke kwesties, zodat kiezers een beter inzicht krijgen in de publieke opinie en de standpunten om hen heen.",
+        "msg2": "Kies een land om de stemmen te bekijken:",
+        "msg3": "Je kunt ook een gesprek voeren met een van de kunstmatig gegenereerde personae om te ontdekken waarom ze zo hebben gestemd.",
+        "msg4": "Hier is een voorbeeld:",
+        "explorePolls": "BEKIJK MEER PEILINGEN"
+    },
+    "personaChatExample": {
+        "exampleName": "Synthetische Persona",
+        "exampleAge": "Leeftijd: 26",
+        "exampleEducation": "Opleiding: Middelbare School",
+        "exampleOccupation": "Ocupatie: Werkloos",
+        "warningPart1": "DEZE PERSONAE ZIJN  ",
+        "warningPart2": "GEEN ECHTE MENSEN",
+        "warningPart3": ", EN ER WORDEN GEEN PERSOONLIJK IDENTIFICEERBARE GEGEVENS VAN LEVENDE PERSONEN GEBRUIKT.",
+        "exampleUserMessage": "Wat vind je van de huidige economische situatie in {{country}}?",
+        "exampleResponse": "Eerlijk gezegd voel ik me op dit moment behoorlijk gestrest. Als werkloze heb ik het gevoel dat alles steeds duurder wordt, terwijl het nog steeds moeilijk is om een vaste baan te vinden. Ik maak me veel zorgen over het betalen van de huur en basisbehoeften zoals boodschappen. {{country}} is in veel opzichten nog steeds een goed land, maar door de economische situatie voelt het soms onzeker en een beetje overweldigend.",
+        "explorePersonas": "ONTDEK MEER PERSONAS"
+    },
+    "pollingResults": {
+        "sampleExport": "Sample data exporteren",
+        "frameExport": "Frame data exporteren",
+        "voteProjection": {
+            "title": "Als er vandaag algemene verkiezingen zouden worden gehouden, op wie zou je dan stemmen?",
+            "subtitle": "Opkomst: <strong>{{turnoutPct}}%</strong> — {{voted}} van de {{total}} respondenten gaven aan dat ze zouden gaan stemmen"
+        },
+        "seatVisualisation": {
+            "title": "Zetelprognose"
+        },
+        "demographicChart": {
+            "title": "Stemmen per demografische groep"
+        }
+    },
+    "personaPage": {
+        "title": "Chat met een persona",
+        "description": "We hebben een willekeurige steekproef genomen van {{dataLength}} soorten personen die in {{modifiedCountry}} wonen. We gebruiken AI om ons in elke persoon te verplaatsen en een opiniepeiling in te vullen. De schattingen die je ziet, zijn gebaseerd op deze steekproef van 'synthetische personae'. <br></br><br></br> Wilt u een gesprek aangaan met een van de synthetische personae? <br></br><br></br> Door te chatten kunt u de onderliggende motivaties en redeneringen achter hun overtuigingen verkennen. U kunt hieronder verschillende demografische gegevens selecteren om de personae te filteren. Beweeg de muis over een persona-icoontje om de details te bekijken en, indien u dat wenst, een gesprek te starten.",
+        "noPersonaMatch": "Er zijn geen persona's die aan uw filters voldoen.",
+        "startChatButton": "BEGIN DE CHAT",
+        "chat": {
+            "warning1": "Welkom bij de",
+            "warning2": "AI Pollster Chat",
+            "warning3": "voordat u verdergaat...",
+            "warning4": "Wij raden u af om persoonlijke gegevens via de chat te delen.",
+            "warning5": "Persoonsgegevens die in de chat worden gedeeld, worden opgeslagen in Azure Cloud-databases en kunnen worden verwerkt door derden buiten de EU.<br></br>De chats worden opgeslagen om het AI-systeem te verbeteren.",
+            "disagree": "TERUG",
+            "agree": "AKKOORD EN BEGIN DE CHAT",
+            "chatWith": "CHAT MET",
+            "notreal": "GEEN ECHT PERSOON",
+            "textInputPlaceholder": "BEGIN HIER MET TYPEN..."
+        }
+    },
+    "aboutPage": {
+        "description": "Wij zijn een team van onderzoekers en studenten dat zich inzet om de publieke opinie via AI transparant, controleerbaar en begrijpelijk te maken.",
+        "mission": {
+            "title": "Onze Missie",
+            "content": "Opiniepeilingen bevinden zich in zwaar weer. Het percentage non-respons loopt op tot wel 94%, en het probleem van de niet-negeerbare non-respons teistert de sector. Dit betekent dat het steeds moeilijker wordt om representatieve steekproeven van de publieke opinie samen te stellen. Wij zijn van mening dat het voor de kwaliteit van de democratie belangrijk is om een goed beeld te krijgen van de opvattingen van het publiek over politiek. Het geeft onderzoekers inzicht in maatschappelijke trends, politici in de publieke stemming, en burgers in hoe zij ten opzichte van hun omgeving staan. <br></br><br></br> Ons werk is per definitie niet-commercieel en kan het best worden gezien als een vorm van digitaal activisme. Ons uitgangspunt is dat een politiek systeem dat beter op de hoogte is van de publieke opinie, beter toegerust is om problemen op het gebied van collectieve actie aan te pakken. We hopen ook dat dit werk kan bijdragen aan een beter begrip tussen verschillende sociale groepen. We zetten ons in voor onderzoek dat transparant en maatschappelijk nuttig is en dat wordt geleid door het algemeen belang."
+        },
+        "whatwedo": {
+            "title": "Wat We Doen",
+            "content": "Wij overbruggen de kloof tussen complexe sociale wetenschappen en alledaagse gesprekken. Door gebruik te maken van <strong>synthetische persona's</strong> creëren we een 'levendige' weergave van volkstellinggegevens waarmee gebruikers rechtstreeks kunnen communiceren.",
+            "items": {
+                "personaGeneration": {
+                    "title": "Persona Genereren",
+                    "content": "We stellen een steekproef samen van duizenden gesimuleerde personen op basis van officiële, geanonimiseerde gegevens uit volkstellingen en enquêtes."
+                },
+                "scientificGrounding": {
+                    "title": "Wetenschappelijke Onderbouwing",
+                    "content": "De synthetische respondenten worden behandeld volgens dezelfde wetenschappelijke onderzoeksmethoden die we in de praktijk zouden toepassen bij echte deelnemers. De enquêtegegevens worden met MrP post-gestratificeerd om gedetailleerde schattingen te verkrijgen."
+                },
+                "publicAccess": {
+                    "title": "Public Access",
+                    "content": "Wij bieden een gratis, interactieve webapp aan waarmee iedereen de resultaten kan bekijken, met personae kan chatten en de gegevens kan downloaden voor eigen onderzoek."
+                }
+            }
+        },
+        "commitments": {
+            "title": "Onze Beloften",
+            "items": {
+                "privacy": {
+                    "title": "Privacy Voorop",
+                    "content": "We gebruiken nooit persoonlijk identificeerbare gegevens over levende personen. Al onze persona’s zijn gesimuleerde modellen."
+                },
+                "partisanship": {
+                    "title": "Onpartijdigheid",
+                    "content": "Onze visuelle identiteit en onze data rapportage zijn strikt neutraal. We doen geen politieke aanbevelingen en roepen niet op tot specifieke acties."
+                },
+                "openScience": {
+                    "title": "Open Wetenschap",
+                    "content": "We delen onze methoden, onze versiegeschiedenis en onze data bronnen om ervoor te zorgen dat het project volledig reproduceerbaar blijft."
+                }
+            }
+        },
+        "team": {
+            "title": "Ons Team",
+            "content": "De Mechanical Pollster is een tool die is ontwikkeld door het AI Pop-up Lab @ de Universiteit van Amsterdam, een academisch, non-profit onderwijs- en onderzoekscentrum binnen het Computational Social Science (CSSci) programma. Wij doen onderzoek en ontwikkelen AI voor opinieonderzoek met een duidelijk maatschappelijk doel: het creëren van tools die het democratisch functioneren ondersteunen ten behoeve van het publiek. <br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi en Xuan Miao."
+        }
+    },
+    "ethicsPage": {
+        "title": "ETHISCHE OVERWEGINGEN",
+        "items": {
+            "algorithmicFairness": {
+                "name": "Algoritmische Rechtvaardigheid",
+                "text": "Voorspellingen voor subgroepen worden afgestemd om fouten voor gedetailleerde segmenten van de bevolking tot een minimum te beperken. In de chat wordt een op de grondwet gebaseerde AI-benadering toegepast om ervoor te zorgen dat onze personages zich op een representatieve, maar niet stereotiepe manier gedragen."
+            },
+            "ethicalDataUse": {
+                "name": "Ethisch Data Gebruik",
+                "text": "Enquêtedata wordt verzameld om onze AI te kalibreren volgens protocollen voor geïnformeerde toestemming, in overeenstemming met de ethische onderzoeksnormen van de <fgwLink>FGw</fgwLink> aan de UvA. Er wordt geen persoonlijk identificeerbare informatie gebruikt bij het opbouwen van persona's."
+            },
+            "epistemicResponsibility": {
+                "name": "Epistemische Verantwoordelijkheid",
+                "text": "De reacties van de persona's zijn ontworpen om te zijn gebaseerd op opgeslagen synthetische profielen, met epistemische grenzen ingebouwd in de chatpijplijn."
+            },
+            "preventingDemocraticHarm": {
+                "name": "Democratische Schade Voorkomen",
+                "text": "De tool is ontworpen om de toegang tot inzichten uit opiniepeilingen te democratiseren, zodat gebruikers beter begrijpen waarom verschillende kiezersgroepen bepaalde standpunten innemen. De synthetische status is tijdens alle interacties permanent zichtbaar om misbruik te voorkomen. Avatars worden abstract gehouden om eraan te herinneren dat dit simulaties zijn, geen echte mensen."
+            },
+            "fairRepresentation": {
+                "name": "Eerlijke Vertegenwoordiging",
+                "text": "Er worden volkstellinggegevens en andere representatieve enquêtes gebruikt om willekeurige steekproeven te genereren van de betreffende populatie; deze worden vervolgens geanalyseerd met statistische instrumenten zoals MrP (multi-level regression and post-stratification) om representatieve conclusies over demografische subgroepen te garanderen."
+            },
+            "transparency": {
+                "name": "Transparantie",
+                "text": "Bij elk resultaat wordt aangegeven waar de gegevens vandaan komen, welke versie van het systeem deze heeft geproduceerd en wanneer. Op een pagina met methoden in gewone taal wordt uitgelegd hoe de tool van begin tot eind werkt."
+            },
+            "robustnessSecurity": {
+                "name": "Robuustheid & Beveiliging",
+                "text": "Geautomatiseerde controles op basis van LLM's zijn ingebouwd in de chatinterface om misbruik of invoer buiten het bereik te detecteren. Het systeem wordt regelmatig getest via redteaming om kwetsbaarheden op te sporen en te verhelpen."
+            },
+            "transparentGovernance": {
+                "name": "Transparant bestuur",
+                "text": "Ons werk is niet-commercieel en kan het best worden gezien als een vorm van digitaal activisme. We werken samen met een select aantal partners die ons helpen om resultaten te boeken voor het publiek."
+            }
+        }
+    }
+}

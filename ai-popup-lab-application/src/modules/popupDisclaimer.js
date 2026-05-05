@@ -1,9 +1,12 @@
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 import closeCross from '../assets/images/closeCross.png';
 import './popupDisclaimer.css';
 
 function PopupDisclaimer() {
+
+  const { t } = useTranslation();
 
   const [closed, setClosed] = useState(false);
   const [unmounted, setUnmounted] = useState(false);
@@ -38,7 +41,7 @@ function PopupDisclaimer() {
             <img onClick={closePopup} src={closeCross} alt="button to close disclaimer popup" id="popupDisclaimerClose"/>
         </div>
         <div id="popupDisclaimerContent">
-            <p className="unbounded-weight300">This platform uses AI-simulated personae based on public census data. These personae are not real humans, and no personal data of individuals is used.</p>
+            <p className="unbounded-weight300">{t('disclaimerPopup')}</p>
         </div>
       </div>
     </div>

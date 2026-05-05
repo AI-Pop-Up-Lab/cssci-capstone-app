@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import axios from "axios";
 
 import './personaChat.css';
@@ -11,6 +12,8 @@ import UserMessage from "./userMessage";
 import AwaitingMessage from "./awaitingMessage";
 
 function PersonaChat({ personaDetails, personaCountry, showChat }) {
+
+  const { t } = useTranslation();
 
   // below code is for sending and retrieving messages
 
@@ -170,28 +173,33 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
 
             <>
             {<div id="chat-bubble-agree" className="unbounded-weight300">
-              <p>Welcome to the</p>
-              <p>AI Pollster Chat</p>
-              <p>before you proceed...</p>
-              <p>We advise against communicating personal information to the chat.</p>
-              <p>Personal data shared in the chat will be stored on Azure Cloud databases, and could be processed by third parties outside of the EU.<br></br>The chats are stored for the purpose of improving the AI system.</p>
+              <p>{t('personaPage.chat.warning1')}</p>
+              <p>{t('personaPage.chat.warning2')}</p>
+              <p>{t('personaPage.chat.warning3')}.</p>
+              <p>{t('personaPage.chat.warning4')}</p>
+              <p>
+                <Trans 
+                i18nKey={`personaPage.chat.warning5`} 
+                components={{ br: <br/> }} 
+                />
+              </p>
 
               <div id="chat-bubble-agree-buttons">
-                <div onClick={() => showChat(false)}>GO BACK</div>
-                <div onClick={() => setCloseAgreementSection(true)}>AGREE AND START THE CHAT</div>
+                <div onClick={() => showChat(false)}>{t('personaPage.chat.disagree')}</div>
+                <div onClick={() => setCloseAgreementSection(true)}>{t('personaPage.chat.agree')}</div>
               </div>
             </div>}
             </>
             )}
 
             <div id="persona-chat-header">
-                <p id="chat-with-text" className="unbounded-weight300">CHAT WITH</p>
+                <p id="chat-with-text" className="unbounded-weight300">{t('personaPage.chat.chatWith')}</p>
                 <div id="persona-name" className="unbounded-weight400">
                     Persona {index + 1}
                     <div id="anthro-warning">
                         <p className="unbounded-weight400">!</p>
                     </div>
-                    <p className="unbounded-weight400" id="chat-not-real-warning">NOT A REAL PERSON</p>
+                    <p className="unbounded-weight400" id="chat-not-real-warning">{t('personaPage.chat.notreal')}</p>
                 </div>
                 <div id="persona-chat-attributes">
                     {Object.entries(personaWithoutIndex).map(([key, value]) => (
@@ -220,7 +228,7 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
                   className="unbounded-weight300" 
                   type="text" 
                   alt="Input for persona chat interface" 
-                  placeholder="START TYPING HERE..."
+                  placeholder={t('personaPage.chat.textInputPlaceholder')}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={(e) => {

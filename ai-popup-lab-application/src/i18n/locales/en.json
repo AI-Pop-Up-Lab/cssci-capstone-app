@@ -1,0 +1,154 @@
+{
+    "disclaimerPopup": "This platform uses AI-simulated personae based on public census data. These personae are not real humans, and no personal data of individuals is used.",
+    "header": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "home": "homepage",
+            "polling": "poll results",
+            "personas": "persona explorer",
+            "about": "about us",
+            "ethics": "ethics"
+        }
+    },
+    "footer": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "about": "About Us",
+            "ethics": "Ethics"
+        }
+    },
+    "landingPage": {
+        "msg1": "Hello! Welcome to Mechanical Pollster. We use AI to explore how people think about important issues, so voters can better understand public opinion and the perspectives around them.",
+        "msg2": "Choose a country to explore the votes:",
+        "msg3": "You can also chat with one of synthetically generated personae to discover the reasoning behind their vote.",
+        "msg4": "Here is an example:",
+        "explorePolls": "EXPLORE MORE POLLS"
+    },
+    "personaChatExample": {
+        "exampleName": "Synthetic Persona",
+        "exampleAge": "Age: 26",
+        "exampleEducation": "Education: High School",
+        "exampleOccupation": "Occupation: Unemployed",
+        "warningPart1": "THESE PERSONAS ARE  ",
+        "warningPart2": "NOT REAL HUMAN BEINGS",
+        "warningPart3": ", AND NO PERSONALLY IDENTIFIABLE DATA OF LIVING INDIVIDUALS IS USED.",
+        "exampleUserMessage": "How do you feel about current economic situation in {{country}}?",
+        "exampleResponse": "Honestly, it feels pretty stressful right now. As someone who's unemployed, it seems like everything is getting more expensive while finding stable work is still tough. I worry a lot about paying rent and basic things like groceries. {{country}} is still a good country in many ways, but the economic situation makes it feel uncertain and a bit overwhelming sometimes.",
+        "explorePersonas": "EXPLORE MORE PERSONAS"
+    },
+    "pollingResults": {
+        "sampleExport": "Export sample data",
+        "frameExport": "Export frame data",
+        "voteProjection": {
+            "title": "If a general election were held today, who would you vote for?",
+            "subtitle": "Turnout: <strong>{{turnoutPct}}%</strong> — {{voted}} of {{total}} respondents said they would vote"
+        },
+        "seatVisualisation": {
+            "title": "Seat Projection"
+        },
+        "demographicChart": {
+            "title": "Vote by Demographic"
+        }
+    },
+    "personaPage": {
+        "title": "Chat with a persona",
+        "description": "We have randomly sampled {{dataLength}} 'types' of individuals who live in {{modifiedCountry}}. We use AI to impersonate each individual, and respond to an Opinion Poll. The estimates you see are based on this sample of 'synthetic personae'. <br></br><br></br> Would you like to chat with one of the synthetic personae? <br></br><br></br> By chatting, you can explore the underlying motivations and reasoning behind their beliefs. You can select various demographics below to filter through personae. Hover over a persona icon to view its details and if you wish to, then enter a chat.",
+        "noPersonaMatch": "No personas match your filters.",
+        "startChatButton": "START THE CHAT",
+        "chat": {
+            "warning1": "Welcome to the",
+            "warning2": "AI Pollster Chat",
+            "warning3": "before you proceed...",
+            "warning4": "We advise against communicating personal information to the chat.",
+            "warning5": "Personal data shared in the chat will be stored on Azure Cloud databases, and could be processed by third parties outside of the EU.<br></br>The chats are stored for the purpose of improving the AI system.",
+            "disagree": "GO BACK",
+            "agree": "AGREE AND START THE CHAT",
+            "chatWith": "CHAT WITH",
+            "notreal": "NOT A REAL PERSON",
+            "textInputPlaceholder": "START TYPING HERE..."
+        }
+    },
+    "aboutPage": {
+        "description": "We are a team of researchers and students dedicated to making public opinion transparent, auditable, and easy to understand through AI.",
+        "mission": {
+            "title": "Our Mission",
+            "content": "Opinion polls are at dire straits. Nonresponse rates are as high as 94%, and nonignorable nonresponse plagues the field. This means that it is increasingly more difficult to build get representative samples of public opinion. We believe getting a good sense of the public's views on politics is important for the quality of democracy. It informs researchers of societal trends, politicians of public sentiment, and citizens of where they stand relative to those around them.<br></br><br></br> Our work is non-commercial by design and is best understood as a form of digital activism. Our core premise is that a polity that is better informed about the shape of public opinion is better equipped to address collective action problems. We also hope this work can foster greater understanding across social groups. We are committed to research that is transparent, socially useful, and guided by the public good."
+        },
+        "whatwedo": {
+            "title": "What We Do",
+            "content": "We bridge the gap between complex social science and everyday conversation. By using <strong>synthetic personas</strong>, we create a 'living' representation of census data that users can interact with directly.",
+            "items": {
+                "personaGeneration": {
+                    "title": "Persona Generation",
+                    "content": "We build a panel of thousands of simulated individuals based on official, non-identifiable census and survey data."
+                },
+                "scientificGrounding": {
+                    "title": "Scientific Grounding",
+                    "content": "The synthetic respondents are treated under the same real-world survey science we would use with real participants. Survey data is post-stratified with MrP to produce rich estimates."
+                },
+                "publicAccess": {
+                    "title": "Public Access",
+                    "content": "We provide a free, interactive web app where anyone can explore results, chat with personas, and download the data for their own research."
+                }
+            }
+        },
+        "commitments": {
+            "title": "Our Commitments",
+            "items": {
+                "privacy": {
+                    "title": "Privacy First",
+                    "content": "We never use personally identifiable data about living individuals. All our personas are simulated models."
+                },
+                "partisanship": {
+                    "title": "Non-Partisanship",
+                    "content": "Our visual identity and data reporting are strictly neutral. We do not provide political recommendations or targeted calls to action."
+                },
+                "openScience": {
+                    "title": "Open Science",
+                    "content": "We share our methods, our version history, and our source data to ensure the project remains fully reproducible."
+                }
+            }
+        },
+        "team": {
+            "title": "Our Team",
+            "content": "The Mechanical Pollster is a tool developed by the AI Pop-up Lab @ the University of Amsterdam, an academic, not-for-profit teaching and research hub within the Computational Social Science (CSSci) Programme. We teach, study, and build AI for public opinion research with a clear public purpose: to create tools that support democratic functioning for the benefit of the public.<br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi, and Xuan Miao."
+        }
+    },
+    "ethicsPage": {
+        "title": "ETHICAL CONSIDERATIONS",
+        "items": {
+            "algorithmicFairness": {
+                "name": "Algorithmic Fairness",
+                "text": "Subgroup predictions are calibrated to minimise errors for granular segments of the population. A constitutional AI approach is implemented in the chat to ensure our personae behave in ways that are representative but not stereotypical."
+            },
+            "ethicalDataUse": {
+                "name": "Ethical Data Use",
+                "text": "Survey data is collected to calibrate our AI under informed consent protocols following the ethical research standards of the <fgwLink>FGw</fgwLink> at the UvA. No personally identifiable information is used in persona construction."
+            },
+            "epistemicResponsibility": {
+                "name": "Epistemic Responsibility",
+                "text": "Persona responses are designed to be grounded in stored synthetic profiles, with epistemic boundaries built in to the chat pipeline."
+            },
+            "preventingDemocraticHarm": {
+                "name": "Preventing Democratic Harm",
+                "text": "The tool is designed to democratise access to polling insights, helping users understand why different voter groups hold the views they do. Synthetic status is permanently visible throughout all interactions to prevent misuse. Avatars are kept abstract as a reminder that these are simulations, not real people."
+            },
+            "fairRepresentation": {
+                "name": "Fair Representation",
+                "text": "Census data and other representative surveys are used to generate random samples of the population of interest, these are then analysed with statistical tools such as MrP (multi-level regression and post-stratification) to ensure representative inference across demographic subgroups."
+            },
+            "transparency": {
+                "name": "Transparency",
+                "text": "Every result shows where the data comes from, which version of the system produced it, and when. A plain-language methods page explains how the tool works from start to finish."
+            },
+            "robustnessSecurity": {
+                "name": "Robustness & Security",
+                "text": "Automated checks powered by LLMs are embedded in the chat interface to detect misuse or out-of-scope inputs. The system is regularly stress tested via redteaming to find and fix vulnerabilities."
+            },
+            "transparentGovernance": {
+                "name": "Transparent Governance",
+                "text": "Our work is non-commercial and is best understood as a form of digital activism. We work with a selected number of partners who help us deliver for the public."
+            }
+        }
+    }
+}

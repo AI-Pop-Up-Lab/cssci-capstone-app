@@ -1,7 +1,8 @@
 // import ApiTest from '../modules/apiTest';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useInView } from 'react-intersection-observer';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
 import './landingPage.css';
@@ -25,6 +26,9 @@ function LandingPage() {
   const [error, setError] = useState(null);
 
   const [responseData, setResponseData] = useState(null);
+
+  const { t, i18n } = useTranslation();
+  const [typingKey, setTypingKey] = useState(i18n.language);
 
   function modifyCountryNameEdgeCases(country){
     let modifiedCountry;
@@ -65,28 +69,41 @@ function LandingPage() {
     setResponseData(data?.data ?? []);
   }, [data]);
 
+  useEffect(() => {
+    setTypingKey(i18n.language);
+  }, [i18n.language]);
+
   // code for typing effect on elements
 
   const [bottomDelayed, setBottomDelayed] = useState(false);
   const [bottomRef, bottomInView] = useInView({ threshold: 0.7, triggerOnce: true, skip: !bottomDelayed });
 
-  function useTypingEffect(text, speed = 18, startDelay = 0, trigger = true) {
+  function useTypingEffect(text, speed = 18, startDelay = 0, trigger = true, resetKey = '') {
     const [displayed, setDisplayed] = useState('');
+    const timeoutRef = useRef(null);
+    const intervalRef = useRef(null);
 
     useEffect(() => {
-      if (!trigger) return;
+      clearTimeout(timeoutRef.current);
+      clearInterval(intervalRef.current);
       setDisplayed('');
+
+      if (!trigger) return;
+
       let i = 0;
-      const timeout = setTimeout(() => {
-        const interval = setInterval(() => {
+      timeoutRef.current = setTimeout(() => {
+        intervalRef.current = setInterval(() => {
           setDisplayed(text.slice(0, i + 1));
           i++;
-          if (i >= text.length) clearInterval(interval);
+          if (i >= text.length) clearInterval(intervalRef.current);
         }, speed);
-        return () => clearInterval(interval);
       }, startDelay);
-      return () => clearTimeout(timeout);
-    }, [text, trigger]);
+
+      return () => {
+        clearTimeout(timeoutRef.current);
+        clearInterval(intervalRef.current);
+      };
+    }, [text, trigger, resetKey]);
 
     return displayed;
   }
@@ -99,18 +116,18 @@ function LandingPage() {
 
   // text for elements
 
-  const msg1 = "Hello! Welcome to Mechanical Pollster. We use AI to explore how people think about important issues, so voters can better understand public opinion and the perspectives around them.";
-  const msg2 = "Choose a country to explore the votes:";
-  const msg3 = "You can also chat with one of synthetically generated personae to discover the reasoning behind their vote.";
-  const msg4 = "Here is an example:";
+  const msg1 = t('landingPage.msg1');
+  const msg2 = t('landingPage.msg2');
+  const msg3 = t('landingPage.msg3');
+  const msg4 = t('landingPage.msg4');
 
   const speed = 30; // speed of each letter types in ms
   const gap = 300; // ms pause between messages
 
-  const typed1 = useTypingEffect(msg1, speed, 0);
-  const typed2 = useTypingEffect(msg2, speed, msg1.length * speed + gap);
-  const typed3 = useTypingEffect(msg3, speed, 0, bottomInView);
-  const typed4 = useTypingEffect(msg4, speed, msg3.length * speed + gap, bottomInView);
+  const typed1 = useTypingEffect(msg1, speed, 0, typingKey);
+  const typed2 = useTypingEffect(msg2, speed, msg1.length * speed + gap, typingKey);
+  const typed3 = useTypingEffect(msg3, speed, 0, bottomInView, typingKey);
+  const typed4 = useTypingEffect(msg4, speed, msg3.length * speed + gap, bottomInView, typingKey);
 
 
   return (
@@ -142,7 +159,7 @@ function LandingPage() {
 
       <div id="landingVoteProjContainer">
         {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
-        <Link to={`/polling/?country=${selectedCountry}`}><button className='unbounded-weight300'>EXPLORE MORE POLLS <img alt='right facing arrow' src={linkArrow}></img></button></Link>
+        <Link to={`/polling/?country=${selectedCountry}`}><button className='unbounded-weight300'>{t('landingPage.explorePolls')}<img alt='right facing arrow' src={linkArrow}></img></button></Link>
       </div>
 
       <div id="landingPageBottomMessages">

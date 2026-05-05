@@ -1,10 +1,14 @@
 import { useState, React, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import './headerAndNavigation.css';
+import LanguageSwitch from './languageSwitch';
 
 function HeaderAndNavigation() {
+
+  const { t } = useTranslation();
 
   const [navOpen, setNavOpen] = useState(false);
   const [darkModeOn, setDarkModeOn] = useState(false);
@@ -24,7 +28,7 @@ function HeaderAndNavigation() {
 
           <div id="header-text-left">
             <h1 className="unbounded-weight300">MECHANICAL <span>POLLSTER</span></h1>
-            <p className="unbounded-weight300">Estimating public opinion from synthetic personae</p>
+            <p className="unbounded-weight300">{t('header.tagline')}</p>
           </div>
 
           <div id='hamburger-and-nav'>
@@ -35,25 +39,25 @@ function HeaderAndNavigation() {
             </div>
 
             <div id='nav-links' className='unbounded-weight400'>
-              <Link to="/" onClick={() => setNavOpen(!navOpen)}>homepage</Link>
-              <Link to="/polling" onClick={() => setNavOpen(!navOpen)}>poll results</Link>
-              <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>persona explorer</Link>
-              <Link to="/about" onClick={() => setNavOpen(!navOpen)}>about us</Link>
-              <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>ethics</Link>
+              <Link to="/" onClick={() => setNavOpen(!navOpen)}>{t('header.links.home')}</Link>
+              <Link to="/polling" onClick={() => setNavOpen(!navOpen)}>{t('header.links.polling')}</Link>
+              <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>{t('header.links.personas')}</Link>
+              <Link to="/about" onClick={() => setNavOpen(!navOpen)}>{t('header.links.about')}</Link>
+              <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>{t('header.links.ethics')}</Link>
             </div>
           </div>
         
         </div>
 
-        {/* <div id='header-right'>
+        <div id='header-right'>
 
           <div id='lang-and-modeswitch'>
-            <button className='unbounded-weight300'>ENGLISH</button>
-            <div className={darkModeOn ? 'modeslideon' : ''} id="modeswitch" onClick={() => setDarkModeOn(!darkModeOn)}>
+            <LanguageSwitch />
+            {/* <div className={darkModeOn ? 'modeslideon' : ''} id="modeswitch" onClick={() => setDarkModeOn(!darkModeOn)}>
               <div id="modeswitch-slider"></div>
-            </div>
+            </div> */}
           </div>
-        </div>   */}
+        </div>  
       </header>
   );
 }

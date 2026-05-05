@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import * as d3 from "d3";
 import './demographicCharts.css';
 import axios from "axios";
@@ -11,6 +12,8 @@ function DemographicCharts({ pollingData, country }) {
   const svgRef = useRef();
   const tooltipRef = useRef();
   const containerRef = useRef();
+
+  const { t } = useTranslation();
 
   const [chosenDemographic, setChosenDemographic] = useState(null);
 
@@ -267,7 +270,7 @@ function DemographicCharts({ pollingData, country }) {
 
   return (
     <div className="DemographicCharts">
-      <h3 className="dc-title">Vote by Demographic</h3>
+      <h3 className="dc-title">{t('pollingResults.demographicChart.title')}</h3>
       {country && (
         <DemographicChooser
           setChosenDemographic={setChosenDemographic}

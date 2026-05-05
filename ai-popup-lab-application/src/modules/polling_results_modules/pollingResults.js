@@ -10,9 +10,12 @@ import VoteProjection from './voteProjection';
 import DemographicCharts from './demographicCharts';
 
 import Loader from "../loader";
+import { useTranslation } from "react-i18next";
 
 
 function PollingResults({ selectedCountry, setSelectedCountry }) {
+
+  const { t } = useTranslation();
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -116,11 +119,11 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
       {data && stratFrameData ? (
         <div id="exportButtons">
           <div className="exportButton" onClick={() => {exportToCSV(responseData, `${selectedCountry}_sample_data.csv`)}}>
-            <p>Export sample data</p>
+            <p>{t('pollingResults.sampleExport')}</p>
             <img src={exportIcon}></img>
           </div>
           <div className="exportButton" onClick={() => {exportToCSV(stratframeResponseData, `${selectedCountry}_frame_data.csv`)}}>
-            <p>Export frame data</p>
+            <p>{t('pollingResults.frameExport')}</p>
             <img src={exportIcon}></img>
           </div>
         </div>

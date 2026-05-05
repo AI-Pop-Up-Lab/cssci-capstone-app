@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { useTranslation, Trans } from 'react-i18next';
 import * as d3 from "d3";
 import './voteProjection.css';
 import axios from "axios";
@@ -6,6 +7,8 @@ import Loader from '../loader';
 // import partyColours from '../../assets/partyColours';
 
 function VoteProjection({ pollingData, country }) {
+
+  const { t } = useTranslation();
 
   const svgRef = useRef();
   const tooltipRef = useRef();
@@ -260,10 +263,16 @@ function VoteProjection({ pollingData, country }) {
 
   return (
     <div className="VoteProjection">
-      <h3 className="vp-title">If a general election were held today, who would you vote for?</h3>
+      <h3 className="vp-title">{t('pollingResults.voteProjection.title')}</h3>
       {partyColours && nextGEcolname ? (
         <>
-          <p className="vp-subtitle">Turnout: <strong>{turnoutPct}%</strong> &mdash; {voted} of {total} respondents said they would vote</p>
+          <p className="vp-subtitle">
+            <Trans
+              i18nKey="pollingResults.voteProjection.subtitle"
+              values={{ turnoutPct, voted, total }}
+              components={{ strong: <strong /> }}
+            />
+          </p>
           <div className="vp-chart-wrapper" ref={containerRef}>
             <svg ref={svgRef} />
             <div ref={tooltipRef} className="chart-tooltip" />
