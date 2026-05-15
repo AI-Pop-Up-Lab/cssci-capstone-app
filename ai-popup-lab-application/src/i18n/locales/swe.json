@@ -1,0 +1,154 @@
+{
+    "disclaimerPopup": "Denna plattform använder AI-simulerade profiler som baseras på offentliga folkräkningsuppgifter. Dessa profiler föreställer inte verkliga personer, och inga personuppgifter om enskilda individer används.",
+    "header": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "home": "hemsida",
+            "polling": "undersökningsresultaten",
+            "personas": "persona explorer",
+            "about": "om oss",
+            "ethics": "etik"
+        }
+    },
+    "footer": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "about": "Om Oss",
+            "ethics": "Etik"
+        }
+    },
+    "landingPage": {
+        "msg1": "Hej! Välkommen till Mechanical Pollster. Vi använder AI för att undersöka hur människor ser på viktiga frågor, så att väljarna bättre kan förstå den allmänna opinionen och de olika synsätten som finns.",
+        "msg2": "Välj ett land för att se rösterna:",
+        "msg3": "Du kan också chatta med en av de datorgenererade profilerna för att ta reda på varför de röstade som de gjorde.",
+        "msg4": "Här är ett exempel:",
+        "explorePolls": "UTFORSKA FLER OMFRÅGNINGAR"
+    },
+    "personaChatExample": {
+        "exampleName": "Syntetisk Persona",
+        "exampleAge": "Ålder: 26",
+        "exampleEducation": "Utbildning: Gymnasiet",
+        "exampleOccupation": "Yrke: Arbetslös",
+        "warningPart1": "DETTA ÄR PERSONPROFILERNA  ",
+        "warningPart2": "INTE VERKLIGA MÄNNISKOR",
+        "warningPart3": ", OCH INGA PERSONUPPGIFTER OM LEVANDE PERSONER ANVÄNDS.",
+        "exampleUserMessage": "Vad tycker du om den nuvarande ekonomiska situationen i {{country}}?",
+        "exampleResponse": "Ärligt talat känns det ganska stressigt just nu. Som arbetslös känns det som att allt blir dyrare samtidigt som det fortfarande är svårt att hitta ett fast jobb. Jag oroar mig mycket för att kunna betala hyran och klara av grundläggande saker som matinköp. {{country}} är fortfarande ett bra land på många sätt, men den ekonomiska situationen gör att det ibland känns osäkert och lite överväldigande.",
+        "explorePersonas": "UTFORSKA FLER PERSONAS"
+    },
+    "pollingResults": {
+        "sampleExport": "Exportera exempeldata",
+        "frameExport": "Exportera ramdata",
+        "voteProjection": {
+            "title": "Om det vore val idag, vem skulle du rösta på?",
+            "subtitle": "Valdeltagande: <strong>{{turnoutPct}} %</strong> — {{voted}} av {{total}} tillfrågade uppgav att de skulle rösta"
+        },
+        "seatVisualisation": {
+            "title": "Sätesutskjutning"
+        },
+        "demographicChart": {
+            "title": "Röstning efter demografisk grupp"
+        }
+    },
+    "personaPage": {
+        "title": "Chatta med en persona",
+        "description": "Vi har slumpmässigt valt ut {{dataLength}} ”typer” av personer som bor i {{modifiedCountry}}. Vi använder AI för att efterlikna varje person och svara på en opinionsundersökning. De uppskattningar du ser baseras på detta urval av ”syntetiska personligheter”. <br></br><br></br> Vill du chatta med en av de syntetiska personerna? <br></br><br></br> Genom att chatta kan du utforska de underliggande motiv och resonemang som ligger bakom deras övertygelser. Du kan välja olika demografiska uppgifter nedan för att filtrera bland personerna. Håll muspekaren över en personikon för att se detaljerna och, om du vill, starta en chatt.",
+        "noPersonaMatch": "Inga personas matchar dina filter.",
+        "startChatButton": "START CHATTEN",
+        "chat": {
+            "warning1": "Välkommen till",
+            "warning2": "AI Pollster Chat",
+            "warning3": "innan du fortsätter...",
+            "warning4": "Vi avråder från att lämna ut personuppgifter i chatten.",
+            "warning5": "Personuppgifter som delas i chatten lagras i databaser i Azure Cloud och kan komma att behandlas av tredje part utanför EU.<br></br>Chatten lagras i syfte att förbättra AI-systemet.",
+            "disagree": "GÅ TILLBAKA",
+            "agree": "GODKÄNN OCH STARTA CHATTEN",
+            "chatWith": "CHATTA MED",
+            "notreal": "INGEN VERKLIG PERSON",
+            "textInputPlaceholder": "BÖRJA SKRIVA HÄR..."
+        }
+    },
+    "aboutPage": {
+        "description": "Vi är ett team bestående av forskare och studenter som arbetar för att göra den allmänna opinionen transparent, verifierbar och lättförståelig med hjälp av AI.",
+        "mission": {
+            "title": "Vårt uppdrag",
+            "content": "Opinionsundersökningarna befinner sig i en svår situation. Andelen som inte svarar är så hög som 94 %, och problemet med icke-försumbar icke-svarande plågar branschen. Detta innebär att det blir allt svårare att ta fram representativa urval av den allmänna opinionen. Vi anser att det är viktigt för demokratins kvalitet att få en god uppfattning om allmänhetens syn på politiken. Det ger forskare insikt i samhällstrender, politiker i den allmänna stämningen och medborgarna i var de står i förhållande till sin omgivning. <br></br><br></br> Vårt arbete är icke-kommersiellt till sin natur och kan bäst beskrivas som en form av digital aktivism. Vår grundläggande utgångspunkt är att ett samhälle som är bättre informerat om den allmänna opinionen är bättre rustat att hantera problem som kräver kollektiva åtgärder. Vi hoppas också att detta arbete kan främja en ökad förståelse mellan olika sociala grupper. Vi är engagerade i forskning som är transparent, samhällsnyttig och styrd av det allmänna bästa."
+        },
+        "whatwedo": {
+            "title": "Vad vi gör",
+            "content": "Vi överbryggar klyftan mellan komplex samhällsvetenskap och vardagliga samtal. Genom att använda <strong>syntetiska personprofiler</strong> skapar vi en ”levande” återgivning av folkräkningsdata som användarna kan interagera direkt med.",
+            "items": {
+                "personaGeneration": {
+                    "title": "Skapande av personprofiler",
+                    "content": "Vi skapar en panel bestående av tusentals simulerade individer baserat på officiella, icke-identifierbara uppgifter från folkräkningar och undersökningar."
+                },
+                "scientificGrounding": {
+                    "title": "Vetenskaplig grund",
+                    "content": "De syntetiska respondenterna behandlas enligt samma verkliga undersökningsmetodik som vi skulle använda med riktiga deltagare. Undersökningsdata poststratifieras med MrP för att producera detaljerade skattningar."
+                },
+                "publicAccess": {
+                    "title": "Allmän tillgång",
+                    "content": "Vi tillhandahåller en gratis, interaktiv webbapp där vem som helst kan utforska resultaten, chatta med personerna och ladda ner data för egen forskning."
+                }
+            }
+        },
+        "commitments": {
+            "title": "Våra åtaganden",
+            "items": {
+                "privacy": {
+                    "title": "Integritet i första hand",
+                    "content": "Vi använder aldrig personligt identifierbara uppgifter om levande personer. Alla våra personaer är simulerade modeller."
+                },
+                "partisanship": {
+                    "title": "Opartiskhet",
+                    "content": "Vår visuella identitet och vår datarapportering är strikt neutral. Vi ger inga politiska rekommendationer eller riktade uppmaningar till handling."
+                },
+                "openScience": {
+                    "title": "Öppen vetenskap",
+                    "content": "Vi delar våra metoder, vår versionshistorik och våra källdata för att säkerställa att projektet förblir fullt reproducerbart."
+                }
+            }
+        },
+        "team": {
+            "title": "Vårt team",
+            "content": "Mechanical Pollster är ett verktyg som utvecklats av AI Pop-up Lab vid Amsterdams universitet, ett akademiskt, ideellt centrum för undervisning och forskning inom programmet Computational Social Science (CSSci). Vi undervisar, forskar och utvecklar AI för opinionsundersökningar med ett tydligt samhällsnyttigt syfte: att skapa verktyg som främjar demokratins funktion till gagn för allmänheten. <br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi och Xuan Miao."
+        }
+    },
+    "ethicsPage": {
+        "title": "ETISKA ÖVERVÄGANDEN",
+        "items": {
+            "algorithmicFairness": {
+                "name": "Algoritmisk rättvisa",
+                "text": "Prognoser för undergrupper kalibreras för att minimera fel för detaljerade segment av populationen. En konstitutionell AI-strategi tillämpas i chatten för att säkerställa att våra personligheter uppträder på ett sätt som är representativt men inte stereotypt."
+            },
+            "ethicalDataUse": {
+                "name": "Etisk datanvändning",
+                "text": "Undersökningsdata samlas in för att kalibrera vår AI enligt protokoll för informerat samtycke i enlighet med de etiska forskningsstandarderna från <fgwLink>FGw</fgwLink> vid UvA. Ingen personligt identifierbar information används vid skapandet av personligheter."
+            },
+            "epistemicResponsibility": {
+                "name": "Epistemiskt ansvar",
+                "text": "Personsvar är utformade för att baseras på lagrade syntetiska profiler, med epistemiska gränser inbyggda i chattpipeline."
+            },
+            "preventingDemocraticHarm": {
+                "name": "Förebyggande av demokratisk skada",
+                "text": "Verktyget är utformat för att demokratisera tillgången till insikter från opinionsundersökningar och hjälpa användare att förstå varför olika väljargrupper har de åsikter de har. Den syntetiska statusen är permanent synlig under alla interaktioner för att förhindra missbruk. Avatarer hålls abstrakta som en påminnelse om att det rör sig om simuleringar, inte riktiga människor."
+            },
+            "fairRepresentation": {
+                "name": "Rättvis representation",
+                "text": "Folkräkningsdata och andra representativa undersökningar används för att skapa slumpmässiga urval av den aktuella populationen. Dessa analyseras sedan med statistiska verktyg som MrP (flerdimensionell regression och efterstratifiering) för att säkerställa representativa slutsatser för olika demografiska undergrupper."
+            },
+            "transparency": {
+                "name": "Transparens",
+                "text": "Varje resultat visar varifrån data kommer, vilken version av systemet som genererade den och när. En metodbeskrivning i klartext förklarar hur verktyget fungerar från början till slut."
+            },
+            "robustnessSecurity": {
+                "name": "Robusthet och säkerhet",
+                "text": "Automatiserade kontroller som drivs av LLM:er är inbäddade i chattgränssnittet för att upptäcka missbruk eller inmatningar som ligger utanför tillämpningsområdet. Systemet stresstestas regelbundet via redteaming för att hitta och åtgärda sårbarheter."
+            },
+            "transparentGovernance": {
+                "name": "Transparent styrning",
+                "text": "Vårt arbete är icke-kommersiellt och kan bäst beskrivas som en form av digital aktivism. Vi samarbetar med ett utvalt antal partners som hjälper oss att leverera till allmänheten."
+            }
+        }
+    }
+}

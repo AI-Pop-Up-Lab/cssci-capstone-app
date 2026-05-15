@@ -1,0 +1,154 @@
+{
+    "disclaimerPopup": "Denne platform bruger AI-simulerede personaer baseret på offentlige folketællingsdata. Disse personaer er ikke rigtige mennesker, og der anvendes ingen personoplysninger om enkeltpersoner.",
+    "header": {
+        "tagline": "Estimating public opinion from synthetic personae",
+        "links": {
+            "home": "hjemmeside",
+            "polling": "afstemningsresultater",
+            "personas": "persona explorer",
+            "about": "om os",
+            "ethics": "etik"
+        }
+    },
+    "footer": {
+        "tagline": "Estimating public opinion from synthetic personaer",
+        "links": {
+            "about": "Om os",
+            "ethics": "Etik"
+        }
+    },
+    "landingPage": {
+        "msg1": "Hej! Velkommen til Mechanical Pollster. Vi bruger AI til at undersøge, hvordan folk tænker om vigtige emner, så vælgerne bedre kan forstå den offentlige mening og perspektiverne omkring dem.",
+        "msg2": "Vælg et land for at udforske stemmerne:",
+        "msg3": "Du kan også chatte med en af de syntetisk genererede personaer for at finde ud af begrundelsen bag deres stemme.",
+        "msg4": "Her er et eksempel:",
+        "explorePolls": "UDFORSK FLERE AFSTEMNINGER"
+    },
+    "personaChatExample": {
+        "exampleName": "Syntetisk persona",
+        "exampleAge": "Alder: 26",
+        "exampleEducation": "Uddannelse: Gymnasium",
+        "exampleOccupation": "Erhverv: Arbejdsløs",
+        "warningPart1": "DISSE PERSONER ER  ",
+        "warningPart2": "IKKE RIGTIGE MENNESKER",
+        "warningPart3": ", OG DER BRUGES INGEN PERSONLIGT IDENTIFICERBARE DATA OM LEVENDE PERSONER.",
+        "exampleUserMessage": "Hvad synes du om den aktuelle økonomiske situation i {{country}}?",
+        "exampleResponse": "Ærligt talt føles det ret stressende lige nu. Som arbejdsløs virker det som om alt bliver dyrere, mens det stadig er svært at finde et fast job. Jeg bekymrer mig meget om at betale husleje og basale ting som dagligvarer. {{country}} er stadig et godt land på mange måder, men den økonomiske situation gør, at det føles usikkert og lidt overvældende nogle gange.",
+        "explorePersonas": "UDFORSK FLERE PERSONAS"
+    },
+    "pollingResults": {
+        "sampleExport": "Eksporter eksempeldata",
+        "frameExport": "Eksporter rammedata",
+        "voteProjection": {
+            "title": "Hvis der var parlamentsvalg i dag, hvem ville du så stemme på?",
+            "subtitle": "Valgdeltagelse: <strong>{{turnoutPct}}%</strong> — {{voted}} af {{total}} respondenter sagde, at de ville stemme"
+        },
+        "seatVisualisation": {
+            "title": "Prognose for mandater"
+        },
+        "demographicChart": {
+            "title": "Stemmer fordelt på demografi"
+        }
+    },
+    "personaPage": {
+        "title": "Chat med en persona",
+        "description": "Vi har udvalgt et tilfældigt udsnit på {{dataLength}} ›typer‹ af personer, der bor i {{modifiedCountry}}. Vi bruger kunstig intelligens til at efterligne hver enkelt person og besvare en meningsmåling. De skøn, du ser, er baseret på dette udsnit af ›syntetiske personaer‹. <br></br><br></br> Vil du gerne chatte med en af de syntetiske personaer? <br></br><br></br> Ved at chatte kan du udforske de underliggende motivationer og ræsonnementer bag deres overbevisninger. Du kan vælge forskellige demografiske oplysninger nedenfor for at filtrere personaerne. Hold musen over et persona-ikon for at se detaljerne, og gå ind i en chat, hvis du ønsker det.",
+        "noPersonaMatch": "Ingen personaer matcher dine filtre.",
+        "startChatButton": "START CHATTEN",
+        "chat": {
+            "warning1": "Velkommen til",
+            "warning2": "AI Pollster Chat",
+            "warning3": "inden du fortsætter...",
+            "warning4": "Vi fraråder at videregive personlige oplysninger i chatten.",
+            "warning5": "Personlige data, der deles i chatten, gemmes i Azure Cloud-databaser og kan blive behandlet af tredjeparter uden for EU.<br></br>Chatten gemmes med det formål at forbedre AI-systemet.",
+            "disagree": "GÅ TILBAGE",
+            "agree": "ACCEPTER OG START CHATTEN",
+            "chatWith": "CHAT MED",
+            "notreal": "IKKE EN ÆGTE PERSON",
+            "textInputPlaceholder": "BEGYND AT SKRIVE HER..."
+        }
+    },
+    "aboutPage": {
+        "description": "Vi er et team af forskere og studerende, der har sat os for at gøre den offentlige mening gennemsigtig, kontrollerbar og letforståelig ved hjælp af kunstig intelligens.",
+        "mission": {
+            "title": "Vores mission",
+            "content": "Meningsmålinger er i en alvorlig krise. Andelen af manglende svar er helt oppe på 94 %, og ikke-ignorerbare manglende svar plager området. Det betyder, at det bliver stadig sværere at opnå repræsentative stikprøver af den offentlige mening. Vi mener, at det er vigtigt for demokratiets kvalitet at få et godt indblik i offentlighedens syn på politik. Det giver forskere indsigt i samfundsmæssige tendenser, politikere indsigt i den offentlige stemning og borgerne indsigt i, hvor de står i forhold til dem omkring dem. <br></br><br></br> Vores arbejde er fra starten ikke-kommercielt og kan bedst forstås som en form for digital aktivisme. Vores grundlæggende præmis er, at et samfund, der er bedre informeret om den offentlige menings udformning, er bedre rustet til at tackle problemer med kollektiv handling. Vi håber også, at dette arbejde kan fremme større forståelse på tværs af sociale grupper. Vi er dedikeret til forskning, der er gennemsigtig, samfundsnyttig og styret af det offentlige gode."
+        },
+        "whatwedo": {
+            "title": "Hvad vi gør",
+            "content": "Vi bygger bro mellem kompleks samfundsvidenskab og hverdagssamtaler. Ved hjælp af <strong>syntetiske personaer</strong> skaber vi en ›levende‹ fremstilling af folketællingsdata, som brugerne kan interagere direkte med.",
+            "items": {
+                "personaGeneration": {
+                    "title": "Persona-generering",
+                    "content": "Vi opbygger et panel bestående af tusindvis af simulerede individer baseret på officielle, ikke-identificerbare folketællings- og undersøgelsesdata."
+                },
+                "scientificGrounding": {
+                    "title": "Videnskabeligt grundlag",
+                    "content": "De syntetiske respondenter behandles efter den samme virkelige undersøgelsesvidenskab, som vi ville bruge med rigtige deltagere. Undersøgelsesdataene poststratificeres med MrP for at frembringe detaljerede estimater."
+                },
+                "publicAccess": {
+                    "title": "Offentlig adgang",
+                    "content": "Vi tilbyder en gratis, interaktiv webapp, hvor alle kan udforske resultater, chatte med personaer og downloade dataene til deres egen forskning."
+                }
+            }
+        },
+        "commitments": {
+            "title": "Vores forpligtelser",
+            "items": {
+                "privacy": {
+                    "title": "Privatlivet først",
+                    "content": "Vi bruger aldrig personligt identificerbare oplysninger om levende personer. Alle vores personaer er simulerede modeller."
+                },
+                "partisanship": {
+                    "title": "Upartiskhed",
+                    "content": "Vores visuelle identitet og datarapportering er strengt neutral. Vi giver ikke politiske anbefalinger eller målrettede opfordringer til handling."
+                },
+                "openScience": {
+                    "title": "Åben videnskab",
+                    "content": "Vi deler vores metoder, vores versionshistorik og vores kildedata for at sikre, at projektet forbliver fuldt reproducerbart."
+                }
+            }
+        },
+        "team": {
+            "title": "Vores team",
+            "content": "The Mechanical Pollster er et værktøj udviklet af AI Pop-up Lab ved Universitetet i Amsterdam, et akademisk, almennyttigt undervisnings- og forskningscenter under programmet Computational Social Science (CSSci). Vi underviser, studerer og udvikler AI til meningsmålinger med et klart samfundsmæssigt formål: at skabe værktøjer, der understøtter demokratiske processer til gavn for offentligheden. <br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi og Xuan Miao."
+        }
+    },
+    "ethicsPage": {
+        "title": "ETISKE OVERVEJELSER",
+        "items": {
+            "algorithmicFairness": {
+                "name": "Algoritmisk retfærdighed",
+                "text": "Forudsigelser for undergrupper er kalibreret for at minimere fejl for detaljerede befolkningssegmenter. Der er implementeret en konstitutionel AI-tilgang i chatten for at sikre, at vores personaer opfører sig på en måde, der er repræsentativ, men ikke stereotyp."
+            },
+            "ethicalDataUse": {
+                "name": "Etisk databrug",
+                "text": "Undersøgelsesdata indsamles for at kalibrere vores AI i henhold til protokoller om informeret samtykke, der følger de etiske forskningsstandarder fra <fgwLink>FGw</fgwLink> ved UvA. Der anvendes ingen personligt identificerbare oplysninger i opbygningen af personaer."
+            },
+            "epistemicResponsibility": {
+                "name": "Epistemisk ansvar",
+                "text": "Persona-svar er designet til at være baseret på lagrede syntetiske profiler, med indbyggede epistemiske grænser i chat-pipeline."
+            },
+            "preventingDemocraticHarm": {
+                "name": "Forebyggelse af demokratisk skade",
+                "text": "Værktøjet er designet til at demokratisere adgangen til indsigt i meningsmålinger og hjælpe brugerne med at forstå, hvorfor forskellige vælgergrupper har de holdninger, de har. Den syntetiske status er permanent synlig i alle interaktioner for at forhindre misbrug. Avatarer holdes abstrakte som en påmindelse om, at dette er simuleringer, ikke rigtige mennesker."
+            },
+            "fairRepresentation": {
+                "name": "Retfærdig repræsentation",
+                "text": "Folketællingsdata og andre repræsentative undersøgelser anvendes til at udvælge tilfældige stikprøver af den relevante population. Disse analyseres derefter ved hjælp af statistiske værktøjer såsom MrP (multi-level regression og post-stratificering) for at sikre repræsentative konklusioner på tværs af demografiske undergrupper."
+            },
+            "transparency": {
+                "name": "Gennemsigtighed",
+                "text": "Hvert resultat viser, hvor dataene kommer fra, hvilken version af systemet der har genereret dem, og hvornår. En side med metoder skrevet i et letforståeligt sprog forklarer, hvordan værktøjet fungerer fra start til slut."
+            },
+            "robustnessSecurity": {
+                "name": "Robusthed og sikkerhed",
+                "text": "Automatiske kontroller drevet af LLM'er er indbygget i chatgrænsefladen for at opdage misbrug eller input uden for anvendelsesområdet. Systemet stresstestes regelmæssigt via redteaming for at finde og rette sårbarheder."
+            },
+            "transparentGovernance": {
+                "name": "Gennemsigtig styring",
+                "text": "Vores arbejde er ikke-kommercielt og kan bedst forstås som en form for digital aktivisme. Vi samarbejder med et udvalg af partnere, der hjælper os med at levere resultater til offentligheden."
+            }
+        }
+    }
+}

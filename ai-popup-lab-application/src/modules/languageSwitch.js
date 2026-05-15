@@ -7,6 +7,8 @@ import closeCross from '../assets/images/closeCross.png';
 const languageOptions = [
   { name: "english", abbreviation: "en", flagFile: require(`../assets/images/flags/united_kingdom.png`)},
   { name: "nederlands", abbreviation: "nl", flagFile: require(`../assets/images/flags/netherlands.png`)},
+  { name: "sweden", abbreviation: "swe", flagFile: require(`../assets/images/flags/sweden.png`)},
+  { name: "denmark", abbreviation: "dk", flagFile: require(`../assets/images/flags/denmark.png`)},
 ]
 
 function LanguageSwitch() {
@@ -41,6 +43,8 @@ function LanguageSwitch() {
               </div>
             ))}
           </div>
+
+          <div id='langSwitch-popup-connector'></div>
 
         </div>
       </div>

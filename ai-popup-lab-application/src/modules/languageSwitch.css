@@ -18,15 +18,18 @@
 }
 
 #langSwitch-popup{
-    position: fixed;
+    position: absolute;
 
     padding: 20px 30px;
 
-    top: 30%;
-    left: calc(50% - 180px);
+    /* top: 30%;
+    left: calc(50% - 180px); */
+    top: 60px;
+    right: 15px;
+
     
 
-    border-radius: 30px;
+    border-radius: 30px 0 30px 30px;
     background-color: #ebb3ab;
     color: #335058;
     height: fit-content;
@@ -44,6 +47,17 @@
 
 #langSwitch-popup.langPopupOpen{
     display: flex;
+}
+
+#langSwitch-popup-connector{
+    background-color: #ebb3ab;
+    height: 31px;
+    width: 20px;
+    position: absolute;
+    top: -30px;
+    right: 0;
+
+    clip-path: polygon(0% 100%, 25% 75%, 25% 25%, 0% 0%, 100% 0%, 75% 25%, 75% 75%, 100% 100%);
 }
 
 #langSwitch-popup-top{
@@ -108,8 +122,8 @@
 
     #langSwitch-popup{
         padding: 15px 20px;
-        top: 30%;
-        left: calc(50% - 120px);
+        /* top: 30%;
+        left: calc(50% - 120px); */
         width: 200px;
     }
 
