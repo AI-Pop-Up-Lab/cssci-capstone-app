@@ -4,5 +4,10 @@ __pycache__/
 *.pyo
 *.pyd
 .env
-country_data/extended_frames/
-data_generation/output/
+
+# ignoring contents but keeping the folders of MRP data generation
+country_data/extended_frames/*
+!country_data/extended_frames/.gitkeep
+
+data_generation/output/*
+!data_generation/output/.gitkeep
