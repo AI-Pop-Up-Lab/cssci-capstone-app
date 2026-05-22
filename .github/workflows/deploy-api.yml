@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_NAME: yourregistryname        # ← replace
+  ACR_NAME: pollstercontainers
   API_IMAGE: fastapi-backend
 
 jobs:

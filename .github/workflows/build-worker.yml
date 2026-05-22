@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_NAME: yourregistryname        # ← replace with your ACR name (no .azurecr.io)
+  ACR_NAME: pollstercontainers  
   IMAGE_NAME: weekly-worker
 
 jobs:
