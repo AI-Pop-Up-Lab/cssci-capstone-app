@@ -6,6 +6,11 @@ options(repos = c(CRAN = "https://cloud.r-project.org"))
 install.packages(c(
   "survey",
   "dplyr",
-  "readr"
-  # add all your actual R package dependencies here
+  "purrr",
+  "readr",
+  "tibble",
+  "tidyr"
 ), dependencies = TRUE)
+
+install.packages("remotes", repos = "https://cloud.r-project.org")
+remotes::install_github("mgoplerud/vglmer")
