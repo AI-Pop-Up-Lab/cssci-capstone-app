@@ -3,6 +3,9 @@ from pydantic import BaseModel
 import json
 from pathlib import Path
 import pandas as pd
+import os
+from datetime import datetime, timedelta, timezone
+from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPermissions
 
 router = APIRouter(prefix="/dynamicdata")
 
@@ -16,7 +19,37 @@ with open(json_path) as f:
 root_keys = list(country_data.keys())
 
 
+# helper to generate a download url that lasts for 1 hour, for extended frame from azure blob storage
+def generate_download_url(country: str, year: int, week: int) -> str:
+    """
+    Generate a 1-hour SAS download URL for a specific country's extended frame blob.
+    Requires AZURE_STORAGE_ACCOUNT_NAME and AZURE_STORAGE_ACCOUNT_KEY env vars.
+    """
+    blob_name    = f"extended-frames/{country}/{year}_{week:02d}_extended_frame.csv"
+    account_name = os.environ["AZURE_STORAGE_ACCOUNT_NAME"]
+    account_key  = os.environ["AZURE_STORAGE_ACCOUNT_KEY"]
+    container    = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
+
+    sas = generate_blob_sas(
+        account_name=account_name,
+        container_name=container,
+        blob_name=blob_name,
+        account_key=account_key,
+        permission=BlobSasPermissions(read=True),
+        expiry=datetime.now(timezone.utc) + timedelta(hours=1),
+    )
+    return f"https://{account_name}.blob.core.windows.net/{container}/{blob_name}?{sas}"
+
 # ENDPOINTS BELOW
+
+# get endpoint to retrieve download url for extended frame
+@router.get("/extended_frame_url")
+def get_extended_frame_url(country: str, year: int, week: int):
+    if country not in root_keys:
+        return {"error": "Country not found in data."}
+
+    url = generate_download_url(country=country, year=year, week=week)
+    return {"url": url}
 
 # GET endpoint to retrieve sample data for a specific country
 @router.get("/nextGE_col_name")

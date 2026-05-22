@@ -1,24 +1,11 @@
-from dotenv import load_dotenv
+import logging
 import os
 
-from .generate_survey import generate_survey
-from .generate_extended_frame import generate_extended_frame
+logger = logging.getLogger(__name__)
 
-countries = [
-    # "netherlands",
-    # "sweden",
-    "denmark"
-]
-
-load_dotenv()
+ENV = os.getenv("ENV", "production")
+COUNTRIES = os.environ.get("COUNTRIES", "denmark").split(",")
 
 def generate_data():
 
-    try:
-        ENV = os.getenv("ENV")
-    except:
-        ENV = "deployment"
-
-    for country in countries:
-        # generate_survey(country, ENV)
-        generate_extended_frame(country, ENV)
+    logger.info("Starting data generation. ENV=%s, countries=%s", ENV, COUNTRIES)

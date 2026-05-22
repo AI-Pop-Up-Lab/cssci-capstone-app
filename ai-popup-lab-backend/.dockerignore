@@ -1,0 +1,22 @@
+# python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# env files
+.env
+.env.*
+env/
+venv/
+
+# data folders
+country_data/extended_frames/
+data_generation/output/
+
+# git and github related files
+.git/
+.github/
+
+# docs
+*.md

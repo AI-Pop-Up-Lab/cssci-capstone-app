@@ -1,0 +1,25 @@
+FROM python:3.12-slim
+
+# install R and system dependencies required by common R packages
+RUN apt-get update && apt-get install -y \
+    r-base \
+    r-base-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# install R packages at build time instead of runtime
+# this keeps container startup instant
+COPY install_r_packages.R .
+RUN Rscript install_r_packages.R
+
+# install Python dependencies
+COPY requirements-worker.txt .
+RUN pip install --no-cache-dir -r requirements-worker.txt
+
+COPY . .
+
+CMD ["python", "-m", "data_generation.run_job"]

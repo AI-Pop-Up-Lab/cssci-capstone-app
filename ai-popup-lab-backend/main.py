@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from contextlib import asynccontextmanager
@@ -11,10 +12,14 @@ from api_endpoints import test_router
 from api_endpoints import sample_router
 from api_endpoints import chat_router
 from api_endpoints import dynamic_data_router
+from api_endpoints import admin_router
 
 # from app.db.init_db import init_db, seed_demo_data
 
-from scheduled_routines import weekly_data_generation, reset_ip_request_limits
+from user_limiting.ip_reset import reset_ip_request_limits
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # timezone data for amsterdam
 AMSTERDAM = ZoneInfo("Europe/Amsterdam")
@@ -51,9 +56,11 @@ async def run_daily():
 async def lifespan(app: FastAPI):
     # init_db()
     # seed_demo_data()
+    logger.info("API starting up")
     asyncio.create_task(run_daily())
     # asyncio.create_task(run_weekly())
     yield
+    logger.info("API shutting down")
 
 # initalise FastAPI app
 app = FastAPI(title="React + FastAPI Base App", lifespan=lifespan)
@@ -84,5 +91,6 @@ app.include_router(test_router, prefix="/api") # this would be accessed through 
 app.include_router(sample_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
 app.include_router(dynamic_data_router, prefix="/api")
+app.include_router(admin_router, prefix="/api")
 
 # weekly_data_generation()

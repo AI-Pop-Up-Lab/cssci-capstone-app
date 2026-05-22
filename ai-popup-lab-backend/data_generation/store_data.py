@@ -1,35 +1,45 @@
 from pathlib import Path
 from datetime import date
-import shutil
+import os
+import logging
+from azure.storage.blob import BlobServiceClient
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-EXTENDED_FRAMES_DIR = BASE_DIR / "country_data" / "extended_frames"
-SURVEYS_DIR = BASE_DIR / "country_data" / "surveys"
+logger = logging.getLogger(__name__)
+
+STORAGE_CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
+CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
 frame_filename_ending = '_extended_frame'
 survey_filename_ending = '_survey'
 
-def store_survey(environment, filepath, country):
+def get_blob_client() -> BlobServiceClient:
+    return BlobServiceClient.from_connection_string(STORAGE_CONNECTION_STRING)
 
-    file_suffix = f"{date.today().year}_{date.today().isocalendar().week}" # e.g. 2026_16 (year, week of year)
+def get_file_suffix() -> str:
+    today = date.today()
+    year, week, _ = today.isocalendar()
+    return f"{year}_{week:02d}"
 
-    if environment == "development":
-        # local store
-        pass
-    else:
-        # azure store
-        pass
 
-def store_frame(environment, filepath, country):
+def store_survey(filepath, country):
 
-    file_suffix = f"{date.today().year}_{date.today().isocalendar().week}" # e.g. 2026_16 (year, week of year)
+    # azure store for when surveys are implemented
 
-    EXTENDED_FRAME_PATH = Path(filepath) / "mrp_extended_frame_predictions.csv"
+    pass
 
-    if environment == "development":
-        
-        shutil.copy(EXTENDED_FRAME_PATH, EXTENDED_FRAMES_DIR / f"{country}{frame_filename_ending}{file_suffix}.csv")
+def store_frame(filepath: Path, country: str, client: BlobServiceClient) -> str:
 
-    else:
-        # azure store
-        pass
+    source = Path(filepath) / "mrp_extended_frame_predictions.csv"
+
+    if not source.exists():
+        raise FileNotFoundError(f"Expected R output not found: {source}")
+
+    blob_name = f"extended-frames/{country}/{get_file_suffix()}_extended_frame.csv"
+    blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
+
+    with open(source, "rb") as f:
+        blob.upload_blob(f, overwrite=True)
+
+    logger.info("Uploaded %s → %s", source, blob_name)
+    
+    return blob_name
