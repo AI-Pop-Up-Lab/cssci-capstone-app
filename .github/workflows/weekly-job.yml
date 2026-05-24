@@ -28,6 +28,11 @@ jobs:
       - name: Pull worker image
         run: docker pull ${{ env.ACR_NAME }}.azurecr.io/${{ env.WORKER_IMAGE }}:latest
 
+      - name: Debug R packages
+        run: |
+          docker run --rm ${{ env.ACR_NAME }}.azurecr.io/${{ env.WORKER_IMAGE }}:latest \
+            Rscript -e "message(paste(.libPaths(), collapse='\n')); message(paste(rownames(installed.packages()), collapse=', '))"
+
       - name: Run worker
         run: |
           docker run --rm \
