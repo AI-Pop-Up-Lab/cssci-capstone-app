@@ -14,6 +14,7 @@ WORKDIR /app
 # install R packages at build time instead of runtime
 # this keeps container startup instant
 COPY install_r_packages.R .
+ENV R_LIBS_SITE=/usr/local/lib/R/site-library
 RUN Rscript install_r_packages.R
 
 # install Python dependencies

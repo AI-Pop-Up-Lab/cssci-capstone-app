@@ -4,23 +4,18 @@
     
 options(repos = c(CRAN = "https://cloud.r-project.org"))
 
+lib <- "/usr/local/lib/R/site-library"
+dir.create(lib, recursive = TRUE, showWarnings = FALSE)
+
 install.packages(c(
   "dplyr",
-  "purrr",
+  "purrr", 
   "readr",
   "tibble",
   "tidyr"
-), dependencies = TRUE)
+), dependencies = TRUE, lib = lib)
 
-install.packages("remotes")
+install.packages("remotes", lib = lib)
+remotes::install_github("mgoplerud/vglmer", upgrade = "never", lib = lib)
 
-result <- tryCatch(
-  remotes::install_github("mgoplerud/vglmer", upgrade = "never"),
-  error = function(e) {
-    message("ERROR installing vglmer: ", conditionMessage(e))
-    quit(status = 1)
-  }
-)
-
-message("Installed packages: ", paste(rownames(installed.packages()), collapse = ", "))
-message("R package installation complete")
+message("Done. Installed: ", paste(rownames(installed.packages(lib.loc = lib)), collapse = ", "))
