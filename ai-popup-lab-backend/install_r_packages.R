@@ -1,9 +1,10 @@
 # install_r_packages.R
 # runs at docker image build via Dockerfile.worker.
 # installs every R package script depends on
-    
+
 lib <- "/usr/local/lib/R/site-library"
 dir.create(lib, recursive = TRUE, showWarnings = FALSE)
+.libPaths(lib)
 message("Installing to: ", lib)
 
 options(repos = c(CRAN = "https://cloud.r-project.org"))
