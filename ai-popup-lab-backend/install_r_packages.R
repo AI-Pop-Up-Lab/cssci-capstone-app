@@ -3,8 +3,8 @@
 # installs every R package script depends on
     
 options(repos = c(CRAN = "https://cloud.r-project.org"))
+
 install.packages(c(
-  "survey",
   "dplyr",
   "purrr",
   "readr",
@@ -12,5 +12,14 @@ install.packages(c(
   "tidyr"
 ), dependencies = TRUE)
 
-install.packages("remotes", repos = "https://cloud.r-project.org")
-remotes::install_github("mgoplerud/vglmer")
+install.packages("remotes")
+
+result <- tryCatch(
+  remotes::install_github("mgoplerud/vglmer", upgrade = "never"),
+  error = function(e) {
+    message("ERROR installing vglmer: ", conditionMessage(e))
+    quit(status = 1)
+  }
+)
+
+message("R package installation complete")
