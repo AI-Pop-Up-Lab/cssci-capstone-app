@@ -31,6 +31,7 @@ jobs:
           context: ./ai-popup-lab-backend
           file: ./ai-popup-lab-backend/Dockerfile.worker
           push: true
+          no-cache: true
           tags: |
             ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
             ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
