@@ -22,4 +22,5 @@ result <- tryCatch(
   }
 )
 
+message("Installed packages: ", paste(rownames(installed.packages()), collapse = ", "))
 message("R package installation complete")
