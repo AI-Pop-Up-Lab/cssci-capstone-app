@@ -2,20 +2,18 @@
 # runs at docker image build via Dockerfile.worker.
 # installs every R package script depends on
     
-options(repos = c(CRAN = "https://cloud.r-project.org"))
-
 lib <- "/usr/local/lib/R/site-library"
 dir.create(lib, recursive = TRUE, showWarnings = FALSE)
+message("Installing to: ", lib)
+
+options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 install.packages(c(
-  "dplyr",
-  "purrr", 
-  "readr",
-  "tibble",
-  "tidyr"
+  "dplyr", "purrr", "readr", "tibble", "tidyr", "remotes"
 ), dependencies = TRUE, lib = lib)
 
-install.packages("remotes", lib = lib)
 remotes::install_github("mgoplerud/vglmer", upgrade = "never", lib = lib)
 
-message("Done. Installed: ", paste(rownames(installed.packages(lib.loc = lib)), collapse = ", "))
+message("Checking vglmer at: ", lib)
+message("vglmer found: ", "vglmer" %in% rownames(installed.packages(lib.loc = lib)))
+message("All libs: ", paste(.libPaths(), collapse = ", "))
