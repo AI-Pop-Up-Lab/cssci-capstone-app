@@ -31,7 +31,9 @@ jobs:
           context: ./ai-popup-lab-backend
           file: ./ai-popup-lab-backend/Dockerfile.api
           push: true
-          tags: ${{ env.ACR_NAME }}.azurecr.io/${{ env.API_IMAGE }}:${{ github.sha }}
+          tags: |
+            ${{ env.ACR_NAME }}.azurecr.io/${{ env.API_IMAGE }}:latest
+            ${{ env.ACR_NAME }}.azurecr.io/${{ env.API_IMAGE }}:${{ github.sha }}
 
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
