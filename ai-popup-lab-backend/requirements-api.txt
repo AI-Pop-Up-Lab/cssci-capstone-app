@@ -34,4 +34,5 @@ python-dateutil==2.9.0.post0
 six==1.17.0
 tzdata==2025.3
 packaging==26.0
+pandas==3.0.1
 colorama==0.4.6
