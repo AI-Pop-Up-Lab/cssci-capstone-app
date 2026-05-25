@@ -1,3 +1,4 @@
+# azure
 python-dotenv==1.2.2
 azure-core==1.41.0
 azure-storage-blob==12.29.0
@@ -16,3 +17,14 @@ six==1.17.0
 tzdata==2025.3
 packaging==26.0
 colorama==0.4.6
+
+# panel survey dependencies
+openai>=1.30.0
+cohere>=5.0.0
+scipy>=1.13.0
+pandas>=2.2.0
+tqdm>=4.66.0
+newspaper3k>=0.2.8
+lxml>=5.2.0
+lxml[html_clean]>=0.4.5
+isoweek>=1.3.3

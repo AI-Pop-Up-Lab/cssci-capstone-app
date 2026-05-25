@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
+    libxslt1-dev \
+    libjpeg-dev \
+    libpng-dev \
     gfortran \
     cmake \
     && rm -rf /var/lib/apt/lists/*
@@ -18,7 +21,9 @@ WORKDIR /app
 COPY install_r_packages.R .
 ENV R_LIBS_SITE=/usr/local/lib/R/site-library
 RUN Rscript install_r_packages.R
-RUN Rscript -e "message('libPaths: ', paste(.libPaths(), collapse=', ')); message('vglmer in site-lib: ', 'vglmer' %in% rownames(installed.packages(lib.loc='/usr/local/lib/R/site-library'))); message('vglmer in R/library: ', 'vglmer' %in% rownames(installed.packages(lib.loc='/usr/lib/R/library'))); message('vglmer anywhere: ', 'vglmer' %in% rownames(installed.packages()))"
+RUN Rscript -e "message('libPaths: ', paste(.libPaths(), collapse=', ')); \
+    message('vglmer in site-lib: ', 'vglmer' %in% rownames(installed.packages(lib.loc='/usr/local/lib/R/site-library'))); \
+    message('vglmer anywhere: ', 'vglmer' %in% rownames(installed.packages()))"
 
     
 # install Python dependencies
