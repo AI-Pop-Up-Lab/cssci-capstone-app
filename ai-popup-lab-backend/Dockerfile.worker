@@ -16,9 +16,8 @@ WORKDIR /app
 COPY install_r_packages.R .
 ENV R_LIBS_SITE=/usr/local/lib/R/site-library
 RUN Rscript install_r_packages.R
-RUN find /usr -name "vglmer" -type d 2>/dev/null && \
-    find /root -name "vglmer" -type d 2>/dev/null && \
-    Rscript -e "message(.libPaths())"
+RUN Rscript -e "message('libPaths: ', paste(.libPaths(), collapse=', ')); message('vglmer in site-lib: ', 'vglmer' %in% rownames(installed.packages(lib.loc='/usr/local/lib/R/site-library'))); message('vglmer in R/library: ', 'vglmer' %in% rownames(installed.packages(lib.loc='/usr/lib/R/library'))); message('vglmer anywhere: ', 'vglmer' %in% rownames(installed.packages()))"
+
     
 # install Python dependencies
 COPY requirements-worker.txt .

@@ -37,7 +37,7 @@ jobs:
         run: |
           docker run --rm \
             -e ENV=production \
-            -e COUNTRIES="${{ github.event.inputs.countries || 'denmark,netherlands,sweden' }}" \
+            -e COUNTRIES="${{ github.event.inputs.countries || 'denmark' }}" \
             -e BLOB_CONTAINER_NAME=generated-data \
             -e AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
             ${{ env.ACR_NAME }}.azurecr.io/${{ env.WORKER_IMAGE }}:latest
