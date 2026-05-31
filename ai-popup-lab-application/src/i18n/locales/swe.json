@@ -7,7 +7,8 @@
             "polling": "undersökningsresultaten",
             "personas": "persona explorer",
             "about": "om oss",
-            "ethics": "etik"
+            "ethics": "etik",
+            "datahub": "data hub"
         }
     },
     "footer": {
@@ -149,6 +150,35 @@
                 "name": "Transparent styrning",
                 "text": "Vårt arbete är icke-kommersiellt och kan bäst beskrivas som en form av digital aktivism. Vi samarbetar med ett utvalt antal partners som hjälper oss att leverera till allmänheten."
             }
+        }
+    },
+    "datahubPage": {
+        "codebook": "codebook",
+        "intro": {
+            "title": "DATA HUB",
+            "text": "Genom att ladda ner uppgifterna godkänner du användarvillkoren."
+        },
+        "interview": {
+            "title": "Mänskliga jämförelsevärden",
+            "text": "Personuppgifter om politiska preferenser uppdelade efter demografiska faktorer på individnivå. Deltagarna besvarade en strukturerad enkät med uppgifter om demografi, tidigare och framtida röstbeteende, och fördjupade dessa uppgifter i en intervju som varade i cirka 10 minuter. Ibland kontaktas respondenterna på nytt och lämnar uppföljande röstinspelningar kring liknande teman. Intervjun och enkätuppgifterna kopplas samman med hjälp av en unik identifierare. Både intervjuerna och enkätuppgifterna är anonymiserade. Om du upptäcker några personligt identifierbara uppgifter i intervjuerna, vänligen kontakta omedelbart huvudforskaren Dr. Roberto Cerina på <span>r.cerina@uva.nl</span>.",
+            "timeframe1": "18-04-2026 till 30-04-2026",
+            "timeframe2": "30-04-2026 till 01-05-2026",
+            "transcripts": "HUMAN INTERVIEW TRANSCRIPTS",
+            "surveyData": "HUMAN SURVEY DATA"
+        },
+        "survey": {
+            "title": "syntetiska undersökningar",
+            "text": "Ett syntetiskt slumpmässigt urval från målgruppen: {{country}}.<br></br>Respondenterna är fiktiva personer som skapats med hjälp av LLM."
+        },
+        "stratification": {
+            "title": "stratification frames",
+            "text": "Detaljerade tabeller som beskriver befolkningsfördelningen över ömsesidigt uteslutande och heltäckande celler. Antalet invånare i cellerna är hämtat från offentligt tillgängliga folkräkningstabeller och har kompletterats med en uppdelning efter ”röster i det senaste parlamentsvalet” med hjälp av en nyligen genomförd kompletterande undersökning. Årtalet och beteckningen i ramens namn anger det år och den valtyp som ramen gäller för."
+        },
+        "support": {
+            "title": "STÖD FORSKNINGEN",
+            "text1": "DONERA OCH BIDRA TILL PROJEKTETS FRAMTIDA ARBETE.",
+            "text2": "ALL HJÄLP ÄR MYCKET VÄLKOMMEN",
+            "donate": "DONERA"
         }
     }
 }

@@ -13,6 +13,7 @@ from api_endpoints import sample_router
 from api_endpoints import chat_router
 from api_endpoints import dynamic_data_router
 from api_endpoints import admin_router
+from api_endpoints import download_router
 
 # from app.db.init_db import init_db, seed_demo_data
 
@@ -92,5 +93,6 @@ app.include_router(sample_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
 app.include_router(dynamic_data_router, prefix="/api")
 app.include_router(admin_router, prefix="/api")
+app.include_router(download_router, prefix="/api")
 
 # weekly_data_generation()

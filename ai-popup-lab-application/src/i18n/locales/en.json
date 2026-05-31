@@ -7,7 +7,8 @@
             "polling": "poll results",
             "personas": "persona explorer",
             "about": "about us",
-            "ethics": "ethics"
+            "ethics": "ethics",
+            "datahub": "data hub"
         }
     },
     "footer": {
@@ -149,6 +150,35 @@
                 "name": "Transparent Governance",
                 "text": "Our work is non-commercial and is best understood as a form of digital activism. We work with a selected number of partners who help us deliver for the public."
             }
+        }
+    },
+    "datahubPage": {
+        "codebook": "codebook",
+        "intro": {
+            "title": "DATA HUB",
+            "text": "By downloading the data you agree to the terms and conditions of use."
+        },
+        "interview": {
+            "title": "Human benchmarks",
+            "text": "Human data on political preferences by persona-level demographics. Subjects completed a structured survey providing demographics, past and prospective voting behaviour, and expanded on these with a roughly 10 minutes long interview. Occasionally respondents are re-contacted, and provide follow-up voice recordings around similar themes. The Interview and the survey-data are matched by a unique identifier. Both interviews and survey data are anonymised. If you notice any personally identifiable data in the interviews, please immediately contact the principal investigator Dr. Roberto Cerina at <span>r.cerina@uva.nl</span>.",
+            "timeframe1": "18-04-2026 to 30-04-2026",
+            "timeframe2": "30-04-2026 to 01-05-2026",
+            "transcripts": "HUMAN INTERVIEW TRANSCRIPTS",
+            "surveyData": "HUMAN SURVEY DATA"
+        },
+        "survey": {
+            "title": "synthetic surveys",
+            "text": "Synthetic random sample from the population of interest: {{country}}.<br></br>Respondents are LLM-generated personae."
+        },
+        "stratification": {
+            "title": "stratification frames",
+            "text": "Detailed tables describing the population distribution across mutually exclusive and exhaustive Cells. Cell counts are derived from publicly available census tables, and augmented to include breakdown by 'vote in the last general election' using a recent auxiliary survey. The year and label in the frame's name reflects the year and election-type for which that frame is valid."
+        },
+        "support": {
+            "title": "SUPPORT THE RESEARCH",
+            "text1": "DONATE AND CONTRIBUTE TO THE FUTURE WORK OF THE PROJECT.",
+            "text2": "ALL HELP WOULD BE GREATLY APPRECIATED",
+            "donate": "DONATE"
         }
     }
 }

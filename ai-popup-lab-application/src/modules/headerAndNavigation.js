@@ -43,6 +43,7 @@ function HeaderAndNavigation() {
               <Link to="/polling" onClick={() => setNavOpen(!navOpen)}>{t('header.links.polling')}</Link>
               <Link to="/personas" onClick={() => setNavOpen(!navOpen)}>{t('header.links.personas')}</Link>
               <Link to="/about" onClick={() => setNavOpen(!navOpen)}>{t('header.links.about')}</Link>
+              <Link to="/datahub" onClick={() => setNavOpen(!navOpen)}>{t('header.links.datahub')}</Link>
               <Link to="/ethics" onClick={() => setNavOpen(!navOpen)}>{t('header.links.ethics')}</Link>
             </div>
           </div>

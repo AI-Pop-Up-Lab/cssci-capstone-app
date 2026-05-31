@@ -7,7 +7,8 @@
             "polling": "afstemningsresultater",
             "personas": "persona explorer",
             "about": "om os",
-            "ethics": "etik"
+            "ethics": "etik",
+            "datahub": "data hub"
         }
     },
     "footer": {
@@ -149,6 +150,35 @@
                 "name": "Gennemsigtig styring",
                 "text": "Vores arbejde er ikke-kommercielt og kan bedst forstås som en form for digital aktivisme. Vi samarbejder med et udvalg af partnere, der hjælper os med at levere resultater til offentligheden."
             }
+        }
+    },
+    "datahubPage": {
+        "codebook": "codebook",
+        "intro": {
+            "title": "DATA HUB",
+            "text": "Ved at downloade dataene accepterer du brugsbetingelserne."
+        },
+        "interview": {
+            "title": "Menneskelige sammenligningsgrundlag",
+            "text": "Personoplysninger om politiske præferencer opdelt efter demografiske data på individniveau. Deltagerne udfyldte et struktureret spørgeskema med oplysninger om demografi, tidligere og forventet stemmeadfærd og uddybede disse oplysninger i et ca. 10 minutter langt interview. Lejlighedsvis kontaktes respondenterne igen og leverer opfølgende lydoptagelser om lignende emner. Interviewet og undersøgelsesdataene matches ved hjælp af en unik identifikator. Både interviewene og undersøgelsesdataene er anonymiseret. Hvis du bemærker personligt identificerbare data i interviewene, bedes du straks kontakte hovedforskeren Dr. Roberto Cerina på <span>r.cerina@uva.nl</span>.",
+            "timeframe1": "18-04-2026 til 30-04-2026",
+            "timeframe2": "30-04-2026 til 01-05-2026",
+            "transcripts": "HUMAN INTERVIEW TRANSCRIPTS",
+            "surveyData": "HUMAN SURVEY DATA"
+        },
+        "survey": {
+            "title": "syntetiske undersøgelser",
+            "text": "Et syntetisk tilfældigt udsnit af den relevante population: {{country}}.<br></br>Respondenterne er personaer genereret af LLM."
+        },
+        "stratification": {
+            "title": "stratification frames",
+            "text": "Detaljerede tabeller, der beskriver befolkningsfordelingen på tværs af indbyrdes udelukkende og udtømmende celler. Celleantalene er hentet fra offentligt tilgængelige folketællingstabeller og udvidet til at omfatte en opdeling efter »stemmeafgivelse ved det seneste parlamentsvalg« ved hjælp af en nylig supplerende undersøgelse. Året og betegnelsen i rammens navn angiver det år og den valgtype, som rammen gælder for."
+        },
+        "support": {
+            "title": "STØT FORSKNINGEN",
+            "text1": "DONÉR OG BIDRAG TIL PROJEKTETS FREMTIDIGE ARBEJDE.",
+            "text2": "AL HJÆLP VIL VÆRE MEGET VELKOMMEN",
+            "donate": "DONÉR"
         }
     }
 }

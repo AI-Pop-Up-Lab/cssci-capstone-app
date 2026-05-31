@@ -89,3 +89,13 @@
         height: 100px;
     }
 }
+
+@media screen and (max-width: 300px){
+    #footer-name{
+        font-size: 13px;
+    }
+
+    #footer-left > a {
+        font-size: 8px;
+    }
+}

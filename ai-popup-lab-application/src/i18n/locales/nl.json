@@ -7,7 +7,8 @@
             "polling": "peilingen",
             "personas": "persona explorer",
             "about": "over ons",
-            "ethics": "ethiek"
+            "ethics": "ethiek",
+            "datahub": "data hub"
         }
     },
     "footer": {
@@ -149,6 +150,35 @@
                 "name": "Transparant bestuur",
                 "text": "Ons werk is niet-commercieel en kan het best worden gezien als een vorm van digitaal activisme. We werken samen met een select aantal partners die ons helpen om resultaten te boeken voor het publiek."
             }
+        }
+    },
+    "datahubPage": {
+        "codebook": "codebook",
+        "intro": {
+            "title": "DATA HUB",
+            "text": "Door de gegevens te downloaden, gaat u akkoord met de gebruiksvoorwaarden."
+        },
+        "interview": {
+            "title": "Menselijke referentiepunten",
+            "text": "Persoonsgegevens over politieke voorkeuren, ingedeeld naar demografische kenmerken op persoonsniveau. De deelnemers vulden een gestructureerde vragenlijst in met demografische gegevens en informatie over hun stemgedrag in het verleden en de toekomst, en gingen hier in een interview van ongeveer 10 minuten dieper op in. Af en toe worden respondenten opnieuw benaderd en leveren ze vervolgopnames rond vergelijkbare thema's. Het interview en de enquêtegegevens worden aan elkaar gekoppeld via een unieke identificatiecode. Zowel de interviews als de enquêtegegevens zijn geanonimiseerd. Mocht u persoonlijk identificeerbare gegevens in de interviews opmerken, neem dan onmiddellijk contact op met de hoofdonderzoeker, dr. Roberto Cerina, via <span>r.cerina@uva.nl</span>.",
+            "timeframe1": "18-04-2026 tot 30-04-2026",
+            "timeframe2": "30-04-2026 tot 01-05-2026",
+            "transcripts": "HUMAN INTERVIEW TRANSCRIPTS",
+            "surveyData": "HUMAN SURVEY DATA"
+        },
+        "survey": {
+            "title": "synthetische enquêtes",
+            "text": "Een synthetische steekproef uit de betreffende populatie: {{country}}.<br></br>De respondenten zijn door LLM gegenereerde persona's."
+        },
+        "stratification": {
+            "title": "stratification frames",
+            "text": "Gedetailleerde tabellen die de bevolkingsspreiding weergeven over elkaar uitsluitende en uitputtende cellen. De celcijfers zijn afgeleid van openbaar beschikbare volkstellingstabellen en aangevuld met een uitsplitsing naar 'stemgedrag bij de laatste algemene verkiezingen' op basis van een recent aanvullend onderzoek. Het jaartal en de aanduiding in de naam van het kader geven het jaar en het type verkiezing weer waarvoor dat kader geldt."
+        },
+        "support": {
+            "title": "STEUN HET ONDERZOEK",
+            "text1": "DONEER EN DRAAG BIJ AAN DE TOEKOMSTIGE ACTIVITEITEN VAN HET PROJECT.",
+            "text2": "ALLE HULP WORDT ZEER OP PRIJS GESTELD",
+            "donate": "DONEER"
         }
     }
 }

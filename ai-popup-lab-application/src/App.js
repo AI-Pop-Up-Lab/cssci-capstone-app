@@ -14,6 +14,7 @@ import MethodsPage from './pages/methodsPage.js'
 import PersonaPage from './pages/personaPage.js'
 import EthicsPage from './pages/ethicsPage.js'
 import PollPage from './pages/pollPage.js';
+import DataHubPage from './pages/dataHubPage.js'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/methods" element={<MethodsPage />} />
         <Route path="/polling" element={<PollPage />} />
+        <Route path="/datahub" element={<DataHubPage />} />
       </Routes>
 
       <Footer />
