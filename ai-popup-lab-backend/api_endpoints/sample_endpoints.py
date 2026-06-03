@@ -1,3 +1,7 @@
+'''
+endpoints for 
+sending country sample and frame data
+'''
 from fastapi import APIRouter
 from pydantic import BaseModel
 import json

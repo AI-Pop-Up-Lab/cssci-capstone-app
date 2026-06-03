@@ -1,3 +1,15 @@
+/*
+Page that shows the results of the synthetic panels
+Countries can be picked to see that country's data
+Graphs shown:
+- bar chart of vote distribution across parties
+- a map of the country and the most popular party in each region
+- a seat projection chart
+- a bar chart that can be filtered by demographics, to show vote distribution across various demographics
+
+Sample and frame data used for charts seen also downloadable here
+*/
+
 import { useState, useEffect } from "react";
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
@@ -7,6 +19,7 @@ import './pollPage.css';
 import PollingResults from '../modules/polling_results_modules/pollingResults';
 import CountrySwitch2 from '../modules/countrySwitch2';
 
+// options for countries to pick from
 const countryOptions = [
   'netherlands',
   'sweden',
@@ -15,8 +28,10 @@ const countryOptions = [
 
 function PollPage() {
 
+  // getting search parameters
   const [searchParams] = useSearchParams();
 
+  // default selected country is first from countryOptions list, otherwise selected country is the selected country from previous page from URL parameters
   const paramCountry = countryOptions.includes(searchParams.get('country'))
   ? searchParams.get('country')
   : countryOptions[0];
@@ -27,6 +42,7 @@ function PollPage() {
 
   const [responseData, setResponseData] = useState(null);
 
+  // retrieving country sample of selected country from backend API
   async function getCountrySample(countryName){
     try {
       
@@ -44,6 +60,7 @@ function PollPage() {
     }
   };
 
+  // when user selects new country, relevant data retrieval function is called
   useEffect(() => {
     setData(null);
 
@@ -56,11 +73,13 @@ function PollPage() {
 
   return (
     <div className="PollPage unbounded-weight300">
+      {/* Component for switching country */}
       <CountrySwitch2 
         setCountry={setSelectedCountry} 
         selectedCountry={selectedCountry}
       />
       
+      {/* Component which holds the polling result graphs */}
       <PollingResults 
         selectedCountry={selectedCountry}
         setSelectedCountry={setSelectedCountry}  

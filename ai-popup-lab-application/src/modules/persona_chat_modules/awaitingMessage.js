@@ -1,3 +1,5 @@
+// component to display a placeholder animation 'message' to indicate the website is awaiting a response from the backend
+
 import './awaitingMessage.css';
 
 import Loader from '../loader'

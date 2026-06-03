@@ -1,3 +1,5 @@
+// function that is not used in app but was an initial test of the API, kept if somebody ever wants a simple example
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 

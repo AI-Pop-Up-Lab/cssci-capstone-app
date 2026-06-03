@@ -1,3 +1,7 @@
+'''
+stores generated synthetic surveys and extended frames on the Azure storage account blob storage
+only stores frames for now
+'''
 from pathlib import Path
 from datetime import date
 import os

@@ -1,3 +1,7 @@
+'''
+endpoints for 
+testing the api, only used when initially made application
+'''
 from fastapi import APIRouter
 from pydantic import BaseModel
 

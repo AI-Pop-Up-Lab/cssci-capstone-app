@@ -1,3 +1,5 @@
+// Landing page, explains the purpose of website, shows one polling result graph as an example, and a mockup of the persona chat.
+
 // import ApiTest from '../modules/apiTest';
 import { useState, useEffect, useRef } from "react";
 import { useInView } from 'react-intersection-observer';
@@ -10,6 +12,7 @@ import chartGraphic from '../assets/images/chartGraphic.png'
 import linkArrow from '../assets/images/linkArrow.png'
 import pollie from '../assets/svgs/pollie.svg'
 
+// components used on this page
 import PollingResults from '../modules/polling_results_modules/pollingResults';
 import PersonaChatExample from '../modules/personaChatExample';
 import CountrySwitch from '../modules/countrySwitch';
@@ -30,6 +33,7 @@ function LandingPage() {
   const { t, i18n } = useTranslation();
   const [typingKey, setTypingKey] = useState(i18n.language);
 
+  // for country names that are different in data than its real name, this function corrects it
   function modifyCountryNameEdgeCases(country){
     let modifiedCountry;
 
@@ -42,6 +46,7 @@ function LandingPage() {
     return modifiedCountry
   }
 
+  // gets the synthetical panel results for a selected country from the backend API
   async function getCountrySample(countryName){
     try {
       
@@ -59,22 +64,25 @@ function LandingPage() {
     }
   };
 
+  // updates data when selected country chages
   useEffect(() => {
     setData(null);
 
     getCountrySample(selectedCountry);
   }, [selectedCountry]);
 
+  // when data is received, properly store it and avoid cases where data is null
   useEffect(() => {
     setResponseData(data?.data ?? []);
   }, [data]);
 
+  // retrigger typing animation when language is changed
   useEffect(() => {
     setTypingKey(i18n.language);
   }, [i18n.language]);
 
-  // code for typing effect on elements
 
+  // code for typing effect on elements
   const [bottomDelayed, setBottomDelayed] = useState(false);
   const [bottomRef, bottomInView] = useInView({ threshold: 0.7, triggerOnce: true, skip: !bottomDelayed });
 
@@ -108,14 +116,13 @@ function LandingPage() {
     return displayed;
   }
 
-  // delay to stop lower messages begin typing won load, for the second where the graph is not loaded so it takes the lower text as being in vie
+  // delay to stop lower messages begin typing on load, for the second where the graph is not loaded so it takes the lower text as being in vie
   useEffect(() => {
     const t = setTimeout(() => setBottomDelayed(true), 1000);
     return () => clearTimeout(t);
   }, []);
 
-  // text for elements
-
+  // text for elements from localisation json
   const msg1 = t('landingPage.msg1');
   const msg2 = t('landingPage.msg2');
   const msg3 = t('landingPage.msg3');
@@ -132,12 +139,15 @@ function LandingPage() {
 
   return (
     <div className="LandingPage unbounded-weight300">
-      {/* <div id='landing-intro'>
+      {/*
+      
+      OLD HTML
+      <div id='landing-intro'>
         <p>This is the AI Pollster, where public opinion is visualised through synthetic personas. Explore graphs which visualise the results of the AI polling, and chat with the personas which form the polling data on the persona chat page, to understand intentions and motivations behind polling decisions.</p>
         <img src={chartGraphic}></img>
-      </div> */}
+      </div> 
 
-      {/* <CountrySwitch setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
+       <CountrySwitch setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
       
       <p id="landing-explorevotes">EXPLORE THE VOTES IN {modifyCountryNameEdgeCases(selectedCountry).toUpperCase()}</p>
     
@@ -146,7 +156,8 @@ function LandingPage() {
         setSelectedCountry={setSelectedCountry}  
       />
 
-      <PersonaChatExample includeLink={true} country={selectedCountry}  /> */}
+      <PersonaChatExample includeLink={true} country={selectedCountry}  /> 
+      */}
 
       <div className="landingPageTop">
         <img className='pollie' src={pollie}></img>

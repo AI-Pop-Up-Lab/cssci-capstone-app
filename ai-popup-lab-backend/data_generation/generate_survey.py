@@ -1,3 +1,8 @@
+'''
+generates the synthetic panel results, incomplete
+except i don't think i use it anymore, will probably be removed
+'''
+
 from pathlib import Path
 from .run_scripts import run_survey_script
 from .store_data import store_survey

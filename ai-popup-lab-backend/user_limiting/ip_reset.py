@@ -1,3 +1,6 @@
+'''
+resets all the IPs logged in the daily limit file
+'''
 import json
 from pathlib import Path
 

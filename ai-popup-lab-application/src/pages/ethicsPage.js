@@ -1,10 +1,12 @@
+// page explaining the AI Pop-up Lab's ethical values on a 'carousel'
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import './ethicsPage.css';
 import carouselArrow from '../assets/images/carouselArrow.png'
-import CarouselCard from './carouselCard';
+import CarouselCard from './modules/carouselCard';
 
+// importing icons for each card
 import biasIcon from '../assets/images/biasIcon.png'
 import privacyIcon from '../assets/images/privacyIcon.png'
 import epistemicIcon from '../assets/images/epistemicIcon.png'
@@ -18,6 +20,7 @@ function EthicsPage() {
 
   const { t } = useTranslation();
 
+  // defining the value in the localisation json for i18n, along with the icon for each card
   const cardValues = [
     { key: "algorithmicFairness", icon: biasIcon },
     { key: "ethicalDataUse", icon: privacyIcon, hasComponents: true },
@@ -36,6 +39,7 @@ function EthicsPage() {
   const currentLeftCardIndex = (currentCardIndex - 1 + amountOfCards) % amountOfCards;
   const currentRightCardIndex = (currentCardIndex + 1) % amountOfCards;
 
+  // function for switching the indexes of which cards should be shown
   function switchCard(direction) {
     setCurrentCardIndex(prev =>
       direction === 'left'
@@ -51,6 +55,7 @@ function EthicsPage() {
       <div id='values-carousel'>
         <img alt="left arrow" src={carouselArrow} onClick={() => {switchCard('left')}} id="carousel-left"></img>
 
+        {/* Defining three carousel cards, passing the value of the current index cards in */}
         <CarouselCard card={cardValues[currentLeftCardIndex]} className="carousel-card-secondary" />
         <CarouselCard card={cardValues[currentCardIndex]} className="carousel-card-primary" />
         <CarouselCard card={cardValues[currentRightCardIndex]} className="carousel-card-secondary" />

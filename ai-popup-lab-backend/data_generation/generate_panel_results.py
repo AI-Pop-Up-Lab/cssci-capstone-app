@@ -1,6 +1,8 @@
 """
-Orchestrates synthetic panel result generation for a given country and ISO week.
-Called by run_job.py for weekly runs and backfill-job.yml for backfills.
+runs synthetic panel result generation for a given country and ISO week.
+called by run_job.py for weekly runs and backfill-job.yml for backfills.
+
+also gets data from azure storage
 """
 from __future__ import annotations
 

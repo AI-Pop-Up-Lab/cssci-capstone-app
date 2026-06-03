@@ -5,6 +5,8 @@ import nl from './locales/nl.json';
 import swe from './locales/swe.json';
 import dk from './locales/dk.json';
 
+// setup for i18n localisation/translation library, defining the keys and which localisation json to reference
+
 i18n
   .use(initReactI18next)
   .init({

@@ -1,3 +1,8 @@
+'''
+checks folder(s) in azure that record if a certain weekly job has already been ran to avoid running again
+especially useful for having to backfill weeks 
+'''
+
 from datetime import date
 from azure.storage.blob import BlobServiceClient
 import os

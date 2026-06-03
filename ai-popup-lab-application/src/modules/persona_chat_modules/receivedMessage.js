@@ -1,3 +1,5 @@
+// component for a received message in the persona chat
+
 import './receivedMessage.css';
 
 function ReceivedMessage({text}) {

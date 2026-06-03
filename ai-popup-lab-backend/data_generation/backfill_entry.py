@@ -1,7 +1,7 @@
 """
-Backfill entry point.
-Invoked by: python -m data_generation.backfill_entry
-Environment variables:
+backfill entry point.
+ran with: python -m data_generation.backfill_entry
+env variables:
     COUNTRIES       comma-separated country names, e.g. "sweden"
     BACKFILL_WEEKS  comma-separated ISO weeks, e.g. "2026-20,2026-21,2026-22"
     JOB_TYPE        panel | mrp | both  (default: panel)

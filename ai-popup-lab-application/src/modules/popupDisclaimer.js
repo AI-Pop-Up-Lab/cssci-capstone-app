@@ -1,3 +1,9 @@
+/*
+popup that is shown when the page is entered, but not when switching pages
+must be clicked away, so that users must look at it
+explains that the personae are not real people
+*/
+
 import { useRef, useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 
@@ -12,6 +18,7 @@ function PopupDisclaimer() {
   const [unmounted, setUnmounted] = useState(false);
   const popupRef = useRef(null);
 
+  // OLD CODE WHICH TRIED TO CENTER IT WITH CSS position:fixed BUT WAS REPLACED WITH FLEXBOX IN CSS USING A PARENT ELEMENT
   // useEffect(() => {
   //   if (popupRef.current) {
   //     const width = popupRef.current.offsetWidth;
@@ -22,6 +29,7 @@ function PopupDisclaimer() {
   //   }
   // }, []);
 
+  // close popup when called
   function closePopup(){
     setClosed(true);
   };

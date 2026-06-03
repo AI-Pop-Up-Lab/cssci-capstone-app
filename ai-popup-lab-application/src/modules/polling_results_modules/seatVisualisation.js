@@ -1,3 +1,6 @@
+// chart using d3.js library which visualises allocated seats from predictions using that country's seat allocation method (equation) which is, which it fetches from the backend
+// very very slight chance it doesn't render on page load/refresh. tried to fix it so many times. will get round to.
+
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import * as d3 from "d3";

@@ -1,3 +1,8 @@
+// interactive map chart using d3.js. uses .geojson files from assets for map structure and keys
+// could never get the netherlands one working...
+// or the sweden map not to look weird...
+// TODO! 
+
 import { useRef, useEffect, useState } from 'react';
 import * as d3 from "d3";
 import './pollingMap.css';

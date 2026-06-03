@@ -1,3 +1,5 @@
+// The footer of every page, including links to the about and ethics page, and the name and tagline of the project/site.
+
 // import { useRef, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';

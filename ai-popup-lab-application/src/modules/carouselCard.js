@@ -4,6 +4,7 @@ function CarouselCard({ card, className }) {
 
   const { t } = useTranslation();
 
+  // map passed parameters to a card esque element for the ethics page
   return (
     <div className={className}>
       <img alt="card icon" src={card.icon} />

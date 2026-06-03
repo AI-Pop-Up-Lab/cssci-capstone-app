@@ -1,3 +1,5 @@
+// component for a user message bubble in the persona chat
+
 import './userMessage.css';
 
 function UserMessage({text}) {

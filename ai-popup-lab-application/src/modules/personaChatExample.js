@@ -1,3 +1,5 @@
+// component that shows an example of what the persona chat looks like and can be used for
+
 import './personaChatExample.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -11,6 +13,7 @@ function PersonaChatExample({includeLink, country}) {
 
   const { t } = useTranslation();
 
+  // modify country names where variable name does not match the country's full name 
   function modifyCountryNameEdgeCases(country){
     let modifiedCountry;
 
@@ -65,6 +68,11 @@ function PersonaChatExample({includeLink, country}) {
 
         </div>
 
+        {/* 
+        when added as child component, includeLink parameter can be passed which 
+        determines if the link to the persona chat page is shown or not
+        for this example being shown on the persona page itself for example, not necessary. confusing even. flabbergasting. gives me shudders.
+        */}
         <div id='land-expl-pers-bottom' className={includeLink ? '' : 'dontShowPersonaLink'}>
           <Link to={`/personas/?country=${country}`}><button className='unbounded-weight300'>{t('personaChatExample.explorePersonas')} <img alt='right facing arrow' src={linkArrow}></img></button></Link>
         </div>

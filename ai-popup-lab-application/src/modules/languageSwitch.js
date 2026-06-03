@@ -1,3 +1,5 @@
+// button and code for switching languages
+
 import { useState, useRef, React, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -16,19 +18,24 @@ function LanguageSwitch() {
   const { i18n } = useTranslation();
   const [popupOpen, setPopupOpen] = useState(false);
 
+  // using i18n library to switch language using locale .jsons
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     localStorage.setItem('lang', lang);
     setPopupOpen(false);
   };
 
+  // flips the popupOpen bool which if true shows the popup for selecting a language
   const togglePopup = () => {
     setPopupOpen(!popupOpen);
   };
 
   return (
       <div className='LanguageSwitch'>
+        {/* button displayed always */}
         <button className='unbounded-weight300' onClick={togglePopup}>{i18n.language.toUpperCase()}</button>
+
+        {/* popup that opens with options for available languages */}
         <div className={popupOpen ? "langPopupOpen" : ""} id='langSwitch-popup'>
 
           <div id='langSwitch-popup-top'>

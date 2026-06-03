@@ -1,3 +1,6 @@
+// renders and is parent of all personae that match chosen filters. 
+// if no personae match, it shows text explaining so
+
 import { useState, useEffect, memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import axios from "axios";

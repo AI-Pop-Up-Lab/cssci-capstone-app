@@ -1,3 +1,7 @@
+'''
+functions which check if R is available in the command line
+and then runs the frame extension R script through R CLI
+'''
 from pathlib import Path
 import subprocess
 import os

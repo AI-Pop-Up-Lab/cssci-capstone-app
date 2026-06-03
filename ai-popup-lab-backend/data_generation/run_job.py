@@ -1,5 +1,5 @@
 """
-Entry point for the weekly data generation worker container.
+entry point for the weekly data generation worker container.
 
 Run locally (no Docker):
     export $(cat .env | xargs)

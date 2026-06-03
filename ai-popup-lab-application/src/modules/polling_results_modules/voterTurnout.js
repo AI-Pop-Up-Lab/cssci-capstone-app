@@ -1,3 +1,5 @@
+// component which shows the total vote turnout of the data passed in, checking how many have value 'did not vote' or similar
+
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import './voterTurnout.css';

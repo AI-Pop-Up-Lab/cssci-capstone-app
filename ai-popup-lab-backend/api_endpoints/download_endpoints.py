@@ -1,3 +1,7 @@
+'''
+endpoints for 
+sending files for the not yet finished and deployed 'data hub' for users to download
+'''
 from fastapi import APIRouter
 from fastapi.responses import FileResponse
 from pydantic import BaseModel

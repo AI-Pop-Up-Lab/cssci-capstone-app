@@ -1,3 +1,8 @@
+'''
+functions that check IPs of persona chat endpoint to see if they have an ongoing request already, increment their request counter and see if it's exceed the limit
+also adds response friction
+'''
+
 import time
 import json
 from pathlib import Path

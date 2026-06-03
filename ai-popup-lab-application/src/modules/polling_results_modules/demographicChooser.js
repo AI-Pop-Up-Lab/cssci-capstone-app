@@ -1,3 +1,10 @@
+// component which takes a country name and shows dropdowns to filter through demographics in that country's data
+/*
+  uses a dynamic sentence such as "if all voters aged __, who have education level ___"
+  because of this, the order and words surrounding the column name are passed so it can be shown and structured correctly
+  the component also fetches and drops the column for next general election vote prediction, because this should not be filtered on for a chart.
+*/
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 

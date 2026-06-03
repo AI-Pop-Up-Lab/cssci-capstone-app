@@ -16,6 +16,7 @@ import EthicsPage from './pages/ethicsPage.js'
 import PollPage from './pages/pollPage.js';
 import DataHubPage from './pages/dataHubPage.js'
 
+// function to scroll to top of browser window, gets called when the pathname changes (user changes page on site)
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -26,6 +27,11 @@ function ScrollToTop() {
   return null;
 }
 
+
+// main App component, holds the router and routes for each page, returning each page when the url route matches
+// Also includes the header above the pages returned so it does not need to be included in every page
+// and footer beneath
+// and the anthropomorphisation disclaimer popup
 function App() {
 
   return (

@@ -1,5 +1,9 @@
+// Component to show the options for countries and let the user select one
+// pages/parents it is used in must pass in a variable and its setter from the React useState hook
+// so that it can which to indicate being selected, and to update the selection
 import { useState, useEffect } from "react";
 
+// options for countries and their abbreviations to display
 import './countrySwitch2.css';
 
 const countryOptions = [
@@ -10,6 +14,7 @@ const countryOptions = [
 
 function CountrySwitch2({setCountry, selectedCountry}) {
 
+  // maps the country options to buttons, and uses its name to retrieve the flag from the assets folder
   return (
     <div className="CountrySwitch2">
       {countryOptions.map(({ name, abbreviation }) => (

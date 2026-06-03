@@ -1,3 +1,6 @@
+// component that retrieves columns from country data to filter on
+// specifically for the persona chat as it includes the next general election prediction column to filter on
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 

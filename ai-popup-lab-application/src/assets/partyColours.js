@@ -12,4 +12,6 @@ const partyColours = {
   "SGP": "#FFA500",
 };
 
+// party colours for dutch parties, unused for the foreseeable future, as data comes from a different place in backend
+
 export default partyColours;

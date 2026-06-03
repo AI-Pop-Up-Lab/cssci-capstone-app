@@ -1,3 +1,6 @@
+// The card displayed of a persona that matches the selected filters.
+// when hovered, shows the full info of the persona and the chat can be entered with a button
+
 import { useState, useEffect, useRef, memo} from "react";
 import { useTranslation } from "react-i18next";
 

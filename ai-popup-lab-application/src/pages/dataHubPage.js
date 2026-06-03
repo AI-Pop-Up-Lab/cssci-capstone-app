@@ -1,3 +1,4 @@
+// not part of deployed website yet, page for downloading the data we use. UNFINISHED
 import { useState } from 'react';
 import { useInView } from "react-intersection-observer"
 import { useTranslation, Trans } from 'react-i18next';
@@ -8,6 +9,7 @@ import downloadIcon from '../assets/svgs/downloadIcon.svg'
 
 const availableCountries = ['netherlands', 'denmark', 'sweden']
 
+// function for downloading a file
 const downloadFile = async (filename, data) => {
 
   const blob = await data.blob();
@@ -24,11 +26,13 @@ function DataHubPage() {
 
   const { t } = useTranslation();
 
+  // function returning a reference and bool for an element, triggering when in view (to trigger an animation by enabling a class)
   const useInViewAnimation = (threshold = 1) => {
     const [ref, inView] = useInView({ threshold, triggerOnce: true })
     return [ref, inView]
   }
 
+  // function to receive stratification frame file from backend API using country
   const downloadStratificationFrame = async (country) => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/api/download/country_frame_raw?country=${country}`);
     
@@ -36,6 +40,7 @@ function DataHubPage() {
     downloadFile(filename, response);
   };
 
+  // function to receive fieldwork data file from backend API using the type of study (pilot or main) and data type (transcripts or survey)
   const downloadFieldworkData = async (studyType, dataType) => {
 
     const response = await fetch(`${process.env.REACT_APP_API_URL}/api/download/fieldwork_file?studyType=${studyType}&dataType=${dataType}`);

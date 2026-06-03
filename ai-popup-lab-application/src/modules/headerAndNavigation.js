@@ -1,3 +1,9 @@
+// header for page and dropdown navigation
+/*
+When not opened, shows page name, hamburger menu to open, and a button to switch languages
+when opened, showss the above, and the website tagline + pages to navigate to
+*/
+
 import { useState, React, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line
@@ -14,7 +20,7 @@ function HeaderAndNavigation() {
   const [darkModeOn, setDarkModeOn] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // detecting if scrolled at all
+  // detecting if scrolled from top at all, to add a header class which changes its styling
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener('scroll', handleScroll);
@@ -26,11 +32,13 @@ function HeaderAndNavigation() {
 
         <div id='header-left'>
 
+          {/* name and tagline */}
           <div id="header-text-left">
             <h1 className="unbounded-weight300">MECHANICAL <span>POLLSTER</span></h1>
             <p className="unbounded-weight300">{t('header.tagline')}</p>
           </div>
 
+          {/* hamburger menu and links that are shown when opened */}
           <div id='hamburger-and-nav'>
 
             <div id="hamburger-container" className={navOpen  ? 'nav-open' : ''} onClick={() => setNavOpen(!navOpen)}>
@@ -50,6 +58,7 @@ function HeaderAndNavigation() {
         
         </div>
 
+        {/* right hand side of header, language switch button and a hypothetical dark mode slider - hypothetical as in it was never made */}
         <div id='header-right'>
 
           <div id='lang-and-modeswitch'>

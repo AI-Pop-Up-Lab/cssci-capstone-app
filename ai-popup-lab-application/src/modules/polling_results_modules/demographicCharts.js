@@ -1,3 +1,5 @@
+// Bar chart which can be filtered by demographic, using the demographicChooser component
+
 import { useRef, useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import * as d3 from "d3";
@@ -29,6 +31,7 @@ function DemographicCharts({ pollingData, country }) {
   const [nextGEcolname, setNextGEcolname] = useState(null);
   const [nextGEcolnameError, setNextGEcolnameError] = useState(null); 
 
+  // datasets can have different column names for the next predicted vote so this is fetched from the backend
   async function getNextGEcolname(countryName){
     try {
 
@@ -46,6 +49,7 @@ function DemographicCharts({ pollingData, country }) {
     }
   };
 
+  // the colours of different parties for a country is fetched from backend
   async function getPartyColours(countryName){
     try {
 
@@ -63,6 +67,7 @@ function DemographicCharts({ pollingData, country }) {
     }
   };
 
+  // data of useful party info is fetched from backend
   async function getPartyInfo(countryName){
     try {
 
@@ -83,6 +88,7 @@ function DemographicCharts({ pollingData, country }) {
     }
   };
 
+  // change data when new country is selected
   useEffect(() => {
 
     setPartyColours(null);
@@ -96,6 +102,7 @@ function DemographicCharts({ pollingData, country }) {
 
   }, [country]);
 
+  // d3.js chart code
   useEffect(() => {
     if (!pollingData || pollingData.length === 0) return;
     if (!partyColours) return;
@@ -278,6 +285,7 @@ function DemographicCharts({ pollingData, country }) {
         />
       )}
       {partyColours && nextGEcolname ? (
+        // element reference for d3.js chart
       <div className="dc-chart-wrapper" ref={containerRef}>
         <svg ref={svgRef} />
         <div ref={tooltipRef} className="chart-tooltip" />

@@ -1,3 +1,6 @@
+// Component which takes the selected country, retrieves its data and passed that data to chart components
+// also the data can be downloaded on this page but in the future there shall be a data hub page, halfway there with that
+
 import { useState, useEffect, useMemo, useCallback, use } from "react";
 import axios from "axios";
 

@@ -1,3 +1,5 @@
+// a dropdown option for a column in the demographic filter. updates parent data when option selected
+
 import { useEffect } from 'react';
 import axios from "axios";
 import '../polling_results_modules/demographicChooser.css';

@@ -1,3 +1,8 @@
+/* 
+Page where the user can select a country, and filter through demographics of the synthetic sample of that country. 
+They can then enter a chat with the selected persona, to ask questions through an LLM acting as the
+persona about political motivation and voting behaviour.
+*/
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
@@ -12,12 +17,14 @@ import CountrySwitch2 from '../modules/countrySwitch2';
 
 import Loader from "../modules/loader";
 
+// options of countries to choose from
 const countryOptions = [
   'netherlands',
   'sweden',
   'denmark'
 ]
 
+// modifies names that are represented differently in data than its real full name
 function modifyCountryNameEdgeCases(country){
   let modifiedCountry;
 
@@ -53,6 +60,7 @@ function PersonaPage() {
 
   const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState({});
 
+  // callback to call the function for setting the demographic chosen from the options in the select elements
   const handleSetChosenPersonaDemographic = useCallback((value) => {
     setChosenPersonaDemographic(value);
   }, []);
@@ -73,12 +81,14 @@ function PersonaPage() {
     }
   };
 
+  // changes the data with react hooks when the user selects new country
   useEffect(() => {
     setData(null);      
     setResponseData([]); 
     getCountrySample(selectedCountry);
   }, [selectedCountry]);
 
+  // handles edge case of country name for display when country selecte
   useEffect(() => {
 
     let modCountry = modifyCountryNameEdgeCases(selectedCountry);
@@ -100,8 +110,10 @@ function PersonaPage() {
   return (
     <div className="PersonaPage">
 
+      {/* componnent to switch country */}
       <CountrySwitch2 setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
 
+      {/* exmaple of persona chat */}
       { selectedCountry && 
         <PersonaChatExample includeLink={false} country={selectedCountry} />
       }
@@ -119,6 +131,7 @@ function PersonaPage() {
           </p>
         </div>
 
+        {/* dropdowns to filter demographic */}
         {selectedCountry ? <DemographicChooserForPersona
         key={selectedCountry}
         setChosenDemographic={handleSetChosenPersonaDemographic}
@@ -126,6 +139,7 @@ function PersonaPage() {
         setRelevantColumns={setRelevantColumns}
         /> : <Loader />}
 
+        {/* Display of personae that match demographic */}
         {data && selectedCountry ? <PersonaChooser 
         data={responseData}
         chosenDemographic={chosenPersonaDemographic}

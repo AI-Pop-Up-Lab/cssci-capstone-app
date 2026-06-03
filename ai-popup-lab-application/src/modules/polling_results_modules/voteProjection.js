@@ -1,3 +1,6 @@
+// d3.js bar chart which shows the total vote distribution
+// fetches party info, party colours and name of next general election prediction column because it should not be on the bar chart
+
 import { useRef, useEffect, useState } from "react";
 import { useTranslation, Trans } from 'react-i18next';
 import * as d3 from "d3";

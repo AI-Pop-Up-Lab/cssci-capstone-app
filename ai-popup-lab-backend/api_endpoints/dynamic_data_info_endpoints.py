@@ -1,3 +1,7 @@
+'''
+endpoints for 
+sending dynamic info from country_data_info.json which are used one off in certain components
+'''
 from fastapi import APIRouter
 from pydantic import BaseModel
 import json
