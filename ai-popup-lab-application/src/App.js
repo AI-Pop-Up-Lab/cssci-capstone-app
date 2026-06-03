@@ -49,7 +49,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/methods" element={<MethodsPage />} />
         <Route path="/polling" element={<PollPage />} />
-        <Route path="/datahub" element={<DataHubPage />} />
+        {/* <Route path="/datahub" element={<DataHubPage />} /> */}
       </Routes>
 
       <Footer />
