@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import './ethicsPage.css';
 import carouselArrow from '../assets/images/carouselArrow.png'
-import CarouselCard from './modules/carouselCard';
+import CarouselCard from '../modules/carouselCard';
 
 // importing icons for each card
 import biasIcon from '../assets/images/biasIcon.png'
