@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import pandas as pd
 import io
+import os
 
 from data_generation.store_data import get_blob_client, CONTAINER_NAME
 from data_generation.aggregate_longitudinal import _longitudinal_blob_name, _longitudinal_demographic_blob_name
@@ -69,3 +70,23 @@ def country_longitudinal_aggregated_demographics(country: str):
     
     test_file = Path(__file__).parent / "demographic_test.csv"
     return FileResponse(test_file, media_type="text/csv")
+
+@router.get("/us_pollster_predictions")
+def us_pollster_predictions():
+    
+    blob_name = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_pollster_model_output.json")
+    container = os.environ.get("US_POLLS_BLOB_CONTAINER", "us-pollster-data")
+
+    client = get_blob_client()
+    blob = client.get_blob_client(container=container, blob=blob_name)
+
+    try:
+        data = blob.download_blob().readall()
+    except Exception:
+        raise HTTPException(status_code=404, detail="US pollster predictions not yet available.")
+
+    return StreamingResponse(
+        io.BytesIO(data),
+        media_type="application/json",
+        headers={"Content-Disposition": f"inline; filename={blob_name}"}
+    )

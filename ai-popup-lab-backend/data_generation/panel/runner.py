@@ -142,7 +142,7 @@ def run_survey(
 
     for col in (vote_col, newsint_col, citations_col, urls_col):
         if col not in panel_df.columns:
-            panel_df[col] = pd.NA
+            panel_df[col] = None
 
     pending = panel_df[panel_df[vote_col].isna()]
     if pending.empty:

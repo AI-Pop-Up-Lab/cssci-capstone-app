@@ -21,9 +21,7 @@ def check_r_available():
         raise EnvironmentError("Rscript not found. Is R installed in the container?")
 
 def run_survey_script(frame_filepath, environment, country):
-
-    # R survey generation script is ran, return output directory and filename
-
+    # not used i think but scared to delete i forgot if i do or something i believe i do not though
     return SURVEYS_DIR / f"{country}_survey.csv"
 
 def run_extension_script(

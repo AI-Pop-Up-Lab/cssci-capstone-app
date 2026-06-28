@@ -1,0 +1,2001 @@
+index,state_cat,cd_cat,age_cat,gender_cat,race_cat,hispanic_cat,educ_cat,cell_pop,state_abbrv,state_cd,vote_choice
+0,42,13,68-72,Female,White,Not Hispanic,HS grad,11225.76049999999,PA,PA-13,Other
+1,25,4,58-62,Male,White,Not Hispanic,2-year,1523.6599000000012,MA,MA-4,Republican
+2,48,14,33-37,Female,Black,Not Hispanic,4-year,758.1354911777433,TX,TX-14,Did not vote
+3,39,7,68-72,Male,White,Not Hispanic,Some college,4222.448104846158,OH,OH-7,Republican
+4,6,22,18-22,Male,Black,Not Hispanic,HS grad,742.9412925516592,CA,CA-22,Democrat
+5,54,1,63-67,Female,White,Not Hispanic,Some college,5212.009499999999,WV,WV-1,Other
+6,42,8,58-62,Female,White,Not Hispanic,HS grad,8883.587599999988,PA,PA-8,Republican
+7,44,1,73-77,Male,White,Not Hispanic,4-year,1889.7891000000009,RI,RI-1,Democrat
+8,6,38,48-52,Male,Other/Multi,Hispanic,4-year,819.8225334565645,CA,CA-38,Democrat
+9,25,9,58-62,Female,Asian,Not Hispanic,HS grad,82.90160000000002,MA,MA-9,Republican
+10,20,1,43-47,Male,White,Not Hispanic,Some college,2975.199299999999,KS,KS-1,Democrat
+11,51,2,28-32,Female,Black,Not Hispanic,Some college,1576.5895000000005,VA,VA-2,Democrat
+12,36,26,48-52,Male,White,Not Hispanic,HS grad,3576.9909999999986,NY,NY-26,Democrat
+13,47,7,28-32,Female,White,Not Hispanic,HS grad,4078.448,TN,TN-7,Republican
+14,25,6,58-62,Male,White,Not Hispanic,HS grad,6749.152700000003,MA,MA-6,Republican
+15,12,15,53-57,Male,Asian,Not Hispanic,Post-grad,314.86760587688724,FL,FL-15,Democrat
+16,34,1,53-57,Male,Other/Multi,Hispanic,No HS,286.22029999999995,NJ,NJ-1,Democrat
+17,6,7,28-32,Female,Asian,Not Hispanic,Some college,765.1775024403747,CA,CA-7,Democrat
+18,47,9,28-32,Female,Black,Not Hispanic,2-year,1528.7201999999995,TN,TN-9,Democrat
+19,36,21,58-62,Female,White,Not Hispanic,Post-grad,3062.9811000000013,NY,NY-21,Democrat
+20,42,7,38-42,Male,White,Not Hispanic,HS grad,4062.5415,PA,PA-7,Republican
+21,18,7,63-67,Female,White,Not Hispanic,4-year,2783.2072000000003,IN,IN-7,Democrat
+22,53,9,58-62,Male,Asian,Not Hispanic,HS grad,868.2769000000001,WA,WA-9,Democrat
+23,48,30,28-32,Female,Other/Multi,Hispanic,HS grad,1393.159447965416,TX,TX-30,Democrat
+24,42,15,53-57,Female,White,Not Hispanic,HS grad,9435.149700000007,PA,PA-15,Republican
+25,12,2,48-52,Female,White,Not Hispanic,Some college,3238.346618278395,FL,FL-2,Democrat
+26,26,7,23-27,Male,White,Not Hispanic,2-year,1489.4882,MI,MI-7,Republican
+27,5,2,43-47,Female,White,Not Hispanic,4-year,3524.517700000004,AR,AR-2,Democrat
+28,6,51,23-27,Female,Other/Multi,Not Hispanic,4-year,659.8828827952593,CA,CA-51,Republican
+29,39,2,23-27,Female,Other/Multi,Not Hispanic,Some college,315.1718846777761,OH,OH-2,Republican
+30,42,1,58-62,Male,White,Not Hispanic,4-year,5979.984499999997,PA,PA-1,Democrat
+31,53,8,33-37,Male,White,Not Hispanic,HS grad,3972.9824999999983,WA,WA-8,Republican
+32,17,12,43-47,Male,White,Not Hispanic,HS grad,6628.757800000005,IL,IL-12,Republican
+33,20,1,33-37,Male,White,Not Hispanic,HS grad,3930.159500000004,KS,KS-1,Republican
+34,26,8,33-37,Male,Black,Not Hispanic,2-year,372.6677,MI,MI-8,Democrat
+35,10,1,53-57,Male,White,Not Hispanic,4-year,3779.0,DE,DE-1,Republican
+36,6,39,38-42,Male,White,Hispanic,No HS,283.2057041182631,CA,CA-39,Did not vote
+37,26,10,63-67,Male,White,Not Hispanic,2-year,1811.4342,MI,MI-10,Democrat
+38,12,15,48-52,Female,White,Not Hispanic,Some college,3357.019044632141,FL,FL-15,Republican
+39,37,11,53-57,Female,White,Not Hispanic,Post-grad,3284.468379173334,NC,NC-11,Republican
+40,25,3,83+,Male,White,Not Hispanic,2-year,237.9866,MA,MA-3,Democrat
+41,48,2,38-42,Male,Other/Multi,Hispanic,Some college,1597.9477857465577,TX,TX-2,Republican
+42,39,9,18-22,Male,White,Not Hispanic,No HS,2378.7427146715245,OH,OH-9,Republican
+43,17,6,33-37,Male,Black,Not Hispanic,2-year,216.7399,IL,IL-6,Did not vote
+44,48,2,28-32,Male,Other/Multi,Hispanic,Some college,1301.6038621800783,TX,TX-2,Did not vote
+45,46,1,18-22,Male,White,Not Hispanic,No HS,3154.0,SD,SD-1,Democrat
+46,21,4,63-67,Male,White,Not Hispanic,No HS,1796.067000000001,KY,KY-4,Republican
+47,13,13,78-82,Male,White,Not Hispanic,4-year,613.8425999999998,GA,GA-13,Republican
+48,39,1,73-77,Female,White,Not Hispanic,HS grad,4305.643656173444,OH,OH-1,Democrat
+49,6,44,28-32,Female,Other/Multi,Hispanic,4-year,1938.4918086145788,CA,CA-44,Democrat
+50,12,4,53-57,Female,White,Not Hispanic,Post-grad,1323.0499078805217,FL,FL-4,Did not vote
+51,1,4,28-32,Male,White,Not Hispanic,HS grad,7019.8515000000025,AL,AL-4,Democrat
+52,44,2,43-47,Female,White,Not Hispanic,HS grad,2025.226,RI,RI-2,Republican
+53,37,9,43-47,Male,White,Not Hispanic,HS grad,3475.5962300272786,NC,NC-9,Other
+54,39,11,18-22,Female,White,Not Hispanic,4-year,889.9800747271742,OH,OH-11,Democrat
+55,42,16,48-52,Female,White,Not Hispanic,4-year,4873.813700000001,PA,PA-16,Republican
+56,26,3,83+,Female,White,Not Hispanic,Some college,1457.3403999999996,MI,MI-3,Did not vote
+57,34,7,58-62,Male,White,Not Hispanic,4-year,7336.928400000006,NJ,NJ-7,Republican
+58,6,44,28-32,Male,Asian,Not Hispanic,HS grad,315.9209386890528,CA,CA-44,Democrat
+59,6,31,73-77,Female,Asian,Not Hispanic,4-year,1385.8007931950472,CA,CA-31,Democrat
+60,37,10,78-82,Male,White,Not Hispanic,Post-grad,1044.3218163894137,NC,NC-10,Did not vote
+61,26,8,78-82,Female,White,Not Hispanic,HS grad,4936.7301,MI,MI-8,Democrat
+62,34,6,23-27,Male,White,Not Hispanic,4-year,4265.429800000001,NJ,NJ-6,Republican
+63,42,10,28-32,Female,White,Not Hispanic,HS grad,3629.613300000001,PA,PA-10,Democrat
+64,36,22,73-77,Female,White,Not Hispanic,HS grad,5048.922400000001,NY,NY-22,Republican
+65,34,1,28-32,Male,Black,Not Hispanic,Some college,1052.5326999999995,NJ,NJ-1,Did not vote
+66,34,3,53-57,Female,White,Not Hispanic,4-year,5601.523899999996,NJ,NJ-3,Republican
+67,17,2,33-37,Male,Black,Not Hispanic,HS grad,3902.0575000000017,IL,IL-2,Did not vote
+68,4,6,28-32,Female,White,Hispanic,2-year,390.7094000000001,AZ,AZ-6,Democrat
+69,25,3,63-67,Male,White,Not Hispanic,Some college,3472.806200000001,MA,MA-3,Republican
+70,12,10,38-42,Male,White,Not Hispanic,No HS,252.10590092968656,FL,FL-10,Other
+71,23,1,58-62,Male,White,Not Hispanic,Post-grad,3195.981499999998,ME,ME-1,Republican
+72,48,12,18-22,Female,White,Not Hispanic,Some college,3719.00477837228,TX,TX-12,Democrat
+73,12,18,23-27,Female,Other/Multi,Hispanic,4-year,1198.2611909134832,FL,FL-18,Other
+74,6,4,58-62,Male,Other/Multi,Hispanic,4-year,196.8601577569734,CA,CA-4,Democrat
+75,13,10,83+,Female,White,Not Hispanic,HS grad,3483.0925999999995,GA,GA-10,Republican
+76,15,2,33-37,Male,Other/Multi,Not Hispanic,Some college,772.1099999999999,HI,HI-2,Did not vote
+77,37,8,28-32,Female,White,Not Hispanic,2-year,1746.2565211823298,NC,NC-8,Democrat
+78,34,2,58-62,Male,White,Not Hispanic,HS grad,8581.508400000006,NJ,NJ-2,Democrat
+79,42,17,63-67,Male,White,Not Hispanic,HS grad,7741.66909999999,PA,PA-17,Democrat
+80,37,9,28-32,Male,White,Not Hispanic,HS grad,3515.75076115489,NC,NC-9,Republican
+81,22,6,63-67,Female,White,Not Hispanic,4-year,2825.165300000001,LA,LA-6,Democrat
+82,47,3,53-57,Male,White,Not Hispanic,HS grad,6876.114999999998,TN,TN-3,Republican
+83,8,4,58-62,Female,White,Not Hispanic,4-year,5851.909400000002,CO,CO-4,Democrat
+84,4,2,63-67,Male,White,Not Hispanic,HS grad,5685.372099999993,AZ,AZ-2,Republican
+85,6,19,83+,Female,Asian,Not Hispanic,No HS,818.8415344433954,CA,CA-19,Democrat
+86,40,2,78-82,Male,Other/Multi,Not Hispanic,No HS,103.9954,OK,OK-2,Republican
+87,26,5,28-32,Male,White,Not Hispanic,No HS,1694.7091000000005,MI,MI-5,Republican
+88,8,2,28-32,Female,Other/Multi,Not Hispanic,4-year,515.2789,CO,CO-2,Republican
+89,28,1,18-22,Female,Other/Multi,Hispanic,Some college,504.2257,MS,MS-1,Democrat
+90,6,50,28-32,Male,White,Not Hispanic,4-year,7744.525732572722,CA,CA-50,Republican
+91,39,7,43-47,Male,White,Not Hispanic,4-year,5199.436713252011,OH,OH-7,Other
+92,25,7,63-67,Male,Black,Not Hispanic,Some college,770.8649999999999,MA,MA-7,Republican
+93,21,2,18-22,Female,White,Not Hispanic,Some college,7161.828099999992,KY,KY-2,Democrat
+94,17,1,28-32,Male,Black,Not Hispanic,HS grad,2934.391899999999,IL,IL-1,Did not vote
+95,36,21,23-27,Female,White,Not Hispanic,Some college,3402.8897,NY,NY-21,Democrat
+96,19,1,63-67,Male,White,Not Hispanic,4-year,3086.050499999999,IA,IA-1,Democrat
+97,6,18,68-72,Female,White,Not Hispanic,Some college,1784.416336737636,CA,CA-18,Republican
+98,6,33,43-47,Female,White,Not Hispanic,HS grad,837.380426719165,CA,CA-33,Democrat
+99,53,5,83+,Female,White,Not Hispanic,HS grad,5088.636599999998,WA,WA-5,Democrat
+100,48,37,33-37,Female,White,Not Hispanic,4-year,8385.348633641464,TX,TX-37,Republican
+101,39,8,68-72,Female,White,Not Hispanic,No HS,1084.4959244407237,OH,OH-8,Democrat
+102,13,4,28-32,Male,Black,Not Hispanic,4-year,3555.3999,GA,GA-4,Republican
+103,53,9,18-22,Female,Other/Multi,Hispanic,No HS,461.1402,WA,WA-9,Did not vote
+104,42,15,58-62,Male,White,Not Hispanic,HS grad,13781.925600000002,PA,PA-15,Republican
+105,39,15,58-62,Female,White,Not Hispanic,4-year,3937.630638696262,OH,OH-15,Republican
+106,25,9,33-37,Female,White,Not Hispanic,2-year,1378.6459999999995,MA,MA-9,Republican
+107,13,7,23-27,Female,White,Not Hispanic,No HS,592.9966000000001,GA,GA-7,Did not vote
+108,6,23,28-32,Male,White,Not Hispanic,No HS,636.9947003873848,CA,CA-23,Republican
+109,48,34,58-62,Female,White,Not Hispanic,HS grad,1204.4179282251291,TX,TX-34,Democrat
+110,26,2,58-62,Male,White,Not Hispanic,HS grad,10440.85690000002,MI,MI-2,Republican
+111,12,5,53-57,Female,White,Not Hispanic,HS grad,3644.7986526874206,FL,FL-5,Republican
+112,17,3,28-32,Female,Black,Not Hispanic,Post-grad,483.84330000000006,IL,IL-3,Democrat
+113,34,12,58-62,Male,White,Not Hispanic,Post-grad,2861.362199999999,NJ,NJ-12,Republican
+114,9,1,23-27,Female,White,Not Hispanic,Post-grad,1792.8517,CT,CT-1,Democrat
+115,48,13,38-42,Female,Other/Multi,Hispanic,No HS,514.6544843725276,TX,TX-13,Did not vote
+116,42,7,48-52,Male,Other/Multi,Hispanic,No HS,796.5203,PA,PA-7,Democrat
+117,40,1,63-67,Male,White,Not Hispanic,2-year,1884.6864000000005,OK,OK-1,Democrat
+118,25,1,68-72,Male,White,Not Hispanic,Some college,3530.503400000005,MA,MA-1,Democrat
+119,36,19,73-77,Male,Other/Multi,Hispanic,Some college,66.3073,NY,NY-19,Democrat
+120,35,2,83+,Female,White,Not Hispanic,No HS,646.6348,NM,NM-2,Democrat
+121,37,3,18-22,Female,Other/Multi,Not Hispanic,HS grad,533.9920154729509,NC,NC-3,Democrat
+122,6,17,18-22,Male,Other/Multi,Hispanic,HS grad,1609.6890884440454,CA,CA-17,Democrat
+123,24,2,63-67,Female,White,Not Hispanic,HS grad,5121.788199999998,MD,MD-2,Democrat
+124,5,1,48-52,Male,White,Not Hispanic,HS grad,7136.4963,AR,AR-1,Republican
+125,27,5,73-77,Male,White,Not Hispanic,Post-grad,1951.7481,MN,MN-5,Democrat
+126,17,14,23-27,Female,Other/Multi,Hispanic,4-year,732.8108999999998,IL,IL-14,Democrat
+127,6,46,53-57,Male,Asian,Not Hispanic,4-year,1148.8292998179747,CA,CA-46,Democrat
+128,6,26,48-52,Male,White,Not Hispanic,Some college,2291.79908507494,CA,CA-26,Democrat
+129,36,1,53-57,Female,Other/Multi,Hispanic,Some college,360.1884,NY,NY-1,Democrat
+130,8,6,33-37,Male,White,Not Hispanic,No HS,289.13449999999995,CO,CO-6,Democrat
+131,51,1,48-52,Male,Other/Multi,Hispanic,4-year,322.1624,VA,VA-1,Republican
+132,35,1,48-52,Male,Other/Multi,Hispanic,Some college,1187.4578,NM,NM-1,Did not vote
+133,18,4,43-47,Female,White,Not Hispanic,4-year,5276.927899999999,IN,IN-4,Did not vote
+134,36,2,78-82,Female,White,Not Hispanic,HS grad,3859.6520000000014,NY,NY-2,Republican
+135,4,2,63-67,Male,Native American,Not Hispanic,Some college,723.4205000000001,AZ,AZ-2,Republican
+136,53,4,48-52,Male,White,Not Hispanic,Some college,2438.557,WA,WA-4,Republican
+137,26,13,53-57,Female,White,Not Hispanic,No HS,932.2912,MI,MI-13,Republican
+138,42,17,33-37,Male,White,Not Hispanic,Post-grad,3905.6048999999975,PA,PA-17,Republican
+139,6,16,28-32,Female,Other/Multi,Hispanic,HS grad,479.0634873475795,CA,CA-16,Other
+140,27,2,48-52,Male,White,Not Hispanic,No HS,414.3667,MN,MN-2,Did not vote
+141,27,4,38-42,Male,White,Not Hispanic,Post-grad,3466.4133,MN,MN-4,Republican
+142,51,6,53-57,Male,White,Not Hispanic,Some college,3647.2380000000016,VA,VA-6,Republican
+143,34,9,28-32,Male,White,Not Hispanic,Post-grad,1239.4664000000005,NJ,NJ-9,Republican
+144,26,9,73-77,Female,White,Not Hispanic,HS grad,6644.6048,MI,MI-9,Democrat
+145,13,4,63-67,Female,White,Not Hispanic,4-year,1800.6172999999992,GA,GA-4,Did not vote
+146,17,14,68-72,Male,Other/Multi,Not Hispanic,Some college,62.9178,IL,IL-14,Democrat
+147,29,5,33-37,Male,White,Not Hispanic,4-year,4168.74321516388,MO,MO-5,Did not vote
+148,25,4,58-62,Male,White,Not Hispanic,Post-grad,4206.496800000001,MA,MA-4,Republican
+149,4,2,33-37,Male,Native American,Not Hispanic,2-year,265.4658,AZ,AZ-2,Democrat
+150,47,8,58-62,Female,White,Not Hispanic,HS grad,6633.103599999998,TN,TN-8,Republican
+151,48,31,53-57,Female,White,Not Hispanic,HS grad,2630.778499434145,TX,TX-31,Democrat
+152,6,44,43-47,Male,White,Hispanic,Some college,401.559704553792,CA,CA-44,Republican
+153,34,1,43-47,Female,White,Not Hispanic,Some college,2084.454599999999,NJ,NJ-1,Republican
+154,6,29,18-22,Female,White,Hispanic,HS grad,602.2757661413633,CA,CA-29,Republican
+155,37,12,43-47,Male,Black,Not Hispanic,HS grad,1803.2466231087053,NC,NC-12,Other
+156,13,10,73-77,Female,Black,Not Hispanic,HS grad,1206.1064000000003,GA,GA-10,Democrat
+157,37,7,23-27,Male,White,Not Hispanic,4-year,4535.348534689357,NC,NC-7,Democrat
+158,40,4,68-72,Male,White,Not Hispanic,4-year,3184.173099999999,OK,OK-4,Republican
+159,42,11,58-62,Female,White,Not Hispanic,Post-grad,2021.015,PA,PA-11,Democrat
+160,6,28,53-57,Male,White,Not Hispanic,4-year,1954.950846470348,CA,CA-28,Republican
+161,49,2,48-52,Male,White,Not Hispanic,Post-grad,3555.2676596619817,UT,UT-2,Democrat
+162,12,16,68-72,Female,White,Not Hispanic,Some college,5464.364550598967,FL,FL-16,Democrat
+163,4,8,68-72,Male,White,Not Hispanic,2-year,1354.6767,AZ,AZ-8,Republican
+164,34,1,63-67,Female,White,Not Hispanic,2-year,2100.4462000000003,NJ,NJ-1,Other
+165,20,1,48-52,Male,White,Not Hispanic,HS grad,3557.888100000004,KS,KS-1,Democrat
+166,48,1,28-32,Female,White,Not Hispanic,No HS,1137.296502640452,TX,TX-1,Did not vote
+167,47,1,38-42,Female,Black,Not Hispanic,Some college,40.7024,TN,TN-1,Democrat
+168,17,8,43-47,Male,Other/Multi,Hispanic,No HS,409.7187,IL,IL-8,Democrat
+169,53,2,23-27,Male,Asian,Hispanic,Some college,27.8956,WA,WA-2,Democrat
+170,15,1,23-27,Female,White,Not Hispanic,4-year,1343.5199999999998,HI,HI-1,Republican
+171,29,3,18-22,Female,White,Not Hispanic,4-year,1620.8109157491672,MO,MO-3,Democrat
+172,12,27,78-82,Male,Other/Multi,Hispanic,No HS,1763.1206791521277,FL,FL-27,Republican
+173,51,5,73-77,Female,Black,Not Hispanic,HS grad,1380.6312999999998,VA,VA-5,Democrat
+174,8,3,58-62,Male,Native American,Hispanic,Some college,85.2055,CO,CO-3,Democrat
+175,5,2,73-77,Female,Other/Multi,Not Hispanic,HS grad,124.0247,AR,AR-2,Republican
+176,25,3,23-27,Female,White,Not Hispanic,4-year,5819.394499999999,MA,MA-3,Republican
+177,55,6,53-57,Male,White,Not Hispanic,HS grad,8340.666500000007,WI,WI-6,Other
+178,48,29,38-42,Male,White,Not Hispanic,4-year,1639.223144114888,TX,TX-29,Democrat
+179,42,3,33-37,Female,Asian,Not Hispanic,Post-grad,627.3657000000001,PA,PA-3,Did not vote
+180,48,28,83+,Female,White,Hispanic,No HS,686.3735018697154,TX,TX-28,Republican
+181,48,30,38-42,Female,Black,Not Hispanic,4-year,2498.0479642752093,TX,TX-30,Did not vote
+182,29,4,53-57,Female,White,Not Hispanic,2-year,1731.044265125534,MO,MO-4,Other
+183,17,7,68-72,Female,Asian,Not Hispanic,Post-grad,224.58110000000005,IL,IL-7,Democrat
+184,42,13,18-22,Female,White,Not Hispanic,HS grad,7201.520499999997,PA,PA-13,Republican
+185,37,8,18-22,Male,White,Not Hispanic,2-year,596.3219795356945,NC,NC-8,Democrat
+186,20,2,63-67,Male,White,Not Hispanic,HS grad,7091.369899999975,KS,KS-2,Republican
+187,6,22,23-27,Male,Other/Multi,Not Hispanic,HS grad,404.2722840799314,CA,CA-22,Republican
+188,42,2,48-52,Male,Asian,Not Hispanic,No HS,307.4241,PA,PA-2,Democrat
+189,13,2,63-67,Male,Black,Not Hispanic,No HS,1892.0892,GA,GA-2,Did not vote
+190,51,6,28-32,Female,White,Not Hispanic,4-year,3966.9768000000017,VA,VA-6,Democrat
+191,12,21,18-22,Female,Black,Not Hispanic,2-year,145.1311729892306,FL,FL-21,Democrat
+192,6,35,73-77,Female,Black,Not Hispanic,4-year,137.01785164044082,CA,CA-35,Republican
+193,48,1,63-67,Female,White,Not Hispanic,2-year,2230.1174493069057,TX,TX-1,Democrat
+194,6,50,58-62,Female,White,Not Hispanic,Some college,2517.48377295291,CA,CA-50,Republican
+195,9,2,28-32,Male,White,Not Hispanic,HS grad,4430.016599999998,CT,CT-2,Republican
+196,36,6,73-77,Male,White,Not Hispanic,4-year,979.2953000000005,NY,NY-6,Democrat
+197,48,21,53-57,Female,White,Not Hispanic,Some college,3058.364331432154,TX,TX-21,Republican
+198,12,3,28-32,Female,Black,Not Hispanic,HS grad,1599.49005481453,FL,FL-3,Democrat
+199,17,5,33-37,Male,White,Not Hispanic,4-year,8435.43630000003,IL,IL-5,Republican
+200,42,15,23-27,Female,Asian,Not Hispanic,HS grad,64.8316,PA,PA-15,Democrat
+201,53,10,28-32,Male,Asian,Not Hispanic,Some college,608.9059,WA,WA-10,Did not vote
+202,27,8,73-77,Male,Asian,Not Hispanic,4-year,21.9641,MN,MN-8,Did not vote
+203,6,46,33-37,Female,Other/Multi,Hispanic,4-year,1201.277073473345,CA,CA-46,Democrat
+204,1,7,18-22,Male,Black,Not Hispanic,HS grad,6206.746700000004,AL,AL-7,Democrat
+205,12,16,53-57,Male,Other/Multi,Hispanic,HS grad,459.4351281903964,FL,FL-16,Republican
+206,6,40,38-42,Female,Other/Multi,Hispanic,2-year,882.0550990432935,CA,CA-40,Republican
+207,37,14,73-77,Female,Other/Multi,Hispanic,No HS,125.00262676462134,NC,NC-14,Democrat
+208,6,35,38-42,Male,Other/Multi,Hispanic,HS grad,3540.861209296351,CA,CA-35,Democrat
+209,28,3,38-42,Female,Black,Not Hispanic,HS grad,2448.825899999999,MS,MS-3,Democrat
+210,39,6,58-62,Female,White,Not Hispanic,HS grad,11528.325355723802,OH,OH-6,Did not vote
+211,35,1,53-57,Female,White,Not Hispanic,Post-grad,2518.602699999999,NM,NM-1,Democrat
+212,12,4,48-52,Male,White,Not Hispanic,HS grad,3969.2301318752193,FL,FL-4,Other
+213,45,7,68-72,Female,White,Not Hispanic,4-year,2915.069000000001,SC,SC-7,Republican
+214,39,15,23-27,Female,White,Not Hispanic,4-year,6709.229204516779,OH,OH-15,Did not vote
+215,41,5,23-27,Male,White,Not Hispanic,4-year,3505.7117999999987,OR,OR-5,Democrat
+216,6,40,18-22,Female,Other/Multi,Hispanic,Some college,3341.3882750576154,CA,CA-40,Democrat
+217,6,36,38-42,Female,White,Not Hispanic,Post-grad,4291.665710073496,CA,CA-36,Did not vote
+218,51,2,48-52,Female,White,Not Hispanic,HS grad,2531.8555,VA,VA-2,Did not vote
+219,22,3,18-22,Male,White,Not Hispanic,HS grad,6320.848700000001,LA,LA-3,Democrat
+220,16,2,83+,Female,White,Not Hispanic,Some college,2536.4302999999986,ID,ID-2,Democrat
+221,27,3,43-47,Male,White,Not Hispanic,Some college,2124.6797000000006,MN,MN-3,Republican
+222,37,8,53-57,Female,White,Not Hispanic,HS grad,3305.950225464494,NC,NC-8,Republican
+223,53,3,33-37,Male,White,Not Hispanic,HS grad,5662.518999999997,WA,WA-3,Democrat
+224,13,13,23-27,Female,Black,Not Hispanic,2-year,770.6199,GA,GA-13,Did not vote
+225,51,1,43-47,Female,Black,Not Hispanic,Some college,1304.2555999999995,VA,VA-1,Democrat
+226,4,3,48-52,Male,Other/Multi,Hispanic,Some college,917.9473,AZ,AZ-3,Republican
+227,34,1,73-77,Female,White,Not Hispanic,Post-grad,1185.3750999999993,NJ,NJ-1,Democrat
+228,36,22,53-57,Female,White,Not Hispanic,4-year,4014.7937000000006,NY,NY-22,Democrat
+229,6,27,58-62,Female,Other/Multi,Hispanic,4-year,460.3062427659961,CA,CA-27,Republican
+230,6,44,48-52,Female,Asian,Not Hispanic,Some college,387.0330992982071,CA,CA-44,Democrat
+231,24,4,23-27,Male,Black,Not Hispanic,4-year,2056.5655000000006,MD,MD-4,Republican
+232,53,7,53-57,Male,White,Not Hispanic,2-year,977.5128,WA,WA-7,Democrat
+233,36,5,28-32,Male,White,Not Hispanic,HS grad,375.1019,NY,NY-5,Did not vote
+234,51,4,58-62,Male,White,Not Hispanic,HS grad,3483.6225999999992,VA,VA-4,Republican
+235,45,7,73-77,Female,Black,Not Hispanic,HS grad,1661.1299,SC,SC-7,Other
+236,26,7,43-47,Female,White,Not Hispanic,4-year,6020.649400000002,MI,MI-7,Democrat
+237,44,1,23-27,Male,White,Not Hispanic,4-year,3927.675999999999,RI,RI-1,Republican
+238,2,1,63-67,Female,Other/Multi,Hispanic,4-year,104.0,AK,AK-1,Democrat
+239,6,29,28-32,Male,Other/Multi,Hispanic,4-year,2044.5032222817017,CA,CA-29,Republican
+240,48,1,18-22,Female,White,Not Hispanic,Some college,4895.963612363346,TX,TX-1,Democrat
+241,45,4,58-62,Male,Black,Not Hispanic,HS grad,1647.4807999999996,SC,SC-4,Democrat
+242,12,17,63-67,Male,White,Not Hispanic,4-year,6203.384814614384,FL,FL-17,Republican
+243,30,1,53-57,Female,Other/Multi,Not Hispanic,HS grad,417.0728,MT,MT-1,Democrat
+244,36,10,23-27,Female,Asian,Not Hispanic,Post-grad,610.6716999999999,NY,NY-10,Democrat
+245,48,18,48-52,Female,Other/Multi,Hispanic,4-year,265.3060094876752,TX,TX-18,Democrat
+246,36,8,58-62,Female,Asian,Not Hispanic,2-year,84.85400000000001,NY,NY-8,Democrat
+247,24,1,43-47,Female,White,Not Hispanic,4-year,4122.6635,MD,MD-1,Republican
+248,20,3,18-22,Female,White,Not Hispanic,Some college,4272.5041,KS,KS-3,Democrat
+249,24,7,23-27,Male,Black,Not Hispanic,HS grad,4979.010899999998,MD,MD-7,Democrat
+250,37,3,78-82,Female,White,Not Hispanic,HS grad,2682.4689502634947,NC,NC-3,Republican
+251,48,18,38-42,Male,Other/Multi,Hispanic,No HS,1490.2546887017363,TX,TX-18,Republican
+252,26,1,78-82,Male,White,Not Hispanic,HS grad,4374.975600000008,MI,MI-1,Republican
+253,12,23,83+,Female,Other/Multi,Hispanic,No HS,868.9588670929666,FL,FL-23,Republican
+254,12,19,33-37,Male,White,Not Hispanic,Post-grad,1079.0904391877198,FL,FL-19,Did not vote
+255,42,2,28-32,Male,White,Not Hispanic,HS grad,2006.0447000000004,PA,PA-2,Republican
+256,47,4,53-57,Female,Native American,Not Hispanic,4-year,15.0,TN,TN-4,Did not vote
+257,6,27,38-42,Male,Other/Multi,Hispanic,No HS,1418.7315712006975,CA,CA-27,Republican
+258,6,8,38-42,Male,Asian,Not Hispanic,HS grad,743.9151345167656,CA,CA-8,Democrat
+259,36,4,48-52,Female,White,Not Hispanic,Post-grad,3924.809400000001,NY,NY-4,Democrat
+260,6,47,43-47,Male,Asian,Not Hispanic,Post-grad,1849.17540078502,CA,CA-47,Republican
+261,47,7,78-82,Male,White,Not Hispanic,HS grad,2070.0538,TN,TN-7,Did not vote
+262,17,5,33-37,Male,White,Not Hispanic,4-year,8435.43630000003,IL,IL-5,Republican
+263,6,46,33-37,Female,Other/Multi,Hispanic,No HS,1174.1774718311185,CA,CA-46,Democrat
+264,49,4,53-57,Female,White,Not Hispanic,Post-grad,1546.236192944521,UT,UT-4,Republican
+265,8,4,23-27,Female,White,Not Hispanic,HS grad,2603.2567999999987,CO,CO-4,Democrat
+266,13,12,38-42,Female,Black,Not Hispanic,Some college,2007.7476,GA,GA-12,Republican
+267,6,50,68-72,Female,White,Not Hispanic,Some college,2711.998995273015,CA,CA-50,Republican
+268,6,32,38-42,Female,White,Not Hispanic,Post-grad,3307.2444381052355,CA,CA-32,Republican
+269,4,2,23-27,Male,White,Hispanic,2-year,132.9848,AZ,AZ-2,Other
+270,6,3,43-47,Male,White,Not Hispanic,4-year,3547.761662829264,CA,CA-3,Republican
+271,8,8,23-27,Female,White,Not Hispanic,Some college,2554.266,CO,CO-8,Republican
+272,6,2,53-57,Male,Black,Not Hispanic,2-year,51.794974692491664,CA,CA-2,Republican
+273,36,3,18-22,Male,White,Not Hispanic,Some college,4062.9020000000014,NY,NY-3,Other
+274,39,1,23-27,Male,Black,Not Hispanic,HS grad,2167.5753273966984,OH,OH-1,Other
+275,22,1,38-42,Male,White,Not Hispanic,4-year,4513.949100000004,LA,LA-1,Democrat
+276,17,8,68-72,Male,White,Not Hispanic,Post-grad,2491.043099999998,IL,IL-8,Republican
+277,28,2,48-52,Male,Black,Not Hispanic,4-year,1057.8954,MS,MS-2,Democrat
+278,48,21,63-67,Female,Other/Multi,Hispanic,No HS,692.8655495209119,TX,TX-21,Other
+279,48,10,83+,Female,White,Not Hispanic,Some college,1730.8122786884617,TX,TX-10,Republican
+280,5,2,33-37,Male,White,Not Hispanic,HS grad,5034.262700000004,AR,AR-2,Republican
+281,9,3,28-32,Female,White,Not Hispanic,HS grad,1480.547300000001,CT,CT-3,Democrat
+282,12,19,38-42,Female,Other/Multi,Hispanic,Some college,764.5131036453664,FL,FL-19,Democrat
+283,12,24,58-62,Male,Other/Multi,Hispanic,Post-grad,467.68617076670193,FL,FL-24,Republican
+284,34,8,83+,Female,Other/Multi,Hispanic,No HS,1984.9800000000005,NJ,NJ-8,Democrat
+285,24,2,73-77,Male,Asian,Not Hispanic,4-year,47.43070000000001,MD,MD-2,Democrat
+286,5,4,68-72,Female,White,Not Hispanic,HS grad,6220.485000000004,AR,AR-4,Other
+287,20,2,63-67,Female,Black,Not Hispanic,Some college,463.9510000000001,KS,KS-2,Republican
+288,29,6,53-57,Female,White,Not Hispanic,4-year,4328.110717586852,MO,MO-6,Democrat
+289,6,25,63-67,Female,White,Not Hispanic,Some college,2864.870505457983,CA,CA-25,Democrat
+290,48,2,63-67,Female,White,Not Hispanic,4-year,2626.1238581138605,TX,TX-2,Did not vote
+291,6,1,83+,Female,White,Not Hispanic,Some college,2667.765339810342,CA,CA-1,Republican
+292,51,1,43-47,Male,White,Not Hispanic,HS grad,3387.5452000000005,VA,VA-1,Republican
+293,6,24,43-47,Male,Other/Multi,Not Hispanic,4-year,161.4437351747825,CA,CA-24,Democrat
+294,48,7,38-42,Female,White,Not Hispanic,4-year,2991.4776219415594,TX,TX-7,Democrat
+295,48,34,58-62,Female,Other/Multi,Hispanic,2-year,730.4574581446248,TX,TX-34,Democrat
+296,55,1,18-22,Male,White,Not Hispanic,Some college,5923.567999999999,WI,WI-1,Republican
+297,45,6,78-82,Female,White,Not Hispanic,Post-grad,1008.5462,SC,SC-6,Democrat
+298,42,15,83+,Female,White,Not Hispanic,HS grad,8729.888200000009,PA,PA-15,Democrat
+299,36,25,83+,Female,Black,Not Hispanic,No HS,413.1186,NY,NY-25,Republican
+300,42,15,63-67,Male,White,Not Hispanic,2-year,2222.638700000002,PA,PA-15,Did not vote
+301,6,41,53-57,Male,White,Not Hispanic,4-year,1176.2185661272351,CA,CA-41,Republican
+302,31,2,38-42,Female,Other/Multi,Hispanic,Some college,270.3912,NE,NE-2,Democrat
+303,29,2,58-62,Male,Asian,Not Hispanic,No HS,189.0666952710069,MO,MO-2,Republican
+304,48,13,63-67,Male,Other/Multi,Hispanic,Post-grad,54.77567536537162,TX,TX-13,Democrat
+305,26,5,53-57,Female,White,Not Hispanic,4-year,4097.5308,MI,MI-5,Democrat
+306,21,3,63-67,Female,Black,Not Hispanic,Some college,1317.2547,KY,KY-3,Democrat
+307,36,24,68-72,Female,White,Not Hispanic,HS grad,8017.399100000004,NY,NY-24,Republican
+308,13,4,48-52,Female,White,Not Hispanic,Post-grad,2371.9108999999994,GA,GA-4,Republican
+309,6,44,28-32,Male,White,Hispanic,HS grad,1043.159424043267,CA,CA-44,Did not vote
+310,26,11,58-62,Male,White,Not Hispanic,Some college,3661.853,MI,MI-11,Did not vote
+311,24,3,28-32,Male,White,Not Hispanic,HS grad,2101.8545000000013,MD,MD-3,Democrat
+312,12,17,63-67,Male,White,Not Hispanic,HS grad,7690.4112518188895,FL,FL-17,Republican
+313,19,4,18-22,Male,Other/Multi,Not Hispanic,HS grad,736.1448,IA,IA-4,Democrat
+314,19,3,53-57,Male,White,Not Hispanic,4-year,4215.316999999998,IA,IA-3,Republican
+315,17,13,23-27,Female,White,Not Hispanic,4-year,5598.6426,IL,IL-13,Democrat
+316,21,1,38-42,Male,White,Not Hispanic,HS grad,7391.292000000001,KY,KY-1,Democrat
+317,39,3,23-27,Male,Black,Not Hispanic,Some college,2337.4782062546624,OH,OH-3,Republican
+318,16,1,53-57,Female,White,Not Hispanic,Some college,6300.688799999996,ID,ID-1,Republican
+319,51,11,38-42,Female,White,Not Hispanic,HS grad,451.69430000000006,VA,VA-11,Did not vote
+320,49,2,58-62,Male,White,Not Hispanic,Post-grad,2808.32627357226,UT,UT-2,Democrat
+321,26,12,83+,Female,Black,Not Hispanic,HS grad,1819.6582,MI,MI-12,Democrat
+322,17,13,43-47,Male,Black,Not Hispanic,HS grad,1391.6813000000002,IL,IL-13,Democrat
+323,31,2,18-22,Male,Black,Not Hispanic,HS grad,1126.9596,NE,NE-2,Democrat
+324,48,9,68-72,Male,White,Not Hispanic,Some college,1657.088846766394,TX,TX-9,Democrat
+325,37,4,28-32,Male,White,Not Hispanic,4-year,6096.424367378997,NC,NC-4,Did not vote
+326,45,7,73-77,Male,White,Not Hispanic,HS grad,4701.359100000001,SC,SC-7,Democrat
+327,30,2,58-62,Male,White,Not Hispanic,Some college,3210.7828000000013,MT,MT-2,Democrat
+328,36,22,23-27,Male,White,Not Hispanic,HS grad,4117.477299999999,NY,NY-22,Republican
+329,13,13,68-72,Male,White,Not Hispanic,Some college,1258.7659999999994,GA,GA-13,Republican
+330,41,3,33-37,Male,White,Not Hispanic,4-year,7415.904799999996,OR,OR-3,Republican
+331,12,5,53-57,Female,White,Not Hispanic,4-year,5199.018408783722,FL,FL-5,Democrat
+332,39,6,68-72,Male,White,Not Hispanic,HS grad,9007.371768820043,OH,OH-6,Other
+333,48,15,28-32,Female,White,Hispanic,4-year,1088.2699170749952,TX,TX-15,Democrat
+334,6,40,43-47,Male,Other/Multi,Hispanic,No HS,1092.6393016824668,CA,CA-40,Democrat
+335,36,13,83+,Female,Other/Multi,Hispanic,No HS,2725.7908000000007,NY,NY-13,Republican
+336,6,22,43-47,Male,Black,Not Hispanic,No HS,288.1571766689209,CA,CA-22,Other
+337,40,4,33-37,Male,Other/Multi,Not Hispanic,Some college,709.7423,OK,OK-4,Democrat
+338,6,17,23-27,Female,Asian,Not Hispanic,4-year,4997.689419199368,CA,CA-17,Republican
+339,51,5,68-72,Male,White,Not Hispanic,Post-grad,2744.4266,VA,VA-5,Democrat
+340,6,42,83+,Female,White,Not Hispanic,No HS,438.7302069992624,CA,CA-42,Democrat
+341,53,4,58-62,Male,White,Not Hispanic,Some college,2974.3183000000017,WA,WA-4,Democrat
+342,45,6,43-47,Female,Black,Not Hispanic,HS grad,1991.0437000000009,SC,SC-6,Republican
+343,36,4,28-32,Female,White,Not Hispanic,No HS,366.8301,NY,NY-4,Democrat
+344,42,17,33-37,Female,White,Not Hispanic,Post-grad,5270.373399999998,PA,PA-17,Republican
+345,45,3,83+,Male,Other/Multi,Not Hispanic,Some college,40.8915,SC,SC-3,Democrat
+346,51,10,18-22,Female,Other/Multi,Hispanic,No HS,675.6203999999999,VA,VA-10,Other
+347,12,26,58-62,Female,White,Hispanic,2-year,248.3241948686799,FL,FL-26,Other
+348,36,2,53-57,Female,White,Not Hispanic,4-year,3643.951300000002,NY,NY-2,Democrat
+349,6,22,43-47,Female,Other/Multi,Hispanic,HS grad,2013.2413462604848,CA,CA-22,Democrat
+350,36,14,78-82,Male,Other/Multi,Hispanic,No HS,1017.9994999999996,NY,NY-14,Democrat
+351,8,6,53-57,Female,Asian,Not Hispanic,4-year,482.8040999999999,CO,CO-6,Other
+352,34,6,18-22,Female,White,Not Hispanic,HS grad,2711.3814000000043,NJ,NJ-6,Democrat
+353,34,9,53-57,Female,White,Not Hispanic,HS grad,2567.8535000000006,NJ,NJ-9,Republican
+354,26,6,68-72,Male,White,Not Hispanic,4-year,3310.162,MI,MI-6,Republican
+355,29,6,23-27,Male,White,Not Hispanic,HS grad,8150.327682358328,MO,MO-6,Republican
+356,42,9,63-67,Female,White,Not Hispanic,4-year,3637.4360999999976,PA,PA-9,Republican
+357,45,5,63-67,Female,Black,Not Hispanic,4-year,642.7760999999998,SC,SC-5,Democrat
+358,27,5,23-27,Female,White,Not Hispanic,4-year,12724.995800000002,MN,MN-5,Did not vote
+359,36,7,18-22,Female,White,Not Hispanic,HS grad,2027.4696,NY,NY-7,Democrat
+360,51,4,18-22,Female,White,Not Hispanic,Some college,4370.895600000002,VA,VA-4,Other
+361,6,34,33-37,Male,White,Not Hispanic,4-year,4828.714457605672,CA,CA-34,Democrat
+362,6,33,18-22,Male,White,Not Hispanic,HS grad,2043.2828877840864,CA,CA-33,Republican
+363,6,18,68-72,Male,White,Not Hispanic,Some college,1543.9723768628166,CA,CA-18,Other
+364,37,6,48-52,Female,White,Not Hispanic,4-year,3821.8472217447616,NC,NC-6,Republican
+365,24,3,73-77,Male,White,Not Hispanic,Post-grad,2777.9608000000003,MD,MD-3,Republican
+366,42,13,78-82,Female,White,Not Hispanic,Some college,1415.7740000000003,PA,PA-13,Democrat
+367,37,12,23-27,Female,White,Not Hispanic,4-year,9942.770833047674,NC,NC-12,Republican
+368,17,15,63-67,Male,White,Not Hispanic,HS grad,9467.080700000008,IL,IL-15,Republican
+369,48,32,53-57,Female,White,Not Hispanic,HS grad,2767.8908527888034,TX,TX-32,Republican
+370,42,9,28-32,Female,White,Not Hispanic,4-year,4256.856799999998,PA,PA-9,Republican
+371,13,6,33-37,Female,Other/Multi,Not Hispanic,4-year,586.1157000000001,GA,GA-6,Democrat
+372,19,2,63-67,Male,White,Not Hispanic,HS grad,10198.88100000001,IA,IA-2,Democrat
+373,17,7,28-32,Female,White,Not Hispanic,4-year,8882.856600000003,IL,IL-7,Democrat
+374,6,52,48-52,Male,Asian,Not Hispanic,No HS,160.6298696456353,CA,CA-52,Democrat
+375,6,48,28-32,Male,Native American,Hispanic,Some college,70.94181363936157,CA,CA-48,Democrat
+376,51,5,78-82,Female,White,Not Hispanic,No HS,1176.5035000000007,VA,VA-5,Other
+377,25,4,33-37,Male,Other/Multi,Hispanic,4-year,266.3197,MA,MA-4,Republican
+378,21,2,83+,Male,White,Not Hispanic,4-year,480.8314,KY,KY-2,Democrat
+379,40,5,83+,Female,White,Not Hispanic,Some college,1971.5762000000004,OK,OK-5,Republican
+380,33,2,83+,Female,White,Not Hispanic,4-year,1926.1171,NH,NH-2,Other
+381,51,5,78-82,Female,White,Not Hispanic,HS grad,3703.877600000003,VA,VA-5,Democrat
+382,42,16,33-37,Male,White,Not Hispanic,Post-grad,2456.8388,PA,PA-16,Democrat
+383,26,12,33-37,Male,Black,Not Hispanic,HS grad,3839.723300000001,MI,MI-12,Democrat
+384,20,3,83+,Male,White,Not Hispanic,4-year,1603.7253000000003,KS,KS-3,Democrat
+385,55,4,18-22,Male,White,Not Hispanic,Some college,5023.081399999999,WI,WI-4,Republican
+386,40,1,18-22,Male,Other/Multi,Not Hispanic,HS grad,1446.7147000000004,OK,OK-1,Did not vote
+387,53,1,38-42,Male,White,Not Hispanic,4-year,5126.074799999999,WA,WA-1,Democrat
+388,6,33,58-62,Female,Native American,Not Hispanic,Some college,43.70560242245757,CA,CA-33,Republican
+389,48,10,58-62,Female,Black,Not Hispanic,Post-grad,200.8495932639588,TX,TX-10,Democrat
+390,36,23,68-72,Female,White,Not Hispanic,4-year,2991.0605,NY,NY-23,Republican
+391,6,35,43-47,Female,Other/Multi,Hispanic,HS grad,3147.2313528474697,CA,CA-35,Republican
+392,36,1,68-72,Female,White,Not Hispanic,Some college,3152.6696999999995,NY,NY-1,Democrat
+393,39,3,33-37,Female,White,Not Hispanic,Post-grad,5003.942917783798,OH,OH-3,Democrat
+394,1,6,38-42,Female,Black,Not Hispanic,2-year,723.8641999999996,AL,AL-6,Democrat
+395,26,2,23-27,Female,White,Not Hispanic,2-year,2159.5549999999994,MI,MI-2,Did not vote
+396,47,8,33-37,Female,Other/Multi,Not Hispanic,Some college,298.76840000000004,TN,TN-8,Democrat
+397,16,1,18-22,Male,Other/Multi,Hispanic,HS grad,1524.4664,ID,ID-1,Democrat
+398,26,3,63-67,Male,White,Not Hispanic,Post-grad,2433.3745,MI,MI-3,Democrat
+399,25,6,28-32,Male,Other/Multi,Hispanic,Some college,377.4249999999999,MA,MA-6,Republican
+400,17,1,43-47,Female,White,Hispanic,2-year,6.525799999999999,IL,IL-1,Republican
+401,49,3,53-57,Female,White,Not Hispanic,HS grad,2744.8631136591844,UT,UT-3,Republican
+402,42,16,58-62,Male,Black,Not Hispanic,Some college,297.2732,PA,PA-16,Republican
+403,6,30,18-22,Male,Other/Multi,Hispanic,HS grad,2279.787145422972,CA,CA-30,Did not vote
+404,55,8,48-52,Male,White,Not Hispanic,4-year,4844.6451,WI,WI-8,Republican
+405,48,23,53-57,Female,White,Not Hispanic,Some college,1545.8892703272493,TX,TX-23,Democrat
+406,13,12,18-22,Male,White,Not Hispanic,HS grad,5485.580399999998,GA,GA-12,Republican
+407,48,4,33-37,Male,White,Not Hispanic,Some college,2399.4990225238303,TX,TX-4,Democrat
+408,6,27,83+,Female,Asian,Not Hispanic,No HS,175.07390892473413,CA,CA-27,Democrat
+409,56,1,48-52,Female,White,Not Hispanic,4-year,3217.0,WY,WY-1,Did not vote
+410,37,9,63-67,Male,Other/Multi,Not Hispanic,Some college,132.77898173704332,NC,NC-9,Republican
+411,37,3,23-27,Female,Other/Multi,Hispanic,HS grad,885.7474655769262,NC,NC-3,Did not vote
+412,6,20,23-27,Male,Black,Not Hispanic,HS grad,485.01110930261353,CA,CA-20,Democrat
+413,48,31,83+,Male,White,Not Hispanic,Some college,1145.028323505791,TX,TX-31,Republican
+414,4,5,43-47,Female,Other/Multi,Hispanic,No HS,374.3223,AZ,AZ-5,Democrat
+415,12,20,83+,Female,White,Not Hispanic,HS grad,4233.734720076407,FL,FL-20,Democrat
+416,6,45,73-77,Male,Asian,Not Hispanic,Some college,720.7459351201279,CA,CA-45,Democrat
+417,42,14,73-77,Male,White,Not Hispanic,HS grad,7059.714899999981,PA,PA-14,Republican
+418,12,3,73-77,Male,White,Not Hispanic,4-year,2828.198137459757,FL,FL-3,Democrat
+419,48,38,33-37,Female,Asian,Not Hispanic,4-year,827.9128938268599,TX,TX-38,Did not vote
+420,37,5,68-72,Female,White,Not Hispanic,4-year,2740.2954420087613,NC,NC-5,Democrat
+421,4,8,38-42,Female,White,Not Hispanic,Some college,2797.7772000000004,AZ,AZ-8,Democrat
+422,1,3,38-42,Male,White,Hispanic,No HS,156.6841,AL,AL-3,Republican
+423,6,1,68-72,Male,White,Not Hispanic,4-year,4355.946263468506,CA,CA-1,Democrat
+424,36,10,23-27,Female,White,Not Hispanic,4-year,14129.798100000004,NY,NY-10,Did not vote
+425,45,6,58-62,Male,Black,Not Hispanic,HS grad,4067.7544000000025,SC,SC-6,Republican
+426,12,19,83+,Female,White,Not Hispanic,HS grad,8549.07115934771,FL,FL-19,Democrat
+427,48,10,28-32,Female,Other/Multi,Hispanic,HS grad,800.9018264406212,TX,TX-10,Republican
+428,6,4,28-32,Male,White,Not Hispanic,4-year,3011.553179807784,CA,CA-4,Republican
+429,45,6,43-47,Male,Black,Not Hispanic,No HS,1346.0591000000002,SC,SC-6,Republican
+430,51,2,53-57,Female,White,Not Hispanic,4-year,4257.996999999999,VA,VA-2,Other
+431,42,13,18-22,Male,White,Not Hispanic,HS grad,8921.861000000003,PA,PA-13,Republican
+432,39,8,23-27,Male,Asian,Not Hispanic,HS grad,217.76475891102032,OH,OH-8,Republican
+433,48,4,63-67,Female,White,Not Hispanic,No HS,425.1158732094805,TX,TX-4,Democrat
+434,4,9,73-77,Male,Other/Multi,Not Hispanic,Some college,172.559,AZ,AZ-9,Republican
+435,12,5,38-42,Female,White,Not Hispanic,4-year,5017.668313153865,FL,FL-5,Did not vote
+436,6,36,73-77,Female,White,Not Hispanic,Some college,2021.2994534244733,CA,CA-36,Republican
+437,28,2,48-52,Male,Black,Not Hispanic,Post-grad,752.2200000000001,MS,MS-2,Democrat
+438,42,1,68-72,Male,White,Not Hispanic,Post-grad,3396.3575000000005,PA,PA-1,Republican
+439,36,20,83+,Male,White,Not Hispanic,Some college,912.9075,NY,NY-20,Republican
+440,48,10,83+,Female,White,Not Hispanic,HS grad,2480.179791843265,TX,TX-10,Did not vote
+441,6,51,43-47,Male,White,Not Hispanic,Some college,2239.478772062896,CA,CA-51,Democrat
+442,41,3,28-32,Male,White,Not Hispanic,Some college,4116.998299999998,OR,OR-3,Democrat
+443,12,1,73-77,Female,White,Not Hispanic,HS grad,4422.262463001764,FL,FL-1,Republican
+444,13,6,38-42,Female,Other/Multi,Hispanic,Post-grad,348.0488,GA,GA-6,Democrat
+445,39,12,73-77,Male,White,Not Hispanic,4-year,2613.0926702913503,OH,OH-12,Republican
+446,55,1,38-42,Female,White,Not Hispanic,2-year,2351.6675,WI,WI-1,Democrat
+447,36,12,58-62,Male,White,Not Hispanic,No HS,120.9581,NY,NY-12,Republican
+448,6,3,18-22,Male,Black,Not Hispanic,HS grad,628.7563898049276,CA,CA-3,Democrat
+449,36,15,18-22,Female,Other/Multi,Hispanic,HS grad,2404.7708999999995,NY,NY-15,Democrat
+450,5,1,68-72,Female,White,Not Hispanic,4-year,1909.6789000000008,AR,AR-1,Republican
+451,48,25,73-77,Female,Black,Not Hispanic,HS grad,572.6428011425834,TX,TX-25,Republican
+452,39,12,63-67,Male,White,Not Hispanic,Some college,3730.02499087459,OH,OH-12,Republican
+453,8,7,43-47,Female,Other/Multi,Hispanic,Post-grad,310.5969,CO,CO-7,Republican
+454,6,20,63-67,Female,White,Not Hispanic,4-year,1389.544816297525,CA,CA-20,Republican
+455,9,4,23-27,Female,White,Hispanic,Some college,145.0188,CT,CT-4,Republican
+456,55,1,33-37,Female,White,Not Hispanic,2-year,2224.2955999999995,WI,WI-1,Republican
+457,26,3,63-67,Male,Native American,Not Hispanic,HS grad,45.3684,MI,MI-3,Democrat
+458,42,17,68-72,Female,Black,Not Hispanic,HS grad,368.8515,PA,PA-17,Democrat
+459,36,23,53-57,Male,White,Not Hispanic,HS grad,8417.634199999995,NY,NY-23,Republican
+460,34,9,48-52,Male,Other/Multi,Hispanic,Some college,956.4444,NJ,NJ-9,Other
+461,6,47,18-22,Female,White,Hispanic,2-year,149.7151735403633,CA,CA-47,Republican
+462,51,10,18-22,Female,Asian,Not Hispanic,4-year,339.7916000000001,VA,VA-10,Democrat
+463,17,1,23-27,Male,Black,Not Hispanic,Some college,2525.4185999999995,IL,IL-1,Republican
+464,34,12,23-27,Male,White,Not Hispanic,4-year,4315.377399999999,NJ,NJ-12,Democrat
+465,39,8,68-72,Female,White,Not Hispanic,Post-grad,2305.5076854337885,OH,OH-8,Republican
+466,37,2,58-62,Male,Asian,Not Hispanic,HS grad,70.39621045173419,NC,NC-2,Other
+467,51,7,58-62,Male,White,Not Hispanic,4-year,2800.463,VA,VA-7,Republican
+468,6,48,48-52,Female,Other/Multi,Hispanic,HS grad,1109.7777366504904,CA,CA-48,Republican
+469,28,4,28-32,Male,White,Not Hispanic,2-year,2062.7217,MS,MS-4,Republican
+470,22,5,63-67,Female,White,Not Hispanic,4-year,2675.528199999999,LA,LA-5,Republican
+471,26,10,28-32,Female,White,Not Hispanic,HS grad,3068.0341,MI,MI-10,Other
+472,6,34,23-27,Female,Other/Multi,Hispanic,2-year,914.2249266663374,CA,CA-34,Republican
+473,6,41,38-42,Male,Other/Multi,Hispanic,Some college,2438.8737568230217,CA,CA-41,Republican
+474,13,9,53-57,Female,Black,Not Hispanic,Some college,422.5492,GA,GA-9,Democrat
+475,17,2,53-57,Male,Other/Multi,Hispanic,Some college,130.2932,IL,IL-2,Democrat
+476,24,8,18-22,Female,Black,Not Hispanic,Some college,1043.5837,MD,MD-8,Democrat
+477,36,12,38-42,Male,Asian,Not Hispanic,4-year,1043.2261,NY,NY-12,Democrat
+478,36,22,68-72,Male,White,Not Hispanic,HS grad,5071.156599999995,NY,NY-22,Republican
+479,24,1,23-27,Female,White,Not Hispanic,4-year,5189.8127,MD,MD-1,Did not vote
+480,23,1,68-72,Female,White,Not Hispanic,HS grad,5911.541199999999,ME,ME-1,Republican
+481,12,11,63-67,Male,Other/Multi,Hispanic,Some college,411.3825171170316,FL,FL-11,Democrat
+482,36,1,68-72,Female,White,Not Hispanic,Post-grad,4872.0773999999965,NY,NY-1,Democrat
+483,17,8,43-47,Female,White,Not Hispanic,Post-grad,2830.529300000001,IL,IL-8,Democrat
+484,4,8,33-37,Male,White,Not Hispanic,HS grad,3342.984600000001,AZ,AZ-8,Republican
+485,24,3,68-72,Female,White,Not Hispanic,Some college,2632.4246000000007,MD,MD-3,Democrat
+486,26,10,23-27,Male,Black,Not Hispanic,Some college,1114.6916,MI,MI-10,Republican
+487,12,14,78-82,Female,White,Not Hispanic,HS grad,2313.5016793633968,FL,FL-14,Republican
+488,34,9,53-57,Female,White,Not Hispanic,4-year,2263.4475000000007,NJ,NJ-9,Democrat
+489,34,6,38-42,Male,Other/Multi,Hispanic,No HS,650.3380000000001,NJ,NJ-6,Republican
+490,39,9,63-67,Female,White,Not Hispanic,Some college,4656.114364620699,OH,OH-9,Did not vote
+491,37,2,28-32,Female,Black,Not Hispanic,4-year,1507.5669758182698,NC,NC-2,Democrat
+492,37,4,23-27,Male,Black,Not Hispanic,No HS,364.307588925047,NC,NC-4,Democrat
+493,17,8,18-22,Female,White,Not Hispanic,Some college,3016.9961999999978,IL,IL-8,Did not vote
+494,44,2,58-62,Male,White,Not Hispanic,4-year,3345.028799999999,RI,RI-2,Other
+495,33,1,33-37,Male,Other/Multi,Not Hispanic,4-year,439.44720000000007,NH,NH-1,Republican
+496,25,1,53-57,Female,Other/Multi,Not Hispanic,2-year,90.2792,MA,MA-1,Republican
+497,36,19,43-47,Female,White,Not Hispanic,2-year,2128.6391,NY,NY-19,Democrat
+498,19,1,38-42,Female,White,Not Hispanic,HS grad,3364.4243,IA,IA-1,Republican
+499,29,2,23-27,Female,White,Not Hispanic,2-year,1734.9259175861048,MO,MO-2,Republican
+500,41,4,23-27,Male,White,Not Hispanic,HS grad,7165.573900000006,OR,OR-4,Democrat
+501,48,26,68-72,Female,White,Not Hispanic,Some college,3368.99927076468,TX,TX-26,Republican
+502,49,4,53-57,Male,Other/Multi,Hispanic,Some college,352.3137274472988,UT,UT-4,Did not vote
+503,28,2,23-27,Male,Black,Not Hispanic,2-year,1594.1806,MS,MS-2,Other
+504,29,5,23-27,Male,Black,Not Hispanic,No HS,248.89380341366336,MO,MO-5,Democrat
+505,45,6,18-22,Female,Black,Not Hispanic,Some college,4267.6369,SC,SC-6,Democrat
+506,17,7,28-32,Female,White,Not Hispanic,Post-grad,6225.237600000007,IL,IL-7,Did not vote
+507,48,4,48-52,Female,White,Not Hispanic,No HS,312.000762992806,TX,TX-4,Did not vote
+508,27,6,18-22,Female,White,Not Hispanic,HS grad,6729.717100000002,MN,MN-6,Republican
+509,6,32,48-52,Female,White,Not Hispanic,Post-grad,3084.1940114468543,CA,CA-32,Republican
+510,6,10,83+,Male,White,Not Hispanic,No HS,244.4095087507834,CA,CA-10,Republican
+511,48,6,53-57,Female,White,Not Hispanic,Some college,2815.922375457204,TX,TX-6,Republican
+512,6,3,48-52,Male,White,Not Hispanic,4-year,4174.288565643365,CA,CA-3,Democrat
+513,13,10,53-57,Male,Black,Not Hispanic,HS grad,2031.0462999999995,GA,GA-10,Democrat
+514,17,15,83+,Female,White,Not Hispanic,HS grad,8078.624099999993,IL,IL-15,Democrat
+515,8,7,38-42,Male,White,Not Hispanic,4-year,7524.252399999999,CO,CO-7,Other
+516,17,6,83+,Female,White,Not Hispanic,Post-grad,802.8199999999997,IL,IL-6,Democrat
+517,41,6,68-72,Female,White,Not Hispanic,Some college,4928.829500000001,OR,OR-6,Democrat
+518,1,7,38-42,Male,White,Not Hispanic,4-year,2135.219400000001,AL,AL-7,Republican
+519,47,9,18-22,Female,Black,Not Hispanic,No HS,1729.5697999999998,TN,TN-9,Democrat
+520,48,13,38-42,Female,White,Not Hispanic,HS grad,3399.0458917941028,TX,TX-13,Democrat
+521,20,2,23-27,Male,White,Not Hispanic,Some college,3787.693099999997,KS,KS-2,Republican
+522,6,50,68-72,Female,White,Not Hispanic,Some college,2711.998995273015,CA,CA-50,Democrat
+523,36,7,43-47,Male,Black,Not Hispanic,No HS,323.5328999999999,NY,NY-7,Republican
+524,6,34,33-37,Female,Other/Multi,Hispanic,HS grad,1867.9398339764195,CA,CA-34,Did not vote
+525,19,3,18-22,Male,White,Not Hispanic,HS grad,7339.203000000005,IA,IA-3,Democrat
+526,53,4,43-47,Male,White,Not Hispanic,4-year,2252.9927,WA,WA-4,Did not vote
+527,55,7,68-72,Male,White,Not Hispanic,Post-grad,1837.6802,WI,WI-7,Did not vote
+528,42,13,18-22,Male,White,Not Hispanic,No HS,3465.236500000003,PA,PA-13,Other
+529,17,5,53-57,Female,Asian,Not Hispanic,Post-grad,611.6361999999999,IL,IL-5,Democrat
+530,39,4,18-22,Female,White,Not Hispanic,HS grad,7429.404331632254,OH,OH-4,Republican
+531,39,11,23-27,Female,Black,Not Hispanic,Some college,4279.7375533728455,OH,OH-11,Democrat
+532,21,4,78-82,Female,White,Not Hispanic,HS grad,4482.7293999999965,KY,KY-4,Republican
+533,36,25,33-37,Male,Other/Multi,Hispanic,HS grad,467.0,NY,NY-25,Democrat
+534,1,5,58-62,Female,White,Not Hispanic,Some college,3677.4244000000017,AL,AL-5,Did not vote
+535,12,8,28-32,Female,White,Not Hispanic,4-year,3208.069045378444,FL,FL-8,Republican
+536,29,7,23-27,Male,White,Not Hispanic,HS grad,7747.332063429919,MO,MO-7,Republican
+537,8,3,38-42,Female,White,Not Hispanic,2-year,1651.3864,CO,CO-3,Democrat
+538,8,4,33-37,Female,White,Not Hispanic,Some college,3180.3789,CO,CO-4,Democrat
+539,48,4,18-22,Female,Other/Multi,Hispanic,No HS,289.422884771342,TX,TX-4,Democrat
+540,55,5,33-37,Female,White,Not Hispanic,2-year,1764.436600000001,WI,WI-5,Republican
+541,34,2,33-37,Female,White,Hispanic,HS grad,202.8022,NJ,NJ-2,Democrat
+542,48,5,28-32,Male,Other/Multi,Hispanic,Some college,1350.150808064996,TX,TX-5,Democrat
+543,55,5,63-67,Female,White,Not Hispanic,HS grad,7981.945699999995,WI,WI-5,Democrat
+544,6,45,28-32,Male,White,Not Hispanic,4-year,2457.5629584931835,CA,CA-45,Republican
+545,25,8,58-62,Male,Other/Multi,Not Hispanic,Post-grad,198.0007,MA,MA-8,Democrat
+546,21,6,73-77,Male,White,Not Hispanic,Some college,1793.8958999999988,KY,KY-6,Did not vote
+547,6,14,68-72,Male,White,Hispanic,No HS,28.0,CA,CA-14,Democrat
+548,42,6,28-32,Female,Other/Multi,Hispanic,No HS,608.079,PA,PA-6,Democrat
+549,25,2,48-52,Male,White,Not Hispanic,Post-grad,3803.019899999996,MA,MA-2,Democrat
+550,26,8,28-32,Male,White,Not Hispanic,Some college,4720.017800000001,MI,MI-8,Republican
+551,6,49,48-52,Male,White,Not Hispanic,Post-grad,4542.443318972313,CA,CA-49,Republican
+552,9,2,73-77,Male,White,Not Hispanic,4-year,2505.8976,CT,CT-2,Republican
+553,48,36,58-62,Male,White,Not Hispanic,HS grad,3665.9614514302566,TX,TX-36,Did not vote
+554,5,2,63-67,Male,White,Not Hispanic,2-year,1217.3505,AR,AR-2,Democrat
+555,12,17,68-72,Male,White,Not Hispanic,HS grad,6884.304520091337,FL,FL-17,Republican
+556,15,1,53-57,Male,Asian,Not Hispanic,No HS,1155.502,HI,HI-1,Democrat
+557,27,4,28-32,Female,White,Not Hispanic,Post-grad,2847.8493000000003,MN,MN-4,Democrat
+558,36,1,18-22,Male,White,Not Hispanic,Some college,6542.097000000001,NY,NY-1,Republican
+559,27,5,48-52,Male,White,Not Hispanic,Some college,2363.6721,MN,MN-5,Democrat
+560,6,16,73-77,Male,White,Not Hispanic,No HS,299.68179985816494,CA,CA-16,Republican
+561,12,22,23-27,Female,Other/Multi,Hispanic,4-year,1773.897142085221,FL,FL-22,Republican
+562,48,7,38-42,Female,White,Not Hispanic,Post-grad,1963.7526954270745,TX,TX-7,Republican
+563,36,24,18-22,Female,White,Not Hispanic,Some college,8336.595299999992,NY,NY-24,Republican
+564,37,2,58-62,Female,Asian,Not Hispanic,Post-grad,319.4140791278177,NC,NC-2,Democrat
+565,37,11,63-67,Female,White,Not Hispanic,Some college,5139.192472747283,NC,NC-11,Democrat
+566,42,9,38-42,Female,White,Not Hispanic,Post-grad,3138.4210999999978,PA,PA-9,Democrat
+567,6,4,53-57,Male,Asian,Not Hispanic,4-year,605.8432977246364,CA,CA-4,Democrat
+568,19,3,58-62,Male,White,Not Hispanic,4-year,4276.026600000001,IA,IA-3,Republican
+569,32,1,28-32,Female,White,Not Hispanic,HS grad,1771.8787000000002,NV,NV-1,Did not vote
+570,17,17,68-72,Female,Black,Not Hispanic,Some college,401.8699,IL,IL-17,Democrat
+571,48,7,68-72,Male,White,Not Hispanic,HS grad,367.3657126907416,TX,TX-7,Republican
+572,26,13,58-62,Female,Black,Not Hispanic,2-year,1167.7376,MI,MI-13,Republican
+573,42,11,58-62,Female,White,Not Hispanic,4-year,3546.0304,PA,PA-11,Other
+574,48,11,33-37,Male,Other/Multi,Hispanic,Some college,2128.532427838082,TX,TX-11,Republican
+575,28,2,58-62,Female,Black,Not Hispanic,Some college,3197.4122000000007,MS,MS-2,Democrat
+576,48,37,58-62,Female,White,Not Hispanic,4-year,3278.568038875079,TX,TX-37,Republican
+577,36,1,38-42,Male,White,Not Hispanic,4-year,4247.582799999998,NY,NY-1,Other
+578,48,10,48-52,Male,Other/Multi,Hispanic,HS grad,743.9880296082623,TX,TX-10,Democrat
+579,18,1,63-67,Female,White,Not Hispanic,HS grad,7137.310800000002,IN,IN-1,Did not vote
+580,27,8,23-27,Female,White,Not Hispanic,4-year,4249.900999999996,MN,MN-8,Democrat
+581,30,1,78-82,Female,White,Not Hispanic,HS grad,2631.376999999999,MT,MT-1,Other
+582,6,27,33-37,Female,White,Not Hispanic,4-year,2178.869868616838,CA,CA-27,Democrat
+583,22,3,43-47,Male,White,Not Hispanic,HS grad,5867.599200000001,LA,LA-3,Democrat
+584,49,3,23-27,Male,White,Not Hispanic,No HS,1157.346328557784,UT,UT-3,Democrat
+585,36,21,38-42,Female,White,Not Hispanic,Some college,3110.251700000001,NY,NY-21,Republican
+586,9,1,43-47,Female,Other/Multi,Hispanic,HS grad,884.4126,CT,CT-1,Democrat
+587,17,17,83+,Male,White,Not Hispanic,2-year,358.1886,IL,IL-17,Democrat
+588,12,1,33-37,Male,White,Not Hispanic,2-year,2727.6970634207983,FL,FL-1,Republican
+589,4,3,48-52,Male,White,Not Hispanic,4-year,1538.8692999999992,AZ,AZ-3,Republican
+590,51,2,43-47,Male,White,Not Hispanic,HS grad,2995.922600000001,VA,VA-2,Republican
+591,25,8,58-62,Male,White,Not Hispanic,Post-grad,3662.3811999999953,MA,MA-8,Did not vote
+592,17,3,78-82,Male,Asian,Not Hispanic,Post-grad,91.4914,IL,IL-3,Republican
+593,36,6,43-47,Female,Asian,Not Hispanic,HS grad,851.9803999999997,NY,NY-6,Democrat
+594,1,4,28-32,Female,White,Not Hispanic,4-year,2918.7429,AL,AL-4,Democrat
+595,13,9,53-57,Female,White,Not Hispanic,HS grad,4977.081499999997,GA,GA-9,Did not vote
+596,39,10,23-27,Male,White,Not Hispanic,2-year,1957.9663948869825,OH,OH-10,Democrat
+597,36,22,48-52,Female,White,Not Hispanic,4-year,3851.5340999999967,NY,NY-22,Democrat
+598,55,2,18-22,Female,White,Not Hispanic,Some college,10983.5115,WI,WI-2,Did not vote
+599,36,17,18-22,Female,White,Not Hispanic,HS grad,5541.2827,NY,NY-17,Did not vote
+600,26,11,48-52,Male,Black,Not Hispanic,Some college,1395.1061,MI,MI-11,Democrat
+601,42,8,63-67,Female,White,Not Hispanic,4-year,3905.159699999997,PA,PA-8,Republican
+602,48,35,18-22,Male,White,Hispanic,HS grad,2266.185058781484,TX,TX-35,Democrat
+603,40,2,33-37,Male,Native American,Not Hispanic,HS grad,1807.5334,OK,OK-2,Republican
+604,53,6,48-52,Female,Native American,Not Hispanic,Post-grad,19.0,WA,WA-6,Democrat
+605,42,16,83+,Female,White,Not Hispanic,HS grad,9165.109700000006,PA,PA-16,Democrat
+606,48,18,23-27,Female,Black,Not Hispanic,Post-grad,779.9692886620074,TX,TX-18,Democrat
+607,6,31,58-62,Female,Other/Multi,Hispanic,No HS,2140.51717149697,CA,CA-31,Democrat
+608,41,2,33-37,Female,White,Not Hispanic,Some college,3386.7658000000006,OR,OR-2,Republican
+609,25,5,28-32,Male,White,Not Hispanic,Post-grad,4104.821900000005,MA,MA-5,Democrat
+610,34,1,18-22,Female,Asian,Not Hispanic,HS grad,322.37729999999993,NJ,NJ-1,Other
+611,37,4,73-77,Female,White,Not Hispanic,Some college,1519.8740902049133,NC,NC-4,Republican
+612,53,9,33-37,Male,White,Not Hispanic,Post-grad,2448.4052,WA,WA-9,Republican
+613,55,3,28-32,Female,White,Not Hispanic,2-year,2602.649300000001,WI,WI-3,Republican
+614,13,13,73-77,Female,Black,Not Hispanic,HS grad,1441.0496999999998,GA,GA-13,Democrat
+615,41,2,68-72,Male,White,Not Hispanic,Some college,6276.951,OR,OR-2,Republican
+616,42,3,78-82,Male,White,Not Hispanic,Post-grad,862.9150999999999,PA,PA-3,Democrat
+617,18,4,33-37,Female,White,Not Hispanic,4-year,5334.218099999998,IN,IN-4,Other
+618,6,36,38-42,Male,Black,Not Hispanic,Post-grad,291.5411436480708,CA,CA-36,Other
+619,5,1,28-32,Male,Black,Not Hispanic,HS grad,2485.8554000000004,AR,AR-1,Did not vote
+620,42,15,23-27,Female,White,Not Hispanic,HS grad,5978.517400000005,PA,PA-15,Other
+621,27,3,78-82,Male,White,Not Hispanic,4-year,1853.4285,MN,MN-3,Did not vote
+622,55,3,53-57,Male,White,Not Hispanic,HS grad,7980.555299999985,WI,WI-3,Democrat
+623,26,6,43-47,Female,White,Not Hispanic,Post-grad,3785.342299999999,MI,MI-6,Did not vote
+624,54,2,48-52,Female,White,Not Hispanic,2-year,2765.4856,WV,WV-2,Republican
+625,23,2,83+,Male,White,Not Hispanic,Post-grad,1289.9113000000002,ME,ME-2,Republican
+626,45,3,43-47,Female,White,Not Hispanic,HS grad,3687.0718000000006,SC,SC-3,Republican
+627,6,17,33-37,Female,Asian,Not Hispanic,4-year,2789.5637806033888,CA,CA-17,Democrat
+628,34,2,18-22,Female,White,Not Hispanic,Some college,4642.566799999997,NJ,NJ-2,Democrat
+629,45,6,78-82,Male,White,Not Hispanic,4-year,1223.4313999999988,SC,SC-6,Democrat
+630,51,1,38-42,Male,White,Not Hispanic,Post-grad,2678.0165,VA,VA-1,Democrat
+631,47,7,23-27,Female,White,Not Hispanic,Post-grad,1542.8809999999996,TN,TN-7,Democrat
+632,4,8,58-62,Female,White,Not Hispanic,Post-grad,2304.3539,AZ,AZ-8,Other
+633,20,2,38-42,Female,White,Not Hispanic,Some college,3146.6775999999986,KS,KS-2,Republican
+634,5,4,53-57,Female,White,Not Hispanic,2-year,1870.2583,AR,AR-4,Republican
+635,6,29,33-37,Male,Black,Not Hispanic,Some college,467.40415538282,CA,CA-29,Democrat
+636,37,13,73-77,Female,Black,Not Hispanic,2-year,224.24340320136625,NC,NC-13,Democrat
+637,39,14,33-37,Female,Black,Not Hispanic,Some college,646.8412390247806,OH,OH-14,Democrat
+638,42,13,63-67,Female,White,Not Hispanic,HS grad,12928.8045,PA,PA-13,Other
+639,48,17,48-52,Female,White,Hispanic,4-year,128.60463302799184,TX,TX-17,Democrat
+640,41,5,38-42,Female,White,Not Hispanic,4-year,5855.137900000001,OR,OR-5,Republican
+641,45,6,43-47,Female,White,Not Hispanic,4-year,2902.801300000001,SC,SC-6,Republican
+642,5,4,58-62,Male,White,Not Hispanic,HS grad,8655.391000000005,AR,AR-4,Republican
+643,12,18,38-42,Female,Black,Not Hispanic,HS grad,1228.2731789496302,FL,FL-18,Other
+644,36,17,58-62,Male,White,Not Hispanic,Post-grad,4474.723099999998,NY,NY-17,Democrat
+645,48,14,18-22,Male,Other/Multi,Hispanic,Some college,1232.9809904183503,TX,TX-14,Other
+646,1,2,83+,Female,White,Not Hispanic,HS grad,3121.8291,AL,AL-2,Republican
+647,29,2,73-77,Female,White,Not Hispanic,HS grad,4984.062064979822,MO,MO-2,Republican
+648,37,14,63-67,Female,White,Not Hispanic,Some college,3532.5002797083807,NC,NC-14,Republican
+649,4,5,58-62,Female,White,Not Hispanic,2-year,2420.926100000001,AZ,AZ-5,Other
+650,22,4,58-62,Female,White,Not Hispanic,HS grad,5957.208500000009,LA,LA-4,Did not vote
+651,48,31,38-42,Female,Other/Multi,Hispanic,Some college,1423.526903641284,TX,TX-31,Democrat
+652,37,12,28-32,Male,White,Not Hispanic,4-year,7412.925658840157,NC,NC-12,Republican
+653,12,19,63-67,Female,White,Not Hispanic,Post-grad,4390.651709507329,FL,FL-19,Republican
+654,48,11,58-62,Female,White,Not Hispanic,2-year,1077.6970238485003,TX,TX-11,Republican
+655,18,4,78-82,Female,White,Not Hispanic,HS grad,4641.3786999999975,IN,IN-4,Did not vote
+656,48,11,83+,Female,Other/Multi,Hispanic,Some college,133.5102449869538,TX,TX-11,Democrat
+657,16,2,28-32,Male,White,Not Hispanic,2-year,1707.0037,ID,ID-2,Republican
+658,36,2,58-62,Female,White,Not Hispanic,Post-grad,2736.382600000001,NY,NY-2,Democrat
+659,22,2,63-67,Female,Black,Not Hispanic,2-year,1031.2257,LA,LA-2,Democrat
+660,13,8,28-32,Female,Black,Not Hispanic,4-year,1038.9537,GA,GA-8,Other
+661,48,26,73-77,Male,White,Hispanic,4-year,72.66971932056546,TX,TX-26,Democrat
+662,9,5,83+,Female,Other/Multi,Not Hispanic,HS grad,27.2267,CT,CT-5,Democrat
+663,6,17,33-37,Female,Asian,Not Hispanic,2-year,448.2664474837768,CA,CA-17,Democrat
+664,18,2,33-37,Male,White,Not Hispanic,HS grad,4974.983499999993,IN,IN-2,Republican
+665,40,1,18-22,Female,Other/Multi,Hispanic,No HS,912.4183,OK,OK-1,Republican
+666,47,1,18-22,Female,White,Not Hispanic,HS grad,6975.881999999991,TN,TN-1,Did not vote
+667,56,1,33-37,Male,White,Not Hispanic,4-year,3210.0,WY,WY-1,Democrat
+668,16,1,38-42,Male,Other/Multi,Not Hispanic,4-year,373.0724000000001,ID,ID-1,Republican
+669,23,1,43-47,Male,White,Not Hispanic,4-year,5350.385400000001,ME,ME-1,Republican
+670,6,42,58-62,Female,Asian,Not Hispanic,Some college,536.1332958353703,CA,CA-42,Republican
+671,34,10,58-62,Male,Black,Not Hispanic,Post-grad,752.1148999999999,NJ,NJ-10,Democrat
+672,55,8,63-67,Female,White,Not Hispanic,4-year,3463.4926999999943,WI,WI-8,Democrat
+673,39,9,33-37,Male,White,Not Hispanic,HS grad,5299.85631659037,OH,OH-9,Republican
+674,36,4,68-72,Female,White,Not Hispanic,Post-grad,3350.0905999999995,NY,NY-4,Republican
+675,21,6,68-72,Female,White,Not Hispanic,Some college,3578.598999999998,KY,KY-6,Republican
+676,49,2,33-37,Male,White,Not Hispanic,HS grad,5461.0642579258265,UT,UT-2,Republican
+677,27,7,33-37,Female,Other/Multi,Not Hispanic,4-year,234.2827,MN,MN-7,Republican
+678,6,41,48-52,Male,White,Not Hispanic,No HS,244.38850737123536,CA,CA-41,Republican
+679,19,3,28-32,Male,White,Not Hispanic,4-year,7195.019200000004,IA,IA-3,Republican
+680,6,8,58-62,Male,White,Hispanic,HS grad,196.0384961546829,CA,CA-8,Republican
+681,12,5,43-47,Female,White,Not Hispanic,4-year,6194.29089249476,FL,FL-5,Other
+682,2,1,58-62,Male,White,Not Hispanic,HS grad,4484.0,AK,AK-1,Democrat
+683,26,1,63-67,Male,White,Not Hispanic,HS grad,11848.695399999988,MI,MI-1,Republican
+684,36,22,68-72,Female,White,Not Hispanic,HS grad,5760.321400000004,NY,NY-22,Democrat
+685,18,2,73-77,Male,White,Not Hispanic,HS grad,4167.386,IN,IN-2,Republican
+686,24,4,63-67,Male,Black,Not Hispanic,HS grad,4300.470799999999,MD,MD-4,Democrat
+687,53,4,68-72,Male,White,Not Hispanic,2-year,1595.7019000000005,WA,WA-4,Republican
+688,42,4,63-67,Male,White,Not Hispanic,Some college,3085.0342,PA,PA-4,Democrat
+689,32,1,63-67,Male,White,Not Hispanic,HS grad,3323.051400000001,NV,NV-1,Republican
+690,13,12,33-37,Male,White,Not Hispanic,No HS,1076.2313000000004,GA,GA-12,Did not vote
+691,48,31,83+,Female,White,Not Hispanic,HS grad,2994.720219831351,TX,TX-31,Democrat
+692,12,18,53-57,Female,White,Not Hispanic,Post-grad,1456.9298045173994,FL,FL-18,Other
+693,17,12,33-37,Female,White,Not Hispanic,HS grad,3292.882600000001,IL,IL-12,Did not vote
+694,48,37,43-47,Female,White,Not Hispanic,4-year,4851.137291035092,TX,TX-37,Other
+695,29,8,78-82,Male,White,Not Hispanic,No HS,1538.7088492757748,MO,MO-8,Democrat
+696,41,6,53-57,Male,Other/Multi,Hispanic,No HS,896.2262999999998,OR,OR-6,Republican
+697,36,2,68-72,Male,White,Not Hispanic,Some college,2577.916200000002,NY,NY-2,Democrat
+698,37,4,53-57,Female,White,Not Hispanic,Some college,1571.116786290631,NC,NC-4,Democrat
+699,16,2,38-42,Male,White,Not Hispanic,HS grad,5526.799999999998,ID,ID-2,Other
+700,12,21,28-32,Male,Other/Multi,Hispanic,HS grad,725.4461361395855,FL,FL-21,Republican
+701,17,10,78-82,Male,White,Not Hispanic,Some college,1173.2044000000003,IL,IL-10,Republican
+702,6,51,53-57,Female,White,Not Hispanic,HS grad,2020.3114364976657,CA,CA-51,Democrat
+703,48,21,43-47,Male,Black,Not Hispanic,Some college,767.2001994986729,TX,TX-21,Republican
+704,13,11,63-67,Female,White,Not Hispanic,4-year,4224.814499999998,GA,GA-11,Republican
+705,34,4,53-57,Female,White,Not Hispanic,4-year,5428.824399999998,NJ,NJ-4,Republican
+706,45,2,58-62,Female,Black,Not Hispanic,Some college,2114.6534999999994,SC,SC-2,Did not vote
+707,42,17,63-67,Female,White,Not Hispanic,2-year,3665.8997,PA,PA-17,Democrat
+708,25,4,48-52,Male,White,Not Hispanic,No HS,1059.8142000000005,MA,MA-4,Democrat
+709,26,11,18-22,Female,Black,Not Hispanic,Some college,1595.8433000000005,MI,MI-11,Democrat
+710,55,7,53-57,Male,White,Not Hispanic,HS grad,8556.463899999999,WI,WI-7,Did not vote
+711,37,13,53-57,Female,Black,Not Hispanic,2-year,685.557550406622,NC,NC-13,Democrat
+712,47,3,68-72,Male,White,Not Hispanic,HS grad,5441.634700000005,TN,TN-3,Democrat
+713,48,34,53-57,Male,Other/Multi,Hispanic,No HS,2085.432742440885,TX,TX-34,Democrat
+714,44,2,63-67,Male,White,Not Hispanic,4-year,3387.3988999999992,RI,RI-2,Other
+715,9,4,73-77,Female,White,Not Hispanic,HS grad,2430.6651,CT,CT-4,Democrat
+716,34,4,68-72,Female,Other/Multi,Hispanic,No HS,200.87840000000003,NJ,NJ-4,Democrat
+717,6,25,68-72,Female,Other/Multi,Not Hispanic,Some college,196.29450618592767,CA,CA-25,Did not vote
+718,37,4,38-42,Female,White,Not Hispanic,Post-grad,5950.954594154721,NC,NC-4,Democrat
+719,53,3,28-32,Female,White,Not Hispanic,4-year,4651.850600000001,WA,WA-3,Republican
+720,29,2,23-27,Female,White,Not Hispanic,Some college,2581.012852741557,MO,MO-2,Republican
+721,25,2,28-32,Female,White,Not Hispanic,Post-grad,3884.934199999997,MA,MA-2,Republican
+722,4,8,28-32,Male,White,Hispanic,HS grad,574.1958999999999,AZ,AZ-8,Democrat
+723,53,5,23-27,Female,White,Not Hispanic,4-year,5775.354399999997,WA,WA-5,Republican
+724,6,26,38-42,Female,White,Not Hispanic,HS grad,983.00240552693,CA,CA-26,Democrat
+725,5,1,33-37,Male,White,Not Hispanic,HS grad,7252.409999999998,AR,AR-1,Republican
+726,12,23,28-32,Male,White,Not Hispanic,HS grad,2184.0538555505173,FL,FL-23,Republican
+727,6,7,78-82,Female,White,Not Hispanic,HS grad,1382.3250198757594,CA,CA-7,Democrat
+728,26,2,43-47,Female,White,Not Hispanic,Post-grad,2462.3245,MI,MI-2,Democrat
+729,29,3,43-47,Female,White,Not Hispanic,4-year,5058.489912735096,MO,MO-3,Did not vote
+730,17,6,43-47,Female,White,Hispanic,4-year,102.6302,IL,IL-6,Democrat
+731,6,1,53-57,Female,White,Not Hispanic,Some college,4120.315071355693,CA,CA-1,Democrat
+732,6,30,43-47,Male,White,Not Hispanic,4-year,4436.819228929003,CA,CA-30,Republican
+733,21,3,48-52,Female,White,Not Hispanic,4-year,3477.882700000002,KY,KY-3,Democrat
+734,6,5,63-67,Female,White,Not Hispanic,HS grad,3004.3207953319225,CA,CA-5,Democrat
+735,39,8,28-32,Female,White,Not Hispanic,4-year,5240.424541382138,OH,OH-8,Republican
+736,12,7,38-42,Male,White,Not Hispanic,Some college,2593.234579708009,FL,FL-7,Democrat
+737,17,1,43-47,Male,Black,Not Hispanic,Some college,2248.129900000001,IL,IL-1,Democrat
+738,22,1,53-57,Female,Other/Multi,Hispanic,HS grad,286.2287999999999,LA,LA-1,Republican
+739,24,3,18-22,Male,Other/Multi,Not Hispanic,HS grad,946.7133,MD,MD-3,Republican
+740,1,1,63-67,Female,White,Not Hispanic,HS grad,6731.413399999996,AL,AL-1,Democrat
+741,6,30,58-62,Male,White,Not Hispanic,Some college,2526.164628018378,CA,CA-30,Other
+742,48,16,28-32,Male,Asian,Hispanic,HS grad,68.42015279102785,TX,TX-16,Democrat
+743,1,1,48-52,Male,Black,Not Hispanic,HS grad,2081.3243999999995,AL,AL-1,Republican
+744,28,4,23-27,Male,White,Not Hispanic,2-year,1725.0076,MS,MS-4,Republican
+745,27,3,68-72,Male,White,Not Hispanic,2-year,1575.5357,MN,MN-3,Republican
+746,17,15,53-57,Female,White,Not Hispanic,HS grad,6788.42480000001,IL,IL-15,Democrat
+747,25,1,53-57,Female,White,Not Hispanic,HS grad,5340.393800000006,MA,MA-1,Democrat
+748,42,16,43-47,Male,White,Not Hispanic,No HS,1240.4821,PA,PA-16,Republican
+749,48,6,28-32,Male,Black,Not Hispanic,Post-grad,399.65140106285713,TX,TX-6,Democrat
+750,13,1,73-77,Female,White,Not Hispanic,Post-grad,1441.556,GA,GA-1,Democrat
+751,17,10,78-82,Male,White,Not Hispanic,Some college,1173.2044000000003,IL,IL-10,Republican
+752,12,21,58-62,Male,Asian,Not Hispanic,4-year,177.97886593379283,FL,FL-21,Other
+753,26,12,48-52,Male,White,Not Hispanic,No HS,1031.8329,MI,MI-12,Democrat
+754,39,2,28-32,Male,White,Not Hispanic,No HS,1857.706599321634,OH,OH-2,Other
+755,12,15,83+,Female,White,Not Hispanic,Post-grad,763.9916493218393,FL,FL-15,Republican
+756,17,14,48-52,Female,White,Not Hispanic,HS grad,3240.701400000002,IL,IL-14,Other
+757,51,3,53-57,Female,Black,Not Hispanic,2-year,866.8165000000002,VA,VA-3,Republican
+758,5,4,48-52,Male,White,Not Hispanic,HS grad,6882.542799999999,AR,AR-4,Republican
+759,26,4,63-67,Female,White,Not Hispanic,HS grad,6772.314099999998,MI,MI-4,Republican
+760,39,13,53-57,Male,White,Not Hispanic,No HS,1380.872850111069,OH,OH-13,Republican
+761,6,49,43-47,Male,White,Hispanic,Some college,86.85420764693832,CA,CA-49,Did not vote
+762,5,3,83+,Male,White,Not Hispanic,Some college,1339.2006,AR,AR-3,Democrat
+763,6,43,33-37,Male,Other/Multi,Hispanic,Some college,1739.2646555770011,CA,CA-43,Democrat
+764,49,3,63-67,Male,White,Not Hispanic,HS grad,3932.707022432782,UT,UT-3,Democrat
+765,1,5,18-22,Male,White,Not Hispanic,No HS,1316.4059999999995,AL,AL-5,Did not vote
+766,10,1,28-32,Male,Black,Not Hispanic,Some college,2069.0,DE,DE-1,Democrat
+767,4,6,38-42,Female,Other/Multi,Not Hispanic,HS grad,292.7213,AZ,AZ-6,Republican
+768,6,30,23-27,Female,White,Not Hispanic,4-year,7954.416447175584,CA,CA-30,Other
+769,36,16,73-77,Male,Other/Multi,Hispanic,No HS,970.4150000000002,NY,NY-16,Did not vote
+770,12,21,38-42,Male,White,Not Hispanic,No HS,736.1857198612137,FL,FL-21,Democrat
+771,34,7,73-77,Female,White,Not Hispanic,2-year,864.3715000000001,NJ,NJ-7,Republican
+772,36,2,53-57,Male,White,Not Hispanic,4-year,3585.092500000001,NY,NY-2,Other
+773,48,10,28-32,Male,White,Not Hispanic,HS grad,3308.268612723559,TX,TX-10,Democrat
+774,1,3,18-22,Male,White,Not Hispanic,Some college,8287.8519,AL,AL-3,Republican
+775,48,12,18-22,Female,White,Hispanic,No HS,189.60351077087287,TX,TX-12,Democrat
+776,36,16,43-47,Male,White,Not Hispanic,Post-grad,3213.8671,NY,NY-16,Republican
+777,8,2,68-72,Male,White,Not Hispanic,4-year,4762.477500000002,CO,CO-2,Republican
+778,42,13,43-47,Female,White,Not Hispanic,Some college,3415.8570000000004,PA,PA-13,Democrat
+779,48,12,73-77,Male,White,Not Hispanic,HS grad,1680.903713634128,TX,TX-12,Democrat
+780,12,27,23-27,Female,White,Not Hispanic,4-year,1953.2619730336369,FL,FL-27,Democrat
+781,49,3,63-67,Female,White,Not Hispanic,4-year,3092.9098602000186,UT,UT-3,Democrat
+782,26,2,23-27,Male,Black,Not Hispanic,Post-grad,13.2891,MI,MI-2,Democrat
+783,36,8,68-72,Female,Asian,Not Hispanic,Some college,52.431,NY,NY-8,Democrat
+784,55,3,28-32,Male,White,Not Hispanic,HS grad,5943.764500000007,WI,WI-3,Democrat
+785,19,1,58-62,Male,White,Not Hispanic,HS grad,10029.96369999999,IA,IA-1,Republican
+786,47,3,33-37,Female,White,Not Hispanic,4-year,5013.503799999999,TN,TN-3,Republican
+787,17,9,18-22,Male,Asian,Not Hispanic,Some college,1105.1402999999998,IL,IL-9,Republican
+788,45,5,63-67,Female,White,Not Hispanic,Post-grad,2170.9940000000006,SC,SC-5,Did not vote
+789,36,7,43-47,Female,White,Not Hispanic,2-year,373.6814,NY,NY-7,Democrat
+790,12,11,33-37,Female,White,Not Hispanic,Post-grad,1582.7057454764672,FL,FL-11,Other
+791,24,1,83+,Female,Black,Not Hispanic,Some college,168.3304,MD,MD-1,Democrat
+792,17,8,58-62,Male,White,Not Hispanic,2-year,1240.5299999999993,IL,IL-8,Republican
+793,6,13,63-67,Male,Other/Multi,Hispanic,No HS,2058.368370149508,CA,CA-13,Did not vote
+794,4,5,63-67,Female,Asian,Not Hispanic,2-year,33.896,AZ,AZ-5,Other
+795,18,4,33-37,Female,White,Not Hispanic,2-year,2582.2315000000003,IN,IN-4,Republican
+796,4,1,33-37,Male,Other/Multi,Not Hispanic,Some college,349.90920000000006,AZ,AZ-1,Republican
+797,8,4,18-22,Male,White,Not Hispanic,Some college,5387.606899999984,CO,CO-4,Democrat
+798,40,4,23-27,Male,White,Not Hispanic,HS grad,7719.599099999992,OK,OK-4,Republican
+799,39,12,28-32,Male,White,Not Hispanic,Some college,3823.038515580276,OH,OH-12,Republican
+800,41,4,78-82,Male,White,Not Hispanic,4-year,1481.509099999999,OR,OR-4,Did not vote
+801,17,8,48-52,Female,White,Not Hispanic,HS grad,1948.6458,IL,IL-8,Republican
+802,48,28,43-47,Female,Other/Multi,Hispanic,2-year,912.9276164409056,TX,TX-28,Democrat
+803,36,4,28-32,Male,Black,Not Hispanic,4-year,1186.1137,NY,NY-4,Republican
+804,6,37,38-42,Female,Black,Not Hispanic,4-year,709.7843689459244,CA,CA-37,Democrat
+805,6,46,28-32,Male,White,Hispanic,No HS,576.128976848307,CA,CA-46,Democrat
+806,39,6,28-32,Female,White,Not Hispanic,Some college,4313.43128087261,OH,OH-6,Democrat
+807,8,7,38-42,Male,White,Not Hispanic,HS grad,3700.8577999999975,CO,CO-7,Republican
+808,28,3,63-67,Female,Black,Not Hispanic,Some college,1951.8208,MS,MS-3,Democrat
+809,55,6,38-42,Female,White,Not Hispanic,4-year,5975.096000000002,WI,WI-6,Democrat
+810,1,2,63-67,Female,White,Not Hispanic,4-year,1842.8015999999973,AL,AL-2,Democrat
+811,2,1,28-32,Male,White,Not Hispanic,2-year,1788.0,AK,AK-1,Other
+812,55,6,68-72,Male,Other/Multi,Hispanic,Some college,45.0932,WI,WI-6,Republican
+813,35,3,28-32,Male,Native American,Not Hispanic,2-year,282.101,NM,NM-3,Democrat
+814,6,37,78-82,Female,Black,Not Hispanic,Some college,937.2389650227632,CA,CA-37,Democrat
+815,48,32,23-27,Female,Asian,Not Hispanic,4-year,1134.3704685972791,TX,TX-32,Republican
+816,48,24,28-32,Female,Other/Multi,Hispanic,HS grad,1014.6427794950464,TX,TX-24,Democrat
+817,31,2,43-47,Female,White,Not Hispanic,4-year,5083.673199999998,NE,NE-2,Republican
+818,36,17,58-62,Female,White,Not Hispanic,Post-grad,5372.389,NY,NY-17,Democrat
+819,13,7,48-52,Female,Asian,Not Hispanic,4-year,1331.585,GA,GA-7,Did not vote
+820,6,1,38-42,Female,White,Not Hispanic,Post-grad,2201.34955284697,CA,CA-1,Democrat
+821,36,4,48-52,Male,Other/Multi,Not Hispanic,HS grad,141.4291,NY,NY-4,Republican
+822,15,2,68-72,Male,White,Not Hispanic,Some college,2016.26,HI,HI-2,Democrat
+823,37,8,73-77,Female,Native American,Not Hispanic,HS grad,259.5457408219375,NC,NC-8,Did not vote
+824,48,4,18-22,Female,White,Not Hispanic,No HS,1535.7375470564432,TX,TX-4,Did not vote
+825,2,1,78-82,Female,White,Not Hispanic,Some college,929.0,AK,AK-1,Republican
+826,36,5,18-22,Male,Black,Not Hispanic,Some college,2842.859300000001,NY,NY-5,Democrat
+827,12,17,28-32,Male,White,Hispanic,HS grad,402.23587659951335,FL,FL-17,Democrat
+828,48,21,33-37,Male,White,Not Hispanic,4-year,3972.837973106866,TX,TX-21,Republican
+829,12,26,63-67,Male,Asian,Not Hispanic,4-year,272.1853008609418,FL,FL-26,Republican
+830,36,12,33-37,Male,White,Not Hispanic,4-year,8460.053999999998,NY,NY-12,Democrat
+831,34,1,28-32,Male,White,Not Hispanic,2-year,1112.0295999999998,NJ,NJ-1,Republican
+832,22,2,43-47,Female,Black,Not Hispanic,HS grad,2363.1725,LA,LA-2,Democrat
+833,37,14,73-77,Female,White,Not Hispanic,Some college,3115.122782478331,NC,NC-14,Other
+834,40,4,38-42,Female,White,Not Hispanic,4-year,3798.764399999999,OK,OK-4,Republican
+835,34,6,73-77,Male,White,Not Hispanic,Some college,1337.5982,NJ,NJ-6,Republican
+836,42,7,48-52,Female,Asian,Not Hispanic,2-year,147.0,PA,PA-7,Republican
+837,55,2,58-62,Female,White,Not Hispanic,4-year,5257.306100000005,WI,WI-2,Democrat
+838,24,4,28-32,Male,Black,Not Hispanic,Some college,3280.5235999999995,MD,MD-4,Democrat
+839,29,2,68-72,Male,White,Not Hispanic,4-year,5331.3285591677695,MO,MO-2,Democrat
+840,1,6,43-47,Female,White,Not Hispanic,Post-grad,3186.825799999999,AL,AL-6,Republican
+841,45,4,38-42,Male,White,Not Hispanic,Some college,2544.393400000001,SC,SC-4,Republican
+842,29,5,23-27,Male,White,Not Hispanic,HS grad,6377.13583351563,MO,MO-5,Republican
+843,23,1,43-47,Male,Other/Multi,Not Hispanic,4-year,236.6555,ME,ME-1,Democrat
+844,6,22,18-22,Female,Other/Multi,Hispanic,No HS,1363.5894480910438,CA,CA-22,Democrat
+845,48,28,28-32,Male,Other/Multi,Hispanic,2-year,1022.4203260824796,TX,TX-28,Republican
+846,22,1,78-82,Male,White,Not Hispanic,Some college,989.3018000000004,LA,LA-1,Democrat
+847,39,1,73-77,Male,White,Not Hispanic,4-year,2051.556757390098,OH,OH-1,Democrat
+848,6,48,83+,Female,White,Not Hispanic,No HS,777.5983811676916,CA,CA-48,Republican
+849,53,5,68-72,Female,White,Not Hispanic,4-year,3613.767699999997,WA,WA-5,Democrat
+850,9,1,68-72,Male,White,Not Hispanic,Some college,2250.0109,CT,CT-1,Republican
+851,12,4,43-47,Female,Black,Not Hispanic,Post-grad,1455.987689353348,FL,FL-4,Democrat
+852,48,14,43-47,Female,White,Not Hispanic,4-year,4203.376132517231,TX,TX-14,Republican
+853,49,1,23-27,Male,Other/Multi,Hispanic,HS grad,2037.472110063631,UT,UT-1,Democrat
+854,12,9,43-47,Female,Black,Not Hispanic,HS grad,450.13479723852487,FL,FL-9,Republican
+855,26,8,43-47,Female,White,Not Hispanic,4-year,3544.249499999998,MI,MI-8,Did not vote
+856,41,2,63-67,Female,Other/Multi,Hispanic,Some college,395.0468,OR,OR-2,Republican
+857,48,23,28-32,Male,Other/Multi,Hispanic,HS grad,3855.566544792424,TX,TX-23,Democrat
+858,21,1,28-32,Male,White,Hispanic,No HS,67.60079999999999,KY,KY-1,Republican
+859,29,3,63-67,Male,Native American,Not Hispanic,HS grad,3.0,MO,MO-3,Republican
+860,41,6,38-42,Female,White,Not Hispanic,4-year,4882.253800000001,OR,OR-6,Republican
+861,41,1,53-57,Male,White,Not Hispanic,HS grad,3136.5618999999983,OR,OR-1,Republican
+862,42,17,38-42,Male,Other/Multi,Not Hispanic,4-year,304.96860000000004,PA,PA-17,Democrat
+863,34,8,28-32,Male,White,Not Hispanic,Post-grad,2065.7122,NJ,NJ-8,Democrat
+864,6,27,23-27,Female,Asian,Not Hispanic,Some college,166.9513453527198,CA,CA-27,Democrat
+865,48,35,33-37,Female,Other/Multi,Hispanic,4-year,1377.4399966262142,TX,TX-35,Democrat
+866,48,17,48-52,Male,White,Not Hispanic,Some college,2967.2910025562514,TX,TX-17,Republican
+867,45,5,33-37,Male,White,Not Hispanic,Some college,3314.0819000000006,SC,SC-5,Republican
+868,6,24,68-72,Male,White,Not Hispanic,4-year,3691.327331725629,CA,CA-24,Did not vote
+869,12,6,43-47,Male,White,Not Hispanic,2-year,1255.69700145403,FL,FL-6,Democrat
+870,42,1,33-37,Female,White,Not Hispanic,Some college,1930.5933,PA,PA-1,Republican
+871,4,2,73-77,Female,Native American,Not Hispanic,HS grad,443.78640000000007,AZ,AZ-2,Democrat
+872,54,2,73-77,Male,White,Not Hispanic,Post-grad,2512.3539,WV,WV-2,Democrat
+873,20,4,38-42,Female,White,Not Hispanic,HS grad,2877.2612,KS,KS-4,Democrat
+874,40,1,58-62,Male,Black,Not Hispanic,Post-grad,118.7658,OK,OK-1,Democrat
+875,48,27,38-42,Female,White,Not Hispanic,4-year,4010.8908050402647,TX,TX-27,Democrat
+876,22,1,63-67,Male,Black,Not Hispanic,Some college,785.4099999999994,LA,LA-1,Democrat
+877,17,9,38-42,Male,Asian,Not Hispanic,4-year,1054.0645,IL,IL-9,Democrat
+878,36,11,43-47,Female,White,Not Hispanic,4-year,3912.2521000000006,NY,NY-11,Republican
+879,35,1,48-52,Female,Other/Multi,Hispanic,Post-grad,564.8429,NM,NM-1,Democrat
+880,23,1,78-82,Male,White,Not Hispanic,HS grad,2373.9919,ME,ME-1,Democrat
+881,36,8,18-22,Male,Black,Not Hispanic,HS grad,3125.5485000000017,NY,NY-8,Democrat
+882,51,5,58-62,Female,White,Not Hispanic,4-year,4805.980299999998,VA,VA-5,Republican
+883,26,7,48-52,Male,White,Not Hispanic,HS grad,4700.986800000003,MI,MI-7,Republican
+884,12,3,33-37,Male,Other/Multi,Hispanic,No HS,354.82099319370536,FL,FL-3,Republican
+885,20,4,38-42,Female,Black,Not Hispanic,Some college,466.4198,KS,KS-4,Democrat
+886,22,1,53-57,Female,Black,Not Hispanic,HS grad,1125.9414000000002,LA,LA-1,Democrat
+887,6,40,18-22,Male,White,Not Hispanic,Some college,2519.195622198189,CA,CA-40,Did not vote
+888,8,2,73-77,Male,White,Not Hispanic,Post-grad,4432.378200000001,CO,CO-2,Democrat
+889,39,2,58-62,Male,White,Not Hispanic,4-year,2927.427304232415,OH,OH-2,Democrat
+890,18,1,33-37,Female,White,Not Hispanic,4-year,4174.0292,IN,IN-1,Democrat
+891,53,2,83+,Female,White,Not Hispanic,4-year,1618.8839000000005,WA,WA-2,Did not vote
+892,12,22,18-22,Male,Other/Multi,Hispanic,2-year,378.1979905419774,FL,FL-22,Republican
+893,6,24,38-42,Male,White,Not Hispanic,2-year,825.4346798240707,CA,CA-24,Republican
+894,42,5,38-42,Male,Black,Not Hispanic,Some college,1536.713,PA,PA-5,Did not vote
+895,48,24,43-47,Male,Black,Not Hispanic,HS grad,358.18165694118136,TX,TX-24,Democrat
+896,13,9,53-57,Male,White,Not Hispanic,HS grad,4488.857699999999,GA,GA-9,Did not vote
+897,12,5,43-47,Male,White,Not Hispanic,2-year,1584.6616872260431,FL,FL-5,Democrat
+898,9,5,28-32,Female,White,Not Hispanic,HS grad,1856.2097999999992,CT,CT-5,Republican
+899,29,5,68-72,Male,Other/Multi,Hispanic,Some college,98.59824815669964,MO,MO-5,Democrat
+900,26,7,68-72,Female,White,Not Hispanic,Post-grad,2817.896400000001,MI,MI-7,Democrat
+901,13,1,48-52,Female,White,Not Hispanic,Some college,2854.101000000001,GA,GA-1,Did not vote
+902,5,3,18-22,Female,White,Not Hispanic,Some college,8182.604599999999,AR,AR-3,Democrat
+903,26,13,28-32,Male,White,Not Hispanic,HS grad,2590.8368,MI,MI-13,Did not vote
+904,53,4,73-77,Male,White,Not Hispanic,4-year,2093.3547000000017,WA,WA-4,Republican
+905,37,4,28-32,Female,White,Not Hispanic,Post-grad,5450.453038647815,NC,NC-4,Republican
+906,27,6,53-57,Female,White,Not Hispanic,4-year,4710.819199999998,MN,MN-6,Did not vote
+907,6,30,23-27,Female,Other/Multi,Hispanic,Some college,1520.1447329300067,CA,CA-30,Democrat
+908,12,26,28-32,Female,White,Not Hispanic,4-year,593.7778703252401,FL,FL-26,Did not vote
+909,15,2,68-72,Male,White,Not Hispanic,Post-grad,1939.962,HI,HI-2,Republican
+910,42,10,23-27,Female,White,Not Hispanic,HS grad,4361.247600000001,PA,PA-10,Republican
+911,48,22,43-47,Male,Black,Not Hispanic,4-year,1127.0895906994638,TX,TX-22,Democrat
+912,48,34,28-32,Female,Black,Not Hispanic,Some college,17.62480842599537,TX,TX-34,Democrat
+913,55,3,28-32,Female,White,Not Hispanic,Some college,4416.196200000001,WI,WI-3,Republican
+914,55,2,28-32,Male,White,Not Hispanic,Some college,3835.454899999999,WI,WI-2,Republican
+915,53,2,28-32,Female,Black,Not Hispanic,Some college,281.358,WA,WA-2,Democrat
+916,6,10,73-77,Female,White,Not Hispanic,4-year,2680.545173609029,CA,CA-10,Democrat
+917,6,43,23-27,Male,Asian,Not Hispanic,4-year,700.927034029596,CA,CA-43,Other
+918,17,2,48-52,Male,White,Not Hispanic,2-year,825.8915999999997,IL,IL-2,Democrat
+919,33,2,78-82,Female,White,Not Hispanic,Some college,1903.2593,NH,NH-2,Republican
+920,6,23,43-47,Male,White,Not Hispanic,HS grad,2022.5109472954523,CA,CA-23,Did not vote
+921,48,8,43-47,Male,White,Not Hispanic,Some college,2627.3307306595643,TX,TX-8,Democrat
+922,36,15,28-32,Male,Native American,Hispanic,HS grad,118.2792,NY,NY-15,Democrat
+923,32,2,43-47,Female,Asian,Not Hispanic,4-year,266.68820000000005,NV,NV-2,Republican
+924,8,3,83+,Male,White,Not Hispanic,No HS,505.2463,CO,CO-3,Democrat
+925,12,26,53-57,Female,Other/Multi,Hispanic,Some college,1736.7866809776306,FL,FL-26,Republican
+926,8,1,63-67,Female,Other/Multi,Hispanic,4-year,254.8398,CO,CO-1,Republican
+927,48,11,33-37,Male,White,Not Hispanic,HS grad,3215.677331319842,TX,TX-11,Republican
+928,35,3,18-22,Female,Other/Multi,Hispanic,HS grad,3133.7578000000003,NM,NM-3,Democrat
+929,41,3,38-42,Male,White,Not Hispanic,Post-grad,3739.488700000003,OR,OR-3,Republican
+930,16,1,33-37,Male,White,Not Hispanic,Some college,5682.478899999999,ID,ID-1,Republican
+931,20,1,58-62,Male,White,Not Hispanic,HS grad,6496.434500000006,KS,KS-1,Democrat
+932,22,6,23-27,Female,White,Not Hispanic,Some college,2319.5548,LA,LA-6,Republican
+933,42,8,28-32,Female,White,Not Hispanic,HS grad,3766.365099999999,PA,PA-8,Other
+934,42,13,23-27,Male,Black,Not Hispanic,2-year,121.198,PA,PA-13,Republican
+935,12,7,33-37,Male,White,Not Hispanic,Some college,2276.2840941675336,FL,FL-7,Republican
+936,51,8,28-32,Female,White,Not Hispanic,Post-grad,7666.6663,VA,VA-8,Democrat
+937,6,34,68-72,Male,Other/Multi,Hispanic,No HS,2081.3888594892173,CA,CA-34,Democrat
+938,48,31,48-52,Male,Black,Not Hispanic,Some college,1126.8854401300764,TX,TX-31,Democrat
+939,6,25,23-27,Female,White,Not Hispanic,4-year,778.1932382300884,CA,CA-25,Democrat
+940,13,3,58-62,Female,White,Not Hispanic,HS grad,5778.162499999996,GA,GA-3,Did not vote
+941,48,8,63-67,Male,White,Hispanic,Some college,120.23611626924183,TX,TX-8,Democrat
+942,9,2,33-37,Male,White,Not Hispanic,4-year,4214.487899999998,CT,CT-2,Republican
+943,24,1,68-72,Female,White,Not Hispanic,HS grad,6240.772899999999,MD,MD-1,Democrat
+944,25,9,48-52,Female,White,Not Hispanic,HS grad,3545.610600000001,MA,MA-9,Democrat
+945,12,22,68-72,Male,White,Not Hispanic,HS grad,2414.1022895932506,FL,FL-22,Republican
+946,39,13,18-22,Male,White,Not Hispanic,Some college,6083.091306949172,OH,OH-13,Democrat
+947,48,11,18-22,Male,Other/Multi,Hispanic,No HS,1869.447333212005,TX,TX-11,Republican
+948,48,21,53-57,Female,White,Not Hispanic,2-year,1439.7234678711386,TX,TX-21,Did not vote
+949,18,1,28-32,Female,Other/Multi,Not Hispanic,Some college,158.0,IN,IN-1,Other
+950,30,1,58-62,Female,White,Not Hispanic,HS grad,4242.987599999997,MT,MT-1,Democrat
+951,12,24,28-32,Male,Other/Multi,Hispanic,2-year,700.429620884396,FL,FL-24,Republican
+952,12,22,58-62,Female,White,Not Hispanic,HS grad,3058.926905695494,FL,FL-22,Democrat
+953,8,2,28-32,Female,White,Not Hispanic,Post-grad,3931.7608,CO,CO-2,Did not vote
+954,51,7,43-47,Male,Black,Not Hispanic,Post-grad,1050.1711999999998,VA,VA-7,Democrat
+955,48,27,48-52,Female,Other/Multi,Hispanic,Post-grad,333.7558714818943,TX,TX-27,Democrat
+956,42,15,23-27,Female,White,Not Hispanic,HS grad,5978.517400000005,PA,PA-15,Democrat
+957,29,4,23-27,Female,White,Not Hispanic,Some college,3702.705552899033,MO,MO-4,Democrat
+958,27,4,38-42,Female,White,Not Hispanic,Post-grad,5531.490600000002,MN,MN-4,Democrat
+959,30,1,18-22,Male,White,Not Hispanic,No HS,2455.828,MT,MT-1,Did not vote
+960,31,2,53-57,Male,White,Not Hispanic,4-year,3771.4087999999992,NE,NE-2,Republican
+961,25,2,68-72,Male,White,Not Hispanic,4-year,3708.9484999999945,MA,MA-2,Did not vote
+962,6,40,38-42,Female,White,Not Hispanic,Some college,2651.0328688826435,CA,CA-40,Democrat
+963,6,37,28-32,Female,Other/Multi,Hispanic,No HS,874.0779651533386,CA,CA-37,Republican
+964,53,1,68-72,Male,White,Not Hispanic,Some college,3235.611700000001,WA,WA-1,Democrat
+965,26,13,43-47,Female,Black,Not Hispanic,4-year,1080.506,MI,MI-13,Democrat
+966,53,2,33-37,Female,White,Not Hispanic,Post-grad,2711.717500000002,WA,WA-2,Democrat
+967,8,3,33-37,Female,White,Not Hispanic,4-year,4356.3013,CO,CO-3,Democrat
+968,34,1,53-57,Female,White,Not Hispanic,HS grad,5041.611400000004,NJ,NJ-1,Republican
+969,12,7,58-62,Female,White,Not Hispanic,Some college,4180.576712260229,FL,FL-7,Democrat
+970,12,26,48-52,Male,Other/Multi,Hispanic,4-year,2306.835760842268,FL,FL-26,Democrat
+971,4,5,68-72,Male,White,Not Hispanic,2-year,1948.6778,AZ,AZ-5,Republican
+972,6,33,83+,Female,Other/Multi,Hispanic,HS grad,681.8330378329129,CA,CA-33,Democrat
+973,49,3,18-22,Female,White,Not Hispanic,HS grad,8623.14359010409,UT,UT-3,Did not vote
+974,17,10,48-52,Female,Black,Not Hispanic,Some college,374.6498,IL,IL-10,Democrat
+975,36,11,23-27,Male,White,Not Hispanic,4-year,4084.428000000001,NY,NY-11,Republican
+976,26,6,43-47,Male,White,Not Hispanic,HS grad,2245.2746,MI,MI-6,Republican
+977,22,4,33-37,Female,White,Not Hispanic,4-year,2746.6203000000014,LA,LA-4,Republican
+978,30,2,28-32,Male,White,Not Hispanic,Some college,3102.589600000001,MT,MT-2,Republican
+979,9,5,68-72,Female,White,Not Hispanic,4-year,3621.417699999996,CT,CT-5,Other
+980,55,4,83+,Male,White,Not Hispanic,Some college,921.0972,WI,WI-4,Republican
+981,47,5,38-42,Female,White,Not Hispanic,Some college,3617.0664999999976,TN,TN-5,Democrat
+982,41,6,33-37,Male,White,Not Hispanic,Some college,3357.4967,OR,OR-6,Democrat
+983,26,7,83+,Male,White,Not Hispanic,No HS,933.9332,MI,MI-7,Republican
+984,6,50,43-47,Male,White,Not Hispanic,HS grad,1133.934901794588,CA,CA-50,Democrat
+985,49,4,43-47,Male,White,Not Hispanic,2-year,2595.386666312886,UT,UT-4,Democrat
+986,18,2,18-22,Male,White,Not Hispanic,HS grad,7796.860900000008,IN,IN-2,Democrat
+987,6,1,23-27,Male,Other/Multi,Not Hispanic,4-year,412.3259244664739,CA,CA-1,Republican
+988,18,2,48-52,Female,White,Not Hispanic,Post-grad,2193.7074,IN,IN-2,Democrat
+989,45,3,63-67,Female,White,Not Hispanic,HS grad,6902.044500000004,SC,SC-3,Republican
+990,36,18,18-22,Male,White,Not Hispanic,HS grad,4890.081900000002,NY,NY-18,Republican
+991,42,4,38-42,Female,White,Not Hispanic,4-year,6447.411299999997,PA,PA-4,Other
+992,45,3,38-42,Male,White,Not Hispanic,4-year,2860.7214000000004,SC,SC-3,Democrat
+993,12,9,38-42,Female,White,Not Hispanic,Post-grad,1101.3736703186123,FL,FL-9,Republican
+994,50,1,83+,Male,White,Not Hispanic,4-year,1444.0,VT,VT-1,Republican
+995,25,4,38-42,Female,Black,Not Hispanic,Post-grad,436.3047,MA,MA-4,Democrat
+996,36,24,53-57,Male,White,Not Hispanic,Some college,3944.690300000001,NY,NY-24,Republican
+997,1,1,83+,Male,White,Not Hispanic,HS grad,2010.876800000001,AL,AL-1,Democrat
+998,55,6,83+,Male,White,Not Hispanic,HS grad,3583.735900000004,WI,WI-6,Did not vote
+999,13,10,63-67,Female,White,Not Hispanic,4-year,2734.4100999999973,GA,GA-10,Democrat
+1000,6,6,38-42,Male,White,Hispanic,Some college,375.1545750176554,CA,CA-6,Other
+1001,26,3,58-62,Female,White,Not Hispanic,4-year,4243.392099999997,MI,MI-3,Republican
+1002,6,39,18-22,Female,Other/Multi,Hispanic,Some college,6359.033094809372,CA,CA-39,Democrat
+1003,6,50,28-32,Male,White,Not Hispanic,4-year,7744.525732572722,CA,CA-50,Republican
+1004,36,21,73-77,Female,White,Not Hispanic,4-year,1962.4942000000017,NY,NY-21,Democrat
+1005,22,1,23-27,Female,White,Not Hispanic,Some college,3044.3868,LA,LA-1,Republican
+1006,50,1,23-27,Female,White,Not Hispanic,Some college,2733.0,VT,VT-1,Republican
+1007,17,9,43-47,Female,White,Not Hispanic,No HS,368.1050000000001,IL,IL-9,Democrat
+1008,40,4,48-52,Female,White,Not Hispanic,Post-grad,1809.652799999999,OK,OK-4,Democrat
+1009,26,4,68-72,Male,White,Not Hispanic,4-year,3629.682899999997,MI,MI-4,Republican
+1010,37,7,38-42,Male,White,Not Hispanic,No HS,674.2607476401338,NC,NC-7,Republican
+1011,36,7,18-22,Male,Other/Multi,Hispanic,No HS,414.1915,NY,NY-7,Other
+1012,26,9,53-57,Male,White,Not Hispanic,Post-grad,2298.4259999999995,MI,MI-9,Republican
+1013,51,11,68-72,Male,White,Not Hispanic,Some college,886.5533999999999,VA,VA-11,Republican
+1014,18,2,58-62,Female,White,Not Hispanic,HS grad,7677.000100000007,IN,IN-2,Democrat
+1015,9,1,33-37,Male,White,Not Hispanic,Post-grad,2465.965900000001,CT,CT-1,Republican
+1016,38,1,18-22,Male,White,Not Hispanic,4-year,1719.0,ND,ND-1,Did not vote
+1017,48,8,48-52,Male,Native American,Hispanic,HS grad,101.7133080801488,TX,TX-8,Democrat
+1018,4,9,78-82,Male,White,Not Hispanic,2-year,1345.9799999999998,AZ,AZ-9,Republican
+1019,25,9,38-42,Male,White,Not Hispanic,2-year,1683.8353000000002,MA,MA-9,Democrat
+1020,48,29,68-72,Male,Other/Multi,Hispanic,HS grad,744.655028976991,TX,TX-29,Democrat
+1021,42,3,63-67,Female,Black,Not Hispanic,2-year,1515.2362,PA,PA-3,Republican
+1022,55,6,38-42,Male,White,Not Hispanic,HS grad,6156.467700000003,WI,WI-6,Republican
+1023,30,1,78-82,Female,White,Not Hispanic,HS grad,2631.376999999999,MT,MT-1,Republican
+1024,37,7,38-42,Male,White,Not Hispanic,Post-grad,1730.1107471247735,NC,NC-7,Democrat
+1025,17,1,58-62,Female,White,Not Hispanic,HS grad,3179.566599999997,IL,IL-1,Democrat
+1026,51,10,58-62,Female,White,Not Hispanic,2-year,1397.5150000000006,VA,VA-10,Democrat
+1027,19,3,53-57,Male,White,Not Hispanic,No HS,1024.6136000000004,IA,IA-3,Other
+1028,41,4,78-82,Female,White,Not Hispanic,HS grad,3502.294400000002,OR,OR-4,Republican
+1029,22,5,38-42,Male,White,Not Hispanic,HS grad,4949.131099999999,LA,LA-5,Republican
+1030,34,4,58-62,Male,White,Not Hispanic,4-year,5163.148000000003,NJ,NJ-4,Republican
+1031,40,1,78-82,Female,White,Not Hispanic,HS grad,3063.904500000001,OK,OK-1,Democrat
+1032,28,4,43-47,Male,White,Not Hispanic,2-year,1613.1760000000002,MS,MS-4,Democrat
+1033,48,36,58-62,Female,Other/Multi,Not Hispanic,Some college,239.7604901538635,TX,TX-36,Democrat
+1034,24,4,28-32,Male,Other/Multi,Hispanic,No HS,505.825,MD,MD-4,Did not vote
+1035,37,1,68-72,Male,Other/Multi,Not Hispanic,HS grad,283.86497363391925,NC,NC-1,Republican
+1036,18,2,48-52,Female,White,Not Hispanic,Some college,3176.266700000001,IN,IN-2,Republican
+1037,23,1,53-57,Female,White,Not Hispanic,Some college,3137.738400000001,ME,ME-1,Democrat
+1038,25,5,28-32,Male,White,Not Hispanic,Some college,1774.3306999999995,MA,MA-5,Democrat
+1039,6,37,28-32,Male,Other/Multi,Hispanic,4-year,1592.051486774918,CA,CA-37,Republican
+1040,6,20,63-67,Female,White,Not Hispanic,Post-grad,946.4631568415872,CA,CA-20,Democrat
+1041,37,10,53-57,Female,White,Not Hispanic,4-year,4768.300763057365,NC,NC-10,Did not vote
+1042,37,5,48-52,Male,White,Not Hispanic,HS grad,5742.995392201418,NC,NC-5,Republican
+1043,37,8,53-57,Female,White,Not Hispanic,4-year,4461.044777597751,NC,NC-8,Republican
+1044,4,1,53-57,Male,White,Not Hispanic,Post-grad,4416.996300000003,AZ,AZ-1,Republican
+1045,17,12,63-67,Female,White,Not Hispanic,Some college,5910.8424,IL,IL-12,Did not vote
+1046,12,3,63-67,Male,White,Not Hispanic,Some college,4108.414635683297,FL,FL-3,Republican
+1047,42,15,43-47,Male,White,Not Hispanic,Some college,2809.8938000000035,PA,PA-15,Republican
+1048,48,15,23-27,Male,White,Not Hispanic,4-year,425.5149485590889,TX,TX-15,Did not vote
+1049,12,23,48-52,Male,White,Not Hispanic,2-year,669.7189486824562,FL,FL-23,Democrat
+1050,37,10,63-67,Female,White,Not Hispanic,No HS,1108.7272098256449,NC,NC-10,Other
+1051,6,39,23-27,Male,Other/Multi,Hispanic,HS grad,7067.933434529282,CA,CA-39,Democrat
+1052,13,8,38-42,Female,White,Not Hispanic,Some college,3011.2921999999985,GA,GA-8,Republican
+1053,6,43,53-57,Female,Black,Not Hispanic,4-year,781.1512014885008,CA,CA-43,Republican
+1054,13,11,68-72,Male,Other/Multi,Hispanic,4-year,118.0925,GA,GA-11,Republican
+1055,37,13,58-62,Female,White,Not Hispanic,Some college,3608.8696017835687,NC,NC-13,Republican
+1056,48,38,23-27,Male,Black,Not Hispanic,Some college,882.3033500368871,TX,TX-38,Republican
+1057,12,5,53-57,Male,Black,Not Hispanic,4-year,510.1787555562001,FL,FL-5,Democrat
+1058,32,2,33-37,Male,White,Not Hispanic,Post-grad,1735.2153999999996,NV,NV-2,Democrat
+1059,39,9,48-52,Female,White,Not Hispanic,4-year,3800.916490991296,OH,OH-9,Democrat
+1060,53,2,23-27,Male,Other/Multi,Not Hispanic,Some college,687.5717999999999,WA,WA-2,Republican
+1061,36,12,18-22,Male,White,Not Hispanic,Some college,1846.3767000000005,NY,NY-12,Republican
+1062,12,27,48-52,Male,White,Not Hispanic,Post-grad,1148.7402802630222,FL,FL-27,Democrat
+1063,36,19,28-32,Female,White,Not Hispanic,Some college,2281.8966,NY,NY-19,Other
+1064,17,10,18-22,Female,White,Not Hispanic,HS grad,3458.6878000000006,IL,IL-10,Democrat
+1065,54,1,73-77,Female,White,Not Hispanic,Some college,4058.748199999999,WV,WV-1,Republican
+1066,22,3,78-82,Female,White,Not Hispanic,HS grad,3404.5104999999994,LA,LA-3,Democrat
+1067,39,3,18-22,Male,White,Not Hispanic,Some college,10115.038766047806,OH,OH-3,Democrat
+1068,4,2,73-77,Male,White,Not Hispanic,Post-grad,2902.9084999999995,AZ,AZ-2,Republican
+1069,22,4,23-27,Female,White,Not Hispanic,4-year,3177.9635000000003,LA,LA-4,Republican
+1070,48,21,63-67,Male,Other/Multi,Hispanic,4-year,526.0024077008266,TX,TX-21,Democrat
+1071,36,12,23-27,Female,Other/Multi,Not Hispanic,4-year,1389.8257000000003,NY,NY-12,Did not vote
+1072,25,6,73-77,Female,White,Not Hispanic,Post-grad,3622.105499999999,MA,MA-6,Republican
+1073,51,5,68-72,Male,White,Not Hispanic,4-year,4042.6847000000007,VA,VA-5,Republican
+1074,48,12,28-32,Male,Black,Not Hispanic,2-year,397.88932696040615,TX,TX-12,Other
+1075,17,10,68-72,Female,White,Not Hispanic,HS grad,3053.5747999999994,IL,IL-10,Did not vote
+1076,32,3,33-37,Male,Other/Multi,Hispanic,Some college,1107.462,NV,NV-3,Democrat
+1077,27,4,18-22,Female,White,Not Hispanic,Some college,6170.599300000001,MN,MN-4,Republican
+1078,36,21,68-72,Male,White,Not Hispanic,4-year,3272.9485000000004,NY,NY-21,Republican
+1079,17,15,83+,Female,White,Not Hispanic,HS grad,8078.624099999993,IL,IL-15,Democrat
+1080,12,22,38-42,Male,Other/Multi,Hispanic,2-year,662.3599820321299,FL,FL-22,Democrat
+1081,49,1,28-32,Female,White,Not Hispanic,4-year,8084.819606523385,UT,UT-1,Democrat
+1082,51,1,18-22,Female,Asian,Not Hispanic,Some college,609.5631,VA,VA-1,Republican
+1083,48,7,28-32,Male,Black,Not Hispanic,Some college,1257.0599506320511,TX,TX-7,Republican
+1084,54,2,53-57,Male,White,Not Hispanic,No HS,2704.229199999999,WV,WV-2,Republican
+1085,42,1,63-67,Male,White,Not Hispanic,4-year,5271.641599999997,PA,PA-1,Republican
+1086,42,10,18-22,Female,White,Not Hispanic,2-year,433.13929999999993,PA,PA-10,Democrat
+1087,42,9,28-32,Male,White,Not Hispanic,HS grad,7006.120799999995,PA,PA-9,Republican
+1088,26,12,68-72,Female,Black,Not Hispanic,4-year,1215.9309000000003,MI,MI-12,Democrat
+1089,26,2,78-82,Female,Other/Multi,Not Hispanic,HS grad,215.628,MI,MI-2,Did not vote
+1090,12,20,58-62,Male,Black,Not Hispanic,HS grad,2848.2899088457525,FL,FL-20,Other
+1091,36,26,78-82,Female,White,Not Hispanic,HS grad,3739.816999999999,NY,NY-26,Did not vote
+1092,13,14,38-42,Male,White,Not Hispanic,4-year,3321.2218,GA,GA-14,Other
+1093,12,28,68-72,Female,Other/Multi,Hispanic,Some college,1291.40338570523,FL,FL-28,Did not vote
+1094,35,3,68-72,Male,White,Not Hispanic,4-year,3053.632200000001,NM,NM-3,Republican
+1095,23,2,38-42,Female,White,Not Hispanic,4-year,4617.038100000001,ME,ME-2,Democrat
+1096,12,12,28-32,Male,White,Not Hispanic,4-year,4202.382890526361,FL,FL-12,Democrat
+1097,47,4,38-42,Male,White,Not Hispanic,Post-grad,1626.2288999999998,TN,TN-4,Democrat
+1098,48,15,23-27,Female,Other/Multi,Hispanic,Some college,3762.607997412147,TX,TX-15,Democrat
+1099,8,5,18-22,Female,White,Not Hispanic,Some college,6114.978299999999,CO,CO-5,Democrat
+1100,1,4,33-37,Female,White,Not Hispanic,Post-grad,1722.3312,AL,AL-4,Did not vote
+1101,17,16,68-72,Female,White,Not Hispanic,Some college,5102.574500000002,IL,IL-16,Democrat
+1102,45,5,18-22,Female,Black,Not Hispanic,2-year,617.6907,SC,SC-5,Did not vote
+1103,48,5,33-37,Female,Other/Multi,Hispanic,2-year,603.978540734732,TX,TX-5,Republican
+1104,6,43,38-42,Male,Other/Multi,Hispanic,No HS,1518.6593344492735,CA,CA-43,Republican
+1105,42,13,78-82,Female,White,Not Hispanic,Post-grad,664.636,PA,PA-13,Republican
+1106,6,32,43-47,Female,Asian,Not Hispanic,Post-grad,860.5966154084341,CA,CA-32,Democrat
+1107,21,5,68-72,Male,White,Not Hispanic,2-year,898.4716000000002,KY,KY-5,Republican
+1108,56,1,28-32,Male,Other/Multi,Not Hispanic,Some college,502.0,WY,WY-1,Democrat
+1109,12,1,58-62,Male,White,Not Hispanic,2-year,2499.1082510226483,FL,FL-1,Did not vote
+1110,6,50,83+,Male,White,Not Hispanic,4-year,2110.710919121636,CA,CA-50,Democrat
+1111,24,5,68-72,Female,White,Not Hispanic,HS grad,2847.122300000002,MD,MD-5,Democrat
+1112,36,16,58-62,Male,White,Not Hispanic,4-year,3455.2395,NY,NY-16,Republican
+1113,51,4,58-62,Female,White,Not Hispanic,No HS,621.7915,VA,VA-4,Republican
+1114,55,1,53-57,Male,White,Not Hispanic,HS grad,5038.5482,WI,WI-1,Republican
+1115,6,9,68-72,Female,Other/Multi,Hispanic,No HS,947.656984715356,CA,CA-9,Republican
+1116,6,43,28-32,Male,Asian,Not Hispanic,Post-grad,358.6381489222244,CA,CA-43,Democrat
+1117,45,2,23-27,Male,Black,Not Hispanic,HS grad,3599.4316,SC,SC-2,Republican
+1118,13,6,33-37,Male,Black,Not Hispanic,Post-grad,1927.5944,GA,GA-6,Democrat
+1119,48,26,28-32,Male,White,Not Hispanic,4-year,4698.032739888653,TX,TX-26,Democrat
+1120,37,8,68-72,Female,White,Not Hispanic,Some college,2850.538929924364,NC,NC-8,Democrat
+1121,6,30,53-57,Female,White,Not Hispanic,4-year,3490.684977502213,CA,CA-30,Democrat
+1122,48,2,38-42,Female,White,Not Hispanic,4-year,4239.064816927896,TX,TX-2,Democrat
+1123,8,8,68-72,Male,Asian,Not Hispanic,HS grad,154.9041,CO,CO-8,Republican
+1124,24,6,23-27,Male,White,Not Hispanic,2-year,1072.9273000000003,MD,MD-6,Democrat
+1125,33,2,58-62,Female,White,Not Hispanic,2-year,3351.5835,NH,NH-2,Democrat
+1126,27,8,78-82,Female,White,Not Hispanic,Some college,2375.9588,MN,MN-8,Republican
+1127,39,3,33-37,Male,White,Not Hispanic,HS grad,2870.57055824178,OH,OH-3,Democrat
+1128,37,4,33-37,Female,White,Not Hispanic,4-year,6226.746775923075,NC,NC-4,Republican
+1129,55,6,43-47,Male,White,Not Hispanic,4-year,3547.351700000001,WI,WI-6,Did not vote
+1130,56,1,58-62,Male,White,Not Hispanic,HS grad,5177.0,WY,WY-1,Republican
+1131,29,3,53-57,Female,White,Not Hispanic,Some college,4469.200270564862,MO,MO-3,Did not vote
+1132,6,22,48-52,Male,White,Not Hispanic,No HS,686.8266067732911,CA,CA-22,Democrat
+1133,40,5,28-32,Male,White,Hispanic,HS grad,197.7156,OK,OK-5,Democrat
+1134,54,2,18-22,Male,White,Not Hispanic,Some college,10067.386300000004,WV,WV-2,Republican
+1135,17,9,18-22,Female,Other/Multi,Hispanic,HS grad,1479.7773999999995,IL,IL-9,Republican
+1136,26,4,73-77,Male,White,Not Hispanic,HS grad,3773.804699999999,MI,MI-4,Other
+1137,24,6,58-62,Female,White,Not Hispanic,4-year,4169.589099999998,MD,MD-6,Democrat
+1138,6,1,63-67,Male,White,Not Hispanic,HS grad,4780.336618159689,CA,CA-1,Republican
+1139,37,12,43-47,Male,Black,Not Hispanic,Post-grad,742.5603078706274,NC,NC-12,Democrat
+1140,18,7,28-32,Female,Black,Not Hispanic,Post-grad,504.0,IN,IN-7,Democrat
+1141,44,2,63-67,Female,White,Not Hispanic,No HS,690.5566000000001,RI,RI-2,Democrat
+1142,48,2,28-32,Female,White,Not Hispanic,Post-grad,1057.609246829798,TX,TX-2,Did not vote
+1143,47,6,53-57,Female,White,Not Hispanic,No HS,1693.2411999999993,TN,TN-6,Democrat
+1144,24,3,23-27,Female,Black,Not Hispanic,Some college,1334.214,MD,MD-3,Other
+1145,17,10,48-52,Female,Asian,Not Hispanic,Post-grad,826.2434999999999,IL,IL-10,Democrat
+1146,42,3,38-42,Female,Asian,Not Hispanic,No HS,161.42739999999998,PA,PA-3,Republican
+1147,45,6,58-62,Female,Black,Not Hispanic,HS grad,3587.3295000000016,SC,SC-6,Republican
+1148,27,4,58-62,Female,White,Not Hispanic,4-year,4234.356,MN,MN-4,Other
+1149,48,30,23-27,Male,Other/Multi,Hispanic,Some college,2137.638201086156,TX,TX-30,Democrat
+1150,6,46,33-37,Male,White,Hispanic,HS grad,447.2687215353506,CA,CA-46,Democrat
+1151,48,23,48-52,Female,Other/Multi,Hispanic,2-year,794.4951713409728,TX,TX-23,Republican
+1152,6,23,23-27,Female,White,Not Hispanic,HS grad,1879.0927659517065,CA,CA-23,Democrat
+1153,6,50,63-67,Male,White,Not Hispanic,HS grad,1593.343058603144,CA,CA-50,Democrat
+1154,31,1,28-32,Male,White,Not Hispanic,4-year,4601.883399999996,NE,NE-1,Democrat
+1155,6,8,68-72,Male,White,Not Hispanic,HS grad,1548.027935104568,CA,CA-8,Republican
+1156,6,2,38-42,Male,White,Not Hispanic,Some college,4541.544852748416,CA,CA-2,Democrat
+1157,1,1,33-37,Female,White,Not Hispanic,No HS,1140.8074,AL,AL-1,Democrat
+1158,25,3,53-57,Male,White,Not Hispanic,4-year,5403.502,MA,MA-3,Did not vote
+1159,42,14,18-22,Male,White,Not Hispanic,HS grad,9335.271699999994,PA,PA-14,Democrat
+1160,4,7,63-67,Male,White,Not Hispanic,Some college,3192.6974000000005,AZ,AZ-7,Did not vote
+1161,37,4,18-22,Male,Asian,Not Hispanic,Some college,1176.25574411692,NC,NC-4,Did not vote
+1162,47,7,33-37,Male,White,Not Hispanic,HS grad,5378.584699999997,TN,TN-7,Democrat
+1163,8,5,23-27,Male,White,Not Hispanic,HS grad,5570.603200000001,CO,CO-5,Republican
+1164,6,47,63-67,Male,Asian,Not Hispanic,4-year,1039.3376068465432,CA,CA-47,Republican
+1165,48,15,28-32,Male,White,Hispanic,Some college,1445.4638042648978,TX,TX-15,Republican
+1166,47,7,33-37,Male,White,Not Hispanic,HS grad,5378.584699999997,TN,TN-7,Democrat
+1167,31,3,73-77,Female,White,Not Hispanic,Post-grad,857.606,NE,NE-3,Democrat
+1168,47,5,58-62,Male,White,Not Hispanic,Some college,2751.508899999999,TN,TN-5,Democrat
+1169,6,21,33-37,Female,White,Not Hispanic,Some college,1419.3114185553748,CA,CA-21,Republican
+1170,22,1,63-67,Female,White,Not Hispanic,Some college,3221.142999999998,LA,LA-1,Did not vote
+1171,41,4,58-62,Female,White,Not Hispanic,Some college,5887.969299999999,OR,OR-4,Republican
+1172,12,28,58-62,Female,White,Not Hispanic,2-year,399.5012321011949,FL,FL-28,Republican
+1173,42,4,78-82,Female,White,Not Hispanic,HS grad,4063.0782999999983,PA,PA-4,Did not vote
+1174,28,2,38-42,Male,Black,Not Hispanic,4-year,1100.2388,MS,MS-2,Republican
+1175,42,4,23-27,Female,White,Not Hispanic,HS grad,2281.082499999999,PA,PA-4,Democrat
+1176,26,6,33-37,Male,White,Not Hispanic,Some college,3322.330400000001,MI,MI-6,Other
+1177,19,4,33-37,Female,White,Not Hispanic,Some college,3510.6516999999985,IA,IA-4,Democrat
+1178,12,12,38-42,Female,Asian,Not Hispanic,4-year,334.93655719994683,FL,FL-12,Democrat
+1179,12,7,73-77,Male,White,Not Hispanic,HS grad,2874.533641540008,FL,FL-7,Republican
+1180,42,4,53-57,Male,White,Not Hispanic,HS grad,5217.595900000002,PA,PA-4,Did not vote
+1181,6,33,78-82,Male,White,Not Hispanic,HS grad,615.2354239692255,CA,CA-33,Democrat
+1182,6,17,73-77,Male,Asian,Not Hispanic,4-year,970.302784706198,CA,CA-17,Republican
+1183,8,8,68-72,Female,White,Not Hispanic,Post-grad,1693.1071999999997,CO,CO-8,Democrat
+1184,8,8,38-42,Female,Other/Multi,Hispanic,HS grad,1786.4407,CO,CO-8,Democrat
+1185,47,7,33-37,Female,Other/Multi,Hispanic,4-year,282.9596,TN,TN-7,Democrat
+1186,22,3,43-47,Female,White,Not Hispanic,Post-grad,1824.2602000000004,LA,LA-3,Republican
+1187,55,5,63-67,Female,White,Not Hispanic,Post-grad,2683.6462,WI,WI-5,Other
+1188,6,42,68-72,Male,White,Not Hispanic,Post-grad,2142.492048064777,CA,CA-42,Democrat
+1189,37,4,53-57,Male,White,Not Hispanic,Some college,1524.365286476485,NC,NC-4,Democrat
+1190,25,8,78-82,Male,White,Not Hispanic,HS grad,1563.6167000000012,MA,MA-8,Democrat
+1191,22,1,23-27,Female,White,Not Hispanic,Some college,3044.3868,LA,LA-1,Democrat
+1192,48,21,63-67,Male,White,Not Hispanic,Post-grad,2723.721291828226,TX,TX-21,Republican
+1193,54,1,63-67,Female,White,Not Hispanic,HS grad,13763.4235,WV,WV-1,Republican
+1194,48,20,68-72,Male,Other/Multi,Hispanic,No HS,1115.3004579075769,TX,TX-20,Republican
+1195,12,1,53-57,Female,White,Not Hispanic,4-year,3798.9745585154137,FL,FL-1,Democrat
+1196,12,13,18-22,Female,White,Not Hispanic,HS grad,3572.207893666325,FL,FL-13,Republican
+1197,37,5,63-67,Female,White,Not Hispanic,4-year,3562.3464373757265,NC,NC-5,Democrat
+1198,13,14,33-37,Male,White,Not Hispanic,HS grad,5700.8275,GA,GA-14,Democrat
+1199,41,3,33-37,Female,White,Not Hispanic,HS grad,2706.708899999999,OR,OR-3,Did not vote
+1200,34,6,58-62,Female,Other/Multi,Hispanic,Some college,441.0985,NJ,NJ-6,Republican
+1201,33,2,18-22,Male,Other/Multi,Hispanic,No HS,94.2522,NH,NH-2,Did not vote
+1202,47,9,53-57,Female,Black,Not Hispanic,Some college,2845.3534,TN,TN-9,Did not vote
+1203,39,13,28-32,Female,White,Not Hispanic,4-year,5295.704643282023,OH,OH-13,Republican
+1204,4,4,38-42,Male,White,Not Hispanic,HS grad,2074.721500000001,AZ,AZ-4,Did not vote
+1205,5,4,73-77,Female,White,Not Hispanic,Some college,3173.4681000000023,AR,AR-4,Republican
+1206,36,7,78-82,Female,White,Not Hispanic,No HS,407.48460000000006,NY,NY-7,Democrat
+1207,27,2,38-42,Female,White,Not Hispanic,Some college,2512.6552,MN,MN-2,Democrat
+1208,13,1,68-72,Female,White,Not Hispanic,2-year,1244.7598999999998,GA,GA-1,Democrat
+1209,24,3,78-82,Female,White,Not Hispanic,Post-grad,1232.7252999999994,MD,MD-3,Democrat
+1210,42,7,33-37,Male,White,Not Hispanic,Some college,2652.8851,PA,PA-7,Republican
+1211,47,8,63-67,Male,White,Not Hispanic,HS grad,7258.051299999995,TN,TN-8,Republican
+1212,34,4,43-47,Male,White,Not Hispanic,4-year,3939.603899999999,NJ,NJ-4,Republican
+1213,21,3,73-77,Female,White,Not Hispanic,Some college,3018.5643000000005,KY,KY-3,Republican
+1214,13,6,38-42,Female,Black,Not Hispanic,HS grad,2048.4011,GA,GA-6,Democrat
+1215,29,5,68-72,Female,White,Not Hispanic,Post-grad,1992.855644933968,MO,MO-5,Republican
+1216,17,7,33-37,Female,Black,Not Hispanic,HS grad,1741.5060000000003,IL,IL-7,Democrat
+1217,34,5,58-62,Female,White,Not Hispanic,4-year,6303.275400000001,NJ,NJ-5,Democrat
+1218,37,14,48-52,Female,White,Not Hispanic,Some college,3137.092720915305,NC,NC-14,Democrat
+1219,6,8,28-32,Female,Asian,Not Hispanic,Some college,703.8554287769971,CA,CA-8,Democrat
+1220,1,1,48-52,Female,White,Not Hispanic,No HS,1180.3162000000004,AL,AL-1,Democrat
+1221,12,9,43-47,Male,Other/Multi,Hispanic,4-year,1838.2388645735275,FL,FL-9,Republican
+1222,48,30,73-77,Male,White,Not Hispanic,Some college,663.1400397298953,TX,TX-30,Republican
+1223,37,1,53-57,Female,Black,Not Hispanic,4-year,1009.4067005875064,NC,NC-1,Republican
+1224,8,6,78-82,Female,Other/Multi,Hispanic,No HS,253.1746,CO,CO-6,Democrat
+1225,48,28,53-57,Female,White,Not Hispanic,2-year,135.29352171039244,TX,TX-28,Republican
+1226,26,8,48-52,Female,White,Not Hispanic,Some college,4629.2355000000025,MI,MI-8,Republican
+1227,26,10,78-82,Male,White,Not Hispanic,4-year,809.7863999999997,MI,MI-10,Democrat
+1228,51,5,58-62,Male,Other/Multi,Hispanic,No HS,136.2918,VA,VA-5,Republican
+1229,6,5,33-37,Female,White,Not Hispanic,Some college,3245.6199367646736,CA,CA-5,Republican
+1230,12,10,53-57,Male,Other/Multi,Hispanic,4-year,627.5590055494523,FL,FL-10,Democrat
+1231,35,3,63-67,Male,White,Not Hispanic,Some college,2836.7069999999994,NM,NM-3,Democrat
+1232,12,2,68-72,Female,Black,Not Hispanic,4-year,512.196543027269,FL,FL-2,Democrat
+1233,38,1,58-62,Female,White,Not Hispanic,Some college,4866.0,ND,ND-1,Democrat
+1234,12,10,28-32,Female,Black,Not Hispanic,No HS,1191.3847827068748,FL,FL-10,Democrat
+1235,6,24,48-52,Female,Black,Not Hispanic,4-year,53.0,CA,CA-24,Democrat
+1236,12,7,38-42,Female,Other/Multi,Hispanic,Post-grad,709.9470460944589,FL,FL-7,Did not vote
+1237,24,5,63-67,Male,White,Not Hispanic,2-year,711.3612999999998,MD,MD-5,Democrat
+1238,8,8,63-67,Female,White,Not Hispanic,Some college,3298.1428999999985,CO,CO-8,Democrat
+1239,6,41,58-62,Female,Other/Multi,Hispanic,Post-grad,272.92488159804964,CA,CA-41,Democrat
+1240,48,15,18-22,Female,White,Hispanic,Some college,2576.259055187429,TX,TX-15,Did not vote
+1241,17,9,83+,Female,White,Not Hispanic,Some college,2340.315399999999,IL,IL-9,Republican
+1242,19,1,38-42,Male,White,Not Hispanic,HS grad,5892.010199999999,IA,IA-1,Did not vote
+1243,6,3,38-42,Male,Other/Multi,Not Hispanic,4-year,495.5027143111747,CA,CA-3,Democrat
+1244,18,9,18-22,Female,White,Hispanic,HS grad,244.734,IN,IN-9,Democrat
+1245,13,3,63-67,Female,Black,Not Hispanic,HS grad,1863.1386,GA,GA-3,Democrat
+1246,36,12,28-32,Female,Other/Multi,Not Hispanic,4-year,1108.0307,NY,NY-12,Democrat
+1247,12,6,68-72,Female,White,Not Hispanic,Some college,7380.595475096137,FL,FL-6,Republican
+1248,48,27,58-62,Male,White,Hispanic,Post-grad,73.91149865138115,TX,TX-27,Other
+1249,51,3,33-37,Female,Black,Not Hispanic,Post-grad,1711.7693,VA,VA-3,Democrat
+1250,6,24,68-72,Male,White,Not Hispanic,HS grad,1671.1704806705222,CA,CA-24,Did not vote
+1251,6,28,43-47,Male,Asian,Not Hispanic,4-year,2327.284919599897,CA,CA-28,Republican
+1252,6,32,33-37,Female,Black,Not Hispanic,Post-grad,243.5950212039978,CA,CA-32,Democrat
+1253,36,16,58-62,Female,White,Not Hispanic,4-year,3291.799,NY,NY-16,Republican
+1254,6,35,43-47,Male,White,Not Hispanic,4-year,855.3813806947104,CA,CA-35,Democrat
+1255,48,11,43-47,Male,White,Not Hispanic,4-year,2878.751950596852,TX,TX-11,Republican
+1256,42,5,63-67,Female,White,Not Hispanic,HS grad,5224.906800000001,PA,PA-5,Democrat
+1257,47,5,83+,Male,Other/Multi,Not Hispanic,Some college,10.7415,TN,TN-5,Democrat
+1258,29,7,48-52,Male,White,Not Hispanic,HS grad,5982.944720283884,MO,MO-7,Republican
+1259,55,8,38-42,Male,White,Not Hispanic,Some college,4269.860299999994,WI,WI-8,Democrat
+1260,5,2,53-57,Female,White,Not Hispanic,4-year,3677.611400000005,AR,AR-2,Democrat
+1261,22,4,53-57,Male,White,Not Hispanic,HS grad,5853.562600000002,LA,LA-4,Republican
+1262,17,11,53-57,Male,White,Not Hispanic,No HS,502.0335,IL,IL-11,Democrat
+1263,51,11,28-32,Male,Black,Not Hispanic,4-year,673.9855000000001,VA,VA-11,Democrat
+1264,34,11,58-62,Female,White,Not Hispanic,HS grad,4071.462000000002,NJ,NJ-11,Democrat
+1265,46,1,53-57,Female,White,Not Hispanic,HS grad,5691.0,SD,SD-1,Democrat
+1266,8,6,28-32,Female,White,Not Hispanic,Post-grad,3462.7642000000023,CO,CO-6,Democrat
+1267,54,2,63-67,Female,White,Not Hispanic,HS grad,11914.5765,WV,WV-2,Republican
+1268,27,8,18-22,Female,White,Not Hispanic,Some college,8159.3083000000015,MN,MN-8,Did not vote
+1269,27,5,63-67,Female,White,Not Hispanic,Some college,2868.5264,MN,MN-5,Democrat
+1270,53,9,68-72,Female,White,Not Hispanic,Some college,2227.0091000000007,WA,WA-9,Did not vote
+1271,21,1,73-77,Male,White,Not Hispanic,No HS,2009.496400000001,KY,KY-1,Republican
+1272,22,3,18-22,Female,Black,Not Hispanic,Some college,2340.085699999999,LA,LA-3,Democrat
+1273,35,3,33-37,Female,Other/Multi,Hispanic,Post-grad,555.6637999999999,NM,NM-3,Republican
+1274,6,38,48-52,Male,White,Hispanic,Some college,369.7959690642634,CA,CA-38,Republican
+1275,17,10,33-37,Male,White,Not Hispanic,Some college,2694.1748,IL,IL-10,Republican
+1276,12,1,78-82,Male,White,Not Hispanic,4-year,1062.058099704014,FL,FL-1,Republican
+1277,6,26,43-47,Male,Other/Multi,Hispanic,HS grad,1322.3779029495809,CA,CA-26,Republican
+1278,48,17,63-67,Male,Other/Multi,Hispanic,HS grad,462.35465113534,TX,TX-17,Democrat
+1279,36,2,33-37,Female,White,Not Hispanic,HS grad,1369.1698999999996,NY,NY-2,Democrat
+1280,18,9,48-52,Male,White,Not Hispanic,HS grad,6774.130800000005,IN,IN-9,Republican
+1281,23,1,63-67,Male,White,Not Hispanic,HS grad,6922.9248999999945,ME,ME-1,Democrat
+1282,25,1,58-62,Female,White,Hispanic,HS grad,53.6595,MA,MA-1,Democrat
+1283,36,22,28-32,Male,White,Not Hispanic,4-year,4205.808399999996,NY,NY-22,Democrat
+1284,51,2,28-32,Female,Black,Not Hispanic,4-year,1508.8714999999995,VA,VA-2,Democrat
+1285,51,4,53-57,Female,Black,Not Hispanic,Some college,2388.2835,VA,VA-4,Democrat
+1286,21,6,43-47,Female,White,Not Hispanic,Post-grad,3854.281599999999,KY,KY-6,Republican
+1287,17,13,68-72,Male,White,Not Hispanic,Post-grad,2093.6008,IL,IL-13,Republican
+1288,25,9,73-77,Female,White,Not Hispanic,2-year,2710.259399999999,MA,MA-9,Democrat
+1289,34,7,38-42,Male,Other/Multi,Hispanic,Post-grad,444.92349999999993,NJ,NJ-7,Democrat
+1290,26,5,28-32,Female,White,Not Hispanic,Some college,4457.6714,MI,MI-5,Democrat
+1291,37,6,73-77,Female,White,Hispanic,Some college,52.3809871977338,NC,NC-6,Republican
+1292,34,1,53-57,Female,White,Not Hispanic,No HS,478.8696999999999,NJ,NJ-1,Republican
+1293,17,10,23-27,Female,White,Not Hispanic,4-year,4537.136999999998,IL,IL-10,Republican
+1294,18,3,83+,Female,White,Not Hispanic,HS grad,6153.089599999999,IN,IN-3,Republican
+1295,21,1,18-22,Female,White,Not Hispanic,HS grad,6741.575299999994,KY,KY-1,Did not vote
+1296,6,22,28-32,Male,Other/Multi,Hispanic,HS grad,5116.364186782553,CA,CA-22,Republican
+1297,8,4,33-37,Male,White,Not Hispanic,Post-grad,2895.7361999999966,CO,CO-4,Republican
+1298,40,3,33-37,Female,White,Not Hispanic,No HS,1044.7838000000002,OK,OK-3,Republican
+1299,21,5,48-52,Female,White,Not Hispanic,HS grad,7811.672900000002,KY,KY-5,Democrat
+1300,12,10,38-42,Female,Black,Not Hispanic,Some college,877.5489301917576,FL,FL-10,Did not vote
+1301,34,5,18-22,Female,White,Not Hispanic,4-year,1448.4522999999997,NJ,NJ-5,Democrat
+1302,42,6,33-37,Male,White,Not Hispanic,HS grad,3832.191100000001,PA,PA-6,Democrat
+1303,12,28,53-57,Male,Other/Multi,Hispanic,4-year,2595.4766233798923,FL,FL-28,Did not vote
+1304,47,8,68-72,Male,White,Not Hispanic,HS grad,5302.949799999998,TN,TN-8,Republican
+1305,51,2,43-47,Male,White,Not Hispanic,4-year,3524.0166000000004,VA,VA-2,Democrat
+1306,36,5,68-72,Female,Other/Multi,Hispanic,Post-grad,206.1422,NY,NY-5,Democrat
+1307,37,11,28-32,Female,Other/Multi,Not Hispanic,Post-grad,171.8227651279562,NC,NC-11,Democrat
+1308,6,2,33-37,Female,Native American,Not Hispanic,2-year,85.16180514870392,CA,CA-2,Republican
+1309,51,9,68-72,Male,White,Not Hispanic,HS grad,6973.068000000003,VA,VA-9,Democrat
+1310,21,6,68-72,Male,Other/Multi,Not Hispanic,2-year,29.4814,KY,KY-6,Did not vote
+1311,51,1,18-22,Male,White,Not Hispanic,HS grad,6496.834300000001,VA,VA-1,Did not vote
+1312,34,12,53-57,Male,White,Not Hispanic,HS grad,3153.056499999999,NJ,NJ-12,Republican
+1313,1,3,18-22,Female,White,Not Hispanic,Some college,9786.076699999994,AL,AL-3,Republican
+1314,4,9,33-37,Male,Other/Multi,Hispanic,HS grad,1851.2249000000008,AZ,AZ-9,Democrat
+1315,39,1,18-22,Male,White,Not Hispanic,HS grad,7797.431848323568,OH,OH-1,Democrat
+1316,34,5,18-22,Female,White,Not Hispanic,Some college,3745.871500000001,NJ,NJ-5,Republican
+1317,4,4,38-42,Female,White,Not Hispanic,Post-grad,2437.0955000000013,AZ,AZ-4,Democrat
+1318,42,1,28-32,Female,White,Not Hispanic,4-year,5986.596600000004,PA,PA-1,Democrat
+1319,48,11,38-42,Male,White,Not Hispanic,HS grad,2970.288578951838,TX,TX-11,Republican
+1320,27,7,18-22,Female,Other/Multi,Hispanic,HS grad,177.262,MN,MN-7,Democrat
+1321,26,6,63-67,Female,White,Not Hispanic,Post-grad,3041.9978,MI,MI-6,Democrat
+1322,1,3,38-42,Male,White,Not Hispanic,Some college,3573.9684000000007,AL,AL-3,Republican
+1323,44,2,33-37,Female,White,Not Hispanic,No HS,179.38049999999998,RI,RI-2,Republican
+1324,17,14,43-47,Male,Other/Multi,Hispanic,HS grad,885.2579000000003,IL,IL-14,Republican
+1325,48,23,38-42,Male,Asian,Not Hispanic,Post-grad,142.7053157608177,TX,TX-23,Other
+1326,20,2,48-52,Female,White,Not Hispanic,Post-grad,2564.064900000001,KS,KS-2,Democrat
+1327,34,6,18-22,Male,Black,Not Hispanic,Some college,1277.0526,NJ,NJ-6,Other
+1328,13,6,28-32,Male,White,Not Hispanic,Post-grad,1707.9326,GA,GA-6,Republican
+1329,8,1,78-82,Male,White,Not Hispanic,HS grad,413.6622,CO,CO-1,Democrat
+1330,42,14,28-32,Female,White,Not Hispanic,Post-grad,2309.121200000001,PA,PA-14,Did not vote
+1331,27,7,23-27,Male,White,Not Hispanic,No HS,1016.7322,MN,MN-7,Republican
+1332,31,2,53-57,Female,White,Not Hispanic,2-year,1522.1719999999991,NE,NE-2,Democrat
+1333,53,7,33-37,Male,White,Not Hispanic,2-year,1661.524500000001,WA,WA-7,Democrat
+1334,53,6,58-62,Female,White,Not Hispanic,Post-grad,2596.8990000000003,WA,WA-6,Democrat
+1335,48,13,18-22,Female,White,Hispanic,No HS,554.6614597895118,TX,TX-13,Democrat
+1336,9,5,83+,Male,White,Not Hispanic,Some college,915.7068999999996,CT,CT-5,Republican
+1337,36,4,43-47,Female,Black,Not Hispanic,Post-grad,1025.1932000000002,NY,NY-4,Other
+1338,48,23,23-27,Male,Other/Multi,Hispanic,HS grad,4285.988928345385,TX,TX-23,Democrat
+1339,20,3,23-27,Male,White,Not Hispanic,4-year,7722.182999999998,KS,KS-3,Republican
+1340,6,25,43-47,Female,Other/Multi,Hispanic,No HS,1096.4462384710864,CA,CA-25,Democrat
+1341,47,2,38-42,Male,White,Not Hispanic,HS grad,6718.815099999995,TN,TN-2,Other
+1342,26,13,33-37,Male,Black,Not Hispanic,Some college,3311.978,MI,MI-13,Democrat
+1343,34,5,63-67,Male,White,Not Hispanic,HS grad,4062.6534000000015,NJ,NJ-5,Democrat
+1344,55,2,23-27,Male,White,Not Hispanic,Some college,3862.0586,WI,WI-2,Republican
+1345,36,10,53-57,Male,White,Hispanic,No HS,172.2996,NY,NY-10,Republican
+1346,24,6,63-67,Female,White,Not Hispanic,4-year,3284.248699999996,MD,MD-6,Republican
+1347,20,1,23-27,Female,White,Hispanic,Some college,358.55400000000003,KS,KS-1,Republican
+1348,24,3,48-52,Female,White,Not Hispanic,4-year,3766.7086,MD,MD-3,Republican
+1349,6,33,53-57,Male,Native American,Hispanic,No HS,49.50389795871613,CA,CA-33,Democrat
+1350,45,3,68-72,Male,White,Not Hispanic,Some college,3519.2059000000013,SC,SC-3,Democrat
+1351,48,4,53-57,Male,White,Not Hispanic,Some college,3044.608172216796,TX,TX-4,Democrat
+1352,13,12,28-32,Male,Black,Not Hispanic,HS grad,4535.162599999997,GA,GA-12,Democrat
+1353,17,2,28-32,Male,Black,Not Hispanic,4-year,1093.3262000000004,IL,IL-2,Democrat
+1354,48,21,43-47,Male,Other/Multi,Hispanic,Some college,1271.0989637460102,TX,TX-21,Republican
+1355,4,3,28-32,Female,White,Hispanic,Some college,861.0596999999999,AZ,AZ-3,Democrat
+1356,29,5,28-32,Male,White,Not Hispanic,Some college,4723.6828925714935,MO,MO-5,Republican
+1357,26,5,73-77,Male,White,Not Hispanic,Some college,3469.365700000002,MI,MI-5,Republican
+1358,39,4,83+,Male,White,Not Hispanic,HS grad,3329.2751364840774,OH,OH-4,Republican
+1359,8,3,28-32,Female,White,Not Hispanic,4-year,4757.647600000001,CO,CO-3,Republican
+1360,37,10,73-77,Male,Other/Multi,Hispanic,Post-grad,82.313398271821,NC,NC-10,Democrat
+1361,20,4,23-27,Male,Black,Not Hispanic,Some college,483.1278,KS,KS-4,Democrat
+1362,36,16,33-37,Female,Other/Multi,Hispanic,HS grad,1405.2538,NY,NY-16,Republican
+1363,4,9,73-77,Male,White,Not Hispanic,Some college,5979.584599999999,AZ,AZ-9,Republican
+1364,26,5,23-27,Male,White,Not Hispanic,HS grad,6762.241300000002,MI,MI-5,Republican
+1365,29,5,83+,Female,White,Not Hispanic,4-year,829.8257806177131,MO,MO-5,Democrat
+1366,12,10,33-37,Female,White,Not Hispanic,Post-grad,2410.2194821484395,FL,FL-10,Republican
+1367,6,44,23-27,Male,Other/Multi,Hispanic,HS grad,4980.375848042235,CA,CA-44,Republican
+1368,10,1,33-37,Female,Other/Multi,Not Hispanic,Some college,408.0,DE,DE-1,Democrat
+1369,18,3,33-37,Female,White,Not Hispanic,4-year,5685.134000000001,IN,IN-3,Republican
+1370,6,23,38-42,Male,White,Not Hispanic,HS grad,2665.814949451672,CA,CA-23,Did not vote
+1371,51,10,53-57,Female,White,Not Hispanic,HS grad,2025.996,VA,VA-10,Democrat
+1372,22,6,23-27,Male,Black,Not Hispanic,No HS,1447.831,LA,LA-6,Other
+1373,47,1,58-62,Female,White,Not Hispanic,No HS,3120.3275,TN,TN-1,Democrat
+1374,54,1,38-42,Female,White,Not Hispanic,HS grad,6464.424499999999,WV,WV-1,Republican
+1375,6,15,28-32,Male,Other/Multi,Hispanic,HS grad,970.8963209222126,CA,CA-15,Democrat
+1376,37,3,68-72,Female,White,Not Hispanic,No HS,606.6504153890249,NC,NC-3,Democrat
+1377,48,20,28-32,Female,Other/Multi,Hispanic,Some college,3355.851382705091,TX,TX-20,Did not vote
+1378,36,22,58-62,Male,White,Not Hispanic,HS grad,7691.020699999999,NY,NY-22,Republican
+1379,24,8,53-57,Female,White,Not Hispanic,Post-grad,5888.609500000007,MD,MD-8,Did not vote
+1380,25,1,43-47,Male,White,Not Hispanic,2-year,1415.6097999999995,MA,MA-1,Democrat
+1381,4,8,28-32,Male,White,Not Hispanic,Post-grad,1332.3445000000004,AZ,AZ-8,Other
+1382,31,1,53-57,Male,White,Not Hispanic,2-year,2102.946500000001,NE,NE-1,Did not vote
+1383,55,7,18-22,Male,Native American,Not Hispanic,Some college,20.9545,WI,WI-7,Republican
+1384,53,4,53-57,Male,White,Not Hispanic,Some college,2597.391700000001,WA,WA-4,Democrat
+1385,5,1,18-22,Female,White,Not Hispanic,No HS,1937.9409,AR,AR-1,Republican
+1386,39,11,33-37,Female,White,Not Hispanic,2-year,772.3540742219199,OH,OH-11,Republican
+1387,17,1,38-42,Female,White,Not Hispanic,4-year,2646.0847999999974,IL,IL-1,Did not vote
+1388,48,34,68-72,Male,Other/Multi,Hispanic,4-year,702.6598511538571,TX,TX-34,Democrat
+1389,5,2,83+,Male,Black,Not Hispanic,HS grad,180.8338,AR,AR-2,Democrat
+1390,51,5,68-72,Female,Other/Multi,Not Hispanic,Some college,319.0788999999999,VA,VA-5,Democrat
+1391,48,4,48-52,Female,Other/Multi,Hispanic,Some college,392.4782709738224,TX,TX-4,Republican
+1392,6,33,28-32,Female,Other/Multi,Hispanic,4-year,2010.710361093608,CA,CA-33,Did not vote
+1393,6,5,38-42,Male,Other/Multi,Hispanic,HS grad,2150.636583666007,CA,CA-5,Democrat
+1394,48,3,38-42,Female,White,Not Hispanic,4-year,5837.518636483172,TX,TX-3,Republican
+1395,6,51,58-62,Male,Other/Multi,Hispanic,HS grad,869.3946534392429,CA,CA-51,Did not vote
+1396,31,1,63-67,Male,White,Not Hispanic,HS grad,5236.838799999998,NE,NE-1,Democrat
+1397,49,2,43-47,Male,White,Not Hispanic,No HS,694.9678108296271,UT,UT-2,Democrat
+1398,34,7,28-32,Female,White,Not Hispanic,HS grad,1345.9701999999995,NJ,NJ-7,Republican
+1399,22,2,73-77,Female,White,Not Hispanic,Some college,1663.7359,LA,LA-2,Republican
+1400,25,7,28-32,Male,White,Not Hispanic,4-year,12101.165300000008,MA,MA-7,Democrat
+1401,6,6,68-72,Male,White,Not Hispanic,Some college,2668.930952560013,CA,CA-6,Other
+1402,53,8,63-67,Male,Asian,Not Hispanic,Some college,256.4856000000001,WA,WA-8,Republican
+1403,17,5,43-47,Female,Other/Multi,Hispanic,HS grad,553.1392000000002,IL,IL-5,Did not vote
+1404,10,1,53-57,Female,Black,Not Hispanic,HS grad,2383.0,DE,DE-1,Other
+1405,13,12,73-77,Male,Black,Not Hispanic,4-year,204.6743,GA,GA-12,Republican
+1406,53,6,78-82,Male,White,Not Hispanic,HS grad,1893.7987,WA,WA-6,Republican
+1407,6,22,23-27,Female,White,Not Hispanic,4-year,1032.1450826383884,CA,CA-22,Democrat
+1408,48,18,33-37,Male,Black,Not Hispanic,Post-grad,983.46110187691,TX,TX-18,Democrat
+1409,39,12,23-27,Female,White,Not Hispanic,4-year,4013.764903749244,OH,OH-12,Democrat
+1410,48,1,33-37,Female,White,Not Hispanic,2-year,2008.8289280624424,TX,TX-1,Republican
+1411,54,1,68-72,Female,White,Not Hispanic,Some college,4704.855699999999,WV,WV-1,Democrat
+1412,48,6,58-62,Female,White,Not Hispanic,Some college,2845.522268201316,TX,TX-6,Republican
+1413,51,9,18-22,Female,White,Not Hispanic,HS grad,7248.972999999998,VA,VA-9,Democrat
+1414,6,37,78-82,Male,Black,Not Hispanic,Some college,461.9730960388104,CA,CA-37,Democrat
+1415,45,4,33-37,Female,Black,Not Hispanic,Some college,1079.5786,SC,SC-4,Democrat
+1416,32,3,63-67,Male,White,Hispanic,2-year,75.3276,NV,NV-3,Republican
+1417,32,2,73-77,Female,White,Not Hispanic,4-year,2654.6714,NV,NV-2,Republican
+1418,48,32,68-72,Female,Black,Not Hispanic,4-year,176.4252326433271,TX,TX-32,Democrat
+1419,53,10,28-32,Male,White,Not Hispanic,Post-grad,1257.1098000000002,WA,WA-10,Other
+1420,39,10,73-77,Female,White,Not Hispanic,HS grad,5089.4581798342015,OH,OH-10,Other
+1421,26,13,68-72,Female,Asian,Not Hispanic,2-year,29.0,MI,MI-13,Democrat
+1422,26,2,73-77,Male,Other/Multi,Not Hispanic,No HS,20.5448,MI,MI-2,Republican
+1423,21,4,33-37,Male,White,Not Hispanic,4-year,4583.109199999999,KY,KY-4,Republican
+1424,19,1,58-62,Male,White,Not Hispanic,4-year,3680.8781,IA,IA-1,Democrat
+1425,21,6,43-47,Female,Black,Not Hispanic,4-year,322.32800000000003,KY,KY-6,Democrat
+1426,6,19,68-72,Male,White,Not Hispanic,Some college,2765.593139089965,CA,CA-19,Democrat
+1427,6,13,38-42,Male,Other/Multi,Hispanic,HS grad,3156.171740290656,CA,CA-13,Other
+1428,42,16,23-27,Male,White,Not Hispanic,HS grad,7697.492400000003,PA,PA-16,Did not vote
+1429,25,7,63-67,Female,White,Not Hispanic,Post-grad,2682.8542000000016,MA,MA-7,Other
+1430,51,3,63-67,Female,White,Not Hispanic,HS grad,3277.7394000000018,VA,VA-3,Republican
+1431,36,12,83+,Female,White,Not Hispanic,Post-grad,5113.419100000004,NY,NY-12,Republican
+1432,4,7,73-77,Male,White,Not Hispanic,Post-grad,2405.240500000001,AZ,AZ-7,Did not vote
+1433,6,52,48-52,Female,White,Not Hispanic,Post-grad,624.4116396962562,CA,CA-52,Democrat
+1434,12,6,73-77,Male,Other/Multi,Hispanic,Post-grad,115.27786039747252,FL,FL-6,Democrat
+1435,54,1,63-67,Male,White,Not Hispanic,HS grad,14085.521400000009,WV,WV-1,Republican
+1436,12,12,28-32,Female,White,Hispanic,HS grad,494.6581795839192,FL,FL-12,Democrat
+1437,29,3,33-37,Male,White,Not Hispanic,Some college,4134.508337229452,MO,MO-3,Republican
+1438,51,5,78-82,Female,Black,Not Hispanic,HS grad,1325.2774,VA,VA-5,Democrat
+1439,54,2,33-37,Female,White,Not Hispanic,HS grad,5528.944600000001,WV,WV-2,Republican
+1440,12,19,23-27,Male,White,Not Hispanic,HS grad,2808.705403973161,FL,FL-19,Democrat
+1441,5,4,63-67,Female,White,Not Hispanic,4-year,2516.9988000000008,AR,AR-4,Democrat
+1442,6,50,68-72,Female,White,Not Hispanic,HS grad,1967.191106550085,CA,CA-50,Democrat
+1443,6,6,78-82,Male,Asian,Not Hispanic,4-year,114.98249262216028,CA,CA-6,Democrat
+1444,12,2,58-62,Male,White,Not Hispanic,Some college,3173.779921325827,FL,FL-2,Other
+1445,34,7,58-62,Female,White,Not Hispanic,HS grad,4899.869300000004,NJ,NJ-7,Democrat
+1446,49,1,23-27,Female,Other/Multi,Hispanic,HS grad,1769.765264098088,UT,UT-1,Republican
+1447,31,3,18-22,Female,White,Not Hispanic,HS grad,4534.839900000001,NE,NE-3,Republican
+1448,36,19,43-47,Female,White,Not Hispanic,HS grad,2998.864899999998,NY,NY-19,Democrat
+1449,12,5,38-42,Male,White,Not Hispanic,Some college,2471.572097807737,FL,FL-5,Other
+1450,45,6,33-37,Male,White,Not Hispanic,Some college,2356.861399999998,SC,SC-6,Republican
+1451,36,15,63-67,Male,White,Not Hispanic,Some college,383.9950999999999,NY,NY-15,Republican
+1452,48,16,83+,Female,White,Hispanic,No HS,915.4841396173414,TX,TX-16,Democrat
+1453,51,11,33-37,Male,Other/Multi,Hispanic,Some college,487.9209,VA,VA-11,Democrat
+1454,18,4,68-72,Male,White,Not Hispanic,Post-grad,1673.492699999999,IN,IN-4,Did not vote
+1455,6,20,28-32,Female,Other/Multi,Hispanic,Some college,2746.585073241798,CA,CA-20,Republican
+1456,12,15,18-22,Male,Other/Multi,Hispanic,HS grad,1884.6157717168487,FL,FL-15,Did not vote
+1457,25,4,33-37,Male,White,Not Hispanic,Some college,2030.7714,MA,MA-4,Did not vote
+1458,51,9,73-77,Male,White,Not Hispanic,HS grad,5126.175799999996,VA,VA-9,Democrat
+1459,20,4,68-72,Male,Other/Multi,Hispanic,HS grad,532.6178,KS,KS-4,Republican
+1460,42,12,48-52,Female,White,Not Hispanic,4-year,3534.053700000003,PA,PA-12,Republican
+1461,32,1,53-57,Female,Asian,Not Hispanic,4-year,819.2782999999998,NV,NV-1,Republican
+1462,9,3,63-67,Female,Black,Not Hispanic,HS grad,727.5874999999999,CT,CT-3,Democrat
+1463,17,10,23-27,Female,Asian,Not Hispanic,4-year,992.1951,IL,IL-10,Democrat
+1464,37,4,43-47,Male,White,Not Hispanic,4-year,4931.211055013152,NC,NC-4,Republican
+1465,37,12,63-67,Male,White,Not Hispanic,Some college,1654.529730503891,NC,NC-12,Republican
+1466,25,2,78-82,Female,Black,Not Hispanic,Some college,17.0,MA,MA-2,Democrat
+1467,12,16,28-32,Female,White,Not Hispanic,Some college,2457.287365243186,FL,FL-16,Democrat
+1468,40,2,63-67,Male,White,Not Hispanic,4-year,2534.084099999999,OK,OK-2,Republican
+1469,8,5,43-47,Male,White,Not Hispanic,Some college,2839.6151000000004,CO,CO-5,Did not vote
+1470,51,6,23-27,Male,White,Not Hispanic,HS grad,6907.355200000002,VA,VA-6,Republican
+1471,10,1,23-27,Female,White,Not Hispanic,Some college,2960.0,DE,DE-1,Republican
+1472,6,28,43-47,Female,Asian,Not Hispanic,2-year,461.4320750437821,CA,CA-28,Republican
+1473,27,7,53-57,Male,White,Not Hispanic,Post-grad,1426.6075000000003,MN,MN-7,Democrat
+1474,29,4,68-72,Male,White,Not Hispanic,Some college,3572.851951075558,MO,MO-4,Republican
+1475,28,4,23-27,Male,Black,Not Hispanic,HS grad,1660.6291,MS,MS-4,Democrat
+1476,25,3,63-67,Female,Asian,Not Hispanic,No HS,430.1106,MA,MA-3,Other
+1477,55,7,58-62,Female,White,Not Hispanic,Some college,6313.34389999999,WI,WI-7,Did not vote
+1478,27,2,38-42,Female,Other/Multi,Not Hispanic,4-year,225.5085,MN,MN-2,Did not vote
+1479,26,11,58-62,Male,Asian,Not Hispanic,Post-grad,960.9845,MI,MI-11,Republican
+1480,24,5,43-47,Female,White,Not Hispanic,Post-grad,2616.0027,MD,MD-5,Democrat
+1481,6,8,48-52,Female,Other/Multi,Hispanic,4-year,370.9294720612245,CA,CA-8,Republican
+1482,36,3,68-72,Male,Other/Multi,Hispanic,Some college,363.19610000000006,NY,NY-3,Other
+1483,12,15,73-77,Female,White,Not Hispanic,4-year,2631.701839571145,FL,FL-15,Republican
+1484,36,24,18-22,Female,White,Not Hispanic,Some college,8336.595299999992,NY,NY-24,Republican
+1485,6,1,48-52,Female,White,Not Hispanic,Post-grad,2165.474093807298,CA,CA-1,Republican
+1486,55,1,68-72,Female,White,Not Hispanic,Post-grad,1859.9832999999992,WI,WI-1,Republican
+1487,26,8,23-27,Female,White,Not Hispanic,Some college,4967.185399999999,MI,MI-8,Republican
+1488,48,31,68-72,Male,White,Not Hispanic,Some college,3010.8834627135257,TX,TX-31,Democrat
+1489,26,10,63-67,Female,White,Not Hispanic,HS grad,7149.436100000004,MI,MI-10,Republican
+1490,6,5,58-62,Female,White,Not Hispanic,No HS,774.023217934674,CA,CA-5,Republican
+1491,47,6,78-82,Male,White,Not Hispanic,4-year,996.5218999999996,TN,TN-6,Democrat
+1492,37,2,33-37,Female,Asian,Not Hispanic,4-year,412.69145488446,NC,NC-2,Other
+1493,42,16,73-77,Female,White,Not Hispanic,HS grad,9010.202800000005,PA,PA-16,Republican
+1494,24,8,28-32,Female,White,Not Hispanic,HS grad,238.0546,MD,MD-8,Democrat
+1495,36,24,28-32,Female,White,Not Hispanic,No HS,1266.6726,NY,NY-24,Republican
+1496,48,13,28-32,Male,White,Not Hispanic,No HS,1057.9421084555609,TX,TX-13,Republican
+1497,36,21,43-47,Female,Asian,Not Hispanic,HS grad,40.126000000000005,NY,NY-21,Republican
+1498,18,4,63-67,Male,White,Not Hispanic,No HS,1418.8456000000003,IN,IN-4,Republican
+1499,37,8,43-47,Female,Native American,Not Hispanic,No HS,92.33151107475372,NC,NC-8,Other
+1500,37,12,33-37,Male,White,Not Hispanic,4-year,5889.283891461271,NC,NC-12,Republican
+1501,53,5,43-47,Female,White,Not Hispanic,Some college,3900.658699999999,WA,WA-5,Republican
+1502,20,1,48-52,Female,Other/Multi,Not Hispanic,4-year,209.8648,KS,KS-1,Democrat
+1503,24,6,63-67,Male,White,Not Hispanic,4-year,3515.6191999999955,MD,MD-6,Republican
+1504,47,2,68-72,Female,Other/Multi,Not Hispanic,Some college,120.951,TN,TN-2,Republican
+1505,28,3,23-27,Female,White,Not Hispanic,4-year,3615.338600000001,MS,MS-3,Republican
+1506,41,4,18-22,Male,Other/Multi,Not Hispanic,No HS,205.0372,OR,OR-4,Republican
+1507,26,4,33-37,Female,White,Not Hispanic,Post-grad,2843.811699999997,MI,MI-4,Republican
+1508,12,10,63-67,Male,Other/Multi,Not Hispanic,No HS,134.87689505883515,FL,FL-10,Republican
+1509,42,1,73-77,Female,White,Not Hispanic,No HS,503.2866,PA,PA-1,Democrat
+1510,6,40,18-22,Male,Other/Multi,Hispanic,Some college,2959.0987726944804,CA,CA-40,Did not vote
+1511,12,4,18-22,Male,Black,Not Hispanic,Some college,1700.7739523372654,FL,FL-4,Republican
+1512,36,19,63-67,Female,White,Not Hispanic,4-year,3974.8213999999984,NY,NY-19,Did not vote
+1513,42,2,63-67,Male,White,Not Hispanic,2-year,511.5877,PA,PA-2,Did not vote
+1514,48,31,18-22,Female,Black,Not Hispanic,Some college,1722.144535164216,TX,TX-31,Did not vote
+1515,13,7,33-37,Female,White,Not Hispanic,Post-grad,2890.0935,GA,GA-7,Republican
+1516,6,30,23-27,Male,White,Not Hispanic,HS grad,1122.1517389633009,CA,CA-30,Republican
+1517,53,3,43-47,Male,White,Not Hispanic,Some college,5174.8290000000015,WA,WA-3,Democrat
+1518,6,51,28-32,Female,White,Not Hispanic,Some college,2514.0069759920275,CA,CA-51,Republican
+1519,12,3,63-67,Female,White,Not Hispanic,HS grad,7877.241132601275,FL,FL-3,Republican
+1520,15,1,33-37,Female,Asian,Not Hispanic,4-year,2968.3080000000004,HI,HI-1,Democrat
+1521,29,8,73-77,Female,White,Not Hispanic,HS grad,6833.364586233503,MO,MO-8,Other
+1522,48,25,33-37,Male,White,Not Hispanic,HS grad,4106.211369020192,TX,TX-25,Democrat
+1523,42,8,38-42,Male,Other/Multi,Hispanic,2-year,299.9203,PA,PA-8,Democrat
+1524,39,12,33-37,Female,White,Not Hispanic,HS grad,4203.373419280387,OH,OH-12,Republican
+1525,8,8,33-37,Male,White,Not Hispanic,Some college,3852.7866,CO,CO-8,Republican
+1526,18,9,23-27,Female,White,Not Hispanic,4-year,5907.981399999999,IN,IN-9,Democrat
+1527,26,11,73-77,Male,White,Not Hispanic,Some college,2071.0974,MI,MI-11,Democrat
+1528,6,48,18-22,Male,Other/Multi,Hispanic,HS grad,3992.896795395091,CA,CA-48,Other
+1529,13,7,53-57,Female,Other/Multi,Not Hispanic,4-year,345.7601,GA,GA-7,Republican
+1530,17,4,38-42,Female,White,Not Hispanic,4-year,1613.0502999999978,IL,IL-4,Democrat
+1531,6,38,23-27,Male,White,Not Hispanic,4-year,766.9329603501042,CA,CA-38,Democrat
+1532,33,1,63-67,Male,White,Not Hispanic,2-year,2312.0828,NH,NH-1,Republican
+1533,39,10,78-82,Male,White,Not Hispanic,Post-grad,1624.6676683966084,OH,OH-10,Democrat
+1534,6,10,18-22,Female,White,Not Hispanic,Some college,2029.101377789873,CA,CA-10,Republican
+1535,26,13,18-22,Male,Black,Not Hispanic,Some college,2019.68,MI,MI-13,Republican
+1536,42,17,23-27,Female,White,Not Hispanic,HS grad,2700.9191999999985,PA,PA-17,Democrat
+1537,42,3,23-27,Female,Black,Not Hispanic,Some college,2936.0076,PA,PA-3,Democrat
+1538,47,4,18-22,Female,White,Not Hispanic,Some college,8179.385699999996,TN,TN-4,Democrat
+1539,25,8,58-62,Male,Other/Multi,Hispanic,4-year,119.49420000000002,MA,MA-8,Democrat
+1540,47,6,33-37,Male,White,Not Hispanic,HS grad,6940.812700000009,TN,TN-6,Other
+1541,12,20,78-82,Female,White,Not Hispanic,4-year,1168.1663059638004,FL,FL-20,Republican
+1542,19,1,38-42,Male,White,Not Hispanic,4-year,4509.325,IA,IA-1,Other
+1543,8,8,68-72,Male,Native American,Hispanic,No HS,28.0,CO,CO-8,Democrat
+1544,26,7,43-47,Male,White,Not Hispanic,4-year,4839.909000000002,MI,MI-7,Republican
+1545,21,6,58-62,Female,Black,Not Hispanic,HS grad,670.4747000000001,KY,KY-6,Democrat
+1546,12,21,18-22,Female,White,Not Hispanic,No HS,1110.373969453069,FL,FL-21,Republican
+1547,42,4,58-62,Male,White,Not Hispanic,Post-grad,3544.771099999998,PA,PA-4,Did not vote
+1548,17,6,78-82,Male,Other/Multi,Hispanic,No HS,111.8415,IL,IL-6,Democrat
+1549,13,7,38-42,Male,White,Not Hispanic,HS grad,1786.5621999999998,GA,GA-7,Other
+1550,6,39,73-77,Male,Asian,Not Hispanic,Some college,184.39817232703484,CA,CA-39,Other
+1551,25,4,58-62,Female,Other/Multi,Not Hispanic,Some college,231.3816,MA,MA-4,Republican
+1552,17,1,68-72,Male,White,Not Hispanic,Post-grad,1501.389600000001,IL,IL-1,Democrat
+1553,19,4,68-72,Female,Other/Multi,Not Hispanic,4-year,67.7563,IA,IA-4,Republican
+1554,12,18,78-82,Male,White,Not Hispanic,HS grad,3457.2264961083542,FL,FL-18,Democrat
+1555,42,9,43-47,Male,White,Not Hispanic,Some college,3367.339399999997,PA,PA-9,Republican
+1556,51,3,43-47,Female,White,Not Hispanic,HS grad,1426.0372999999995,VA,VA-3,Republican
+1557,27,7,63-67,Female,White,Not Hispanic,2-year,3647.791700000003,MN,MN-7,Did not vote
+1558,36,26,28-32,Female,White,Not Hispanic,4-year,4968.038999999998,NY,NY-26,Republican
+1559,48,18,33-37,Female,White,Not Hispanic,Post-grad,1817.1623690223887,TX,TX-18,Republican
+1560,56,1,38-42,Female,White,Not Hispanic,Post-grad,2747.0,WY,WY-1,Republican
+1561,36,13,48-52,Female,Other/Multi,Hispanic,2-year,704.1811,NY,NY-13,Democrat
+1562,48,28,33-37,Male,Other/Multi,Hispanic,HS grad,4489.591424474464,TX,TX-28,Did not vote
+1563,48,37,33-37,Female,White,Not Hispanic,Post-grad,5208.344932754887,TX,TX-37,Democrat
+1564,45,2,43-47,Male,White,Not Hispanic,Some college,2480.677899999999,SC,SC-2,Did not vote
+1565,26,4,63-67,Male,White,Not Hispanic,4-year,3361.4379999999983,MI,MI-4,Republican
+1566,6,15,43-47,Female,Asian,Not Hispanic,Post-grad,2400.327690341184,CA,CA-15,Other
+1567,1,7,73-77,Female,Black,Not Hispanic,HS grad,2214.0983,AL,AL-7,Democrat
+1568,26,11,43-47,Female,White,Not Hispanic,Post-grad,3474.1361,MI,MI-11,Other
+1569,27,6,23-27,Female,White,Not Hispanic,No HS,825.5513,MN,MN-6,Democrat
+1570,23,1,28-32,Male,White,Not Hispanic,HS grad,4837.2593,ME,ME-1,Republican
+1571,34,7,48-52,Female,White,Not Hispanic,4-year,6708.572900000005,NJ,NJ-7,Democrat
+1572,33,2,58-62,Female,White,Not Hispanic,Some college,3817.860400000004,NH,NH-2,Democrat
+1573,48,4,28-32,Female,White,Not Hispanic,HS grad,2219.2107862693715,TX,TX-4,Republican
+1574,6,29,18-22,Male,White,Hispanic,Some college,369.71909637996686,CA,CA-29,Democrat
+1575,12,14,63-67,Female,White,Not Hispanic,Some college,2828.979186374752,FL,FL-14,Democrat
+1576,45,3,23-27,Female,White,Not Hispanic,2-year,1835.1311,SC,SC-3,Other
+1577,48,9,43-47,Female,Other/Multi,Hispanic,HS grad,2084.320734234004,TX,TX-9,Democrat
+1578,55,7,58-62,Female,White,Not Hispanic,Some college,6313.34389999999,WI,WI-7,Republican
+1579,48,20,73-77,Female,Other/Multi,Hispanic,HS grad,1641.436689212935,TX,TX-20,Democrat
+1580,48,28,38-42,Male,White,Hispanic,HS grad,1421.2662425521069,TX,TX-28,Republican
+1581,17,7,23-27,Male,Black,Not Hispanic,4-year,2797.4691000000007,IL,IL-7,Republican
+1582,22,4,63-67,Male,White,Not Hispanic,HS grad,5834.2059,LA,LA-4,Republican
+1583,13,5,28-32,Male,White,Not Hispanic,Post-grad,3395.7917999999986,GA,GA-5,Republican
+1584,36,10,28-32,Male,White,Not Hispanic,2-year,344.3964,NY,NY-10,Did not vote
+1585,51,6,83+,Male,White,Not Hispanic,HS grad,2696.299600000002,VA,VA-6,Republican
+1586,18,3,48-52,Female,White,Not Hispanic,HS grad,4762.534200000001,IN,IN-3,Democrat
+1587,34,2,58-62,Male,White,Not Hispanic,No HS,1261.3314,NJ,NJ-2,Republican
+1588,16,1,38-42,Male,White,Not Hispanic,2-year,2128.5095999999994,ID,ID-1,Republican
+1589,8,5,73-77,Male,White,Not Hispanic,4-year,2757.5433000000003,CO,CO-5,Democrat
+1590,12,2,58-62,Male,Black,Not Hispanic,Some college,880.9151794361043,FL,FL-2,Republican
+1591,6,4,48-52,Male,Other/Multi,Hispanic,No HS,863.6683130133872,CA,CA-4,Democrat
+1592,51,11,48-52,Female,White,Not Hispanic,Post-grad,5002.118600000005,VA,VA-11,Republican
+1593,22,5,33-37,Female,White,Not Hispanic,Post-grad,1750.1940000000009,LA,LA-5,Democrat
+1594,48,3,23-27,Female,White,Not Hispanic,4-year,3855.9155476404894,TX,TX-3,Democrat
+1595,39,1,38-42,Male,White,Not Hispanic,4-year,5553.377734569127,OH,OH-1,Did not vote
+1596,12,1,43-47,Female,White,Not Hispanic,4-year,4294.270411387143,FL,FL-1,Other
+1597,8,8,38-42,Male,Other/Multi,Not Hispanic,4-year,163.08249999999998,CO,CO-8,Other
+1598,47,2,63-67,Male,White,Not Hispanic,2-year,1908.7292,TN,TN-2,Did not vote
+1599,13,3,58-62,Male,Black,Not Hispanic,HS grad,2490.193799999999,GA,GA-3,Democrat
+1600,49,1,38-42,Male,Asian,Not Hispanic,HS grad,250.65886289415536,UT,UT-1,Democrat
+1601,6,44,38-42,Female,Black,Not Hispanic,4-year,525.9977298144114,CA,CA-44,Democrat
+1602,37,14,73-77,Male,White,Not Hispanic,Post-grad,1979.447328035185,NC,NC-14,Republican
+1603,47,3,63-67,Male,White,Not Hispanic,2-year,1425.6041999999995,TN,TN-3,Democrat
+1604,12,18,58-62,Female,White,Not Hispanic,HS grad,4996.21870645994,FL,FL-18,Did not vote
+1605,13,8,63-67,Male,White,Not Hispanic,Some college,3182.9666999999963,GA,GA-8,Democrat
+1606,53,7,18-22,Female,White,Not Hispanic,Some college,5777.465900000001,WA,WA-7,Democrat
+1607,13,3,58-62,Female,Black,Not Hispanic,No HS,1209.6534,GA,GA-3,Democrat
+1608,24,8,83+,Male,Other/Multi,Hispanic,Some college,62.0,MD,MD-8,Democrat
+1609,25,2,18-22,Female,White,Not Hispanic,Some college,13295.469800000015,MA,MA-2,Democrat
+1610,12,26,48-52,Female,White,Hispanic,4-year,782.8761021402713,FL,FL-26,Republican
+1611,42,14,53-57,Female,White,Not Hispanic,HS grad,9249.393399999995,PA,PA-14,Democrat
+1612,42,12,78-82,Female,Black,Not Hispanic,Post-grad,283.67,PA,PA-12,Democrat
+1613,20,4,73-77,Female,White,Not Hispanic,HS grad,2997.814900000002,KS,KS-4,Did not vote
+1614,48,3,48-52,Female,White,Not Hispanic,No HS,342.7435210354876,TX,TX-3,Republican
+1615,12,9,68-72,Female,White,Not Hispanic,Some college,3078.7080287708627,FL,FL-9,Republican
+1616,1,2,73-77,Female,White,Not Hispanic,HS grad,3541.734399999996,AL,AL-2,Democrat
+1617,34,8,78-82,Female,White,Not Hispanic,HS grad,1012.3449000000004,NJ,NJ-8,Democrat
+1618,55,7,38-42,Female,White,Not Hispanic,2-year,3626.238900000001,WI,WI-7,Democrat
+1619,4,9,38-42,Female,Other/Multi,Hispanic,4-year,790.1255,AZ,AZ-9,Did not vote
+1620,12,7,63-67,Female,Other/Multi,Hispanic,HS grad,1208.6435717871102,FL,FL-7,Republican
+1621,29,4,53-57,Male,White,Not Hispanic,HS grad,6578.788932925286,MO,MO-4,Democrat
+1622,47,1,83+,Female,White,Not Hispanic,Post-grad,722.5514999999999,TN,TN-1,Democrat
+1623,6,19,48-52,Female,Other/Multi,Hispanic,Post-grad,380.99967195930753,CA,CA-19,Other
+1624,22,2,18-22,Male,White,Not Hispanic,Some college,3030.012800000002,LA,LA-2,Republican
+1625,42,2,58-62,Female,Other/Multi,Hispanic,Some college,242.749,PA,PA-2,Democrat
+1626,20,1,68-72,Female,White,Not Hispanic,4-year,2497.704300000001,KS,KS-1,Other
+1627,10,1,43-47,Female,White,Not Hispanic,HS grad,2678.0,DE,DE-1,Republican
+1628,12,2,68-72,Male,White,Not Hispanic,No HS,817.4528035947782,FL,FL-2,Republican
+1629,23,2,38-42,Male,White,Not Hispanic,Some college,3157.893,ME,ME-2,Democrat
+1630,26,12,38-42,Female,White,Not Hispanic,HS grad,1460.7285,MI,MI-12,Democrat
+1631,48,15,63-67,Male,White,Not Hispanic,HS grad,1675.0521043134063,TX,TX-15,Did not vote
+1632,36,25,73-77,Female,White,Not Hispanic,2-year,1306.4906,NY,NY-25,Republican
+1633,39,5,23-27,Female,White,Not Hispanic,Some college,3839.791231158038,OH,OH-5,Republican
+1634,55,2,43-47,Male,White,Not Hispanic,4-year,5056.874500000004,WI,WI-2,Republican
+1635,24,1,23-27,Female,Black,Not Hispanic,Some college,1100.2824,MD,MD-1,Democrat
+1636,22,5,43-47,Male,White,Not Hispanic,Some college,2681.9474000000005,LA,LA-5,Other
+1637,50,1,68-72,Female,White,Not Hispanic,HS grad,5123.0,VT,VT-1,Democrat
+1638,12,23,23-27,Female,Other/Multi,Hispanic,No HS,321.013036020475,FL,FL-23,Republican
+1639,41,1,18-22,Male,White,Not Hispanic,No HS,1537.1677000000004,OR,OR-1,Republican
+1640,42,5,68-72,Male,White,Not Hispanic,Post-grad,2869.4509000000007,PA,PA-5,Democrat
+1641,6,23,73-77,Female,White,Not Hispanic,HS grad,2136.302677210073,CA,CA-23,Democrat
+1642,26,7,63-67,Female,Other/Multi,Not Hispanic,Some college,328.7902,MI,MI-7,Republican
+1643,12,4,68-72,Female,Asian,Not Hispanic,No HS,157.12417807573277,FL,FL-4,Democrat
+1644,9,4,83+,Female,White,Not Hispanic,Post-grad,1686.892800000001,CT,CT-4,Democrat
+1645,26,5,83+,Female,White,Not Hispanic,HS grad,6710.606899999997,MI,MI-5,Republican
+1646,13,14,43-47,Female,White,Not Hispanic,Post-grad,2663.959300000001,GA,GA-14,Democrat
+1647,45,4,38-42,Male,White,Not Hispanic,Post-grad,2246.4846000000007,SC,SC-4,Democrat
+1648,48,36,78-82,Female,Black,Not Hispanic,HS grad,346.64346363224894,TX,TX-36,Democrat
+1649,45,7,33-37,Female,White,Not Hispanic,Post-grad,1595.1104000000005,SC,SC-7,Other
+1650,13,4,33-37,Male,Black,Not Hispanic,No HS,746.6219,GA,GA-4,Democrat
+1651,13,7,73-77,Male,White,Not Hispanic,4-year,3625.346600000002,GA,GA-7,Democrat
+1652,12,27,38-42,Female,White,Not Hispanic,4-year,865.8510884708462,FL,FL-27,Democrat
+1653,6,41,68-72,Male,Other/Multi,Hispanic,No HS,1628.2133494689026,CA,CA-41,Democrat
+1654,51,9,23-27,Male,Other/Multi,Not Hispanic,4-year,126.81879999999995,VA,VA-9,Democrat
+1655,22,4,78-82,Female,White,Not Hispanic,Post-grad,590.2707999999998,LA,LA-4,Democrat
+1656,12,14,48-52,Male,White,Not Hispanic,2-year,1106.3462306110148,FL,FL-14,Democrat
+1657,48,8,68-72,Male,Black,Not Hispanic,2-year,147.0647231924163,TX,TX-8,Democrat
+1658,22,3,58-62,Male,Black,Not Hispanic,4-year,220.2236,LA,LA-3,Other
+1659,4,7,73-77,Female,Other/Multi,Hispanic,No HS,1323.9896,AZ,AZ-7,Democrat
+1660,8,2,48-52,Female,White,Not Hispanic,Some college,2126.778900000001,CO,CO-2,Democrat
+1661,36,24,58-62,Male,White,Not Hispanic,HS grad,11412.667899999982,NY,NY-24,Did not vote
+1662,42,17,38-42,Male,White,Not Hispanic,4-year,7365.107599999999,PA,PA-17,Did not vote
+1663,12,8,73-77,Male,White,Not Hispanic,Some college,3147.642252540836,FL,FL-8,Republican
+1664,49,3,23-27,Male,White,Not Hispanic,Some college,13272.540143211005,UT,UT-3,Democrat
+1665,48,10,73-77,Female,White,Not Hispanic,Post-grad,1716.4659661801977,TX,TX-10,Democrat
+1666,48,9,63-67,Female,White,Not Hispanic,Some college,1657.5523838778674,TX,TX-9,Democrat
+1667,12,15,63-67,Male,White,Not Hispanic,4-year,3266.3965090513702,FL,FL-15,Democrat
+1668,6,1,38-42,Female,Other/Multi,Hispanic,Some college,581.9398699687812,CA,CA-1,Democrat
+1669,48,18,38-42,Female,Other/Multi,Not Hispanic,Some college,210.7358881313504,TX,TX-18,Republican
+1670,17,3,23-27,Male,White,Not Hispanic,HS grad,1211.5095999999996,IL,IL-3,Republican
+1671,36,16,38-42,Male,White,Not Hispanic,2-year,446.4339,NY,NY-16,Republican
+1672,42,8,23-27,Male,White,Not Hispanic,2-year,1574.0471000000002,PA,PA-8,Democrat
+1673,6,38,58-62,Female,Asian,Not Hispanic,No HS,1051.743231103071,CA,CA-38,Democrat
+1674,42,16,48-52,Male,White,Not Hispanic,Post-grad,2185.9296,PA,PA-16,Republican
+1675,51,6,73-77,Female,White,Not Hispanic,HS grad,5340.378800000003,VA,VA-6,Other
+1676,40,5,38-42,Male,Asian,Not Hispanic,HS grad,74.55669999999999,OK,OK-5,Democrat
+1677,25,5,58-62,Male,Other/Multi,Not Hispanic,HS grad,237.7301,MA,MA-5,Republican
+1678,48,22,43-47,Male,White,Not Hispanic,2-year,1120.951437132322,TX,TX-22,Democrat
+1679,29,8,23-27,Female,White,Not Hispanic,4-year,3698.868574159495,MO,MO-8,Democrat
+1680,42,1,58-62,Male,White,Not Hispanic,Post-grad,3925.362500000001,PA,PA-1,Republican
+1681,47,6,33-37,Female,White,Not Hispanic,4-year,5048.6839000000045,TN,TN-6,Democrat
+1682,42,3,53-57,Male,Black,Not Hispanic,No HS,1162.8961,PA,PA-3,Democrat
+1683,13,13,58-62,Male,White,Not Hispanic,4-year,1358.8536999999988,GA,GA-13,Republican
+1684,6,33,38-42,Female,White,Not Hispanic,2-year,511.0202509442074,CA,CA-33,Democrat
+1685,12,19,73-77,Male,Other/Multi,Hispanic,4-year,212.614078917376,FL,FL-19,Democrat
+1686,28,1,68-72,Female,White,Not Hispanic,HS grad,5028.562900000001,MS,MS-1,Democrat
+1687,28,2,73-77,Female,White,Not Hispanic,Some college,1945.783100000001,MS,MS-2,Did not vote
+1688,35,2,28-32,Male,Other/Multi,Hispanic,HS grad,3157.4504000000006,NM,NM-2,Republican
+1689,22,1,83+,Male,White,Not Hispanic,4-year,1066.9406,LA,LA-1,Republican
+1690,44,2,38-42,Male,White,Not Hispanic,4-year,2901.6643,RI,RI-2,Democrat
+1691,49,1,38-42,Female,White,Not Hispanic,4-year,5779.521191612846,UT,UT-1,Republican
+1692,12,23,48-52,Male,Other/Multi,Hispanic,HS grad,1472.391933738304,FL,FL-23,Democrat
+1693,41,4,18-22,Male,White,Not Hispanic,Some college,8292.334199999994,OR,OR-4,Republican
+1694,38,1,18-22,Female,Native American,Not Hispanic,Some college,614.0,ND,ND-1,Republican
+1695,29,6,33-37,Male,White,Not Hispanic,Post-grad,1874.965582288624,MO,MO-6,Republican
+1696,10,1,33-37,Male,White,Not Hispanic,2-year,1487.0,DE,DE-1,Democrat
+1697,45,4,18-22,Male,White,Not Hispanic,HS grad,5412.4335,SC,SC-4,Democrat
+1698,53,5,43-47,Female,White,Not Hispanic,Post-grad,2971.7364999999995,WA,WA-5,Democrat
+1699,40,2,63-67,Male,White,Not Hispanic,No HS,2148.6093,OK,OK-2,Republican
+1700,49,3,33-37,Male,White,Not Hispanic,4-year,6119.002333072475,UT,UT-3,Other
+1701,55,3,18-22,Female,White,Not Hispanic,Some college,15236.640400000031,WI,WI-3,Democrat
+1702,18,6,58-62,Female,White,Not Hispanic,HS grad,9116.370299999997,IN,IN-6,Republican
+1703,36,24,33-37,Male,White,Not Hispanic,No HS,1877.0012000000004,NY,NY-24,Republican
+1704,26,10,18-22,Male,Other/Multi,Not Hispanic,Some college,550.8402,MI,MI-10,Democrat
+1705,55,4,18-22,Male,White,Not Hispanic,Some college,5023.081399999999,WI,WI-4,Democrat
+1706,6,21,68-72,Male,White,Not Hispanic,HS grad,1247.9021405366373,CA,CA-21,Republican
+1707,24,1,38-42,Female,White,Not Hispanic,4-year,4520.537199999996,MD,MD-1,Republican
+1708,48,21,83+,Female,Other/Multi,Hispanic,No HS,638.0772606709812,TX,TX-21,Democrat
+1709,13,12,23-27,Female,White,Not Hispanic,4-year,2825.173999999999,GA,GA-12,Republican
+1710,44,2,73-77,Male,White,Not Hispanic,No HS,516.0608999999998,RI,RI-2,Other
+1711,21,2,63-67,Female,White,Not Hispanic,2-year,1999.1398999999988,KY,KY-2,Republican
+1712,55,1,28-32,Male,Other/Multi,Hispanic,Some college,492.7451,WI,WI-1,Did not vote
+1713,48,25,53-57,Male,White,Not Hispanic,HS grad,3928.2619800042703,TX,TX-25,Republican
+1714,17,1,23-27,Male,White,Not Hispanic,Post-grad,558.3148000000001,IL,IL-1,Other
+1715,42,12,33-37,Female,White,Not Hispanic,2-year,2250.834700000001,PA,PA-12,Other
+1716,17,17,23-27,Male,White,Not Hispanic,HS grad,4938.484499999993,IL,IL-17,Republican
+1717,36,10,28-32,Male,White,Not Hispanic,Post-grad,5634.136200000003,NY,NY-10,Republican
+1718,37,6,63-67,Female,Black,Not Hispanic,HS grad,1351.907088662179,NC,NC-6,Did not vote
+1719,48,1,18-22,Male,Other/Multi,Not Hispanic,Some college,435.1888993482477,TX,TX-1,Republican
+1720,4,3,38-42,Female,Other/Multi,Hispanic,No HS,1684.0395000000003,AZ,AZ-3,Republican
+1721,12,12,63-67,Female,White,Not Hispanic,2-year,1939.9394923103623,FL,FL-12,Republican
+1722,39,13,63-67,Female,White,Not Hispanic,HS grad,8545.021852081885,OH,OH-13,Other
+1723,34,5,43-47,Female,Asian,Not Hispanic,Post-grad,1101.0022,NJ,NJ-5,Democrat
+1724,27,6,53-57,Male,White,Not Hispanic,4-year,5081.865100000001,MN,MN-6,Republican
+1725,6,3,38-42,Male,White,Not Hispanic,2-year,1208.3079338992527,CA,CA-3,Republican
+1726,18,5,18-22,Male,White,Not Hispanic,No HS,3363.9845,IN,IN-5,Did not vote
+1727,48,17,38-42,Female,White,Not Hispanic,4-year,4704.329449238118,TX,TX-17,Democrat
+1728,4,6,28-32,Female,Other/Multi,Hispanic,Some college,1546.8911000000005,AZ,AZ-6,Republican
+1729,22,2,48-52,Male,Black,Not Hispanic,HS grad,3327.818800000001,LA,LA-2,Republican
+1730,51,9,58-62,Male,Black,Not Hispanic,No HS,296.0009,VA,VA-9,Did not vote
+1731,6,1,48-52,Male,White,Not Hispanic,Some college,2935.991838913636,CA,CA-1,Did not vote
+1732,42,3,63-67,Male,Black,Not Hispanic,Post-grad,614.5699,PA,PA-3,Democrat
+1733,12,28,63-67,Female,White,Not Hispanic,HS grad,963.389124856698,FL,FL-28,Republican
+1734,48,18,18-22,Female,Other/Multi,Hispanic,No HS,1235.0595552422274,TX,TX-18,Democrat
+1735,42,2,28-32,Male,Black,Not Hispanic,HS grad,2736.4385999999995,PA,PA-2,Did not vote
+1736,48,26,48-52,Male,White,Not Hispanic,HS grad,2354.710034750129,TX,TX-26,Democrat
+1737,12,11,18-22,Male,White,Not Hispanic,2-year,694.8375008336957,FL,FL-11,Republican
+1738,30,1,68-72,Male,White,Not Hispanic,Post-grad,3039.8978,MT,MT-1,Republican
+1739,42,15,73-77,Female,White,Not Hispanic,Some college,2159.7602000000024,PA,PA-15,Republican
+1740,12,23,18-22,Female,White,Not Hispanic,Some college,1920.4301437951424,FL,FL-23,Democrat
+1741,12,16,78-82,Male,White,Not Hispanic,Some college,3032.238892597401,FL,FL-16,Democrat
+1742,4,4,58-62,Female,White,Not Hispanic,Some college,3868.0237,AZ,AZ-4,Other
+1743,53,4,48-52,Female,White,Not Hispanic,Post-grad,1728.9565999999995,WA,WA-4,Republican
+1744,39,12,83+,Female,White,Not Hispanic,HS grad,6540.064824705476,OH,OH-12,Democrat
+1745,36,23,33-37,Female,White,Not Hispanic,HS grad,4393.199299999998,NY,NY-23,Republican
+1746,42,1,43-47,Female,White,Not Hispanic,4-year,5479.4637,PA,PA-1,Democrat
+1747,30,2,18-22,Male,White,Not Hispanic,HS grad,5636.8992,MT,MT-2,Other
+1748,26,10,83+,Female,White,Not Hispanic,HS grad,7464.542699999999,MI,MI-10,Democrat
+1749,25,9,38-42,Female,White,Not Hispanic,2-year,2003.0739,MA,MA-9,Democrat
+1750,36,25,23-27,Male,Black,Hispanic,HS grad,40.0,NY,NY-25,Democrat
+1751,12,5,33-37,Female,White,Not Hispanic,Some college,2637.697213327696,FL,FL-5,Republican
+1752,48,27,48-52,Male,Other/Multi,Hispanic,No HS,1633.9261915948375,TX,TX-27,Republican
+1753,47,2,58-62,Male,White,Not Hispanic,HS grad,7695.752300000002,TN,TN-2,Republican
+1754,18,5,53-57,Female,White,Not Hispanic,HS grad,5164.5998999999965,IN,IN-5,Republican
+1755,34,12,43-47,Male,White,Hispanic,Post-grad,65.9364,NJ,NJ-12,Democrat
+1756,6,44,78-82,Female,Native American,Hispanic,No HS,45.400571155794886,CA,CA-44,Democrat
+1757,53,10,43-47,Female,White,Not Hispanic,Post-grad,2309.8764999999994,WA,WA-10,Democrat
+1758,48,34,68-72,Female,White,Not Hispanic,2-year,590.1958125869992,TX,TX-34,Did not vote
+1759,50,1,23-27,Male,White,Not Hispanic,No HS,761.0,VT,VT-1,Democrat
+1760,17,15,23-27,Male,Black,Not Hispanic,Some college,380.7928,IL,IL-15,Did not vote
+1761,8,5,53-57,Female,White,Not Hispanic,2-year,1539.1097999999995,CO,CO-5,Democrat
+1762,12,9,33-37,Female,White,Not Hispanic,4-year,2956.285119891407,FL,FL-9,Democrat
+1763,6,19,78-82,Male,Black,Not Hispanic,Some college,34.34258995835419,CA,CA-19,Democrat
+1764,6,34,48-52,Female,White,Hispanic,HS grad,186.01364612496928,CA,CA-34,Democrat
+1765,6,10,58-62,Female,White,Not Hispanic,Some college,2567.8507596496643,CA,CA-10,Republican
+1766,55,5,48-52,Male,White,Not Hispanic,4-year,6460.172399999996,WI,WI-5,Republican
+1767,6,11,68-72,Male,Other/Multi,Hispanic,Some college,382.1741089643049,CA,CA-11,Democrat
+1768,6,40,58-62,Female,White,Not Hispanic,2-year,1644.6854315687524,CA,CA-40,Republican
+1769,47,9,18-22,Male,White,Not Hispanic,Some college,2042.4419000000005,TN,TN-9,Republican
+1770,35,1,28-32,Female,Native American,Not Hispanic,HS grad,318.13470000000007,NM,NM-1,Did not vote
+1771,42,13,83+,Female,White,Not Hispanic,HS grad,10245.738500000009,PA,PA-13,Did not vote
+1772,36,21,38-42,Male,White,Not Hispanic,HS grad,7026.051799999996,NY,NY-21,Republican
+1773,48,25,18-22,Female,Other/Multi,Hispanic,HS grad,2821.78147366662,TX,TX-25,Republican
+1774,36,24,38-42,Male,White,Not Hispanic,2-year,2570.930500000001,NY,NY-24,Republican
+1775,29,5,73-77,Male,Black,Not Hispanic,HS grad,373.44135509087465,MO,MO-5,Democrat
+1776,39,14,18-22,Male,White,Not Hispanic,HS grad,8959.552639111735,OH,OH-14,Republican
+1777,25,8,38-42,Female,Other/Multi,Hispanic,Post-grad,235.4697,MA,MA-8,Democrat
+1778,18,4,18-22,Male,Other/Multi,Not Hispanic,Some college,727.7377,IN,IN-4,Republican
+1779,26,7,48-52,Male,White,Not Hispanic,Some college,4408.588200000002,MI,MI-7,Did not vote
+1780,8,5,68-72,Male,White,Not Hispanic,Post-grad,3569.9205,CO,CO-5,Democrat
+1781,45,4,53-57,Male,White,Not Hispanic,HS grad,4261.496700000001,SC,SC-4,Other
+1782,13,2,18-22,Male,White,Not Hispanic,Some college,3131.612900000001,GA,GA-2,Did not vote
+1783,6,50,63-67,Male,White,Not Hispanic,Some college,2780.431342483484,CA,CA-50,Democrat
+1784,12,23,38-42,Female,Black,Not Hispanic,4-year,1162.0698522354407,FL,FL-23,Democrat
+1785,48,6,53-57,Male,White,Not Hispanic,HS grad,3161.212003154345,TX,TX-6,Did not vote
+1786,17,14,33-37,Female,White,Not Hispanic,4-year,4451.3443,IL,IL-14,Did not vote
+1787,39,3,33-37,Female,White,Not Hispanic,Some college,2591.226542172035,OH,OH-3,Democrat
+1788,48,13,33-37,Female,Other/Multi,Hispanic,No HS,458.26671102013466,TX,TX-13,Democrat
+1789,6,13,53-57,Female,White,Not Hispanic,Some college,1507.7832555754562,CA,CA-13,Republican
+1790,42,10,28-32,Female,White,Not Hispanic,4-year,4901.3054,PA,PA-10,Democrat
+1791,17,4,18-22,Female,Other/Multi,Hispanic,HS grad,5857.068100000001,IL,IL-4,Democrat
+1792,12,11,38-42,Male,White,Not Hispanic,Post-grad,1985.677547916124,FL,FL-11,Democrat
+1793,39,4,48-52,Female,Other/Multi,Hispanic,No HS,32.48703158626136,OH,OH-4,Democrat
+1794,48,37,68-72,Female,White,Not Hispanic,2-year,372.9057816533669,TX,TX-37,Republican
+1795,15,2,78-82,Male,White,Not Hispanic,4-year,711.216,HI,HI-2,Republican
+1796,34,7,63-67,Female,White,Not Hispanic,HS grad,4759.979500000006,NJ,NJ-7,Republican
+1797,13,14,53-57,Female,White,Not Hispanic,4-year,3110.538800000001,GA,GA-14,Republican
+1798,34,1,48-52,Female,Asian,Not Hispanic,4-year,416.3563000000001,NJ,NJ-1,Democrat
+1799,36,17,58-62,Male,White,Not Hispanic,4-year,5835.868799999999,NY,NY-17,Democrat
+1800,36,12,23-27,Male,Other/Multi,Hispanic,4-year,1257.4299,NY,NY-12,Democrat
+1801,36,18,43-47,Female,White,Not Hispanic,HS grad,2822.2613,NY,NY-18,Democrat
+1802,6,41,73-77,Female,Asian,Not Hispanic,2-year,289.67604534890484,CA,CA-41,Democrat
+1803,39,6,38-42,Male,White,Not Hispanic,HS grad,7546.931021763045,OH,OH-6,Democrat
+1804,37,13,58-62,Female,White,Not Hispanic,Some college,3608.8696017835687,NC,NC-13,Democrat
+1805,39,1,73-77,Male,White,Not Hispanic,Post-grad,2220.4352198657616,OH,OH-1,Democrat
+1806,6,11,73-77,Female,White,Not Hispanic,2-year,467.9716077438656,CA,CA-11,Republican
+1807,25,8,23-27,Male,Asian,Not Hispanic,HS grad,142.8907,MA,MA-8,Republican
+1808,23,1,73-77,Male,White,Not Hispanic,Some college,2343.98,ME,ME-1,Did not vote
+1809,6,18,33-37,Female,Other/Multi,Hispanic,2-year,1052.477197004995,CA,CA-18,Republican
+1810,12,13,58-62,Male,White,Not Hispanic,2-year,2157.4012792586936,FL,FL-13,Republican
+1811,25,5,53-57,Male,White,Not Hispanic,Some college,2248.1986,MA,MA-5,Democrat
+1812,41,6,73-77,Male,White,Not Hispanic,2-year,1205.6807,OR,OR-6,Republican
+1813,12,19,48-52,Male,White,Not Hispanic,HS grad,3552.3514130909152,FL,FL-19,Democrat
+1814,48,1,23-27,Male,Black,Not Hispanic,HS grad,1884.8905878296453,TX,TX-1,Democrat
+1815,32,3,68-72,Female,White,Not Hispanic,4-year,2388.368100000001,NV,NV-3,Democrat
+1816,42,8,38-42,Female,White,Not Hispanic,4-year,3590.2323,PA,PA-8,Republican
+1817,26,9,48-52,Male,Black,Not Hispanic,HS grad,438.5371,MI,MI-9,Democrat
+1818,27,8,33-37,Male,White,Not Hispanic,HS grad,6047.049299999993,MN,MN-8,Republican
+1819,36,16,58-62,Male,Other/Multi,Hispanic,HS grad,1191.4719,NY,NY-16,Other
+1820,51,2,58-62,Female,White,Not Hispanic,Some college,4036.068399999999,VA,VA-2,Republican
+1821,27,4,78-82,Female,Other/Multi,Not Hispanic,Some college,112.619,MN,MN-4,Republican
+1822,29,8,53-57,Male,White,Not Hispanic,HS grad,9205.350243713738,MO,MO-8,Republican
+1823,36,8,23-27,Male,Other/Multi,Hispanic,4-year,691.5832999999997,NY,NY-8,Democrat
+1824,41,4,48-52,Female,Other/Multi,Hispanic,HS grad,112.5572,OR,OR-4,Republican
+1825,6,10,73-77,Female,Asian,Not Hispanic,HS grad,374.9141131073292,CA,CA-10,Democrat
+1826,29,3,33-37,Female,White,Not Hispanic,Post-grad,4466.443665034431,MO,MO-3,Democrat
+1827,26,13,28-32,Male,Other/Multi,Not Hispanic,Some college,494.8189,MI,MI-13,Democrat
+1828,50,1,18-22,Female,White,Not Hispanic,Some college,10037.0,VT,VT-1,Did not vote
+1829,27,5,58-62,Female,White,Not Hispanic,HS grad,2310.367,MN,MN-5,Republican
+1830,26,7,63-67,Male,White,Not Hispanic,Post-grad,2704.699000000001,MI,MI-7,Republican
+1831,53,6,23-27,Female,Asian,Not Hispanic,HS grad,152.5369,WA,WA-6,Republican
+1832,25,9,63-67,Female,White,Not Hispanic,2-year,4238.635099999999,MA,MA-9,Republican
+1833,9,2,73-77,Male,White,Not Hispanic,No HS,849.5641999999999,CT,CT-2,Republican
+1834,12,11,48-52,Female,Black,Not Hispanic,4-year,672.3086509199837,FL,FL-11,Democrat
+1835,6,22,48-52,Female,Other/Multi,Hispanic,4-year,675.4969470308797,CA,CA-22,Democrat
+1836,1,1,33-37,Female,White,Not Hispanic,4-year,3614.199699999999,AL,AL-1,Republican
+1837,25,1,63-67,Male,White,Not Hispanic,Post-grad,2633.548800000002,MA,MA-1,Democrat
+1838,42,11,73-77,Male,White,Not Hispanic,Some college,1776.3144,PA,PA-11,Republican
+1839,41,2,63-67,Female,White,Not Hispanic,2-year,2894.5347999999976,OR,OR-2,Democrat
+1840,4,6,63-67,Female,White,Not Hispanic,Some college,5836.733399999996,AZ,AZ-6,Republican
+1841,34,8,28-32,Male,Other/Multi,Hispanic,4-year,1678.8493,NJ,NJ-8,Republican
+1842,6,51,23-27,Female,Other/Multi,Not Hispanic,HS grad,402.9273326978814,CA,CA-51,Republican
+1843,51,7,78-82,Male,White,Not Hispanic,HS grad,1167.4912000000002,VA,VA-7,Republican
+1844,8,4,68-72,Male,White,Hispanic,Some college,64.38409999999999,CO,CO-4,Did not vote
+1845,36,19,58-62,Male,White,Not Hispanic,HS grad,8438.114099999995,NY,NY-19,Republican
+1846,17,12,53-57,Male,White,Not Hispanic,2-year,3151.313700000001,IL,IL-12,Republican
+1847,36,25,53-57,Male,White,Not Hispanic,Some college,2798.681200000001,NY,NY-25,Republican
+1848,24,1,33-37,Male,White,Not Hispanic,HS grad,5434.989200000002,MD,MD-1,Democrat
+1849,42,8,18-22,Female,White,Not Hispanic,No HS,1630.4966,PA,PA-8,Democrat
+1850,12,16,78-82,Female,White,Not Hispanic,Some college,3913.0933233972046,FL,FL-16,Republican
+1851,48,36,23-27,Female,Black,Not Hispanic,4-year,724.9369229293078,TX,TX-36,Democrat
+1852,27,8,63-67,Female,White,Not Hispanic,HS grad,8149.499199999996,MN,MN-8,Democrat
+1853,42,6,48-52,Male,White,Not Hispanic,HS grad,3383.7064,PA,PA-6,Republican
+1854,48,10,38-42,Female,White,Hispanic,HS grad,327.98791667423416,TX,TX-10,Republican
+1855,56,1,38-42,Female,White,Not Hispanic,Post-grad,2747.0,WY,WY-1,Democrat
+1856,12,14,33-37,Female,White,Hispanic,4-year,366.62615524018406,FL,FL-14,Republican
+1857,13,13,33-37,Male,Black,Hispanic,HS grad,12.414,GA,GA-13,Democrat
+1858,12,25,33-37,Female,Other/Multi,Hispanic,4-year,1555.8278122792117,FL,FL-25,Republican
+1859,13,2,83+,Female,White,Not Hispanic,Post-grad,618.5815000000001,GA,GA-2,Democrat
+1860,35,2,23-27,Male,Black,Not Hispanic,Some college,288.87639999999993,NM,NM-2,Democrat
+1861,55,7,18-22,Male,White,Not Hispanic,Some college,5288.5839999999935,WI,WI-7,Democrat
+1862,55,5,58-62,Male,White,Not Hispanic,Post-grad,3400.0741,WI,WI-5,Republican
+1863,29,7,68-72,Female,White,Not Hispanic,Some college,5438.942418284575,MO,MO-7,Democrat
+1864,36,24,53-57,Male,White,Not Hispanic,2-year,3286.485900000004,NY,NY-24,Did not vote
+1865,48,14,68-72,Male,White,Not Hispanic,No HS,515.8406525203698,TX,TX-14,Republican
+1866,51,4,58-62,Female,White,Not Hispanic,2-year,1435.5371,VA,VA-4,Republican
+1867,12,6,28-32,Male,White,Not Hispanic,Some college,2515.289977218344,FL,FL-6,Democrat
+1868,29,8,48-52,Male,Other/Multi,Not Hispanic,HS grad,555.9616150916937,MO,MO-8,Republican
+1869,48,2,43-47,Male,White,Not Hispanic,Post-grad,2264.6173816428345,TX,TX-2,Republican
+1870,17,1,83+,Female,White,Not Hispanic,Some college,831.3150999999999,IL,IL-1,Democrat
+1871,25,5,23-27,Female,White,Not Hispanic,Post-grad,2805.5947999999985,MA,MA-5,Democrat
+1872,55,3,58-62,Female,White,Not Hispanic,HS grad,7578.017899999975,WI,WI-3,Democrat
+1873,55,3,38-42,Male,White,Not Hispanic,4-year,4465.942700000001,WI,WI-3,Democrat
+1874,48,36,28-32,Male,Other/Multi,Hispanic,Post-grad,102.94681234048868,TX,TX-36,Did not vote
+1875,45,5,43-47,Female,Black,Not Hispanic,Post-grad,1192.8402,SC,SC-5,Democrat
+1876,13,5,53-57,Male,Black,Not Hispanic,4-year,1019.6597000000004,GA,GA-5,Democrat
+1877,17,10,23-27,Male,Other/Multi,Hispanic,4-year,1293.7239,IL,IL-10,Did not vote
+1878,32,4,43-47,Female,Other/Multi,Hispanic,Some college,869.4619999999999,NV,NV-4,Democrat
+1879,34,4,28-32,Male,Black,Not Hispanic,HS grad,181.8011,NJ,NJ-4,Democrat
+1880,28,2,83+,Male,White,Not Hispanic,4-year,723.1093999999999,MS,MS-2,Republican
+1881,36,23,58-62,Male,White,Not Hispanic,HS grad,10209.464800000023,NY,NY-23,Did not vote
+1882,23,1,58-62,Female,White,Not Hispanic,HS grad,6512.887299999999,ME,ME-1,Republican
+1883,42,3,48-52,Male,White,Not Hispanic,Some college,802.141,PA,PA-3,Republican
+1884,17,15,63-67,Female,White,Not Hispanic,Some college,5213.543000000008,IL,IL-15,Did not vote
+1885,17,14,43-47,Male,White,Not Hispanic,4-year,3982.323300000002,IL,IL-14,Democrat
+1886,6,38,23-27,Female,Other/Multi,Hispanic,Some college,4149.251268717887,CA,CA-38,Did not vote
+1887,10,1,38-42,Male,White,Hispanic,Some college,42.0,DE,DE-1,Other
+1888,48,10,58-62,Female,White,Not Hispanic,Post-grad,2434.121137021557,TX,TX-10,Did not vote
+1889,25,7,73-77,Female,White,Not Hispanic,No HS,249.5562,MA,MA-7,Democrat
+1890,12,15,68-72,Male,White,Not Hispanic,4-year,3225.858516860656,FL,FL-15,Democrat
+1891,42,7,73-77,Female,White,Not Hispanic,HS grad,5916.801099999998,PA,PA-7,Republican
+1892,34,1,38-42,Male,White,Not Hispanic,Post-grad,2399.6034000000004,NJ,NJ-1,Republican
+1893,4,2,23-27,Male,White,Not Hispanic,HS grad,3187.1561999999994,AZ,AZ-2,Republican
+1894,17,8,23-27,Female,White,Not Hispanic,Some college,1490.9063,IL,IL-8,Did not vote
+1895,9,1,28-32,Male,White,Not Hispanic,No HS,293.9378,CT,CT-1,Republican
+1896,37,5,58-62,Female,White,Not Hispanic,Post-grad,2102.366160617135,NC,NC-5,Democrat
+1897,13,8,33-37,Female,Black,Not Hispanic,Post-grad,823.0723,GA,GA-8,Democrat
+1898,6,7,58-62,Female,Black,Not Hispanic,Some college,647.418730606488,CA,CA-7,Democrat
+1899,6,3,33-37,Female,White,Not Hispanic,4-year,3964.536233398894,CA,CA-3,Democrat
+1900,35,1,68-72,Male,White,Hispanic,HS grad,259.7765,NM,NM-1,Democrat
+1901,4,2,38-42,Female,Other/Multi,Not Hispanic,4-year,173.5238,AZ,AZ-2,Republican
+1902,48,10,18-22,Female,White,Not Hispanic,HS grad,5638.485110274508,TX,TX-10,Republican
+1903,6,51,48-52,Male,White,Not Hispanic,Post-grad,2353.9981240944235,CA,CA-51,Republican
+1904,36,10,33-37,Male,White,Not Hispanic,4-year,8449.492300000007,NY,NY-10,Republican
+1905,25,7,23-27,Male,White,Hispanic,Some college,102.8414,MA,MA-7,Republican
+1906,25,6,43-47,Male,Other/Multi,Hispanic,4-year,344.999,MA,MA-6,Republican
+1907,6,10,73-77,Female,White,Not Hispanic,No HS,144.0003103035964,CA,CA-10,Other
+1908,45,7,33-37,Female,Other/Multi,Hispanic,HS grad,209.2058,SC,SC-7,Democrat
+1909,48,30,28-32,Female,White,Hispanic,Some college,540.1373324042104,TX,TX-30,Republican
+1910,1,5,63-67,Male,White,Not Hispanic,HS grad,4078.0914999999977,AL,AL-5,Republican
+1911,9,1,78-82,Female,White,Not Hispanic,No HS,654.0240999999999,CT,CT-1,Republican
+1912,48,35,33-37,Female,White,Not Hispanic,2-year,1022.559330469952,TX,TX-35,Other
+1913,33,1,48-52,Female,White,Not Hispanic,Some college,2943.6602000000007,NH,NH-1,Democrat
+1914,6,49,33-37,Female,White,Not Hispanic,4-year,4360.042326832849,CA,CA-49,Democrat
+1915,12,5,63-67,Female,White,Not Hispanic,2-year,2639.941451002767,FL,FL-5,Democrat
+1916,37,7,38-42,Male,White,Not Hispanic,4-year,2942.3371235614286,NC,NC-7,Republican
+1917,40,4,18-22,Female,White,Not Hispanic,Some college,8995.281399999998,OK,OK-4,Republican
+1918,36,6,78-82,Female,White,Not Hispanic,HS grad,2123.3816,NY,NY-6,Republican
+1919,53,2,33-37,Female,White,Not Hispanic,HS grad,2941.5833000000007,WA,WA-2,Republican
+1920,27,5,83+,Female,White,Not Hispanic,HS grad,3266.8623999999973,MN,MN-5,Democrat
+1921,16,2,58-62,Male,White,Not Hispanic,2-year,2240.705800000001,ID,ID-2,Other
+1922,26,11,43-47,Female,Other/Multi,Hispanic,HS grad,131.8574,MI,MI-11,Democrat
+1923,18,9,78-82,Female,White,Not Hispanic,Some college,1739.3513000000005,IN,IN-9,Did not vote
+1924,12,14,43-47,Female,White,Not Hispanic,Post-grad,2509.394079297823,FL,FL-14,Democrat
+1925,5,3,33-37,Male,Other/Multi,Not Hispanic,4-year,412.5175,AR,AR-3,Republican
+1926,18,6,58-62,Male,White,Not Hispanic,Post-grad,1421.1483999999998,IN,IN-6,Republican
+1927,39,13,48-52,Male,White,Not Hispanic,4-year,3265.830041214232,OH,OH-13,Other
+1928,4,1,23-27,Female,White,Not Hispanic,4-year,9257.226199999994,AZ,AZ-1,Democrat
+1929,25,4,68-72,Female,White,Not Hispanic,4-year,3728.677199999997,MA,MA-4,Did not vote
+1930,36,26,53-57,Female,Black,Not Hispanic,Some college,762.67,NY,NY-26,Democrat
+1931,36,12,28-32,Female,White,Not Hispanic,Post-grad,10203.377299999998,NY,NY-12,Republican
+1932,42,14,68-72,Male,White,Not Hispanic,4-year,3994.3984999999993,PA,PA-14,Republican
+1933,47,2,28-32,Female,Black,Not Hispanic,HS grad,597.1708,TN,TN-2,Democrat
+1934,39,13,58-62,Female,White,Not Hispanic,Some college,4707.938143770414,OH,OH-13,Republican
+1935,6,26,28-32,Male,Other/Multi,Hispanic,No HS,1344.920927720582,CA,CA-26,Democrat
+1936,26,10,48-52,Male,White,Not Hispanic,No HS,1385.1245,MI,MI-10,Republican
+1937,36,8,68-72,Female,Black,Not Hispanic,HS grad,3206.743399999999,NY,NY-8,Democrat
+1938,12,22,78-82,Male,White,Not Hispanic,4-year,2438.4204683298008,FL,FL-22,Republican
+1939,5,1,73-77,Male,White,Not Hispanic,HS grad,4251.603399999991,AR,AR-1,Democrat
+1940,12,14,23-27,Female,Black,Not Hispanic,Post-grad,373.2176093373908,FL,FL-14,Democrat
+1941,26,2,38-42,Female,White,Not Hispanic,Some college,4592.3497,MI,MI-2,Democrat
+1942,24,1,78-82,Female,Black,Not Hispanic,HS grad,574.6834,MD,MD-1,Democrat
+1943,9,1,18-22,Male,White,Not Hispanic,Some college,4965.6871,CT,CT-1,Republican
+1944,47,7,68-72,Female,White,Not Hispanic,Some college,2611.8417,TN,TN-7,Democrat
+1945,51,1,63-67,Male,White,Not Hispanic,HS grad,4418.1462,VA,VA-1,Other
+1946,12,5,28-32,Female,White,Not Hispanic,4-year,6514.809126868905,FL,FL-5,Democrat
+1947,51,3,33-37,Female,White,Not Hispanic,No HS,531.9902,VA,VA-3,Democrat
+1948,2,1,63-67,Male,White,Not Hispanic,HS grad,5241.0,AK,AK-1,Other
+1949,51,1,48-52,Female,White,Not Hispanic,2-year,1557.7583999999993,VA,VA-1,Democrat
+1950,53,1,58-62,Male,White,Not Hispanic,HS grad,3780.5917,WA,WA-1,Republican
+1951,1,6,33-37,Female,White,Not Hispanic,Some college,1996.6733,AL,AL-6,Did not vote
+1952,42,9,38-42,Male,Other/Multi,Not Hispanic,Some college,117.6083,PA,PA-9,Did not vote
+1953,53,9,43-47,Male,Asian,Not Hispanic,Post-grad,982.5396000000004,WA,WA-9,Republican
+1954,48,36,23-27,Male,Other/Multi,Hispanic,No HS,576.1443038480593,TX,TX-36,Democrat
+1955,53,9,58-62,Male,Asian,Not Hispanic,Post-grad,765.3104000000002,WA,WA-9,Republican
+1956,33,1,68-72,Female,White,Not Hispanic,Some college,3845.5055000000016,NH,NH-1,Did not vote
+1957,6,13,68-72,Female,Black,Not Hispanic,4-year,39.75106971649024,CA,CA-13,Did not vote
+1958,48,10,38-42,Female,White,Not Hispanic,Post-grad,2915.4458837027064,TX,TX-10,Democrat
+1959,36,13,58-62,Female,Other/Multi,Hispanic,HS grad,2352.3446,NY,NY-13,Democrat
+1960,36,14,28-32,Female,White,Not Hispanic,4-year,2744.2694999999985,NY,NY-14,Democrat
+1961,24,3,38-42,Female,Black,Not Hispanic,Some college,1117.4107,MD,MD-3,Democrat
+1962,34,9,33-37,Female,Other/Multi,Hispanic,Some college,1680.0838,NJ,NJ-9,Republican
+1963,6,50,63-67,Male,Asian,Not Hispanic,Some college,237.247179143141,CA,CA-50,Democrat
+1964,41,5,43-47,Male,Other/Multi,Hispanic,HS grad,328.77149999999995,OR,OR-5,Democrat
+1965,6,12,33-37,Female,Asian,Not Hispanic,Post-grad,1789.756071274608,CA,CA-12,Democrat
+1966,41,1,18-22,Female,Black,Not Hispanic,HS grad,289.4134,OR,OR-1,Democrat
+1967,48,10,18-22,Male,White,Not Hispanic,Some college,14683.73125966906,TX,TX-10,Democrat
+1968,26,9,48-52,Male,White,Not Hispanic,HS grad,6906.348100000002,MI,MI-9,Republican
+1969,28,4,68-72,Female,Other/Multi,Hispanic,2-year,48.0,MS,MS-4,Democrat
+1970,17,6,33-37,Female,White,Not Hispanic,No HS,262.5888999999999,IL,IL-6,Did not vote
+1971,53,9,28-32,Female,White,Not Hispanic,HS grad,1096.3322000000005,WA,WA-9,Democrat
+1972,41,2,53-57,Male,White,Not Hispanic,HS grad,5345.254800000001,OR,OR-2,Republican
+1973,19,4,63-67,Female,White,Not Hispanic,HS grad,8688.22649999999,IA,IA-4,Democrat
+1974,8,8,28-32,Female,White,Hispanic,HS grad,750.7035000000002,CO,CO-8,Democrat
+1975,12,12,48-52,Female,Asian,Not Hispanic,Post-grad,201.7578605939724,FL,FL-12,Democrat
+1976,26,6,18-22,Female,White,Not Hispanic,HS grad,5004.293399999998,MI,MI-6,Democrat
+1977,51,8,53-57,Female,White,Not Hispanic,Post-grad,4899.846200000001,VA,VA-8,Democrat
+1978,41,2,83+,Male,White,Not Hispanic,Post-grad,1318.0015999999998,OR,OR-2,Republican
+1979,12,10,58-62,Female,Black,Not Hispanic,Post-grad,396.4954525655684,FL,FL-10,Democrat
+1980,48,14,58-62,Female,White,Not Hispanic,2-year,1669.8021160819449,TX,TX-14,Democrat
+1981,20,4,68-72,Female,White,Not Hispanic,2-year,1654.9326,KS,KS-4,Republican
+1982,48,11,28-32,Male,White,Not Hispanic,Some college,2630.203468193937,TX,TX-11,Republican
+1983,12,21,38-42,Male,Black,Not Hispanic,Post-grad,316.8021864887023,FL,FL-21,Democrat
+1984,36,16,33-37,Female,White,Not Hispanic,4-year,3204.081399999999,NY,NY-16,Democrat
+1985,51,2,23-27,Male,Asian,Not Hispanic,2-year,154.3152,VA,VA-2,Democrat
+1986,12,28,73-77,Female,White,Not Hispanic,Some college,725.3968236025895,FL,FL-28,Democrat
+1987,39,6,23-27,Female,White,Not Hispanic,2-year,1649.63440408622,OH,OH-6,Republican
+1988,55,4,33-37,Male,White,Not Hispanic,4-year,3952.2446,WI,WI-4,Did not vote
+1989,6,49,48-52,Female,Asian,Not Hispanic,Some college,286.2066224267876,CA,CA-49,Did not vote
+1990,6,19,28-32,Female,Other/Multi,Hispanic,4-year,1392.2751792250515,CA,CA-19,Did not vote
+1991,37,13,43-47,Female,Black,Not Hispanic,Post-grad,1015.716910448559,NC,NC-13,Democrat
+1992,18,1,38-42,Male,White,Not Hispanic,HS grad,4941.878100000001,IN,IN-1,Democrat
+1993,6,10,53-57,Male,White,Not Hispanic,Post-grad,3257.159406006404,CA,CA-10,Democrat
+1994,26,10,53-57,Male,Black,Not Hispanic,4-year,232.2988,MI,MI-10,Democrat
+1995,42,5,48-52,Female,Black,Not Hispanic,Some college,1456.1324,PA,PA-5,Democrat
+1996,13,12,48-52,Male,White,Not Hispanic,No HS,955.4835000000002,GA,GA-12,Democrat
+1997,17,16,38-42,Female,Asian,Not Hispanic,Some college,37.48780000000001,IL,IL-16,Democrat
+1998,48,8,43-47,Female,White,Not Hispanic,Some college,1881.500097056247,TX,TX-8,Democrat
+1999,29,5,18-22,Male,Black,Not Hispanic,HS grad,1959.664456241363,MO,MO-5,Democrat

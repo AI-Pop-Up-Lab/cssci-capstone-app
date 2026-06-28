@@ -45,13 +45,15 @@ jobs:
             --registry-password ${{ secrets.ACR_PASSWORD }} \
             --restart-policy Never \
             --location westeurope \
-            --cpu 2 \
-            --memory 4 \
+            --cpu 4 \
+            --memory 8 \
             --environment-variables \
               ENV=production \
               COUNTRIES="${{ github.event.inputs.countries || 'denmark,netherlands,sweden' }}" \
               JOB_TYPE="${{ github.event.inputs.job_type || 'both' }}" \
               BLOB_CONTAINER_NAME=generated-data \
+              US_POLLS_BLOB_CONTAINER="polling-data" \
+              US_POLLS_OUTPUT_BLOB_NAME="us_polls_model_output.json" \
             --secure-environment-variables \
               AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
               AZURE_OPENAI_API_KEY="${{ secrets.AZURE_OPENAI_API_KEY }}" \

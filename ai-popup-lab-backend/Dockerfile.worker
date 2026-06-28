@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     gfortran \
     cmake \
+    make \
+    g++ \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

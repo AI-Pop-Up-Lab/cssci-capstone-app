@@ -31,6 +31,8 @@ from .job_guard import already_ran_typed, mark_ran_typed
 from .run_scripts import check_r_available, run_extension_script
 from .store_data import CONTAINER_NAME, get_blob_client, store_frame, results_blob_name, download_blob_to_path
 from .aggregate_longitudinal import update_longitudinal_aggregates
+from .fetch_us_polls import fetch_and_store_us_polls
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -134,6 +136,12 @@ def main() -> None:
     blob_client = get_blob_client()
     year, week  = _this_week()
     failed: list[str] = []
+
+    try:
+        fetch_and_store_us_polls()
+    except Exception:
+        logger.exception("US polls pipeline failed")
+        failed.append("usa_pollsters_download")
 
     for country in COUNTRIES:
         logger.info("Processing country: %s", country)
