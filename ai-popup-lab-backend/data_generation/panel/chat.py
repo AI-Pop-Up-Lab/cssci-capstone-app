@@ -29,7 +29,7 @@ def _get_env(name: str) -> str:
 	return val
 
 
-co = cohere.ClientV2(_get_env('COHERE_API_KEY'))
+co = cohere.ClientV2(_get_env('COHERE_API_KEY'), timeout=240)
 
 def send_message_cohere_rag(question, conversation, articles):
     documents = [
