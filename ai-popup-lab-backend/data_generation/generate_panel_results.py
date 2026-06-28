@@ -19,7 +19,7 @@ from isoweek import Week
 
 from .panel.biography import populate_panel
 from .panel.runner import run_survey
-from .store_data import get_blob_client, CONTAINER_NAME
+from .store_data import get_blob_client, CONTAINER_NAME, results_blob_name
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,7 @@ def _active_panel_blob(country: str) -> str:
     return f"panel-state/{country}/active_panel.csv"
 
 def _results_blob(country: str, year: int, week: int) -> str:
-    return f"panel-results/{country}/{year}_{week:02d}_{country}_panel_results.csv"
+    return results_blob_name(country, year, week)
 
 def _gdelt_blob(country: str, year: int, week: int) -> str:
     return f"gdelt-cache/{country}/{year}_{week:02d}_gdelt.csv"

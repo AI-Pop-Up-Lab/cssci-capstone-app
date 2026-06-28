@@ -24,12 +24,21 @@ def get_file_suffix() -> str:
     year, week, _ = today.isocalendar()
     return f"{year}_{week:02d}"
 
+def results_blob_name(country: str, year: int, week: int) -> str:
+    return f"panel-results/{country}/{year}_{week:02d}_{country}_panel_results.csv"
 
-def store_survey(filepath, country):
+def download_blob_to_path(client: BlobServiceClient, blob_name: str, dest_path: Path) -> Path:
+    """Download a blob to a local path. Raises FileNotFoundError if the blob doesn't exist."""
+    blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
+    try:
+        data = blob.download_blob().readall()
+    except Exception as exc:
+        raise FileNotFoundError(f"Blob not found: {blob_name}") from exc
 
-    # azure store for when surveys are implemented
-
-    pass
+    dest_path.parent.mkdir(parents=True, exist_ok=True)
+    dest_path.write_bytes(data)
+    logger.info("Downloaded %s → %s", blob_name, dest_path)
+    return dest_path
 
 def store_frame(filepath: Path, country: str, client: BlobServiceClient) -> str:
 

@@ -20,6 +20,7 @@ from api_endpoints import chat_router
 from api_endpoints import dynamic_data_router
 from api_endpoints import admin_router
 from api_endpoints import download_router
+from api_endpoints import longitudinal_router
 
 # from app.db.init_db import init_db, seed_demo_data
 from user_limiting.ip_reset import reset_ip_request_limits
@@ -81,3 +82,4 @@ app.include_router(chat_router, prefix="/api")
 app.include_router(dynamic_data_router, prefix="/api")
 app.include_router(admin_router, prefix="/api")
 app.include_router(download_router, prefix="/api")
+app.include_router(longitudinal_router, prefix="/api")
