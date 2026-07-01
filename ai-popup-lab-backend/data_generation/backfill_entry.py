@@ -13,7 +13,11 @@ import logging
 import os
 import sys
 
-from .generate_panel_results import generate_panel_results, isoweek_to_panel_date
+from .generate_panel_results import (
+    generate_panel_results,
+    generate_panel_biographies_only,
+    isoweek_to_panel_date,
+)
 from .job_guard import already_ran_typed, mark_ran_typed
 from .run_scripts import check_r_available, run_extension_script
 from .store_data import CONTAINER_NAME, get_blob_client, store_frame
@@ -26,6 +30,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 FORCE = os.environ.get("BACKFILL_FORCE", "false").lower() == "true"
+GENERATE_EVENTS = os.environ.get("GENERATE_EVENTS", "false").lower() == "true"
+ARTICLES_PATH = os.environ.get("ARTICLES_PATH")  # required only if GENERATE_EVENTS=true
 
 _RAW_WEEKS = os.environ.get("BACKFILL_WEEKS", "")
 
@@ -86,6 +92,22 @@ def main() -> None:
                     else:
                         _run_mrp(country, blob_client)
                         mark_ran_typed(blob_client, CONTAINER_NAME, country, "mrp", year, week)
+
+                if JOB_TYPE == "biography":
+                    if not FORCE and already_ran_typed(
+                        blob_client, CONTAINER_NAME, country, "biography", year, week
+                    ):
+                        logger.info("[%s] Biography lock exists — skipping (use force=true to override).", label)
+                    else:
+                        generate_panel_biographies_only(
+                            country=country,
+                            year=year,
+                            week=week,
+                            client=blob_client,
+                            generate_events=GENERATE_EVENTS,
+                            articles_path=ARTICLES_PATH,
+                        )
+                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "biography", year, week)
 
                 logger.info("Done: %s", label)
             except Exception:

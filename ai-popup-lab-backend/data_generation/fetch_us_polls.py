@@ -161,6 +161,12 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
     df["population"] = df["population"].str.strip().str.upper()
     df["g"] = pd.factorize(df["population"])[0] + 1
 
+    population_lookup = (
+        df[["g", "population"]]
+        .drop_duplicates()
+        .sort_values("g")
+    )
+
     daily_rows = []
     count_cols = ["samplesize"] + PARTY_COLS
     for _, row in df.iterrows():
@@ -221,11 +227,11 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
         "y": weekly_df[PARTY_COLS].astype(int).values.tolist(),
     }
 
-    return weekly_df, all_weeks, week_to_t, stan_data
+    return weekly_df, all_weeks, week_to_t, stan_data, population_lookup
 
 
 # step 3: run stan
-def _run_model(stan_data: dict) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def _run_model(stan_data: dict, population_lookup) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     install_cmdstan(version="2.36.0")
 
     stan_file = Path(tempfile.gettempdir()) / "us_polls_model.stan"
@@ -242,15 +248,32 @@ def _run_model(stan_data: dict) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 
     alpha = fit.stan_variable("alpha")
     time  = fit.stan_variable("time")
+    population = fit.stan_variable("population")
 
-    draws     = alpha.shape[0]
-    T         = time.shape[1]
+    lv_index = (
+    population_lookup
+        .query("population == 'LV'")
+        .g
+        .iloc[0]
+        - 1
+    )
+
+    draws = alpha.shape[0]
+    T = time.shape[1]
     K_minus_1 = alpha.shape[1]
-    K         = K_minus_1 + 1
+    K = K_minus_1 + 1
 
+    # reference category is the last party: Other
     eta = np.zeros((draws, T, K))
+
     for k in range(K_minus_1):
-        eta[:, :, k] = alpha[:, k, None] + time[:, :, k]
+        eta[:, :, k] = (
+            alpha[:, k, None]
+            + time[:, :, k]
+            + population[:, lv_index, k][:, None]
+        )
+
+    eta[:, :, K - 1] = 0
 
     p = softmax(eta, axis=2)
 
@@ -346,11 +369,11 @@ def fetch_and_store_us_polls(
 
     # process innit
     logger.info("preparing data...")
-    weekly_df, all_weeks, week_to_t, stan_data = _prepare_stan_data(raw_df)
+    weekly_df, all_weeks, week_to_t, stan_data, population_lookup = _prepare_stan_data(raw_df)
 
     # model
     logger.info("running Stan model")
-    p_mean, p_low, p_high = _run_model(stan_data)
+    p_mean, p_low, p_high = _run_model(stan_data, population_lookup)
 
     # make output
     payload = _build_output(p_mean, p_low, p_high, weekly_df, all_weeks, week_to_t)

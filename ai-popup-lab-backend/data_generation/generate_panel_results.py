@@ -31,6 +31,7 @@ _COUNTRY_DISPLAY = {
     "sweden":      "Sweden",
     "netherlands": "Netherlands",
     "denmark":     "Denmark",
+    "usa": "The USA",
 }
 
 # ── Blob path helpers ─────────────────────────────────────────────────────────
@@ -83,6 +84,74 @@ def isoweek_to_panel_date(year: int, week: int) -> str:
     """Return the Monday of the given ISO week as YYYYMMDD."""
     return Week(year, week).monday().strftime("%Y%m%d")
 
+def generate_panel_biographies_only(
+    country: str,
+    year: int,
+    week: int,
+    client: BlobServiceClient | None = None,
+    generate_events: bool = False,
+    articles_path: str | Path | None = None,
+) -> None:
+    """
+    Populate (or top up) biographies for a country's active panel WITHOUT
+    running a survey wave. Intended for standing up a new panel — e.g.
+    building the US panel — before turning on weekly surveys for it.
+    """
+    if client is None:
+        client = get_blob_client()
+
+    with open(COUNTRY_INFO_PATH) as f:
+        country_info = json.load(f)
+
+    info = country_info.get(country, {})
+    panel_filename = info.get("panel_filename")
+    if not panel_filename:
+        raise ValueError(f"No panel_filename configured for '{country}' in {COUNTRY_INFO_PATH}")
+
+    display_name = _COUNTRY_DISPLAY.get(country, country.title())
+    panel_date = isoweek_to_panel_date(year, week)
+
+    panel_df = _download_df(client, _active_panel_blob(country))
+    if panel_df is None:
+        logger.info("No active panel in blob — initialising from %s", panel_filename)
+        source = PANELS_DIR / panel_filename
+        if not source.exists():
+            raise FileNotFoundError(
+                f"Base panel file not found: {source}\n"
+                f"Copy {panel_filename} to country_data/panels/ in the backend repo."
+            )
+        panel_df = pd.read_csv(source)
+        if "biography" not in panel_df.columns:
+            panel_df["biography"] = pd.NA
+
+    missing_bio = int(panel_df["biography"].isna().sum())
+    if not missing_bio:
+        logger.info("All %d panelists already have biographies for %s — nothing to do.", len(panel_df), country)
+        return
+
+    logger.info(
+        "Generating %d/%d missing biographies for %s (generate_events=%s)...",
+        missing_bio, len(panel_df), country, generate_events,
+    )
+
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as tmp:
+        checkpoint_tmp = tmp.name
+
+    panel_df = populate_panel(
+        panel_df,
+        display_name,
+        delay_seconds=0.01,
+        checkpoint_path=checkpoint_tmp,
+        generate_events=generate_events,
+        date=panel_date if generate_events else None,
+        articles_path=articles_path if generate_events else None,
+    )
+
+    _upload_df(client, _active_panel_blob(country), panel_df)
+    logger.info(
+        "Biography-only panel generation complete: %s %d-W%02d (active panel updated in blob, no survey run).",
+        country, year, week,
+    )
 
 def generate_panel_results(
     country: str,

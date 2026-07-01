@@ -92,7 +92,7 @@
         "stratification_frame_filename": "usa_strat_frame.csv",
         "survey_filename": "usa_survey.csv",
         "extended_frame_filename": null,
-        "panel_filename": null,
+        "panel_filename": "us_panel.csv",
         "questiond_id": null,
         "party_info_filename": "usa_parties.csv",
         "demographic_search_columns": ["age_cat", "gender_cat", "race_cat", "hispanic_cat", "educ_cat", "state_abbrv", "vote_choice"],

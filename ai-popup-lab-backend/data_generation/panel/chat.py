@@ -29,7 +29,7 @@ def _get_env(name: str) -> str:
 	return val
 
 
-co = cohere.ClientV2(_get_env('COHERE_API_KEY'), timeout=240)
+co = cohere.ClientV2(_get_env('COHERE_API_KEY'))
 
 def send_message_cohere_rag(question, conversation, articles):
     documents = [
@@ -79,9 +79,8 @@ def send_message_cohere_rag(question, conversation, articles):
 
 def send_message(message: str,
 				 conversation: Optional[List[Dict[str, str]]] = None,
-				 *,
 				 max_tokens: int = 2048,
-				 temperature: float = 0.7) -> str:
+				 temperature: float = 0.7,) -> str:
 	"""Send `message` to Azure OpenAI and return the respondent message.
 
 	Args:
@@ -102,6 +101,7 @@ def send_message(message: str,
 
 	if conversation is None:
 		conversation = []
+		
 	# Copy to avoid mutating caller list. Internally map respondent role to assistant role.
 	messages = []
 	for turn in conversation:
@@ -132,5 +132,3 @@ def send_message(message: str,
 
 
 __all__ = ["send_message"]
-
-
