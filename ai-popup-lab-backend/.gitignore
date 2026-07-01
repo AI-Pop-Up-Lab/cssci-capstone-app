@@ -15,3 +15,4 @@ data_generation/output/*
 # and other
 country_data/panels/sweden_panel_active.csv
 !country_data/panels/.gitkeep
+country_data/stratification_frames/usa_strat_frame.csv

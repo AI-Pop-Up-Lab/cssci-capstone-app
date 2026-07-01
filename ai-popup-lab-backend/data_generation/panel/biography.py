@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import time
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional
 
 import numpy as np
 import pandas as pd
@@ -56,6 +56,8 @@ def populate_panel(
     generate_events: bool = False,
     date: Optional[str] = None,
     articles_path: Optional[str | Path] = None,
+    on_checkpoint: Optional[Callable[[pd.DataFrame], None]] = None,
+    checkpoint_interval: int = 25,
 ) -> pd.DataFrame:
     """
     Populate each panelist with a generated biography. Resumable: rows that
@@ -96,8 +98,12 @@ def populate_panel(
         """
 
         biography = send_message(prompt)
+        
         panel.at[index, "biography"] = biography
         panel.to_csv(checkpoint_path, index=False)
+
+        if on_checkpoint and (i + 1) % checkpoint_interval == 0:
+            on_checkpoint(panel)
 
         row = row.copy()
         row["biography"] = biography

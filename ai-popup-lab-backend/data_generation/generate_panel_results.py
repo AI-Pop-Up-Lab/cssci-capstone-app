@@ -19,7 +19,7 @@ from isoweek import Week
 
 from .panel.biography import populate_panel
 from .panel.runner import run_survey
-from .store_data import get_blob_client, CONTAINER_NAME, results_blob_name
+from .store_data import get_blob_client, CONTAINER_NAME, results_blob_name, biography_snapshot_blob_name
 
 logger = logging.getLogger(__name__)
 
@@ -137,6 +137,12 @@ def generate_panel_biographies_only(
     with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as tmp:
         checkpoint_tmp = tmp.name
 
+    def checkpoint_callback(current_panel: pd.DataFrame) -> None:
+        """Push progress to the active panel blob periodically, so an ACI
+        crash mid-run doesn't lose everything generated so far — only the
+        local temp checkpoint file, which doesn't survive a container restart."""
+        _upload_df(client, _active_panel_blob(country), current_panel)
+
     panel_df = populate_panel(
         panel_df,
         display_name,
@@ -145,11 +151,14 @@ def generate_panel_biographies_only(
         generate_events=generate_events,
         date=panel_date if generate_events else None,
         articles_path=articles_path if generate_events else None,
+        on_checkpoint=checkpoint_callback,
     )
 
     _upload_df(client, _active_panel_blob(country), panel_df)
+    _upload_df(client, biography_snapshot_blob_name(country, year, week), panel_df)
     logger.info(
-        "Biography-only panel generation complete: %s %d-W%02d (active panel updated in blob, no survey run).",
+        "Biography-only panel generation complete: %s %d-W%02d "
+        "(active panel + weekly snapshot updated in blob, no survey run).",
         country, year, week,
     )
 

@@ -27,6 +27,9 @@ def get_file_suffix() -> str:
 def results_blob_name(country: str, year: int, week: int) -> str:
     return f"panel-results/{country}/{year}_{week:02d}_{country}_panel_results.csv"
 
+def biography_snapshot_blob_name(country: str, year: int, week: int) -> str:
+    return f"biography-snapshots/{country}/{year}_{week:02d}_{country}_biography_snapshot.csv"
+
 def download_blob_to_path(client: BlobServiceClient, blob_name: str, dest_path: Path) -> Path:
     """Download a blob to a local path. Raises FileNotFoundError if the blob doesn't exist."""
     blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
