@@ -102,7 +102,7 @@ def populate_panel(
         panel.at[index, "biography"] = biography
         panel.to_csv(checkpoint_path, index=False)
 
-        if on_checkpoint and (i + 1) % checkpoint_interval == 0:
+        if on_checkpoint and (index + 1) % checkpoint_interval == 0:
             on_checkpoint(panel)
 
         row = row.copy()
