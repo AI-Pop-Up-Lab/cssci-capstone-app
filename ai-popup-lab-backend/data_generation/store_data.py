@@ -27,6 +27,9 @@ def get_file_suffix() -> str:
 def results_blob_name(country: str, year: int, week: int) -> str:
     return f"panel-results/{country}/{year}_{week:02d}_{country}_panel_results.csv"
 
+def strat_frame_blob_name(country: str) -> str:
+    return f"stratification-frames/{country}/{country}_strat_frame.csv"
+
 def biography_snapshot_blob_name(country: str, year: int, week: int) -> str:
     return f"biography-snapshots/{country}/{year}_{week:02d}_{country}_biography_snapshot.csv"
 

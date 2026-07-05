@@ -16,6 +16,7 @@ import sys
 from .generate_panel_results import (
     generate_panel_results,
     generate_panel_biographies_only,
+    generate_vote_choice_backfill,
     isoweek_to_panel_date,
 )
 from .job_guard import already_ran_typed, mark_ran_typed
@@ -84,15 +85,6 @@ def main() -> None:
                         )
                         mark_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week)
 
-                if JOB_TYPE in ("mrp", "both"):
-                    if not FORCE and already_ran_typed(
-                        blob_client, CONTAINER_NAME, country, "mrp", year, week
-                    ):
-                        logger.info("[%s] MRP lock exists — skipping.", label)
-                    else:
-                        _run_mrp(country, blob_client)
-                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "mrp", year, week)
-
                 if JOB_TYPE == "biography":
                     if not FORCE and already_ran_typed(
                         blob_client, CONTAINER_NAME, country, "biography", year, week
@@ -108,6 +100,30 @@ def main() -> None:
                             articles_path=ARTICLES_PATH,
                         )
                         mark_ran_typed(blob_client, CONTAINER_NAME, country, "biography", year, week)
+
+                if JOB_TYPE in ("vote_choice_backfill", "vote_choice_and_mrp"):
+                    if not FORCE and already_ran_typed(
+                        blob_client, CONTAINER_NAME, country, "vote_choice_backfill", year, week
+                    ):
+                        logger.info("[%s] Vote choice lock exists — skipping (use force=true to override).", label)
+                    else:
+                        generate_vote_choice_backfill(
+                            country=country,
+                            year=year,
+                            week=week,
+                            force=FORCE,
+                            client=blob_client,
+                        )
+                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "vote_choice_backfill", year, week)
+
+                if JOB_TYPE in ("mrp", "both", "vote_choice_and_mrp"):
+                    if not FORCE and already_ran_typed(
+                        blob_client, CONTAINER_NAME, country, "mrp", year, week
+                    ):
+                        logger.info("[%s] MRP lock exists — skipping.", label)
+                    else:
+                        _run_mrp(country, blob_client, year, week)
+                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "mrp", year, week)
 
                 logger.info("Done: %s", label)
             except Exception:

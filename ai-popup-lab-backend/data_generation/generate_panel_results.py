@@ -48,6 +48,13 @@ def _gdelt_blob(country: str, year: int, week: int) -> str:
 def _panel_guard_blob(country: str, year: int, week: int) -> str:
     return f"job-runs/panel/{country}/{year}_{week:02d}.lock"
 
+def _backfill_panel_blob(country: str, year: int, week: int) -> str:
+    """per-week input panel for parallel vote-choice backfill runs unlike from _active_panel_blob, which is the shared rolling panel state."""
+    return f"panel-state/{country}/backfill/{year}_{week:02d}_{country}_panel.csv"
+
+def _vote_choice_guard_blob(country: str, year: int, week: int) -> str:
+    return f"job-runs/vote-choice-backfill/{country}/{year}_{week:02d}.lock"
+
 # ── Low-level blob helpers ────────────────────────────────────────────────────
 
 def _blob_exists(client: BlobServiceClient, blob_name: str) -> bool:
@@ -161,6 +168,73 @@ def generate_panel_biographies_only(
         "(active panel + weekly snapshot updated in blob, no survey run).",
         country, year, week,
     )
+
+def generate_vote_choice_backfill(
+    country: str,
+    year: int,
+    week: int,
+    force: bool = False,
+    client: BlobServiceClient | None = None,
+) -> None:
+    """
+    Run one survey wave for a pre-built, week-specific backfill panel.
+    Safe to run in parallel across weeks: reads/writes only per-week blobs,
+    never touches the shared active_panel.csv.
+    Assumes biographies already populated (does NOT call populate_panel).
+    """
+    if client is None:
+        client = get_blob_client()
+
+    with open(COUNTRY_INFO_PATH) as f:
+        country_info = json.load(f)
+
+    info = country_info.get(country, {})
+    question_id = info.get("question_id")
+    if not question_id:
+        raise ValueError(f"No question_id configured for '{country}'")
+
+    if not force and _blob_exists(client, _vote_choice_guard_blob(country, year, week)):
+        logger.info("Vote choice already exists for %s %d-W%02d — skipping.", country, year, week)
+        return
+
+    panel_date = isoweek_to_panel_date(year, week)
+
+    # Load this week's pre-built panel (already has biographies + attrition applied)
+    panel_df = _download_df(client, _backfill_panel_blob(country, year, week))
+    if panel_df is None:
+        raise FileNotFoundError(
+            f"No backfill panel found at {_backfill_panel_blob(country, year, week)}. "
+            f"Upload the split week file to blob before running."
+        )
+    if panel_df["biography"].isna().any():
+        raise ValueError(
+            f"Backfill panel for {country} {year}-W{week:02d} has missing biographies — "
+            f"run the biography-only step first."
+        )
+
+    news_df = _download_df(client, _gdelt_blob(country, year, week))
+
+    def checkpoint_callback(current_panel: pd.DataFrame) -> None:
+        _upload_df(client, _backfill_panel_blob(country, year, week), current_panel)
+
+    panel_df, news_df = run_survey(
+        question_id=question_id,
+        panel_df=panel_df,
+        panel_date=panel_date,
+        news_df=news_df,
+        attrition_rate=0.0,          # already applied when the week's panel was split for backfilling biography generation done all at once
+        panels_dir=None,
+        panel_name=None,
+        on_checkpoint=checkpoint_callback,
+    )
+
+    _upload_df(client, _results_blob(country, year, week), panel_df)
+    if news_df is not None:
+        _upload_df(client, _gdelt_blob(country, year, week), news_df)
+
+    blob = client.get_blob_client(container=CONTAINER_NAME, blob=_vote_choice_guard_blob(country, year, week))
+    blob.upload_blob(b"done", overwrite=True)
+    logger.info("Vote choice backfill complete: %s %d-W%02d", country, year, week)
 
 def generate_panel_results(
     country: str,

@@ -1,0 +1,154 @@
+name: Backfill US Vote Choice and MRP (Parallel)
+
+on:
+  workflow_dispatch:
+    inputs:
+      weeks:
+        description: 'Comma-separated ISO weeks (e.g. 2026-14,2026-15,...)'
+        required: true
+        default: '2026-14,2026-15,2026-16,2026-17,2026-18,2026-19,2026-20,2026-21,2026-22,2026-23'
+      countries:
+        description: 'Comma-separated countries'
+        required: false
+        default: 'usa'
+      force:
+        description: 'Force rerun even if lock exists (true/false)'
+        required: false
+        default: 'false'
+
+jobs:
+  prepare-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      weeks: ${{ steps.set-matrix.outputs.weeks }}
+    steps:
+      - id: set-matrix
+        run: |
+          WEEKS_JSON=$(echo "${{ github.event.inputs.weeks }}" | tr ',' '\n' | jq -R . | jq -sc .)
+          echo "weeks=$WEEKS_JSON" >> "$GITHUB_OUTPUT"
+
+  backfill-vote-choice:
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    strategy:
+      fail-fast: false
+      max-parallel: 11
+      matrix:
+        week: ${{ fromJson(needs.prepare-matrix.outputs.weeks) }}
+    steps:
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Compute container name
+        id: aci
+        run: |
+          SAFE_WEEK=$(echo "${{ matrix.week }}" | tr -cd '[:alnum:]-' | tr '[:upper:]' '[:lower:]')
+          echo "name=vote-choice-backfill-$SAFE_WEEK" >> "$GITHUB_OUTPUT"
+
+      - name: Delete existing ACI if present
+        run: |
+          az container delete \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name ${{ steps.aci.outputs.name }} \
+            --yes || true
+
+      - name: Create and run ACI worker
+        run: |
+          az container create \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name ${{ steps.aci.outputs.name }} \
+            --image ${{ secrets.ACR_LOGIN_SERVER }}/weekly-worker:latest \
+            --registry-username ${{ secrets.ACR_USERNAME }} \
+            --registry-password ${{ secrets.ACR_PASSWORD }} \
+            --restart-policy Never \
+            --location westeurope \
+            --cpu 2 \
+            --memory 4 \
+            --command-line "python -m data_generation.backfill_entry" \
+            --environment-variables \
+              ENV=production \
+              COUNTRIES="${{ github.event.inputs.countries }}" \
+              JOB_TYPE="vote_choice_and_mrp" \
+              BACKFILL_WEEKS="${{ matrix.week }}" \
+              BACKFILL_FORCE="${{ github.event.inputs.force }}" \
+              BLOB_CONTAINER_NAME=generated-data \
+            --secure-environment-variables \
+              AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+              AZURE_OPENAI_API_KEY="${{ secrets.AZURE_OPENAI_API_KEY }}" \
+              AZURE_OPENAI_MODEL="${{ secrets.AZURE_OPENAI_MODEL }}" \
+              AZURE_OPENAI_BASE_URL="${{ secrets.AZURE_OPENAI_BASE_URL }}" \
+              COHERE_API_KEY="${{ secrets.COHERE_API_KEY }}" \
+            --os-type Linux
+
+      - name: Wait for ACI to finish
+        timeout-minutes: 1000
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_URL: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ env.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+        run: |
+          LAST_REFRESH=$(date +%s)
+          REFRESH_INTERVAL=$((45 * 60))  # refresh every 45 min, well under the ~60 min token lifetime
+
+          refresh_azure_login() {
+            echo "Refreshing Azure OIDC login..."
+            IDTOKEN=$(curl -sLS "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=api://AzureADTokenExchange" \
+              -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" | jq -r '.value')
+            az login --service-principal \
+              -u "${{ secrets.AZURE_CLIENT_ID }}" \
+              --tenant "${{ secrets.AZURE_TENANT_ID }}" \
+              --federated-token "$IDTOKEN" \
+              --allow-no-subscriptions
+            az account set --subscription "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          }
+
+          while true; do
+            NOW=$(date +%s)
+            if [ $((NOW - LAST_REFRESH)) -ge $REFRESH_INTERVAL ]; then
+              refresh_azure_login
+              LAST_REFRESH=$NOW
+            fi
+
+            STATE=$(az container show \
+              --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+              --name ${{ steps.aci.outputs.name }} \
+              --query "containers[0].instanceView.currentState.state" \
+              --output tsv)
+            echo "[${{ matrix.week }}] Container state: $STATE"
+            if [ "$STATE" = "Terminated" ]; then break; fi
+            sleep 30
+          done
+
+      - name: Check exit code
+        run: |
+          EXIT_CODE=$(az container show \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name ${{ steps.aci.outputs.name }} \
+            --query "containers[0].instanceView.currentState.exitCode" \
+            --output tsv)
+          echo "[${{ matrix.week }}] Exit code: $EXIT_CODE"
+          if [ "$EXIT_CODE" != "0" ]; then
+            echo "Backfill failed for week ${{ matrix.week }} with exit code $EXIT_CODE"
+            exit 1
+          fi
+
+      - name: Print container logs
+        if: always()
+        run: |
+          az container logs \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name ${{ steps.aci.outputs.name }}
+
+      - name: Clean up ACI
+        if: always()
+        run: |
+          az container delete \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name ${{ steps.aci.outputs.name }} \
+            --yes

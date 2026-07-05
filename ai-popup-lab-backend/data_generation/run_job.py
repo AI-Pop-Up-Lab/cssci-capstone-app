@@ -29,7 +29,10 @@ import pandas as pd
 from .generate_panel_results import generate_panel_results
 from .job_guard import already_ran_typed, mark_ran_typed
 from .run_scripts import check_r_available, run_extension_script
-from .store_data import CONTAINER_NAME, get_blob_client, store_frame, results_blob_name, download_blob_to_path
+from .store_data import (
+    CONTAINER_NAME, get_blob_client, store_frame, results_blob_name,
+    download_blob_to_path, strat_frame_blob_name,
+)
 from .aggregate_longitudinal import update_longitudinal_aggregates
 from .fetch_us_polls import fetch_and_store_us_polls
 
@@ -62,11 +65,25 @@ def _run_mrp(country: str, blob_client, year: int, week: int) -> None:
     with open(BASE_DIR / "country_data" / "country_data_info.json") as f:
         country_data = json.load(f)
 
-    frame_path = STRAT_FRAMES_DIR / country_data[country]["stratification_frame_filename"]
 
     survey_blob_name = results_blob_name(country, year, week)
 
     with tempfile.TemporaryDirectory() as tmp:
+        # retrieve strat frame from local file if present, else pull from blob storage on azure
+
+        local_frame_path = STRAT_FRAMES_DIR / country_data[country]["stratification_frame_filename"]
+        if local_frame_path and local_frame_path.exists():
+            frame_path = local_frame_path
+        else:
+            frame_path = Path(tmp) / f"{country}_strat_frame.csv"
+            try:
+                download_blob_to_path(blob_client, strat_frame_blob_name(country), frame_path)
+            except FileNotFoundError:
+                raise FileNotFoundError(
+                    f"No stratification frame found locally at {local_frame_path} "
+                    f"or in blob at {strat_frame_blob_name(country)} for '{country}'."
+                )
+
         survey_path = Path(tmp) / f"{country}_{year}_{week:02d}_panel_results.csv"
         try:
             download_blob_to_path(blob_client, survey_blob_name, survey_path)

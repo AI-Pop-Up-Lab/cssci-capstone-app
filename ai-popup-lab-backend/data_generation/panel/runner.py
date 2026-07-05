@@ -11,10 +11,11 @@ from pathlib import Path
 import pandas as pd
 import scipy.stats as stats
 from tqdm import tqdm
+import logging
 
 from .biography import populate_panel
 from .chat import send_message, send_message_cohere_rag
-from .survey import generate_question, _questions_path
+from .survey import generate_question, _questions_path, generate_turnout_question, get_district_info
 from .news import download_weekly_news, fetch_article
 
 CHECKPOINT_INTERVAL = 10
@@ -23,8 +24,10 @@ _COUNTRY_NAMES = {
     "se": "Sweden",
     "nl": "Netherlands",
     "dk": "Denmark",
+    "us": "The USA"
 }
 
+logger = logging.getLogger(__name__)
 
 def _country_display_name(country_code: str) -> str:
     return _COUNTRY_NAMES.get(country_code, country_code.upper())
@@ -153,7 +156,12 @@ def run_survey(
     for persona in tqdm(pending.itertuples(), total=len(pending), desc=f"Surveying [{country_code}]"):
         # --- Step 1: initial thought process ---
         conversation = [{"role": "system", "content": str(persona.biography)}]
-        first_prompt = generate_question(question_id, initial=True)
+
+        district = None
+        if country_code == "us":
+            district = getattr(persona, "state_cd", None)
+            
+        first_prompt = generate_question(question_id, initial=True, district=district)
         first_response = send_message(first_prompt, conversation=conversation)
         conversation += [
             {"role": "user",      "content": first_prompt},
@@ -224,8 +232,35 @@ def run_survey(
                     {"role": "assistant", "content": answer},
                 ]
 
+        # --- Step 2.5: turnout gate (US only — other countries skip straight to Step 3) ---
+        district = None
+        if country_code == "us":
+            district = getattr(persona, "state_cd", None)
+            if not district:
+                logger.warning("Persona %s has no state_cd — skipping.", getattr(persona, "cell_id", persona.Index))
+                continue
+
+            _, full_state_name = get_district_info(district)
+            if full_state_name is None:
+                logger.warning("No house_candidates.csv match for district '%s' — skipping persona %s.",
+                                district, getattr(persona, "cell_id", persona.Index))
+                continue
+
+            turnout_prompt = generate_turnout_question(full_state_name)
+            turnout_response = send_message(turnout_prompt, conversation=conversation)
+            conversation += [
+                {"role": "user", "content": turnout_prompt},
+                {"role": "assistant", "content": turnout_response},
+            ]
+            if turnout_response.strip().lower() == "yes":
+                panel_df.at[persona.Index, vote_col] = "Did not vote"
+                completed += 1
+                if on_checkpoint and completed % CHECKPOINT_INTERVAL == 0:
+                    on_checkpoint(panel_df)
+                continue
+
         # --- Step 3: final answer ---
-        second_prompt   = generate_question(question_id, initial=False)
+        second_prompt   = generate_question(question_id, initial=False, district=district)
         second_response = send_message(second_prompt, conversation=conversation)
         panel_df.at[persona.Index, vote_col] = second_response
         completed += 1
