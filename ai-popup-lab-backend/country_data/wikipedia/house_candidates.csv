@@ -1,40 +1,40 @@
 State,District,Incumbent,Incumbent_Party,Status,PVI_2025,Democratic_Candidates,Republican_Candidates,Independent_ThirdParty,Democratic_Count,Republican_Count,Independent_Count,Primaries_Over,District_full
-Alabama,AL-01,None (new seat),None (new seat),New representative to be elected,R+17,['Clyde Jones Jr.'],"['Lucas Burger', 'Jerry Carl', 'John Mills', 'Austin Sidwell']",[],1,4,0,False,Alabama 1
-Alabama,AL-02,Shomari Figures,Democratic,Incumbent running,R+7,['Shomari Figures'],"['Hampton Harris', 'Christian Horn', 'Rhett Marques', 'David Matthews', 'Joshua McKee', 'James Richardson']",[],1,6,0,False,Alabama 2
-Alabama,AL-02,Barry Moore Redistricted from the 1st district,Republican,Incumbent retiring to run for U.S. Senate[26],R+7,['Shomari Figures'],"['Hampton Harris', 'Christian Horn', 'Rhett Marques', 'David Matthews', 'Joshua McKee', 'James Richardson']",[],1,6,0,False,Alabama 2
-Alabama,AL-03,Mike Rogers,Republican,Incumbent renominated,R+23,['Lee McInnis'],['Mike Rogers'],[],1,1,0,True,Alabama 3
-Alabama,AL-04,Robert Aderholt,Republican,Incumbent renominated,R+33,['Amanda Pusczek'],['Robert Aderholt'],[],1,1,0,True,Alabama 4
-Alabama,AL-05,Dale Strong,Republican,Incumbent renominated,R+15,['Andrew Sneed'],['Dale Strong'],[],1,1,0,True,Alabama 5
-Alabama,AL-06,Gary Palmer,Republican,Incumbent running,R+17,"['Jacob Bouma-Sims', 'Ashtyn Kennedy', 'Maurice Mercer', 'Keith Pilkington']","['Case Dixon', 'Gary Palmer']",[],4,2,0,False,Alabama 6
-Alabama,AL-07,Terri Sewell,Democratic,Incumbent running,D+10,['Terri Sewell'],"['Ammie Akin', 'David Perry']",[],1,2,0,False,Alabama 7
-Alaska,AK-At-Large,Nick Begich III,Republican,Incumbent running,R+6,"['Eric Hafner', 'Yaquelin Reynoso', 'Matt Schultz', 'John Williams']","['Nick Begich III', 'Eddie Goldfarb', 'Clay Strickland']","[{'name': 'David Ambrose II', 'party': 'Independent'}, {'name': 'Lady Donna Dutchess', 'party': 'Independent'}, {'name': 'John Foddrill', 'party': 'Libertarian'}, {'name': 'Bill Hill', 'party': 'Independent'}, {'name': 'Jim McDermott', 'party': 'Libertarian'}, {'name': 'David Richey', 'party': 'Independent'}, {'name': 'Bronco Williams', 'party': 'Independent'}]",4,3,7,False,Alaska at-large
-Arizona,AZ-01,David Schweikert,Republican,Incumbent retiring to run for governor[27],R+1,"['n-Woods', 'Rick McCartney', 'Amish Shah', 'Jonathan Treble']","['Joseph Chaplik', 'Jay Feely', 'John Trobough']","[{'name': 'Monica Alponte', 'party': 'Libertarian'}]",4,3,1,False,Arizona 1
-Arizona,AZ-02,Eli Crane,Republican,Incumbent running,R+7,['Jonathan Nez'],['Eli Crane'],"[{'name': 'Curtis Goodwin', 'party': 'Libertarian'}]",1,1,1,True,Arizona 2
-Arizona,AZ-03,Yassamin Ansari,Democratic,Incumbent running,D+22,['Yassamin Ansari'],[],"[{'name': 'Alan Aversa', 'party': 'No Labels'}]",1,0,1,False,Arizona 3
-Arizona,AZ-04,Greg Stanton,Democratic,Incumbent running,D+4,"['Kai Newkirk', 'Greg Stanton']",['Zuhdi Jasser'],"[{'name': 'Tisha Benoit', 'party': 'No Labels'}, {'name': 'John Fillmore', 'party': 'No Labels'}]",2,1,2,False,Arizona 4
-Arizona,AZ-05,Andy Biggs,Republican,Incumbent retiring to run for governor[28],R+10,"['Brian Hualde', 'Chris James', 'Elizabeth Lee']","['Daniel Keenan', 'Mark Lamb']",[],3,2,0,False,Arizona 5
-Arizona,AZ-06,Juan Ciscomani,Republican,Incumbent running,EVEN,['JoAnna Mendoza'],['Juan Ciscomani'],"[{'name': 'Jereme Peters', 'party': 'Libertarian'}]",1,1,1,True,Arizona 6
-Arizona,AZ-07,Adelita Grijalva,Democratic,Incumbent running,D+13,['Adelita Grijalva'],['Daniel Butierez'],[],1,1,0,True,Arizona 7
-Arizona,AZ-08,Abraham Hamadeh,Republican,Incumbent running,R+8,"['Bernadette Greene-Placentia', 'Ray Keeler']",['Abraham Hamadeh'],[],2,1,0,False,Arizona 8
-Arizona,AZ-09,Paul Gosar,Republican,Incumbent running,R+15,['Dani Sterbinsky'],['Paul Gosar'],[],1,1,0,True,Arizona 9
-Arkansas,AR-01,Rick Crawford,Republican,Incumbent renominated,R+23,['Terri Green'],['Rick Crawford'],[],1,1,0,True,Arkansas 1
-Arkansas,AR-02,French Hill,Republican,Incumbent renominated,R+8,['Chris Jones'],['French Hill'],[],1,1,0,True,Arkansas 2
-Arkansas,AR-03,Steve Womack,Republican,Incumbent renominated,R+13,['Robb Ryerse'],['Steve Womack'],[],1,1,0,True,Arkansas 3
-Arkansas,AR-04,Bruce Westerman,Republican,Incumbent renominated,R+20,['James Russell'],['Bruce Westerman'],[],1,1,0,True,Arkansas 4
-California,CA-01,James Gallagher,Republican,Incumbent advanced to general,D+7,['Mike McGuire'],['James Gallagher'],[],1,1,0,True,California 1
-California,CA-02,Jared Huffman,Democratic,Incumbent advanced to general,D+13,['Jared Huffman'],['Robin Littau'],[],1,1,0,True,California 2
-California,CA-03,Ami Bera Redistricted from the 6th district,Democratic,Incumbent advanced to general,D+6,['Ami Bera'],['Robb Tucker'],[],1,1,0,True,California 3
-California,CA-04,Mike Thompson,Democratic,Incumbent advanced to general Democratic hold.,D+8,"['Eric Jones', 'Mike Thompson']",[],[],2,0,0,False,California 4
-California,CA-05,Tom McClintock,Republican,Incumbent advanced to general,R+10,['Michael Masuda'],['Tom McClintock'],[],1,1,0,True,California 5
-California,CA-06,Kevin Kiley Redistricted from the 3rd district,Independent,Incumbent advanced to general,D+5,['Richard Pan'],[],"[{'name': 'Kevin Kiley', 'party': 'Independent'}]",1,0,1,False,California 6
-California,CA-07,Doris Matsui,Democratic,Incumbent advanced to general Democratic hold.,D+7,"['Doris Matsui', 'Mai Vang']",[],[],2,0,0,False,California 7
-California,CA-08,John Garamendi,Democratic,Incumbent advanced to general,D+19,['John Garamendi'],['Rudy Recile'],[],1,1,0,True,California 8
-California,CA-09,Josh Harder,Democratic,Incumbent advanced to general,D+8,['Josh Harder'],['John McBride'],[],1,1,0,True,California 9
+Alabama,AL-1,None (new seat),None (new seat),New representative to be elected,R+17,['Clyde Jones Jr.'],"['Lucas Burger', 'Jerry Carl', 'John Mills', 'Austin Sidwell']",[],1,4,0,False,Alabama 1
+Alabama,AL-2,Shomari Figures,Democratic,Incumbent running,R+7,['Shomari Figures'],"['Hampton Harris', 'Christian Horn', 'Rhett Marques', 'David Matthews', 'Joshua McKee', 'James Richardson']",[],1,6,0,False,Alabama 2
+Alabama,AL-2,Barry Moore Redistricted from the 1st district,Republican,Incumbent retiring to run for U.S. Senate[26],R+7,['Shomari Figures'],"['Hampton Harris', 'Christian Horn', 'Rhett Marques', 'David Matthews', 'Joshua McKee', 'James Richardson']",[],1,6,0,False,Alabama 2
+Alabama,AL-3,Mike Rogers,Republican,Incumbent renominated,R+23,['Lee McInnis'],['Mike Rogers'],[],1,1,0,True,Alabama 3
+Alabama,AL-4,Robert Aderholt,Republican,Incumbent renominated,R+33,['Amanda Pusczek'],['Robert Aderholt'],[],1,1,0,True,Alabama 4
+Alabama,AL-5,Dale Strong,Republican,Incumbent renominated,R+15,['Andrew Sneed'],['Dale Strong'],[],1,1,0,True,Alabama 5
+Alabama,AL-6,Gary Palmer,Republican,Incumbent running,R+17,"['Jacob Bouma-Sims', 'Ashtyn Kennedy', 'Maurice Mercer', 'Keith Pilkington']","['Case Dixon', 'Gary Palmer']",[],4,2,0,False,Alabama 6
+Alabama,AL-7,Terri Sewell,Democratic,Incumbent running,D+10,['Terri Sewell'],"['Ammie Akin', 'David Perry']",[],1,2,0,False,Alabama 7
+Alaska,AK-1,Nick Begich III,Republican,Incumbent running,R+6,"['Eric Hafner', 'Yaquelin Reynoso', 'Matt Schultz', 'John Williams']","['Nick Begich III', 'Eddie Goldfarb', 'Clay Strickland']","[{'name': 'David Ambrose II', 'party': 'Independent'}, {'name': 'Lady Donna Dutchess', 'party': 'Independent'}, {'name': 'John Foddrill', 'party': 'Libertarian'}, {'name': 'Bill Hill', 'party': 'Independent'}, {'name': 'Jim McDermott', 'party': 'Libertarian'}, {'name': 'David Richey', 'party': 'Independent'}, {'name': 'Bronco Williams', 'party': 'Independent'}]",4,3,7,False,Alaska at-large
+Arizona,AZ-1,David Schweikert,Republican,Incumbent retiring to run for governor[27],R+1,"['n-Woods', 'Rick McCartney', 'Amish Shah', 'Jonathan Treble']","['Joseph Chaplik', 'Jay Feely', 'John Trobough']","[{'name': 'Monica Alponte', 'party': 'Libertarian'}]",4,3,1,False,Arizona 1
+Arizona,AZ-2,Eli Crane,Republican,Incumbent running,R+7,['Jonathan Nez'],['Eli Crane'],"[{'name': 'Curtis Goodwin', 'party': 'Libertarian'}]",1,1,1,True,Arizona 2
+Arizona,AZ-3,Yassamin Ansari,Democratic,Incumbent running,D+22,['Yassamin Ansari'],[],"[{'name': 'Alan Aversa', 'party': 'No Labels'}]",1,0,1,False,Arizona 3
+Arizona,AZ-4,Greg Stanton,Democratic,Incumbent running,D+4,"['Kai Newkirk', 'Greg Stanton']",['Zuhdi Jasser'],"[{'name': 'Tisha Benoit', 'party': 'No Labels'}, {'name': 'John Fillmore', 'party': 'No Labels'}]",2,1,2,False,Arizona 4
+Arizona,AZ-5,Andy Biggs,Republican,Incumbent retiring to run for governor[28],R+10,"['Brian Hualde', 'Chris James', 'Elizabeth Lee']","['Daniel Keenan', 'Mark Lamb']",[],3,2,0,False,Arizona 5
+Arizona,AZ-6,Juan Ciscomani,Republican,Incumbent running,EVEN,['JoAnna Mendoza'],['Juan Ciscomani'],"[{'name': 'Jereme Peters', 'party': 'Libertarian'}]",1,1,1,True,Arizona 6
+Arizona,AZ-7,Adelita Grijalva,Democratic,Incumbent running,D+13,['Adelita Grijalva'],['Daniel Butierez'],[],1,1,0,True,Arizona 7
+Arizona,AZ-8,Abraham Hamadeh,Republican,Incumbent running,R+8,"['Bernadette Greene-Placentia', 'Ray Keeler']",['Abraham Hamadeh'],[],2,1,0,False,Arizona 8
+Arizona,AZ-9,Paul Gosar,Republican,Incumbent running,R+15,['Dani Sterbinsky'],['Paul Gosar'],[],1,1,0,True,Arizona 9
+Arkansas,AR-1,Rick Crawford,Republican,Incumbent renominated,R+23,['Terri Green'],['Rick Crawford'],[],1,1,0,True,Arkansas 1
+Arkansas,AR-2,French Hill,Republican,Incumbent renominated,R+8,['Chris Jones'],['French Hill'],[],1,1,0,True,Arkansas 2
+Arkansas,AR-3,Steve Womack,Republican,Incumbent renominated,R+13,['Robb Ryerse'],['Steve Womack'],[],1,1,0,True,Arkansas 3
+Arkansas,AR-4,Bruce Westerman,Republican,Incumbent renominated,R+20,['James Russell'],['Bruce Westerman'],[],1,1,0,True,Arkansas 4
+California,CA-1,James Gallagher,Republican,Incumbent advanced to general,D+7,['Mike McGuire'],['James Gallagher'],[],1,1,0,True,California 1
+California,CA-2,Jared Huffman,Democratic,Incumbent advanced to general,D+13,['Jared Huffman'],['Robin Littau'],[],1,1,0,True,California 2
+California,CA-3,Ami Bera Redistricted from the 6th district,Democratic,Incumbent advanced to general,D+6,['Ami Bera'],['Robb Tucker'],[],1,1,0,True,California 3
+California,CA-4,Mike Thompson,Democratic,Incumbent advanced to general Democratic hold.,D+8,"['Eric Jones', 'Mike Thompson']",[],[],2,0,0,False,California 4
+California,CA-5,Tom McClintock,Republican,Incumbent advanced to general,R+10,['Michael Masuda'],['Tom McClintock'],[],1,1,0,True,California 5
+California,CA-6,Kevin Kiley Redistricted from the 3rd district,Independent,Incumbent advanced to general,D+5,['Richard Pan'],[],"[{'name': 'Kevin Kiley', 'party': 'Independent'}]",1,0,1,False,California 6
+California,CA-7,Doris Matsui,Democratic,Incumbent advanced to general Democratic hold.,D+7,"['Doris Matsui', 'Mai Vang']",[],[],2,0,0,False,California 7
+California,CA-8,John Garamendi,Democratic,Incumbent advanced to general,D+19,['John Garamendi'],['Rudy Recile'],[],1,1,0,True,California 8
+California,CA-9,Josh Harder,Democratic,Incumbent advanced to general,D+8,['Josh Harder'],['John McBride'],[],1,1,0,True,California 9
 California,CA-10,Mark DeSaulnier,Democratic,Incumbent advanced to general,D+18,['Mark DeSaulnier'],['Jeff Frese'],[],1,1,0,True,California 10
 California,CA-11,Nancy Pelosi,Democratic,Incumbent retiring[2] Democratic hold.,D+36,"['Connie Chan', 'Scott Wiener']",[],[],2,0,0,False,California 11
 California,CA-12,Lateefah Simon,Democratic,Incumbent advanced to general Democratic hold.,D+39,"['Jamie Joyce', 'Lateefah Simon']",[],[],2,0,0,False,California 12
 California,CA-13,Adam Gray,Democratic,Incumbent advanced to general,D+2,['Adam Gray'],['Kevin Lincoln'],[],1,1,0,True,California 13
-California,CA-14,TBD[ad],TBD[ad],Incumbent to be determined in 2026 Democratic hold.,D+19,"['Melissa Hernandez', 'Aisha Wahab']",[],[],2,0,0,False,California 14
+California,CA-14,TBD[m],TBD[m],Incumbent to be determined in 2026 Democratic hold.,D+19,"['Melissa Hernandez', 'Aisha Wahab']",[],[],2,0,0,False,California 14
 California,CA-15,Kevin Mullin,Democratic,Incumbent advanced to general,D+26,['Kevin Mullin'],['Charles Hoelter'],[],1,1,0,True,California 15
 California,CA-16,Sam Liccardo,Democratic,Incumbent advanced to general,D+25,['Sam Liccardo'],[''],[],1,1,0,True,California 16
 California,CA-17,Ro Khanna,Democratic,Incumbent advanced to general,D+21,['Ro Khanna'],['Ritesh Tandon'],[],1,1,0,True,California 17
@@ -74,29 +74,29 @@ California,CA-49,Mike Levin,Democratic,Incumbent advanced to general,D+7,['Mike 
 California,CA-50,Scott Peters,Democratic,Incumbent advanced to general,D+10,['Scott Peters'],['Steve Cohen'],[],1,1,0,True,California 50
 California,CA-51,Sara Jacobs,Democratic,Incumbent advanced to general,D+10,['Sara Jacobs'],['Ricardo Cabrera'],[],1,1,0,True,California 51
 California,CA-52,Juan Vargas,Democratic,Incumbent advanced to general,D+11,['Juan Vargas'],['Jeff Belle'],[],1,1,0,True,California 52
-Colorado,CO-01,Diana DeGette,Democratic,Incumbent running,D+29,"['Diana DeGette', 'Wanda James', 'Melat Kiros']",['Christy Peterson'],[],3,1,0,False,Colorado 1
-Colorado,CO-02,Joe Neguse,Democratic,Incumbent running,D+20,['Joe Neguse'],"['Christina Blunt', 'Kelley Dennison']",[],1,2,0,False,Colorado 2
-Colorado,CO-03,Jeff Hurd,Republican,Incumbent running,R+5,"['Alex Kelloff', 'Dwayne Romero']","['Ron Hanks', 'Jeff Hurd']",[],2,2,0,False,Colorado 3
-Colorado,CO-04,Lauren Boebert,Republican,Incumbent running,R+9,['Eileen Laubacher'],['Lauren Boebert'],"[{'name': 'Tim Veldhuizen', 'party': 'Independent'}]",1,1,1,True,Colorado 4
-Colorado,CO-05,Jeff Crank,Republican,Incumbent running,R+5,"['Jessica Killin', 'Joe Reagan']",['Jeff Crank'],[],2,1,0,False,Colorado 5
-Colorado,CO-06,Jason Crow,Democratic,Incumbent running,D+11,['Jason Crow'],['Mel Tewahade'],[],1,1,0,True,Colorado 6
-Colorado,CO-07,Brittany Pettersen,Democratic,Incumbent running,D+8,['Brittany Pettersen'],['Tim Bennett'],[],1,1,0,True,Colorado 7
-Colorado,CO-08,Gabe Evans,Republican,Incumbent running,EVEN,"['Shannon Bird', 'Manny Rutinel']",['Gabe Evans'],[],2,1,0,False,Colorado 8
-Connecticut,CT-01,John B. Larson,Democratic,Incumbent running,D+12,"['Luke Bronin', 'Ruth Fortune', 'Jillian Gilchrest', 'John B. Larson']",['Amy Chai'],[],4,1,0,False,Connecticut 1
-Connecticut,CT-02,Joe Courtney,Democratic,Incumbent running,D+4,['Joe Courtney'],['George Austin'],[],1,1,0,True,Connecticut 2
-Connecticut,CT-03,Rosa DeLauro,Democratic,Incumbent running,D+8,['Rosa DeLauro'],"['Raphael Irizarry', 'Chris Lancia']",[],1,2,0,False,Connecticut 3
-Connecticut,CT-04,Jim Himes,Democratic,Incumbent running,D+13,['Jim Himes'],"['Michael Goldstein', 'Dan Miressi']",[],1,2,0,False,Connecticut 4
-Connecticut,CT-05,Jahana Hayes,Democratic,Incumbent running,D+3,['Jahana Hayes'],"['Jonathan De Barros', 'Chris Shea']",[],1,2,0,False,Connecticut 5
-Delaware,DE-At-Large,Sarah McBride,Democratic,Incumbent running,D+8,['Sarah McBride'],['Earl Cooper'],[],1,1,0,True,Delaware at-large
-Florida,FL-01,Jimmy Patronis,Republican,Incumbent running,R+18,[],"['Douglas Chico', 'John Frankman']","[{'name': 'Tyler Davis', 'party': 'Independent'}, {'name': 'Jimmy Patronis', 'party': 'Republican ▌Gay Valimont (Democratic'}]",0,2,2,False,Florida 1
-Florida,FL-02,Neal Dunn,Republican,Incumbent retiring[30],R+8,"['Yen Bailey', 'Brice Barnes', 'Amanda Green', 'Nic Zateslo']","['Keith Gross', 'Lee Jones', 'Nick Lewis', 'Luke Murphy', 'Jim Norton', 'Evan Power', 'Austin Rogers', 'Audie Rowell']",[],4,8,0,False,Florida 2
-Florida,FL-03,Kat Cammack,Republican,Incumbent running,R+10,"['Troy Albers', 'Seth Harp', 'George Hubac', 'Tom Wells']",['Kat Cammack'],"[{'name': 'Mike Klein', 'party': 'Independent'}]",4,1,1,False,Florida 3
-Florida,FL-04,Aaron Bean,Republican,Incumbent running,R+5,"['LaShonda Holloway', 'Michael Kirwan', 'Brittany Robinson']",['Aaron Bean'],"[{'name': 'Todd Schaefer', 'party': 'Independent'}, {'name': 'Mike Sell', 'party': 'Florida Forward'}]",3,1,2,False,Florida 4
-Florida,FL-05,John Rutherford,Republican,Incumbent running,R+10,"['Rachel Grage', 'Alex Hazen', 'Mark Heggestad']","['Mark Kaye', 'John Rutherford']",[],3,2,0,False,Florida 5
-Florida,FL-06,Randy Fine,Republican,Incumbent running,R+14,"['Robert Cooper II', 'Steve Morgan', 'Ronnie Murchinson-Rivera', 'Eric Yonce']","['Manuel Asensio', 'Aaron Baker', 'Dan Bilzerian', 'Randy Fine', 'Charles Gambaro Jr.']","[{'name': 'Michael Gist', 'party': 'Independent'}, {'name': 'Andrew Parrott', 'party': 'Libertarian'}]",4,5,2,False,Florida 6
-Florida,FL-07,Cory Mills,Republican,Incumbent running,R+5,"['Bale Dalton', 'Alan Grayson', 'Marialana Kinter']","['Ryan Elijah', 'Michael Johnson', 'Cory Mills', 'Sarah Ulrich']","[{'name': 'Christopher Dennison', 'party': 'Libertarian'}]",3,4,1,False,Florida 7
-Florida,FL-08,Mike Haridopolos,Republican,Incumbent running,R+8,['Jennifer Jenkins'],['Mike Haridopolos'],[],1,1,0,True,Florida 8
-Florida,FL-09,Darren Soto,Democratic,Incumbent running,R+8,['Darren Soto'],"['Ben Butler', 'Marcus Carter', 'Thomas Chalifoux', 'Dan Green', 'Jorge Martinez', 'Steve Rance', 'Justin Story']",[],1,7,0,False,Florida 9
+Colorado,CO-1,Diana DeGette,Democratic,Incumbent lost renomination,D+29,['Melat Kiros'],['Christy Peterson'],[],1,1,0,True,Colorado 1
+Colorado,CO-2,Joe Neguse,Democratic,Incumbent renominated,D+20,['Joe Neguse'],['Kelley Dennison'],[],1,1,0,True,Colorado 2
+Colorado,CO-3,Jeff Hurd,Republican,Incumbent renominated,R+5,['Dwayne Romero'],['Jeff Hurd'],[],1,1,0,True,Colorado 3
+Colorado,CO-4,Lauren Boebert,Republican,Incumbent renominated,R+9,['Eileen Laubacher'],['Lauren Boebert'],"[{'name': 'Tim Veldhuizen', 'party': 'Independent'}]",1,1,1,True,Colorado 4
+Colorado,CO-5,Jeff Crank,Republican,Incumbent renominated,R+5,['Jessica Killin'],['Jeff Crank'],[],1,1,0,True,Colorado 5
+Colorado,CO-6,Jason Crow,Democratic,Incumbent renominated,D+11,['Jason Crow'],['Jason Clark'],[],1,1,0,True,Colorado 6
+Colorado,CO-7,Brittany Pettersen,Democratic,Incumbent renominated,D+8,['Brittany Pettersen'],['Tim Bennett'],[],1,1,0,True,Colorado 7
+Colorado,CO-8,Gabe Evans,Republican,Incumbent renominated,EVEN,['Manny Rutinel'],['Gabe Evans'],[],1,1,0,True,Colorado 8
+Connecticut,CT-1,John B. Larson,Democratic,Incumbent running,D+12,"['Luke Bronin', 'Ruth Fortune', 'Jillian Gilchrest', 'John B. Larson']",['Amy Chai'],[],4,1,0,False,Connecticut 1
+Connecticut,CT-2,Joe Courtney,Democratic,Incumbent running,D+4,['Joe Courtney'],['George Austin'],[],1,1,0,True,Connecticut 2
+Connecticut,CT-3,Rosa DeLauro,Democratic,Incumbent running,D+8,['Rosa DeLauro'],"['Raphael Irizarry', 'Chris Lancia']",[],1,2,0,False,Connecticut 3
+Connecticut,CT-4,Jim Himes,Democratic,Incumbent running,D+13,['Jim Himes'],"['Michael Goldstein', 'Dan Miressi']",[],1,2,0,False,Connecticut 4
+Connecticut,CT-5,Jahana Hayes,Democratic,Incumbent running,D+3,['Jahana Hayes'],"['Jonathan De Barros', 'Chris Shea']",[],1,2,0,False,Connecticut 5
+Delaware,DE-1,Sarah McBride,Democratic,Incumbent running,D+8,['Sarah McBride'],['Earl Cooper'],[],1,1,0,True,Delaware at-large
+Florida,FL-1,Jimmy Patronis,Republican,Incumbent running,R+18,[],"['Douglas Chico', 'John Frankman']","[{'name': 'Tyler Davis', 'party': 'Independent'}, {'name': 'Jimmy Patronis', 'party': 'Republican ▌Gay Valimont (Democratic'}]",0,2,2,False,Florida 1
+Florida,FL-2,Neal Dunn,Republican,Incumbent retiring[30],R+8,"['Yen Bailey', 'Brice Barnes', 'Amanda Green', 'Nic Zateslo']","['Keith Gross', 'Lee Jones', 'Nick Lewis', 'Luke Murphy', 'Jim Norton', 'Evan Power', 'Austin Rogers', 'Audie Rowell']",[],4,8,0,False,Florida 2
+Florida,FL-3,Kat Cammack,Republican,Incumbent running,R+10,"['Troy Albers', 'Seth Harp', 'George Hubac', 'Tom Wells']",['Kat Cammack'],"[{'name': 'Mike Klein', 'party': 'Independent'}]",4,1,1,False,Florida 3
+Florida,FL-4,Aaron Bean,Republican,Incumbent running,R+5,"['LaShonda Holloway', 'Michael Kirwan', 'Brittany Robinson']",['Aaron Bean'],"[{'name': 'Todd Schaefer', 'party': 'Independent'}, {'name': 'Mike Sell', 'party': 'Florida Forward'}]",3,1,2,False,Florida 4
+Florida,FL-5,John Rutherford,Republican,Incumbent running,R+10,"['Rachel Grage', 'Alex Hazen', 'Mark Heggestad']","['Mark Kaye', 'John Rutherford']",[],3,2,0,False,Florida 5
+Florida,FL-6,Randy Fine,Republican,Incumbent running,R+14,"['Robert Cooper II', 'Steve Morgan', 'Ronnie Murchinson-Rivera', 'Eric Yonce']","['Manuel Asensio', 'Aaron Baker', 'Dan Bilzerian', 'Randy Fine', 'Charles Gambaro Jr.']","[{'name': 'Michael Gist', 'party': 'Independent'}, {'name': 'Andrew Parrott', 'party': 'Libertarian'}]",4,5,2,False,Florida 6
+Florida,FL-7,Cory Mills,Republican,Incumbent running,R+5,"['Bale Dalton', 'Alan Grayson', 'Marialana Kinter']","['Ryan Elijah', 'Michael Johnson', 'Cory Mills', 'Sarah Ulrich']","[{'name': 'Christopher Dennison', 'party': 'Libertarian'}]",3,4,1,False,Florida 7
+Florida,FL-8,Mike Haridopolos,Republican,Incumbent running,R+8,['Jennifer Jenkins'],['Mike Haridopolos'],[],1,1,0,True,Florida 8
+Florida,FL-9,Darren Soto,Democratic,Incumbent running,R+8,['Darren Soto'],"['Ben Butler', 'Marcus Carter', 'Thomas Chalifoux', 'Dan Green', 'Jorge Martinez', 'Steve Rance', 'Justin Story']",[],1,7,0,False,Florida 9
 Florida,FL-10,Maxwell Frost,Democratic,Incumbent re-elected,D+13,['Maxwell Frost'],[],[],1,0,0,False,Florida 10
 Florida,FL-11,Daniel Webster,Republican,Incumbent retiring[31],R+7,"['James Pericola', 'Royal Webster', 'Dan Williams']","['Carey Baker', 'Ivette Palomo', 'Nizam Razack', 'Joe Strada', 'Tim Wilkins']","[{'name': 'Ralph Groves', 'party': 'Libertarian'}]",3,5,1,False,Florida 11
 Florida,FL-12,Gus Bilirakis,Republican,Incumbent running,R+7,"['Darren McAuley', 'Kimberly Overman']",['Gus Bilirakis'],"[{'name': 'Branden Scrivener', 'party': 'Independent'}]",2,1,1,False,Florida 12
@@ -107,7 +107,7 @@ Florida,FL-16,Vern Buchanan,Republican,Incumbent retiring[32],R+6,"['Jon Harris'
 Florida,FL-17,Greg Steube,Republican,Incumbent running,R+10,"['Matthew Montavon', 'Allen Spence']",['Greg Steube'],"[{'name': 'Michael Quirk', 'party': 'Independent'}]",2,1,1,False,Florida 17
 Florida,FL-18,Scott Franklin,Republican,Incumbent running,R+8,['Curtis Gibson'],['Scott Franklin'],"[{'name': 'Deva Simmons', 'party': 'Independent'}]",1,1,1,True,Florida 18
 Florida,FL-19,Byron Donalds,Republican,Incumbent retiring to run for governor[33],R+14,"['Victor Arias', 'Robert Neeld', 'Howard Sapp']","['Greg Bukowski', 'Madison Cawthorn', 'Chris Collins', 'Ola Hawatmeh', 'Catalina Lauf', 'Jim Oberweis', 'Mike Pedersen', 'Linda Sawyer', 'Jim Schwartzel', 'John Strand']","[{'name': 'Seth Haskin', 'party': 'Independent'}]",3,10,1,False,Florida 19
-Florida,FL-20,Vac­ant[ae],Vac­ant[ae],Incumbent to be determined in 2026,D+20,"['Luther Campbell', 'Elijah Manley', 'Debbie Wasserman Schultz']","['Brent Anderson', 'Lateresa Jones', 'Rod Joseph', 'Carla Spalding']","[{'name': 'Sheila Cherfilus-McCormick', 'party': 'Democratic ▌Dale Holness (Democratic'}, {'name': 'Kedner Maxime', 'party': 'Independent'}]",3,4,2,False,Florida 20
+Florida,FL-20,Vac­ant[n],Vac­ant[n],Incumbent to be determined in 2026,D+20,"['Luther Campbell', 'Elijah Manley', 'Debbie Wasserman Schultz']","['Brent Anderson', 'Lateresa Jones', 'Rod Joseph', 'Carla Spalding']","[{'name': 'Sheila Cherfilus-McCormick', 'party': 'Democratic ▌Dale Holness (Democratic'}, {'name': 'Kedner Maxime', 'party': 'Independent'}]",3,4,2,False,Florida 20
 Florida,FL-20,Debbie Wasserman Schultz Redistricted from the 25th district,Democratic,Incumbent running,D+20,"['Luther Campbell', 'Elijah Manley', 'Debbie Wasserman Schultz']","['Brent Anderson', 'Lateresa Jones', 'Rod Joseph', 'Carla Spalding']","[{'name': 'Sheila Cherfilus-McCormick', 'party': 'Democratic ▌Dale Holness (Democratic'}, {'name': 'Kedner Maxime', 'party': 'Independent'}]",3,4,2,False,Florida 20
 Florida,FL-21,Brian Mast,Republican,Incumbent running,R+7,"['James Martin', 'Bernard Taylor']",['Brian Mast'],"[{'name': 'Alexander Cooke', 'party': 'Independent'}]",2,1,1,False,Florida 21
 Florida,FL-22,None (new seat),None (new seat),New representative to be elected,R+4,"['Pia Dandiya', 'Kaysia Earley']","['Casey Askar', 'David Burck', 'Michael Carbonara', 'Richard Evans', 'Terri Hasdorff', 'Belinda Keiser', 'Michael Thompson']",[],2,7,0,False,Florida 22
@@ -117,33 +117,33 @@ Florida,FL-25,Jared Moskowitz Redistricted from the 23rd district,Democratic,Inc
 Florida,FL-26,Mario Díaz-Balart,Republican,Incumbent running,R+7,['Nicole Locklin'],['az-Balart'],"[{'name': 'Deborah Ann Meidinger Hosey', 'party': 'Independent'}]",1,1,1,True,Florida 26
 Florida,FL-27,María Elvira Salazar,Republican,Incumbent running,R+6,"['Robin Peguero', 'Eliott Rodriguez']","['Michael Arias', 'a Elvira Salazar']",[],2,2,0,False,Florida 27
 Florida,FL-28,Carlos A. Giménez,Republican,Incumbent running,R+10,['Phil Ehr'],['Carlos Gimenez'],"[{'name': 'Eddy Rojas', 'party': 'Independent'}]",1,1,1,True,Florida 28
-Georgia,GA-01,Buddy Carter,Republican,Incumbent retiring to run for U.S. Senate[34],R+8,['Amanda Hollowell'],['Jim Kingston'],[],1,1,0,True,Georgia 1
-Georgia,GA-02,Sanford Bishop,Democratic,Incumbent renominated,D+4,['Sanford Bishop'],['Matt Day'],[],1,1,0,True,Georgia 2
-Georgia,GA-03,Brian Jack,Republican,Incumbent renominated,R+15,['Maura Keller'],['Brian Jack'],[],1,1,0,True,Georgia 3
-Georgia,GA-04,Hank Johnson,Democratic,Incumbent renominated,D+27,['Hank Johnson'],['James Duffie'],[],1,1,0,True,Georgia 4
-Georgia,GA-05,Nikema Williams,Democratic,Incumbent renominated,D+36,['Nikema Williams'],['John Oscar Salvesen'],[],1,1,0,True,Georgia 5
-Georgia,GA-06,Lucy McBath,Democratic,Incumbent renominated,D+25,['Lucy McBath'],['Kevin Martin'],[],1,1,0,True,Georgia 6
-Georgia,GA-07,Rich McCormick,Republican,Incumbent renominated,R+11,['Tony Kozycki'],['Rich McCormick'],[],1,1,0,True,Georgia 7
-Georgia,GA-08,Austin Scott,Republican,Incumbent renominated,R+15,['Kelly Esti'],['Austin Scott'],[],1,1,0,True,Georgia 8
-Georgia,GA-09,Andrew Clyde,Republican,Incumbent renominated,R+17,['Caitlyn Gegen'],['Andrew Clyde'],[],1,1,0,True,Georgia 9
+Georgia,GA-1,Buddy Carter,Republican,Incumbent retiring to run for U.S. Senate[34],R+8,['Amanda Hollowell'],['Jim Kingston'],[],1,1,0,True,Georgia 1
+Georgia,GA-2,Sanford Bishop,Democratic,Incumbent renominated,D+4,['Sanford Bishop'],['Matt Day'],[],1,1,0,True,Georgia 2
+Georgia,GA-3,Brian Jack,Republican,Incumbent renominated,R+15,['Maura Keller'],['Brian Jack'],[],1,1,0,True,Georgia 3
+Georgia,GA-4,Hank Johnson,Democratic,Incumbent renominated,D+27,['Hank Johnson'],['James Duffie'],[],1,1,0,True,Georgia 4
+Georgia,GA-5,Nikema Williams,Democratic,Incumbent renominated,D+36,['Nikema Williams'],['John Oscar Salvesen'],[],1,1,0,True,Georgia 5
+Georgia,GA-6,Lucy McBath,Democratic,Incumbent renominated,D+25,['Lucy McBath'],['Kevin Martin'],[],1,1,0,True,Georgia 6
+Georgia,GA-7,Rich McCormick,Republican,Incumbent renominated,R+11,['Tony Kozycki'],['Rich McCormick'],[],1,1,0,True,Georgia 7
+Georgia,GA-8,Austin Scott,Republican,Incumbent renominated,R+15,['Kelly Esti'],['Austin Scott'],[],1,1,0,True,Georgia 8
+Georgia,GA-9,Andrew Clyde,Republican,Incumbent renominated,R+17,['Caitlyn Gegen'],['Andrew Clyde'],[],1,1,0,True,Georgia 9
 Georgia,GA-10,Mike Collins,Republican,Incumbent retiring to run for U.S. Senate[35],R+11,['Pam Delancy'],['Houston Gaines'],[],1,1,0,True,Georgia 10
 Georgia,GA-11,Barry Loudermilk,Republican,Incumbent retiring[36],R+12,['Chris Harden'],['John Cowan'],[],1,1,0,True,Georgia 11
 Georgia,GA-12,Rick Allen,Republican,Incumbent renominated,R+7,['Ceretta Smith'],['Rick Allen'],[],1,1,0,True,Georgia 12
-Georgia,GA-13,TBD[af],TBD[af],Incumbent to be determined in 2026,D+21,['Jasmine Clark'],['Jonathan Chavez'],[],1,1,0,True,Georgia 13
+Georgia,GA-13,TBD[o],TBD[o],Incumbent to be determined in 2026,D+21,['Jasmine Clark'],['Jonathan Chavez'],[],1,1,0,True,Georgia 13
 Georgia,GA-14,Clay Fuller,Republican,Incumbent renominated,R+19,['Shawn Harris'],['Clay Fuller'],"[{'name': 'Andrew Underwood', 'party': 'Libertarian'}]",1,1,1,True,Georgia 14
-Hawaii,HI-01,Ed Case,Democratic,Incumbent running,D+13,"['Jennifer Booker', 'Ed Case', 'Ben Fatula', 'Jarrett Keohokalole', 'Nick Kiswanto']",['Adriel Lam'],"[{'name': 'Nathan Berning', 'party': 'Independent'}, {'name': 'Jordan Conley', 'party': 'Green'}]",5,1,2,False,Hawaii 1
-Hawaii,HI-02,Jill Tokuda,Democratic,Incumbent running,D+12,"['Kirill Basin', 'Greg Guithues', 'Steven King', 'Jill Tokuda']",['Brenton Awa'],"[{'name': 'Edward Codelia', 'party': 'Independent'}, {'name': 'Randall Terry', 'party': 'Independent'}]",4,1,2,False,Hawaii 2
-Idaho,ID-01,Russ Fulcher,Republican,Incumbent renominated,R+22,['Kaylee Peterson'],['Russ Fulcher'],"[{'name': 'Brendan Gomez', 'party': 'Constitution'}, {'name': 'Sarah Zabel', 'party': 'Independent'}]",1,1,2,True,Idaho 1
-Idaho,ID-02,Mike Simpson,Republican,Incumbent renominated,R+13,['Ellie Gilbreath'],['Mike Simpson'],"[{'name': 'Emre Houser', 'party': 'Independent'}, {'name': 'Tripp Hutchinson', 'party': 'Independent'}, {'name': 'Will Johanson', 'party': 'Libertarian'}, {'name': 'Carta Sierra', 'party': 'Constitution'}]",1,1,4,True,Idaho 2
-Illinois,IL-01,Jonathan Jackson,Democratic,Incumbent renominated,D+18,['Jonathan Jackson'],['Christian Maxwell'],[],1,1,0,True,Illinois 1
-Illinois,IL-02,Robin Kelly,Democratic,Incumbent retiring to run for U.S. Senate[6],D+18,['Donna Miller'],['Michael Noack'],"[{'name': 'Ashley Banks', 'party': 'Independent'}]",1,1,1,True,Illinois 2
-Illinois,IL-03,Delia Ramirez,Democratic,Incumbent renominated,D+17,['Delia Ramirez'],['Angel Oakley'],[],1,1,0,True,Illinois 3
-Illinois,IL-04,Chuy García,Democratic,Incumbent retiring[7],D+17,['Patty Garcia'],['Lupe Castillo'],"[{'name': 'Chris Getty', 'party': 'Independent'}, {'name': 'Ed Hershey', 'party': 'Working Class'}, {'name': 'as', 'party': 'Independent'}, {'name': 'Byron Sigcho-Lopez', 'party': 'Independent'}]",1,1,4,True,Illinois 4
-Illinois,IL-05,Mike Quigley,Democratic,Incumbent renominated,D+19,['Mike Quigley'],['Tommy Hanson'],[],1,1,0,True,Illinois 5
-Illinois,IL-06,Sean Casten,Democratic,Incumbent renominated,D+3,['Sean Casten'],['Niki Conforti'],[],1,1,0,True,Illinois 6
-Illinois,IL-07,Danny Davis,Democratic,Incumbent retiring[8],D+34,['La Shawn Ford'],['Chad Koppie'],[],1,1,0,True,Illinois 7
-Illinois,IL-08,Raja Krishnamoorthi,Democratic,Incumbent retiring to run for U.S. Senate[9],D+5,['Melissa Bean'],['Jennifer Davis'],[],1,1,0,True,Illinois 8
-Illinois,IL-09,Jan Schakowsky,Democratic,Incumbent retiring[10],D+19,['Daniel Biss'],['John Elleson'],[],1,1,0,True,Illinois 9
+Hawaii,HI-1,Ed Case,Democratic,Incumbent running,D+13,"['Jennifer Booker', 'Ed Case', 'Ben Fatula', 'Jarrett Keohokalole', 'Nick Kiswanto']",['Adriel Lam'],"[{'name': 'Nathan Berning', 'party': 'Independent'}, {'name': 'Jordan Conley', 'party': 'Green'}]",5,1,2,False,Hawaii 1
+Hawaii,HI-2,Jill Tokuda,Democratic,Incumbent running,D+12,"['Kirill Basin', 'Greg Guithues', 'Steven King', 'Jill Tokuda']",['Brenton Awa'],"[{'name': 'Edward Codelia', 'party': 'Independent'}, {'name': 'Randall Terry', 'party': 'Independent'}]",4,1,2,False,Hawaii 2
+Idaho,ID-1,Russ Fulcher,Republican,Incumbent renominated,R+22,['Kaylee Peterson'],['Russ Fulcher'],"[{'name': 'Brendan Gomez', 'party': 'Constitution'}, {'name': 'Sarah Zabel', 'party': 'Independent'}]",1,1,2,True,Idaho 1
+Idaho,ID-2,Mike Simpson,Republican,Incumbent renominated,R+13,['Ellie Gilbreath'],['Mike Simpson'],"[{'name': 'Emre Houser', 'party': 'Independent'}, {'name': 'Tripp Hutchinson', 'party': 'Independent'}, {'name': 'Will Johanson', 'party': 'Libertarian'}, {'name': 'Carta Sierra', 'party': 'Constitution'}]",1,1,4,True,Idaho 2
+Illinois,IL-1,Jonathan Jackson,Democratic,Incumbent renominated,D+18,['Jonathan Jackson'],['Christian Maxwell'],[],1,1,0,True,Illinois 1
+Illinois,IL-2,Robin Kelly,Democratic,Incumbent retiring to run for U.S. Senate[6],D+18,['Donna Miller'],['Michael Noack'],"[{'name': 'Ashley Banks', 'party': 'Independent'}]",1,1,1,True,Illinois 2
+Illinois,IL-3,Delia Ramirez,Democratic,Incumbent renominated,D+17,['Delia Ramirez'],['Angel Oakley'],[],1,1,0,True,Illinois 3
+Illinois,IL-4,Chuy García,Democratic,Incumbent retiring[7],D+17,['Patty Garcia'],['Lupe Castillo'],"[{'name': 'Chris Getty', 'party': 'Independent'}, {'name': 'Ed Hershey', 'party': 'Working Class'}, {'name': 'as', 'party': 'Independent'}, {'name': 'Byron Sigcho-Lopez', 'party': 'Independent'}]",1,1,4,True,Illinois 4
+Illinois,IL-5,Mike Quigley,Democratic,Incumbent renominated,D+19,['Mike Quigley'],['Tommy Hanson'],[],1,1,0,True,Illinois 5
+Illinois,IL-6,Sean Casten,Democratic,Incumbent renominated,D+3,['Sean Casten'],['Niki Conforti'],[],1,1,0,True,Illinois 6
+Illinois,IL-7,Danny Davis,Democratic,Incumbent retiring[8],D+34,['La Shawn Ford'],['Chad Koppie'],[],1,1,0,True,Illinois 7
+Illinois,IL-8,Raja Krishnamoorthi,Democratic,Incumbent retiring to run for U.S. Senate[9],D+5,['Melissa Bean'],['Jennifer Davis'],[],1,1,0,True,Illinois 8
+Illinois,IL-9,Jan Schakowsky,Democratic,Incumbent retiring[10],D+19,['Daniel Biss'],['John Elleson'],[],1,1,0,True,Illinois 9
 Illinois,IL-10,Brad Schneider,Democratic,Incumbent renominated,D+12,['Brad Schneider'],['Carl Lambrecht'],[],1,1,0,True,Illinois 10
 Illinois,IL-11,Bill Foster,Democratic,Incumbent renominated,D+6,['Bill Foster'],['Jeff Walter'],[],1,1,0,True,Illinois 11
 Illinois,IL-12,Mike Bost,Republican,Incumbent renominated,R+22,['Julie Fortier'],['Mike Bost'],[],1,1,0,True,Illinois 12
@@ -152,189 +152,189 @@ Illinois,IL-14,Lauren Underwood,Democratic,Incumbent renominated,D+3,['Lauren Un
 Illinois,IL-15,Mary Miller,Republican,Incumbent renominated,R+20,['Jennifer Todd'],['Mary Miller'],[],1,1,0,True,Illinois 15
 Illinois,IL-16,Darin LaHood,Republican,Incumbent renominated,R+11,['Paul Nolley'],['Darin LaHood'],[],1,1,0,True,Illinois 16
 Illinois,IL-17,Eric Sorensen,Democratic,Incumbent renominated,D+3,['Eric Sorensen'],['Dillan Vancil'],[],1,1,0,True,Illinois 17
-Indiana,IN-01,Frank J. Mrvan,Democratic,Incumbent renominated,D+1,['Frank Mrvan'],['Barb Regnitz'],[],1,1,0,True,Indiana 1
-Indiana,IN-02,Rudy Yakym,Republican,Incumbent renominated,R+13,['Jamee Decio'],['Rudy Yakym'],"[{'name': 'William Henry', 'party': 'Libertarian'}]",1,1,1,True,Indiana 2
-Indiana,IN-03,Marlin Stutzman,Republican,Incumbent renominated,R+16,['Kelly Thompson'],['Marlin Stutzman'],[],1,1,0,True,Indiana 3
-Indiana,IN-04,Jim Baird,Republican,Incumbent renominated,R+15,['Drew Cox'],['Jim Baird'],[],1,1,0,True,Indiana 4
-Indiana,IN-05,Victoria Spartz,Republican,Incumbent renominated,R+8,['J. D. Ford'],['Victoria Spartz'],[],1,1,0,True,Indiana 5
-Indiana,IN-06,Jefferson Shreve,Republican,Incumbent renominated,R+16,['Cinde Wirth'],['Jefferson Shreve'],[],1,1,0,True,Indiana 6
-Indiana,IN-07,André Carson,Democratic,Incumbent renominated,D+21,['Carson'],['Patrick McAuley'],"[{'name': 'James Sceniak', 'party': 'Libertarian'}]",1,1,1,True,Indiana 7
-Indiana,IN-08,Mark Messmer,Republican,Incumbent renominated,R+18,['Mary Allen'],['Mark Messmer'],[],1,1,0,True,Indiana 8
-Indiana,IN-09,Erin Houchin,Republican,Incumbent renominated,R+15,['Brad Meyer'],['Erin Houchin'],"[{'name': 'Tonya Hudson', 'party': 'Libertarian'}, {'name': 'Floyd Taylor', 'party': 'Independent'}]",1,1,2,True,Indiana 9
-Iowa,IA-01,Mariannette Miller-Meeks,Republican,Incumbent renominated,R+4,['Christina Bohannan'],['Mariannette Miller-Meeks'],"[{'name': 'Michael Bridgford', 'party': 'Independent'}]",1,1,1,True,Iowa 1
-Iowa,IA-02,Ashley Hinson,Republican,Incumbent retiring to run for U.S. Senate[37],R+4,['Lindsay James'],['Joe Mitchell'],"[{'name': 'Dave Bushaw', 'party': 'Independent'}]",1,1,1,True,Iowa 2
-Iowa,IA-03,Zach Nunn,Republican,Incumbent renominated,R+2,['Sarah Trone Garriott'],['Zach Nunn'],[],1,1,0,True,Iowa 3
-Iowa,IA-04,Randy Feenstra,Republican,Incumbent retiring to run for governor[38],R+15,['David Dawson'],['Chris McGowan'],[],1,1,0,True,Iowa 4
-Kansas,KS-01,Tracey Mann,Republican,Incumbent running,R+16,"['Colin McRoberts', 'Lauren Reinhold']","['Tracey Mann', 'Craig Musser']",[],2,2,0,False,Kansas 1
-Kansas,KS-02,Derek Schmidt,Republican,Incumbent running,R+10,['Don Coover'],"['Derek Schmidt', 'Chad Young']",[],1,2,0,False,Kansas 2
-Kansas,KS-03,Sharice Davids,Democratic,Incumbent running,D+2,"['Sharice Davids', 'Sarah Preu']","['Eric Jenkins', 'Chase LaPorte']",[],2,2,0,False,Kansas 3
-Kansas,KS-04,Ron Estes,Republican,Incumbent running,R+12,"['Chris Carmichael', 'Cole Epley', 'Ryan Gilbert', 'Katy Tyndell']","['Ron Estes', 'Frank McCollum']",[],4,2,0,False,Kansas 4
-Kentucky,KY-01,James Comer,Republican,Incumbent renominated,R+23,['Drew Williams'],['James Comer'],[],1,1,0,True,Kentucky 1
-Kentucky,KY-02,Brett Guthrie,Republican,Incumbent renominated,R+20,['Megan Wingfield'],['Brett Guthrie'],[],1,1,0,True,Kentucky 2
-Kentucky,KY-03,Morgan McGarvey,Democratic,Incumbent renominated,D+10,['Morgan McGarvey'],['Maria Rodriquez'],[],1,1,0,True,Kentucky 3
-Kentucky,KY-04,Thomas Massie,Republican,Incumbent lost renomination[64],R+18,['Melissa Strange'],['Ed Gallrein'],"[{'name': 'Jeremy Todd', 'party': 'Libertarian'}]",1,1,1,True,Kentucky 4
-Kentucky,KY-05,Hal Rogers,Republican,Incumbent renominated,R+32,['Ned Pillersdorf'],['Hal Rogers'],[],1,1,0,True,Kentucky 5
-Kentucky,KY-06,Andy Barr,Republican,Incumbent retiring to run for U.S. Senate[39],R+7,['Zach Dembo'],['Ralph Alvarado'],[],1,1,0,True,Kentucky 6
-Louisiana,LA-01,Steve Scalise,Republican,Incumbent running,R+20,['Lauren Jewett'],"['Randall Arrington', 'Steve Scalise']",[],1,2,0,False,Louisiana 1
-Louisiana,LA-02,Troy Carter,Democratic,Incumbent running,D+25,"['Troy Carter', 'Renada Collins']",[],[],2,0,0,False,Louisiana 2
-Louisiana,LA-03,Clay Higgins,Republican,Incumbent running,R+18,"['John Day', 'Tia LeBrun', 'Caleb Walker']",['Clay Higgins'],[],3,1,0,False,Louisiana 3
-Louisiana,LA-04,Mike Johnson,Republican,Incumbent running,R+17,"['Conrad Cable', 'Matt Gromlich']","['Mike Johnson', 'Josh Morott', 'Mike Nichols']",[],2,3,0,False,Louisiana 4
-Louisiana,LA-05,Julia Letlow,Republican,Incumbent retiring to run for U.S. Senate[40],R+18,"['Jessee Fleenor', 'Larry Foy', 'Lindsay Garcia', 'Dan McKay', 'Tania Nyman']","['Misti Cordell', 'Michael Echols', 'Rick Edmonds', 'Austin Magee', 'Michael Mebruer', 'Blake Miguez', 'Sammy Wyatt']",[],5,7,0,False,Louisiana 5
-Louisiana,LA-06,Cleo Fields,Democratic,Incumbent running,R+16,['Cleo Fields'],"['Monique Appeaning', 'Larry Davis', 'Chris Johnson', 'Peter Williams']",[],1,4,0,False,Louisiana 6
-Maine,ME-01,Chellie Pingree,Democratic,Incumbent renominated,D+11,['Chellie Pingree'],['Ronald Russell'],[],1,1,0,True,Maine 1
-Maine,ME-02,Jared Golden,Democratic,Incumbent retiring[11],R+4,['Matthew Dunlap'],['Paul LePage'],[],1,1,0,True,Maine 2
-Maryland,MD-01,Andy Harris,Republican,Incumbent running,R+8,"['Victor Guidice', 'Dan Schwartz', 'George Walish', 'Randi White']","['Chris Bruneau', 'Andy Harris']",[],4,2,0,False,Maryland 1
-Maryland,MD-02,Johnny Olszewski,Democratic,Incumbent running,D+10,"['Johnny Olszewski', 'Clint Spellman Jr.']","['Nnabu Eze', 'Dave Wallace']",[],2,2,0,False,Maryland 2
-Maryland,MD-03,Sarah Elfreth,Democratic,Incumbent running,D+12,"['Jennifer Cross', 'Austin Dyches', 'Sarah Elfreth', 'Sean Hammond', 'Robert Morrison']","['Ray Bly', 'Berney Flowers', 'Felix Seier', 'John White']",[],5,4,0,False,Maryland 3
-Maryland,MD-04,Glenn Ivey,Democratic,Incumbent running,D+39,"['Joseph Gomes', 'Shavonne Hedgepeth', 'Glenn Ivey', 'Jakeya Johnson']",['George McDermott'],[],4,1,0,False,Maryland 4
-Maryland,MD-05,Steny Hoyer,Democratic,Incumbent retiring[12],D+17,"['Rushern Baker', 'Quincy Bareebe', 'Wala Blegay', 'Adrian Boafo', 'Reuben Collins II', 'Ellis Colvin', 'Harry Dunn', 'Arthur Ellis', 'Elldwnia English', 'Terry Jackson II', 'Harry Jarin', 'Simons Kenneth', 'Walter Kirkland', 'Jerry Lightfoot', 'Heather Luper', 'James Makle', 'Leigha Messick', 'Keith Salkowski', 'Alexis Solis', 'Tracy Starr', 'David Sundberg', 'Harold Tolbert']","['Chris Chaffee', 'Bryan DuVal Cubero', 'Michelle Talkington']","[{'name': 'Jonathan Burruss', 'party': 'Independent'}, {'name': 'Mildred Hall', 'party': 'Independent'}]",22,3,2,False,Maryland 5
-Maryland,MD-06,April McClain Delaney,Democratic,Incumbent running,D+3,"['George Gluck', 'Alexis Goldstein', 'April McClain Delaney', 'David Trone', 'Ethan Wechtaluk', 'Kiambo White', 'A. Mark Wilks']","['Chris Burnett', 'Robin Ficker', 'Mariela Roca']","[{'name': 'Moshe Landman', 'party': 'Green'}]",7,3,1,False,Maryland 6
-Maryland,MD-07,Kweisi Mfume,Democratic,Incumbent running,D+31,"['Mark Conway', 'Tashi Davis', 'Theo Gillespie', 'Kweisi Mfume']",['Scott Collier'],[],4,1,0,False,Maryland 7
-Maryland,MD-08,Jamie Raskin,Democratic,Incumbent running,D+30,"['J. D. Kumar', 'Stephen Leon', 'Jamie Raskin', 'Boris Velasquez']","['Anita Cox', 'Donald Lech', 'Cheryl Riley', 'Michael Yadeta']","[{'name': 'Nancy Wallace', 'party': 'Green'}]",4,4,1,False,Maryland 8
-Massachusetts,MA-01,Richard Neal,Democratic,Incumbent running,D+8,"['Richard Neal', 'Jeromie Whalen']",[],"[{'name': 'Nadia Milleron', 'party': 'Independent'}]",2,0,1,False,Massachusetts 1
-Massachusetts,MA-02,Jim McGovern,Democratic,Incumbent running,D+13,['Jim McGovern'],[],[],1,0,0,False,Massachusetts 2
-Massachusetts,MA-03,Lori Trahan,Democratic,Incumbent running,D+11,['Lori Trahan'],['Gary Grossi'],[],1,1,0,True,Massachusetts 3
-Massachusetts,MA-04,Jake Auchincloss,Democratic,Incumbent running,D+11,"['Jake Auchincloss', 'Jason Poulos']",['Tom Stalcup'],[],2,1,0,False,Massachusetts 4
-Massachusetts,MA-05,Katherine Clark,Democratic,Incumbent running,D+24,"['Katherine Clark', 'Jonathan Paz', 'Tarik Samman']",[],[],3,0,0,False,Massachusetts 5
-Massachusetts,MA-06,Seth Moulton,Democratic,Incumbent retiring to run for U.S. Senate[13],D+11,"['Bethany Andres-Beck', 'John Beccia', 'Jamie Belsito', 'Daniel Koh', 'Mariah Lancaster', 'Tram Nguyen']",['Micah Jones'],[],6,1,0,False,Massachusetts 6
-Massachusetts,MA-07,Ayanna Pressley,Democratic,Incumbent running,D+34,['Ayanna Pressley'],[],[],1,0,0,False,Massachusetts 7
-Massachusetts,MA-08,Stephen Lynch,Democratic,Incumbent running,D+15,"['Stephen Lynch', 'Patrick Roath']",['Robert Burke'],[],2,1,0,False,Massachusetts 8
-Massachusetts,MA-09,Bill Keating,Democratic,Incumbent running,D+6,['Craig Swallow'],[],"[{'name': 'Bill Keating', 'party': 'Democratic} ▌Tyler MacAllister (Republican'}]",1,0,1,False,Massachusetts 9
-Michigan,MI-01,Jack Bergman,Republican,Incumbent running,R+11,"['Callie Barr', 'Kyle Blomquist', 'Wayne Stiles']","['Jack Bergman', 'Matthew DenOtter', 'Justin Michal']","[{'name': 'Zebulon Featherly', 'party': 'Independent'}]",3,3,1,False,Michigan 1
-Michigan,MI-02,John Moolenaar,Republican,Incumbent running,R+15,"['Ben Ambrose', 'Jamie Hill', 'Clyde Welford']",['John Moolenaar'],[],3,1,0,False,Michigan 2
-Michigan,MI-03,Hillary Scholten,Democratic,Incumbent running,D+4,['Hillary Scholten'],"['Ryan Cushman', 'Terri DeBoer']",[],1,2,0,False,Michigan 3
-Michigan,MI-04,Bill Huizenga,Republican,Incumbent running,R+3,"['Diop Harris', 'Sean McCann']","['Bill Huizenga', 'Philip Tanis']",[],2,2,0,False,Michigan 4
-Michigan,MI-05,Tim Walberg,Republican,Incumbent running,R+13,['Christian Vukasovich'],['Tim Walberg'],"[{'name': 'Jim Bronke', 'party': 'Green'}]",1,1,1,True,Michigan 5
-Michigan,MI-06,Debbie Dingell,Democratic,Incumbent running,D+12,['Debbie Dingell'],['Heather Smiley'],"[{'name': 'Clyde Shabazz', 'party': 'Green'}]",1,1,1,True,Michigan 6
-Michigan,MI-07,Tom Barrett,Republican,Incumbent running,EVEN,"['Bridget Brink', 'William Lawrence', 'Matt Maasdam']",['Tom Barrett'],[],3,1,0,False,Michigan 7
-Michigan,MI-08,Kristen McDonald Rivet,Democratic,Incumbent running,R+1,['Kristen McDonald Rivet'],"['Amir Hassan', 'Al Lemmo', 'Thomas Smith']",[],1,3,0,False,Michigan 8
-Michigan,MI-09,Lisa McClain,Republican,Incumbent running,R+16,['Ray Pooley'],['Lisa McClain'],[],1,1,0,True,Michigan 9
+Indiana,IN-1,Frank J. Mrvan,Democratic,Incumbent renominated,D+1,['Frank Mrvan'],['Barb Regnitz'],[],1,1,0,True,Indiana 1
+Indiana,IN-2,Rudy Yakym,Republican,Incumbent renominated,R+13,['Jamee Decio'],['Rudy Yakym'],"[{'name': 'William Henry', 'party': 'Libertarian'}]",1,1,1,True,Indiana 2
+Indiana,IN-3,Marlin Stutzman,Republican,Incumbent renominated,R+16,['Kelly Thompson'],['Marlin Stutzman'],[],1,1,0,True,Indiana 3
+Indiana,IN-4,Jim Baird,Republican,Incumbent renominated,R+15,['Drew Cox'],['Jim Baird'],[],1,1,0,True,Indiana 4
+Indiana,IN-5,Victoria Spartz,Republican,Incumbent renominated,R+8,['J. D. Ford'],['Victoria Spartz'],[],1,1,0,True,Indiana 5
+Indiana,IN-6,Jefferson Shreve,Republican,Incumbent renominated,R+16,['Cinde Wirth'],['Jefferson Shreve'],[],1,1,0,True,Indiana 6
+Indiana,IN-7,André Carson,Democratic,Incumbent renominated,D+21,['Carson'],['Patrick McAuley'],"[{'name': 'James Sceniak', 'party': 'Libertarian'}]",1,1,1,True,Indiana 7
+Indiana,IN-8,Mark Messmer,Republican,Incumbent renominated,R+18,['Mary Allen'],['Mark Messmer'],[],1,1,0,True,Indiana 8
+Indiana,IN-9,Erin Houchin,Republican,Incumbent renominated,R+15,['Brad Meyer'],['Erin Houchin'],"[{'name': 'Tonya Hudson', 'party': 'Libertarian'}, {'name': 'Floyd Taylor', 'party': 'Independent'}]",1,1,2,True,Indiana 9
+Iowa,IA-1,Mariannette Miller-Meeks,Republican,Incumbent renominated,R+4,['Christina Bohannan'],['Mariannette Miller-Meeks'],"[{'name': 'Michael Bridgford', 'party': 'Independent'}]",1,1,1,True,Iowa 1
+Iowa,IA-2,Ashley Hinson,Republican,Incumbent retiring to run for U.S. Senate[37],R+4,['Lindsay James'],['Joe Mitchell'],"[{'name': 'Dave Bushaw', 'party': 'Independent'}, {'name': 'Rick Stewart', 'party': 'Libertarian'}]",1,1,2,True,Iowa 2
+Iowa,IA-3,Zach Nunn,Republican,Incumbent renominated,R+2,['Sarah Trone Garriott'],['Zach Nunn'],[],1,1,0,True,Iowa 3
+Iowa,IA-4,Randy Feenstra,Republican,Incumbent retiring to run for governor[38],R+15,['David Dawson'],['Chris McGowan'],[],1,1,0,True,Iowa 4
+Kansas,KS-1,Tracey Mann,Republican,Incumbent running,R+16,"['Colin McRoberts', 'Lauren Reinhold']","['Tracey Mann', 'Craig Musser']",[],2,2,0,False,Kansas 1
+Kansas,KS-2,Derek Schmidt,Republican,Incumbent running,R+10,['Don Coover'],"['Derek Schmidt', 'Chad Young']",[],1,2,0,False,Kansas 2
+Kansas,KS-3,Sharice Davids,Democratic,Incumbent running,D+2,"['Sharice Davids', 'Sarah Preu']","['Eric Jenkins', 'Chase LaPorte']",[],2,2,0,False,Kansas 3
+Kansas,KS-4,Ron Estes,Republican,Incumbent running,R+12,"['Chris Carmichael', 'Cole Epley', 'Ryan Gilbert', 'Katy Tyndell']","['Ron Estes', 'Frank McCollum']",[],4,2,0,False,Kansas 4
+Kentucky,KY-1,James Comer,Republican,Incumbent renominated,R+23,['Drew Williams'],['James Comer'],[],1,1,0,True,Kentucky 1
+Kentucky,KY-2,Brett Guthrie,Republican,Incumbent renominated,R+20,['Megan Wingfield'],['Brett Guthrie'],"[{'name': 'Thomas Loecken', 'party': 'Independent'}]",1,1,1,True,Kentucky 2
+Kentucky,KY-3,Morgan McGarvey,Democratic,Incumbent renominated,D+10,['Morgan McGarvey'],['Maria Rodriquez'],[],1,1,0,True,Kentucky 3
+Kentucky,KY-4,Thomas Massie,Republican,Incumbent lost renomination[67],R+18,['Melissa Strange'],['Ed Gallrein'],"[{'name': 'Mohammad Wael Ahmad', 'party': 'Kentucky Party'}, {'name': 'Jeremy Todd', 'party': 'Libertarian'}]",1,1,2,True,Kentucky 4
+Kentucky,KY-5,Hal Rogers,Republican,Incumbent renominated,R+32,['Ned Pillersdorf'],['Hal Rogers'],"[{'name': 'Gerardo Serrano', 'party': 'Independent'}, {'name': 'Mikel Wein', 'party': 'Independent'}]",1,1,2,True,Kentucky 5
+Kentucky,KY-6,Andy Barr,Republican,Incumbent retiring to run for U.S. Senate[39],R+7,['Zach Dembo'],['Ralph Alvarado'],"[{'name': 'Jay Bowman', 'party': 'Independent'}, {'name': 'Pete Lynch', 'party': 'Kentucky Party'}]",1,1,2,True,Kentucky 6
+Louisiana,LA-1,Steve Scalise,Republican,Incumbent running,R+20,['Lauren Jewett'],"['Randall Arrington', 'Steve Scalise']",[],1,2,0,False,Louisiana 1
+Louisiana,LA-2,Troy Carter,Democratic,Incumbent running,D+25,"['Troy Carter', 'Renada Collins']",[],[],2,0,0,False,Louisiana 2
+Louisiana,LA-3,Clay Higgins,Republican,Incumbent running,R+18,"['John Day', 'Tia LeBrun', 'Caleb Walker']",['Clay Higgins'],[],3,1,0,False,Louisiana 3
+Louisiana,LA-4,Mike Johnson,Republican,Incumbent running,R+17,"['Conrad Cable', 'Matt Gromlich']","['Mike Johnson', 'Josh Morott', 'Mike Nichols']",[],2,3,0,False,Louisiana 4
+Louisiana,LA-5,Julia Letlow,Republican,Incumbent retiring to run for U.S. Senate[40],R+18,"['Jessee Fleenor', 'Larry Foy', 'Lindsay Garcia', 'Dan McKay', 'Tania Nyman']","['Misti Cordell', 'Michael Echols', 'Gabe Firment', 'Austin Magee', 'Michael Mebruer', 'Blake Miguez', 'Sammy Wyatt']",[],5,7,0,False,Louisiana 5
+Louisiana,LA-6,Cleo Fields,Democratic,Incumbent running,R+16,['Cleo Fields'],"['Monique Appeaning', 'Larry Davis', 'Rick Edmonds', 'Chris Johnson', 'Peter Williams']",[],1,5,0,False,Louisiana 6
+Maine,ME-1,Chellie Pingree,Democratic,Incumbent renominated,D+11,['Chellie Pingree'],['Ronald Russell'],[],1,1,0,True,Maine 1
+Maine,ME-2,Jared Golden,Democratic,Incumbent retiring[11],R+4,['Matthew Dunlap'],['Paul LePage'],[],1,1,0,True,Maine 2
+Maryland,MD-1,Andy Harris,Republican,Incumbent renominated,R+8,['Dan Schwartz'],['Andy Harris'],[],1,1,0,True,Maryland 1
+Maryland,MD-2,Johnny Olszewski,Democratic,Incumbent renominated,D+10,['Johnny Olszewski'],['Dave Wallace'],[],1,1,0,True,Maryland 2
+Maryland,MD-3,Sarah Elfreth,Democratic,Incumbent renominated,D+12,['Sarah Elfreth'],['Berney Flowers'],[],1,1,0,True,Maryland 3
+Maryland,MD-4,Glenn Ivey,Democratic,Incumbent renominated,D+39,['Glenn Ivey'],['George McDermott'],[],1,1,0,True,Maryland 4
+Maryland,MD-5,Steny Hoyer,Democratic,Incumbent retiring[12],D+17,['Adrian Boafo'],['Chris Chaffee'],"[{'name': 'Jonathan Burruss', 'party': 'Independent'}, {'name': 'Mildred Hall', 'party': 'Independent'}]",1,1,2,True,Maryland 5
+Maryland,MD-6,April McClain Delaney,Democratic,Incumbent renominated,D+3,['April McClain Delaney'],['Robin Ficker'],"[{'name': 'Moshe Landman', 'party': 'Green'}]",1,1,1,True,Maryland 6
+Maryland,MD-7,Kweisi Mfume,Democratic,Incumbent renominated,D+31,['Kweisi Mfume'],['Scott Collier'],[],1,1,0,True,Maryland 7
+Maryland,MD-8,Jamie Raskin,Democratic,Incumbent renominated,D+30,['Jamie Raskin'],['Cheryl Riley'],"[{'name': 'Nancy Wallace', 'party': 'Green'}]",1,1,1,True,Maryland 8
+Massachusetts,MA-1,Richard Neal,Democratic,Incumbent running,D+8,"['Richard Neal', 'Jeromie Whalen']",[],"[{'name': 'Nadia Milleron', 'party': 'Independent'}]",2,0,1,False,Massachusetts 1
+Massachusetts,MA-2,Jim McGovern,Democratic,Incumbent running,D+13,['Jim McGovern'],[],[],1,0,0,False,Massachusetts 2
+Massachusetts,MA-3,Lori Trahan,Democratic,Incumbent running,D+11,['Lori Trahan'],['Gary Grossi'],[],1,1,0,True,Massachusetts 3
+Massachusetts,MA-4,Jake Auchincloss,Democratic,Incumbent running,D+11,"['Jake Auchincloss', 'Jason Poulos']",['Tom Stalcup'],[],2,1,0,False,Massachusetts 4
+Massachusetts,MA-5,Katherine Clark,Democratic,Incumbent running,D+24,"['Katherine Clark', 'Jonathan Paz', 'Tarik Samman']",[],[],3,0,0,False,Massachusetts 5
+Massachusetts,MA-6,Seth Moulton,Democratic,Incumbent retiring to run for U.S. Senate[13],D+11,"['Bethany Andres-Beck', 'John Beccia', 'Jamie Belsito', 'Daniel Koh', 'Mariah Lancaster', 'Tram Nguyen']",['Micah Jones'],[],6,1,0,False,Massachusetts 6
+Massachusetts,MA-7,Ayanna Pressley,Democratic,Incumbent running,D+34,['Ayanna Pressley'],[],[],1,0,0,False,Massachusetts 7
+Massachusetts,MA-8,Stephen Lynch,Democratic,Incumbent running,D+15,"['Stephen Lynch', 'Patrick Roath']",['Robert Burke'],[],2,1,0,False,Massachusetts 8
+Massachusetts,MA-9,Bill Keating,Democratic,Incumbent running,D+6,['Craig Swallow'],[],"[{'name': 'Bill Keating', 'party': 'Democratic} ▌Tyler MacAllister (Republican'}]",1,0,1,False,Massachusetts 9
+Michigan,MI-1,Jack Bergman,Republican,Incumbent running,R+11,"['Callie Barr', 'Kyle Blomquist', 'Wayne Stiles']","['Jack Bergman', 'Matthew DenOtter', 'Justin Michal']","[{'name': 'Zebulon Featherly', 'party': 'Independent'}]",3,3,1,False,Michigan 1
+Michigan,MI-2,John Moolenaar,Republican,Incumbent running,R+15,"['Ben Ambrose', 'Jamie Hill', 'Clyde Welford']",['John Moolenaar'],[],3,1,0,False,Michigan 2
+Michigan,MI-3,Hillary Scholten,Democratic,Incumbent running,D+4,['Hillary Scholten'],"['Ryan Cushman', 'Terri DeBoer']",[],1,2,0,False,Michigan 3
+Michigan,MI-4,Bill Huizenga,Republican,Incumbent running,R+3,"['Diop Harris', 'Sean McCann']","['Bill Huizenga', 'Philip Tanis']",[],2,2,0,False,Michigan 4
+Michigan,MI-5,Tim Walberg,Republican,Incumbent running,R+13,['Christian Vukasovich'],['Tim Walberg'],"[{'name': 'Jim Bronke', 'party': 'Green'}]",1,1,1,True,Michigan 5
+Michigan,MI-6,Debbie Dingell,Democratic,Incumbent running,D+12,['Debbie Dingell'],['Heather Smiley'],"[{'name': 'Clyde Shabazz', 'party': 'Green'}]",1,1,1,True,Michigan 6
+Michigan,MI-7,Tom Barrett,Republican,Incumbent running,EVEN,"['Bridget Brink', 'William Lawrence', 'Matt Maasdam']",['Tom Barrett'],[],3,1,0,False,Michigan 7
+Michigan,MI-8,Kristen McDonald Rivet,Democratic,Incumbent running,R+1,['Kristen McDonald Rivet'],"['Amir Hassan', 'Al Lemmo', 'Thomas Smith']",[],1,3,0,False,Michigan 8
+Michigan,MI-9,Lisa McClain,Republican,Incumbent running,R+16,['Ray Pooley'],['Lisa McClain'],[],1,1,0,True,Michigan 9
 Michigan,MI-10,John James,Republican,Incumbent retiring to run for governor[41],R+3,"['Eric Chung', 'Tim Greimel', 'Christina Hines']","['Mike Bouchard', 'Steffan Demetropoulos', 'Justin Kirk', 'Robert Lulgjuraj']",[],3,4,0,False,Michigan 10
 Michigan,MI-11,Haley Stevens,Democratic,Incumbent retiring to run for U.S. Senate[14],D+9,"['Aisha Farooqi', 'Jeremy Moss', 'John Torres', 'Don Ufford']",['Ethan Baker'],"[{'name': 'Anil Kumar', 'party': 'Independent'}]",4,1,1,False,Michigan 11
 Michigan,MI-12,Rashida Tlaib,Democratic,Incumbent running,D+21,"['Shanelle Jackson', 'Byron Nolen', 'Rashida Tlaib']",['James Hooper'],[],3,1,0,False,Michigan 12
 Michigan,MI-13,Shri Thanedar,Democratic,Incumbent running,D+22,"['Donavan McKinney', 'Shri Thanedar']",['TP Nykoriak'],"[{'name': 'Maurice Morton', 'party': 'Independent'}]",2,1,1,False,Michigan 13
-Minnesota,MN-01,Brad Finstad,Republican,Incumbent running,R+6,[],"['Brad Finstad', 'Gregory Goetzman', 'Oliver Morlan']","[{'name': 'Alex Eaton', 'party': 'DFL'}, {'name': 'Jake Johnson', 'party': 'DFL'}]",0,3,2,False,Minnesota 1
-Minnesota,MN-02,Angie Craig,DFL,Incumbent retiring to run for U.S. Senate[15],D+3,[],['Eric Pratt'],"[{'name': 'Abdi Abdulle', 'party': 'DFL'}, {'name': 'Kaela Berg', 'party': 'DFL'}, {'name': 'Matt Klein', 'party': 'DFL'}, {'name': 'Matt Little', 'party': 'DFL'}, {'name': 'Hugh McTavish', 'party': 'DFL'}, {'name': 'Christopher Mosel', 'party': 'DFL'}]",0,1,6,False,Minnesota 2
-Minnesota,MN-03,Kelly Morrison,DFL,Incumbent running,D+11,[],"['Tyler Bass', 'Quentin Wittrock']","[{'name': 'Kelly Morrison', 'party': 'DFL'}]",0,2,1,False,Minnesota 3
-Minnesota,MN-04,Betty McCollum,DFL,Incumbent running,D+18,[],"['Gene Rechtzigel', 'Paul Wikstrom', 'Paul Xiong']","[{'name': 'Betty McCollum', 'party': 'DFL'}, {'name': 'Aswar Rahman', 'party': 'DFL'}]",0,3,2,False,Minnesota 4
-Minnesota,MN-05,Ilhan Omar,DFL,Incumbent running,D+32,[],"['Dalia Al-Aqidi', 'John Nagel', 'Angie Windhauser', 'Abbey Zieska']","[{'name': 'Julie Le', 'party': 'DFL'}, {'name': 'Abena McKenzie', 'party': 'DFL'}, {'name': 'Ilhan Omar', 'party': 'DFL'}, {'name': 'Latonya Reeves', 'party': 'DFL'}, {'name': 'Nate Schluter', 'party': 'DFL'}]",0,4,5,False,Minnesota 5
-Minnesota,MN-06,Tom Emmer,Republican,Incumbent running,R+10,[],"['Chris Corey', 'Tom Emmer', 'Mike Foley']","[{'name': 'Doug Chapin', 'party': 'DFL'}, {'name': 'Kelly Doss', 'party': 'Forward-Independence'}]",0,3,2,False,Minnesota 6
-Minnesota,MN-07,Michelle Fischbach,Republican,Incumbent running,R+18,[],['Michelle Fischbach'],"[{'name': 'Steve Carlson', 'party': 'DFL'}, {'name': 'Erik Osberg', 'party': 'DFL'}]",0,1,2,False,Minnesota 7
-Minnesota,MN-08,Pete Stauber,Republican,Incumbent running,R+7,[],"['Anthony Hamilton', 'Pete Stauber']","[{'name': 'Luke Gulbranson', 'party': 'DFL'}, {'name': 'John Munter', 'party': 'DFL'}, {'name': 'Trina Swanson', 'party': 'DFL'}]",0,2,3,False,Minnesota 8
-Mississippi,MS-01,Trent Kelly,Republican,Incumbent renominated,R+18,['Cliff Johnson'],['Trent Kelly'],[],1,1,0,True,Mississippi 1
-Mississippi,MS-02,Bennie Thompson,Democratic,Incumbent renominated,D+11,['Bennie Thompson'],['Ron Eller'],"[{'name': 'Bennie Foster', 'party': 'Independent'}]",1,1,1,True,Mississippi 2
-Mississippi,MS-03,Michael Guest,Republican,Incumbent renominated,R+14,['Michael Chiaradio'],['Michael Guest'],"[{'name': 'Erik Kiehle', 'party': 'Libertarian'}]",1,1,1,True,Mississippi 3
-Mississippi,MS-04,Mike Ezell,Republican,Incumbent renominated,R+21,['Jeffrey Hulum III'],['Mike Ezell'],"[{'name': 'Carl Boyanton', 'party': 'Independent'}]",1,1,1,True,Mississippi 4
-Missouri,MO-01,Wesley Bell,Democratic,Incumbent running,D+29,"['Wesley Bell', 'Cori Bush', 'Carl Harris', 'Carl Henderson', 'Alissa Murphy']","['Paul Berry', 'Andrew Jones']","[{'name': 'Tom Schmitz', 'party': 'Libertarian'}]",5,2,1,False,Missouri 1
-Missouri,MO-02,Ann Wagner,Republican,Incumbent running,R+6,"['Tim Bilash', 'Joan VonDras', 'Fred Wellman']","['Matthew Grant', 'Peter Pfeifer', 'Elizabeth Sparks-Holmes', 'Ann Wagner', 'Brandon Wilkinson']","[{'name': 'Brandon Daugherty', 'party': 'Libertarian'}]",3,5,1,False,Missouri 2
-Missouri,MO-03,Bob Onder,Republican,Incumbent running,R+10,"['Tommy Holstein', 'Bethany Mann', 'Paul Wilson']","['John Fraser', 'Bob Onder']","[{'name': 'Jim Higgins', 'party': 'Libertarian'}]",3,2,1,False,Missouri 3
-Missouri,MO-04,Mark Alford,Republican,Incumbent running,R+10,"['Jeanette Cass', 'Hartzell Gray', 'Jordan Herrera', 'Randy Miller', 'G. Rick', 'Ashleigh Rogers', 'Wayne Russell']","['Mark Alford', 'Heather Shelton', 'Scott Vera']","[{'name': 'Thomas Holbrook', 'party': 'Libertarian'}]",7,3,1,False,Missouri 4
-Missouri,MO-05,Emanuel Cleaver,Democratic,Incumbent running,R+9,['Emanuel Cleaver'],"['Micah Beebe', 'Rick Brattin', 'Taylor Burks', 'Brett Hueffmeier', 'Berton Knox', 'Brad Patty']","[{'name': 'Randy Langkraehr', 'party': 'Libertarian'}]",1,6,1,False,Missouri 5
-Missouri,MO-06,Sam Graves,Republican,Incumbent retiring[42],R+13,"['Matt Levine', 'Scot Pondelick', 'Josh Smead']","['Jim Ingram', 'Cody Oshel', 'Nathanael Schultz', 'Chris Stigall', 'Nathan Willett']","[{'name': 'Andy Maidment', 'party': 'Libertarian'}]",3,5,1,False,Missouri 6
-Missouri,MO-07,Eric Burlison,Republican,Incumbent running,R+21,['Missi Hesketh'],"['Eric Burlison', 'John Casey', 'Grayson Hunt']","[{'name': 'Kevin Craig', 'party': 'Libertarian'}]",1,3,1,False,Missouri 7
-Missouri,MO-08,Jason Smith,Republican,Incumbent running,R+27,"['Frank Barnitz', 'Chris Reichard']","['Gordon Heslop', 'Jason Smith']","[{'name': 'Rebecca Sharpe Lombard', 'party': 'Libertarian'}]",2,2,1,False,Missouri 8
-Montana,MT-01,Ryan Zinke,Republican,Incumbent retiring[43],R+5,['Sam Forstag'],['Aaron Flint'],"[{'name': 'Kimberly Persico', 'party': 'Independent'}, {'name': 'Nick Sheehy', 'party': 'Libertarian'}]",1,1,2,True,Montana 1
-Montana,MT-02,Troy Downing,Republican,Incumbent renominated,R+15,['Brian Miller'],['Troy Downing'],"[{'name': 'Michael Eisenhauer', 'party': 'Independent'}, {'name': 'Patrick McCracken', 'party': 'Libertarian'}]",1,1,2,True,Montana 2
-Nebraska,NE-01,Mike Flood,Republican,Incumbent renominated,R+6,['Chris Backemeyer'],['Mike Flood'],"[{'name': 'Austin Ahlman', 'party': 'Independent'}, {'name': 'Nik Sandman', 'party': 'Libertarian'}]",1,1,2,True,Nebraska 1
-Nebraska,NE-02,Don Bacon,Republican,Incumbent retiring[44],D+3,['Denise Powell'],['Brinker Harding'],"[{'name': 'Eric Foreman', 'party': 'Libertarian'}]",1,1,1,True,Nebraska 2
-Nebraska,NE-03,Adrian Smith,Republican,Incumbent renominated,R+27,['Becky Stille'],['Adrian Smith'],"[{'name': 'Macey Budke', 'party': 'Independent'}, {'name': 'Mark Cohen', 'party': 'Independent'}, {'name': 'David Else', 'party': 'Legal Marijuana Now'}]",1,1,3,True,Nebraska 3
-Nevada,NV-01,Dina Titus,Democratic,Incumbent renominated,D+2,['Dina Titus'],['Carrie Buck'],"[{'name': 'Bobby Khan', 'party': 'Independent'}, {'name': 'Steven St. John', 'party': 'Independent'}, {'name': 'Anthony Thomas', 'party': 'Independent'}, {'name': 'Victor Willert', 'party': 'Independent'}]",1,1,4,True,Nevada 1
-Nevada,NV-02,Mark Amodei,Republican,Incumbent retiring[45],R+7,['Teresa Benitez-Thompson'],['David Flippo'],"[{'name': 'Lynn Chapman', 'party': 'Independent American'}]",1,1,1,True,Nevada 2
-Nevada,NV-03,Susie Lee,Democratic,Incumbent renominated,D+1,['Susie Lee'],"[""Marty O'Donnell""]","[{'name': 'David Anderson', 'party': 'Independent'}, {'name': 'Dean Johnson', 'party': 'Independent'}, {'name': 'Jon Kamerath', 'party': 'Independent American'}]",1,1,3,True,Nevada 3
-Nevada,NV-04,Steven Horsford,Democratic,Incumbent renominated,D+2,['Steven Horsford'],['Cody Whipple'],"[{'name': 'Russell Best', 'party': 'Independent American'}, {'name': 'William Johnson', 'party': 'Independent'}, {'name': 'Gary Steele', 'party': 'Independent'}]",1,1,3,True,Nevada 4
-New Hampshire,NH-01,Chris Pappas,Democratic,Incumbent retiring to run for U.S. Senate[16],D+2,"['Carleigh Beriont', 'Bill Conlin', 'Matthew Emerson', 'Heath Howard', 'Stefany Shaheen', 'Sarah Spinosa', 'Maura Sullivan', 'Christian Urrutia']","['Lindsey Anderson', 'Melissa Bailey', 'Michael Callis', 'Brian Cole', 'Anthony DiLorenzo', 'Hollie Noveletsky']",[],8,6,0,False,New Hampshire 1
-New Hampshire,NH-02,Maggie Goodlander,Democratic,Incumbent running,D+2,"['Paige Beauchemin', 'Sarah Chadzynski', 'Maggie Goodlander']","['Dan Nicholson', 'Victor Orlando', 'Lily Tang Williams']",[],3,3,0,False,New Hampshire 2
-New Jersey,NJ-01,Donald Norcross,Democratic,Incumbent renominated,D+10,['Donald Norcross'],['Damon Galdo'],[],1,1,0,True,New Jersey 1
-New Jersey,NJ-02,Jeff Van Drew,Republican,Incumbent renominated,R+5,['Zack Mullock'],['Jeff Van Drew'],[],1,1,0,True,New Jersey 2
-New Jersey,NJ-03,Herb Conaway,Democratic,Incumbent renominated,D+5,['Herb Conaway'],['Michael McGuire'],[],1,1,0,True,New Jersey 3
-New Jersey,NJ-04,Chris Smith,Republican,Incumbent renominated,R+14,['Rachel Peace'],['Chris Smith'],[],1,1,0,True,New Jersey 4
-New Jersey,NJ-05,Josh Gottheimer,Democratic,Incumbent renominated,D+2,['Josh Gottheimer'],['Sean Kirrane'],[],1,1,0,True,New Jersey 5
-New Jersey,NJ-06,Frank Pallone,Democratic,Incumbent renominated,D+5,['Frank Pallone'],['Hillary Herzig'],[],1,1,0,True,New Jersey 6
-New Jersey,NJ-07,Thomas Kean Jr.,Republican,Incumbent renominated,EVEN,['Rebecca Bennett'],['Thomas Kean Jr.'],[],1,1,0,True,New Jersey 7
-New Jersey,NJ-08,Rob Menendez,Democratic,Incumbent renominated,D+15,['Rob Menendez'],[],"[{'name': 'Richard Barilla', 'party': 'Independent'}]",1,0,1,False,New Jersey 8
-New Jersey,NJ-09,Nellie Pou,Democratic,Incumbent renominated,D+2,['Nellie Pou'],['Rosie Pino'],[],1,1,0,True,New Jersey 9
+Minnesota,MN-1,Brad Finstad,Republican,Incumbent running,R+6,[],"['Brad Finstad', 'Gregory Goetzman', 'Oliver Morlan']","[{'name': 'Alex Eaton', 'party': 'DFL'}, {'name': 'Jake Johnson', 'party': 'DFL'}]",0,3,2,False,Minnesota 1
+Minnesota,MN-2,Angie Craig,DFL,Incumbent retiring to run for U.S. Senate[15],D+3,[],['Eric Pratt'],"[{'name': 'Abdi Abdulle', 'party': 'DFL'}, {'name': 'Kaela Berg', 'party': 'DFL'}, {'name': 'Matt Klein', 'party': 'DFL'}, {'name': 'Matt Little', 'party': 'DFL'}, {'name': 'Hugh McTavish', 'party': 'DFL'}, {'name': 'Christopher Mosel', 'party': 'DFL'}]",0,1,6,False,Minnesota 2
+Minnesota,MN-3,Kelly Morrison,DFL,Incumbent running,D+11,[],"['Tyler Bass', 'Quentin Wittrock']","[{'name': 'Kelly Morrison', 'party': 'DFL'}]",0,2,1,False,Minnesota 3
+Minnesota,MN-4,Betty McCollum,DFL,Incumbent running,D+18,[],"['Gene Rechtzigel', 'Paul Wikstrom', 'Paul Xiong']","[{'name': 'Betty McCollum', 'party': 'DFL'}, {'name': 'Aswar Rahman', 'party': 'DFL'}]",0,3,2,False,Minnesota 4
+Minnesota,MN-5,Ilhan Omar,DFL,Incumbent running,D+32,[],"['Dalia Al-Aqidi', 'John Nagel', 'Angie Windhauser', 'Abbey Zieska']","[{'name': 'Julie Le', 'party': 'DFL'}, {'name': 'Abena McKenzie', 'party': 'DFL'}, {'name': 'Ilhan Omar', 'party': 'DFL'}, {'name': 'Latonya Reeves', 'party': 'DFL'}, {'name': 'Nate Schluter', 'party': 'DFL'}]",0,4,5,False,Minnesota 5
+Minnesota,MN-6,Tom Emmer,Republican,Incumbent running,R+10,[],"['Chris Corey', 'Tom Emmer', 'Mike Foley']","[{'name': 'Doug Chapin', 'party': 'DFL'}, {'name': 'Kelly Doss', 'party': 'Forward-Independence'}]",0,3,2,False,Minnesota 6
+Minnesota,MN-7,Michelle Fischbach,Republican,Incumbent running,R+18,[],['Michelle Fischbach'],"[{'name': 'Steve Carlson', 'party': 'DFL'}, {'name': 'Erik Osberg', 'party': 'DFL'}]",0,1,2,False,Minnesota 7
+Minnesota,MN-8,Pete Stauber,Republican,Incumbent running,R+7,[],"['Anthony Hamilton', 'Pete Stauber']","[{'name': 'Luke Gulbranson', 'party': 'DFL'}, {'name': 'John Munter', 'party': 'DFL'}, {'name': 'Trina Swanson', 'party': 'DFL'}]",0,2,3,False,Minnesota 8
+Mississippi,MS-1,Trent Kelly,Republican,Incumbent renominated,R+18,['Cliff Johnson'],['Trent Kelly'],[],1,1,0,True,Mississippi 1
+Mississippi,MS-2,Bennie Thompson,Democratic,Incumbent renominated,D+11,['Bennie Thompson'],['Ron Eller'],"[{'name': 'Bennie Foster', 'party': 'Independent'}]",1,1,1,True,Mississippi 2
+Mississippi,MS-3,Michael Guest,Republican,Incumbent renominated,R+14,['Michael Chiaradio'],['Michael Guest'],"[{'name': 'Erik Kiehle', 'party': 'Libertarian'}]",1,1,1,True,Mississippi 3
+Mississippi,MS-4,Mike Ezell,Republican,Incumbent renominated,R+21,['Jeffrey Hulum III'],['Mike Ezell'],"[{'name': 'Carl Boyanton', 'party': 'Independent'}]",1,1,1,True,Mississippi 4
+Missouri,MO-1,Wesley Bell,Democratic,Incumbent running,D+29,"['Wesley Bell', 'Cori Bush', 'Carl Harris', 'Carl Henderson', 'Alissa Murphy']","['Paul Berry', 'Andrew Jones']","[{'name': 'Tom Schmitz', 'party': 'Libertarian'}]",5,2,1,False,Missouri 1
+Missouri,MO-2,Ann Wagner,Republican,Incumbent running,R+6,"['Tim Bilash', 'Joan VonDras', 'Fred Wellman']","['Matthew Grant', 'Peter Pfeifer', 'Elizabeth Sparks-Holmes', 'Ann Wagner', 'Brandon Wilkinson']","[{'name': 'Brandon Daugherty', 'party': 'Libertarian'}]",3,5,1,False,Missouri 2
+Missouri,MO-3,Bob Onder,Republican,Incumbent running,R+10,"['Tommy Holstein', 'Bethany Mann', 'Paul Wilson']","['John Fraser', 'Bob Onder']","[{'name': 'Jim Higgins', 'party': 'Libertarian'}]",3,2,1,False,Missouri 3
+Missouri,MO-4,Mark Alford,Republican,Incumbent running,R+10,"['Jeanette Cass', 'Hartzell Gray', 'Jordan Herrera', 'Randy Miller', 'G. Rick', 'Ashleigh Rogers', 'Wayne Russell']","['Mark Alford', 'Heather Shelton', 'Scott Vera']","[{'name': 'Thomas Holbrook', 'party': 'Libertarian'}]",7,3,1,False,Missouri 4
+Missouri,MO-5,Emanuel Cleaver,Democratic,Incumbent running,R+9,['Emanuel Cleaver'],"['Micah Beebe', 'Rick Brattin', 'Taylor Burks', 'Brett Hueffmeier', 'Berton Knox', 'Brad Patty']","[{'name': 'Randy Langkraehr', 'party': 'Libertarian'}]",1,6,1,False,Missouri 5
+Missouri,MO-6,Sam Graves,Republican,Incumbent retiring[42],R+13,"['Matt Levine', 'Scot Pondelick', 'Josh Smead']","['Jim Ingram', 'Cody Oshel', 'Nathanael Schultz', 'Chris Stigall', 'Nathan Willett']","[{'name': 'Andy Maidment', 'party': 'Libertarian'}]",3,5,1,False,Missouri 6
+Missouri,MO-7,Eric Burlison,Republican,Incumbent running,R+21,['Missi Hesketh'],"['Eric Burlison', 'John Casey', 'Grayson Hunt']","[{'name': 'Kevin Craig', 'party': 'Libertarian'}]",1,3,1,False,Missouri 7
+Missouri,MO-8,Jason Smith,Republican,Incumbent running,R+27,"['Frank Barnitz', 'Chris Reichard']","['Gordon Heslop', 'Jason Smith']","[{'name': 'Rebecca Sharpe Lombard', 'party': 'Libertarian'}]",2,2,1,False,Missouri 8
+Montana,MT-1,Ryan Zinke,Republican,Incumbent retiring[43],R+5,['Sam Forstag'],['Aaron Flint'],"[{'name': 'Kimberly Persico', 'party': 'Independent'}, {'name': 'Nick Sheehy', 'party': 'Libertarian'}]",1,1,2,True,Montana 1
+Montana,MT-2,Troy Downing,Republican,Incumbent renominated,R+15,['Brian Miller'],['Troy Downing'],"[{'name': 'Michael Eisenhauer', 'party': 'Independent'}, {'name': 'Patrick McCracken', 'party': 'Libertarian'}]",1,1,2,True,Montana 2
+Nebraska,NE-1,Mike Flood,Republican,Incumbent renominated,R+6,['Chris Backemeyer'],['Mike Flood'],"[{'name': 'Austin Ahlman', 'party': 'Independent'}, {'name': 'Nik Sandman', 'party': 'Libertarian'}]",1,1,2,True,Nebraska 1
+Nebraska,NE-2,Don Bacon,Republican,Incumbent retiring[44],D+3,['Denise Powell'],['Brinker Harding'],"[{'name': 'Eric Foreman', 'party': 'Libertarian'}]",1,1,1,True,Nebraska 2
+Nebraska,NE-3,Adrian Smith,Republican,Incumbent renominated,R+27,['Becky Stille'],['Adrian Smith'],"[{'name': 'Macey Budke', 'party': 'Independent'}, {'name': 'Mark Cohen', 'party': 'Independent'}, {'name': 'David Else', 'party': 'Legal Marijuana Now'}]",1,1,3,True,Nebraska 3
+Nevada,NV-1,Dina Titus,Democratic,Incumbent renominated,D+2,['Dina Titus'],['Carrie Buck'],"[{'name': 'Bobby Khan', 'party': 'Independent'}, {'name': 'Steven St. John', 'party': 'Independent'}, {'name': 'Anthony Thomas', 'party': 'Independent'}, {'name': 'Victor Willert', 'party': 'Independent'}]",1,1,4,True,Nevada 1
+Nevada,NV-2,Mark Amodei,Republican,Incumbent retiring[45],R+7,['Teresa Benitez-Thompson'],['David Flippo'],"[{'name': 'Lynn Chapman', 'party': 'Independent American'}]",1,1,1,True,Nevada 2
+Nevada,NV-3,Susie Lee,Democratic,Incumbent renominated,D+1,['Susie Lee'],"[""Marty O'Donnell""]","[{'name': 'David Anderson', 'party': 'Independent'}, {'name': 'Dean Johnson', 'party': 'Independent'}, {'name': 'Jon Kamerath', 'party': 'Independent American'}]",1,1,3,True,Nevada 3
+Nevada,NV-4,Steven Horsford,Democratic,Incumbent renominated,D+2,['Steven Horsford'],['Cody Whipple'],"[{'name': 'Russell Best', 'party': 'Independent American'}, {'name': 'William Johnson', 'party': 'Independent'}, {'name': 'Gary Steele', 'party': 'Independent'}]",1,1,3,True,Nevada 4
+New Hampshire,NH-1,Chris Pappas,Democratic,Incumbent retiring to run for U.S. Senate[16],D+2,"['Carleigh Beriont', 'Bill Conlin', 'Matthew Emerson', 'Heath Howard', 'Stefany Shaheen', 'Sarah Spinosa', 'Maura Sullivan', 'Christian Urrutia']","['Lindsey Anderson', 'Melissa Bailey', 'Michael Callis', 'Brian Cole', 'Anthony DiLorenzo', 'Hollie Noveletsky']",[],8,6,0,False,New Hampshire 1
+New Hampshire,NH-2,Maggie Goodlander,Democratic,Incumbent running,D+2,"['Paige Beauchemin', 'Sarah Chadzynski', 'Maggie Goodlander']","['Dan Nicholson', 'Victor Orlando', 'Lily Tang Williams']",[],3,3,0,False,New Hampshire 2
+New Jersey,NJ-1,Donald Norcross,Democratic,Incumbent renominated,D+10,['Donald Norcross'],['Damon Galdo'],[],1,1,0,True,New Jersey 1
+New Jersey,NJ-2,Jeff Van Drew,Republican,Incumbent renominated,R+5,['Zack Mullock'],['Jeff Van Drew'],[],1,1,0,True,New Jersey 2
+New Jersey,NJ-3,Herb Conaway,Democratic,Incumbent renominated,D+5,['Herb Conaway'],['Michael McGuire'],[],1,1,0,True,New Jersey 3
+New Jersey,NJ-4,Chris Smith,Republican,Incumbent renominated,R+14,['Rachel Peace'],['Chris Smith'],[],1,1,0,True,New Jersey 4
+New Jersey,NJ-5,Josh Gottheimer,Democratic,Incumbent renominated,D+2,['Josh Gottheimer'],['Sean Kirrane'],[],1,1,0,True,New Jersey 5
+New Jersey,NJ-6,Frank Pallone,Democratic,Incumbent renominated,D+5,['Frank Pallone'],['Hillary Herzig'],[],1,1,0,True,New Jersey 6
+New Jersey,NJ-7,Thomas Kean Jr.,Republican,Incumbent renominated,EVEN,['Rebecca Bennett'],['Thomas Kean Jr.'],[],1,1,0,True,New Jersey 7
+New Jersey,NJ-8,Rob Menendez,Democratic,Incumbent renominated,D+15,['Rob Menendez'],[],"[{'name': 'Richard Barilla', 'party': 'Independent'}, {'name': 'Aristotle Eliopoulos', 'party': 'Independent'}, {'name': ""Da'Shone Hughey"", 'party': 'Independent'}]",1,0,3,False,New Jersey 8
+New Jersey,NJ-9,Nellie Pou,Democratic,Incumbent renominated,D+2,['Nellie Pou'],['Rosie Pino'],[],1,1,0,True,New Jersey 9
 New Jersey,NJ-10,LaMonica McIver,Democratic,Incumbent renominated,D+27,['LaMonica McIver'],['Carmen Bucco'],[],1,1,0,True,New Jersey 10
 New Jersey,NJ-11,Analilia Mejia,Democratic,Incumbent renominated,D+5,['Analilia Mejia'],['Joe Hathaway'],[],1,1,0,True,New Jersey 11
 New Jersey,NJ-12,Bonnie Watson Coleman,Democratic,Incumbent retiring[17],D+13,['Adam Hamawy'],['Gregg Mele'],[],1,1,0,True,New Jersey 12
-New Mexico,NM-01,Melanie Stansbury,Democratic,Incumbent renominated,D+7,['Melanie Stansbury'],['Didi Okpareke'],[],1,1,0,True,New Mexico 1
-New Mexico,NM-02,Gabe Vasquez,Democratic,Incumbent renominated,EVEN,['Gabe Vasquez'],['Greg Cunningham'],[],1,1,0,True,New Mexico 2
-New Mexico,NM-03,Teresa Leger Fernandez,Democratic,Incumbent renominated,D+3,['ndez'],['Martin Zamora'],[],1,1,0,True,New Mexico 3
-New York,NY-01,Nick LaLota,Republican,Incumbent running,R+4,"['Chris Gallant', 'Lukas Ventouras']",['Nick LaLota'],[],2,1,0,False,New York 1
-New York,NY-02,Andrew Garbarino,Republican,Incumbent running,R+6,['Patrick Halpin'],['Andrew Garbarino'],[],1,1,0,True,New York 2
-New York,NY-03,Tom Suozzi,Democratic,Incumbent running,EVEN,"['Tom Suozzi', 'Danielle Welch']","['Greg Hach', 'Mike LiPetri']",[],2,2,0,False,New York 3
-New York,NY-04,Laura Gillen,Democratic,Incumbent running,D+2,"['Laura Gillen', 'Frank Lozada']","['Jeanine Driscoll', 'Michael Mandel', 'Marvin Williams']",[],2,3,0,False,New York 4
-New York,NY-05,Gregory Meeks,Democratic,Incumbent running,D+24,['Gregory Meeks'],[],[],1,0,0,False,New York 5
-New York,NY-06,Grace Meng,Democratic,Incumbent running,D+6,"['Grace Meng', 'Chuck Park']",[],[],2,0,0,False,New York 6
-New York,NY-07,Nydia Velázquez,Democratic,Incumbent retiring[18],D+25,"['Vichal Kumar', 'Antonio Reynoso', 'Claire Valdez', 'Julie Won']",[],[],4,0,0,False,New York 7
-New York,NY-08,Hakeem Jeffries,Democratic,Incumbent running,D+24,['Hakeem Jeffries'],[],[],1,0,0,False,New York 8
-New York,NY-09,Yvette Clarke,Democratic,Incumbent running,D+22,"['Joshua Bristol', 'Yvette Clarke', 'Michael Goldfarb']",['Joel Anabilah-Azumah'],[],3,1,0,False,New York 9
-New York,NY-10,Dan Goldman,Democratic,Incumbent running,D+32,"['Dan Goldman', 'Brad Lander']",[],[],2,0,0,False,New York 10
-New York,NY-11,Nicole Malliotakis,Republican,Incumbent running,R+10,['Michael DeCillis'],['Nicole Malliotakis'],[],1,1,0,True,New York 11
-New York,NY-12,Jerry Nadler,Democratic,Incumbent retiring[19],D+33,"['Micah Bergdale', 'Alex Bores', 'George Conway', 'Chris Diep', 'Laura Dunn', 'Micah Lasher', 'Jack Schlossberg', 'Nina Schwalbe', 'Patrick Timmins']",[],[],9,0,0,False,New York 12
-New York,NY-13,Adriano Espaillat,Democratic,Incumbent running,D+32,"['Darializa Avila Chevalier', 'Theo Chino-Tavarez', 'Adriano Espaillat', 'Oscar Romero']",[],[],4,0,0,False,New York 13
-New York,NY-14,Alexandria Ocasio-Cortez,Democratic,Incumbent running,D+19,"['Marty Dolan', 'Felipe Garcia', 'Alexandria Ocasio-Cortez']",['Diamant Hysenaj'],[],3,1,0,False,New York 14
-New York,NY-15,Ritchie Torres,Democratic,Incumbent running,D+27,"['Michael Blake', 'Ritchie Torres', 'Jose Vega']",[],"[{'name': 'Gonzalo Duran', 'party': 'Conservative'}, {'name': 'Andre Easton', 'party': 'Independent'}]",3,0,2,False,New York 15
-New York,NY-16,George Latimer,Democratic,Incumbent running,D+18,['George Latimer'],['Joseph Cinquemani'],[],1,1,0,True,New York 16
-New York,NY-17,Mike Lawler,Republican,Incumbent running,D+1,"['John Cappello', 'Cait Conley', 'Beth Davidson', 'Effie Phillips-Staley', 'Mike Sacks']",['Mike Lawler'],[],5,1,0,False,New York 17
-New York,NY-18,Pat Ryan,Democratic,Incumbent running,D+2,['Pat Ryan'],['Jacqueline Auringer'],[],1,1,0,True,New York 18
-New York,NY-19,Josh Riley,Democratic,Incumbent running,D+1,['Josh Riley'],"['Peter Oberacker', 'Alexander Portelli']",[],1,2,0,False,New York 19
-New York,NY-20,Paul Tonko,Democratic,Incumbent running,D+8,['Paul Tonko'],['Ralph Ambrosio'],[],1,1,0,True,New York 20
-New York,NY-21,Elise Stefanik,Republican,Incumbent retiring[46],R+10,"['Stuart Amoriell', 'Blake Gendebien']","['Anthony Constantino', 'Robert Smullen']",[],2,2,0,False,New York 21
-New York,NY-22,John Mannion,Democratic,Incumbent running,D+4,['John Mannion'],['Kailee Buller'],"[{'name': 'Will Staton', 'party': 'Independent'}]",1,1,1,True,New York 22
-New York,NY-23,Nick Langworthy,Republican,Incumbent running,R+10,"['Aaron Gies', 'Kevin Stocker']",['Nick Langworthy'],[],2,1,0,False,New York 23
-New York,NY-24,Claudia Tenney,Republican,Incumbent running,R+11,"['Alissa Ellman', 'Diana Kastenbaum']",['Claudia Tenney'],"[{'name': 'Ken Estes', 'party': 'Independent'}, {'name': 'Todd Sloan', 'party': 'Independent'}]",2,1,2,False,New York 24
-New York,NY-25,Joseph Morelle,Democratic,Incumbent running,D+10,"['Joseph Morelle', 'Sherita Traywick', 'Robin Wilt']",['Virginia McIntyre'],[],3,1,0,False,New York 25
-New York,NY-26,Tim Kennedy,Democratic,Incumbent running,D+11,['Tim Kennedy'],['Dennis Hannon'],[],1,1,0,True,New York 26
-North Carolina,NC-01,Don Davis,Democratic,Incumbent renominated,R+5,['Don Davis'],['Laurie Buckhout'],"[{'name': 'Tom Bailey', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 1
-North Carolina,NC-02,Deborah Ross,Democratic,Incumbent renominated,D+17,['Deborah Ross'],['Eugene Douglass'],"[{'name': 'Matthew Laszacs', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 2
-North Carolina,NC-03,Greg Murphy,Republican,Incumbent renominated,R+6,['Raymond Smith Jr.'],['Greg Murphy'],"[{'name': 'Daniel Cavender', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 3
-North Carolina,NC-04,Valerie Foushee,Democratic,Incumbent renominated,D+23,['Valerie Foushee'],['Max Ganorkar'],"[{'name': 'Guy Meilleur', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 4
-North Carolina,NC-05,Virginia Foxx,Republican,Incumbent renominated,R+9,['Chuck Hubbard'],['Virginia Foxx'],"[{'name': 'David Clayton', 'party': 'Independent'}, {'name': 'Robert Luffman', 'party': 'Libertarian'}]",1,1,2,True,North Carolina 5
-North Carolina,NC-06,Addison McDowell,Republican,Incumbent renominated,R+9,['Cyril Jefferson'],['Addison McDowell'],[],1,1,0,True,North Carolina 6
-North Carolina,NC-07,David Rouzer,Republican,Incumbent renominated,R+7,['Kimberly Hardy'],['David Rouzer'],"[{'name': 'Maad Abu-Ghazalah', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 7
-North Carolina,NC-08,Mark Harris,Republican,Incumbent renominated,R+10,['Colby Watson'],['Mark Harris'],[],1,1,0,True,North Carolina 8
-North Carolina,NC-09,Richard Hudson,Republican,Incumbent renominated,R+8,['Richard Ojeda'],['Richard Hudson'],[],1,1,0,True,North Carolina 9
+New Mexico,NM-1,Melanie Stansbury,Democratic,Incumbent renominated,D+7,['Melanie Stansbury'],['Didi Okpareke'],[],1,1,0,True,New Mexico 1
+New Mexico,NM-2,Gabe Vasquez,Democratic,Incumbent renominated,EVEN,['Gabe Vasquez'],['Greg Cunningham'],[],1,1,0,True,New Mexico 2
+New Mexico,NM-3,Teresa Leger Fernandez,Democratic,Incumbent renominated,D+3,['ndez'],['Martin Zamora'],[],1,1,0,True,New Mexico 3
+New York,NY-1,Nick LaLota,Republican,Incumbent renominated,R+4,['Chris Gallant'],['Nick LaLota'],[],1,1,0,True,New York 1
+New York,NY-2,Andrew Garbarino,Republican,Incumbent renominated,R+6,['Patrick Halpin'],['Andrew Garbarino'],[],1,1,0,True,New York 2
+New York,NY-3,Tom Suozzi,Democratic,Incumbent renominated,EVEN,['Tom Suozzi'],['Mike LiPetri'],[],1,1,0,True,New York 3
+New York,NY-4,Laura Gillen,Democratic,Incumbent renominated,D+2,['Laura Gillen'],['Jeanine Driscoll'],[],1,1,0,True,New York 4
+New York,NY-5,Gregory Meeks,Democratic,Incumbent renominated,D+24,['Gregory Meeks'],['George Marsh'],[],1,1,0,True,New York 5
+New York,NY-6,Grace Meng,Democratic,Incumbent renominated,D+6,['Grace Meng'],['Joseph Chou'],[],1,1,0,True,New York 6
+New York,NY-7,Nydia Velázquez,Democratic,Incumbent retiring[18],D+25,['Claire Valdez'],['Melvin Rivera'],[],1,1,0,True,New York 7
+New York,NY-8,Hakeem Jeffries,Democratic,Incumbent renominated,D+24,['Hakeem Jeffries'],['Lewis Mizrahi'],[],1,1,0,True,New York 8
+New York,NY-9,Yvette Clarke,Democratic,Incumbent renominated,D+22,['Yvette Clarke'],['Joel Anabilah-Azumah'],[],1,1,0,True,New York 9
+New York,NY-10,Dan Goldman,Democratic,Incumbent lost renomination,D+32,['Brad Lander'],['Jennifer Moore'],[],1,1,0,True,New York 10
+New York,NY-11,Nicole Malliotakis,Republican,Incumbent renominated,R+10,['Michael DeCillis'],['Nicole Malliotakis'],[],1,1,0,True,New York 11
+New York,NY-12,Jerry Nadler,Democratic,Incumbent retiring[19],D+33,['Micah Lasher'],['Caroline Shinkle'],[],1,1,0,True,New York 12
+New York,NY-13,Adriano Espaillat,Democratic,Incumbent lost renomination,D+32,['Darializa Avila Chevalier'],['Jomo Williams'],[],1,1,0,True,New York 13
+New York,NY-14,Alexandria Ocasio-Cortez,Democratic,Incumbent renominated,D+19,['Alexandria Ocasio-Cortez'],['Diamant Hysenaj'],[],1,1,0,True,New York 14
+New York,NY-15,Ritchie Torres,Democratic,Incumbent renominated,D+27,['Ritchie Torres'],['Stylo Sapaskis'],"[{'name': 'Gonzalo Duran', 'party': 'Conservative'}, {'name': 'Andre Easton', 'party': 'Independent'}]",1,1,2,True,New York 15
+New York,NY-16,George Latimer,Democratic,Incumbent renominated,D+18,['George Latimer'],['Joseph Cinquemani'],[],1,1,0,True,New York 16
+New York,NY-17,Mike Lawler,Republican,Incumbent renominated,D+1,['Cait Conley'],['Mike Lawler'],[],1,1,0,True,New York 17
+New York,NY-18,Pat Ryan,Democratic,Incumbent renominated,D+2,['Pat Ryan'],['Jacqueline Auringer'],[],1,1,0,True,New York 18
+New York,NY-19,Josh Riley,Democratic,Incumbent renominated,D+1,['Josh Riley'],['Peter Oberacker'],[],1,1,0,True,New York 19
+New York,NY-20,Paul Tonko,Democratic,Incumbent renominated,D+8,['Paul Tonko'],['Ralph Ambrosio'],[],1,1,0,True,New York 20
+New York,NY-21,Elise Stefanik,Republican,Incumbent retiring[46],R+10,['Blake Gendebien'],['Anthony Constantino'],[],1,1,0,True,New York 21
+New York,NY-22,John Mannion,Democratic,Incumbent renominated,D+4,['John Mannion'],['Kailee Buller'],[],1,1,0,True,New York 22
+New York,NY-23,Nick Langworthy,Republican,Incumbent renominated,R+10,['Aaron Gies'],['Nick Langworthy'],[],1,1,0,True,New York 23
+New York,NY-24,Claudia Tenney,Republican,Incumbent renominated,R+11,['Alissa Ellman'],['Claudia Tenney'],"[{'name': 'Ken Estes', 'party': 'Independent'}, {'name': 'Todd Sloan', 'party': 'Independent'}]",1,1,2,True,New York 24
+New York,NY-25,Joseph Morelle,Democratic,Incumbent renominated,D+10,['Joseph Morelle'],['Virginia McIntyre'],[],1,1,0,True,New York 25
+New York,NY-26,Tim Kennedy,Democratic,Incumbent renominated,D+11,['Tim Kennedy'],['Dennis Hannon'],[],1,1,0,True,New York 26
+North Carolina,NC-1,Don Davis,Democratic,Incumbent renominated,R+5,['Don Davis'],['Laurie Buckhout'],"[{'name': 'Tom Bailey', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 1
+North Carolina,NC-2,Deborah Ross,Democratic,Incumbent renominated,D+17,['Deborah Ross'],['Eugene Douglass'],"[{'name': 'Matthew Laszacs', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 2
+North Carolina,NC-3,Greg Murphy,Republican,Incumbent renominated,R+6,['Raymond Smith Jr.'],['Greg Murphy'],"[{'name': 'Daniel Cavender', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 3
+North Carolina,NC-4,Valerie Foushee,Democratic,Incumbent renominated,D+23,['Valerie Foushee'],['Max Ganorkar'],"[{'name': 'Guy Meilleur', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 4
+North Carolina,NC-5,Virginia Foxx,Republican,Incumbent renominated,R+9,['Chuck Hubbard'],['Virginia Foxx'],"[{'name': 'Robert Luffman', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 5
+North Carolina,NC-6,Addison McDowell,Republican,Incumbent renominated,R+9,['Cyril Jefferson'],['Addison McDowell'],[],1,1,0,True,North Carolina 6
+North Carolina,NC-7,David Rouzer,Republican,Incumbent renominated,R+7,['Kimberly Hardy'],['David Rouzer'],"[{'name': 'Maad Abu-Ghazalah', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 7
+North Carolina,NC-8,Mark Harris,Republican,Incumbent renominated,R+10,['Colby Watson'],['Mark Harris'],[],1,1,0,True,North Carolina 8
+North Carolina,NC-9,Richard Hudson,Republican,Incumbent renominated,R+8,['Richard Ojeda'],['Richard Hudson'],[],1,1,0,True,North Carolina 9
 North Carolina,NC-10,Pat Harrigan,Republican,Incumbent renominated,R+9,['Ashley Bell'],['Pat Harrigan'],"[{'name': 'Steve Feldman', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 10
 North Carolina,NC-11,Chuck Edwards,Republican,Incumbent renominated,R+5,['Jamie Ager'],['Chuck Edwards'],"[{'name': 'Travis Groo', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 11
 North Carolina,NC-12,Alma Adams,Democratic,Incumbent renominated,D+24,['Alma Adams'],['Jack Codiga'],[],1,1,0,True,North Carolina 12
 North Carolina,NC-13,Brad Knott,Republican,Incumbent renominated,R+8,['Paul Barringer'],['Brad Knott'],"[{'name': 'Steven Swinton', 'party': 'Libertarian'}]",1,1,1,True,North Carolina 13
 North Carolina,NC-14,Tim Moore,Republican,Incumbent renominated,R+8,['Lakesha Womack'],['Tim Moore'],[],1,1,0,True,North Carolina 14
-North Dakota,ND-At-Large,Julie Fedorchak,Republican,Incumbent renominated,R+18,[],['Julie Fedorchak'],"[{'name': 'Trygve Hammer', 'party': 'Democratic-NPL'}]",0,1,1,False,North Dakota at-large
-Ohio,OH-01,Greg Landsman,Democratic,Incumbent renominated,R+1,['Greg Landsman'],['Eric Conroy'],"[{'name': 'John Hancock', 'party': 'Libertarian'}]",1,1,1,True,Ohio 1
-Ohio,OH-02,David Taylor,Republican,Incumbent renominated,R+21,['Jennifer Mazzuckelli'],['David Taylor'],[],1,1,0,True,Ohio 2
-Ohio,OH-03,Joyce Beatty,Democratic,Incumbent renominated,D+21,['Joyce Beatty'],['Cleophus Dulaney'],[],1,1,0,True,Ohio 3
-Ohio,OH-04,Jim Jordan,Republican,Incumbent renominated,R+21,['Joshua Kolasinski'],['Jim Jordan'],"[{'name': 'Tamie Wilson', 'party': 'Independent'}]",1,1,1,True,Ohio 4
-Ohio,OH-05,Bob Latta,Republican,Incumbent renominated,R+12,['Brian Shaver'],['Bob Latta'],[],1,1,0,True,Ohio 5
-Ohio,OH-06,Michael Rulli,Republican,Incumbent renominated,R+17,['Elizabeth Kirtley'],['Michael Rulli'],[],1,1,0,True,Ohio 6
-Ohio,OH-07,Max Miller,Republican,Incumbent renominated,R+5,['Brian Poindexter'],['Max Miller'],[],1,1,0,True,Ohio 7
-Ohio,OH-08,Warren Davidson,Republican,Incumbent renominated,R+8,['Vanessa Enoch'],['Warren Davidson'],[],1,1,0,True,Ohio 8
-Ohio,OH-09,Marcy Kaptur,Democratic,Incumbent renominated,R+5,['Marcy Kaptur'],['Derek Merrin'],"[{'name': 'Matthew Althaus', 'party': 'Libertarian'}]",1,1,1,True,Ohio 9
+North Dakota,ND-1,Julie Fedorchak,Republican,Incumbent renominated,R+18,[],['Julie Fedorchak'],"[{'name': 'Trygve Hammer', 'party': 'Democratic-NPL'}]",0,1,1,False,North Dakota at-large
+Ohio,OH-1,Greg Landsman,Democratic,Incumbent renominated,R+1,['Greg Landsman'],['Eric Conroy'],"[{'name': 'John Hancock', 'party': 'Libertarian'}]",1,1,1,True,Ohio 1
+Ohio,OH-2,David Taylor,Republican,Incumbent renominated,R+21,['Jennifer Mazzuckelli'],['David Taylor'],[],1,1,0,True,Ohio 2
+Ohio,OH-3,Joyce Beatty,Democratic,Incumbent renominated,D+21,['Joyce Beatty'],['Cleophus Dulaney'],[],1,1,0,True,Ohio 3
+Ohio,OH-4,Jim Jordan,Republican,Incumbent renominated,R+21,['Joshua Kolasinski'],['Jim Jordan'],"[{'name': 'Tamie Wilson', 'party': 'Independent'}]",1,1,1,True,Ohio 4
+Ohio,OH-5,Bob Latta,Republican,Incumbent renominated,R+12,['Brian Shaver'],['Bob Latta'],[],1,1,0,True,Ohio 5
+Ohio,OH-6,Michael Rulli,Republican,Incumbent renominated,R+17,['Elizabeth Kirtley'],['Michael Rulli'],[],1,1,0,True,Ohio 6
+Ohio,OH-7,Max Miller,Republican,Incumbent renominated,R+5,['Brian Poindexter'],['Max Miller'],[],1,1,0,True,Ohio 7
+Ohio,OH-8,Warren Davidson,Republican,Incumbent renominated,R+8,['Vanessa Enoch'],['Warren Davidson'],[],1,1,0,True,Ohio 8
+Ohio,OH-9,Marcy Kaptur,Democratic,Incumbent renominated,R+5,['Marcy Kaptur'],['Derek Merrin'],"[{'name': 'Matthew Althaus', 'party': 'Libertarian'}]",1,1,1,True,Ohio 9
 Ohio,OH-10,Mike Turner,Republican,Incumbent renominated,R+4,['Kristina Knickerbocker'],['Mike Turner'],"[{'name': 'Thomas McMasters', 'party': 'Libertarian'}]",1,1,1,True,Ohio 10
 Ohio,OH-11,Shontel Brown,Democratic,Incumbent renominated,D+28,['Shontel Brown'],['Mike Kirchner'],[],1,1,0,True,Ohio 11
 Ohio,OH-12,Troy Balderson,Republican,Incumbent renominated,R+15,['Jerrad Christian'],['Troy Balderson'],[],1,1,0,True,Ohio 12
 Ohio,OH-13,Emilia Sykes,Democratic,Incumbent renominated,D+2,['Emilia Sykes'],['Carey Coleman'],[],1,1,0,True,Ohio 13
 Ohio,OH-14,David Joyce,Republican,Incumbent renominated,R+10,['Maria Jukic'],['David Joyce'],[],1,1,0,True,Ohio 14
 Ohio,OH-15,Mike Carey,Republican,Incumbent renominated,R+5,['Don Leonard'],['Mike Carey'],"[{'name': 'Brennan Barrington', 'party': 'Libertarian'}]",1,1,1,True,Ohio 15
-Oklahoma,OK-01,Kevin Hern,Republican,Incumbent retiring to run for U.S. Senate[47],R+11,['John Croisant'],['Mark Tedford'],[],1,1,0,True,Oklahoma 1
-Oklahoma,OK-02,Josh Brecheen,Republican,Incumbent renominated,R+28,['Brandon Wade'],['Josh Brecheen'],"[{'name': 'Ronnie Hopkins', 'party': 'Independent'}]",1,1,1,True,Oklahoma 2
-Oklahoma,OK-03,Frank Lucas,Republican,Incumbent renominated,R+23,['Suzie Byrd'],['Frank Lucas'],[],1,1,0,True,Oklahoma 3
-Oklahoma,OK-04,Tom Cole,Republican,Incumbent renominated,R+17,['Mitchell Jacob'],['Tom Cole'],"[{'name': 'Rocco Bonacci', 'party': 'Independent'}]",1,1,1,True,Oklahoma 4
-Oklahoma,OK-05,Stephanie Bice,Republican,Incumbent renominated,R+9,['Jena Nelson'],['Stephanie Bice'],"[{'name': 'Robert Henri', 'party': 'Independent'}, {'name': 'Austin Nieves', 'party': 'Independent'}]",1,1,2,True,Oklahoma 5
-Oregon,OR-01,Suzanne Bonamici,Democratic,Incumbent renominated,D+20,['Suzanne Bonamici'],['Barbara Kahl'],[],1,1,0,True,Oregon 1
-Oregon,OR-02,Cliff Bentz,Republican,Incumbent renominated,R+14,['Chris Beck'],['Cliff Bentz'],[],1,1,0,True,Oregon 2
-Oregon,OR-03,Maxine Dexter,Democratic,Incumbent renominated,D+24,['Maxine Dexter'],['Loran Ayles'],[],1,1,0,True,Oregon 3
-Oregon,OR-04,Val Hoyle,Democratic,Incumbent renominated,D+6,['Val Hoyle'],['Monique DeSpain'],"[{'name': 'Justin Filip', 'party': 'Pacific Green'}]",1,1,1,True,Oregon 4
-Oregon,OR-05,Janelle Bynum,Democratic,Incumbent renominated,D+4,['Janelle Bynum'],['Patti Adair'],[],1,1,0,True,Oregon 5
-Oregon,OR-06,Andrea Salinas,Democratic,Incumbent renominated,D+6,['Andrea Salinas'],['David Russ'],[],1,1,0,True,Oregon 6
-Pennsylvania,PA-01,Brian Fitzpatrick,Republican,Incumbent renominated,D+1,['Bob Harvie'],['Brian Fitzpatrick'],[],1,1,0,True,Pennsylvania 1
-Pennsylvania,PA-02,Brendan Boyle,Democratic,Incumbent renominated,D+19,['Brendan Boyle'],['Jessica Arriaga'],[],1,1,0,True,Pennsylvania 2
-Pennsylvania,PA-03,Dwight Evans,Democratic,Incumbent retiring[20],D+40,['Chris Rabb'],[],[],1,0,0,False,Pennsylvania 3
-Pennsylvania,PA-04,Madeleine Dean,Democratic,Incumbent renominated,D+8,['Madeleine Dean'],['Aurora Stuski'],[],1,1,0,True,Pennsylvania 4
-Pennsylvania,PA-05,Mary Gay Scanlon,Democratic,Incumbent renominated,D+15,['Mary Gay Scanlon'],['Nicholas Manganaro'],[],1,1,0,True,Pennsylvania 5
-Pennsylvania,PA-06,Chrissy Houlahan,Democratic,Incumbent renominated,D+6,['Chrissy Houlahan'],['Marty Young'],[],1,1,0,True,Pennsylvania 6
-Pennsylvania,PA-07,Ryan Mackenzie,Republican,Incumbent renominated,R+1,['Bob Brooks'],['Ryan Mackenzie'],[],1,1,0,True,Pennsylvania 7
-Pennsylvania,PA-08,Rob Bresnahan,Republican,Incumbent renominated,R+4,['Paige Cognetti'],['Rob Bresnahan'],[],1,1,0,True,Pennsylvania 8
-Pennsylvania,PA-09,Dan Meuser,Republican,Incumbent renominated,R+19,['Rachel Wallace'],['Dan Meuser'],[],1,1,0,True,Pennsylvania 9
+Oklahoma,OK-1,Kevin Hern,Republican,Incumbent retiring to run for U.S. Senate[47],R+11,['John Croisant'],['Mark Tedford'],[],1,1,0,True,Oklahoma 1
+Oklahoma,OK-2,Josh Brecheen,Republican,Incumbent renominated,R+28,['Brandon Wade'],['Josh Brecheen'],"[{'name': 'Ronnie Hopkins', 'party': 'Independent'}]",1,1,1,True,Oklahoma 2
+Oklahoma,OK-3,Frank Lucas,Republican,Incumbent renominated,R+23,['Suzie Byrd'],['Frank Lucas'],[],1,1,0,True,Oklahoma 3
+Oklahoma,OK-4,Tom Cole,Republican,Incumbent renominated,R+17,['Mitchell Jacob'],['Tom Cole'],"[{'name': 'Rocco Bonacci', 'party': 'Independent'}]",1,1,1,True,Oklahoma 4
+Oklahoma,OK-5,Stephanie Bice,Republican,Incumbent renominated,R+9,['Jena Nelson'],['Stephanie Bice'],"[{'name': 'Robert Henri', 'party': 'Independent'}, {'name': 'Austin Nieves', 'party': 'Independent'}]",1,1,2,True,Oklahoma 5
+Oregon,OR-1,Suzanne Bonamici,Democratic,Incumbent renominated,D+20,['Suzanne Bonamici'],['Barbara Kahl'],[],1,1,0,True,Oregon 1
+Oregon,OR-2,Cliff Bentz,Republican,Incumbent renominated,R+14,['Chris Beck'],['Cliff Bentz'],[],1,1,0,True,Oregon 2
+Oregon,OR-3,Maxine Dexter,Democratic,Incumbent renominated,D+24,['Maxine Dexter'],['Loran Ayles'],[],1,1,0,True,Oregon 3
+Oregon,OR-4,Val Hoyle,Democratic,Incumbent renominated,D+6,['Val Hoyle'],['Monique DeSpain'],"[{'name': 'Justin Filip', 'party': 'Pacific Green'}]",1,1,1,True,Oregon 4
+Oregon,OR-5,Janelle Bynum,Democratic,Incumbent renominated,D+4,['Janelle Bynum'],['Patti Adair'],[],1,1,0,True,Oregon 5
+Oregon,OR-6,Andrea Salinas,Democratic,Incumbent renominated,D+6,['Andrea Salinas'],['David Russ'],[],1,1,0,True,Oregon 6
+Pennsylvania,PA-1,Brian Fitzpatrick,Republican,Incumbent renominated,D+1,['Bob Harvie'],['Brian Fitzpatrick'],[],1,1,0,True,Pennsylvania 1
+Pennsylvania,PA-2,Brendan Boyle,Democratic,Incumbent renominated,D+19,['Brendan Boyle'],['Jessica Arriaga'],[],1,1,0,True,Pennsylvania 2
+Pennsylvania,PA-3,Dwight Evans,Democratic,Incumbent retiring[20],D+40,['Chris Rabb'],[],[],1,0,0,False,Pennsylvania 3
+Pennsylvania,PA-4,Madeleine Dean,Democratic,Incumbent renominated,D+8,['Madeleine Dean'],['Aurora Stuski'],[],1,1,0,True,Pennsylvania 4
+Pennsylvania,PA-5,Mary Gay Scanlon,Democratic,Incumbent renominated,D+15,['Mary Gay Scanlon'],['Nicholas Manganaro'],[],1,1,0,True,Pennsylvania 5
+Pennsylvania,PA-6,Chrissy Houlahan,Democratic,Incumbent renominated,D+6,['Chrissy Houlahan'],['Marty Young'],[],1,1,0,True,Pennsylvania 6
+Pennsylvania,PA-7,Ryan Mackenzie,Republican,Incumbent renominated,R+1,['Bob Brooks'],['Ryan Mackenzie'],[],1,1,0,True,Pennsylvania 7
+Pennsylvania,PA-8,Rob Bresnahan,Republican,Incumbent renominated,R+4,['Paige Cognetti'],['Rob Bresnahan'],[],1,1,0,True,Pennsylvania 8
+Pennsylvania,PA-9,Dan Meuser,Republican,Incumbent renominated,R+19,['Rachel Wallace'],['Dan Meuser'],[],1,1,0,True,Pennsylvania 9
 Pennsylvania,PA-10,Scott Perry,Republican,Incumbent renominated,R+3,['Janelle Stelson'],['Scott Perry'],"[{'name': 'Isabelle Harman', 'party': 'Independent'}, {'name': 'Steven Long', 'party': 'Independent'}]",1,1,2,True,Pennsylvania 10
 Pennsylvania,PA-11,Lloyd Smucker,Republican,Incumbent renominated,R+11,['Nancy Mannion'],['Lloyd Smucker'],[],1,1,0,True,Pennsylvania 11
 Pennsylvania,PA-12,Summer Lee,Democratic,Incumbent renominated,D+10,['Summer Lee'],['James Hayes'],[],1,1,0,True,Pennsylvania 12
@@ -343,34 +343,34 @@ Pennsylvania,PA-14,Guy Reschenthaler,Republican,Incumbent renominated,R+17,['Ala
 Pennsylvania,PA-15,Glenn Thompson,Republican,Incumbent renominated,R+19,['Ray Bilger'],['Glenn Thompson'],[],1,1,0,True,Pennsylvania 15
 Pennsylvania,PA-16,Mike Kelly,Republican,Incumbent renominated,R+11,['Justin Wagner'],['Mike Kelly'],[],1,1,0,True,Pennsylvania 16
 Pennsylvania,PA-17,Chris Deluzio,Democratic,Incumbent renominated,D+3,['Chris Deluzio'],['Tony Guy'],[],1,1,0,True,Pennsylvania 17
-Rhode Island,RI-01,Gabe Amo,Democratic,Incumbent's intent unknown,D+12,[],[],[],0,0,0,False,Rhode Island 1
-Rhode Island,RI-02,Seth Magaziner,Democratic,Incumbent running,D+4,['Seth Magaziner'],"['Vic Mellor', 'Stephen Skoly']",[],1,2,0,False,Rhode Island 2
-South Carolina,SC-01,Nancy Mace,Republican,Incumbent retiring to run for governor[48],R+6,"['Mac Deford', 'Nancy Lacore']","['Jenny Costa Honeycutt', 'Mark Smith']","[{'name': 'Margo Ellis', 'party': 'Alliance'}, {'name': 'Bill Reeside', 'party': 'Libertarian'}]",2,2,2,False,South Carolina 1
-South Carolina,SC-02,Joe Wilson,Republican,Incumbent renominated,R+7,"['Zyon Khalifa', 'David Robinson II']",['Joe Wilson'],"[{'name': 'Dayna Alane Smith', 'party': 'Workers'}]",2,1,1,False,South Carolina 2
-South Carolina,SC-03,Sheri Biggs,Republican,Incumbent renominated,R+21,['Eunice Lehmacher'],['Sheri Biggs'],"[{'name': 'Brian Corriea', 'party': 'Libertarian'}]",1,1,1,True,South Carolina 3
-South Carolina,SC-04,William Timmons,Republican,Incumbent renominated,R+11,['Courtney McClain'],['William Timmons'],"[{'name': 'Jessica Ethridge', 'party': 'Libertarian'}]",1,1,1,True,South Carolina 4
-South Carolina,SC-05,Ralph Norman,Republican,Incumbent retiring to run for governor[49],R+11,['Mallory Dittmer'],['Wes Climer'],"[{'name': 'Andy Kaplan', 'party': 'Forward'}]",1,1,1,True,South Carolina 5
-South Carolina,SC-06,Jim Clyburn,Democratic,Incumbent renominated,D+13,['Jim Clyburn'],['John Peterson'],"[{'name': 'Joseph Oddo', 'party': 'Alliance'}]",1,1,1,True,South Carolina 6
-South Carolina,SC-07,Russell Fry,Republican,Incumbent renominated,R+12,['John Vincent'],['Russell Fry'],[],1,1,0,True,South Carolina 7
-South Dakota,SD-At-Large,Dusty Johnson,Republican,Incumbent retiring to run for governor[50],R+15,['Nikki Gronli'],['Marty Jackley'],[],1,1,0,True,South Dakota at-large
-Tennessee,TN-01,Diana Harshbarger,Republican,Incumbent running,R+29,"['Kristi Burke', 'Hernan Garcia', 'David Kerr']",['Diana Harshbarger'],"[{'name': 'Joshua Ashburn', 'party': 'Independent'}, {'name': 'Richard Baker', 'party': 'Independent'}, {'name': 'Chris Campbell', 'party': 'Independent'}, {'name': 'Billy Cody', 'party': 'Independent'}, {'name': 'Tyler McClain', 'party': 'Independent'}]",3,1,5,False,Tennessee 1
-Tennessee,TN-02,Tim Burchett,Republican,Incumbent running,R+17,['Michaela Barnett'],['Tim Burchett'],"[{'name': 'Bruce Fine', 'party': 'Independent'}, {'name': 'Adam Heimerman', 'party': 'Independent'}]",1,1,2,True,Tennessee 2
-Tennessee,TN-03,Chuck Fleischmann,Republican,Incumbent running,R+18,"['Anna Golladay', 'Bryan Martin']",['Chuck Fleischmann'],"[{'name': 'Dean Arnold', 'party': 'Independent'}, {'name': 'Jean Howard-Hill', 'party': 'Independent'}, {'name': 'Rodney Joe King', 'party': 'Independent'}, {'name': 'Donnie Ownby', 'party': 'Independent'}, {'name': 'Edward Roland', 'party': 'Independent'}]",2,1,5,False,Tennessee 3
-Tennessee,TN-04,Scott DesJarlais,Republican,Incumbent running,R+11,"['Victoria Broderick', 'Mike Cortese', 'Cliff Huffman', 'Tim Lanier', 'Joyce Neal']","['Thomas Davis', 'Scott DesJarlais', 'Joshua James', 'Rocky Jones']","[{'name': 'Jacob Anders', 'party': 'Independent'}]",5,4,1,False,Tennessee 4
-Tennessee,TN-05,Andy Ogles,Republican,Incumbent running,R+10,"['Yolanda Cooper-Sutton', 'DeVante Hill', 'Rachel Hurley', 'Carrie Ann Iacomini', 'Chaz Molder']","['Charlie Hatcher', 'Andy Ogles']","[{'name': 'James Johnson', 'party': 'Independent'}, {'name': ""l O'Leary"", 'party': 'Independent'}]",5,2,2,False,Tennessee 5
-Tennessee,TN-06,John Rose,Republican,Incumbent retiring to run for governor[51],R+13,"['Lore Bergman', 'Mike Croley', 'Christopher Finley', 'Miriam Leibowitz', 'Chaney Mosley']","['Natisha Brooks', 'Johnny Garrett', 'Jon Henry', 'Van Hilleary']","[{'name': 'Christopher Monday', 'party': 'Independent'}, {'name': 'Angus Purdy', 'party': 'Independent'}]",5,4,2,False,Tennessee 6
-Tennessee,TN-07,Matt Van Epps,Republican,Incumbent running,R+11,"['Darden Copeland', 'Vincent B. Dixie', 'Saletta Holloway', 'Joshua Sales']",['Matt Van Epps'],"[{'name': 'Andrew Koontz', 'party': 'Independent'}, {'name': 'Lowell Reynolds', 'party': 'Independent'}]",4,1,2,False,Tennessee 7
-Tennessee,TN-08,David Kustoff,Republican,Incumbent running,R+10,"['Dewey Bryan', 'Jordan Hinders', 'Heidi Kuhn', 'Leonard Perkins']",['David Kustoff'],"[{'name': 'Adam Austill', 'party': 'Independent'}, {'name': 'Wells Blankenship', 'party': 'Independent'}, {'name': 'Antonio Futch', 'party': 'Independent'}, {'name': 'Pamela Moses', 'party': 'Independent'}, {'name': 'Horace Taylor', 'party': 'Independent'}, {'name': 'Henry Ward III', 'party': 'Independent'}]",4,1,6,False,Tennessee 8
-Tennessee,TN-09,Steve Cohen,Democratic,Incumbent retiring[21],R+9,"['LaTroy A-Williams', 'London Lamar', 'Justin Pearson', 'Jim Torino']","['Charlotte Bergmann', 'Brent Taylor', 'Jeremy Thompson', 'Todd Warner']","[{'name': 'Dennis Clark', 'party': 'Independent'}, {'name': 'Michelle Head', 'party': 'Independent'}]",4,4,2,False,Tennessee 9
-Texas,TX-01,Nathaniel Moran,Republican,Incumbent renominated,R+24,['Yolanda Prince'],['Nathaniel Moran'],[],1,1,0,True,Texas 1
-Texas,TX-02,Dan Crenshaw,Republican,Incumbent lost renomination[65],R+11,['Shaun Finnie'],['Steve Toth'],[],1,1,0,True,Texas 2
-Texas,TX-03,Keith Self,Republican,Incumbent renominated,R+11,['Evan Hunt'],['Keith Self'],[],1,1,0,True,Texas 3
-Texas,TX-04,Pat Fallon,Republican,Incumbent renominated,R+12,['Jason Pearce'],['Pat Fallon'],[],1,1,0,True,Texas 4
-Texas,TX-05,Lance Gooden,Republican,Incumbent renominated,R+10,['Chelsey Hockett'],['Lance Gooden'],[],1,1,0,True,Texas 5
-Texas,TX-06,Jake Ellzey,Republican,Incumbent renominated,R+11,['Danny Minton'],['Jake Ellzey'],[],1,1,0,True,Texas 6
-Texas,TX-07,Lizzie Fletcher,Democratic,Incumbent renominated,D+13,['Lizzie Fletcher'],['Alexander Hale'],[],1,1,0,True,Texas 7
-Texas,TX-08,Morgan Luttrell,Republican,Incumbent retiring[52],R+13,['Laura Jones'],['Jessica Hart Steinmann'],[],1,1,0,True,Texas 8
-Texas,TX-09,None (new seat),None (new seat),New representative to be elected,R+9,['Leticia Gutierrez'],['Alex Mealer'],[],1,1,0,True,Texas 9
+Rhode Island,RI-1,Gabe Amo,Democratic,Incumbent running,D+12,['Gabe Amo'],['Kellie Keenan'],"[{'name': 'Pedro DeSouza', 'party': 'Independent'}]",1,1,1,True,Rhode Island 1
+Rhode Island,RI-2,Seth Magaziner,Democratic,Incumbent running,D+4,['Seth Magaziner'],"['Vic Mellor', 'Stephen Skoly']",[],1,2,0,False,Rhode Island 2
+South Carolina,SC-1,Nancy Mace,Republican,Incumbent retiring to run for governor[48],R+6,['Nancy Lacore'],['Jenny Costa Honeycutt'],"[{'name': 'Margo Ellis', 'party': 'Alliance'}, {'name': 'Bill Reeside', 'party': 'Libertarian'}]",1,1,2,True,South Carolina 1
+South Carolina,SC-2,Joe Wilson,Republican,Incumbent renominated,R+7,['Zyon Khalifa'],['Joe Wilson'],"[{'name': 'Dayna Alane Smith', 'party': 'Workers'}]",1,1,1,True,South Carolina 2
+South Carolina,SC-3,Sheri Biggs,Republican,Incumbent renominated,R+21,['Eunice Lehmacher'],['Sheri Biggs'],"[{'name': 'Brian Corriea', 'party': 'Libertarian'}]",1,1,1,True,South Carolina 3
+South Carolina,SC-4,William Timmons,Republican,Incumbent renominated,R+11,['Courtney McClain'],['William Timmons'],"[{'name': 'Jessica Ethridge', 'party': 'Libertarian'}]",1,1,1,True,South Carolina 4
+South Carolina,SC-5,Ralph Norman,Republican,Incumbent retiring to run for governor[49],R+11,['Mallory Dittmer'],['Wes Climer'],"[{'name': 'Andy Kaplan', 'party': 'Forward'}]",1,1,1,True,South Carolina 5
+South Carolina,SC-6,Jim Clyburn,Democratic,Incumbent renominated,D+13,['Jim Clyburn'],['John Peterson'],"[{'name': 'Joseph Oddo', 'party': 'Alliance'}]",1,1,1,True,South Carolina 6
+South Carolina,SC-7,Russell Fry,Republican,Incumbent renominated,R+12,['John Vincent'],['Russell Fry'],[],1,1,0,True,South Carolina 7
+South Dakota,SD-1,Dusty Johnson,Republican,Incumbent retiring to run for governor[50],R+15,['Nikki Gronli'],['Marty Jackley'],[],1,1,0,True,South Dakota at-large
+Tennessee,TN-1,Diana Harshbarger,Republican,Incumbent running,R+29,"['Kristi Burke', 'Hernan Garcia', 'David Kerr']",['Diana Harshbarger'],"[{'name': 'Joshua Ashburn', 'party': 'Independent'}, {'name': 'Richard Baker', 'party': 'Independent'}, {'name': 'Chris Campbell', 'party': 'Independent'}, {'name': 'Billy Cody', 'party': 'Independent'}, {'name': 'Tyler McClain', 'party': 'Independent'}]",3,1,5,False,Tennessee 1
+Tennessee,TN-2,Tim Burchett,Republican,Incumbent running,R+17,['Michaela Barnett'],['Tim Burchett'],"[{'name': 'Bruce Fine', 'party': 'Independent'}, {'name': 'Adam Heimerman', 'party': 'Independent'}]",1,1,2,True,Tennessee 2
+Tennessee,TN-3,Chuck Fleischmann,Republican,Incumbent running,R+18,"['Anna Golladay', 'Bryan Martin']",['Chuck Fleischmann'],"[{'name': 'Dean Arnold', 'party': 'Independent'}, {'name': 'Jean Howard-Hill', 'party': 'Independent'}, {'name': 'Rodney Joe King', 'party': 'Independent'}, {'name': 'Donnie Ownby', 'party': 'Independent'}, {'name': 'Edward Roland', 'party': 'Independent'}]",2,1,5,False,Tennessee 3
+Tennessee,TN-4,Scott DesJarlais,Republican,Incumbent running,R+11,"['Victoria Broderick', 'Mike Cortese', 'Cliff Huffman', 'Tim Lanier', 'Joyce Neal']","['Thomas Davis', 'Scott DesJarlais', 'Joshua James', 'Rocky Jones']","[{'name': 'Jacob Anders', 'party': 'Independent'}]",5,4,1,False,Tennessee 4
+Tennessee,TN-5,Andy Ogles,Republican,Incumbent running,R+10,"['Yolanda Cooper-Sutton', 'DeVante Hill', 'Rachel Hurley', 'Carrie Ann Iacomini', 'Chaz Molder']","['Charlie Hatcher', 'Andy Ogles']","[{'name': 'James Johnson', 'party': 'Independent'}, {'name': ""l O'Leary"", 'party': 'Independent'}]",5,2,2,False,Tennessee 5
+Tennessee,TN-6,John Rose,Republican,Incumbent retiring to run for governor[51],R+13,"['Lore Bergman', 'Mike Croley', 'Christopher Finley', 'Miriam Leibowitz', 'Chaney Mosley']","['Natisha Brooks', 'Johnny Garrett', 'Jon Henry', 'Van Hilleary']","[{'name': 'Christopher Monday', 'party': 'Independent'}, {'name': 'Angus Purdy', 'party': 'Independent'}]",5,4,2,False,Tennessee 6
+Tennessee,TN-7,Matt Van Epps,Republican,Incumbent running,R+11,"['Darden Copeland', 'Vincent B. Dixie', 'Saletta Holloway', 'Joshua Sales']",['Matt Van Epps'],"[{'name': 'Andrew Koontz', 'party': 'Independent'}, {'name': 'Lowell Reynolds', 'party': 'Independent'}]",4,1,2,False,Tennessee 7
+Tennessee,TN-8,David Kustoff,Republican,Incumbent running,R+10,"['Dewey Bryan', 'Jordan Hinders', 'Heidi Kuhn', 'Leonard Perkins']",['David Kustoff'],"[{'name': 'Adam Austill', 'party': 'Independent'}, {'name': 'Wells Blankenship', 'party': 'Independent'}, {'name': 'Antonio Futch', 'party': 'Independent'}, {'name': 'Pamela Moses', 'party': 'Independent'}, {'name': 'Horace Taylor', 'party': 'Independent'}, {'name': 'Henry Ward III', 'party': 'Independent'}]",4,1,6,False,Tennessee 8
+Tennessee,TN-9,Steve Cohen,Democratic,Incumbent retiring[21],R+9,"['LaTroy A-Williams', 'London Lamar', 'Justin Pearson', 'Jim Torino']","['Charlotte Bergmann', 'Brent Taylor', 'Jeremy Thompson', 'Todd Warner']","[{'name': 'Dennis Clark', 'party': 'Independent'}, {'name': 'Michelle Head', 'party': 'Independent'}]",4,4,2,False,Tennessee 9
+Texas,TX-1,Nathaniel Moran,Republican,Incumbent renominated,R+24,['Yolanda Prince'],['Nathaniel Moran'],[],1,1,0,True,Texas 1
+Texas,TX-2,Dan Crenshaw,Republican,Incumbent lost renomination[68],R+11,['Shaun Finnie'],['Steve Toth'],[],1,1,0,True,Texas 2
+Texas,TX-3,Keith Self,Republican,Incumbent renominated,R+11,['Evan Hunt'],['Keith Self'],[],1,1,0,True,Texas 3
+Texas,TX-4,Pat Fallon,Republican,Incumbent renominated,R+12,['Jason Pearce'],['Pat Fallon'],[],1,1,0,True,Texas 4
+Texas,TX-5,Lance Gooden,Republican,Incumbent renominated,R+10,['Chelsey Hockett'],['Lance Gooden'],[],1,1,0,True,Texas 5
+Texas,TX-6,Jake Ellzey,Republican,Incumbent renominated,R+11,['Danny Minton'],['Jake Ellzey'],[],1,1,0,True,Texas 6
+Texas,TX-7,Lizzie Fletcher,Democratic,Incumbent renominated,D+13,['Lizzie Fletcher'],['Alexander Hale'],[],1,1,0,True,Texas 7
+Texas,TX-8,Morgan Luttrell,Republican,Incumbent retiring[52],R+13,['Laura Jones'],['Jessica Hart Steinmann'],[],1,1,0,True,Texas 8
+Texas,TX-9,None (new seat),None (new seat),New representative to be elected,R+9,['Leticia Gutierrez'],['Alex Mealer'],[],1,1,0,True,Texas 9
 Texas,TX-10,Michael McCaul,Republican,Incumbent retiring[53],R+10,['Caitlin Rourk'],['Chris Gober'],[],1,1,0,True,Texas 10
 Texas,TX-11,August Pfluger,Republican,Incumbent renominated,R+17,['Claire Reynolds'],['August Pfluger'],[],1,1,0,True,Texas 11
 Texas,TX-12,Craig Goldman,Republican,Incumbent renominated,R+11,['Angela Rodriguez Prilliman'],['Craig Goldman'],[],1,1,0,True,Texas 12
@@ -380,12 +380,12 @@ Texas,TX-15,Monica De La Cruz,Republican,Incumbent renominated,R+7,['Bobby Pulid
 Texas,TX-16,Veronica Escobar,Democratic,Incumbent renominated,D+11,['Veronica Escobar'],['Adam Bauman'],[],1,1,0,True,Texas 16
 Texas,TX-17,Pete Sessions,Republican,Incumbent renominated,R+10,['Casey Shepard'],['Pete Sessions'],[],1,1,0,True,Texas 17
 Texas,TX-18,Christian Menefee,Democratic,Incumbent renominated,D+29,['Christian Menefee'],['Ronald Whitfield'],[],1,1,0,True,Texas 18
-Texas,TX-18,Al Green Redistricted from the 9th district,Democratic,Incumbent lost renomination[247] Democratic loss,D+29,['Christian Menefee'],['Ronald Whitfield'],[],1,1,0,True,Texas 18
+Texas,TX-18,Al Green Redistricted from the 9th district,Democratic,Incumbent lost renomination[243] Democratic loss,D+29,['Christian Menefee'],['Ronald Whitfield'],[],1,1,0,True,Texas 18
 Texas,TX-19,Jodey Arrington,Republican,Incumbent retiring[54],R+25,['Kyle Rable'],['Tom Sell'],[],1,1,0,True,Texas 19
 Texas,TX-20,Joaquin Castro,Democratic,Incumbent renominated,D+16,['Joaquin Castro'],['Edgardo Rafael Baez'],[],1,1,0,True,Texas 20
 Texas,TX-21,Chip Roy,Republican,Incumbent retiring to run for Texas attorney general[55],R+10,['Kristin Hook'],['Mark Teixeira'],[],1,1,0,True,Texas 21
 Texas,TX-22,Troy Nehls,Republican,Incumbent retiring[56],R+11,['Marquette Greene-Scott'],['Trever Nehls'],[],1,1,0,True,Texas 22
-Texas,TX-23,TBD[aj],TBD[aj],Incumbent to be determined in 2026,R+7,['Katy Padilla Stout'],['Brandon Herrera'],[],1,1,0,True,Texas 23
+Texas,TX-23,TBD[s],TBD[s],Incumbent to be determined in 2026,R+7,['Katy Padilla Stout'],['Brandon Herrera'],[],1,1,0,True,Texas 23
 Texas,TX-24,Beth Van Duyne,Republican,Incumbent renominated,R+8,['Kevin Burge'],['Beth Van Duyne'],[],1,1,0,True,Texas 24
 Texas,TX-25,Marc Veasey Redistricted from the 33rd district,Democratic,Incumbent retiring[23] Democratic loss,R+11,['Dione Sims'],['Roger Williams'],[],1,1,0,True,Texas 25
 Texas,TX-25,Roger Williams,Republican,Incumbent renominated,R+11,['Dione Sims'],['Roger Williams'],[],1,1,0,True,Texas 25
@@ -397,48 +397,49 @@ Texas,TX-30,None (new seat),None (new seat),New representative to be elected,D+2
 Texas,TX-31,John Carter,Republican,Incumbent renominated,R+11,['Justin Early'],['John Carter'],[],1,1,0,True,Texas 31
 Texas,TX-32,None (new seat),None (new seat),New representative to be elected,R+8,['Dan Barrios'],['Jace Yarbrough'],[],1,1,0,True,Texas 32
 Texas,TX-33,Jasmine Crockett Redistricted from the 30th district,Democratic,Incumbent retiring to run for U.S. Senate[22] Democratic loss,D+18,['Colin Allred'],['Patrick Gillespie'],[],1,1,0,True,Texas 33
-Texas,TX-33,Julie Johnson Redistricted from the 32nd district,Democratic,Incumbent lost renomination[250],D+18,['Colin Allred'],['Patrick Gillespie'],[],1,1,0,True,Texas 33
+Texas,TX-33,Julie Johnson Redistricted from the 32nd district,Democratic,Incumbent lost renomination[246],D+18,['Colin Allred'],['Patrick Gillespie'],[],1,1,0,True,Texas 33
 Texas,TX-34,Vicente Gonzalez,Democratic,Incumbent renominated,R+3,['Vicente Gonzalez'],['Eric Flores'],[],1,1,0,True,Texas 34
 Texas,TX-35,None (new seat),None (new seat),New representative to be elected,R+4,['Johnny Garcia'],['Carlos De La Cruz'],[],1,1,0,True,Texas 35
 Texas,TX-36,Brian Babin,Republican,Incumbent renominated,R+12,['Rhonda Hart'],['Brian Babin'],[],1,1,0,True,Texas 36
 Texas,TX-37,Lloyd Doggett,Democratic,Incumbent retiring[24] Democratic loss,D+30,['Greg Casar'],['a'],[],1,1,0,True,Texas 37
 Texas,TX-37,Greg Casar Redistricted from the 35th district,Democratic,Incumbent renominated,D+30,['Greg Casar'],['a'],[],1,1,0,True,Texas 37
 Texas,TX-38,Wesley Hunt,Republican,Incumbent retiring to run for U.S. Senate[57],R+10,['Melissa McDonough'],['Jon Bonck'],[],1,1,0,True,Texas 38
-Utah,UT-01,None (new seat),None (new seat),New representative to be elected,D+12,"['Nate Blouin', 'Michael Farrell', 'Ben McAdams', 'Liban Mohamed']",['Riley Owen'],"[{'name': 'January Walker', 'party': 'Forward'}, {'name': 'Jesse West', 'party': 'Libertarian'}]",4,1,2,False,Utah 1
-Utah,UT-02,Blake Moore Redistricted from the 1st district,Republican,Incumbent running,R+15,['Peter Crosby'],"['Karianne Lisonbee', 'Blake Moore']","[{'name': 'Carlton Bowen', 'party': 'Independent American'}, {'name': 'Daniel Cottam', 'party': 'Libertarian'}]",1,2,2,False,Utah 2
-Utah,UT-03,Celeste Maloy Redistricted from the 2nd district,Republican,Incumbent running,R+21,['Kent Udell'],"['Phil Lyman', 'Celeste Maloy']","[{'name': 'Cassie Easley', 'party': 'Constitution'}, {'name': 'Michael Stoddard', 'party': 'Libertarian'}]",1,2,2,False,Utah 3
-Utah,UT-04,Burgess Owens,Republican,Incumbent retiring[58] Republican loss,R+17,['Jonny Larsen'],['Mike Kennedy'],"[{'name': 'Steven Burt', 'party': 'Independent'}, {'name': 'Taylor Wright', 'party': 'Libertarian'}]",1,1,2,True,Utah 4
-Utah,UT-04,Mike Kennedy Redistricted from the 3rd district,Republican,Incumbent renominated,R+17,['Jonny Larsen'],['Mike Kennedy'],"[{'name': 'Steven Burt', 'party': 'Independent'}, {'name': 'Taylor Wright', 'party': 'Libertarian'}]",1,1,2,True,Utah 4
-Vermont,VT-At-Large,Becca Balint,Democratic,Incumbent running,D+17,['Becca Balint'],"['Mark Coester', 'Gerald Malloy']","[{'name': 'Adam Ortiz', 'party': 'Independent'}]",1,2,1,False,Vermont at-large
-Virginia,VA-01,Rob Wittman,Republican,Incumbent running,R+3,"['Elizabeth Beggs', 'Salaam Bhatti', 'Tim Cywinski', 'Jason Knapp', 'Ericka Kopp', 'Shannon Taylor', 'Melvin Tull']",['Rob Wittman'],[],7,1,0,False,Virginia 1
-Virginia,VA-02,Jen Kiggans,Republican,Incumbent running,EVEN,"['Nila Devanath', 'Bill Fleming', 'Elaine Luria', 'Patrick Mosolf']",['Jen Kiggans'],[],4,1,0,False,Virginia 2
-Virginia,VA-03,Bobby Scott,Democratic,Incumbent running,D+18,['Bobby Scott'],['Edwin Rivera'],[],1,1,0,True,Virginia 3
-Virginia,VA-04,Jennifer McClellan,Democratic,Incumbent running,D+17,['Jennifer McClellan'],[],[],1,0,0,False,Virginia 4
-Virginia,VA-05,John McGuire,Republican,Incumbent running,R+6,"['Suzanne Krzyzanowski', 'Tom Perriello', 'Rob Tracinski']","['Melanie Lucero', 'John McGuire']",[],3,2,0,False,Virginia 5
-Virginia,VA-06,Ben Cline,Republican,Incumbent running,R+12,['Beth Macy'],['Ben Cline'],[],1,1,0,True,Virginia 6
-Virginia,VA-07,Eugene Vindman,Democratic,Incumbent running,D+2,['Eugene Vindman'],"['Philip Harding', 'Doug Ollivant', 'Rick Smithers']",[],1,3,0,False,Virginia 7
-Virginia,VA-08,Don Beyer,Democratic,Incumbent running,D+26,"['Don Beyer', 'Lorena Bruner', 'Michael Duffin', 'Adam Dunigan', 'Mohamed Seifeldein']",['Tony Sabio'],[],5,1,0,False,Virginia 8
-Virginia,VA-09,Morgan Griffith,Republican,Incumbent running,R+22,"['Douglas Crockett', 'Adam Murphy', 'Joy Powers']",['Morgan Griffith'],[],3,1,0,False,Virginia 9
+Utah,UT-1,None (new seat),None (new seat),New representative to be elected,D+12,['Ben McAdams'],['Riley Owen'],"[{'name': 'January Walker', 'party': 'Forward'}, {'name': 'Jesse West', 'party': 'Libertarian'}]",1,1,2,True,Utah 1
+Utah,UT-2,Blake Moore Redistricted from the 1st district,Republican,Incumbent renominated,R+15,['Peter Crosby'],['Blake Moore'],"[{'name': 'Carlton Bowen', 'party': 'Independent American'}, {'name': 'Daniel Cottam', 'party': 'Libertarian'}]",1,1,2,True,Utah 2
+Utah,UT-3,Celeste Maloy Redistricted from the 2nd district,Republican,Incumbent renominated,R+21,['Kent Udell'],['Celeste Maloy'],"[{'name': 'Cassie Easley', 'party': 'Constitution'}, {'name': 'Michael Stoddard', 'party': 'Libertarian'}]",1,1,2,True,Utah 3
+Utah,UT-4,Burgess Owens,Republican,Incumbent retiring[58] Republican loss,R+17,['Jonny Larsen'],['Mike Kennedy'],"[{'name': 'Steven Burt', 'party': 'Independent'}, {'name': 'Taylor Wright', 'party': 'Libertarian'}]",1,1,2,True,Utah 4
+Utah,UT-4,Mike Kennedy Redistricted from the 3rd district,Republican,Incumbent renominated,R+17,['Jonny Larsen'],['Mike Kennedy'],"[{'name': 'Steven Burt', 'party': 'Independent'}, {'name': 'Taylor Wright', 'party': 'Libertarian'}]",1,1,2,True,Utah 4
+Vermont,VT-1,Becca Balint,Democratic,Incumbent running,D+17,['Becca Balint'],"['Mark Coester', 'Gerald Malloy']","[{'name': 'Adam Ortiz', 'party': 'Independent'}]",1,2,1,False,Vermont at-large
+Virginia,,,,,,[],[],[],0,0,0,False,
+Virginia,VA-1,Rob Wittman,Republican,Incumbent running,R+3,"['Elizabeth Beggs', 'Salaam Bhatti', 'Tim Cywinski', 'Jason Knapp', 'Ericka Kopp', 'Shannon Taylor', 'Melvin Tull']",['Rob Wittman'],[],7,1,0,False,Virginia 1
+Virginia,VA-2,Jen Kiggans,Republican,Incumbent running,EVEN,"['Nila Devanath', 'Bill Fleming', 'Elaine Luria', 'Patrick Mosolf']",['Jen Kiggans'],[],4,1,0,False,Virginia 2
+Virginia,VA-3,Bobby Scott,Democratic,Incumbent running,D+18,['Bobby Scott'],['Edwin Rivera'],[],1,1,0,True,Virginia 3
+Virginia,VA-4,Jennifer McClellan,Democratic,Incumbent running,D+17,['Jennifer McClellan'],[],[],1,0,0,False,Virginia 4
+Virginia,VA-5,John McGuire,Republican,Incumbent running,R+6,"['Suzanne Krzyzanowski', 'Tom Perriello', 'Rob Tracinski']","['Melanie Lucero', 'John McGuire']",[],3,2,0,False,Virginia 5
+Virginia,VA-6,Ben Cline,Republican,Incumbent running,R+12,['Beth Macy'],['Ben Cline'],[],1,1,0,True,Virginia 6
+Virginia,VA-7,Eugene Vindman,Democratic,Incumbent running,D+2,['Eugene Vindman'],"['Philip Harding', 'Doug Ollivant', 'Rick Smithers']",[],1,3,0,False,Virginia 7
+Virginia,VA-8,Don Beyer,Democratic,Incumbent running,D+26,"['Don Beyer', 'Lorena Bruner', 'Michael Duffin', 'Adam Dunigan', 'Mohamed Seifeldein']",['Tony Sabio'],[],5,1,0,False,Virginia 8
+Virginia,VA-9,Morgan Griffith,Republican,Incumbent running,R+22,"['Douglas Crockett', 'Adam Murphy', 'Joy Powers']",['Morgan Griffith'],[],3,1,0,False,Virginia 9
 Virginia,VA-10,Suhas Subramanyam,Democratic,Incumbent running,D+6,['Suhas Subramanyam'],"['Dave Beckwith', 'Julie Perry', 'Anthony Suttles', 'Sam Wong']",[],1,4,0,False,Virginia 10
 Virginia,VA-11,James Walkinshaw,Democratic,Incumbent running,D+18,['James Walkinshaw'],['Arthur Purves'],[],1,1,0,True,Virginia 11
-Washington,WA-01,Suzan DelBene,Democratic,Incumbent running,D+15,"['Suzan DelBene', 'Hunter Gordon', 'Catherine Hildebrand', 'Benjamin Kincaid', 'Bryce Nickel']",['Mary Silva'],"[{'name': 'James Etzkorn', 'party': 'Independent'}]",5,1,1,False,Washington 1
-Washington,WA-02,Rick Larsen,Democratic,Incumbent running,D+12,"['Devin Hermanson', 'Rick Larsen', 'Tomas Scheel']","['Edwin Feller', 'Raymond Pelletti']",[],3,2,0,False,Washington 2
-Washington,WA-03,Marie Gluesenkamp Perez,Democratic,Incumbent running,R+2,"['Austin Braswell', 'Marie Gluesenkamp Perez', 'Brent Hennrich', 'Troy Rasband']","['John Braun', 'Lawrence Kellogg', 'John Roco']","[{'name': 'Antony Barran', 'party': 'Cascade'}, {'name': 'John Saulie-Rohman', 'party': 'Independent'}]",4,3,2,False,Washington 3
-Washington,WA-04,Dan Newhouse,Republican,Incumbent retiring[59],R+10,['John Duresky'],"['Matt Boehnke', 'John Hughs', 'Amanda McKinney', 'Elpidia Saavedra', 'Jerrod Sessler', 'Ken Vaz']","[{'name': 'Jack Kobiesa', 'party': 'Independent'}, {'name': 'Devin Poore', 'party': 'Cascade'}, {'name': 'Zac Rossi', 'party': 'Independent'}, {'name': 'Favian Valencia', 'party': 'Independent'}]",1,6,4,False,Washington 4
-Washington,WA-05,Michael Baumgartner,Republican,Incumbent running,R+5,"['Carmela Conroy', 'Kevin Fagan', 'Richard Freudenberg', 'Mike Gahvarehchee', 'Bajun Mavalwalla', 'Michael McGarr', 'David Womack']",['Michael Baumgartner'],"[{'name': 'Andrew Bartleson', 'party': 'Independent'}, {'name': 'Ann Marie Danimus', 'party': 'Independent'}, {'name': 'Matthew Hayes', 'party': 'Independent'}, {'name': 'Nate Powell', 'party': 'Independent'}, {'name': 'Kyle Ursey', 'party': 'Independent'}]",7,1,5,False,Washington 5
-Washington,WA-06,Emily Randall,Democratic,Incumbent running,D+10,['Emily Randall'],['Teresa Fox'],"[{'name': 'Macy Jones', 'party': 'Independent'}, {'name': 'Leon Lawson', 'party': 'Trump Republican'}, {'name': ""Brian O'Gorman"", 'party': 'Independent'}]",1,1,3,True,Washington 6
-Washington,WA-07,Pramila Jayapal,Democratic,Incumbent running,D+39,"['Pramila Jayapal', 'Gwen Kirkland']",['Nirav Sheth'],"[{'name': 'David Blomstrom', 'party': 'Fifth Republic'}]",2,1,1,False,Washington 7
-Washington,WA-08,Kim Schrier,Democratic,Incumbent running,D+3,"['Keith Arnold', 'Kim Schrier']","['Trinh Ha', 'Bob Hagglund', 'Spencer Meline', 'Andres Valleza']",[],2,4,0,False,Washington 8
-Washington,WA-09,Adam Smith,Democratic,Incumbent running,D+22,"['Melissa Chaudhry', 'Adam Smith']",['Doug Basler'],"[{'name': 'Jacob Perasso', 'party': 'Socialist Workers'}, {'name': 'Kshama Sawant', 'party': 'Independent'}]",2,1,2,False,Washington 9
+Washington,WA-1,Suzan DelBene,Democratic,Incumbent running,D+15,"['Suzan DelBene', 'Hunter Gordon', 'Catherine Hildebrand', 'Benjamin Kincaid', 'Bryce Nickel']",['Mary Silva'],"[{'name': 'James Etzkorn', 'party': 'Independent'}]",5,1,1,False,Washington 1
+Washington,WA-2,Rick Larsen,Democratic,Incumbent running,D+12,"['Devin Hermanson', 'Rick Larsen', 'Tomas Scheel']","['Edwin Feller', 'Raymond Pelletti']",[],3,2,0,False,Washington 2
+Washington,WA-3,Marie Gluesenkamp Perez,Democratic,Incumbent running,R+2,"['Austin Braswell', 'Marie Gluesenkamp Perez', 'Brent Hennrich', 'Troy Rasband']","['John Braun', 'Lawrence Kellogg', 'John Roco']","[{'name': 'Antony Barran', 'party': 'Cascade'}, {'name': 'John Saulie-Rohman', 'party': 'Independent'}]",4,3,2,False,Washington 3
+Washington,WA-4,Dan Newhouse,Republican,Incumbent retiring[59],R+10,['John Duresky'],"['Matt Boehnke', 'John Hughs', 'Amanda McKinney', 'Elpidia Saavedra', 'Jerrod Sessler', 'Ken Vaz']","[{'name': 'Jack Kobiesa', 'party': 'Independent'}, {'name': 'Devin Poore', 'party': 'Cascade'}, {'name': 'Zac Rossi', 'party': 'Independent'}, {'name': 'Favian Valencia', 'party': 'Independent'}]",1,6,4,False,Washington 4
+Washington,WA-5,Michael Baumgartner,Republican,Incumbent running,R+5,"['Carmela Conroy', 'Kevin Fagan', 'Richard Freudenberg', 'Mike Gahvarehchee', 'Bajun Mavalwalla', 'Michael McGarr', 'David Womack']",['Michael Baumgartner'],"[{'name': 'Andrew Bartleson', 'party': 'Independent'}, {'name': 'Ann Marie Danimus', 'party': 'Independent'}, {'name': 'Matthew Hayes', 'party': 'Independent'}, {'name': 'Nate Powell', 'party': 'Independent'}, {'name': 'Kyle Ursey', 'party': 'Independent'}]",7,1,5,False,Washington 5
+Washington,WA-6,Emily Randall,Democratic,Incumbent running,D+10,['Emily Randall'],['Teresa Fox'],"[{'name': 'Macy Jones', 'party': 'Independent'}, {'name': 'Leon Lawson', 'party': 'Trump Republican'}, {'name': ""Brian O'Gorman"", 'party': 'Independent'}]",1,1,3,True,Washington 6
+Washington,WA-7,Pramila Jayapal,Democratic,Incumbent running,D+39,"['Pramila Jayapal', 'Gwen Kirkland']",['Nirav Sheth'],"[{'name': 'David Blomstrom', 'party': 'Fifth Republic'}]",2,1,1,False,Washington 7
+Washington,WA-8,Kim Schrier,Democratic,Incumbent running,D+3,"['Keith Arnold', 'Kim Schrier']","['Trinh Ha', 'Bob Hagglund', 'Spencer Meline', 'Andres Valleza']",[],2,4,0,False,Washington 8
+Washington,WA-9,Adam Smith,Democratic,Incumbent running,D+22,"['Melissa Chaudhry', 'Adam Smith']",['Doug Basler'],"[{'name': 'Jacob Perasso', 'party': 'Socialist Workers'}, {'name': 'Kshama Sawant', 'party': 'Independent'}]",2,1,2,False,Washington 9
 Washington,WA-10,Marilyn Strickland,Democratic,Incumbent running,D+9,"['Adam Arafat', 'Alex Scheel', 'Marilyn Strickland']",['Chris Chung'],"[{'name': 'Curtis Engle', 'party': 'Independent'}, {'name': 'Derek Maynes', 'party': 'Independent'}]",3,1,2,False,Washington 10
-West Virginia,WV-01,Carol Miller,Republican,Incumbent renominated,R+22,['Vince George'],['Carol Miller'],[],1,1,0,True,West Virginia 1
-West Virginia,WV-02,Riley Moore,Republican,Incumbent renominated,R+20,['Ace Parsi'],['Riley Moore'],[],1,1,0,True,West Virginia 2
-Wisconsin,WI-01,Bryan Steil,Republican,Incumbent running,R+2,"['Miguel Aranda', 'Mitchell Berman', 'Peter Burgelis', 'Lorenzo Santos']",['Bryan Steil'],[],4,1,0,False,Wisconsin 1
-Wisconsin,WI-02,Mark Pocan,Democratic,Incumbent running,D+21,"['Douglas Alexander', 'Mark Pocan']",[],[],2,0,0,False,Wisconsin 2
-Wisconsin,WI-03,Derrick Van Orden,Republican,Incumbent running,R+3,"['Emily Berge', 'Rebecca Cooke']",['Derrick Van Orden'],"[{'name': 'Alexander Kent', 'party': 'Independent'}, {'name': 'Rustin Provance', 'party': 'Independent'}]",2,1,2,False,Wisconsin 3
-Wisconsin,WI-04,Gwen Moore,Democratic,Incumbent running,D+26,"['Amy Donohue', 'Gwen Moore']","['Purnima Nath', 'Tim Rogers']","[{'name': 'Arthur Burks', 'party': 'Independent'}, {'name': 'Robert Raymond', 'party': 'Independent'}]",2,2,2,False,Wisconsin 4
-Wisconsin,WI-05,Scott Fitzgerald,Republican,Incumbent running,R+11,['Andrew Beck'],['Scott Fitzgerald'],[],1,1,0,True,Wisconsin 5
-Wisconsin,WI-06,Glenn Grothman,Republican,Incumbent running,R+8,"['Amanda Bell', 'Brad Smith']",['Glenn Grothman'],"[{'name': 'Matthew Arndt', 'party': 'Wisconsin Green'}, {'name': 'Elizabeth Fitzgibbon', 'party': 'Independent'}, {'name': 'Michael Thurow', 'party': 'Independent'}]",2,1,3,False,Wisconsin 6
-Wisconsin,WI-07,Tom Tiffany,Republican,Incumbent retiring to run for governor[60],R+11,"['Chris Armstrong', 'Fred Clark', 'Ginger Murray']","['Michael Alfonso', 'Niina Baum', 'Jessi Ebben', 'Kevin Hermining', 'Don Raihala']",[],3,5,0,False,Wisconsin 7
-Wisconsin,WI-08,Tony Wied,Republican,Incumbent running,R+8,"['Rick Crosson', 'Katrina deVille', 'Mark Scheffler']",['Tony Wied'],[],3,1,0,False,Wisconsin 8
-Wyoming,WY-At-Large,Harriet Hageman,Republican,Incumbent retiring to run for U.S. Senate[61],R+23,"['Elena Del Real', 'Lisa Kinney']","['Jillian Balow', 'Bo Biteman', 'Frank Chapman', 'Kevin Christensen', 'Richard Dodson', 'Steve Friess', 'David Giralt', 'Keith Goodenough', 'Chuck Gray', 'Reid Rasner']","[{'name': 'Shawn Johnson', 'party': 'Libertarian'}]",2,10,1,False,Wyoming at-large
+West Virginia,WV-1,Carol Miller,Republican,Incumbent renominated,R+22,['Vince George'],['Carol Miller'],[],1,1,0,True,West Virginia 1
+West Virginia,WV-2,Riley Moore,Republican,Incumbent renominated,R+20,['Ace Parsi'],['Riley Moore'],[],1,1,0,True,West Virginia 2
+Wisconsin,WI-1,Bryan Steil,Republican,Incumbent running,R+2,"['Miguel Aranda', 'Mitchell Berman', 'Peter Burgelis', 'Lorenzo Santos']",['Bryan Steil'],[],4,1,0,False,Wisconsin 1
+Wisconsin,WI-2,Mark Pocan,Democratic,Incumbent running,D+21,"['Douglas Alexander', 'Mark Pocan']",[],[],2,0,0,False,Wisconsin 2
+Wisconsin,WI-3,Derrick Van Orden,Republican,Incumbent running,R+3,"['Emily Berge', 'Rebecca Cooke']",['Derrick Van Orden'],"[{'name': 'Alexander Kent', 'party': 'Independent'}, {'name': 'Rustin Provance', 'party': 'Independent'}]",2,1,2,False,Wisconsin 3
+Wisconsin,WI-4,Gwen Moore,Democratic,Incumbent running,D+26,"['Amy Donohue', 'Gwen Moore']","['Purnima Nath', 'Tim Rogers']","[{'name': 'Arthur Burks', 'party': 'Independent'}, {'name': 'Robert Raymond', 'party': 'Independent'}]",2,2,2,False,Wisconsin 4
+Wisconsin,WI-5,Scott Fitzgerald,Republican,Incumbent running,R+11,['Andrew Beck'],['Scott Fitzgerald'],[],1,1,0,True,Wisconsin 5
+Wisconsin,WI-6,Glenn Grothman,Republican,Incumbent running,R+8,"['Amanda Bell', 'Brad Smith']",['Glenn Grothman'],"[{'name': 'Matthew Arndt', 'party': 'Wisconsin Green'}, {'name': 'Elizabeth Fitzgibbon', 'party': 'Independent'}, {'name': 'Michael Thurow', 'party': 'Independent'}]",2,1,3,False,Wisconsin 6
+Wisconsin,WI-7,Tom Tiffany,Republican,Incumbent retiring to run for governor[60],R+11,"['Chris Armstrong', 'Fred Clark', 'Ginger Murray']","['Michael Alfonso', 'Niina Baum', 'Jessi Ebben', 'Kevin Hermining', 'Don Raihala']",[],3,5,0,False,Wisconsin 7
+Wisconsin,WI-8,Tony Wied,Republican,Incumbent running,R+8,"['Rick Crosson', 'Katrina deVille', 'Mark Scheffler']",['Tony Wied'],[],3,1,0,False,Wisconsin 8
+Wyoming,WY-1,Harriet Hageman,Republican,Incumbent retiring to run for U.S. Senate[61],R+23,"['Elena Del Real', 'Lisa Kinney']","['Jillian Balow', 'Bo Biteman', 'Frank Chapman', 'Kevin Christensen', 'Richard Dodson', 'Steve Friess', 'David Giralt', 'Keith Goodenough', 'Chuck Gray', 'Reid Rasner']","[{'name': 'Shawn Johnson', 'party': 'Libertarian'}]",2,10,1,False,Wyoming at-large
