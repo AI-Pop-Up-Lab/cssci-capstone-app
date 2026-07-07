@@ -15,6 +15,10 @@ on:
         description: 'Force rerun even if lock exists (true/false)'
         required: false
         default: 'false'
+      type:
+        description: 'Type of backfill (vote_choice_backfill, mrp, or vote_choice_and_mrp)'
+        required: true
+        default: 'vote_choice_backfill'
 
 jobs:
   prepare-matrix:
@@ -75,7 +79,7 @@ jobs:
             --environment-variables \
               ENV=production \
               COUNTRIES="${{ github.event.inputs.countries }}" \
-              JOB_TYPE="vote_choice_and_mrp" \
+              JOB_TYPE="${{ github.event.inputs.type }}" \
               BACKFILL_WEEKS="${{ matrix.week }}" \
               BACKFILL_FORCE="${{ github.event.inputs.force }}" \
               BLOB_CONTAINER_NAME=generated-data \
