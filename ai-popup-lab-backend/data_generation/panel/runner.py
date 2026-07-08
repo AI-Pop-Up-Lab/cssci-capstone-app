@@ -27,6 +27,11 @@ _COUNTRY_NAMES = {
     "us": "The USA"
 }
 
+US_NEWS_DOMAINS = [
+    "yahoo.com", "aol.com", "cnn.com", "forbes.com", "foxnews.com",
+    "nypost.com", "newsweek.com", "thehill.com", "breitbart.com", "cbsnews.com",
+]
+
 logger = logging.getLogger(__name__)
 
 def _country_display_name(country_code: str) -> str:
@@ -123,12 +128,20 @@ def run_survey(
 
     # Download GDELT if not provided
     if news_df is None:
-        news_df = download_weekly_news(
-            start_date=panel_end_date - pd.Timedelta(days=7),
-            end_date=panel_end_date,
-            domain=f".{country_code}",
-            save_csv=False,
-        )
+        if country_code == "us":
+            news_df = download_weekly_news(
+                start_date=panel_end_date - pd.Timedelta(days=7),
+                end_date=panel_end_date,
+                domain=US_NEWS_DOMAINS,
+                save_csv=False,
+            )
+        else:
+            news_df = download_weekly_news(
+                start_date=panel_end_date - pd.Timedelta(days=7),
+                end_date=panel_end_date,
+                domain=f".{country_code}",
+                save_csv=False,
+            )
     if news_df is None:
         raise RuntimeError(
             f"No GDELT news data available for '{country_code}' around {panel_date}."

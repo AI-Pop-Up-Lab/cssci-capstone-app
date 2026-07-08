@@ -52,12 +52,18 @@ def _coerce_datetime(value: datetime | date | str) -> datetime:
     return datetime.fromisoformat(value)
 
 
-def _normalize_domain(domain: str) -> str:
-    normalized = domain.strip().lower()
+def _normalize_domains(domain: str | list[str]) -> list[str]:
+    raw_list = domain if isinstance(domain, list) else [domain]
+    normalized = []
+    for d in raw_list:
+        d = d.strip().lower()
+        if not d:
+            continue
+        if not d.startswith("."):
+            d = f".{d}"
+        normalized.append(d)
     if not normalized:
-        raise ValueError("domain must be a non-empty string")
-    if not normalized.startswith("."):
-        normalized = f".{normalized}"
+        raise ValueError("domain must contain at least one non-empty entry")
     return normalized
 
 
@@ -98,8 +104,7 @@ def get_gkg_urls(start: datetime, end: datetime, masterlist_urls: list[str] | No
 
 
 # ── Step 2: Download one GKG zip, filter for .nl sources ──────────────────────
-def download_and_filter(url: str, domain: str) -> pd.DataFrame | None:
-    domain = _normalize_domain(domain)
+def download_and_filter(url: str, domains: list[str]) -> pd.DataFrame | None:
     for attempt in range(3):
         try:
             r = requests.get(url, timeout=30)
@@ -111,12 +116,10 @@ def download_and_filter(url: str, domain: str) -> pd.DataFrame | None:
                         names=GKG_COLUMNS, dtype=str,
                         low_memory=False, on_bad_lines="skip",
                     )
-
-            # Keep rows where the source domain ends with the requested suffix.
-            mask = df["SourceCommonName"].fillna("").str.lower().str.endswith(domain)
+            names = df["SourceCommonName"].fillna("").str.lower()
+            mask = names.apply(lambda n: any(n.endswith(d) for d in domains))
             filtered = df.loc[mask, [c for c in KEEP_COLUMNS if c in df.columns]]
             return filtered if not filtered.empty else None
-
         except Exception as e:
             if attempt == 2:
                 print(f"  ✗ {url.split('/')[-1]} — {e}")
@@ -138,38 +141,37 @@ def parse_tone(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def download_weekly_news(
-    start_date: datetime | date | str,
-    end_date: datetime | date | str,
-    domain: str = ".nl",
-    output_file: str | Path | None = None,
-    max_workers: int = DEFAULT_MAX_WORKERS,
-    masterlist_urls: list[str] | None = None,
-    save_csv: bool = True,
+    start_date, end_date,
+    domain: str | list[str] = ".nl",
+    output_file=None,
+    max_workers=DEFAULT_MAX_WORKERS,
+    masterlist_urls=None,
+    save_csv=True,
 ) -> pd.DataFrame | None:
     start = _coerce_datetime(start_date)
     end = _coerce_datetime(end_date)
-    normalized_domain = _normalize_domain(domain)
-    output_path = Path(output_file) if output_file is not None else _output_path(start, end, normalized_domain, None)
+    normalized_domains = _normalize_domains(domain)
+    output_path = Path(output_file) if output_file is not None else _output_path(
+        start, end, normalized_domains[0], None  # filename just uses first domain as a label
+    )
 
     t0 = time.time()
     urls = get_gkg_urls(start, end, masterlist_urls=masterlist_urls)
-
     if not urls:
         print("No GKG files found for the given date range.")
         return None
 
     results = []
     print(f"Downloading and filtering {len(urls)} files ({max_workers} threads)...")
-
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(download_and_filter, u, normalized_domain): u for u in urls}
+        futures = {executor.submit(download_and_filter, u, normalized_domains): u for u in urls}
         for future in tqdm(as_completed(futures), total=len(futures), unit="file"):
             df = future.result()
             if df is not None:
                 results.append(df)
 
     if not results:
-        print(f"No {normalized_domain} source records found.")
+        print(f"No {normalized_domains} source records found.")
         return None
 
     combined = pd.concat(results, ignore_index=True)
@@ -185,10 +187,7 @@ def download_weekly_news(
     print(f"\n✓ Done in {elapsed:.1f}s")
     print(f"  Unique articles  : {len(combined):,}")
     print(f"  Unique sources   : {combined['SourceCommonName'].nunique():,}")
-    if save_csv:
-        print(f"  Output           : {output_path}")
-
-    print(f"\nTop 10 {normalized_domain} sources:")
+    print(f"\nTop 10 {normalized_domains} sources:")
     print(combined["SourceCommonName"].value_counts().head(10).to_string())
 
     return combined
