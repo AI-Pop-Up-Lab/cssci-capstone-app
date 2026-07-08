@@ -15,7 +15,7 @@ import logging
 
 from .biography import populate_panel
 from .chat import send_message, send_message_cohere_rag
-from .survey import generate_question, _questions_path, generate_turnout_question, get_district_info
+from .survey import generate_question, _questions_path, generate_turnout_question, get_district_info, to_list
 from .news import download_weekly_news, fetch_article
 
 CHECKPOINT_INTERVAL = 10
@@ -170,6 +170,7 @@ def run_survey(
 
         # --- Step 2: maybe read news ---
         if stats.bernoulli.rvs(effort) == 1:
+
             news_read = random.randint(0, 120) * 5 / 20  # approx articles per week
             readable = news_df.copy()
             readable["SourceCommonName"] = (
@@ -178,7 +179,13 @@ def run_survey(
             readable["tone_activity"] = pd.to_numeric(
                 readable["tone_activity"], errors="coerce"
             ).fillna(0)
-            readable = readable[readable["SourceCommonName"] == source_common_name]
+
+            persona_media_diet = getattr(persona, "media_diet", None)
+            if pd.notna(persona_media_diet) and str(persona_media_diet).strip():
+                media_diet_list = [str(s).strip().lower() for s in to_list(persona_media_diet)]
+                readable = readable[readable["SourceCommonName"].isin(media_diet_list)]
+            else:
+                readable = readable[readable["SourceCommonName"] == source_common_name]
 
             if not readable.empty:
                 n = max(1, min(len(readable), int(round(news_read))))
