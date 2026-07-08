@@ -56,12 +56,9 @@ def _normalize_domains(domain: str | list[str]) -> list[str]:
     raw_list = domain if isinstance(domain, list) else [domain]
     normalized = []
     for d in raw_list:
-        d = d.strip().lower()
-        if not d:
-            continue
-        if not d.startswith("."):
-            d = f".{d}"
-        normalized.append(d)
+        d = d.strip().lower().lstrip(".")
+        if d:
+            normalized.append(d)
     if not normalized:
         raise ValueError("domain must contain at least one non-empty entry")
     return normalized
@@ -117,7 +114,9 @@ def download_and_filter(url: str, domains: list[str]) -> pd.DataFrame | None:
                         low_memory=False, on_bad_lines="skip",
                     )
             names = df["SourceCommonName"].fillna("").str.lower()
-            mask = names.apply(lambda n: any(n.endswith(d) for d in domains))
+            mask = names.apply(
+                lambda n: any(n == d or n.endswith(f".{d}") for d in domains)
+            )
             filtered = df.loc[mask, [c for c in KEEP_COLUMNS if c in df.columns]]
             return filtered if not filtered.empty else None
         except Exception as e:
