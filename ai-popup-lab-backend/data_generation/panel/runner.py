@@ -132,7 +132,7 @@ def run_survey(
             news_df = download_weekly_news(
                 start_date=panel_end_date - pd.Timedelta(days=7),
                 end_date=panel_end_date,
-                domain=US_NEWS_DOMAINS,
+                domain=".com",
                 save_csv=False,
             )
         else:

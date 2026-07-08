@@ -55,6 +55,10 @@ def _backfill_panel_blob(country: str, year: int, week: int) -> str:
 def _vote_choice_guard_blob(country: str, year: int, week: int) -> str:
     return f"job-runs/vote-choice-backfill/{country}/{year}_{week:02d}.lock"
 
+def _backfill_checkpoint_blob(country: str, year: int, week: int) -> str:
+    """Scratch checkpoint for in-progress vote-choice backfill runs. Never used as an input."""
+    return f"panel-state/{country}/backfill/checkpoints/{year}_{week:02d}_{country}_panel_checkpoint.csv"
+
 # ── Low-level blob helpers ────────────────────────────────────────────────────
 
 def _blob_exists(client: BlobServiceClient, blob_name: str) -> bool:
@@ -215,7 +219,7 @@ def generate_vote_choice_backfill(
     news_df = _download_df(client, _gdelt_blob(country, year, week))
 
     def checkpoint_callback(current_panel: pd.DataFrame) -> None:
-        _upload_df(client, _backfill_panel_blob(country, year, week), current_panel)
+        _upload_df(client, _backfill_checkpoint_blob(country, year, week), current_panel)
 
     panel_df, news_df = run_survey(
         question_id=question_id,
