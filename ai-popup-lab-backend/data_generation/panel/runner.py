@@ -127,6 +127,21 @@ def run_survey(
     source_common_name = str(question_row["news"]).strip().lower()
 
     # Download GDELT if not provided
+    # if news_df is None:
+    #     if country_code == "us":
+    #         news_df = download_weekly_news(
+    #             start_date=panel_end_date - pd.Timedelta(days=7),
+    #             end_date=panel_end_date,
+    #             domain=US_NEWS_DOMAINS,
+    #             save_csv=False,
+    #         )
+    #     else:
+    #         news_df = download_weekly_news(
+    #             start_date=panel_end_date - pd.Timedelta(days=7),
+    #             end_date=panel_end_date,
+    #             domain=f".{country_code}",
+    #             save_csv=False,
+    #         )
     if news_df is None:
         if country_code == "us":
             news_df = download_weekly_news(
@@ -139,7 +154,7 @@ def run_survey(
             news_df = download_weekly_news(
                 start_date=panel_end_date - pd.Timedelta(days=7),
                 end_date=panel_end_date,
-                domain=f".{country_code}",
+                domain=f".com",
                 save_csv=False,
             )
     if news_df is None:
