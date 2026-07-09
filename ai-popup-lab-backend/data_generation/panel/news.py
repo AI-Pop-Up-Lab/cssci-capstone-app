@@ -141,7 +141,7 @@ def parse_tone(df: pd.DataFrame) -> pd.DataFrame:
 
 def download_weekly_news(
     start_date, end_date,
-    domain: str | list[str] = ".nl",
+    domain: str | list[str] = ".com",
     output_file=None,
     max_workers=DEFAULT_MAX_WORKERS,
     masterlist_urls=None,

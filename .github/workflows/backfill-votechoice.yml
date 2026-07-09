@@ -74,7 +74,7 @@ jobs:
             --restart-policy Never \
             --location westeurope \
             --cpu 2 \
-            --memory 4 \
+            --memory 8 \
             --command-line "python -m data_generation.backfill_entry" \
             --environment-variables \
               ENV=production \
