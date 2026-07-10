@@ -116,6 +116,16 @@ function VoteProjection({ pollingData, country }) {
     if (!containerRef.current) return;
 
     const drawChart = () => {
+
+      // console.log(pollingData)
+
+      // console.log("drawing chart with:", {
+      //   country,
+      //   nextGEcolname,
+      //   partyColourKeys: Object.keys(partyColours),
+      //   sampleVotes: [...new Set(pollingData.map(r => r[nextGEcolname]))]
+      // });
+      
       const containerWidth = containerRef.current?.getBoundingClientRect().width;
       if (!containerWidth || containerWidth === 0) return;
 

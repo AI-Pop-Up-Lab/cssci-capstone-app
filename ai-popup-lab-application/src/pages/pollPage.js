@@ -23,7 +23,8 @@ import CountrySwitch2 from '../modules/countrySwitch2';
 const countryOptions = [
   'netherlands',
   'sweden',
-  'denmark'
+  'denmark',
+  'usa'
 ]
 
 function PollPage() {
@@ -77,6 +78,7 @@ function PollPage() {
       <CountrySwitch2 
         setCountry={setSelectedCountry} 
         selectedCountry={selectedCountry}
+         include_usa_TEMPORARY={true}
       />
       
       {/* Component which holds the polling result graphs */}

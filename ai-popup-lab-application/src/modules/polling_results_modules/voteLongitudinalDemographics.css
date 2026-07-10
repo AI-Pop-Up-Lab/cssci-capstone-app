@@ -1,0 +1,151 @@
+.VoteLongitudinalDemographics{
+  /* background: #ffffff; */
+  border-radius: 0;
+  padding: 30px 15px;
+  /* border: 2px solid #1a3a42; */
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: visible;
+}
+
+.VoteLongitudinalDemographics .vld-title,
+.VoteLongitudinalDemographics .vld-subtitle {
+  text-align: center;
+  width: 100%;
+}
+
+.vld-chart-wrapper {
+  position: relative;
+  overflow-x: visible;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.vld-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #335058;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  font-family: "Unbounded", sans-serif;
+}
+
+.vld-chart-wrapper svg text {
+  fill: #111 !important;
+  font-family: "Unbounded", sans-serif;
+}
+
+.vld-grid line {
+  stroke: #335058;
+  stroke-dasharray: 3 3;
+}
+
+.chart-tooltip {
+  position: fixed;
+  background: #1a3a42;
+  color: #fff;
+  padding: 6px 11px;
+  border-radius: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+  z-index: 9999;
+  white-space: nowrap;
+}
+
+.vld-slider-wrapper{
+  width: 100%;
+  position: relative;
+  height: 14px;
+}
+
+.vld-range-background{
+  width: 98%;
+  left: 1%;
+  z-index: 1;
+  background-color: #bac7c5;
+  border-radius: 12px;
+  position: absolute;
+  height: 7px;
+}
+
+.vld-range {
+  pointer-events: none;
+  width: 100%;
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  height: 7px;
+  z-index: 2;
+}
+
+.vld-range::-webkit-slider-thumb {
+  pointer-events: all;
+  cursor: grab;
+}
+
+.vld-range::-moz-range-thumb {
+  pointer-events: all;
+  cursor: grab;
+}
+
+.vld-slider-labels > p > span{
+  font-weight: 500;
+}
+
+/* css for the dropdowns */
+
+.vld-demographic-choices{
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.vld-dc{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 5px 30px 5px;
+}
+
+.vld-dc > p{
+    text-transform: capitalize;
+    color: #335058;
+}
+
+.vld-dc > select{
+    display: inline-block;
+    /* background: #f4f6f8; */
+    border: 2px solid #1a3a42;
+    border-radius: 0;
+    color: #1a3a42;
+    font-size: 0.93rem;
+    padding: 3px 8px;
+    cursor: pointer;
+    height: 32px;
+    max-width: 220px;
+    vertical-align: middle;
+    font-family: "Unbounded", sans-serif;
+    margin-top: 6px;
+}
+
+.vld-dc > select:hover {
+  background: #e8edf2;
+}
+
+.vld-dc > select > option {
+  background-color: #fff;
+  color: #1a3a42;
+}

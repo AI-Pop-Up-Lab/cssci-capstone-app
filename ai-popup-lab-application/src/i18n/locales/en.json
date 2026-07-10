@@ -49,6 +49,21 @@
         },
         "demographicChart": {
             "title": "Vote by Demographic"
+        },
+        "voteLongitudinal": {
+            "title": "Vote share per party over time",
+            "selected": "Selected",
+            "to": "to"
+        },
+        "voteLongitudinalDemographic": {
+            "title": "Vote share per party over time, by demographic",
+            "selected": "Selected",
+            "to": "to"
+        },
+        "pollstersUS": {
+            "title": "Aggregated national average support",
+            "selected": "Selected",
+            "to": "to"
         }
     },
     "personaPage": {

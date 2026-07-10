@@ -39,7 +39,11 @@ function LandingPage() {
 
     if(country === 'netherlands'){
       modifiedCountry = 'the Netherlands';
-    }else{
+    }
+    if(country === 'usa'){
+      modifiedCountry = 'the USA'
+    }
+    else{
       modifiedCountry = country;
     }
 
@@ -73,14 +77,13 @@ function LandingPage() {
 
   // when data is received, properly store it and avoid cases where data is null
   useEffect(() => {
-    setResponseData(data?.data ?? []);
+    setResponseData(data?.data ?? null);
   }, [data]);
 
   // retrigger typing animation when language is changed
   useEffect(() => {
     setTypingKey(i18n.language);
   }, [i18n.language]);
-
 
   // code for typing effect on elements
   const [bottomDelayed, setBottomDelayed] = useState(false);
@@ -164,7 +167,7 @@ function LandingPage() {
         <div className="landingPageMessageSection">
           <p className="landingPageMessage">{typed1}</p>
           <p className="landingPageMessage">{typed2}&nbsp;</p>
-          <CountrySwitch2 selectedCountry={selectedCountry} setCountry={setSelectedCountry}/>
+          <CountrySwitch2 selectedCountry={selectedCountry} setCountry={setSelectedCountry} include_usa_TEMPORARY={false}/>
         </div>
       </div>
 

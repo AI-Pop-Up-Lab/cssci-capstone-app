@@ -31,6 +31,8 @@ def get_country_sample(country: str):
     # checking if requested country is in data
     if country not in root_keys:
         return {"error": "Country not found in data."}
+    elif country == "usa":
+        return {"error": "Stratification frame not available for USA."}
 
     country_sample_filename = country_data[country]['survey_filename']
     country_sample_path = base_dir / "country_data" / 'surveys' / country_sample_filename
@@ -48,6 +50,8 @@ def get_country_stratification_frame(country: str):
     # checking if requested country is in data
     if country not in root_keys:
         return {"error": "Country not found in data."}
+    elif country == "usa":
+        return {"error": "Stratification frame not available for USA."}
 
     country_frame_filename = country_data[country]['stratification_frame_filename']
     country_frame_path = base_dir / "country_data" / 'stratification_frames' / country_frame_filename

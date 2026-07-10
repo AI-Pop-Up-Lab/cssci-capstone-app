@@ -11,6 +11,10 @@ import PollingMap from './pollingMap';
 import SeatVisualisation from './seatVisualisation';
 import VoteProjection from './voteProjection';
 import DemographicCharts from './demographicCharts';
+import VoteLongitudinal from "./voteLongitudinal";
+import VoteLongitudinalDemographics from "./voteLongitudinalDemographics";
+import PollstersUS from "./pollstersUS";
+import VoteLongitudinalUSPollsters from "./voteLongitudinalUSPollsters";
 
 import Loader from "../loader";
 import { useTranslation } from "react-i18next";
@@ -105,33 +109,79 @@ function PollingResults({ selectedCountry, setSelectedCountry }) {
 
   return (
     <div className="PollingResults">
-      {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
-      <div id="polling-divider"></div>
-      {selectedCountry !== "netherlands" && (
+
+      {/* {selectedCountry !== "usa" && (
+        <>
+          {data ? <VoteLongitudinal country={selectedCountry} /> : <Loader />}
+          <div id="polling-divider"></div>
+        </>
+      )} */}
+
+      {selectedCountry === "usa" && (
+        <>
+          {data ? <VoteLongitudinalUSPollsters country={selectedCountry} /> : <Loader />}
+          <div id="polling-divider"></div>
+        </>
+      )}
+
+      {selectedCountry !== "usa" && (
+        <>
+        {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
+        <div id="polling-divider"></div>
+        </>
+      )}
+
+      {selectedCountry !== "netherlands" && selectedCountry !== "usa" && (
         <>
         {data ? <PollingMap pollingData={responseData} country={selectedCountry} /> : <Loader />}
         <div id="polling-divider"></div>
         </>
       )}
-      {data ? <SeatVisualisation pollingData={responseData} country={selectedCountry} /> : <Loader />}
-      <div id="polling-divider"></div>
-      {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
-      {/* {data ? <PollingMap /> : <Loader />} */}
 
+      {selectedCountry !== "usa" && (
+        <>
+        {data ? <SeatVisualisation pollingData={responseData} country={selectedCountry} /> : <Loader />}
+        <div id="polling-divider"></div>
+        </>
+      )}
 
-      {data && stratFrameData ? (
-        <div id="exportButtons">
-          <div className="exportButton" onClick={() => {exportToCSV(responseData, `${selectedCountry}_sample_data.csv`)}}>
-            <p>{t('pollingResults.sampleExport')}</p>
-            <img src={exportIcon}></img>
+      {selectedCountry === "usa" && (
+        <>
+        {data ? <VoteLongitudinalDemographics country={selectedCountry} /> : <Loader />}
+        <div id="polling-divider"></div>
+        </>
+      )}
+
+      {selectedCountry !== "usa" && (
+        <>
+        {data ? <DemographicCharts pollingData={responseData} country={selectedCountry} /> : <Loader />}
+        </>
+      )}
+
+      {selectedCountry === "usa" && (
+        <>
+        {/* <div id="polling-divider"></div> */}
+        {data ? <PollstersUS /> : <Loader />}
+        </>
+      )}
+      
+      {selectedCountry !== "usa" && (
+        <>
+        {data && stratFrameData ? (
+          <div id="exportButtons">
+            <div className="exportButton" onClick={() => {exportToCSV(responseData, `${selectedCountry}_sample_data.csv`)}}>
+              <p>{t('pollingResults.sampleExport')}</p>
+              <img src={exportIcon}></img>
+            </div>
+            <div className="exportButton" onClick={() => {exportToCSV(stratframeResponseData, `${selectedCountry}_frame_data.csv`)}}>
+              <p>{t('pollingResults.frameExport')}</p>
+              <img src={exportIcon}></img>
+            </div>
           </div>
-          <div className="exportButton" onClick={() => {exportToCSV(stratframeResponseData, `${selectedCountry}_frame_data.csv`)}}>
-            <p>{t('pollingResults.frameExport')}</p>
-            <img src={exportIcon}></img>
-          </div>
-        </div>
-      ) : (
-        <Loader />
+        ) : (
+          <Loader />
+        )}
+        </>
       )}
 
     </div>

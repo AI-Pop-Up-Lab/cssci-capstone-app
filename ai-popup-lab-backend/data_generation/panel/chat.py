@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 import os
+import time
+import logging
 from pathlib import Path
 from typing import List, Dict, Optional
 
-from openai import OpenAI
+import httpx
+from openai import OpenAI, APITimeoutError, APIConnectionError
 import cohere
 import json
 
+logger = logging.getLogger(__name__)
 
 # Load .env from modules directory or project root
 env_path = Path(__file__).resolve().parent / '.env'  # modules/.env
@@ -30,6 +34,40 @@ def _get_env(name: str) -> str:
 
 
 co = cohere.ClientV2(_get_env('COHERE_API_KEY'))
+
+
+# ── Retry helper for transient network errors ──────────────────────────────
+RETRYABLE_EXCEPTIONS = (
+	httpx.ReadTimeout,
+	httpx.ConnectTimeout,
+	httpx.ConnectError,
+	APITimeoutError,       # OpenAI SDK's own timeout wrapper
+	APIConnectionError,    # OpenAI SDK's own connection-error wrapper
+)
+
+def _call_with_retry(fn, *args, max_retries: int = 4, base_delay: float = 5.0, **kwargs):
+	"""
+	Call `fn(*args, **kwargs)`, retrying with exponential backoff on transient
+	network errors (read timeouts, connect timeouts/errors). Re-raises the
+	last exception if all attempts fail, and re-raises immediately on any
+	non-network exception (e.g. bad request, auth error) without retrying.
+	"""
+	last_exc: Exception | None = None
+	for attempt in range(1, max_retries + 1):
+		try:
+			return fn(*args, **kwargs)
+		except RETRYABLE_EXCEPTIONS as exc:
+			last_exc = exc
+			if attempt == max_retries:
+				logger.error("Giving up after %d attempts — last error: %s", max_retries, exc)
+				break
+			wait = base_delay * (2 ** (attempt - 1))
+			logger.warning(
+				"Transient network error (%s) on attempt %d/%d — retrying in %.0fs",
+				type(exc).__name__, attempt, max_retries, wait,
+			)
+			time.sleep(wait)
+	raise last_exc
 
 def send_message_cohere_rag(question, conversation, articles):
     documents = [
@@ -61,7 +99,8 @@ def send_message_cohere_rag(question, conversation, articles):
     messages.append({"role": "user", "content": question})
 
     try:
-        response = co.chat(
+        response = _call_with_retry(
+            co.chat,
             model="command-r-plus-08-2024",
             messages=messages,
             documents=documents,
@@ -111,7 +150,8 @@ def send_message(message: str,
 		messages.append(msg)
 	messages.append({"role": "user", "content": message})
 
-	response = client.chat.completions.create(
+	response = _call_with_retry(
+		client.chat.completions.create,
 		model=model,
 		messages=messages,
 		max_tokens=max_tokens,

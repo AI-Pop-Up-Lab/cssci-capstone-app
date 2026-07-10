@@ -19,7 +19,11 @@ function PersonaChatExample({includeLink, country}) {
 
     if(country === 'netherlands'){
       modifiedCountry = 'the Netherlands';
-    }else{
+    }
+    if(country === 'usa'){
+      modifiedCountry = 'the USA'
+    }
+    else{
       modifiedCountry = country;
     }
 

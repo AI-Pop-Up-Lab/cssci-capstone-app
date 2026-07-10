@@ -21,7 +21,8 @@ import Loader from "../modules/loader";
 const countryOptions = [
   'netherlands',
   'sweden',
-  'denmark'
+  'denmark',
+  'usa'
 ]
 
 // modifies names that are represented differently in data than its real full name
@@ -111,7 +112,11 @@ function PersonaPage() {
     <div className="PersonaPage">
 
       {/* componnent to switch country */}
-      <CountrySwitch2 setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
+      <CountrySwitch2 
+        setCountry={setSelectedCountry} 
+        selectedCountry={selectedCountry}
+        include_usa_TEMPORARY={false}
+      />
 
       {/* exmaple of persona chat */}
       { selectedCountry && 
