@@ -319,12 +319,30 @@ function VoteLongitudinalUSPollsters({ country }) {
         return pos === undefined ? null : pos + x.bandwidth() / 2;
       };
 
-      // y — linear, padded around actual data range (base + overlay if shown)
-      const baseShares = slicedData.flatMap(d => d.values.map(v => v.share));
-      const overlayShares = (showPollsters && visiblePollsterSeries)
-        ? visiblePollsterSeries.flatMap(s => s.values.flatMap(v => [v.mean, v.low, v.high]))
+      // y — linear, padded around the *visible* data range (base + overlay if
+      // shown), excluding any series the user has toggled off via the legend.
+      // This is what lets the axis tighten up when e.g. "Other" is hidden,
+      // instead of always reserving room for series that aren't drawn.
+      const visibleBaseSeries = slicedData.filter(d => !hiddenSeries.has(d.party));
+      const baseShares = visibleBaseSeries.flatMap(d => d.values.map(v => v.share));
+
+      const visibleOverlaySeries = (showPollsters && visiblePollsterSeries)
+        ? visiblePollsterSeries.filter(s => !hiddenSeries.has(`pollster-${s.party}`))
         : [];
-      const allShares = [...baseShares, ...overlayShares];
+      const overlayShares = visibleOverlaySeries.flatMap(s => s.values.flatMap(v => [v.mean, v.low, v.high]));
+
+      let allShares = [...baseShares, ...overlayShares];
+      // Fallback: if every series is hidden, fall back to the full dataset
+      // rather than computing a domain from an empty array (d3.min/max would
+      // return undefined and produce a NaN domain, breaking the chart).
+      if (!allShares.length) {
+        allShares = [
+          ...slicedData.flatMap(d => d.values.map(v => v.share)),
+          ...(showPollsters && visiblePollsterSeries
+            ? visiblePollsterSeries.flatMap(s => s.values.flatMap(v => [v.mean, v.low, v.high]))
+            : []),
+        ];
+      }
 
       const yPad = 4;
       const y = d3.scaleLinear()
