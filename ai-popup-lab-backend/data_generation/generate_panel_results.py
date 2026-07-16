@@ -173,6 +173,78 @@ def generate_panel_biographies_only(
         country, year, week,
     )
 
+def generate_vote_choice_backfill_onetime(
+    country: str,
+    target_year: int,
+    target_week: int,
+    source_year: int,
+    source_week: int,
+    force: bool = False,
+    client: BlobServiceClient | None = None,
+) -> None:
+    """
+    One-off vote-choice generation for a target ISO week, reusing a
+    biography-only panel snapshot taken from a DIFFERENT week
+    (source_year/source_week) instead of that target week's own
+    pre-built backfill panel.
+
+    Deliberately isolated from the normal backfill blobs/guards/checkpoints
+    for target_year/target_week, so it can't collide with a "real" backfill
+    run for that week later.
+    """
+    if client is None:
+        client = get_blob_client()
+
+    with open(COUNTRY_INFO_PATH) as f:
+        country_info = json.load(f)
+
+    info = country_info.get(country, {})
+    question_id = info.get("question_id")
+    if not question_id:
+        raise ValueError(f"No question_id configured for '{country}'")
+
+    onetime_guard = f"job-runs/vote-choice-backfill-onetime/{country}/{target_year}_{target_week:02d}.lock"
+    if not force and _blob_exists(client, onetime_guard):
+        logger.info(
+            "One-time vote choice backfill already exists for %s %d-W%02d — skipping.",
+            country, target_year, target_week,
+        )
+        return
+
+    panel_date = isoweek_to_panel_date(target_year, target_week)
+
+    source_blob = biography_snapshot_blob_name(country, source_year, source_week)
+    panel_df = _download_df(client, source_blob)
+    if panel_df is None:
+        raise FileNotFoundError(f"No biography snapshot found at {source_blob}.")
+    if panel_df["biography"].isna().any():
+        raise ValueError(
+            f"Source panel {country} {source_year}-W{source_week:02d} has missing biographies."
+        )
+
+    news_df = _download_df(client, _gdelt_blob(country, target_year, target_week))
+
+    def checkpoint_callback(current_panel: pd.DataFrame) -> None:
+        _upload_df(
+            client,
+            f"panel-state/{country}/backfill-onetime/checkpoints/"
+            f"{target_year}_{target_week:02d}_{country}_panel_checkpoint.csv",
+            current_panel,
+        )
+
+    panel_df, news_df = run_survey(
+        question_id=question_id,
+        panel_df=panel_df,
+        panel_date=panel_date,
+        news_df=news_df,
+        attrition_rate=0.0,
+        panels_dir=None,
+        panel_name=None,
+        on_checkpoint=checkpoint_callback,
+    )
+
+    _upload_df(client, _results_blob(country, target_year, target_week), panel_df)
+
 def generate_vote_choice_backfill(
     country: str,
     year: int,

@@ -18,7 +18,7 @@ def _longitudinal_demographic_blob_name(country: str) -> str:
 
 # ── column config ────────────────────────────────────────────────────────────
 
-DEMOGRAPHIC_COLS = ["gender", "age_group", "municipality", "education_level"]
+DEMOGRAPHIC_COLS = ["gender", "age_group", "municipality", "education_level", "state_abbrv"]
 PARTY_COL        = "party"
 WEIGHT_COL       = "prob_raked"
 

@@ -49,9 +49,9 @@ PARTY_COLS = ["democrat", "republican", "other"]
 STAN_MODEL = """
 data {
   int<lower=1> N;
-  int<lower=1> H;
-  int<lower=1> G;
-  int<lower=1> T;
+  int<lower=2> H;
+  int<lower=2> G;
+  int<lower=2> T;
   int<lower=2> K;
 
   array[N] int<lower=1, upper=H> h;
@@ -59,6 +59,13 @@ data {
   array[N] int<lower=1, upper=T> t;
 
   array[N, K] int<lower=0> y;
+}
+
+transformed data {
+  // Correct for the reduced marginal variance induced by
+  // Stan's sum-to-zero constraint.
+  real house_scale = sqrt(H / (H - 1.0));
+  real population_scale = sqrt(G / (G - 1.0));
 }
 
 parameters {
@@ -80,9 +87,19 @@ transformed parameters {
   matrix[T, K - 1] time;
 
   for (k in 1:(K - 1)) {
-    house[, k] = sigma_house[k] * house_raw[k];
-    population[, k] = sigma_population[k] * population_raw[k];
-    time[, k] = sigma_time[k] * time_raw[k];
+    // sigma_house is now the exact marginal SD of house effects.
+    house[, k] =
+      sigma_house[k] * house_scale * house_raw[k];
+
+    // sigma_population is now the exact marginal SD
+    // of sampled-population effects.
+    population[, k] =
+      sigma_population[k] * population_scale
+      * population_raw[k];
+
+    // sigma_time remains the weekly innovation SD.
+    time[, k] =
+      sigma_time[k] * time_raw[k];
   }
 }
 
@@ -226,6 +243,15 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
         "t": weekly_df["t"].astype(int).tolist(),
         "y": weekly_df[PARTY_COLS].astype(int).values.tolist(),
     }
+
+    if stan_data["H"] < 2:
+        raise ValueError(
+            f"Need at least 2 distinct pollsters to fit the model, got {stan_data['H']}."
+        )
+    if stan_data["G"] < 2:
+        raise ValueError(
+            f"Need at least 2 distinct population types to fit the model, got {stan_data['G']}."
+        )
 
     return weekly_df, all_weeks, week_to_t, stan_data, population_lookup
 

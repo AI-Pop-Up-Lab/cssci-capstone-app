@@ -1,0 +1,96 @@
+name: Backfill Longitudinal Aggregates (from staged frames)
+
+on:
+  workflow_dispatch:
+    inputs:
+      country:
+        description: 'Country'
+        required: false
+        default: 'usa'
+      weeks:
+        description: 'Comma-separated ISO weeks whose frames are already staged (e.g. 2026-10,2026-11)'
+        required: true
+
+jobs:
+  backfill-longitudinal:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Delete existing ACI if present
+        run: |
+          az container delete \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name backfill-longitudinal \
+            --yes || true
+
+      - name: Create and run ACI worker
+        run: |
+          az container create \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name backfill-longitudinal \
+            --image ${{ secrets.ACR_LOGIN_SERVER }}/weekly-worker:latest \
+            --registry-username ${{ secrets.ACR_USERNAME }} \
+            --registry-password ${{ secrets.ACR_PASSWORD }} \
+            --restart-policy Never \
+            --location westeurope \
+            --cpu 1 \
+            --memory 2 \
+            --command-line "python -m data_generation.backfill_longitudinal_entry" \
+            --environment-variables \
+              ENV=production \
+              COUNTRY="${{ github.event.inputs.country }}" \
+              FRAMES="${{ github.event.inputs.weeks }}" \
+              BLOB_CONTAINER_NAME=generated-data \
+            --secure-environment-variables \
+              AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+            --os-type Linux
+
+      - name: Wait for ACI to finish
+        run: |
+          while true; do
+            STATE=$(az container show \
+              --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+              --name backfill-longitudinal \
+              --query "containers[0].instanceView.currentState.state" \
+              --output tsv)
+            echo "Container state: $STATE"
+            if [ "$STATE" = "Terminated" ]; then break; fi
+            sleep 15
+          done
+
+      - name: Check exit code
+        run: |
+          EXIT_CODE=$(az container show \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name backfill-longitudinal \
+            --query "containers[0].instanceView.currentState.exitCode" \
+            --output tsv)
+          echo "Exit code: $EXIT_CODE"
+          if [ "$EXIT_CODE" != "0" ]; then
+            echo "Longitudinal backfill failed with exit code $EXIT_CODE"
+            exit 1
+          fi
+
+      - name: Print container logs
+        if: always()
+        run: |
+          az container logs \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name backfill-longitudinal
+
+      - name: Clean up ACI
+        if: always()
+        run: |
+          az container delete \
+            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+            --name backfill-longitudinal \
+            --yes
