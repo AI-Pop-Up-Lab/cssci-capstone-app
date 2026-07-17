@@ -213,7 +213,14 @@ def generate_vote_choice_backfill_onetime(
 
     panel_date = isoweek_to_panel_date(target_year, target_week)
 
-    source_blob = biography_snapshot_blob_name(country, source_year, source_week)
+    source_blob = _backfill_panel_blob(country, source_year, source_week)
+    panel_df = _download_df(client, source_blob)
+    if panel_df is None:
+        raise FileNotFoundError(f"No backfill panel found at {source_blob}.")
+    if panel_df["biography"].isna().any():
+        raise ValueError(
+            f"Source panel {country} {source_year}-W{source_week:02d} has missing biographies."
+        )
     panel_df = _download_df(client, source_blob)
     if panel_df is None:
         raise FileNotFoundError(f"No biography snapshot found at {source_blob}.")
