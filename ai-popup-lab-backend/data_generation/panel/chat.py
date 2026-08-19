@@ -33,7 +33,14 @@ def _get_env(name: str) -> str:
 	return val
 
 
-co = cohere.ClientV2(_get_env('COHERE_API_KEY'))
+co = None
+
+def _get_cohere_client() -> cohere.ClientV2:
+	# lazy init so importing this module (e.g. for JOB_TYPE=mrp runs) doesn't require COHERE_API_KEY
+	global co
+	if co is None:
+		co = cohere.ClientV2(_get_env('COHERE_API_KEY'))
+	return co
 
 
 # ── Retry helper for transient network errors ──────────────────────────────
@@ -100,7 +107,7 @@ def send_message_cohere_rag(question, conversation, articles):
 
     try:
         response = _call_with_retry(
-            co.chat,
+            _get_cohere_client().chat,
             model="command-r-plus-08-2024",
             messages=messages,
             documents=documents,

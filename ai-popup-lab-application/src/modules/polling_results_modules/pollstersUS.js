@@ -279,7 +279,9 @@ function PollstersUS() {
   return (
     <div className="PollstersUS">
       <h3 className="pollus-title">{t('pollingResults.pollstersUS.title')}</h3>
-      {chartData && partyColours && rangeIdx ? (
+      {(error || partyColoursError) ? (
+        <p className="pollus-error">{error || partyColoursError}</p>
+      ) : chartData && partyColours && rangeIdx ? (
         <>
           <div className="pollus-chart-wrapper" ref={containerRef}>
             <svg ref={svgRef} />

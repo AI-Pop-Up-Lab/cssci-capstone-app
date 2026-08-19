@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "react-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "cwd": "ai-popup-lab-application",
+      "port": 3000
+    }
+  ]
+}

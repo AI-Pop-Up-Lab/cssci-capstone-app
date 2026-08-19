@@ -59,7 +59,7 @@ def main() -> None:
         logger.error("No weeks provided. Set BACKFILL_WEEKS=YYYY-WW[,YYYY-WW,...]")
         sys.exit(1)
 
-    if JOB_TYPE in ("mrp", "both"):
+    if JOB_TYPE in ("mrp", "both", "vote_choice_and_mrp"):
         check_r_available()
 
     blob_client = get_blob_client()
@@ -76,14 +76,18 @@ def main() -> None:
                     ):
                         logger.info("[%s] Panel lock exists — skipping (use force=true to override).", label)
                     else:
-                        generate_panel_results(
+                        panel_ran = generate_panel_results(
                             country=country,
                             year=year,
                             week=week,
                             force=FORCE,
                             client=blob_client,
                         )
-                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week)
+                        if panel_ran:
+                            mark_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week)
+                        else:
+                            # no lock for unconfigured countries — a lock without results wedges MRP
+                            logger.warning("[%s] Panel not configured — no lock written.", label)
 
                 if JOB_TYPE == "biography":
                     if not FORCE and already_ran_typed(

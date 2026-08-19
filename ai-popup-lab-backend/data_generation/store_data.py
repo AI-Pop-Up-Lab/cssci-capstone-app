@@ -6,18 +6,19 @@ from pathlib import Path
 from datetime import date
 import os
 import logging
+from azure.core.exceptions import ResourceNotFoundError
 from azure.storage.blob import BlobServiceClient
 
 logger = logging.getLogger(__name__)
 
-STORAGE_CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
 frame_filename_ending = '_extended_frame'
 survey_filename_ending = '_survey'
 
 def get_blob_client() -> BlobServiceClient:
-    return BlobServiceClient.from_connection_string(STORAGE_CONNECTION_STRING)
+    # read lazily so importing this module (e.g. from the API) doesn't crash when the var is unset
+    return BlobServiceClient.from_connection_string(os.environ["AZURE_STORAGE_CONNECTION_STRING"])
 
 def get_file_suffix() -> str:
     today = date.today()
@@ -38,7 +39,8 @@ def download_blob_to_path(client: BlobServiceClient, blob_name: str, dest_path: 
     blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
     try:
         data = blob.download_blob().readall()
-    except Exception as exc:
+    except ResourceNotFoundError as exc:
+        # only a genuinely missing blob becomes FileNotFoundError; auth/network errors propagate unchanged
         raise FileNotFoundError(f"Blob not found: {blob_name}") from exc
 
     dest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -46,14 +48,17 @@ def download_blob_to_path(client: BlobServiceClient, blob_name: str, dest_path: 
     logger.info("Downloaded %s → %s", blob_name, dest_path)
     return dest_path
 
-def store_frame(filepath: Path, country: str, client: BlobServiceClient) -> str:
+def store_frame(filepath: Path, country: str, client: BlobServiceClient, year: int | None = None, week: int | None = None) -> str:
 
     source = Path(filepath) / "mrp_extended_frame_predictions.csv"
 
     if not source.exists():
         raise FileNotFoundError(f"Expected R output not found: {source}")
 
-    blob_name = f"extended-frames/{country}/{get_file_suffix()}_extended_frame.csv"
+    # use the job's captured year/week when given — date.today() drifts on runs that
+    # cross the ISO-week rollover and mislabels backfilled historical weeks
+    suffix = f"{year}_{week:02d}" if year is not None and week is not None else get_file_suffix()
+    blob_name = f"extended-frames/{country}/{suffix}_extended_frame.csv"
     blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
 
     with open(source, "rb") as f:

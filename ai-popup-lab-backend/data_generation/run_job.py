@@ -20,13 +20,14 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import sys
 import tempfile
 from datetime import date
 from pathlib import Path
 import pandas as pd
 
-from .generate_panel_results import generate_panel_results
+from .generate_panel_results import generate_panel_results, isoweek_to_panel_date
 from .job_guard import already_ran_typed, mark_ran_typed
 from .run_scripts import check_r_available, run_extension_script
 from .store_data import (
@@ -94,6 +95,30 @@ def _run_mrp(country: str, blob_client, year: int, week: int) -> None:
                 f"Panel must run successfully before MRP for the same week."
             )
 
+        # panel results store the vote answer in a wave column named {YYYYMMDD}_vote,
+        # but the R script only accepts 'predicted_vote' (or its alias 'vote_2026').
+        # prefer the wave matching THIS job's week — a backfilled snapshot of the shared
+        # active panel can carry later weeks' wave columns, and the newest is then wrong
+        survey_df = pd.read_csv(survey_path)
+        if "predicted_vote" not in survey_df.columns and "vote_2026" not in survey_df.columns:
+            this_week_col = f"{isoweek_to_panel_date(year, week)}_vote"
+            if this_week_col in survey_df.columns:
+                vote_col = this_week_col
+            else:
+                wave_vote_cols = sorted(c for c in survey_df.columns if re.fullmatch(r"\d{8}_vote", c))
+                if not wave_vote_cols:
+                    raise ValueError(
+                        f"No vote column found in panel results for '{country}' "
+                        f"(expected 'predicted_vote', 'vote_2026', or a 'YYYYMMDD_vote' wave column)."
+                    )
+                vote_col = wave_vote_cols[-1]
+                logger.warning(
+                    "[%s] No wave column %s in panel results — falling back to newest wave %s.",
+                    country, this_week_col, vote_col,
+                )
+            survey_df = survey_df.rename(columns={vote_col: "predicted_vote"})
+            survey_df.to_csv(survey_path, index=False)
+
         output_dir = Path(tmp) / "output"
         output_dir.mkdir()
         run_extension_script(
@@ -102,11 +127,17 @@ def _run_mrp(country: str, blob_client, year: int, week: int) -> None:
             output_dir=output_dir,
             country=country,
         )
-        frame_blob_name = store_frame(filepath=output_dir, country=country, client=blob_client)
+        frame_blob_name = store_frame(filepath=output_dir, country=country, client=blob_client, year=year, week=week)
 
         frame_path_local = Path(tmp) / "extended_frame.csv"
         download_blob_to_path(blob_client, frame_blob_name, frame_path_local)
         extended_frame = pd.read_csv(frame_path_local)
+
+        # R output columns differ from what the aggregator expects
+        # (same rename convention as backfill_longitudinal_entry.py)
+        extended_frame = extended_frame.rename(
+            columns={"predicted_vote_party": "party", "expected_N": "prob_raked"}
+        )
 
         update_longitudinal_aggregates(
             country=country,
@@ -121,23 +152,41 @@ def _run_mrp(country: str, blob_client, year: int, week: int) -> None:
 def run_country_job(country: str, blob_client, year: int, week: int) -> None:
     """Run the configured job(s) for a single country."""
 
+    with open(BASE_DIR / "country_data" / "country_data_info.json") as f:
+        country_data = json.load(f)
+    info = country_data.get(country, {})
+    panel_configured = bool(info.get("panel_filename")) and bool(info.get("question_id"))
+
     if JOB_TYPE in ("panel", "both"):
-        if already_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week):
+        if not panel_configured:
+            # don't write the panel lock here — a lock without panel results would
+            # permanently wedge MRP for this country+week
+            logger.warning(
+                "[%s] Panel not configured (panel_filename/question_id missing in "
+                "country_data_info.json) — skipping panel stage, no lock written.", country
+            )
+        elif already_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week):
             logger.info("[%s] Panel already ran for %d-W%02d — skipping.", country, year, week)
         else:
             logger.info("[%s] Running panel survey (%d-W%02d)...", country, year, week)
-            generate_panel_results(
+            panel_ran = generate_panel_results(
                 country=country,
                 year=year,
                 week=week,
                 force=False,
                 client=blob_client,
             )
-            mark_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week)
-            logger.info("[%s] Panel survey done.", country)
+            if panel_ran:
+                mark_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week)
+                logger.info("[%s] Panel survey done.", country)
+            else:
+                logger.warning("[%s] Panel produced no results — no lock written.", country)
 
     if JOB_TYPE in ("mrp", "both"):
-        if already_ran_typed(blob_client, CONTAINER_NAME, country, "mrp", year, week):
+        if not panel_configured:
+            # MRP needs this week's panel results, which an unconfigured country can never have
+            logger.warning("[%s] Panel not configured — skipping MRP stage, no lock written.", country)
+        elif already_ran_typed(blob_client, CONTAINER_NAME, country, "mrp", year, week):
             logger.info("[%s] MRP already ran for %d-W%02d — skipping.", country, year, week)
         else:
             logger.info("[%s] Running MRP...", country)

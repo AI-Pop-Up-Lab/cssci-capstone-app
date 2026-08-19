@@ -99,7 +99,7 @@ def run_survey(
     panels_dir: Path | None = None,
     panel_name: str | None = None,
     on_checkpoint=None,
-) -> tuple[pd.DataFrame, pd.DataFrame | None]:
+) -> tuple[pd.DataFrame, pd.DataFrame | None, pd.DataFrame]:
     """
     Run one survey wave on panel_df.
 
@@ -115,7 +115,9 @@ def run_survey(
         on_checkpoint:  Optional callable(panel_df) called every CHECKPOINT_INTERVAL respondents.
 
     Returns:
-        (updated_panel_df, news_df)
+        (updated_panel_df, news_df, results_df)
+        updated_panel_df: active panel after attrition & replacement (next wave's state)
+        results_df: this wave's completed responses BEFORE attrition (the results snapshot)
     """
     panel_date = pd.to_datetime(panel_date).normalize().strftime("%Y%m%d")
     panel_end_date = pd.to_datetime(panel_date)
@@ -127,34 +129,21 @@ def run_survey(
     source_common_name = str(question_row["news"]).strip().lower()
 
     # Download GDELT if not provided
-    # if news_df is None:
-    #     if country_code == "us":
-    #         news_df = download_weekly_news(
-    #             start_date=panel_end_date - pd.Timedelta(days=7),
-    #             end_date=panel_end_date,
-    #             domain=US_NEWS_DOMAINS,
-    #             save_csv=False,
-    #         )
-    #     else:
-    #         news_df = download_weekly_news(
-    #             start_date=panel_end_date - pd.Timedelta(days=7),
-    #             end_date=panel_end_date,
-    #             domain=f".{country_code}",
-    #             save_csv=False,
-    #         )
+    # per-country domain filter: the news question filters on sources like 'dn.se',
+    # which can never appear in a .com-only download
     if news_df is None:
         if country_code == "us":
             news_df = download_weekly_news(
                 start_date=panel_end_date - pd.Timedelta(days=7),
                 end_date=panel_end_date,
-                domain=".com",
+                domain=US_NEWS_DOMAINS,
                 save_csv=False,
             )
         else:
             news_df = download_weekly_news(
                 start_date=panel_end_date - pd.Timedelta(days=7),
                 end_date=panel_end_date,
-                domain=f".com",
+                domain=f".{country_code}",
                 save_csv=False,
             )
     if news_df is None:
@@ -177,7 +166,7 @@ def run_survey(
 
     pending = panel_df[panel_df[vote_col].isna()]
     if pending.empty:
-        return panel_df, news_df
+        return panel_df, news_df, panel_df.copy()
 
     completed = int(panel_df[vote_col].notna().sum())
 
@@ -304,6 +293,10 @@ def run_survey(
             on_checkpoint(panel_df)
 
     # --- Attrition & replacement ---
+    # snapshot before attrition: this wave's results must keep retired panelists' answers,
+    # and replacements (with cleared wave columns) belong only in the active panel state
+    results_df = panel_df.copy()
+
     attrition_count = max(
         (1 if attrition_rate > 0 and len(panel_df) > 0 else 0),
         int(round(len(panel_df) * attrition_rate)),
@@ -335,4 +328,4 @@ def run_survey(
                         subset=["cell_id"], keep="first"
                     ).reset_index(drop=True)
 
-    return panel_df, news_df
+    return panel_df, news_df, results_df

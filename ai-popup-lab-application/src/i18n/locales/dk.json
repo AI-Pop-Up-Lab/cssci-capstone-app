@@ -154,6 +154,7 @@
     },
     "datahubPage": {
         "codebook": "codebook",
+        "downloadError": "Download mislykkedes. Filen er muligvis ikke tilgængelig endnu — prøv igen senere.",
         "intro": {
             "title": "DATA HUB",
             "text": "Ved at downloade dataene accepterer du brugsbetingelserne."

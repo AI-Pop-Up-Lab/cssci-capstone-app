@@ -4,7 +4,7 @@
     {
       "label": "Create Python Env",
       "type": "shell",
-      "command": "python3.13 -m venv ${workspaceFolder}/env",
+      "command": "py -m venv ${workspaceFolder}/env",
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -17,7 +17,7 @@
     {
       "label": "Install Backend Dependencies",
       "type": "shell",
-      "command": "${workspaceFolder}/env/bin/python -m pip install -r requirements.txt",
+      "command": "${workspaceFolder}/env/Scripts/python -m pip install -r requirements.txt",
       "options": {
         "cwd": "${workspaceFolder}/ai-popup-lab-backend"
       },
@@ -30,7 +30,7 @@
     {
       "label": "Install Frontend Dependencies",
       "type": "shell",
-      "command": "npm install",
+      "command": "npm install --legacy-peer-deps",
       "options": {
         "cwd": "${workspaceFolder}/ai-popup-lab-application"
       },
@@ -52,7 +52,7 @@
     {
       "label": "Start Backend",
       "type": "shell",
-      "command": "${workspaceFolder}/env/bin/python -m uvicorn main:app --reload",
+      "command": "${workspaceFolder}/env/Scripts/python -m uvicorn main:app --reload",
       "options": {
         "cwd": "${workspaceFolder}/ai-popup-lab-backend"
       },

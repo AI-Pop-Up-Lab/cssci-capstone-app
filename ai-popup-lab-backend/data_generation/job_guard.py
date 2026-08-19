@@ -4,10 +4,8 @@ especially useful for having to backfill weeks
 '''
 
 from datetime import date
+from azure.core.exceptions import ResourceNotFoundError
 from azure.storage.blob import BlobServiceClient
-import os
-
-STORAGE_CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 
 def _this_week() -> tuple[int, int]:
     today = date.today()
@@ -24,7 +22,8 @@ def already_ran(client: BlobServiceClient, container: str, country: str) -> bool
     try:
         blob.get_blob_properties()
         return True
-    except Exception:
+    except ResourceNotFoundError:
+        # only a missing lock means "not run" — auth/network errors propagate instead of triggering re-runs
         return False
 
 def mark_ran(client: BlobServiceClient, container: str, country: str):
@@ -53,7 +52,7 @@ def already_ran_typed(
     try:
         blob.get_blob_properties()
         return True
-    except Exception:
+    except ResourceNotFoundError:
         return False
 
 def mark_ran_typed(

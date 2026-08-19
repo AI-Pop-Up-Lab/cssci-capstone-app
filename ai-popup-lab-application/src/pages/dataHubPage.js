@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { useInView } from "react-intersection-observer"
 import { useTranslation, Trans } from 'react-i18next';
-import axios from "axios";
 
 import './dataHubPage.css';
 import downloadIcon from '../assets/svgs/downloadIcon.svg'
@@ -34,21 +33,32 @@ function DataHubPage() {
 
   // function to receive stratification frame file from backend API using country
   const downloadStratificationFrame = async (country) => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/download/country_frame_raw?country=${country}`);
-    
-    const filename = `${country}_stratification_frame.csv`;
-    downloadFile(filename, response);
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/download/country_frame_raw?country=${country}`);
+      if (!response.ok) throw new Error(`Download failed with status ${response.status}`);
+
+      const filename = `${country}_stratification_frame.csv`;
+      await downloadFile(filename, response);
+    } catch (error) {
+      console.error('Stratification frame download failed:', error);
+      alert(t('datahubPage.downloadError'));
+    }
   };
 
   // function to receive fieldwork data file from backend API using the type of study (pilot or main) and data type (transcripts or survey)
   const downloadFieldworkData = async (studyType, dataType) => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/download/fieldwork_file?studyType=${studyType}&dataType=${dataType}`);
+      if (!response.ok) throw new Error(`Download failed with status ${response.status}`);
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/download/fieldwork_file?studyType=${studyType}&dataType=${dataType}`);
-    
-    const disposition = response.headers.get('Content-Disposition');
-    const filename = disposition?.split('filename=')[1]?.replace(/"/g, '') ?? 'download.csv';
+      const disposition = response.headers.get('Content-Disposition');
+      const filename = disposition?.split('filename=')[1]?.replace(/"/g, '') ?? 'download.csv';
 
-    downloadFile(filename, response);
+      await downloadFile(filename, response);
+    } catch (error) {
+      console.error('Fieldwork data download failed:', error);
+      alert(t('datahubPage.downloadError'));
+    }
   };
 
   const [ref1, inView1] = useInViewAnimation();
@@ -82,22 +92,22 @@ function DataHubPage() {
             <div className="datahub-interview-set">
                 <p className='datahub-interview-timeframe'>{t('datahubPage.interview.timeframe1')}</p>
                 <div className='datahub-data-buttonrow'>
-                    <button onClick={() => downloadFieldworkData('pilot', 'transcript')} className='datahub-download-button-light'>{t('datahubPage.interview.transcripts')}<img src={downloadIcon} /></button>
+                    <button onClick={() => downloadFieldworkData('pilot', 'transcript')} className='datahub-download-button-light'>{t('datahubPage.interview.transcripts')}<img src={downloadIcon} alt="" /></button>
                 </div>
                 <div className='datahub-data-buttonrow'>
-                    <button onClick={() => downloadFieldworkData('pilot', 'survey')} className='datahub-download-button-light'>{t('datahubPage.interview.surveyData')}<img src={downloadIcon} /></button>
-                    <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} /></button>
+                    <button onClick={() => downloadFieldworkData('pilot', 'survey')} className='datahub-download-button-light'>{t('datahubPage.interview.surveyData')}<img src={downloadIcon} alt="" /></button>
+                    <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} alt="" /></button>
                 </div>
             </div>
 
             <div className="datahub-interview-set">
                 <p className='datahub-interview-timeframe'>{t('datahubPage.interview.timeframe2')}</p>
                 <div className='datahub-data-buttonrow'>
-                    <button onClick={() => downloadFieldworkData('main', 'transcript')}className='datahub-download-button-light'>{t('datahubPage.interview.transcripts')}<img src={downloadIcon} /></button>
+                    <button onClick={() => downloadFieldworkData('main', 'transcript')}className='datahub-download-button-light'>{t('datahubPage.interview.transcripts')}<img src={downloadIcon} alt="" /></button>
                 </div>
                 <div className='datahub-data-buttonrow'>
-                    <button onClick={() => downloadFieldworkData('main', 'survey')} className='datahub-download-button-light'>{t('datahubPage.interview.surveyData')}<img src={downloadIcon} /></button>
-                    <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} /></button>
+                    <button onClick={() => downloadFieldworkData('main', 'survey')} className='datahub-download-button-light'>{t('datahubPage.interview.surveyData')}<img src={downloadIcon} alt="" /></button>
+                    <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} alt="" /></button>
                 </div>
             </div>
         </div>
@@ -115,8 +125,8 @@ function DataHubPage() {
             </p>
         
             <div className='datahub-data-buttonrow'>
-                <button className='datahub-download-button-dark'>{t('datahubPage.survey.title')}<img src={downloadIcon} /></button>
-                <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} /></button>
+                <button className='datahub-download-button-dark'>{t('datahubPage.survey.title')}<img src={downloadIcon} alt="" /></button>
+                <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} alt="" /></button>
             </div>
         </div>
 
@@ -133,7 +143,7 @@ function DataHubPage() {
                   onClick={() => downloadStratificationFrame(country)}
                 >
                   {`${country.charAt(0).toUpperCase() + country.slice(1)} Frame`}
-                  <img src={downloadIcon} />
+                  <img src={downloadIcon} alt="" />
                 </button>
               </div>
             ))}

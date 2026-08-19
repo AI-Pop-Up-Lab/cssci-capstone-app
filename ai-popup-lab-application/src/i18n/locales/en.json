@@ -169,6 +169,7 @@
     },
     "datahubPage": {
         "codebook": "codebook",
+        "downloadError": "Download failed. The file may not be available yet — please try again later.",
         "intro": {
             "title": "DATA HUB",
             "text": "By downloading the data you agree to the terms and conditions of use."

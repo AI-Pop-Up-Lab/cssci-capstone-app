@@ -154,6 +154,7 @@
     },
     "datahubPage": {
         "codebook": "codebook",
+        "downloadError": "Downloaden mislukt. Het bestand is mogelijk nog niet beschikbaar — probeer het later opnieuw.",
         "intro": {
             "title": "DATA HUB",
             "text": "Door de gegevens te downloaden, gaat u akkoord met de gebruiksvoorwaarden."

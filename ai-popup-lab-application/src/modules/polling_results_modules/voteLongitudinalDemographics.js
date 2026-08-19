@@ -303,7 +303,9 @@ function VoteLongitudinalDemographics({ country }) {
   return (
     <div className="VoteLongitudinalDemographics">
       <h3 className="vld-title">{t('pollingResults.voteLongitudinalDemographic.title')}</h3>
-      {chartData && partyColours && rangeIdx ? (
+      {(error || partyColoursError) ? (
+        <p className="vld-error">{error || partyColoursError}</p>
+      ) : chartData && partyColours && rangeIdx ? (
         <>
 
           <div className="vld-demographic-choices">

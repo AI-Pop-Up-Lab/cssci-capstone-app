@@ -294,7 +294,9 @@ function VoteLongitudinal({ country }) {
   return (
     <div className="VoteLongitudinal">
       <h3 className="vl-title">{t('pollingResults.voteLongitudinal.title')}</h3>
-      {chartData && partyColours && rangeIdx ? (
+      {(error || partyColoursError) ? (
+        <p className="vl-error">{error || partyColoursError}</p>
+      ) : chartData && partyColours && rangeIdx ? (
         <>
           <div className="vl-chart-wrapper" ref={containerRef}>
             <svg ref={svgRef} />

@@ -587,7 +587,9 @@ function VoteLongitudinalUSPollsters({ country }) {
         <p className="vlup-pollster-status vlup-pollster-status--error">{pollsterError}</p>
       )}
 
-      {chartData && partyColours && rangeIdx ? (
+      {(error || partyColoursError) ? (
+        <p className="vlup-pollster-status vlup-pollster-status--error">{error || partyColoursError}</p>
+      ) : chartData && partyColours && rangeIdx ? (
         <>
           <div className="vlup-chart-wrapper" ref={containerRef}>
             <svg ref={svgRef} />

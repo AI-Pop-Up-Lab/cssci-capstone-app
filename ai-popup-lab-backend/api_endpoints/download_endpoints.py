@@ -2,7 +2,7 @@
 endpoints for 
 sending files for the not yet finished and deployed 'data hub' for users to download
 '''
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import json
@@ -29,13 +29,18 @@ def country_frame_raw(country: str):
 
     # checking if requested country is in data
     if country not in root_keys:
-        return {"error": "Country not found in data."}
+        raise HTTPException(status_code=404, detail="Country not found in data.")
 
-    country_sample_filename = country_data[country]['survey_filename']
-    country_sample_path = base_dir / "country_data" / 'surveys' / country_sample_filename
+    country_frame_filename = country_data[country]['stratification_frame_filename']
+    if country_frame_filename is None:
+        raise HTTPException(status_code=404, detail=f"Stratification frame not available for {country}.")
+
+    country_frame_path = base_dir / "country_data" / 'stratification_frames' / country_frame_filename
+    if not country_frame_path.exists():
+        raise HTTPException(status_code=404, detail=f"Stratification frame file missing for {country}.")
 
     return FileResponse(
-        path=country_sample_path,
+        path=country_frame_path,
         media_type='text/csv',
         filename=f"{country}_stratification_frame.csv"
     )
@@ -46,7 +51,7 @@ def country_frame_raw(country: str):
 def fieldwork_file(studyType: str, dataType: str):
 
     if studyType not in ['pilot', 'main'] or dataType not in ['survey', 'transcript']:
-        return {"error": "invalid studyType or dataType. studyType must be 'pilot' or 'main'. dataType must be 'survey' or 'transcript'."}
+        raise HTTPException(status_code=400, detail="invalid studyType or dataType. studyType must be 'pilot' or 'main'. dataType must be 'survey' or 'transcript'.")
 
     fieldwork_files_path = base_dir / "fieldwork_data"
 
@@ -70,9 +75,14 @@ def fieldwork_file(studyType: str, dataType: str):
         filepath = fieldwork_files_path / "fieldwork_transcripts.zip"
         filename = "fieldwork_transcripts.zip"
 
+    if not filepath.exists():
+        raise HTTPException(status_code=404, detail=f"Fieldwork file not available: {filename}")
+
+    media_type = 'application/zip' if filename.endswith('.zip') else 'text/csv'
+
     return FileResponse(
         path=filepath,
-        media_type='text/csv',
+        media_type=media_type,
         filename=filename,
         headers={"Access-Control-Expose-Headers": "Content-Disposition"}
     )

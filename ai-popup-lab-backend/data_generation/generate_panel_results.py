@@ -14,6 +14,7 @@ from datetime import date
 from pathlib import Path
 
 import pandas as pd
+from azure.core.exceptions import ResourceNotFoundError
 from azure.storage.blob import BlobServiceClient
 from isoweek import Week 
 
@@ -65,7 +66,8 @@ def _blob_exists(client: BlobServiceClient, blob_name: str) -> bool:
     try:
         client.get_blob_client(container=CONTAINER_NAME, blob=blob_name).get_blob_properties()
         return True
-    except Exception:
+    except ResourceNotFoundError:
+        # only a missing blob means "doesn't exist" — auth/network errors propagate
         return False
 
 def _download_df(client: BlobServiceClient, blob_name: str) -> pd.DataFrame | None:
@@ -221,13 +223,6 @@ def generate_vote_choice_backfill_onetime(
         raise ValueError(
             f"Source panel {country} {source_year}-W{source_week:02d} has missing biographies."
         )
-    panel_df = _download_df(client, source_blob)
-    if panel_df is None:
-        raise FileNotFoundError(f"No biography snapshot found at {source_blob}.")
-    if panel_df["biography"].isna().any():
-        raise ValueError(
-            f"Source panel {country} {source_year}-W{source_week:02d} has missing biographies."
-        )
 
     news_df = _download_df(client, _gdelt_blob(country, target_year, target_week))
 
@@ -239,7 +234,7 @@ def generate_vote_choice_backfill_onetime(
             current_panel,
         )
 
-    panel_df, news_df = run_survey(
+    panel_df, news_df, results_df = run_survey(
         question_id=question_id,
         panel_df=panel_df,
         panel_date=panel_date,
@@ -250,7 +245,10 @@ def generate_vote_choice_backfill_onetime(
         on_checkpoint=checkpoint_callback,
     )
 
-    _upload_df(client, _results_blob(country, target_year, target_week), panel_df)
+    _upload_df(client, _results_blob(country, target_year, target_week), results_df)
+
+    # write the guard checked at the top of this function so reruns actually skip
+    client.get_blob_client(container=CONTAINER_NAME, blob=onetime_guard).upload_blob(b"done", overwrite=True)
 
 def generate_vote_choice_backfill(
     country: str,
@@ -300,7 +298,7 @@ def generate_vote_choice_backfill(
     def checkpoint_callback(current_panel: pd.DataFrame) -> None:
         _upload_df(client, _backfill_checkpoint_blob(country, year, week), current_panel)
 
-    panel_df, news_df = run_survey(
+    panel_df, news_df, results_df = run_survey(
         question_id=question_id,
         panel_df=panel_df,
         panel_date=panel_date,
@@ -311,7 +309,7 @@ def generate_vote_choice_backfill(
         on_checkpoint=checkpoint_callback,
     )
 
-    _upload_df(client, _results_blob(country, year, week), panel_df)
+    _upload_df(client, _results_blob(country, year, week), results_df)
     if news_df is not None:
         _upload_df(client, _gdelt_blob(country, year, week), news_df)
 
@@ -325,9 +323,13 @@ def generate_panel_results(
     week: int,
     force: bool = False,
     client: BlobServiceClient | None = None,
-) -> None:
+) -> bool:
     """
     Run one survey wave for `country` for ISO week `year`/`week`.
+
+    Returns True if this week's panel results exist (freshly generated or already
+    present), False if the country has no panel configured — callers must NOT
+    write a panel lock on False, or MRP wedges on a lock with no results.
 
     Args:
         country: Full country name, e.g. 'sweden'.
@@ -348,11 +350,11 @@ def generate_panel_results(
 
     if not panel_filename or not question_id:
         logger.info("Panel not configured for %s — skipping.", country)
-        return
+        return False
 
     if not force and already_ran_panel(client, country, year, week):
         logger.info("Panel results already exist for %s %d-W%02d — skipping.", country, year, week)
-        return
+        return True
 
     panel_date = isoweek_to_panel_date(year, week)
     panel_name = Path(panel_filename).stem   # e.g. 'sweden_panel_40'
@@ -403,7 +405,7 @@ def generate_panel_results(
         """Save panel to blob every CHECKPOINT_INTERVAL respondents."""
         _upload_df(client, _active_panel_blob(country), current_panel)
 
-    panel_df, news_df = run_survey(
+    panel_df, news_df, results_df = run_survey(
         question_id=question_id,
         panel_df=panel_df,
         panel_date=panel_date,
@@ -413,9 +415,9 @@ def generate_panel_results(
         on_checkpoint=checkpoint_callback,
     )
 
-    # ── 5. Upload results snapshot (this week's responses only) ──────────────
+    # ── 5. Upload results snapshot (this week's responses, pre-attrition) ────
     results_blob_name = _results_blob(country, year, week)
-    _upload_df(client, results_blob_name, panel_df)
+    _upload_df(client, results_blob_name, results_df)
     logger.info("Results snapshot uploaded to %s", results_blob_name)
 
     # ── 6. Update active panel state ─────────────────────────────────────────
@@ -430,3 +432,4 @@ def generate_panel_results(
     # ── 8. Write lock ─────────────────────────────────────────────────────────
     mark_ran_panel(client, country, year, week)
     logger.info("Panel generation complete: %s %d-W%02d", country, year, week)
+    return True
