@@ -63,7 +63,7 @@ jobs:
             --os-type Linux
 
       - name: Wait for ACI to finish
-        timeout-minutes: 360
+        timeout-minutes: 600
         run: |
           while true; do
             STATE=$(az container show \
