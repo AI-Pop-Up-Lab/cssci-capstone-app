@@ -1,0 +1,200 @@
+/* Team Page Styles */
+
+.TeamPage{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Header Section */
+#team-intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 100px;
+
+  /* mint held until 60% so the description text stays on the light band for readable contrast */
+  background: #D1E3DD;
+  background: linear-gradient(180deg, rgba(209, 227, 221, 1) 0%, rgba(209, 227, 221, 1) 60%, rgba(51, 78, 88, 1) 100%);
+}
+
+#team-intro > h1{
+  font-size: 80px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#team-intro > p{
+  font-size: 14px;
+  color: #334E58;
+  margin-bottom: 20px;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Core Team Section */
+.team-section{
+  padding: 50px 4%;
+  width: calc(100% - 8%);
+}
+
+#team-core{
+  background-color: #335058;
+  color: #D1E3DD;
+}
+
+.team-section-header{
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.team-section-header::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 2.5px;
+  margin-top: 3px;
+  background-color: #D1E3DD;
+}
+
+.team-header-underline-appear::after{
+  animation: team-header-underline 0.69420s ease-in-out forwards;
+}
+
+.team-core-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.team-core-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #2e464f;
+  border-radius: 18px;
+  padding: 30px;
+  transition: transform 0.2s ease;
+}
+
+.team-core-card:hover{
+  transform: translateY(-5px);
+}
+
+.team-core-role{
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 22px;
+  color: #FCBFB7;
+  margin: 0 0 8px;
+}
+
+.team-core-name{
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0 0 15px;
+}
+
+.team-core-text{
+  font-size: 14px;
+  line-height: 1.5;
+  color: #B8C4CA;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.team-core-contact{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'unbounded';
+  font-size: 12px;
+  color: #334E58;
+  background-color: #FCBFB7;
+  border-radius: 18px;
+  padding: 10px 20px;
+  transition: background-color 0.2s;
+}
+
+.team-core-contact:hover{
+  cursor: pointer;
+  background-color: #e8b1a9;
+}
+
+/* Animation Classes */
+.team-fade-in-up{
+  animation: team-fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes team-fade-in-up{
+  from{
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes team-header-underline{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 920px){
+  #team-intro > h1{
+    font-size: 60px;
+  }
+
+  .team-section-header{
+    font-size: 30px;
+  }
+
+  .team-core-role{
+    font-size: 18px;
+  }
+
+  .team-core-text{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 540px){
+  #team-intro > h1{
+    font-size: 42px;
+  }
+
+  .team-section-header{
+    font-size: 22px;
+  }
+
+  .team-core-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .team-core-role{
+    font-size: 16px;
+  }
+
+  .team-core-name{
+    font-size: 14px;
+  }
+
+  .team-core-text{
+    font-size: 11px;
+  }
+
+  .team-core-contact{
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+}

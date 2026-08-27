@@ -75,6 +75,14 @@
     font-size: 16px;
 }
 
+.datahub-country-indicator{
+    max-width: 1000px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FCBFB7;
+    margin-bottom: 10px;
+}
+
 .datahub-colour-transition{
     height: 115px;
     width: 100%;
@@ -88,11 +96,6 @@
 .datahub-colour-transition#pink-to-light{
     background: #FCBFB7;
     background: linear-gradient(180deg, rgba(252, 191, 183, 1) 0%, rgba(155, 169, 176, 1) 100%);
-}
-
-.datahub-colour-transition#light-to-white{
-    background: #9BA9B0;
-    background: linear-gradient(180deg, rgba(155, 169, 176, 1) 0%, rgba(209, 227, 221, 1) 100%);
 }
 
 #datahub-interview-data{
@@ -196,6 +199,58 @@
     margin-top: 20px;
 }
 
+/* quotation-mark bubble revealing a citation popup on hover/focus */
+.datahub-citation{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.datahub-citation-bubble{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2.5px solid #D1E3DD;
+    background: transparent;
+    color: #D1E3DD;
+    font-family: 'unbounded';
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 0;
+    padding: 14px 0 0 0;
+    cursor: default;
+    transition: background-color 0.2s;
+}
+
+.datahub-citation:hover .datahub-citation-bubble,
+.datahub-citation-bubble:focus-visible{
+    background-color: rgba(209, 227, 221, 0.15);
+}
+
+.datahub-citation-popup{
+    display: none;
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: max-content;
+    max-width: min(560px, 55vw);
+    border: 2px solid #FCBFB7;
+    border-radius: 24px;
+    background-color: #335058;
+    color: #FCBFB7;
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 12px 24px;
+    text-align: center;
+}
+
+.datahub-citation:hover .datahub-citation-popup,
+.datahub-citation:focus-within .datahub-citation-popup{
+    display: block;
+}
+
 .datahub-interview-timeframe{
     color: #FCBFB7;
     font-size: 16px;
@@ -208,46 +263,6 @@
 
 #datahub-stratification-frames > p{
     margin-bottom: 30px;
-}
-
-#datahub-support{
-    width: calc(100% - 8%);
-    padding: 0 4%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#datahub-support > h1{
-    font-weight: 500;
-    font-size: 34px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#datahub-support > p{
-    font-size: 16px;
-    max-width: 500px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #9BA9B0;
-}
-
-#datahub-support > button{
-    margin-bottom: 50px;
-    color: #335058;
-    background-color: #FCBFB7;
-    font-family: 'unbounded';
-    font-size: 16px;
-    border: 2px solid #335058;
-    border-radius: 18px;
-    padding: 12px 46px;
-}
-
-#datahub-support > button:hover{
-    cursor: pointer;
-    background-color: #efb6af;
 }
 
 @keyframes header-underline{
@@ -269,6 +284,10 @@
     .datahub-section-text{
         font-size: 14px;
     }
+
+    .datahub-country-indicator{
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 810px){
@@ -289,6 +308,10 @@
         font-size: 12px;
     }
 
+    .datahub-country-indicator{
+        font-size: 14px;
+    }
+
     .datahub-interview-timeframe{
         font-size: 14px;
     }
@@ -301,17 +324,23 @@
         height: 12px;
     }
 
-    #datahub-support > h1{
-        font-size: 30px;
+    .datahub-citation-bubble{
+        width: 32px;
+        height: 32px;
+        font-size: 24px;
+        padding-top: 11px;
     }
 
-    #datahub-support > p {
-        font-size: 14px;
-    }   
-
-    #datahub-support > button{
-        font-size: 14px;
+    /* anchor the popup below the bubble so it doesn't overflow the viewport */
+    .datahub-citation-popup{
+        left: auto;
+        right: 0;
+        top: calc(100% + 8px);
+        transform: none;
+        max-width: 80vw;
+        font-size: 10px;
     }
+
 }
 
 @media screen and (max-width: 540px){
@@ -332,6 +361,10 @@
         font-size: 10px;
     }
 
+    .datahub-country-indicator{
+        font-size: 12px;
+    }
+
     .datahub-interview-timeframe{
         font-size: 11px;
     }
@@ -344,38 +377,12 @@
         height: 9px;
     }
 
-
-    #datahub-support > h1{
-        font-size: 26px;
-    }
-
-    #datahub-support > p {
-        font-size: 12px;
-    }   
-
-    #datahub-support > button{
-        font-size: 12px;
-        padding: 8px 30px;
-    }
 }
 
 @media screen and (max-width: 450px) {
     .datahub-download-button-light, .datahub-download-button-dark, .datahub-download-codebook{
         font-size: 8px;
         padding: 7px 14px;
-    }
-
-    #datahub-support > h1{
-        font-size: 20px;
-    }
-
-    #datahub-support > p {
-        font-size: 10px;
-    }   
-
-    #datahub-support > button{
-        font-size: 10px;
-        padding: 8px 30px;
     }
 }
 
@@ -414,17 +421,5 @@
 
     .datahub-download-button-light > img, .datahub-download-button-dark > img, .datahub-download-codebook > img {
         height: 8px;
-    }
-
-    #datahub-support > h1{
-        font-size: 20px;
-    }
-
-    #datahub-support > p {
-        font-size: 10px;
-    }   
-
-    #datahub-support > button{
-        font-size: 10px;
     }
 }

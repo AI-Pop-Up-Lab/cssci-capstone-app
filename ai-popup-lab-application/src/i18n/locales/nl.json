@@ -152,15 +152,43 @@
             }
         }
     },
+    "teamPage": {
+        "title": "ONTMOET HET TEAM",
+        "description": "Dit project is een samenwerking tussen studenten Computational Social Science en Cultural Data & AI aan de Universiteit van Amsterdam, onder begeleiding van dr. Roberto Cerina.",
+        "coreTeam": {
+            "title": "Kernteam",
+            "contact": "Contact",
+            "members": {
+                "policog": {
+                    "role": "Poli-Cog",
+                    "text": "Leidt de politiek-cognitieve kant van het project: hoe synthetische persona's redeneren en praten over politiek. Ontwerpt de gedragsregels van de chatpipeline zodat antwoorden representatief en onderbouwd blijven, zonder stereotypen."
+                },
+                "personaSampling": {
+                    "role": "Persona Sampling",
+                    "text": "Bouwt de synthetische steekproeven achter elke peiling. Trekt representatieve persona's uit op volkstellingen gebaseerde stratificatiekaders, zodat elke gesimuleerde respondent een echt deel van de bevolking weerspiegelt."
+                },
+                "infrastructure": {
+                    "role": "Infrastructuur",
+                    "text": "Bouwt en onderhoudt het platform zelf: de backend-API's, datapipelines en deployment die elk resultaat van model naar browser brengen."
+                }
+            }
+        }
+    },
     "datahubPage": {
         "codebook": "codebook",
         "downloadError": "Downloaden mislukt. Het bestand is mogelijk nog niet beschikbaar — probeer het later opnieuw.",
+        "countries": {
+            "netherlands": "Nederland",
+            "denmark": "Denemarken",
+            "sweden": "Zweden"
+        },
         "intro": {
             "title": "DATA HUB",
             "text": "Door de gegevens te downloaden, gaat u akkoord met de gebruiksvoorwaarden."
         },
         "interview": {
-            "title": "Menselijke referentiepunten",
+            "title": "Menselijke referentiepunten: {{country}}",
+            "subtitle": "Dit zijn de menselijke referentiegegevens voor {{country}}.",
             "text": "Persoonsgegevens over politieke voorkeuren, ingedeeld naar demografische kenmerken op persoonsniveau. De deelnemers vulden een gestructureerde vragenlijst in met demografische gegevens en informatie over hun stemgedrag in het verleden en de toekomst, en gingen hier in een interview van ongeveer 10 minuten dieper op in. Af en toe worden respondenten opnieuw benaderd en leveren ze vervolgopnames rond vergelijkbare thema's. Het interview en de enquêtegegevens worden aan elkaar gekoppeld via een unieke identificatiecode. Zowel de interviews als de enquêtegegevens zijn geanonimiseerd. Mocht u persoonlijk identificeerbare gegevens in de interviews opmerken, neem dan onmiddellijk contact op met de hoofdonderzoeker, dr. Roberto Cerina, via <span>r.cerina@uva.nl</span>.",
             "timeframe1": "18-04-2026 tot 30-04-2026",
             "timeframe2": "30-04-2026 tot 01-05-2026",
@@ -174,12 +202,6 @@
         "stratification": {
             "title": "stratification frames",
             "text": "Gedetailleerde tabellen die de bevolkingsspreiding weergeven over elkaar uitsluitende en uitputtende cellen. De celcijfers zijn afgeleid van openbaar beschikbare volkstellingstabellen en aangevuld met een uitsplitsing naar 'stemgedrag bij de laatste algemene verkiezingen' op basis van een recent aanvullend onderzoek. Het jaartal en de aanduiding in de naam van het kader geven het jaar en het type verkiezing weer waarvoor dat kader geldt."
-        },
-        "support": {
-            "title": "STEUN HET ONDERZOEK",
-            "text1": "DONEER EN DRAAG BIJ AAN DE TOEKOMSTIGE ACTIVITEITEN VAN HET PROJECT.",
-            "text2": "ALLE HULP WORDT ZEER OP PRIJS GESTELD",
-            "donate": "DONEER"
         }
     }
 }
