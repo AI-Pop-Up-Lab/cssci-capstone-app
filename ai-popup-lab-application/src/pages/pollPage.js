@@ -16,76 +16,76 @@ import axios from 'axios';
 
 import './pollPage.css';
 
-import PollingResults from '../modules/polling_results_modules/pollingResults';
 import CountrySwitch2 from '../modules/countrySwitch2';
 
-// options for countries to pick from
-const countryOptions = [
-  'netherlands',
-  'sweden',
-  'denmark',
-  'usa'
-]
+import PollingMap from '../modules/polling_results_modules/pollingMap';
+import SeatVisualisation from '../modules/polling_results_modules/seatVisualisation';
+import VoteProjection from '../modules/polling_results_modules/voteProjection';
+import DemographicCharts from '../modules/polling_results_modules/demographicCharts';
+import VoteLongitudinal from "../modules/polling_results_modules/voteLongitudinal";
+import VoteLongitudinalDemographics from "../modules/polling_results_modules/voteLongitudinalDemographics";
+import PollstersUS from "../modules/polling_results_modules/pollstersUS";
+import VoteLongitudinalUSPollsters from "../modules/polling_results_modules/voteLongitudinalUSPollsters";
+
+import { getCountryData } from '../utils/fetch_data';
+import { getChosenCountry, setChosenCountry } from '../utils/set_country';
+import { COUNTRY_INFO } from '../utils/common_vars'
 
 function PollPage() {
 
-  // getting search parameters
-  const [searchParams] = useSearchParams();
+  const [selectedCountry, setSelectedCountry] = useState(() => getChosenCountry() ?? "usa");
 
-  // default selected country is first from countryOptions list, otherwise selected country is the selected country from previous page from URL parameters
-  const paramCountry = countryOptions.includes(searchParams.get('country'))
-  ? searchParams.get('country')
-  : countryOptions[0];
-  const [selectedCountry, setSelectedCountry] = useState(paramCountry);
+  const [countryData, setCountryData] = useState(null);
 
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-
-  const [responseData, setResponseData] = useState(null);
-
-  // retrieving country sample of selected country from backend API
-  async function getCountrySample(countryName){
-    try {
-      
-
-      // console.log(`Getting polling results for ${countryName}...`);
-
-      // FastAPI in testing is running on 127.0.0.1:8000
-      // In deployment, the environment variable REACT_APP_API_URL is in the github repository secrets and gets added in build from the workflow file (deploy-frontend.yml)
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/country_sample?country=${countryName}`);
-      setData(response.data);
-      setError(null);
-    } catch (err) {
-      setError(err.message);
-      setData(null);
-    }
-  };
-
-  // when user selects new country, relevant data retrieval function is called
   useEffect(() => {
-    setData(null);
+    let cancelled = false;
 
-    getCountrySample(selectedCountry);
+    getCountryData(selectedCountry)
+      .then((data) => {
+        if (!cancelled) setCountryData(data);
+      })
+      .catch((err) => {
+        console.error('Failed to load country data:', err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [selectedCountry]);
 
-  useEffect(() => {
-    setResponseData(data?.data ?? []);
-  }, [data]);
+  function handleCountryChange(country) {
+    setChosenCountry(country);
+    setSelectedCountry(country);
+  }
 
   return (
     <div className="PollPage unbounded-weight300">
       {/* Component for switching country */}
       <CountrySwitch2 
-        setCountry={setSelectedCountry} 
+        setCountry={handleCountryChange} 
         selectedCountry={selectedCountry}
-         include_usa_TEMPORARY={true}
       />
+
       
-      {/* Component which holds the polling result graphs */}
-      <PollingResults 
-        selectedCountry={selectedCountry}
-        setSelectedCountry={setSelectedCountry}  
-      />
+      {COUNTRY_INFO[selectedCountry].is_in_development ? (
+        <div id="poll-page-comingsoon">
+          <p>Coming soon for selected country...</p>
+        </div>
+      ) : (
+        <div id="poll-page-content">
+          
+          {selectedCountry === 'usa' ? (
+            <VoteLongitudinalUSPollsters />
+          ) : (
+            <VoteLongitudinal />
+          )}
+
+          <VoteLongitudinalDemographics />
+        </div>
+      )}
+
+
+      
     </div>
   );
 }

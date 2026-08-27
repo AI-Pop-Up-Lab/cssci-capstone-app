@@ -9,3 +9,5 @@ env/
 venv/
 .env/
 .env
+.env2
+ai-popup-lab-backend/.env2

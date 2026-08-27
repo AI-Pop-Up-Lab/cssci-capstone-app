@@ -9,29 +9,12 @@ import personaPic_1 from '../assets/svgs/personaPic_1.svg'
 import personaPic_2 from '../assets/svgs/personaPic_2.svg'
 import linkArrow from '../assets/images/linkArrow.png'
 
-function PersonaChatExample({includeLink, country}) {
+function PersonaChatExample({includeLink, countryData}) {
 
   const { t } = useTranslation();
 
-  // modify country names where variable name does not match the country's full name 
-  function modifyCountryNameEdgeCases(country){
-    let modifiedCountry;
-
-    if(country === 'netherlands'){
-      modifiedCountry = 'the Netherlands';
-    }
-    if(country === 'usa'){
-      modifiedCountry = 'the USA'
-    }
-    else{
-      modifiedCountry = country;
-    }
-
-    return modifiedCountry
-  }
-
-  let modifiedCountry = modifyCountryNameEdgeCases(country)
-  modifiedCountry = modifiedCountry.charAt(0).toUpperCase() + modifiedCountry.slice(1);
+  let countryName = countryData.alias
+  countryName = countryName.charAt(0).toUpperCase() + countryName.slice(1);
 
 
   return (
@@ -58,13 +41,13 @@ function PersonaChatExample({includeLink, country}) {
           <div id="example-persona-chat">
             <div id='example-user-message-container'>
               <div id="example-user-message">
-                <p>{t('personaChatExample.exampleUserMessage', { country: modifiedCountry})}</p>
+                <p>{t('personaChatExample.exampleUserMessage', { country: countryName})}</p>
                 <div id="example-user-message-bubbletick"></div>
               </div>
             </div>
             <div id='example-response-message-container'>
               <div id="example-response-message">
-                <p>{t('personaChatExample.exampleResponse', { country: modifiedCountry})}</p>
+                <p>{t('personaChatExample.exampleResponse', { country: countryName})}</p>
                 <div id="example-response-message-bubbletick"></div>
               </div>
             </div>
@@ -78,7 +61,7 @@ function PersonaChatExample({includeLink, country}) {
         for this example being shown on the persona page itself for example, not necessary. confusing even. flabbergasting. gives me shudders.
         */}
         <div id='land-expl-pers-bottom' className={includeLink ? '' : 'dontShowPersonaLink'}>
-          <Link to={`/personas/?country=${country}`}><button className='unbounded-weight300'>{t('personaChatExample.explorePersonas')} <img alt='right facing arrow' src={linkArrow}></img></button></Link>
+          <Link to={`/personas`}><button className='unbounded-weight300'>{t('personaChatExample.explorePersonas')} <img alt='right facing arrow' src={linkArrow}></img></button></Link>
         </div>
     </div>
   );

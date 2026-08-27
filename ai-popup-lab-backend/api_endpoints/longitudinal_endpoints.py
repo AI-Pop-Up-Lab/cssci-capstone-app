@@ -6,8 +6,8 @@ import pandas as pd
 import io
 import os
 
-from data_generation.store_data import get_blob_client, CONTAINER_NAME
 from data_generation.aggregate_longitudinal import _longitudinal_blob_name, _longitudinal_demographic_blob_name
+from azure_storage_utils import get_blob_service_client, CONTAINER_NAME
 
 router = APIRouter(prefix="/longitudinal")
 
@@ -21,7 +21,7 @@ with open(json_path) as f:
 root_keys = list(country_data.keys())
 
 def _stream_blob_as_csv(blob_name: str) -> StreamingResponse:
-    client = get_blob_client()
+    client = get_blob_service_client()
     blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
     try:
         data = blob.download_blob().readall()
@@ -78,7 +78,7 @@ def us_pollster_predictions():
     blob_name = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_polls_model_output.json")
     container = os.environ.get("US_POLLS_BLOB_CONTAINER", "polling-data")
 
-    client = get_blob_client()
+    client = get_blob_service_client()
     blob = client.get_blob_client(container=container, blob=blob_name)
 
     try:

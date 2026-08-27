@@ -1,11 +1,34 @@
 """
-backfill entry point.
-ran with: python -m data_generation.backfill_entry
-env variables:
-    COUNTRIES       comma-separated country names, e.g. "sweden"
+Backfill entry point — sequentially runs the panel generation cycle
+(attrition -> biographies -> survey) and/or MRP frame extension for a set of
+countries across a set of ISO weeks, entirely on the backfill storage track
+(see azure_storage_utils.get_backfill_active_panel_path and friends) so a
+backfill run never touches live production panel state.
+
+Run with: python -m data_generation.backfill_entry
+
+Env variables:
+    COUNTRIES       comma-separated country names, e.g. "usa" or "usa,sweden"
     BACKFILL_WEEKS  comma-separated ISO weeks, e.g. "2026-20,2026-21,2026-22"
-    JOB_TYPE        panel | mrp | both  (default: panel)
-    BACKFILL_FORCE  true | false        (default: false)
+    JOB_TYPE        panel | mrp | both   (default: panel)
+    BACKFILL_FORCE  true | false         (default: false)
+
+Weeks for a given country are always processed in chronological order,
+regardless of the order they're listed in BACKFILL_WEEKS — each backfilled
+week depends on the panel state left behind by the previous one, so this
+must never be parallelized across weeks for the same country. Different
+countries are independent of each other and are simply processed one after
+another here (see run_job.py for the equivalent weekly-job country loop).
+
+If a week fails for a given country, later weeks for that same country are
+skipped (their input state would be stale/incomplete) — the run moves on to
+the next country instead. Other countries are unaffected.
+
+Job locks live inside the per-job functions: generate_panel_results_backfill
+writes its "panel_backfill" lock only after a successful run, and skips both
+the run and the lock entirely for countries with no panel configured — a
+lock without results would wedge the downstream MRP step. _run_mrp locks
+under "mrp_backfill" the same way.
 """
 from __future__ import annotations
 
@@ -13,16 +36,8 @@ import logging
 import os
 import sys
 
-from .generate_panel_results import (
-    generate_panel_results,
-    generate_panel_biographies_only,
-    generate_vote_choice_backfill,
-    isoweek_to_panel_date,
-)
-from .job_guard import already_ran_typed, mark_ran_typed
-from .run_scripts import check_r_available, run_extension_script
-from .store_data import CONTAINER_NAME, get_blob_client, store_frame
-from .run_job import _run_mrp, COUNTRIES, JOB_TYPE
+from .generate_panel_results import generate_panel_results_backfill
+from .run_scripts import check_r_available
 
 logging.basicConfig(
     level=logging.INFO,
@@ -30,15 +45,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if c.strip()]
+JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
 FORCE = os.environ.get("BACKFILL_FORCE", "false").lower() == "true"
-GENERATE_EVENTS = os.environ.get("GENERATE_EVENTS", "false").lower() == "true"
-ARTICLES_PATH = os.environ.get("ARTICLES_PATH")  # required only if GENERATE_EVENTS=true
 
 _RAW_WEEKS = os.environ.get("BACKFILL_WEEKS", "")
 
 
 def _parse_weeks(raw: str) -> list[tuple[int, int]]:
-    """Parse "2026-20,2026-21" → [(2026, 20), (2026, 21)]."""
+    """Parse "2026-20,2026-21" -> [(2026, 20), (2026, 21)], sorted chronologically."""
     result = []
     for token in raw.split(","):
         token = token.strip()
@@ -50,7 +65,7 @@ def _parse_weeks(raw: str) -> list[tuple[int, int]]:
                 f"Invalid week format: '{token}'. Expected YYYY-WW (e.g. 2026-20)."
             )
         result.append((int(parts[0]), int(parts[1])))
-    return result
+    return sorted(result)
 
 
 def main() -> None:
@@ -59,80 +74,38 @@ def main() -> None:
         logger.error("No weeks provided. Set BACKFILL_WEEKS=YYYY-WW[,YYYY-WW,...]")
         sys.exit(1)
 
-    if JOB_TYPE in ("mrp", "both", "vote_choice_and_mrp"):
+    if JOB_TYPE in ("mrp", "both"):
         check_r_available()
+        # Imported lazily so panel-only backfills never require run_job.py's
+        # R/MRP dependencies to be importable.
+        from .run_job import _run_mrp
 
-    blob_client = get_blob_client()
     failed: list[str] = []
 
-    for year, week in weeks:
-        for country in COUNTRIES:
+    for country in COUNTRIES:
+        logger.info(
+            "Backfilling %s across %d week(s): %s [job_type=%s, force=%s]",
+            country, len(weeks), ", ".join(f"{y}-W{w:02d}" for y, w in weeks), JOB_TYPE, FORCE,
+        )
+        for year, week in weeks:
             label = f"{country} {year}-W{week:02d}"
-            logger.info("Backfilling: %s [job_type=%s, force=%s]", label, JOB_TYPE, FORCE)
             try:
                 if JOB_TYPE in ("panel", "both"):
-                    if not FORCE and already_ran_typed(
-                        blob_client, CONTAINER_NAME, country, "panel", year, week
-                    ):
-                        logger.info("[%s] Panel lock exists — skipping (use force=true to override).", label)
-                    else:
-                        panel_ran = generate_panel_results(
-                            country=country,
-                            year=year,
-                            week=week,
-                            force=FORCE,
-                            client=blob_client,
-                        )
-                        if panel_ran:
-                            mark_ran_typed(blob_client, CONTAINER_NAME, country, "panel", year, week)
-                        else:
-                            # no lock for unconfigured countries — a lock without results wedges MRP
-                            logger.warning("[%s] Panel not configured — no lock written.", label)
+                    generate_panel_results_backfill(
+                        country=country, year=year, week=week, force=FORCE,
+                    )
 
-                if JOB_TYPE == "biography":
-                    if not FORCE and already_ran_typed(
-                        blob_client, CONTAINER_NAME, country, "biography", year, week
-                    ):
-                        logger.info("[%s] Biography lock exists — skipping (use force=true to override).", label)
-                    else:
-                        generate_panel_biographies_only(
-                            country=country,
-                            year=year,
-                            week=week,
-                            client=blob_client,
-                            generate_events=GENERATE_EVENTS,
-                            articles_path=ARTICLES_PATH,
-                        )
-                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "biography", year, week)
-
-                if JOB_TYPE in ("vote_choice_backfill", "vote_choice_and_mrp"):
-                    if not FORCE and already_ran_typed(
-                        blob_client, CONTAINER_NAME, country, "vote_choice_backfill", year, week
-                    ):
-                        logger.info("[%s] Vote choice lock exists — skipping (use force=true to override).", label)
-                    else:
-                        generate_vote_choice_backfill(
-                            country=country,
-                            year=year,
-                            week=week,
-                            force=FORCE,
-                            client=blob_client,
-                        )
-                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "vote_choice_backfill", year, week)
-
-                if JOB_TYPE in ("mrp", "both", "vote_choice_and_mrp"):
-                    if not FORCE and already_ran_typed(
-                        blob_client, CONTAINER_NAME, country, "mrp", year, week
-                    ):
-                        logger.info("[%s] MRP lock exists — skipping.", label)
-                    else:
-                        _run_mrp(country, blob_client, year, week)
-                        mark_ran_typed(blob_client, CONTAINER_NAME, country, "mrp", year, week)
+                if JOB_TYPE in ("mrp", "both"):
+                    _run_mrp(country=country, year=year, week=week, backfill=True, force=FORCE)
 
                 logger.info("Done: %s", label)
             except Exception:
-                logger.exception("Failed: %s", label)
+                logger.exception("Failed: %s — stopping this country's backfill here.", label)
                 failed.append(label)
+                # Later weeks for this country depend on this week's panel
+                # state, so there's no safe way to continue past a failure —
+                # move on to the next country instead.
+                break
 
     if failed:
         logger.error("Backfill finished with failures: %s", failed)

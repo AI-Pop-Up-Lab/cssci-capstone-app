@@ -14,94 +14,45 @@ import PersonaChatExample from '../modules/personaChatExample.js';
 import DemographicChooserForPersona from '../modules/persona_chat_modules/demographicChooserForPersona.js';
 import PersonaChooser from "../modules/persona_chat_modules/personaChooser.js";
 import CountrySwitch2 from '../modules/countrySwitch2';
-
 import Loader from "../modules/loader";
 
-// options of countries to choose from
-const countryOptions = [
-  'netherlands',
-  'sweden',
-  'denmark',
-  'usa'
-]
-
-// modifies names that are represented differently in data than its real full name
-function modifyCountryNameEdgeCases(country){
-  let modifiedCountry;
-
-  if(country === 'netherlands'){
-    modifiedCountry = 'the Netherlands';
-  }else{
-    modifiedCountry = country;
-  }
-
-  return modifiedCountry
-}
+import { getCountryData } from '../utils/fetch_data';
+import { getChosenCountry, setChosenCountry } from '../utils/set_country';
 
 function PersonaPage() {
 
   const { t } = useTranslation();
 
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-
-  const [responseData, setResponseData] = useState(null);
-
-  const [modifiedCountry, setModifiedCountry] = useState(null);
-  const dataLength = useMemo(() => responseData?.length ?? 0, [responseData]);
-
-  const [searchParams] = useSearchParams();
-
-  const paramCountry = countryOptions.includes(searchParams.get('country'))
-  ? searchParams.get('country')
-  : countryOptions[0];
-  const [selectedCountry, setSelectedCountry] = useState(paramCountry); 
-
-  const [relevantColumns, setRelevantColumns] = useState(null);
-
+  const [selectedCountry, setSelectedCountry] = useState(() => getChosenCountry() ?? "usa");
+  const [countryData, setCountryData] = useState(null);
+  
   const [chosenPersonaDemographic, setChosenPersonaDemographic] = useState({});
+
+  useEffect(() => {
+    let cancelled = false;
+
+    getCountryData(selectedCountry)
+      .then((data) => {
+        if (!cancelled) setCountryData(data);
+      })
+      .catch((err) => {
+        console.error('Failed to load country data:', err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedCountry]);
+
+  function handleCountryChange(country) {
+    setChosenCountry(country);
+    setSelectedCountry(country);
+  }
 
   // callback to call the function for setting the demographic chosen from the options in the select elements
   const handleSetChosenPersonaDemographic = useCallback((value) => {
     setChosenPersonaDemographic(value);
   }, []);
-
-  // function to get country sample data from backend
-  async function getCountrySample(countryName){
-    try {
-
-      // console.log(`Getting polling results for ${countryName}...`);
-
-      // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/country_sample?country=${countryName}`);
-      setData(response.data);
-      setError(null);
-    } catch (err) {
-      setError(err.message);
-      setData(null);
-    }
-  };
-
-  // changes the data with react hooks when the user selects new country
-  useEffect(() => {
-    setData(null);      
-    setResponseData([]); 
-    getCountrySample(selectedCountry);
-  }, [selectedCountry]);
-
-  // handles edge case of country name for display when country selecte
-  useEffect(() => {
-
-    let modCountry = modifyCountryNameEdgeCases(selectedCountry);
-    modCountry = modCountry.charAt(0).toUpperCase() + modCountry.slice(1);
-
-    setModifiedCountry(modCountry);
-
-  }, [selectedCountry])
-  
-  useEffect(() => {
-    setResponseData(data?.data ?? []);
-  }, [data]);
 
   // scroll to top of page when loads, as many personas puts you at bottom of massive page
   useEffect(() => {
@@ -113,44 +64,46 @@ function PersonaPage() {
 
       {/* componnent to switch country */}
       <CountrySwitch2 
-        setCountry={setSelectedCountry} 
+        setCountry={handleCountryChange} 
         selectedCountry={selectedCountry}
-        include_usa_TEMPORARY={false}
       />
 
       {/* exmaple of persona chat */}
-      { selectedCountry && 
-        <PersonaChatExample includeLink={false} country={selectedCountry} />
-      }
+      {countryData ? (
+        <PersonaChatExample includeLink={false} countryData={countryData} />
+      ) : (
+        <Loader />
+      )}
 
 
       <div id="persona-selection">
         <div id="selection-explanation">
           <h1 className="unbounded-weight400">{t('personaPage.title')}</h1>
-          <p className="unbounded-weight300">
+          {/* <p className="unbounded-weight300">
             <Trans
               i18nKey="personaPage.description"
               values={{ dataLength, modifiedCountry }}
               components={{ br: <br/> }}
             />
-          </p>
+          </p> */}
+          <p>Coming soon...</p>
         </div>
 
         {/* dropdowns to filter demographic */}
-        {selectedCountry ? <DemographicChooserForPersona
+        {/* {selectedCountry ? <DemographicChooserForPersona
         key={selectedCountry}
         setChosenDemographic={handleSetChosenPersonaDemographic}
         country={selectedCountry}
         setRelevantColumns={setRelevantColumns}
-        /> : <Loader />}
+        /> : <Loader />} */}
 
         {/* Display of personae that match demographic */}
-        {data && selectedCountry ? <PersonaChooser 
+        {/* {data && selectedCountry ? <PersonaChooser 
         data={responseData}
         chosenDemographic={chosenPersonaDemographic}
         countryName={selectedCountry}
         relevantColumns={relevantColumns ? [...relevantColumns] : null}
-        /> : <Loader />}
+        /> : <Loader />} */}
 
       </div>
     </div>
