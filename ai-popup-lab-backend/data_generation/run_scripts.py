@@ -25,7 +25,6 @@ def run_survey_script(frame_filepath, environment, country):
     return SURVEYS_DIR / f"{country}_survey.csv"
 
 def run_extension_script(
-
     survey_path: str | Path,
     frame_path: str | Path,
     output_dir: Path,
@@ -39,7 +38,9 @@ def run_extension_script(
         survey_path: Path to the survey CSV file.
         frame_path: Path to the frame CSV file.
         output_dir: Directory where R should write its output.
-        country: String of country name
+        country: String of country name — also passed through to the R CLI
+            so it can pick the right post-stratification module (US vs the
+            shared module for everyone else).
         n_sims: Number of simulations to run (default: 250).
 
     Returns:
@@ -67,6 +68,7 @@ def run_extension_script(
         str(survey_path),
         str(frame_path),
         str(output_dir),
+        country,
         str(n_sims),
     ]
 

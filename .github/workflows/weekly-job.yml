@@ -8,7 +8,7 @@ on:
       countries:
         description: 'Comma-separated countries'
         required: false
-        default: 'denmark,sweden'
+        default: 'usa'
       job_type:
         description: 'Job type: mrp, panel, or both'
         required: false
@@ -49,7 +49,7 @@ jobs:
             --memory 8 \
             --environment-variables \
               ENV=production \
-              COUNTRIES="${{ github.event.inputs.countries || 'denmark,netherlands,sweden' }}" \
+              COUNTRIES="${{ github.event.inputs.countries || 'usa' }}" \
               JOB_TYPE="${{ github.event.inputs.job_type || 'both' }}" \
               BLOB_CONTAINER_NAME=generated-data \
               US_POLLS_BLOB_CONTAINER="polling-data" \

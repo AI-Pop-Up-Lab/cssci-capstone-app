@@ -2,12 +2,9 @@
 Download GDELT 2.0 GKG records for a date range and source domain.
 
 Example:
-    from modules.news import download_weekly_news
+    from .news import download_weekly_news
 
     download_weekly_news("2025-04-28", "2025-05-04", domain=".nl")
-
-Requirements:
-    pip install requests pandas tqdm
 """
 
 import io
@@ -19,7 +16,10 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+import newspaper
 from tqdm import tqdm
+
+from .retry_utils import retry_call, RetryExhausted
 
 MASTERLIST_URLS = [
     "http://data.gdeltproject.org/gdeltv2/masterfilelist.txt",
@@ -75,13 +75,23 @@ def _output_path(start: datetime, end: datetime, domain: str, output_dir: str | 
 
 
 # ── Step 1: Collect GKG file URLs for the date range ──────────────────────────
+def _fetch_masterlist(master_url: str) -> requests.Response:
+    resp = requests.get(master_url, timeout=60)
+    resp.raise_for_status()
+    return resp
+
+
 def get_gkg_urls(start: datetime, end: datetime, masterlist_urls: list[str] | None = None) -> list[str]:
     urls = []
+    end_inclusive = end + timedelta(days=1)
     for master_url in (masterlist_urls or MASTERLIST_URLS):
         print(f"Fetching master list: {master_url}")
-        resp = requests.get(master_url, timeout=60)
-        resp.raise_for_status()
-        end_inclusive = end + timedelta(days=1)
+        try:
+            resp = retry_call(_fetch_masterlist, master_url)
+        except RetryExhausted as exc:
+            print(f"  ✗ giving up on masterlist {master_url}: {exc}")
+            continue
+
         for line in resp.text.splitlines():
             parts = line.strip().split()
             if len(parts) < 3:
@@ -100,30 +110,33 @@ def get_gkg_urls(start: datetime, end: datetime, masterlist_urls: list[str] | No
     return urls
 
 
-# ── Step 2: Download one GKG zip, filter for .nl sources ──────────────────────
-def download_and_filter(url: str, domains: list[str]) -> pd.DataFrame | None:
-    for attempt in range(3):
-        try:
-            r = requests.get(url, timeout=30)
-            r.raise_for_status()
-            with zipfile.ZipFile(io.BytesIO(r.content)) as z:
-                with z.open(z.namelist()[0]) as f:
-                    df = pd.read_csv(
-                        f, sep="\t", header=None,
-                        names=GKG_COLUMNS, dtype=str,
-                        low_memory=False, on_bad_lines="skip",
-                    )
-            names = df["SourceCommonName"].fillna("").str.lower()
-            mask = names.apply(
-                lambda n: any(n == d or n.endswith(f".{d}") for d in domains)
+# ── Step 2: Download one GKG zip, filter for matching sources ─────────────────
+def _download_and_parse_gkg(url: str) -> pd.DataFrame:
+    r = requests.get(url, timeout=30)
+    r.raise_for_status()
+    with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+        with z.open(z.namelist()[0]) as f:
+            df = pd.read_csv(
+                f, sep="\t", header=None,
+                names=GKG_COLUMNS, dtype=str,
+                low_memory=False, on_bad_lines="skip",
             )
-            filtered = df.loc[mask, [c for c in KEEP_COLUMNS if c in df.columns]]
-            return filtered if not filtered.empty else None
-        except Exception as e:
-            if attempt == 2:
-                print(f"  ✗ {url.split('/')[-1]} — {e}")
-            time.sleep(2 ** attempt)
-    return None
+    return df
+
+
+def download_and_filter(url: str, domains: list[str]) -> pd.DataFrame | None:
+    try:
+        df = retry_call(_download_and_parse_gkg, url)
+    except RetryExhausted as exc:
+        print(f"  ✗ {url.split('/')[-1]} — giving up: {exc}")
+        return None
+
+    names = df["SourceCommonName"].fillna("").str.lower()
+    mask = names.apply(
+        lambda n: any(n == d or n.endswith(f".{d}") for d in domains)
+    )
+    filtered = df.loc[mask, [c for c in KEEP_COLUMNS if c in df.columns]]
+    return filtered if not filtered.empty else None
 
 
 # ── Step 3: Parse V2Tone into named numeric columns ───────────────────────────
@@ -192,34 +205,21 @@ def download_weekly_news(
     return combined
 
 
+# ── Article text extraction ─────────────────────────────────────────────────
+def _fetch_article_inner(url: str) -> dict[str, str | None]:
+    article = newspaper.Article(url)
+    article.download()
+    article.parse()
+    return {
+        "title": article.title,
+        "authors": ", ".join(article.authors) if article.authors else None,
+        "text": article.text,
+    }
 
-
-# GET ARTICLE TEXT, TITLE AND AUTHORS 
-import newspaper
 
 def fetch_article(url: str) -> dict[str, str | None]:
     try:
-        article = newspaper.Article(url)
-        article.download()
-        article.parse()
-        return {
-            "title": article.title,
-            "authors": ", ".join(article.authors) if article.authors else None,
-            "text": article.text,
-        }
-    except Exception as e:
-        print(f"  ✗ Failed to fetch {url} — {e}")
+        return retry_call(_fetch_article_inner, url)
+    except RetryExhausted as exc:
+        print(f"  ✗ Failed to fetch {url} — giving up: {exc}")
         return {"title": None, "authors": None, "text": None}
-
-
-# ── Main ───────────────────────────────────────────────────────────────────────
-def main() -> None:
-    # download_weekly_news("2026-05-04", "2026-05-10", domain=".se")
-    print(fetch_article("https://www.dn.se/direkt/2026-05-07/barn-fran-13-ar-kan-overvakas-elektroniskt/"))
-
-
-if __name__ == "__main__":
-    main()
-
-
-

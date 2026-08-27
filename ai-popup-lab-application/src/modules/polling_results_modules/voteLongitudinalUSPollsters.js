@@ -12,6 +12,16 @@ import { parseBaselineCsv } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
+// The backend always returns the unconditional-on-turnout dataset, which
+// includes a non-voter category alongside the parties. We never refetch on
+// the "amongst likely voters" toggle — instead we derive the likely-voters
+// view client-side by dropping this series and renormalising the rest so
+// they sum back to 100% for each week. Matches case-insensitively and
+// tolerates a couple of label variants in case the backend's exact wording
+// changes.
+const NON_VOTER_LABEL_RE = /^(did not vote|will not vote|non-?voters?)$/i;
+const isNonVoterSeries = party => NON_VOTER_LABEL_RE.test((party ?? "").trim());
+
 // ----------------------------------------------------------------------
 // ISO-week helpers: the US pollster feed gives us date-range labels like
 // "09 Dec 2024 – 15 Dec 2024". We convert the *start* of that range into
@@ -58,6 +68,14 @@ function VoteLongitudinalUSPollsters({ country }) {
   const tooltipRef = useRef();
   const containerRef = useRef();
 
+  // --- 'Amongst likely voters' toggle: default true. The fetched dataset
+  // is always unconditional on turnout (includes a non-voter category) —
+  // toggling this doesn't refetch, it switches `displayData` between the
+  // raw unconditional series and a client-side-renormalised likely-voters
+  // view (see `displayData` below). Mutually exclusive with the US
+  // pollster-average overlay, which is a reference for likely voters only.
+  const [likelyVotersOnly, setLikelyVotersOnly] = useState(true);
+
   const [chartData, setChartData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -85,6 +103,10 @@ function VoteLongitudinalUSPollsters({ country }) {
   };
 
   // fetch chart data
+  // The endpoint always returns the unconditional-on-turnout dataset (i.e.
+  // it includes the non-voter category as an extra `vote_choice`). We fetch
+  // it once per country and derive the "amongst likely voters" view from it
+  // client-side (see `displayData` below) rather than refetching on toggle.
   async function getChartData(countryName){
     setChartData(null);
       setError(null);
@@ -123,6 +145,14 @@ function VoteLongitudinalUSPollsters({ country }) {
     getChartData(country);
 
   }, [country]);
+
+  // The US pollster-average overlay is a reference for likely voters only —
+  // force it off if the user switches to the unconditional (all-adults) view.
+  useEffect(() => {
+    if (!likelyVotersOnly && showPollsters) {
+      setShowPollsters(false);
+    }
+  }, [likelyVotersOnly, showPollsters]);
 
   useEffect(() => {
     if (!chartData) return;
@@ -202,8 +232,35 @@ function VoteLongitudinalUSPollsters({ country }) {
     }
   };
 
-  const slicedData = chartData && rangeIdx
-    ? chartData.map(series => ({
+  // "Amongst likely voters" view: drop the non-voter series and renormalise
+  // the remaining shares per week so they sum back to 100%. When the toggle
+  // is off, pass the unconditional dataset straight through (it already
+  // includes the non-voter category and already sums to 100%).
+  const displayData = useMemo(() => {
+    if (!chartData) return null;
+    if (!likelyVotersOnly) return chartData;
+
+    const nonVoterSeries = chartData.find(s => isNonVoterSeries(s.party));
+    const voterSeries = chartData.filter(s => !isNonVoterSeries(s.party));
+    if (!nonVoterSeries) return voterSeries;
+
+    const nonVoterShareByWeek = new Map(nonVoterSeries.values.map(v => [v.week, v.share]));
+
+    return voterSeries.map(series => ({
+      ...series,
+      values: series.values.map(v => {
+        const nonVoterShare = nonVoterShareByWeek.get(v.week) ?? 0;
+        const denom = 100 - nonVoterShare;
+        return {
+          ...v,
+          share: denom > 0 ? +(v.share / denom * 100).toFixed(2) : 0,
+        };
+      }),
+    }));
+  }, [chartData, likelyVotersOnly]);
+
+  const slicedData = displayData && rangeIdx
+    ? displayData.map(series => ({
         ...series,
         values: series.values.slice(rangeIdx[0], rangeIdx[1] + 1),
       }))
@@ -573,7 +630,20 @@ function VoteLongitudinalUSPollsters({ country }) {
         <label className="vlup-pollster-toggle">
           <input
             type="checkbox"
+            checked={likelyVotersOnly}
+            onChange={e => setLikelyVotersOnly(e.target.checked)}
+          />
+          {t('pollingResults.voteLongitudinal.likelyVotersOnly', 'Amongst likely voters')}
+        </label>
+
+        <label
+          className={`vlup-pollster-toggle${!likelyVotersOnly ? " vlup-pollster-toggle--disabled" : ""}`}
+          title={!likelyVotersOnly ? t('pollingResults.voteLongitudinal.pollsterAvgLikelyVotersOnly', 'US pollster averages are only available amongst likely voters') : undefined}
+        >
+          <input
+            type="checkbox"
             checked={showPollsters}
+            disabled={!likelyVotersOnly}
             onChange={e => setShowPollsters(e.target.checked)}
           />
           {t('pollingResults.voteLongitudinal.showPollsterAvg', 'Show US pollster averages')}
@@ -587,7 +657,7 @@ function VoteLongitudinalUSPollsters({ country }) {
         <p className="vlup-pollster-status vlup-pollster-status--error">{pollsterError}</p>
       )}
 
-      {chartData && partyColours && rangeIdx ? (
+      {displayData && partyColours && rangeIdx ? (
         <>
           <div className="vlup-chart-wrapper" ref={containerRef}>
             <svg ref={svgRef} />
@@ -624,7 +694,7 @@ function VoteLongitudinalUSPollsters({ country }) {
             <input
               type="range"
               min={0}
-              max={chartData[0].values.length - 1}
+              max={displayData[0].values.length - 1}
               value={rangeIdx[0]}
               onChange={e => {
                 const val = Math.min(Number(e.target.value), rangeIdx[1] - 1);
@@ -635,7 +705,7 @@ function VoteLongitudinalUSPollsters({ country }) {
             <input
               type="range"
               min={0}
-              max={chartData[0].values.length - 1}
+              max={displayData[0].values.length - 1}
               value={rangeIdx[1]}
               onChange={e => {
                 const val = Math.max(Number(e.target.value), rangeIdx[0] + 1);
@@ -647,7 +717,7 @@ function VoteLongitudinalUSPollsters({ country }) {
           </div>
 
           <div className="vlup-slider-labels">
-            <p>{t('pollingResults.voteLongitudinal.selected')}: <span>{chartData[0].values[rangeIdx[0]]?.week}</span> {t('pollingResults.voteLongitudinal.to')} <span>{chartData[0].values[rangeIdx[1]]?.week}</span></p>
+            <p>{t('pollingResults.voteLongitudinal.selected')}: <span>{displayData[0].values[rangeIdx[0]]?.week}</span> {t('pollingResults.voteLongitudinal.to')} <span>{displayData[0].values[rangeIdx[1]]?.week}</span></p>
           </div>
 
           <div className="vlup-export unbounded-weight300">

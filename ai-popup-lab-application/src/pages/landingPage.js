@@ -20,65 +20,38 @@ import Loader from "../modules/loader";
 import VoteProjection from "../modules/polling_results_modules/voteProjection";
 import CountrySwitch2 from "../modules/countrySwitch2";
 
+import { getCountryData } from '../utils/fetch_data';
+import { getChosenCountry, setChosenCountry } from '../utils/set_country';
 
 function LandingPage() {
 
-  const [selectedCountry, setSelectedCountry] = useState("netherlands");
+  const [selectedCountry, setSelectedCountry] = useState(() => getChosenCountry() ?? "usa");
 
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-
-  const [responseData, setResponseData] = useState(null);
+  const [countryData, setCountryData] = useState(null);
 
   const { t, i18n } = useTranslation();
   const [typingKey, setTypingKey] = useState(i18n.language);
 
-  // for country names that are different in data than its real name, this function corrects it
-  function modifyCountryNameEdgeCases(country){
-    let modifiedCountry;
-
-    if(country === 'netherlands'){
-      modifiedCountry = 'the Netherlands';
-    }
-    if(country === 'usa'){
-      modifiedCountry = 'the USA'
-    }
-    else{
-      modifiedCountry = country;
-    }
-
-    return modifiedCountry
-  }
-
-  // gets the synthetical panel results for a selected country from the backend API
-  async function getCountrySample(countryName){
-    try {
-      
-
-      // console.log(`Getting polling results for ${countryName}...`);
-
-      // FastAPI in testing is running on 127.0.0.1:8000
-      // In deployment, the environment variable REACT_APP_API_URL is in the github repository secrets and gets added in build from the workflow file (deploy-frontend.yml)
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/country_sample?country=${countryName}`);
-      setData(response.data);
-      setError(null);
-    } catch (err) {
-      setError(err.message);
-      setData(null);
-    }
-  };
-
-  // updates data when selected country chages
   useEffect(() => {
-    setData(null);
+    let cancelled = false;
 
-    getCountrySample(selectedCountry);
+    getCountryData(selectedCountry)
+      .then((data) => {
+        if (!cancelled) setCountryData(data);
+      })
+      .catch((err) => {
+        console.error('Failed to load country data:', err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [selectedCountry]);
 
-  // when data is received, properly store it and avoid cases where data is null
-  useEffect(() => {
-    setResponseData(data?.data ?? null);
-  }, [data]);
+  function handleCountryChange(country) {
+    setChosenCountry(country);
+    setSelectedCountry(country);
+  }
 
   // retrigger typing animation when language is changed
   useEffect(() => {
@@ -142,38 +115,19 @@ function LandingPage() {
 
   return (
     <div className="LandingPage unbounded-weight300">
-      {/*
-      
-      OLD HTML
-      <div id='landing-intro'>
-        <p>This is the AI Pollster, where public opinion is visualised through synthetic personas. Explore graphs which visualise the results of the AI polling, and chat with the personas which form the polling data on the persona chat page, to understand intentions and motivations behind polling decisions.</p>
-        <img src={chartGraphic}></img>
-      </div> 
-
-       <CountrySwitch setCountry={setSelectedCountry} selectedCountry={selectedCountry}/>
-      
-      <p id="landing-explorevotes">EXPLORE THE VOTES IN {modifyCountryNameEdgeCases(selectedCountry).toUpperCase()}</p>
-    
-      <PollingResults 
-        selectedCountry={selectedCountry}
-        setSelectedCountry={setSelectedCountry}  
-      />
-
-      <PersonaChatExample includeLink={true} country={selectedCountry}  /> 
-      */}
-
       <div className="landingPageTop">
         <img className='pollie' src={pollie}></img>
         <div className="landingPageMessageSection">
           <p className="landingPageMessage">{typed1}</p>
           <p className="landingPageMessage">{typed2}&nbsp;</p>
-          <CountrySwitch2 selectedCountry={selectedCountry} setCountry={setSelectedCountry} include_usa_TEMPORARY={false}/>
+          <CountrySwitch2 selectedCountry={selectedCountry} setCountry={handleCountryChange}/>
         </div>
       </div>
 
       <div id="landingVoteProjContainer">
-        {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />}
-        <Link to={`/polling/?country=${selectedCountry}`}><button className='unbounded-weight300'>{t('landingPage.explorePolls')}<img alt='right facing arrow' src={linkArrow}></img></button></Link>
+        <p>Coming soon...</p>
+        {/* {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />} */}
+        <Link to={`/polling`}><button className='unbounded-weight300'>{t('landingPage.explorePolls')}<img alt='right facing arrow' src={linkArrow}></img></button></Link>
       </div>
 
       <div id="landingPageBottomMessages">
@@ -184,7 +138,11 @@ function LandingPage() {
         </div>
       </div>
 
-      <PersonaChatExample includeLink={true} country={selectedCountry} />
+      {countryData ? (
+        <PersonaChatExample includeLink={true} countryData={countryData} />
+      ) : (
+        <Loader />
+      )}
 
     </div>
   );
