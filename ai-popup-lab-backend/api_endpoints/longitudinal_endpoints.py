@@ -6,8 +6,8 @@ import pandas as pd
 import io
 import os
 
+from azure_storage_utils import get_blob_service_client
 from data_generation.aggregate_longitudinal import _longitudinal_blob_name, _longitudinal_demographic_blob_name
-from azure_storage_utils import get_blob_service_client, CONTAINER_NAME
 
 router = APIRouter(prefix="/longitudinal")
 
@@ -20,18 +20,18 @@ with open(json_path) as f:
 
 root_keys = list(country_data.keys())
 
-def _stream_blob_as_csv(blob_name: str) -> StreamingResponse:
-    client = get_blob_service_client()
-    blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
-    try:
-        data = blob.download_blob().readall()
-    except Exception:
-        raise HTTPException(status_code=404, detail=f"Longitudinal data not yet available.")
-    return StreamingResponse(
-        io.BytesIO(data),
-        media_type="text/csv",
-        headers={"Content-Disposition": f"inline; filename={blob_name.split('/')[-1]}"}
-    )
+# def _stream_blob_as_csv(blob_name: str) -> StreamingResponse:
+#     client = get_blob_client()
+#     blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
+#     try:
+#         data = blob.download_blob().readall()
+#     except Exception:
+#         raise HTTPException(status_code=404, detail=f"Longitudinal data not yet available.")
+#     return StreamingResponse(
+#         io.BytesIO(data),
+#         media_type="text/csv",
+#         headers={"Content-Disposition": f"inline; filename={blob_name.split('/')[-1]}"}
+#     )
 
 # ENDPOINTS BELOW
 
