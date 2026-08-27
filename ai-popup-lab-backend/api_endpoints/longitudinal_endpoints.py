@@ -77,7 +77,7 @@ def us_pollster_predictions():
     blob_name = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_pollster_model_output.json")
     container = os.environ.get("US_POLLS_BLOB_CONTAINER", "us-pollster-data")
 
-    client = get_blob_client()
+    client = get_blob_service_client()
     blob = client.get_blob_client(container=container, blob=blob_name)
 
     try:
