@@ -7,18 +7,9 @@ import pandas as pd
 
 
 def _questions_path() -> Path:
-    """
-    Resolve questions.csv.
-    Can be overridden with QUESTIONS_PATH env var.
-    Default: backend_root/country_data/questions.csv
-    """
     override = os.getenv("QUESTIONS_PATH")
     if override:
         return Path(override)
-    # __file__ = data_generation/panel/survey.py
-    # parents[0] = data_generation/panel/
-    # parents[1] = data_generation/
-    # parents[2] = backend root
     return Path(__file__).resolve().parents[2] / "country_data" / "questions.csv"
 
 def _house_candidates_path() -> Path:
@@ -50,13 +41,38 @@ def choose_candidate(cand_list, incumbent):
                 return c
     return random.choice(cand_list)
 
+def _strip_leading_zero(district_code: str) -> str:
+    """Normalize 'CT-02' and 'CT-2' to the same canonical 'CT-2' form. Only
+    touches the suffix when it's purely numeric, so non-numeric seat labels
+    like 'AK-At-Large' pass through unchanged."""
+    parts = district_code.split("-", 1)
+    if len(parts) != 2:
+        return district_code
+    state, district_num = parts
+    if district_num.isdigit():
+        return f"{state}-{int(district_num)}"
+    return district_code
+
 def _normalize_district_code(panel_district_code: str, candidates_df: pd.DataFrame) -> str | None:
     """Panel uses codes like 'AK-1' for single-district states; house_candidates.csv
-    uses 'AK-At-Large' for the same seat. Try exact match first, then fall back to
-    state-prefix match only when the state has exactly one district on file (safe:
-    multi-district states will have >1 match and correctly return no fallback)."""
+    uses 'AK-At-Large' for the same seat. Try exact match first, then a
+    zero-padding-normalized match (handles e.g. panel's 'CT-2' vs
+    house_candidates.csv's 'CT-02' — confirmed from production logs: every
+    observed match failure was a single-digit district number, the exact
+    signature of a zero-padding mismatch), then fall back to state-prefix
+    match only when the state has exactly one district on file (safe:
+    multi-district states will have >1 match and correctly return no
+    fallback)."""
     if panel_district_code in candidates_df["District"].values:
         return panel_district_code
+
+    normalized_target = _strip_leading_zero(panel_district_code)
+    normalized_lookup = candidates_df["District"].apply(_strip_leading_zero)
+    normalized_matches = candidates_df[normalized_lookup == normalized_target]
+    if len(normalized_matches) == 1:
+        return normalized_matches.iloc[0]["District"]
+    # len > 1 means the candidates file has an actual duplicate/ambiguity
+    # under normalization — don't guess, fall through to the next strategy.
 
     state_abbrev = panel_district_code.split("-")[0]
     state_matches = candidates_df[candidates_df["District"].str.startswith(f"{state_abbrev}-")]
@@ -108,7 +124,6 @@ def generate_question(question_id: str, initial: bool, district: str | None = No
     raw_options = question_row.get("options")
 
     if pd.isna(raw_options) or not str(raw_options).strip():
-        # District-based dynamic options (currently: US House races)
         if not district:
             raise ValueError(f"Question '{question_id}' has no fixed options and requires a district.")
         options, _ = get_district_info(district)
@@ -144,4 +159,3 @@ def generate_question(question_id: str, initial: bool, district: str | None = No
         "Express the thoughts in the first person. The options are:\n"
         f"{formatted_options}"
     )
-
