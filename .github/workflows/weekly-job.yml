@@ -46,7 +46,7 @@ jobs:
             --restart-policy Never \
             --location westeurope \
             --cpu 4 \
-            --memory 8 \
+            --memory 16 \
             --environment-variables \
               ENV=production \
               COUNTRIES="${{ github.event.inputs.countries || 'usa' }}" \
