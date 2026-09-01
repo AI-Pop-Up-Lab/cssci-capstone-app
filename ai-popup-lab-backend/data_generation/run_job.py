@@ -16,7 +16,6 @@ only a COUNTRIES value and a configured entry in country_data_info.json.
 """
 from __future__ import annotations
 
-import json
 import logging
 import os
 import sys
@@ -39,9 +38,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-COUNTRY_INFO_PATH = BASE_DIR / "country_data" / "country_data_info.json"
-
 # Comma-separated list of country names, e.g. "usa" or "usa,sweden"
 COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if c.strip()]
 
@@ -50,22 +46,26 @@ JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
 
 
 def _this_week() -> tuple[int, int]:
+    """
+    Returns the ISO (year, week) to run against. Defaults to the current
+    week, but can be overridden with TARGET_WEEK=YYYY-WW (e.g. "2026-35") —
+    for retrying a step (most commonly MRP) against a specific past week's
+    already-completed production data, without waiting for that week to
+    roll back around or misusing the backfill track (which reads/writes a
+    separate storage path, not this week's real production panel).
+    """
+    override = os.environ.get("TARGET_WEEK", "").strip()
+    if override:
+        try:
+            year_str, week_str = override.split("-")
+            return int(year_str), int(week_str)
+        except ValueError:
+            raise ValueError(
+                f"Invalid TARGET_WEEK format: '{override}'. Expected YYYY-WW (e.g. 2026-35)."
+            )
     today = date.today()
     year, week, _ = today.isocalendar()
     return year, week
-
-
-def _panel_configured(country: str) -> bool:
-    """
-    True when `country` has a panel configured in country_data_info.json
-    (a non-null `question_id`). An unconfigured or unknown country can never
-    have panel results, so MRP skips it with a warning instead of failing the
-    whole job — and never writes a lock, since a lock without results would
-    permanently wedge MRP for that country+week.
-    """
-    with open(COUNTRY_INFO_PATH) as f:
-        country_data = json.load(f)
-    return bool(country_data.get(country, {}).get("question_id"))
 
 
 def _rename_state_column(df: pd.DataFrame) -> pd.DataFrame:
@@ -173,12 +173,6 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
     so a backfill MRP run never collides with, or gets skipped by, a
     production MRP run for the same week.
     """
-    if not _panel_configured(country):
-        # MRP needs this week's panel results, which an unconfigured country
-        # can never have — skip with a warning rather than failing the job
-        logger.warning("[%s] Panel not configured — skipping MRP, no lock written.", country)
-        return
-
     week_label = iso_week_label(year, week)
     panel_date = isoweek_to_panel_date(year, week)
     job_type = "mrp_backfill" if backfill else "mrp"
