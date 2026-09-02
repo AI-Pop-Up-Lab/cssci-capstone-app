@@ -30,6 +30,7 @@ def run_extension_script(
     output_dir: Path,
     country: str,
     n_sims: int = 250,
+    compute_draws: bool = True,
 ) -> Path:
     """
     run the frame extension R script on the given survey and frame files.
@@ -42,6 +43,12 @@ def run_extension_script(
             so it can pick the right post-stratification module (US vs the
             shared module for everyone else).
         n_sims: Number of simulations to run (default: 250).
+        compute_draws: If False, skips the simulation-draws phase and every
+            output derived from it (quartile/uncertainty tables, CD-level
+            breakdowns) — this is the memory-heavy part of the run.
+            extended_frame, point_estimates, stage_diagnostics, and
+            aggregate_counts are unaffected either way. Default True
+            (full output, matches prior behavior).
 
     Returns:
         Path to the output directory.
@@ -70,9 +77,10 @@ def run_extension_script(
         str(output_dir),
         country,
         str(n_sims),
+        "true" if compute_draws else "false",
     ]
 
-    logger.info("Running R script for country=%s", country)
+    logger.info("Running R script for country=%s (compute_draws=%s)", country, compute_draws)
     logger.info("Command: %s", " ".join(cmd))
 
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=4500)

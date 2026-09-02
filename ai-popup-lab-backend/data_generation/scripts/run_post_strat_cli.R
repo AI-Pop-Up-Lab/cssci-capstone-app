@@ -4,7 +4,7 @@ if (length(args) < 4) {
   stop(
     paste(
       "Usage:",
-      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims]"
+      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws]"
     )
   )
 }
@@ -32,6 +32,16 @@ if (is.na(n_sims) || n_sims <= 0) {
   stop("n_sims must be a positive integer.")
 }
 
+# compute_draws = FALSE skips the simulation-draws phase entirely (and every
+# output that depends on it: quartile/uncertainty tables, CD-level
+# breakdowns) -- this is the memory-heavy part of the run. extended_frame,
+# point_estimates, stage_diagnostics, and aggregate_counts are unaffected,
+# since none of them depend on the draws. Defaults to TRUE (full output,
+# original behavior) for standalone/manual invocations; the pipeline
+# explicitly opts out via this arg when it only needs extended_frame.
+compute_draws_arg <- if (length(args) >= 6) args[[6]] else "true"
+compute_draws <- tolower(compute_draws_arg) %in% c("true", "1", "yes")
+
 # Country-specific post-stratification module. The US module has its own
 # stickbreaking/multinomial structure and district-level output tailored to
 # US House races; every other country still uses the original shared
@@ -42,7 +52,7 @@ if (is.na(n_sims) || n_sims <= 0) {
 module_file <- if (tolower(country) == "usa") {
   "post_strat_module_us.R"
 } else {
-  "post_strat_module.R"
+  "post_strat_module_dk_se.R"
 }
 
 module_path <- file.path(dirname(script_path), module_file)
@@ -59,7 +69,8 @@ result <- run_post_stratification(
   frame = frame,
   config = list(
     verbose = TRUE,
-    n_sims = n_sims
+    n_sims = n_sims,
+    compute_draws = compute_draws
   )
 )
 

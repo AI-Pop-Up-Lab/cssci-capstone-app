@@ -17,6 +17,10 @@ on:
         description: 'Optional: target a specific ISO week (YYYY-WW, e.g. 2026-35) instead of the current week — for retrying a step (e.g. MRP) against a week whose panel/survey has already completed'
         required: false
         default: ''
+      compute_mrp_draws:
+        description: 'Compute MRP simulation draws (quartile/uncertainty tables, CD-level breakdowns)? This is the memory-heavy phase. false = skip it, only produce extended_frame + point_estimates + diagnostics'
+        required: false
+        default: 'false'
 
 jobs:
   run-weekly-job:
@@ -50,12 +54,13 @@ jobs:
             --restart-policy Never \
             --location westeurope \
             --cpu 4 \
-            --memory 16 \
+            --memory 8 \
             --environment-variables \
               ENV=production \
               COUNTRIES="${{ github.event.inputs.countries || 'usa' }}" \
               JOB_TYPE="${{ github.event.inputs.job_type || 'both' }}" \
               TARGET_WEEK="${{ github.event.inputs.target_week }}" \
+              COMPUTE_MRP_DRAWS="${{ github.event.inputs.compute_mrp_draws || 'false' }}" \
               BLOB_CONTAINER_NAME=generated-data \
               US_POLLS_BLOB_CONTAINER="polling-data" \
               US_POLLS_OUTPUT_BLOB_NAME="us_polls_model_output.json" \

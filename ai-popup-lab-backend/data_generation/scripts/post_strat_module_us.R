@@ -14,6 +14,7 @@ default_us_post_strat_config <- function() {
 		min_events = 15,
 		seed = NULL,
 		drop_other_gender = TRUE,
+		compute_draws = TRUE,
 		survey_aliases = list(
 			age_group = c("age_cat"),
 			gender = c("gender_cat"),
@@ -777,24 +778,42 @@ run_post_stratification <- function(survey, frame, config = list()) {
 	weights <- frame_pred$expected_N_raked
 	mrp_estimates <- compute_us_post_national_point_estimates(prob_mat, weights)
 
-	pi_draws <- vector("list", length(parties) - 1)
+	if (isTRUE(config$compute_draws)) {
+		pi_draws <- vector("list", length(parties) - 1)
 
-	for (k in seq_len(length(parties) - 1)) {
-		config$msg("Simulation draws for stage ", k, "/", length(parties) - 1, " [", parties[[k]], "]")
-		stage_newdata <- make_us_post_prediction_data(frame_pred, sb_fits[[k]])
-		pi_draws[[k]] <- predict_us_post_stage_draws(sb_fits[[k]], stage_newdata, config)
+		for (k in seq_len(length(parties) - 1)) {
+			config$msg("Simulation draws for stage ", k, "/", length(parties) - 1, " [", parties[[k]], "]")
+			stage_newdata <- make_us_post_prediction_data(frame_pred, sb_fits[[k]])
+			pi_draws[[k]] <- predict_us_post_stage_draws(sb_fits[[k]], stage_newdata, config)
+		}
+
+		share_draws <- compute_us_post_share_draws(pi_draws, parties, weights)
+		quartile_table <- build_us_post_quartile_table(share_draws, parties, mrp_estimates)
+		share_draws_quartiles <- build_us_post_share_draws_quartiles(share_draws, parties, mrp_estimates)
+		cd_party_point <- compute_us_post_cd_point(prob_mat, frame_pred, parties)
+		cd_party_draws <- compute_us_post_cd_draws(pi_draws, frame_pred, parties)
+		cd_party_quartiles <- compute_us_post_cd_quartiles(cd_party_draws, cd_party_point)
+		share_draws_long <- build_us_post_share_draws_long(share_draws)
+		share_draws_tbl <- as_tibble(share_draws)
+	} else {
+		config$msg(
+			"compute_draws = FALSE -- skipping simulation draws, quartile/uncertainty ",
+			"outputs, and CD-level breakdowns (this is the memory-heavy phase). ",
+			"extended_frame, point_estimates, stage_diagnostics, and aggregate_counts ",
+			"are unaffected, since none of them depend on the draws."
+		)
+		quartile_table <- NULL
+		share_draws_quartiles <- NULL
+		cd_party_point <- NULL
+		cd_party_draws <- NULL
+		cd_party_quartiles <- NULL
+		share_draws_long <- NULL
+		share_draws_tbl <- NULL
 	}
 
-	share_draws <- compute_us_post_share_draws(pi_draws, parties, weights)
-	quartile_table <- build_us_post_quartile_table(share_draws, parties, mrp_estimates)
-	share_draws_quartiles <- build_us_post_share_draws_quartiles(share_draws, parties, mrp_estimates)
 	extended_frame <- build_us_post_extended_frame(prob_mat, frame_pred)
 	stage_diagnostics <- compute_us_post_stage_diagnostics(sb_fits, parties)
 	aggregate_counts <- compute_us_post_aggregate_counts(extended_frame)
-	cd_party_point <- compute_us_post_cd_point(prob_mat, frame_pred, parties)
-	cd_party_draws <- compute_us_post_cd_draws(pi_draws, frame_pred, parties)
-	cd_party_quartiles <- compute_us_post_cd_quartiles(cd_party_draws, cd_party_point)
-	share_draws_long <- build_us_post_share_draws_long(share_draws)
 
 	list(
 		point_estimates = mrp_estimates,
@@ -803,7 +822,7 @@ run_post_stratification <- function(survey, frame, config = list()) {
 		extended_frame = extended_frame,
 		stage_diagnostics = stage_diagnostics,
 		aggregate_counts = aggregate_counts,
-		share_draws = as_tibble(share_draws),
+		share_draws = share_draws_tbl,
 		share_draws_long = share_draws_long,
 		cell_party_probabilities = as_tibble(prob_mat),
 		stickbreaking_conditional_probs = as_tibble(pi_mat),
@@ -822,31 +841,27 @@ write_post_strat_outputs <- function(result, output_dir) {
 		dir.create(output_dir, recursive = TRUE)
 	}
 
-	write_csv(result$point_estimates, file.path(output_dir, "mrp_point_estimates.csv"))
-	write_csv(result$quartile_table, file.path(output_dir, "mrp_quartile_table.csv"))
-	write_csv(result$share_draws_quartiles, file.path(output_dir, "mrp_share_draws_quartiles.csv"))
-	write_csv(result$extended_frame, file.path(output_dir, "mrp_extended_frame_predictions.csv"))
-	write_csv(result$stage_diagnostics, file.path(output_dir, "mrp_stage_diagnostics.csv"))
-	write_csv(result$aggregate_counts, file.path(output_dir, "mrp_aggregate_counts.csv"))
-	write_csv(result$share_draws, file.path(output_dir, "mrp_share_draws.csv"))
-	write_csv(result$share_draws_long, file.path(output_dir, "mrp_share_draws_long.csv"))
-	write_csv(result$cell_party_probabilities, file.path(output_dir, "mrp_cell_party_probabilities.csv"))
-	write_csv(
-		result$stickbreaking_conditional_probs,
-		file.path(output_dir, "mrp_stickbreaking_conditional_probs.csv")
-	)
-	write_csv(
-		result$cd_party_point,
-		file.path(output_dir, "mrp_cd_party_point_estimates.csv")
-	)
-	write_csv(
-		result$cd_party_draws,
-		file.path(output_dir, "mrp_cd_party_draws_long.csv")
-	)
-	write_csv(
-		result$cd_party_quartiles,
-		file.path(output_dir, "mrp_cd_party_quartiles.csv")
-	)
+	write_if_present <- function(df, filename) {
+		if (is.null(df)) {
+			message("Skipping ", filename, " (not computed -- compute_draws = FALSE)")
+			return(invisible(NULL))
+		}
+		write_csv(df, file.path(output_dir, filename))
+	}
+
+	write_if_present(result$point_estimates, "mrp_point_estimates.csv")
+	write_if_present(result$quartile_table, "mrp_quartile_table.csv")
+	write_if_present(result$share_draws_quartiles, "mrp_share_draws_quartiles.csv")
+	write_if_present(result$extended_frame, "mrp_extended_frame_predictions.csv")
+	write_if_present(result$stage_diagnostics, "mrp_stage_diagnostics.csv")
+	write_if_present(result$aggregate_counts, "mrp_aggregate_counts.csv")
+	write_if_present(result$share_draws, "mrp_share_draws.csv")
+	write_if_present(result$share_draws_long, "mrp_share_draws_long.csv")
+	write_if_present(result$cell_party_probabilities, "mrp_cell_party_probabilities.csv")
+	write_if_present(result$stickbreaking_conditional_probs, "mrp_stickbreaking_conditional_probs.csv")
+	write_if_present(result$cd_party_point, "mrp_cd_party_point_estimates.csv")
+	write_if_present(result$cd_party_draws, "mrp_cd_party_draws_long.csv")
+	write_if_present(result$cd_party_quartiles, "mrp_cd_party_quartiles.csv")
 
 	invisible(result)
 }

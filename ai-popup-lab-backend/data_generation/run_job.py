@@ -44,6 +44,14 @@ COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if
 # What to run: "panel", "mrp", or "both"
 JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
 
+# If False (the default), skip the memory-heavy simulation-draws phase of
+# MRP entirely — quartile/uncertainty tables and CD-level breakdowns won't
+# be produced, but extended_frame (the file the rest of the pipeline
+# actually consumes right now) is computed earlier and unaffected. Flip to
+# true via env var when those other outputs are needed again, without a
+# code change.
+COMPUTE_MRP_DRAWS = os.environ.get("COMPUTE_MRP_DRAWS", "false").strip().lower() in ("true", "1", "yes")
+
 
 def _this_week() -> tuple[int, int]:
     """
@@ -213,6 +221,7 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
             frame_path=frame_path,
             output_dir=output_dir,
             country=country,
+            compute_draws=COMPUTE_MRP_DRAWS,
         )
 
         r_output_path = output_dir / "mrp_extended_frame_predictions.csv"
