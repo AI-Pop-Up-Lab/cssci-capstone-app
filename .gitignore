@@ -9,3 +9,6 @@ env/
 venv/
 .env/
 .env
+
+# local backup copies of the original stratification frames (large files, not for the repo)
+ai-popup-lab-backend/country_data/stratification_frames/originals/

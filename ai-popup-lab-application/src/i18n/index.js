@@ -23,4 +23,11 @@ i18n
     },
   });
 
+// keeping the document language in sync with the selected locale, mapping our locale keys to valid BCP-47 language tags for screen readers
+const langTags = { en: 'en', nl: 'nl', dk: 'da', swe: 'sv' };
+i18n.on('languageChanged', lang => {
+  document.documentElement.lang = langTags[lang] || 'en';
+});
+document.documentElement.lang = langTags[i18n.language] || 'en';
+
 export default i18n;

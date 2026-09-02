@@ -1,0 +1,598 @@
+.NetworkingPlatformPage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 6%;
+}
+
+#netplat-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#netplat-title{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 840px;
+}
+
+#netplat-title > h1{
+    width: 100%;
+    text-align: justify;
+    text-align-last: justify;
+    font-size: 80px;
+}
+
+#netplat-title > h1:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#netplat-title > h1:nth-child(1) > span{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #6B6D76;
+}
+
+#netplat-briefing{
+    margin-top: 20px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+
+.netplat-header{
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.netplat-header::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2.5px;
+    background-color: #335058;
+    margin-top: 3px;
+}
+
+.header-underline-appear::after{
+    animation: header-underline 0.69420s ease-in-out forwards;
+}
+
+.netplat-sectiontext{
+    margin-bottom: 40px;
+    max-width: 1000px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.netplat-sectiontext > strong{
+    font-weight: 600;
+}
+
+/* tab bar */
+
+#netplat-tabs{
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #6B6D76;
+}
+
+.netplat-tab{
+    padding: 12px 30px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: inherit;
+    color: #6B6D76;
+    cursor: pointer;
+}
+
+.netplat-tab.is-active{
+    border-bottom-color: #335058;
+    color: #335058;
+}
+
+.netplat-tab:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* sign-up form */
+
+#netplat-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 80px;
+}
+
+.netplat-field{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.netplat-field-wide{
+    width: 100%;
+}
+
+.netplat-field > span,
+.netplat-field > legend{
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6B6D76;
+    margin-bottom: 6px;
+}
+
+.netplat-field > input,
+.netplat-field > select,
+.netplat-field > textarea{
+    padding: 10px 12px;
+    border: 1px solid #6B6D76;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.netplat-field > textarea{
+    resize: vertical;
+}
+
+.netplat-checkbox-grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.netplat-checkbox{
+    display: flex;
+    align-items: center;
+    width: 47%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.netplat-checkbox > input{
+    margin-right: 8px;
+}
+
+.netplat-button-primary{
+    padding: 12px 35px;
+    border: none;
+    background-color: #335058;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.netplat-button-primary:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* availability calendar */
+
+#netplat-calendar{
+    display: flex;
+    flex-direction: column;
+    width: 520px;
+    max-width: 100%;
+    margin-bottom: 80px;
+}
+
+.netplat-calendar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.netplat-calendar-header > h2{
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.netplat-calendar-header > button{
+    aspect-ratio: 1;
+    height: 34px;
+    border: 1px solid #6B6D76;
+    border-radius: 50%;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.netplat-calendar-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.netplat-calendar-weekday{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6B6D76;
+}
+
+.netplat-calendar-cell{
+    aspect-ratio: 1;
+    border: 1px solid #6B6D76;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.netplat-calendar-cell.is-empty{
+    border: none;
+    cursor: default;
+}
+
+.netplat-calendar-cell.is-selected{
+    background-color: #FCBFB7;
+    border-color: #FCBFB7;
+}
+
+.netplat-calendar-cell:disabled{
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.netplat-calendar-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+/* matches */
+
+#netplat-matches{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 80px;
+    list-style: none;
+    padding: 0;
+}
+
+.netplat-match-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    margin-bottom: 100px;
+}
+
+.netplat-match-photo{
+    border-radius: 50%;
+    background-color: #FCBFB7;
+    aspect-ratio: 1;
+    height: 140px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 36px;
+}
+
+.netplat-match-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.netplat-match-text > h2{
+    text-align: right;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.netplat-match-text > p{
+    text-align: right;
+    max-width: 350px;
+}
+
+.netplat-match-score{
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6B6D76;
+}
+
+.netplat-match-item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.netplat-match-item:nth-child(even) > .netplat-match-text{
+    align-items: flex-start;
+}
+
+.netplat-match-item:nth-child(even) > .netplat-match-text > h2,
+.netplat-match-item:nth-child(even) > .netplat-match-text > p{
+    text-align: left;
+}
+
+.netplat-match-item:nth-child(even) > .netplat-match-photo{
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.netplat-match-item:nth-last-child(1){
+    margin-bottom: 100px;
+}
+
+.netplat-tag-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.netplat-match-item:nth-child(even) .netplat-tag-row{
+    justify-content: flex-start;
+}
+
+.netplat-tag{
+    padding: 3px 12px;
+    margin: 0 0 5px 5px;
+    border: 1px solid #6B6D76;
+    font-size: 13px;
+}
+
+.netplat-empty{
+    line-height: 1.5;
+    font-size: 16px;
+    color: #6B6D76;
+    margin-bottom: 80px;
+}
+
+@keyframes header-underline{
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 920px){
+    #netplat-title{
+        width: 630px;
+    }
+
+    #netplat-title > h1{
+        font-size: 60px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 16px;
+    }
+
+    #netplat-briefing{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 810px){
+
+    #netplat-title{
+        width: 480px;
+    }
+
+    #netplat-title > h1{
+        font-size: 46px;
+    }
+
+    #netplat-briefing{
+        font-size: 17px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 13px;
+    }
+
+    .netplat-header{
+        font-size: 26px;
+    }
+
+    .netplat-sectiontext{
+        font-size: 14px;
+    }
+
+    .netplat-tab{
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .netplat-field,
+    .netplat-checkbox{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .netplat-field > input,
+    .netplat-field > select,
+    .netplat-field > textarea{
+        font-size: 14px;
+    }
+
+    .netplat-button-primary{
+        font-size: 14px;
+    }
+
+    .netplat-calendar-cell,
+    .netplat-calendar-footer{
+        font-size: 14px;
+    }
+
+    .netplat-match-item{
+        margin-bottom: 40px;
+        padding: 5%;
+    }
+
+    .netplat-match-photo{
+        height: 100px;
+        font-size: 26px;
+    }
+
+    .netplat-match-text > p{
+        font-size: 14px;
+    }
+
+    .netplat-match-text > h2{
+        font-size: 20px;
+    }
+
+    .netplat-match-item:nth-last-child(1){
+        margin-bottom: 80px;
+    }
+
+    #netplat-matches{
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 540px){
+    #netplat-title{
+        width: 378px;
+    }
+
+    #netplat-title > h1{
+        font-size: 36px;
+    }
+
+    #netplat-briefing{
+        font-size: 14px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 10px;
+    }
+
+    #netplat-tabs{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    #netplat-title{
+        width: 273px;
+    }
+
+    #netplat-title > h1{
+        font-size: 26px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 7px;
+    }
+
+    #netplat-briefing{
+        font-size: 10px;
+    }
+
+    .netplat-header{
+        font-size: 18px;
+    }
+
+    .netplat-sectiontext{
+        font-size: 10px;
+    }
+
+    .netplat-tab{
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+    .netplat-field,
+    .netplat-checkbox,
+    .netplat-field > input,
+    .netplat-field > select,
+    .netplat-field > textarea,
+    .netplat-button-primary,
+    .netplat-calendar-cell,
+    .netplat-calendar-footer{
+        font-size: 10px;
+    }
+
+    .netplat-field > span,
+    .netplat-field > legend,
+    .netplat-calendar-weekday,
+    .netplat-match-score,
+    .netplat-tag{
+        font-size: 9px;
+    }
+
+    .netplat-match-item{
+        margin-bottom: 30px;
+    }
+
+    .netplat-match-photo{
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .netplat-match-text > p{
+        font-size: 10px;
+    }
+
+    .netplat-match-text > h2{
+        font-size: 14px;
+    }
+
+    .netplat-match-item:nth-last-child(1){
+        margin-bottom: 60px;
+    }
+
+    .netplat-empty{
+        font-size: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    #netplat-title{
+        width: 187px;
+    }
+
+    #netplat-title > h1{
+        font-size: 18px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 5px;
+    }
+
+    #netplat-briefing{
+        font-size: 8px;
+    }
+}

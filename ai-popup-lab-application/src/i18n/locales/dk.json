@@ -152,15 +152,43 @@
             }
         }
     },
+    "teamPage": {
+        "title": "MØD HOLDET",
+        "description": "Dette projekt er et samarbejde mellem studerende fra Computational Social Science og Cultural Data & AI ved Amsterdams Universitet, under vejledning af dr. Roberto Cerina.",
+        "coreTeam": {
+            "title": "Kerneteam",
+            "contact": "Kontakt",
+            "members": {
+                "policog": {
+                    "role": "Poli-Cog",
+                    "text": "Leder projektets politisk-kognitive side: hvordan syntetiske personaer ræsonnerer og taler om politik. Designer chatpipelinens adfærdsregler, så svarene forbliver repræsentative, velfunderede og fri for stereotyper."
+                },
+                "personaSampling": {
+                    "role": "Persona Sampling",
+                    "text": "Bygger de syntetiske stikprøver bag hver måling. Udtrækker repræsentative personaer fra folketællingsbaserede stratifikationsrammer, så hver simuleret respondent afspejler et virkeligt udsnit af befolkningen."
+                },
+                "infrastructure": {
+                    "role": "Infrastruktur",
+                    "text": "Bygger og vedligeholder selve platformen: backend-API'er, datapipelines og deployment, der bringer hvert resultat fra model til browser."
+                }
+            }
+        }
+    },
     "datahubPage": {
         "codebook": "codebook",
         "downloadError": "Download mislykkedes. Filen er muligvis ikke tilgængelig endnu — prøv igen senere.",
+        "countries": {
+            "netherlands": "Holland",
+            "denmark": "Danmark",
+            "sweden": "Sverige"
+        },
         "intro": {
             "title": "DATA HUB",
             "text": "Ved at downloade dataene accepterer du brugsbetingelserne."
         },
         "interview": {
-            "title": "Menneskelige sammenligningsgrundlag",
+            "title": "Menneskelige sammenligningsgrundlag: {{country}}",
+            "subtitle": "Dette er de menneskelige benchmarkdata for {{country}}.",
             "text": "Personoplysninger om politiske præferencer opdelt efter demografiske data på individniveau. Deltagerne udfyldte et struktureret spørgeskema med oplysninger om demografi, tidligere og forventet stemmeadfærd og uddybede disse oplysninger i et ca. 10 minutter langt interview. Lejlighedsvis kontaktes respondenterne igen og leverer opfølgende lydoptagelser om lignende emner. Interviewet og undersøgelsesdataene matches ved hjælp af en unik identifikator. Både interviewene og undersøgelsesdataene er anonymiseret. Hvis du bemærker personligt identificerbare data i interviewene, bedes du straks kontakte hovedforskeren Dr. Roberto Cerina på <span>r.cerina@uva.nl</span>.",
             "timeframe1": "18-04-2026 til 30-04-2026",
             "timeframe2": "30-04-2026 til 01-05-2026",
@@ -174,12 +202,6 @@
         "stratification": {
             "title": "stratification frames",
             "text": "Detaljerede tabeller, der beskriver befolkningsfordelingen på tværs af indbyrdes udelukkende og udtømmende celler. Celleantalene er hentet fra offentligt tilgængelige folketællingstabeller og udvidet til at omfatte en opdeling efter »stemmeafgivelse ved det seneste parlamentsvalg« ved hjælp af en nylig supplerende undersøgelse. Året og betegnelsen i rammens navn angiver det år og den valgtype, som rammen gælder for."
-        },
-        "support": {
-            "title": "STØT FORSKNINGEN",
-            "text1": "DONÉR OG BIDRAG TIL PROJEKTETS FREMTIDIGE ARBEJDE.",
-            "text2": "AL HJÆLP VIL VÆRE MEGET VELKOMMEN",
-            "donate": "DONÉR"
         }
     }
 }
