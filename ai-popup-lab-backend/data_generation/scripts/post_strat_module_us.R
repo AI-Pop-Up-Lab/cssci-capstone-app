@@ -601,10 +601,23 @@ build_us_post_share_draws_quartiles <- function(share_draws, parties, mrp_estima
 }
 
 build_us_post_extended_frame <- function(prob_mat, frame_pred) {
+	# frame_pred carries columns from the raw stratification frame that aren't
+	# needed here (notably its own `prob` column, the unraked pre-existing
+	# per-cell probability) -- narrowing to exactly what this function needs
+	# BEFORE the join avoids any name collision with the `prob` column
+	# pivot_longer creates below (the per-party post-stratified probability,
+	# a completely different quantity). Confirmed via production run: without
+	# this narrowing, left_join silently renames both to prob.x/prob.y and
+	# the later `mutate(expected_N = expected_N_raked * prob)` fails with
+	# "object 'prob' not found".
+	frame_cols <- frame_pred %>%
+		mutate(cell_id = seq_len(n())) %>%
+		select(cell_id, age_group, gender, race, state_abbrv, state_cd, education_level, expected_N_raked)
+
 	as_tibble(prob_mat) %>%
 		mutate(cell_id = seq_len(nrow(frame_pred))) %>%
 		pivot_longer(cols = -cell_id, names_to = "vote_2026", values_to = "prob") %>%
-		left_join(frame_pred %>% mutate(cell_id = seq_len(n())), by = "cell_id") %>%
+		left_join(frame_cols, by = "cell_id") %>%
 		mutate(expected_N = expected_N_raked * prob) %>%
 		select(cell_id, age_group, gender, race, state_abbrv, state_cd, education_level, expected_N_raked, vote_2026, prob, expected_N)
 }
