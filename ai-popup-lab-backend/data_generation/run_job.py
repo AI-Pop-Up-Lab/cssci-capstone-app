@@ -229,17 +229,30 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
             raise FileNotFoundError(f"Expected R output not found: {r_output_path}")
 
         extended_frame = pd.read_csv(r_output_path)
-        storage.upload_dataframe(extended_frame, storage.get_extended_frame_path(country, week_label))
+
+        extended_frame_path = (
+            storage.get_backfill_extended_frame_path(country, week_label)
+            if backfill else
+            storage.get_extended_frame_path(country, week_label)
+        )
+        storage.upload_dataframe(extended_frame, extended_frame_path)
         logger.info("[%s] Extended frame uploaded for %s.", country, week_label)
 
-        update_longitudinal_aggregates(
-            country=country,
-            extended_frame=_prepare_extended_frame_for_longitudinal(extended_frame),
-            year=year,
-            week=week,
-            blob_client=storage.get_blob_service_client(),
-            container=storage.CONTAINER_NAME,
-        )
+        if backfill:
+            logger.info(
+                "[%s] Skipping longitudinal aggregate update for %s — backfill runs never "
+                "touch production aggregates.",
+                country, week_label,
+            )
+        else:
+            update_longitudinal_aggregates(
+                country=country,
+                extended_frame=_prepare_extended_frame_for_longitudinal(extended_frame),
+                year=year,
+                week=week,
+                blob_client=storage.get_blob_service_client(),
+                container=storage.CONTAINER_NAME,
+            )
 
     storage.mark_job_ran(country, job_type, week_label)
     logger.info("MRP complete: %s %s (job_type=%s)", country, week_label, job_type)

@@ -41,31 +41,13 @@ Country
 import io
 import os
 import pandas as pd
-from azure.core.exceptions import ResourceNotFoundError
 from azure.storage.blob import BlobServiceClient
 
+CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
-# clients are created lazily so importing this module (e.g. from the API)
-# doesn't crash when AZURE_STORAGE_CONNECTION_STRING is unset
-_blob_service_client = None
-_container_client = None
-
-
-def _get_blob_service_client():
-    global _blob_service_client
-    if _blob_service_client is None:
-        _blob_service_client = BlobServiceClient.from_connection_string(
-            os.environ["AZURE_STORAGE_CONNECTION_STRING"]
-        )
-    return _blob_service_client
-
-
-def _get_container_client():
-    global _container_client
-    if _container_client is None:
-        _container_client = _get_blob_service_client().get_container_client(CONTAINER_NAME)
-    return _container_client
+_blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+_container_client = _blob_service_client.get_container_client(CONTAINER_NAME)
 
 
 '''----------------
@@ -132,6 +114,15 @@ def get_backfill_historical_panel_path(country, iso_week):
     return f"{country}/backfill_storage/historical_panels/{iso_week}_{country}_panel_results.csv"
 
 
+def get_backfill_extended_frame_path(country, iso_week):
+    """
+    Per-week MRP extended-frame output for a backfilled week. Mirrors
+    get_extended_frame_path but lives on the backfill track, so a backfill's
+    MRP output never overwrites the production extended frame for that week.
+    """
+    return f"{country}/backfill_storage/extended_frames/{iso_week}_extended_frame.csv"
+
+
 def get_backfill_panel_checkpoint_path(country, iso_week):
     """Scratch checkpoint for the week currently being backfilled. Never read as an input."""
     return f"{country}/backfill_storage/checkpoints/{iso_week}_panel_checkpoint.csv"
@@ -152,7 +143,7 @@ def upload_dataframe(df, blob_path, overwrite=True):
     csv_buffer = io.StringIO()
     df.to_csv(csv_buffer, index=False)
 
-    blob_client = _get_container_client().get_blob_client(blob_path)
+    blob_client = _container_client.get_blob_client(blob_path)
     blob_client.upload_blob(csv_buffer.getvalue(), overwrite=overwrite)
 
 
@@ -160,14 +151,14 @@ def upload_file(local_path, blob_path, overwrite=True):
     '''
     Uploads a local file as-is to Azure Blob Storage at blob_path.
     '''
-    blob_client = _get_container_client().get_blob_client(blob_path)
+    blob_client = _container_client.get_blob_client(blob_path)
     with open(local_path, "rb") as f:
         blob_client.upload_blob(f, overwrite=overwrite)
 
 
 def mark_job_ran(country, job_type, iso_week):
     '''Writes a lock blob marking a job type as complete for a given country/week.'''
-    blob_client = _get_container_client().get_blob_client(get_job_lock_path(country, job_type, iso_week))
+    blob_client = _container_client.get_blob_client(get_job_lock_path(country, job_type, iso_week))
     blob_client.upload_blob(b"done", overwrite=True)
 
 
@@ -180,7 +171,7 @@ def read_dataframe(blob_path):
     Reads a CSV blob from Azure Blob Storage into a pandas DataFrame.
     Raises azure.core.exceptions.ResourceNotFoundError if blob_path doesn't exist.
     '''
-    blob_client = _get_container_client().get_blob_client(blob_path)
+    blob_client = _container_client.get_blob_client(blob_path)
     stream = blob_client.download_blob()
     return pd.read_csv(io.BytesIO(stream.readall()))
 
@@ -189,8 +180,7 @@ def read_dataframe_or_none(blob_path):
     '''Like read_dataframe, but returns None instead of raising if the blob is missing.'''
     try:
         return read_dataframe(blob_path)
-    except ResourceNotFoundError:
-        # only a genuinely missing blob becomes None; auth/network errors propagate unchanged
+    except Exception:
         return None
 
 
@@ -198,7 +188,7 @@ def blob_exists(blob_path):
     '''
     Returns True if a blob exists at blob_path, False otherwise.
     '''
-    return _get_container_client().get_blob_client(blob_path).exists()
+    return _container_client.get_blob_client(blob_path).exists()
 
 
 def already_ran(country, job_type, iso_week):
@@ -212,4 +202,4 @@ def get_blob_service_client():
     client rather than one of the path helpers above (e.g. aggregate_longitudinal.py,
     which takes a BlobServiceClient + container name directly).
     '''
-    return _get_blob_service_client()
+    return _blob_service_client
