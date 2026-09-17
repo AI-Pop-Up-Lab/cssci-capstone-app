@@ -1,0 +1,120 @@
+.TermsPage {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 45px;
+    color: #334E58;
+}
+.TermsPage > h1 {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0 0 30px;
+    padding-bottom: 12px;
+    border-bottom: 5px solid #d9d9d9;
+}
+
+.terms-introduction {
+    margin-bottom: 35px;
+}
+
+.terms-introduction p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 0 0 18px;
+}
+
+.terms-content {
+    padding-bottom: 30px;
+    border-bottom: 5px solid #d9d9d9;
+}
+
+.terms-section {
+    margin-bottom: 14px;
+}
+
+.terms-section h2 {
+    display: inline;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin: 0 5px 0 0;
+}
+
+.terms-section p {
+    display: inline;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.terms-section p + p {
+    display: block;
+    margin-top: 8px;
+}
+
+/* Links */
+
+.TermsPage a {
+    color: #334E58;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.TermsPage a:hover {
+    opacity: 0.7;
+}
+
+
+/* Tablet */
+
+@media screen and (max-width: 810px) {
+
+    .TermsPage {
+        width: 92%;
+        padding: 25px 0 35px;
+    }
+
+    .TermsPage > h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .terms-introduction p,
+    .terms-section h2,
+    .terms-section p {
+        font-size: 13px;
+    }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 450px) {
+
+    .TermsPage {
+        width: 90%;
+        padding: 20px 0 30px;
+    }
+
+    .TermsPage > h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .terms-introduction {
+        margin-bottom: 25px;
+    }
+
+    .terms-introduction p,
+    .terms-section h2,
+    .terms-section p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .terms-section {
+        margin-bottom: 12px;
+    }
+}
