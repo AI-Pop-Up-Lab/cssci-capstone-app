@@ -30,6 +30,14 @@ Country
             per-week result snapshot for each backfilled week
         backfill checkpoints
             in-progress checkpoint for the week currently being backfilled
+    hotfix_backfill (usa-only, split-stage backfill track — see below)
+        active panel (manually-seeded, week-(t-1) input; stage 1 advances this week by week)
+        biography_panels
+            per-week snapshot after attrition + biography/media_diet (stage 1 output, stage 2 input)
+        vote_choice_panels
+            per-week snapshot after the survey wave / vote choice (stage 2 output)
+        extended_frames
+            per-week MRP extended frame (stage 2 output)
     Job runs
         job type
             lock files
@@ -126,6 +134,45 @@ def get_backfill_extended_frame_path(country, iso_week):
 def get_backfill_panel_checkpoint_path(country, iso_week):
     """Scratch checkpoint for the week currently being backfilled. Never read as an input."""
     return f"{country}/backfill_storage/checkpoints/{iso_week}_panel_checkpoint.csv"
+
+
+# ── Hotfix backfill (split-stage: sequential attrition+bio, then parallel
+#    survey+MRP) — a second, independent backfill track alongside
+#    backfill_storage above. Kept entirely separate so this hotfix never
+#    reads or overwrites the (full-cycle, single-track) backfill_storage
+#    blobs or production state. ─────────────────────────────────────────────
+
+def get_hotfix_backfill_active_panel_path(country):
+    """
+    The manually-seeded 'current' active panel that hotfix-backfill stage 1
+    advances week by week (attrition + replacement only). Seed this with a
+    genuine week-(t-1) panel before the first week of a stage-1 run — stage 1
+    itself never seeds it. Stage 2 never reads this blob directly; it reads
+    the per-week snapshot in biography_panels instead, so multiple stage-2
+    containers running in parallel never contend over this single blob.
+    """
+    return f"{country}/hotfix_backfill/{country}_active_panel.csv"
+
+
+def get_hotfix_backfill_biography_panel_path(country, iso_week):
+    """
+    Per-week snapshot written by hotfix-backfill stage 1 once that week's
+    attrition + biography/media_diet generation is done — the full panel,
+    no vote-choice columns yet. This is what stage 2 reads as input for that
+    week, and stage 2 for different weeks reads different blobs here, which
+    is what lets those stage-2 runs happen in parallel with no contention.
+    """
+    return f"{country}/hotfix_backfill/biography_panels/{iso_week}_{country}_panel_biography.csv"
+
+
+def get_hotfix_backfill_vote_panel_path(country, iso_week):
+    """Per-week panel snapshot after hotfix-backfill stage 2's survey wave (vote choice included)."""
+    return f"{country}/hotfix_backfill/vote_choice_panels/{iso_week}_{country}_panel_votes.csv"
+
+
+def get_hotfix_backfill_extended_frame_path(country, iso_week):
+    """Per-week MRP extended-frame output from hotfix-backfill stage 2."""
+    return f"{country}/hotfix_backfill/extended_frames/{iso_week}_extended_frame.csv"
 
 
 def get_job_lock_path(country, job_type, iso_week):

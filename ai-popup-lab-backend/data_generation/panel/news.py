@@ -19,7 +19,7 @@ import requests
 import newspaper
 from tqdm import tqdm
 
-from .retry_utils import retry_call, RetryExhausted
+from .retry_utils import retry_call, RetryExhausted, is_permanent_http_error
 
 MASTERLIST_URLS = [
     "http://data.gdeltproject.org/gdeltv2/masterfilelist.txt",
@@ -87,7 +87,7 @@ def get_gkg_urls(start: datetime, end: datetime, masterlist_urls: list[str] | No
     for master_url in (masterlist_urls or MASTERLIST_URLS):
         print(f"Fetching master list: {master_url}")
         try:
-            resp = retry_call(_fetch_masterlist, master_url)
+            resp = retry_call(_fetch_masterlist, master_url, should_retry=is_permanent_http_error)
         except RetryExhausted as exc:
             print(f"  ✗ giving up on masterlist {master_url}: {exc}")
             continue
@@ -126,7 +126,7 @@ def _download_and_parse_gkg(url: str) -> pd.DataFrame:
 
 def download_and_filter(url: str, domains: list[str]) -> pd.DataFrame | None:
     try:
-        df = retry_call(_download_and_parse_gkg, url)
+        df = retry_call(_download_and_parse_gkg, url, should_retry=is_permanent_http_error)
     except RetryExhausted as exc:
         print(f"  ✗ {url.split('/')[-1]} — giving up: {exc}")
         return None
@@ -219,7 +219,7 @@ def _fetch_article_inner(url: str) -> dict[str, str | None]:
 
 def fetch_article(url: str) -> dict[str, str | None]:
     try:
-        return retry_call(_fetch_article_inner, url)
+        return retry_call(_fetch_article_inner, url, should_retry=is_permanent_http_error)
     except RetryExhausted as exc:
         print(f"  ✗ Failed to fetch {url} — giving up: {exc}")
         return {"title": None, "authors": None, "text": None}

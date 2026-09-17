@@ -161,13 +161,21 @@ def _prepare_survey_for_r(survey_df: pd.DataFrame, panel_date: str) -> pd.DataFr
 
 def _prepare_extended_frame_for_longitudinal(extended_frame: pd.DataFrame) -> pd.DataFrame:
     """
-    aggregate_longitudinal.py expects columns named `party` (outcome) and
-    `prob_raked` (weight) — but the US R module's extended-frame output
-    names these `vote_2026` and `expected_N`. Rename on a copy here rather
-    than upstream, so the blob uploaded to get_extended_frame_path keeps
-    the R script's native column names for any other consumer.
+    aggregate_longitudinal.py (and the frontend charts consuming its output)
+    expect columns named `party` (outcome), `prob_raked` (weight), and
+    `state` (demographic dimension) — but the US R module's extended-frame
+    output names these `vote_2026`, `expected_N`, and `state_abbrv`
+    respectively (the latter because the R module itself requires that
+    exact name with no alias fallback — see _prepare_frame_for_r). Rename
+    on a copy here rather than upstream, so the blob uploaded to
+    get_extended_frame_path keeps the R script's native column names for
+    any other consumer.
     """
-    return extended_frame.rename(columns={"vote_2026": "party", "expected_N": "prob_raked"})
+    return extended_frame.rename(columns={
+        "vote_2026": "party",
+        "expected_N": "prob_raked",
+        "state_abbrv": "state",
+    })
 
 
 def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: bool = False) -> None:

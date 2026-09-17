@@ -1,0 +1,154 @@
+name: Hotfix Backfill - Stage 2 (Vote Choice + Extended Frame)
+
+# USA only. Splits the given weeks round-robin into up to 5 groups and runs
+# one ACI container per non-empty group, all in parallel — this stage has
+# no week-to-week dependency (each week's stage-1 biography panel already
+# stands alone), unlike stage 1, so it's safe to fan out. Run
+# hotfix-backfill-stage1.yml for these same weeks first; stage 2 will fail
+# fast for any week that doesn't have a stage-1 snapshot yet.
+
+on:
+  workflow_dispatch:
+    inputs:
+      weeks:
+        description: 'ISO weeks to backfill, e.g. 2026-14,2026-15,2026-16 (any order — independent in stage 2, spread across parallel containers)'
+        required: true
+      force:
+        description: 'Force rerun even if a week already has a stage-2 lock (true/false)'
+        required: false
+        default: 'false'
+
+jobs:
+  stage2:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      MAX_CONTAINERS: 5
+      RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      ACR_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
+      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+      AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      AZURE_OPENAI_MODEL: ${{ secrets.AZURE_OPENAI_MODEL }}
+      AZURE_OPENAI_BASE_URL: ${{ secrets.AZURE_OPENAI_BASE_URL }}
+      COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+      HOTFIX_FORCE: ${{ github.event.inputs.force }}
+      WEEKS_INPUT: ${{ github.event.inputs.weeks }}
+    steps:
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Split weeks into up to 5 groups
+        run: |
+          IFS=',' read -ra WEEKS <<< "$WEEKS_INPUT"
+          declare -a GROUPS
+          for i in "${!WEEKS[@]}"; do
+            idx=$(( i % MAX_CONTAINERS ))
+            week="$(echo "${WEEKS[$i]}" | tr -d '[:space:]')"
+            GROUPS[$idx]="${GROUPS[$idx]:+${GROUPS[$idx]},}${week}"
+          done
+          n="${#GROUPS[@]}"
+          echo "n=$n" >> "$GITHUB_ENV"
+          for i in "${!GROUPS[@]}"; do
+            echo "GROUP_$i=${GROUPS[$i]}" >> "$GITHUB_ENV"
+            echo "Group $i: ${GROUPS[$i]}"
+          done
+
+      - name: Delete existing ACIs if present
+        run: |
+          for i in $(seq 0 $((MAX_CONTAINERS - 1))); do
+            az container delete --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --yes || true
+          done
+
+      - name: Create ACI stage-2 workers (one per group, running in parallel)
+        run: |
+          for i in $(seq 0 $((n - 1))); do
+            group_var="GROUP_$i"
+            group="${!group_var}"
+            if [ -z "$group" ]; then continue; fi
+            echo "Launching container $i for weeks: $group"
+            az container create \
+              --resource-group "$RESOURCE_GROUP" \
+              --name "hotfix-backfill-stage2-aci-$i" \
+              --image "$ACR_LOGIN_SERVER/weekly-worker:latest" \
+              --registry-username "$ACR_USERNAME" \
+              --registry-password "$ACR_PASSWORD" \
+              --restart-policy Never \
+              --location westeurope \
+              --cpu 2 \
+              --memory 4 \
+              --command-line "python -m data_generation.hotfix_backfill_stage2_entry" \
+              --environment-variables \
+                ENV=production \
+                HOTFIX_WEEKS="$group" \
+                HOTFIX_FORCE="$HOTFIX_FORCE" \
+                BLOB_CONTAINER_NAME=generated-data \
+              --secure-environment-variables \
+                AZURE_STORAGE_CONNECTION_STRING="$AZURE_STORAGE_CONNECTION_STRING" \
+                AZURE_OPENAI_API_KEY="$AZURE_OPENAI_API_KEY" \
+                AZURE_OPENAI_MODEL="$AZURE_OPENAI_MODEL" \
+                AZURE_OPENAI_BASE_URL="$AZURE_OPENAI_BASE_URL" \
+                COHERE_API_KEY="$COHERE_API_KEY" \
+              --os-type Linux
+          done
+
+      - name: Wait for all ACIs to finish
+        timeout-minutes: 720
+        run: |
+          : > /tmp/active_containers.txt
+          for i in $(seq 0 $((n - 1))); do
+            group_var="GROUP_$i"
+            group="${!group_var}"
+            if [ -z "$group" ]; then continue; fi
+            echo "$i" >> /tmp/active_containers.txt
+          done
+          while [ -s /tmp/active_containers.txt ]; do
+            : > /tmp/still_active.txt
+            while read -r i; do
+              STATE=$(az container show --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --query "containers[0].instanceView.currentState.state" --output tsv)
+              echo "Container $i state: $STATE"
+              if [ "$STATE" != "Terminated" ]; then
+                echo "$i" >> /tmp/still_active.txt
+              fi
+            done < /tmp/active_containers.txt
+            mv /tmp/still_active.txt /tmp/active_containers.txt
+            if [ -s /tmp/active_containers.txt ]; then sleep 30; fi
+          done
+
+      - name: Check exit codes
+        run: |
+          overall=0
+          for i in $(seq 0 $((n - 1))); do
+            group_var="GROUP_$i"
+            group="${!group_var}"
+            if [ -z "$group" ]; then continue; fi
+            EXIT_CODE=$(az container show --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --query "containers[0].instanceView.currentState.exitCode" --output tsv)
+            echo "Container $i (weeks: $group) exit code: $EXIT_CODE"
+            if [ "$EXIT_CODE" != "0" ]; then overall=1; fi
+          done
+          if [ "$overall" != "0" ]; then
+            echo "One or more stage-2 containers failed — see logs above/below."
+            exit 1
+          fi
+
+      - name: Print container logs
+        if: always()
+        run: |
+          for i in $(seq 0 $((MAX_CONTAINERS - 1))); do
+            echo "=== Logs: hotfix-backfill-stage2-aci-$i ==="
+            az container logs --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" || true
+          done
+
+      - name: Clean up ACIs
+        if: always()
+        run: |
+          for i in $(seq 0 $((MAX_CONTAINERS - 1))); do
+            az container delete --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --yes || true
+          done
