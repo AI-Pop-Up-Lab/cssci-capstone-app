@@ -47,6 +47,11 @@ jobs:
 
       - name: Split weeks into up to 5 groups
         run: |
+          echo "Raw input (hexdump):"
+          echo -n "$WEEKS_INPUT" | xxd | head -20
+          IFS=',' read -ra WEEKS <<< "$WEEKS_INPUT"
+          echo "Parsed WEEKS array (${#WEEKS[@]} elements):"
+          printf '  [%s]\n' "${WEEKS[@]}"
           IFS=',' read -ra WEEKS <<< "$WEEKS_INPUT"
           declare -a GROUPS
           for i in "${!WEEKS[@]}"; do
