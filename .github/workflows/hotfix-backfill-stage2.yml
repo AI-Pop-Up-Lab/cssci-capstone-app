@@ -47,24 +47,23 @@ jobs:
 
       - name: Split weeks into up to 5 groups
         run: |
-          echo "Raw input (hexdump):"
-          echo -n "$WEEKS_INPUT" | xxd | head -20
+          set -x
           IFS=',' read -ra WEEKS <<< "$WEEKS_INPUT"
-          echo "Parsed WEEKS array (${#WEEKS[@]} elements):"
-          printf '  [%s]\n' "${WEEKS[@]}"
-          IFS=',' read -ra WEEKS <<< "$WEEKS_INPUT"
+          declare -p WEEKS
           declare -a GROUPS
           for i in "${!WEEKS[@]}"; do
             idx=$(( i % MAX_CONTAINERS ))
             week="$(echo "${WEEKS[$i]}" | tr -d '[:space:]')"
+            declare -p week
             GROUPS[$idx]="${GROUPS[$idx]:+${GROUPS[$idx]},}${week}"
+            declare -p GROUPS
           done
           n="${#GROUPS[@]}"
           echo "n=$n" >> "$GITHUB_ENV"
           for i in "${!GROUPS[@]}"; do
             echo "GROUP_$i=${GROUPS[$i]}" >> "$GITHUB_ENV"
-            echo "Group $i: ${GROUPS[$i]}"
           done
+          declare -p GROUPS
 
       - name: Delete existing ACIs if present
         run: |
