@@ -52,7 +52,7 @@ function App() {
         <Route path="/methods" element={<MethodsPage />} />
         <Route path="/polling" element={<PollPage />} />
         <Route path="/datahub" element={<DataHubPage />} />
-        <Route path="/team" element={<TeamPage />} />
+        {/* <Route path="/team" element={<TeamPage />} /> */}
         <Route path="/terms" element={<TermsPage />} />
       </Routes>
 

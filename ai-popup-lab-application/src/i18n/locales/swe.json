@@ -203,5 +203,120 @@
             "title": "stratification frames",
             "text": "Detaljerade tabeller som beskriver befolkningsfördelningen över ömsesidigt uteslutande och heltäckande celler. Antalet invånare i cellerna är hämtat från offentligt tillgängliga folkräkningstabeller och har kompletterats med en uppdelning efter ”röster i det senaste parlamentsvalet” med hjälp av en nyligen genomförd kompletterande undersökning. Årtalet och beteckningen i ramens namn anger det år och den valtyp som ramen gäller för."
         }
+    },
+     "termsPage": {
+  "title": "Allmänna villkor",
+
+  "introduction": [
+    "Mechanical Pollster, ett verktyg som utvecklats av AI POP-Up Lab vid Amsterdams universitet, uppmuntrar allmänheten att ta del av och använda de data som görs tillgängliga via <webbplats>www.mechanical-pollster.com</webbplats>. Olika typer av data organiseras och görs tillgängliga i maskinläsbara format (”datamängder”) av AI POP-Up Lab och publiceras på <webbplats>mechanical-pollster.com</webbplats>. Användning av data som härrör från datamängderna, inklusive presentationer såsom tabeller och diagram, omfattas också av dessa användarvillkor. Datamängderna kan innehålla tillhörande dokumentation och metadata (”Metadata”).",
+
+    "Om någon av de datamängder eller något av det material som finns tillgängligt på <website>mechanical-pollster.com</website> hänvisar till en annan källa än Mechanical Pollster, kan detta material omfattas av särskilda villkor eller behörighetskrav. Det är ditt ansvar att ta reda på om så är fallet och, vid behov, inhämta tillstånd från den berörda källan eller rättighetsinnehavaren.",
+
+    "Genom att öppna eller använda datamängderna eller presentationer av data som härrör från dessa samtycker du till att följa dessa villkor."
+  ],
+
+  "sections": {
+    "licensedUse": {
+      "title": "Auktoriserad användning.",
+      "content": [
+        "I enlighet med dessa villkor beviljas du en royaltyfri, världsomfattande och icke-exklusiv rätt att använda, reproducera, extrahera, ladda ner, kopiera, sprida, visa, analysera, anpassa eller inkludera datamängderna och de uppgifter som ingår i dem i andra resultat för forskningsändamål."
+      ]
+    },
+
+    "retainedRights": {
+      "title": "Kvarstående rättigheter.",
+      "content": [
+        "Upphovsrätten och övriga tillämpliga rättigheter till datamängderna och metadatan tillhör AI POP-Up Lab och/eller berörda rättighetsinnehavare. Alla rättigheter som inte uttryckligen beviljas enligt dessa villkor förbehålls."
+      ]
+    },
+
+    "acknowledgement": {
+      "title": "Tack och källhänvisningar.",
+      "content": [
+        "När du använder datamängderna måste du på lämpligt sätt ange AI POP-Up Lab och dess forskare som källa samt, i tillämpliga fall, använda de källhänvisningsuppgifter som medföljer den aktuella datamängden."
+      ]
+    },
+
+    "modifyingDatasets": {
+      "title": "Ändring eller anpassning av datamängderna.",
+      "content": [
+        "Som en del av den licensierade användningen får du ändra eller anpassa datamängderna. Ändrade eller härledda data får inte presenteras som ursprungliga eller oförändrade data från AI POP-Up Lab."
+      ]
+    },
+
+    "personalData": {
+      "title": "Personuppgifter.",
+      "content": [
+        "De mänskliga referensdata som görs tillgängliga via Mechanical Pollster är pseudoanonymiserade. Om du stöter på personligt identifierbar information eller annan information som skulle kunna identifiera en deltagare i undersökningen får du inte använda den informationen för att identifiera personen eller lämna ut den till tredje part.",
+
+        "All sådan information, eller alla händelser som rör obehörig åtkomst till, behandling av eller utlämnande av personuppgifter, måste omedelbart anmälas till Dr. Roberto Cerina (<email>r.cerina@uva.nl</email>).",
+
+        "Alla personuppgifter som man kommer i kontakt med vid användning av datamängderna måste hanteras i enlighet med den allmänna dataskyddsförordningen (GDPR)."
+      ]
+    },
+
+    "syntheticData": {
+      "title": "Syntetiska data.",
+      "content": [
+        "Fiktiva personer och deras uttalanden får inte framställas som verkliga individer eller som uttalanden gjorda av identifierbara verkliga personer."
+      ]
+    },
+
+    "prohibitedUses": {
+      "title": "Förbjudna användningsområden.",
+      "content": [
+        "Inget försök får göras att identifiera eller återidentifiera någon forskningsdeltagare med hjälp av information som ingår i datamängderna, inklusive genom att kombinera datamängderna med data från AI POP-Up Lab som erhållits tidigare eller med information som erhållits från andra källor. Du får inte sälja eller på annat sätt överlåta datauppsättningarna eller uppgifterna i dessa till någon tredje part, utom inom ramen för den licensierade användningen. Du får inte använda datauppsättningarna på ett sätt som förvränger eller väsentligt felaktigt återger deras innehåll, ursprung, metodik eller, i tillämpliga fall, deras syntetiska karaktär."
+      ]
+    },
+
+    "noEndorsement": {
+      "title": "Inget stöd.",
+      "content": [
+        "Du får inte uttryckligen eller indirekt hävda att Mechanical Pollster, AI Pop-up Lab, Amsterdams universitet eller någon relevant finansiär eller forskningspartner stöder det sätt på vilket eller det syfte för vilket du använder datamängderna, din tolkning av uppgifterna eller någon enhet, organisation, företag, produkt eller tjänst."
+      ]
+    },
+
+    "namesAndLogos": {
+      "title": "Användning av namn och logotyper.",
+      "content": [
+        "Utan föregående skriftligt godkännande får du inte använda logotyperna för Mechanical Pollster eller AI Pop-up Lab på ett sätt som antyder sponsring, anknytning eller stöd."
+      ]
+    },
+
+    "noWarranties": {
+      "title": "Inga garantier.",
+      "content": [
+        "Dataseten tillhandahålls utan någon form av garanti, varken uttrycklig eller underförstådd. Du bär själv det fulla ansvaret för din användning av dataseten. I den utsträckning som tillämplig lag tillåter ska Amsterdams universitet, AI POP-Up Lab och forskarteamet Mechanical Pollster inte hållas ansvariga för skador som uppstår till följd av sådan användning."
+      ]
+    },
+
+    "thirdPartyMaterials": {
+      "title": "Material från tredje part.",
+      "content": [
+        "Om du vill återanvända material från datamängderna som tillhör en tredje part är det ditt ansvar att avgöra om tillstånd krävs och, vid behov, inhämta tillstånd från den berörda rättighetsinnehavaren. De tillstånd som beviljas enligt dessa villkor har inte företräde framför eventuella rättigheter eller begränsningar som gäller för material från tredje part."
+      ]
+    },
+
+    "modificationDiscontinuation": {
+      "title": "Ändring eller avveckling av datamängder.",
+      "content": [
+        "AI POP-Up Lab förbehåller sig rätten att, med eller utan föregående meddelande, ändra eller upphöra med, tillfälligt eller permanent, datamängderna eller alla sätt att få tillgång till dem."
+      ]
+    },
+
+    "termination": {
+      "title": "Uppsägning.",
+      "content": [
+        "De rättigheter som beviljas enligt dessa villkor kan upphävas om du bryter mot dessa villkor. När du mottar en skriftlig begäran om detta måste du upphöra med användningen av och förstöra alla kopior av de berörda datamängderna samt bekräfta att du har följt kraven inom sju (7) dagar."
+      ]
+    },
+
+    "entireAgreement": {
+      "title": "Hela avtalet.",
+      "content": [
+        "Dessa användarvillkor utgör de villkor som reglerar användningen av AI POP-Up Lab-datauppsättningarna och kan komma att ändras från tid till annan."
+      ]
     }
+  }
+}
 }
