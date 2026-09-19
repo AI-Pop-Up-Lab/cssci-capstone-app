@@ -50,6 +50,15 @@ JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
 # actually consumes right now) is computed earlier and unaffected. Flip to
 # true via env var when those other outputs are needed again, without a
 # code change.
+#
+# NOTE: as of the current post_strat_module_us.R, this no longer actually
+# skips anything for country == "usa" — that module always runs the full
+# draws phase regardless of what's passed here (its only remaining
+# draws-related toggle, config$export_cell_draws, just controls whether
+# the raw per-cell draw matrix gets written). Left in place — still passed
+# through to run_extension_script/the R CLI — in case a country module
+# reintroduces a real gate, but expect every USA MRP run to now take as
+# long as a "full draws" run used to, whatever this is set to.
 COMPUTE_MRP_DRAWS = os.environ.get("COMPUTE_MRP_DRAWS", "false").strip().lower() in ("true", "1", "yes")
 
 
@@ -211,6 +220,23 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
         frame_df = _prepare_frame_for_r(frame_df)
         frame_df.to_csv(frame_path, index=False)
 
+        # Static per-country input the updated US vglmer formula requires
+        # (state-level presidential + district-level congressional vote
+        # shares). Only the US module takes this — post_strat_module_dk_se.R
+        # doesn't, so don't require it for other countries.
+        area_shares_path = None
+        if country.lower() == "usa":
+            area_shares_blob = storage.get_area_level_vote_shares_path(country)
+            area_shares_df = storage.read_dataframe_or_none(area_shares_blob)
+            if area_shares_df is None:
+                raise FileNotFoundError(
+                    f"No area-level vote shares file found for {country} "
+                    f"(expected blob: {area_shares_blob}). Upload it before running MRP — "
+                    f"post_strat_module_us.R's run_post_stratification() requires it."
+                )
+            area_shares_path = tmp_path / f"{country}_area_level_vote_shares.csv"
+            area_shares_df.to_csv(area_shares_path, index=False)
+
         survey_df = storage.read_dataframe_or_none(survey_blob_path)
         if survey_df is None:
             raise FileNotFoundError(
@@ -230,6 +256,7 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
             output_dir=output_dir,
             country=country,
             compute_draws=COMPUTE_MRP_DRAWS,
+            area_shares_path=area_shares_path,
         )
 
         r_output_path = output_dir / "mrp_extended_frame_predictions.csv"

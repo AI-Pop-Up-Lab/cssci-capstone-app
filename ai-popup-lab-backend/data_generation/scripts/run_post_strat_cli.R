@@ -4,7 +4,7 @@ if (length(args) < 4) {
   stop(
     paste(
       "Usage:",
-      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws]"
+      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws] [area_shares_csv]"
     )
   )
 }
@@ -32,20 +32,30 @@ if (is.na(n_sims) || n_sims <= 0) {
   stop("n_sims must be a positive integer.")
 }
 
-# compute_draws = FALSE skips the simulation-draws phase entirely (and every
-# output that depends on it: quartile/uncertainty tables, CD-level
-# breakdowns) -- this is the memory-heavy part of the run. extended_frame,
-# point_estimates, stage_diagnostics, and aggregate_counts are unaffected,
-# since none of them depend on the draws. Defaults to TRUE (full output,
-# original behavior) for standalone/manual invocations; the pipeline
-# explicitly opts out via this arg when it only needs extended_frame.
+# NOTE: compute_draws no longer gates anything in the current
+# post_strat_module_us.R -- run_post_stratification() always runs the full
+# simulation-draws phase now (national_summary_95ci, share_draws,
+# cd_party_draws/cd_party_ci, and every margin summary's CI all depend on
+# it). The only remaining draws-related toggle on the R side is
+# config$export_cell_draws (default FALSE), which controls only whether
+# the raw per-cell draw matrix (mrp_cell_draws.csv) gets written, not
+# whether draws are computed at all. This arg is still accepted and still
+# threaded into config -- in case a country module reintroduces a real
+# gate -- but for country == "usa" it currently has no effect on runtime.
 compute_draws_arg <- if (length(args) >= 6) args[[6]] else "true"
 compute_draws <- tolower(compute_draws_arg) %in% c("true", "1", "yes")
+
+# Optional: area-level (state-level presidential + district-level
+# congressional) vote shares. post_strat_module_us.R's
+# run_post_stratification() takes this as a required positional argument
+# (area_level_vote_shares, no default) -- omit only when sourcing a
+# country module that doesn't take it.
+area_shares_path <- if (length(args) >= 7 && nzchar(args[[7]])) args[[7]] else NULL
 
 # Country-specific post-stratification module. The US module has its own
 # stickbreaking/multinomial structure and district-level output tailored to
 # US House races; every other country still uses the original shared
-# module. Add more country-specific branches here as they're built out —
+# module. Add more country-specific branches here as they're built out --
 # both modules expose the same run_post_stratification()/
 # write_post_strat_outputs() entry points, so this dispatch is the only
 # thing that needs to change to add a new one.
@@ -61,10 +71,17 @@ if (!file.exists(module_path)) {
 }
 source(module_path)
 
+if (tolower(country) == "usa" && is.null(area_shares_path)) {
+  stop(
+    "country == 'usa' requires an area-level vote shares CSV (7th CLI arg) -- ",
+    "post_strat_module_us.R's run_post_stratification() has no default for it."
+  )
+}
+
 survey <- readr::read_csv(survey_path, show_col_types = FALSE)
 frame <- readr::read_csv(frame_path, show_col_types = FALSE)
 
-result <- run_post_stratification(
+run_args <- list(
   survey = survey,
   frame = frame,
   config = list(
@@ -73,6 +90,12 @@ result <- run_post_stratification(
     compute_draws = compute_draws
   )
 )
+
+if (!is.null(area_shares_path)) {
+  run_args$area_level_vote_shares <- readr::read_csv(area_shares_path, show_col_types = FALSE)
+}
+
+result <- do.call(run_post_stratification, run_args)
 
 write_post_strat_outputs(result, output_dir)
 
