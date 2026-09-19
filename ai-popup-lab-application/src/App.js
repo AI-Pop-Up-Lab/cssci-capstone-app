@@ -16,6 +16,7 @@ import EthicsPage from './pages/ethicsPage.js'
 import PollPage from './pages/pollPage.js';
 import DataHubPage from './pages/dataHubPage.js'
 import TeamPage from './pages/teamPage.js'
+import TermsPage from './pages/termsPage.js'
 
 // function to scroll to top of browser window, gets called when the pathname changes (user changes page on site)
 function ScrollToTop() {
@@ -51,7 +52,8 @@ function App() {
         <Route path="/methods" element={<MethodsPage />} />
         <Route path="/polling" element={<PollPage />} />
         <Route path="/datahub" element={<DataHubPage />} />
-        <Route path="/team" element={<TeamPage />} />
+        {/* <Route path="/team" element={<TeamPage />} /> */}
+        <Route path="/terms" element={<TermsPage />} />
       </Routes>
 
       <Footer />

@@ -168,24 +168,44 @@
         }
     },
     "teamPage": {
-        "title": "MEET THE TEAM",
-        "description": "This project is a collaboration between Computational Social Science and Cultural Data & AI students at the University of Amsterdam, under the supervision of Dr. Roberto Cerina.",
-        "coreTeam": {
-            "title": "Core Team",
-            "contact": "Contact",
-            "members": {
-                "policog": {
-                    "role": "Poli-Cog",
-                    "text": "Leads the political-cognition side of the project: how synthetic personae reason and talk about politics. Designs the behavioural guardrails of the chat pipeline so persona responses stay representative, grounded, and free of stereotype."
-                },
-                "personaSampling": {
-                    "role": "Persona Sampling",
-                    "text": "Builds the synthetic samples behind every poll. Draws representative personae from census-based stratification frames so each simulated respondent mirrors a real slice of the population."
-                },
-                "infrastructure": {
-                    "role": "Infrastructure",
-                    "text": "Builds and maintains the platform itself: the backend APIs, data pipelines, and deployment that carry every result from model to browser."
-                }
+        "title": "OUR TEAM",
+        "description": "At Mechanical Pollster we have a continuous flow of contributors, each partaking in one of the many building blocks of the platform.",
+        "contact": "Contact",
+        "teams": {
+            "poliCog": {
+                "name": "Political Cognitive",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "humanBenchmark": {
+                "name": "Human Benchmarking",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            },
+            "infrastructure": {
+                "name": "Infrastructure",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            }
+        },
+        "members": {
+            "dummy1": {
+                "highlights": [
+                    "Something 1",
+                    "Something 2",
+                    "Something 3"
+                ]
+            },
+            "dummy2": {
+                "highlights": [
+                    "Something 1",
+                    "Something 2",
+                    "Something 3"
+                ]
+            },
+            "dummy3": {
+                "highlights": [
+                    "Something 1",
+                    "Something 2",
+                    "Something 3"
+                ]
             }
         }
     },
@@ -218,5 +238,120 @@
             "title": "stratification frames",
             "text": "Detailed tables describing the population distribution across mutually exclusive and exhaustive Cells. Cell counts are derived from publicly available census tables, and augmented to include breakdown by 'vote in the last general election' using a recent auxiliary survey. The year and label in the frame's name reflects the year and election-type for which that frame is valid."
         }
+    },
+    "termsPage": {
+  "title": "Terms and Conditions",
+
+  "introduction": [
+    "Mechanical Pollster, a tool developed by the AI POP-Up Lab at the University of Amsterdam, encourages the public to access and use the data made available through <website>www.mechanical-pollster.com</website>. Various data are organised and made available in machine-readable formats (“Datasets”) by the AI POP-Up Lab, and published on <website>mechanical-pollster.com</website>. Use of data derived from the Datasets, including presentations such as tables and charts, is also subject to these Terms and Conditions. Datasets may include accompanying documentation and metadata (“Metadata”).",
+
+    "If any Datasets or materials available on <website>mechanical-pollster.com</website> are credited to a source other than Mechanical Pollster, those materials may be subject to separate terms or permissions. You are responsible for determining whether this is the case and, where necessary, obtaining permission from the relevant source or rights holder.",
+
+    "By accessing or using the Datasets or any presentations of data derived from them, you agree to comply with these Terms and Conditions."
+  ],
+
+  "sections": {
+    "licensedUse": {
+      "title": "Licensed Use.",
+      "content": [
+        "Subject to these Terms and Conditions, you are granted a royalty-free, worldwide, non-exclusive right to use, reproduce, extract, download, copy, distribute, display, analyse, adapt, or include the Datasets and data contained therein in other outputs for research purposes."
+      ]
+    },
+
+    "retainedRights": {
+      "title": "Retained Rights.",
+      "content": [
+        "Copyright and other applicable rights in the Datasets and Metadata remain with the AI POP-Up Lab and/or the relevant rights holders. All rights not specifically granted under these Terms and Conditions are reserved."
+      ]
+    },
+
+    "acknowledgement": {
+      "title": "Acknowledgement and Citation.",
+      "content": [
+        "When using the Datasets, you must appropriately acknowledge the AI POP-Up Lab, its researchers, and use the citation information provided with the relevant Dataset, where applicable."
+      ]
+    },
+
+    "modifyingDatasets": {
+      "title": "Altering or Modifying the Datasets.",
+      "content": [
+        "As part of the Licensed Use, you may alter or adapt the Datasets. Modified or derived data must not be presented as original or unmodified AI POP-Up Lab data."
+      ]
+    },
+
+    "personalData": {
+      "title": "Personal Data.",
+      "content": [
+        "Human Benchmark Data made available through Mechanical Pollster are pseudo-anonymised. If you encounter personally identifiable information or other information that could identify a research participant, you must not use that information to identify the individual or disclose it to third parties.",
+
+        "Any such information, or any incident involving unauthorised access to, processing of, or disclosure of personal data, must be reported immediately to Dr. Roberto Cerina (<email>r.cerina@uva.nl</email>).",
+
+        "Any personal data encountered through use of the Datasets must be handled in accordance with the General Data Protection Regulation (GDPR)."
+      ]
+    },
+
+    "syntheticData": {
+      "title": "Synthetic Data.",
+      "content": [
+        "Synthetic personae and their responses must not be represented as real individuals or as statements made by identifiable real persons."
+      ]
+    },
+
+    "prohibitedUses": {
+      "title": "Prohibited Uses.",
+      "content": [
+        "No attempt shall be made to identify or re-identify any research participant using information contained in the Datasets, including by combining the Datasets with AI POP-Up Lab data obtained previously or with information obtained from other sources. You must not sell or otherwise transfer the Datasets or data contained therein to any third party except within the Licensed Use. You must not use the Datasets in a manner that falsifies or materially misrepresents their content, provenance, methodology, or, where applicable, their synthetic nature."
+      ]
+    },
+
+    "noEndorsement": {
+      "title": "No Endorsement.",
+      "content": [
+        "You must not state or imply that Mechanical Pollster, the AI Pop-up Lab, the University of Amsterdam, or any relevant funding agency or research partner endorses the manner or purpose of your use of the Datasets, your interpretation of the data, or any entity, organisation, company, product, or service."
+      ]
+    },
+
+    "namesAndLogos": {
+      "title": "Use of Names and Logos.",
+      "content": [
+        "Without prior written approval, you may not use the Mechanical Pollster or AI Pop-up Lab logos in a manner that suggests sponsorship, affiliation, or endorsement."
+      ]
+    },
+
+    "noWarranties": {
+      "title": "No Warranties.",
+      "content": [
+        "The Datasets are provided without warranty of any kind, either express or implied. You are solely responsible for your use of the Datasets. To the extent permitted by applicable law, the University of Amsterdam, the AI POP-Up Lab and the Mechanical Pollster research team shall not be liable for damages arising from such use."
+      ]
+    },
+
+    "thirdPartyMaterials": {
+      "title": "Third-Party Materials.",
+      "content": [
+        "If you wish to reuse material from the Datasets that is attributed to a third party, it is your responsibility to determine whether permission is required and, where necessary, obtain permission from the relevant rights holder. The permissions granted under these Terms and Conditions do not override any rights or restrictions applicable to third-party materials."
+      ]
+    },
+
+    "modificationDiscontinuation": {
+      "title": "Modification or Discontinuation of Datasets.",
+      "content": [
+        "The AI POP-Up Lab reserves the right to modify or discontinue, temporarily or permanently, the Datasets or any means of accessing them, with or without prior notice."
+      ]
+    },
+
+    "termination": {
+      "title": "Termination.",
+      "content": [
+        "The rights granted under these Terms and Conditions may be terminated if you breach these Terms and Conditions. Upon receiving a written request to that effect, you must cease use of and destroy any copies of the relevant Datasets and confirm compliance within seven (7) days."
+      ]
+    },
+
+    "entireAgreement": {
+      "title": "Entire Agreement.",
+      "content": [
+        "These Terms and Conditions constitute the terms governing use of the AI POP-Up Lab Datasets and may be amended from time to time."
+      ]
     }
+  }
+}
 }
