@@ -31,6 +31,7 @@ def run_extension_script(
     country: str,
     n_sims: int = 250,
     compute_draws: bool = True,
+    area_shares_path: str | Path | None = None,
 ) -> Path:
     """
     run the frame extension R script on the given survey and frame files.

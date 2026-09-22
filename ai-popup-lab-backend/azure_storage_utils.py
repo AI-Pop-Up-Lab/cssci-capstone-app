@@ -135,6 +135,14 @@ def get_backfill_panel_checkpoint_path(country, iso_week):
     """Scratch checkpoint for the week currently being backfilled. Never read as an input."""
     return f"{country}/backfill_storage/checkpoints/{iso_week}_panel_checkpoint.csv"
 
+def get_area_level_vote_shares_path(country):
+    """
+    Static per-country input required by post_strat_module_us.R's
+    run_post_stratification() (state-level presidential + district-level
+    congressional vote shares). USA-only currently.
+    """
+    return f"{country}/{country}_area_level_vote_shares.csv"
+
 
 # ── Hotfix backfill (split-stage: sequential attrition+bio, then parallel
 #    survey+MRP) — a second, independent backfill track alongside

@@ -116,6 +116,19 @@ def run_stage2_week(country: str, year: int, week: int, force: bool = False) -> 
         frame_df = _prepare_frame_for_r(frame_df)
         frame_df.to_csv(frame_path, index=False)
 
+        area_shares_path = None
+        if country.lower() == "usa":
+            area_shares_blob = storage.get_area_level_vote_shares_path(country)
+            area_shares_df = storage.read_dataframe_or_none(area_shares_blob)
+            if area_shares_df is None:
+                raise FileNotFoundError(
+                    f"No area-level vote shares file found for {country} "
+                    f"(expected blob: {area_shares_blob}). Upload it before running "
+                    f"hotfix backfill stage 2 — post_strat_module_us.R requires it."
+                )
+            area_shares_path = tmp_path / f"{country}_area_level_vote_shares.csv"
+            area_shares_df.to_csv(area_shares_path, index=False)
+
         survey_df = _prepare_survey_for_r(panel_df, panel_date)
         survey_path = tmp_path / f"{country}_{week_label}_panel_results.csv"
         survey_df.to_csv(survey_path, index=False)
@@ -128,6 +141,7 @@ def run_stage2_week(country: str, year: int, week: int, force: bool = False) -> 
             output_dir=output_dir,
             country=country,
             compute_draws=COMPUTE_MRP_DRAWS,
+            area_shares_path=area_shares_path,
         )
 
         r_output_path = output_dir / "mrp_extended_frame_predictions.csv"
