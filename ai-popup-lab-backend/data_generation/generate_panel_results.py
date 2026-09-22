@@ -41,6 +41,10 @@ logger = logging.getLogger(__name__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 COUNTRY_INFO_PATH = BASE_DIR / "country_data" / "country_data_info.json"
 
+# "Year in review" articles used for the legacy events_interpretation column
+# (see panel.biography.get_articles). Local repo data, not blob storage.
+ELECTION_DATA_PATH = BASE_DIR / "country_data" / "wikipedia" / "election_data.csv"
+
 
 def iso_week_label(year: int, week: int) -> str:
     """Canonical filename/blob label for a given ISO year+week, e.g. '2026_18'."""
@@ -137,6 +141,8 @@ def _run_panel_cycle(
                 display_name,
                 delay_seconds=0.01,
                 date=panel_date,
+                generate_events=True,
+                articles_path=ELECTION_DATA_PATH,
                 on_checkpoint=bio_checkpoint,
             )
             storage.upload_dataframe(panel_df, active_panel_path)

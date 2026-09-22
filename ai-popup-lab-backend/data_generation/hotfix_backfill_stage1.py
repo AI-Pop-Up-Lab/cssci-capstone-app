@@ -50,6 +50,11 @@ logger = logging.getLogger(__name__)
 
 STAGE1_JOB_TYPE = "hotfix_backfill_stage1"
 
+# "Year in review" articles used for the legacy events_interpretation column
+# (see panel.biography.get_articles). Local repo data, not blob storage —
+# lives alongside the other country_data assets.
+ELECTION_DATA_PATH = Path(__file__).resolve().parent.parent / "country_data" / "wikipedia" / "election_data.csv"
+
 
 def run_stage1_week(country: str, year: int, week: int, force: bool = False) -> pd.DataFrame:
     """
@@ -112,6 +117,8 @@ def run_stage1_week(country: str, year: int, week: int, force: bool = False) -> 
                 display_name,
                 delay_seconds=0.01,
                 date=panel_date,
+                generate_events=True,
+                articles_path=ELECTION_DATA_PATH,
                 on_checkpoint=bio_checkpoint,
             )
             storage.upload_dataframe(panel_df, active_panel_path)
