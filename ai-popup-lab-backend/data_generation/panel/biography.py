@@ -92,6 +92,7 @@ def system_prompt(row, date) -> str:
         f"Ensure that absolutely everything you write is consistent with the demographic characteristics. This might mean your biography might not be entirely socially acceptable, that is wholly fine. For example, you might be a non-voter."
         f"Below is a biography that you have previously written for yourself. This is a fixed part of your identity, and should be consistent with your demographic characteristics. It should provide a sense of who you are as a person, your life, interests, and values. \n"
         f"Your biography is:\n {row.get('biography')}\n"
+        f"Here is your interpretation of events that have happened in the past few years, and that are salient to you as a person. Also consider these when answering questions:\n {row.get('events_interpretation')}"
     )
 
 
@@ -110,7 +111,7 @@ def populate_panel(
     panel: pd.DataFrame,
     country: str,
     delay_seconds: float = 1.0,
-    generate_events: bool = False,
+    generate_events: bool = True,
     date: Optional[str] = None,
     articles_path: Optional[str | Path] = None,
     on_checkpoint: Optional[Callable[[pd.DataFrame], None]] = None,
