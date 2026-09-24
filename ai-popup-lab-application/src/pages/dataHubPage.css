@@ -12,7 +12,11 @@
     padding-bottom: 100px;
 
     background: #D1E3DD;
-    background: linear-gradient(180deg,rgba(209, 227, 221, 1) 0%, rgba(51, 78, 88, 1) 100%);
+    background: linear-gradient(180deg,rgba(209, 227, 221, 1) 0%, rgba(155, 169, 176, 1) 100%);
+}
+
+#datahub-intro.datahub-intro-no-human-benchmark{
+    background: linear-gradient(180deg, rgba(209, 227, 221, 1) 0%, rgba(252, 191, 183, 1) 100%);
 }
 
 #datahub-intro > h1{
@@ -34,7 +38,7 @@
     border-radius: 32px;
     background-color: #334E58;
     padding: 10px 28px;
-    font-family: 'unbounded';
+    font-family: inherit;
     font-weight: 300;
     font-size: 14px;
 }
@@ -89,22 +93,22 @@
 }
 
 .datahub-colour-transition#dark-to-pink{
-    background: #334E58;
-    background: linear-gradient(180deg,rgba(51, 78, 88, 1) 0%, rgba(252, 191, 183, 1) 100%);
+    background: #9BA9B0;
+    background: linear-gradient(180deg,rgba(155, 169, 176, 1) 0%, rgba(252, 191, 183, 1) 100%);
 }
 
 .datahub-colour-transition#pink-to-light{
     background: #FCBFB7;
-    background: linear-gradient(180deg, rgba(252, 191, 183, 1) 0%, rgba(155, 169, 176, 1) 100%);
+    background: linear-gradient(180deg, rgba(252, 191, 183, 1) 0%, rgba(51, 80, 88, 1) 100%);
 }
 
 #datahub-interview-data{
-    background-color: #335058;
-    color: #D1E3DD;
+    background-color: #9BA9B0;
+    color: #FCBFB7;
 }
 
 #datahub-interview-data > h1::after{
-    background-color: #D1E3DD;
+    background-color: #FCBFB7;
 }
 
 #datahub-survey-data{
@@ -117,12 +121,12 @@
 }
 
 #datahub-stratification-frames{
-    background-color: #9BA9B0;
-    color: #FCBFB7;
+    background-color: #335058;
+    color: #D1E3DD;
 }
 
 #datahub-stratification-frames > h1::after{
-    background-color: #FCBFB7;
+    background-color: #D1E3DD;
 }
 
 .datahub-data-buttonrow{
@@ -207,6 +211,7 @@
 }
 
 .datahub-citation-bubble{
+    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -218,8 +223,28 @@
     font-size: 30px;
     line-height: 0;
     padding: 14px 0 0 0;
-    cursor: default;
-    transition: background-color 0.2s;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#datahub-interview-data .datahub-citation-bubble{
+    border-color: #FCBFB7;
+    color: #FCBFB7;
+}
+
+.datahub-citation-loading{
+    border-color: #FCBFB7;
+}
+
+.datahub-citation-loading::after{
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border: 2px solid transparent;
+    border-top-color: #FCBFB7;
+    border-radius: 50%;
+    animation: datahub-citation-pin-progress 1s linear;
+    pointer-events: none;
 }
 
 .datahub-citation:hover .datahub-citation-bubble,
@@ -227,8 +252,12 @@
     background-color: rgba(209, 227, 221, 0.15);
 }
 
+#datahub-interview-data .datahub-citation:hover .datahub-citation-bubble,
+#datahub-interview-data .datahub-citation-bubble:focus-visible{
+    background-color: rgba(252, 191, 183, 0.15);
+}
+
 .datahub-citation-popup{
-    display: none;
     position: absolute;
     left: calc(100% + 12px);
     top: 50%;
@@ -246,19 +275,76 @@
     text-align: center;
 }
 
-.datahub-citation:hover .datahub-citation-popup,
-.datahub-citation:focus-within .datahub-citation-popup{
-    display: block;
+.datahub-citation-popup > p{
+    margin: 0;
+}
+
+.datahub-citation-popup > p + p{
+    margin-top: 8px;
+}
+
+.datahub-citation-menu{
+    position: absolute;
+    left: calc(100% + 12px);
+    z-index: 6;
+    display: flex;
+    overflow: hidden;
+    border: 2px solid #FCBFB7;
+    border-radius: 8px;
+    background-color: #335058;
+}
+
+.datahub-citation-menu > button{
+    border: none;
+    border-right: 1px solid #FCBFB7;
+    background: transparent;
+    color: #FCBFB7;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 9px 12px;
+    cursor: pointer;
+}
+
+.datahub-citation-menu > button:last-child{
+    border-right: none;
+}
+
+.datahub-citation-menu > button:hover,
+.datahub-citation-menu > button:focus-visible{
+    background-color: #FCBFB7;
+    color: #335058;
+}
+
+.datahub-citation-close{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: #FCBFB7;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@keyframes datahub-citation-pin-progress{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .datahub-interview-timeframe{
-    color: #FCBFB7;
+    color: #335058;
     font-size: 16px;
     font-weight: 400;
 }
 
 #datahub-interview-data > p > span{
-    color: #FCBFB7;
+    color: #335058;
 }
 
 #datahub-stratification-frames > p{

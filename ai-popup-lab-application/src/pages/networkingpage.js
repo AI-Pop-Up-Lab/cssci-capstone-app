@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { useTranslation } from 'react-i18next';
 
-import './networkingPlatformPage.css';
+import './networkingpage.css';
 
 const availableCountries = ['netherlands', 'denmark', 'sweden'];
-const researchFields = ['politicalScience', 'sociology', 'psychology', 'economics', 'communication'];
-const experimentTypes = ['doorToDoor', 'phoneBank', 'labInField', 'surveyExperiment', 'observational'];
+const projectTypes = ['bachelorThesis', 'masterThesis', 'otherGraded', 'somethingElse'];
+const steps = ['signup', 'calendar', 'matches'];
 
 const API = process.env.REACT_APP_API_URL;
-const STORAGE_KEY = 'networking-supervisor';
+const STORAGE_KEY = 'networking-session';
+const DESCRIPTION_MAX = 600;
 
 // local YYYY-MM-DD key; toISOString() would shift the day for negative UTC offsets
 const dateKey = (date) => {
@@ -36,138 +38,368 @@ const requestJson = async (path, options = {}) => {
   return response.json();
 };
 
-// -------------------------------------------------------------------------
+// only allow http(s) links typed by users, so a javascript: link can never end up in an href
+const safeUrl = (url) => (/^https?:\/\//i.test(url ?? '') ? url : null);
 
-// registration form for a supervising professor and the students they bring
-function SupervisorSignup({ supervisor, onRegistered }) {
+// -------------------------------------------------------------------------
+// small building blocks
+
+// section heading with the underline that draws itself once scrolled into view
+function SectionHeader({ children }) {
+  const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
+  return (
+    <h2 ref={ref} className={`netplat-header ${inView ? 'header-underline-appear' : ''}`}>
+      {children}
+    </h2>
+  );
+}
+
+// inline confirmation or error message; replaces alert() popups
+function Notice({ tone, children }) {
+  if (!children) return null;
+  return <p className={`netplat-notice netplat-notice-${tone}`} role="status">{children}</p>;
+}
+
+// one question: plain-language label, grey hint, then the input itself
+function Question({ label, hint, htmlFor, children }) {
+  return (
+    <div className="netplat-question">
+      {htmlFor
+        ? <label className="netplat-question-label" htmlFor={htmlFor}>{label}</label>
+        : <span className="netplat-question-label">{label}</span>}
+      {hint && <p className="netplat-question-hint">{hint}</p>}
+      {children}
+    </div>
+  );
+}
+
+// big clickable card used instead of small checkboxes and radio buttons
+function ChoiceCard({ picked, onClick, children }) {
+  return (
+    <button
+      type="button"
+      aria-pressed={picked}
+      className={`netplat-choice ${picked ? 'is-picked' : ''}`}
+      onClick={onClick}
+    >
+      <span className="netplat-choice-mark" aria-hidden="true">{picked ? '✓' : ''}</span>
+      {children}
+    </button>
+  );
+}
+
+function ConsentCheck({ checked, onChange, label }) {
+  return (
+    <label className="netplat-consent">
+      <input type="checkbox" required checked={checked} onChange={e => onChange(e.target.checked)} />
+      <span>{label}</span>
+    </label>
+  );
+}
+
+// shared state and save logic for both sign-up sheets
+function useSignupForm({ role, profile, initial, validate, prepare, onSaved }) {
 
   const { t } = useTranslation();
 
-  const [form, setForm] = useState({
-    name: supervisor?.name ?? '',
-    email: supervisor?.email ?? '',
-    institution: supervisor?.institution ?? '',
-    country: supervisor?.country ?? availableCountries[0],
-    field: supervisor?.field ?? researchFields[0],
-    studentCount: supervisor?.studentCount ?? 1,
-    experimentTypes: supervisor?.experimentTypes ?? [],
-    notes: supervisor?.notes ?? '',
-  });
+  const [form, setForm] = useState(() => ({ ...initial, ...profile }));
   const [saving, setSaving] = useState(false);
+  const [notice, setNotice] = useState(null);
 
   const setField = (key, value) => setForm(prev => ({ ...prev, [key]: value }));
 
-  const toggleExperimentType = (type) => setForm(prev => ({
-    ...prev,
-    experimentTypes: prev.experimentTypes.includes(type)
-      ? prev.experimentTypes.filter(item => item !== type)
-      : [...prev.experimentTypes, type],
-  }));
-
   const submit = async (event) => {
     event.preventDefault();
-    if (form.experimentTypes.length === 0) {
-      alert(t('networkingPage.signup.pickOneType'));
+    setNotice(null);
+
+    const problem = validate(form);
+    if (problem) {
+      setNotice({ tone: 'error', text: t(problem) });
       return;
     }
 
     setSaving(true);
     try {
-      const payload = { ...form, studentCount: Number(form.studentCount) };
-      const saved = supervisor
-        ? await requestJson(`/api/network/supervisors/${supervisor.id}`, { method: 'PUT', body: JSON.stringify(payload) })
-        : await requestJson('/api/network/supervisors', { method: 'POST', body: JSON.stringify(payload) });
-      onRegistered(saved);
+      const path = `/api/network/${role}s`;
+      const body = JSON.stringify(prepare(form));
+      const saved = profile
+        ? await requestJson(`${path}/${profile.id}`, { method: 'PUT', body })
+        : await requestJson(path, { method: 'POST', body });
+      if (profile) setNotice({ tone: 'good', text: t('networkingPage.signup.saved') });
+      onSaved(saved);
     } catch (error) {
-      console.error('Supervisor sign-up failed:', error);
-      alert(t('networkingPage.saveError'));
+      console.error(`${role} sign-up failed:`, error);
+      setNotice({ tone: 'error', text: t('networkingPage.saveError') });
     } finally {
       setSaving(false);
     }
   };
 
+  return { form, setField, saving, notice, submit };
+}
+
+// -------------------------------------------------------------------------
+// step 0: who are you
+
+function RolePicker({ onPick }) {
+
+  const { t } = useTranslation();
+
   return (
-    <form className="netplat-form" onSubmit={submit}>
+    <div id="netplat-roles">
+      <SectionHeader>{t('networkingPage.role.heading')}</SectionHeader>
+      <p className="netplat-lead">{t('networkingPage.role.lead')}</p>
 
-      <label className="netplat-field">
-        <span>{t('networkingPage.signup.name')}</span>
-        <input required value={form.name} onChange={e => setField('name', e.target.value)} />
-      </label>
+      <div className="netplat-role-grid">
+        {['supervisor', 'student'].map(role => (
+          <button key={role} type="button" className="netplat-role-card" onClick={() => onPick(role)}>
+            <span className="netplat-role-title">{t(`networkingPage.role.${role}.title`)}</span>
+            <span className="netplat-role-text">{t(`networkingPage.role.${role}.text`)}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
-      <label className="netplat-field">
-        <span>{t('networkingPage.signup.email')}</span>
-        <input required type="email" value={form.email} onChange={e => setField('email', e.target.value)} />
-      </label>
+// -------------------------------------------------------------------------
+// step 1a: sheet 1, supervisors
 
-      <label className="netplat-field">
-        <span>{t('networkingPage.signup.institution')}</span>
-        <input required value={form.institution} onChange={e => setField('institution', e.target.value)} />
-      </label>
+function SupervisorSignup({ profile, onSaved }) {
 
-      <label className="netplat-field">
-        <span>{t('networkingPage.signup.country')}</span>
-        <select value={form.country} onChange={e => setField('country', e.target.value)}>
+  const { t } = useTranslation();
+
+  const { form, setField, saving, notice, submit } = useSignupForm({
+    role: 'supervisor',
+    profile,
+    onSaved,
+    initial: {
+      name: '',
+      email: '',
+      affiliation: '',
+      profileUrl: '',
+      country: availableCountries[0],
+      studentCount: 1,
+      placements: 1,
+      projectTypes: [],
+      description: '',
+      consent: false,
+    },
+    validate: (values) => (values.projectTypes.length === 0 ? 'networkingPage.supervisor.pickProjectTypes' : null),
+    prepare: (values) => ({ ...values, studentCount: Number(values.studentCount), placements: Number(values.placements) }),
+  });
+
+  const toggleProjectType = (type) => setField('projectTypes',
+    form.projectTypes.includes(type)
+      ? form.projectTypes.filter(item => item !== type)
+      : [...form.projectTypes, type]);
+
+  const isLinkedIn = /linkedin\.com/i.test(form.profileUrl ?? '');
+  const description = form.description ?? '';
+
+  return (
+    <form id="netplat-form" onSubmit={submit}>
+
+      <SectionHeader>{t('networkingPage.supervisor.heading')}</SectionHeader>
+      <p className="netplat-lead">{t('networkingPage.supervisor.lead')}</p>
+
+      <Question label={t('networkingPage.supervisor.name')} htmlFor="netplat-name">
+        <input id="netplat-name" required autoComplete="name" value={form.name} onChange={e => setField('name', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.supervisor.email')} hint={t('networkingPage.supervisor.emailHint')} htmlFor="netplat-email">
+        <input id="netplat-email" required type="email" autoComplete="email" value={form.email} onChange={e => setField('email', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.supervisor.affiliation')} hint={t('networkingPage.supervisor.affiliationHint')} htmlFor="netplat-affiliation">
+        <input id="netplat-affiliation" required autoComplete="organization" value={form.affiliation} onChange={e => setField('affiliation', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.supervisor.profileUrl')} hint={t('networkingPage.supervisor.profileUrlHint')} htmlFor="netplat-profile">
+        <input
+          id="netplat-profile"
+          required
+          type="url"
+          placeholder="https://"
+          value={form.profileUrl}
+          onChange={e => setField('profileUrl', e.target.value)}
+        />
+        {isLinkedIn && <Notice tone="info">{t('networkingPage.supervisor.linkedinNudge')}</Notice>}
+      </Question>
+
+      <Question label={t('networkingPage.supervisor.country')} htmlFor="netplat-country">
+        <select id="netplat-country" value={form.country} onChange={e => setField('country', e.target.value)}>
           {availableCountries.map(country => (
             <option key={country} value={country}>{t(`networkingPage.countries.${country}`)}</option>
           ))}
         </select>
-      </label>
+      </Question>
 
-      <label className="netplat-field">
-        <span>{t('networkingPage.signup.field')}</span>
-        <select value={form.field} onChange={e => setField('field', e.target.value)}>
-          {researchFields.map(field => (
-            <option key={field} value={field}>{t(`networkingPage.fields.${field}`)}</option>
-          ))}
-        </select>
-      </label>
-
-      <label className="netplat-field">
-        <span>{t('networkingPage.signup.studentCount')}</span>
+      <Question label={t('networkingPage.supervisor.studentCount')} hint={t('networkingPage.supervisor.studentCountHint')} htmlFor="netplat-student-count">
         <input
+          id="netplat-student-count"
           required
           type="number"
           min="1"
-          max="200"
+          className="netplat-input-small"
           value={form.studentCount}
           onChange={e => setField('studentCount', e.target.value)}
         />
-      </label>
+      </Question>
 
-      <fieldset className="netplat-field netplat-field-wide">
-        <legend>{t('networkingPage.signup.experimentTypes')}</legend>
-        <div className="netplat-checkbox-grid">
-          {experimentTypes.map(type => (
-            <label key={type} className="netplat-checkbox">
-              <input
-                type="checkbox"
-                checked={form.experimentTypes.includes(type)}
-                onChange={() => toggleExperimentType(type)}
-              />
-              {t(`networkingPage.experimentTypes.${type}`)}
-            </label>
+      <Question label={t('networkingPage.supervisor.placements')} hint={t('networkingPage.supervisor.placementsHint')} htmlFor="netplat-placements">
+        <input
+          id="netplat-placements"
+          required
+          type="number"
+          min="1"
+          max="50"
+          className="netplat-input-small"
+          value={form.placements}
+          onChange={e => setField('placements', e.target.value)}
+        />
+      </Question>
+
+      <Question label={t('networkingPage.supervisor.projectTypes')} hint={t('networkingPage.supervisor.projectTypesHint')}>
+        <div className="netplat-choice-grid">
+          {projectTypes.map(type => (
+            <ChoiceCard key={type} picked={form.projectTypes.includes(type)} onClick={() => toggleProjectType(type)}>
+              {t(`networkingPage.projectTypes.${type}`)}
+            </ChoiceCard>
           ))}
         </div>
-      </fieldset>
+      </Question>
 
-      <label className="netplat-field netplat-field-wide">
-        <span>{t('networkingPage.signup.notes')}</span>
-        <textarea rows="4" value={form.notes} onChange={e => setField('notes', e.target.value)} />
-      </label>
+      <Question label={t('networkingPage.supervisor.description')} hint={t('networkingPage.supervisor.descriptionHint')} htmlFor="netplat-description">
+        <textarea
+          id="netplat-description"
+          required
+          rows="6"
+          maxLength={DESCRIPTION_MAX}
+          value={description}
+          onChange={e => setField('description', e.target.value)}
+        />
+        <span className="netplat-counter">
+          {t('networkingPage.supervisor.characters', { count: description.length, max: DESCRIPTION_MAX })}
+        </span>
+      </Question>
+
+      <ConsentCheck
+        checked={form.consent}
+        onChange={value => setField('consent', value)}
+        label={t('networkingPage.supervisor.consent')}
+      />
+
+      <Notice tone={notice?.tone}>{notice?.text}</Notice>
 
       <button type="submit" className="netplat-button-primary" disabled={saving}>
         {saving
           ? t('networkingPage.signup.saving')
-          : supervisor ? t('networkingPage.signup.update') : t('networkingPage.signup.submit')}
+          : profile ? t('networkingPage.signup.update') : t('networkingPage.supervisor.submit')}
       </button>
     </form>
   );
 }
 
 // -------------------------------------------------------------------------
+// step 1b: sheet 2, students
 
-// month calendar where a supervisor marks the days their students can run fieldwork
-function AvailabilityCalendar({ supervisor }) {
+function StudentSignup({ profile, onSaved }) {
+
+  const { t } = useTranslation();
+
+  const { form, setField, saving, notice, submit } = useSignupForm({
+    role: 'student',
+    profile,
+    onSaved,
+    initial: {
+      name: '',
+      email: '',
+      university: '',
+      studyProgram: '',
+      projectType: '',
+      projectTypeOther: '',
+      consent: false,
+    },
+    validate: (values) => {
+      if (!values.projectType) return 'networkingPage.student.pickProjectType';
+      if (values.projectType === 'somethingElse' && !(values.projectTypeOther ?? '').trim()) {
+        return 'networkingPage.student.describeOther';
+      }
+      return null;
+    },
+    // the free-text detail only belongs with "something else"
+    prepare: (values) => ({
+      ...values,
+      projectTypeOther: values.projectType === 'somethingElse' ? (values.projectTypeOther ?? '').trim() : '',
+    }),
+  });
+
+  return (
+    <form id="netplat-form" onSubmit={submit}>
+
+      <SectionHeader>{t('networkingPage.student.heading')}</SectionHeader>
+      <p className="netplat-lead">{t('networkingPage.student.lead')}</p>
+
+      <Question label={t('networkingPage.student.name')} htmlFor="netplat-name">
+        <input id="netplat-name" required autoComplete="name" value={form.name} onChange={e => setField('name', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.student.email')} hint={t('networkingPage.student.emailHint')} htmlFor="netplat-email">
+        <input id="netplat-email" required type="email" autoComplete="email" value={form.email} onChange={e => setField('email', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.student.university')} htmlFor="netplat-university">
+        <input id="netplat-university" required autoComplete="organization" value={form.university} onChange={e => setField('university', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.student.studyProgram')} hint={t('networkingPage.student.studyProgramHint')} htmlFor="netplat-program">
+        <input id="netplat-program" required value={form.studyProgram} onChange={e => setField('studyProgram', e.target.value)} />
+      </Question>
+
+      <Question label={t('networkingPage.student.projectType')} hint={t('networkingPage.student.projectTypeHint')}>
+        <div className="netplat-choice-grid" role="radiogroup">
+          {projectTypes.map(type => (
+            <ChoiceCard key={type} picked={form.projectType === type} onClick={() => setField('projectType', type)}>
+              {t(`networkingPage.projectTypes.${type}`)}
+            </ChoiceCard>
+          ))}
+        </div>
+      </Question>
+
+      {form.projectType === 'somethingElse' && (
+        <Question label={t('networkingPage.student.projectTypeOther')} hint={t('networkingPage.student.projectTypeOtherHint')} htmlFor="netplat-other">
+          <textarea
+            id="netplat-other"
+            required
+            rows="3"
+            value={form.projectTypeOther ?? ''}
+            onChange={e => setField('projectTypeOther', e.target.value)}
+          />
+        </Question>
+      )}
+
+      <ConsentCheck
+        checked={form.consent}
+        onChange={value => setField('consent', value)}
+        label={t('networkingPage.student.consent')}
+      />
+
+      <Notice tone={notice?.tone}>{notice?.text}</Notice>
+
+      <button type="submit" className="netplat-button-primary" disabled={saving}>
+        {saving
+          ? t('networkingPage.signup.saving')
+          : profile ? t('networkingPage.signup.update') : t('networkingPage.signup.submit')}
+      </button>
+    </form>
+  );
+}
+
+// -------------------------------------------------------------------------
+// step 2: dates
+
+function AvailabilityCalendar({ role, profile, onDone }) {
 
   const { t } = useTranslation();
 
@@ -175,25 +407,27 @@ function AvailabilityCalendar({ supervisor }) {
   const [view, setView] = useState({ year: today.getFullYear(), month: today.getMonth() });
   const [selected, setSelected] = useState(() => new Set());
   const [saving, setSaving] = useState(false);
+  const [notice, setNotice] = useState(null);
 
   const grid = useMemo(() => buildMonthGrid(view.year, view.month), [view]);
 
-  // load the days already stored for this supervisor
+  // load the days already stored for this person
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
-        const data = await requestJson(`/api/network/availability?supervisorId=${supervisor.id}`);
+        const data = await requestJson(`/api/network/availability?role=${role}&id=${profile.id}`);
         if (!cancelled) setSelected(new Set(data.dates ?? []));
       } catch (error) {
         console.error('Availability load failed:', error);
       }
     })();
     return () => { cancelled = true; };
-  }, [supervisor.id]);
+  }, [role, profile.id]);
 
   const toggleDay = (date) => {
     const key = dateKey(date);
+    setNotice(null);
     setSelected(prev => {
       const next = new Set(prev);
       if (next.has(key)) next.delete(key); else next.add(key);
@@ -208,15 +442,16 @@ function AvailabilityCalendar({ supervisor }) {
 
   const save = async () => {
     setSaving(true);
+    setNotice(null);
     try {
       await requestJson('/api/network/availability', {
         method: 'PUT',
-        body: JSON.stringify({ supervisorId: supervisor.id, dates: [...selected].sort() }),
+        body: JSON.stringify({ role, id: profile.id, dates: [...selected].sort() }),
       });
-      alert(t('networkingPage.calendar.saved'));
+      setNotice({ tone: 'good', text: t('networkingPage.calendar.saved') });
     } catch (error) {
       console.error('Availability save failed:', error);
-      alert(t('networkingPage.saveError'));
+      setNotice({ tone: 'error', text: t('networkingPage.saveError') });
     } finally {
       setSaving(false);
     }
@@ -226,12 +461,15 @@ function AvailabilityCalendar({ supervisor }) {
     .toLocaleDateString(undefined, { month: 'long', year: 'numeric' });
 
   return (
-    <div className="netplat-calendar">
+    <div id="netplat-calendar">
+
+      <SectionHeader>{t(`networkingPage.calendar.${role}.heading`)}</SectionHeader>
+      <p className="netplat-lead">{t('networkingPage.calendar.lead')}</p>
 
       <div className="netplat-calendar-header">
-        <button type="button" onClick={() => shiftMonth(-1)} aria-label={t('networkingPage.calendar.previous')}>&lsaquo;</button>
+        <button type="button" onClick={() => shiftMonth(-1)} title={t('networkingPage.calendar.previous')} aria-label={t('networkingPage.calendar.previous')}>&lsaquo;</button>
         <h3>{monthLabel}</h3>
-        <button type="button" onClick={() => shiftMonth(1)} aria-label={t('networkingPage.calendar.next')}>&rsaquo;</button>
+        <button type="button" onClick={() => shiftMonth(1)} title={t('networkingPage.calendar.next')} aria-label={t('networkingPage.calendar.next')}>&rsaquo;</button>
       </div>
 
       <div className="netplat-calendar-grid">
@@ -258,99 +496,152 @@ function AvailabilityCalendar({ supervisor }) {
         })}
       </div>
 
+      <p className="netplat-calendar-count">
+        {selected.size === 0
+          ? t('networkingPage.calendar.countNone')
+          : t('networkingPage.calendar.count', { count: selected.size })}
+      </p>
+
+      <Notice tone={notice?.tone}>{notice?.text}</Notice>
+
       <div className="netplat-calendar-footer">
-        <p>{t('networkingPage.calendar.count', { count: selected.size })}</p>
         <button type="button" className="netplat-button-primary" onClick={save} disabled={saving}>
           {saving ? t('networkingPage.calendar.saving') : t('networkingPage.calendar.save')}
         </button>
+        {notice?.tone === 'good' && (
+          <button type="button" className="netplat-button-secondary" onClick={onDone}>
+            {t('networkingPage.calendar.goToMatches')}
+          </button>
+        )}
       </div>
     </div>
   );
 }
 
 // -------------------------------------------------------------------------
+// step 3: matches. students see supervisors, supervisors see students; emails never shown
 
-// supervisors whose field, country and free days line up with yours
-function MatchList({ supervisor }) {
+function MatchList({ role, profile }) {
 
   const { t } = useTranslation();
+  const isStudent = role === 'student';
 
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pending, setPending] = useState(null);
+  const [notice, setNotice] = useState(null);
 
   const load = useCallback(async () => {
     setLoading(true);
     try {
-      const data = await requestJson(`/api/network/matches?supervisorId=${supervisor.id}`);
+      const data = await requestJson(`/api/network/matches?role=${role}&id=${profile.id}`);
       setMatches(data.matches ?? []);
     } catch (error) {
       console.error('Match load failed:', error);
-      alert(t('networkingPage.matches.loadError'));
+      setNotice({ tone: 'error', text: t('networkingPage.matches.loadError') });
     } finally {
       setLoading(false);
     }
-  }, [supervisor.id, t]);
+  }, [role, profile.id, t]);
 
   useEffect(() => { load(); }, [load]);
 
   const sendRequest = async (match) => {
     setPending(match.id);
+    setNotice(null);
     try {
       await requestJson('/api/network/requests', {
         method: 'POST',
-        body: JSON.stringify({ fromSupervisorId: supervisor.id, toSupervisorId: match.id }),
+        body: JSON.stringify({ fromRole: role, fromId: profile.id, toId: match.id }),
       });
       setMatches(prev => prev.map(item => item.id === match.id ? { ...item, requestStatus: 'sent' } : item));
     } catch (error) {
-      console.error('Collaboration request failed:', error);
-      alert(t('networkingPage.matches.requestError'));
+      console.error('Match request failed:', error);
+      setNotice({ tone: 'error', text: t('networkingPage.matches.requestError') });
     } finally {
       setPending(null);
     }
   };
 
-  if (loading) return <p className="netplat-empty">{t('networkingPage.matches.loading')}</p>;
-  if (matches.length === 0) return <p className="netplat-empty">{t('networkingPage.matches.empty')}</p>;
+  // first letter of the name, shown in the pink circle
+  const initial = (name) => (name?.trim()?.[0] ?? '?').toUpperCase();
 
   return (
-    <ul className="netplat-match-list">
-      {matches.map(match => (
-        <li key={match.id} className="netplat-match-card">
+    <div className="netplat-matches-wrap">
 
-          <div className="netplat-match-head">
-            <h3>{match.name}</h3>
-            <span className="netplat-match-score">{t('networkingPage.matches.score', { score: match.score })}</span>
-          </div>
+      <SectionHeader>{t(`networkingPage.matches.${role}.heading`)}</SectionHeader>
+      <p className="netplat-lead">{t(`networkingPage.matches.${role}.lead`)}</p>
 
-          <p className="netplat-match-meta">
-            {match.institution} &middot; {t(`networkingPage.countries.${match.country}`)} &middot; {t(`networkingPage.fields.${match.field}`)}
-          </p>
+      <Notice tone={notice?.tone}>{notice?.text}</Notice>
 
-          <p className="netplat-match-meta">
-            {t('networkingPage.matches.students', { count: match.studentCount })} &middot;{' '}
-            {t('networkingPage.matches.sharedDays', { count: match.sharedDates?.length ?? 0 })}
-          </p>
+      {loading && <p className="netplat-empty">{t('networkingPage.matches.loading')}</p>}
+      {!loading && matches.length === 0 && <p className="netplat-empty">{t('networkingPage.matches.empty')}</p>}
 
-          <ul className="netplat-tag-row">
-            {(match.experimentTypes ?? []).map(type => (
-              <li key={type} className="netplat-tag">{t(`networkingPage.experimentTypes.${type}`)}</li>
-            ))}
-          </ul>
+      {!loading && matches.length > 0 && (
+        <ul id="netplat-matches">
+          {matches.map(match => {
+            const profileLink = safeUrl(match.profileUrl);
+            const sharedDays = match.sharedDates?.length ?? 0;
+            const tags = isStudent ? (match.projectTypes ?? []) : [match.projectType].filter(Boolean);
 
-          <button
-            type="button"
-            className="netplat-button-primary"
-            disabled={match.requestStatus === 'sent' || pending === match.id}
-            onClick={() => sendRequest(match)}
-          >
-            {match.requestStatus === 'sent'
-              ? t('networkingPage.matches.requested')
-              : t('networkingPage.matches.request')}
-          </button>
-        </li>
-      ))}
-    </ul>
+            return (
+              <li key={match.id} className="netplat-match-item">
+
+                <div className="netplat-match-photo" aria-hidden="true">{initial(match.name)}</div>
+
+                <div className="netplat-match-text">
+                  <h3>{match.name}</h3>
+                  <p className="netplat-match-score">{t('networkingPage.matches.score', { score: match.score })}</p>
+
+                  {isStudent ? (
+                    <>
+                      <p>
+                        {match.affiliation}, {t(`networkingPage.countries.${match.country}`)}<br />
+                        {t('networkingPage.matches.places', { count: match.placements })},{' '}
+                        {t('networkingPage.matches.sharedDays', { count: sharedDays })}
+                      </p>
+                      <p>{match.description}</p>
+                      {profileLink && (
+                        <a href={profileLink} target="_blank" rel="noopener noreferrer">
+                          {t('networkingPage.matches.viewProfile')}
+                        </a>
+                      )}
+                    </>
+                  ) : (
+                    <p>
+                      {match.studyProgram}, {match.university}<br />
+                      {t('networkingPage.matches.sharedDays', { count: sharedDays })}
+                      {match.projectTypeOther && <><br />{match.projectTypeOther}</>}
+                    </p>
+                  )}
+
+                  <ul className="netplat-tag-row">
+                    {tags.map(type => (
+                      <li key={type} className="netplat-tag">{t(`networkingPage.projectTypes.${type}`)}</li>
+                    ))}
+                  </ul>
+
+                  {match.requestStatus === 'sent'
+                    ? <p className="netplat-notice netplat-notice-good">{t('networkingPage.matches.requested')}</p>
+                    : (
+                      <button
+                        type="button"
+                        className="netplat-button-primary"
+                        disabled={pending === match.id}
+                        onClick={() => sendRequest(match)}
+                      >
+                        {pending === match.id
+                          ? t('networkingPage.matches.requesting')
+                          : t(`networkingPage.matches.${role}.request`)}
+                      </button>
+                    )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
   );
 }
 
@@ -360,8 +651,8 @@ function NetworkingPlatformPage() {
 
   const { t } = useTranslation();
 
-  // registered supervisor is kept locally so a refresh does not force a re-signup
-  const [supervisor, setSupervisor] = useState(() => {
+  // saved sign-up is kept locally so a refresh does not force a new sign-up
+  const [session, setSession] = useState(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
       return stored ? JSON.parse(stored) : null;
@@ -369,52 +660,71 @@ function NetworkingPlatformPage() {
       return null;
     }
   });
+  const [role, setRole] = useState(() => session?.role ?? null);
+  const [step, setStep] = useState(() => (session ? 'matches' : 'role'));
 
-  const [tab, setTab] = useState('signup');
-
-  const onRegistered = (saved) => {
-    setSupervisor(saved);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-    } catch (error) {
-      console.error('Could not store supervisor locally:', error);
-    }
-    setTab('calendar');
+  const pickRole = (picked) => {
+    setRole(picked);
+    setStep('signup');
   };
 
-  const tabs = [
-    { key: 'signup', locked: false },
-    { key: 'calendar', locked: !supervisor },
-    { key: 'matches', locked: !supervisor },
-  ];
+  const onSaved = (profile) => {
+    const firstTime = !session;
+    const next = { role, profile };
+    setSession(next);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    } catch (error) {
+      console.error('Could not store sign-up locally:', error);
+    }
+    if (firstTime) setStep(role === 'student' ? 'calendar' : 'matches');
+  };
 
   return (
     <div className="NetworkingPlatformPage unbounded-weight300">
 
       <div id="netplat-intro">
-        <h1>{t('networkingPage.intro.title')}</h1>
-        <p>{t('networkingPage.intro.text')}</p>
+        <div id="netplat-title">
+          <h1>{t('networkingPage.intro.titleLine1')}<span>{t('networkingPage.intro.kicker')}</span></h1>
+          <h1>{t('networkingPage.intro.titleLine2')}</h1>
+        </div>
+        <p id="netplat-briefing">{t('networkingPage.intro.text')}</p>
       </div>
 
-      <nav className="netplat-tabs">
-        {tabs.map(({ key, locked }) => (
-          <button
-            key={key}
-            type="button"
-            disabled={locked}
-            className={`netplat-tab ${tab === key ? 'is-active' : ''}`}
-            onClick={() => setTab(key)}
-          >
-            {t(`networkingPage.tabs.${key}`)}
-          </button>
-        ))}
-      </nav>
+      {step === 'role' && <RolePicker onPick={pickRole} />}
 
-      <section className="netplat-section">
-        {tab === 'signup' && <SupervisorSignup supervisor={supervisor} onRegistered={onRegistered} />}
-        {tab === 'calendar' && supervisor && <AvailabilityCalendar supervisor={supervisor} />}
-        {tab === 'matches' && supervisor && <MatchList supervisor={supervisor} />}
-      </section>
+      {step !== 'role' && (
+        <nav id="netplat-steps" aria-label={t('networkingPage.intro.titleLine2')}>
+          {steps.filter(key => role === 'student' || key !== 'calendar').map((key, index) => {
+            const locked = key !== 'signup' && !session;
+            return (
+              <button
+                key={key}
+                type="button"
+                disabled={locked}
+                title={locked ? t('networkingPage.steps.locked') : undefined}
+                className={`netplat-step ${step === key ? 'is-active' : ''}`}
+                onClick={() => setStep(key)}
+              >
+                <span className="netplat-step-number" aria-hidden="true">{index + 1}</span>
+                {t(`networkingPage.steps.${key}`)}
+              </button>
+            );
+          })}
+        </nav>
+      )}
+
+      {/* before signing up, the role can still be changed */}
+      {step === 'signup' && !session && (
+        <button type="button" className="netplat-link" onClick={() => setStep('role')}>
+          &larr; {t('networkingPage.role.back')}
+        </button>
+      )}
+
+      {step === 'signup' && role === 'supervisor' && <SupervisorSignup profile={session?.profile} onSaved={onSaved} />}
+      {step === 'signup' && role === 'student' && <StudentSignup profile={session?.profile} onSaved={onSaved} />}
+      {step === 'calendar' && session && <AvailabilityCalendar role={role} profile={session.profile} onDone={() => setStep('matches')} />}
+      {step === 'matches' && session && <MatchList role={role} profile={session.profile} />}
 
     </div>
   );
