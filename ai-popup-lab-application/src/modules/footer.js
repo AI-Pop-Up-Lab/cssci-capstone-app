@@ -15,6 +15,7 @@ function Footer() {
       <div id="footer-left">
         <Link to="/about">{t('footer.links.about')}</Link>
         <Link to="/ethics">{t('footer.links.ethics')}</Link>
+        <Link to="/terms">{t('footer.links.terms')}</Link>
         {/* <Link to="/methods">Methods</Link> */}
       </div>
       <div id="footer-right">
