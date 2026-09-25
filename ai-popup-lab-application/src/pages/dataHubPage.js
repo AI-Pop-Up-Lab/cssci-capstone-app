@@ -209,19 +209,6 @@ function DataHubPage() {
             </p>
             
             <div className="datahub-interview-set">
-                <p className='datahub-interview-timeframe'>{t('datahubPage.interview.timeframe1')}</p>
-                <div className='datahub-data-buttonrow'>
-                    <button onClick={() => downloadFieldworkData('pilot', 'transcript', selectedCountry)} className='datahub-download-button-light'>{t('datahubPage.interview.transcripts')}<img src={downloadIcon} alt="" /></button>
-                    <CitationBubble citations={humanDataCitations} />
-                </div>
-                <div className='datahub-data-buttonrow'>
-                    <button onClick={() => downloadFieldworkData('pilot', 'survey', selectedCountry)} className='datahub-download-button-light'>{t('datahubPage.interview.surveyData')}<img src={downloadIcon} alt="" /></button>
-                    <button className='datahub-download-codebook'>{t('datahubPage.codebook')}<img src={downloadIcon} alt="" /></button>
-                    <CitationBubble citations={humanDataCitations} />
-                </div>
-            </div>
-
-            <div className="datahub-interview-set">
                 <p className='datahub-interview-timeframe'>{t('datahubPage.interview.timeframe2')}</p>
                 <div className='datahub-data-buttonrow'>
                     <button onClick={() => downloadFieldworkData('main', 'transcript', selectedCountry)} className='datahub-download-button-light'>{t('datahubPage.interview.transcripts')}<img src={downloadIcon} alt="" /></button>
@@ -269,8 +256,7 @@ function DataHubPage() {
                   <img src={downloadIcon} alt="" />
                 </button>
                 <CitationBubble citations={stratificationFrameCitations[selectedCountry]} />
-              </div>
-            ))}
+            </div>
         </div>
 
     </div>
