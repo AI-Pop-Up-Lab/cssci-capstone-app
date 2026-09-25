@@ -227,8 +227,41 @@
     transition: background-color 0.2s, border-color 0.2s;
 }
 
+.datahub-citation:hover .datahub-citation-bubble,
+.datahub-citation-bubble:focus-visible{
+    background-color: rgba(209, 227, 221, 0.15);
+}
+
+.datahub-citation-popup{
+    display: none;
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: max-content;
+    max-width: min(560px, 55vw);
+    border: 2px solid #FCBFB7;
+    border-radius: 24px;
+    background-color: #335058;
+    color: #FCBFB7;
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 12px 24px;
+    text-align: center;
+}
+
+.datahub-citation:hover .datahub-citation-popup,
+.datahub-citation:focus-within .datahub-citation-popup{
+    display: block;
+}
+
 #datahub-interview-data .datahub-citation-bubble{
     border-color: #FCBFB7;
+    color: #FCBFB7;
+}
+
+.datahub-interview-timeframe{
     color: #FCBFB7;
 }
 

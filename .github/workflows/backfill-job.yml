@@ -9,7 +9,7 @@ on:
       countries:
         description: 'Comma-separated countries'
         required: false
-        default: 'denmark,sweden'
+        default: 'usa'
       job_type:
         description: 'Job type: mrp, panel, or both'
         required: false

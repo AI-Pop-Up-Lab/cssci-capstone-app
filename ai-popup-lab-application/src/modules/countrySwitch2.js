@@ -6,23 +6,14 @@ import { useState, useEffect } from "react";
 // options for countries and their abbreviations to display
 import './countrySwitch2.css';
 
-const countryOptions = [
-  { name: "netherlands", abbreviation: "NL" },
-  { name: "sweden", abbreviation: "SE" },
-  { name: "denmark", abbreviation: "DK" },
-  { name: "usa", abbreviation: "USA"}
-];
+import { COUNTRY_INFO } from '../utils/common_vars'
 
-function CountrySwitch2({setCountry, selectedCountry, include_usa_TEMPORARY}) {
-
-  const options = include_usa_TEMPORARY
-    ? countryOptions
-    : countryOptions.filter(c => c.name !== "usa");
+function CountrySwitch2({setCountry, selectedCountry}) {
 
   // maps the country options to buttons, and uses its name to retrieve the flag from the assets folder
   return (
     <div className="CountrySwitch2">
-      {options.map(({ name, abbreviation }) => (
+      {Object.entries(COUNTRY_INFO).map(([name, { country_code, flag_image, abbreviation }]) => (
         <button
           key={name}
           type="button"
@@ -31,10 +22,10 @@ function CountrySwitch2({setCountry, selectedCountry, include_usa_TEMPORARY}) {
           title={name.charAt(0).toUpperCase() + name.slice(1)}
         >
           <img
-            src={require(`../assets/images/flags/${name}.png`)} // flag icons must be stored in this directory
+            src={flag_image}
             alt={name}
           />
-          <div className="countryswitch2-label unbounded-weight400">{abbreviation}</div>
+          <div className="countryswitch2-label unbounded-weight400">{abbreviation.toUpperCase()}</div>
         </button>
       ))}
     </div>

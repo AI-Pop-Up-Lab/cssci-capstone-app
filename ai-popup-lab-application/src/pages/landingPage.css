@@ -33,6 +33,12 @@
     margin-bottom: 12px;
 }
 
+#landingVoteProjContainer > p{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
 #landingVoteProjContainer a > button{
     background-color: #334E58;
     border-radius: 34px;

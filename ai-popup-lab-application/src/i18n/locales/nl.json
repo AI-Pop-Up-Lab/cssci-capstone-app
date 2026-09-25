@@ -203,5 +203,120 @@
             "title": "stratification frames",
             "text": "Gedetailleerde tabellen die de bevolkingsspreiding weergeven over elkaar uitsluitende en uitputtende cellen. De celcijfers zijn afgeleid van openbaar beschikbare volkstellingstabellen en aangevuld met een uitsplitsing naar 'stemgedrag bij de laatste algemene verkiezingen' op basis van een recent aanvullend onderzoek. Het jaartal en de aanduiding in de naam van het kader geven het jaar en het type verkiezing weer waarvoor dat kader geldt."
         }
+    },
+     "termsPage": {
+  "title": "Algemene voorwaarden",
+
+  "introduction": [
+    "Mechanical Pollster, een tool die is ontwikkeld door het AI POP-Up Lab van de Universiteit van Amsterdam, moedigt het publiek aan om de gegevens die via <website>www.mechanical-pollster.com</website> beschikbaar worden gesteld, te raadplegen en te gebruiken. Diverse gegevens worden door het AI POP-Up Lab geordend en in machinaal leesbare formaten (“Datasets”) beschikbaar gesteld, en gepubliceerd op <website>mechanical-pollster.com</website>. Het gebruik van gegevens die zijn afgeleid van de datasets, met inbegrip van weergaven zoals tabellen en grafieken, valt eveneens onder deze Algemene Voorwaarden. Datasets kunnen begeleidende documentatie en metagegevens („metagegevens“) bevatten.",
+
+    "Indien voor datasets of materiaal dat beschikbaar is op <website>mechanical-pollster.com</website> een andere bron dan Mechanical Pollster wordt vermeld, kunnen voor dat materiaal afzonderlijke voorwaarden of toestemmingen gelden. Het is uw verantwoordelijkheid om na te gaan of dit het geval is en, indien nodig, toestemming te verkrijgen van de betreffende bron of rechthebbende.",
+
+    "Door de datasets of enige presentaties van daaruit afgeleide gegevens te raadplegen of te gebruiken, gaat u ermee akkoord zich aan deze algemene voorwaarden te houden."
+  ],
+
+  "sections": {
+    "licensedUse": {
+      "title": "Gebruik onder licentie.",
+      "content": [
+        "Onder voorbehoud van deze Algemene Voorwaarden wordt u een royaltyvrij, wereldwijd en niet-exclusief recht verleend om de datasets en de daarin opgenomen gegevens te gebruiken, te reproduceren, er uit te halen, te downloaden, te kopiëren, te verspreiden, weer te geven, te analyseren, aan te passen of op te nemen in andere publicaties voor onderzoeksdoeleinden."
+      ]
+    },
+
+    "retainedRights": {
+      "title": "Voorbehouden rechten.",
+      "content": [
+        "Het auteursrecht en andere toepasselijke rechten op de datasets en metadata blijven berusten bij het AI POP-Up Lab en/of de betreffende rechthebbenden. Alle rechten die niet uitdrukkelijk in deze Algemene Voorwaarden worden verleend, zijn voorbehouden."
+      ]
+    },
+
+    "acknowledgement": {
+      "title": "Dankwoord en bronvermelding.",
+      "content": [
+        "Bij het gebruik van de datasets dient u het AI POP-Up Lab en de onderzoekers daarvan op gepaste wijze te vermelden en, indien van toepassing, de bronvermelding te gebruiken die bij de betreffende dataset is verstrekt."
+      ]
+    },
+
+    "modifyingDatasets": {
+      "title": "Het aanpassen of wijzigen van de datasets.",
+      "content": [
+        "In het kader van het gelicentieerde gebruik mag u de datasets wijzigen of aanpassen. Gewijzigde of afgeleide gegevens mogen niet worden gepresenteerd als originele of ongewijzigde gegevens van AI POP-Up Lab."
+      ]
+    },
+
+    "personalData": {
+      "title": "Persoonsgegevens.",
+      "content": [
+        "De via Mechanical Pollster beschikbaar gestelde benchmarkgegevens over mensen zijn pseudo-geanonimiseerd. Mocht u persoonlijk identificeerbare informatie of andere informatie tegenkomen waarmee een deelnemer aan het onderzoek kan worden geïdentificeerd, dan mag u die informatie niet gebruiken om de persoon in kwestie te identificeren of aan derden bekendmaken.",
+
+        "Dergelijke informatie, of elk incident waarbij sprake is van ongeoorloofde toegang tot, verwerking van of openbaarmaking van persoonsgegevens, moet onmiddellijk worden gemeld aan dr. Roberto Cerina (<email>r.cerina@uva.nl</email>).",
+
+        "Alle persoonsgegevens die bij het gebruik van de datasets worden verkregen, moeten worden behandeld in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG)."
+      ]
+    },
+
+    "syntheticData": {
+      "title": "Synthetische gegevens.",
+      "content": [
+        "Synthetische personages en hun reacties mogen niet worden voorgesteld als echte personen of als uitspraken van identificeerbare, echte personen."
+      ]
+    },
+
+    "prohibitedUses": {
+      "title": "Verboden gebruik.",
+      "content": [
+        "Er mag geen poging worden ondernomen om een deelnemer aan het onderzoek te identificeren of opnieuw te identificeren aan de hand van informatie uit de datasets, ook niet door de datasets te combineren met eerder verkregen gegevens van het AI POP-Up Lab of met informatie uit andere bronnen. U mag de datasets of de daarin opgenomen gegevens niet verkopen of op andere wijze overdragen aan derden, behalve in het kader van het gelicentieerde gebruik. U mag de datasets niet gebruiken op een wijze die de inhoud, herkomst, methodologie of, indien van toepassing, het synthetische karakter ervan vervalst of wezenlijk verkeerd voorstelt."
+      ]
+    },
+
+    "noEndorsement": {
+      "title": "Geen aanbeveling.",
+      "content": [
+        "U mag niet vermelden of suggereren dat Mechanical Pollster, het AI Pop-up Lab, de Universiteit van Amsterdam of enige relevante financieringsinstantie of onderzoekspartner de wijze of het doel van uw gebruik van de datasets, uw interpretatie van de gegevens of enige entiteit, organisatie, onderneming, product of dienst onderschrijft."
+      ]
+    },
+
+    "namesAndLogos": {
+      "title": "Gebruik van namen en logo's.",
+      "content": [
+        "Zonder voorafgaande schriftelijke toestemming mag u de logo’s van Mechanical Pollster of AI Pop-up Lab niet gebruiken op een manier die de indruk wekt van sponsoring, banden of goedkeuring."
+      ]
+    },
+
+    "noWarranties": {
+      "title": "Geen garanties.",
+      "content": [
+        "De datasets worden aangeboden zonder enige vorm van garantie, hetzij uitdrukkelijk, hetzij impliciet. U bent zelf volledig verantwoordelijk voor uw gebruik van de datasets. Voor zover toegestaan door de toepasselijke wetgeving, zijn de Universiteit van Amsterdam, het AI POP-Up Lab en het onderzoeksteam van Mechanical Pollster niet aansprakelijk voor schade die voortvloeit uit dergelijk gebruik."
+      ]
+    },
+
+    "thirdPartyMaterials": {
+      "title": "Materiaal van derden.",
+      "content": [
+        "Indien u materiaal uit de datasets wilt hergebruiken dat aan een derde partij is toegeschreven, is het uw verantwoordelijkheid om na te gaan of hiervoor toestemming vereist is en, indien nodig, toestemming te verkrijgen van de betreffende rechthebbende. De toestemmingen die krachtens deze Algemene Voorwaarden worden verleend, hebben geen voorrang boven rechten of beperkingen die van toepassing zijn op materiaal van derden."
+      ]
+    },
+
+    "modificationDiscontinuation": {
+      "title": "Wijziging of stopzetting van datasets.",
+      "content": [
+        "Het AI POP-Up Lab behoudt zich het recht voor om de datasets of de wijze waarop deze toegankelijk zijn, tijdelijk of definitief te wijzigen of stop te zetten, al dan niet met voorafgaande kennisgeving."
+      ]
+    },
+
+    "termination": {
+      "title": "Beëindiging.",
+      "content": [
+        "De rechten die krachtens deze Algemene Voorwaarden worden verleend, kunnen worden beëindigd indien u deze Algemene Voorwaarden schendt. Na ontvangst van een schriftelijk verzoek daartoe dient u het gebruik van de betreffende datasets te staken, alle kopieën daarvan te vernietigen en binnen zeven (7) dagen te bevestigen dat u aan deze voorwaarde voldoet."
+      ]
+    },
+
+    "entireAgreement": {
+      "title": "Volledige overeenkomst.",
+      "content": [
+        "Deze algemene voorwaarden bevatten de bepalingen die van toepassing zijn op het gebruik van de AI POP-Up Lab-datasets en kunnen van tijd tot tijd worden gewijzigd."
+      ]
     }
+  }
+}
 }

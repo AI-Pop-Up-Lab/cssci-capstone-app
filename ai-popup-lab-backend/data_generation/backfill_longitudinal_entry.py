@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import io
 import logging
@@ -7,10 +7,10 @@ import sys
 
 import pandas as pd
 
-from .store_data import get_blob_client, CONTAINER_NAME
+from azure_storage_utils import get_blob_service_client, CONTAINER_NAME
 from .aggregate_longitudinal import update_longitudinal_aggregates
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s — %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s â€” %(message)s")
 logger = logging.getLogger(__name__)
 
 # teammate export column name -> pipeline convention column name
@@ -46,7 +46,7 @@ def main() -> None:
         logger.error("No weeks provided. Set FRAMES=YYYY-WW[,YYYY-WW,...]")
         sys.exit(1)
 
-    blob_client = get_blob_client()
+    blob_client = get_blob_service_client()
     failed: list[str] = []
 
     for year, week in weeks:
@@ -76,7 +76,7 @@ def main() -> None:
             # column names (e.g. manual inspection) still sees them as-is.
             canonical = blob_client.get_blob_client(container=CONTAINER_NAME, blob=canonical_blob)
             canonical.upload_blob(data, overwrite=True)
-            logger.info("[%s] Copied staging → canonical (%s)", label, canonical_blob)
+            logger.info("[%s] Copied staging â†’ canonical (%s)", label, canonical_blob)
 
             update_longitudinal_aggregates(
                 country=country,

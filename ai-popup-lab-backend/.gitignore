@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 *.pyd
 .env
+.env2
 
 # ignoring contents but keeping the folders of MRP data generation
 country_data/extended_frames/*

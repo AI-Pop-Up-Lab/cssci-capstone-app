@@ -22,9 +22,11 @@
 }
 
 #selection-explanation > p{
-  font-size: 16px;
+  /* font-size: 16px; */
   margin-top: 20px;
   max-width: 800px;
+  font-family: 'Unbounded';
+  font-size: 18px;
 }
 
 @media screen and (max-width: 450px){
