@@ -137,7 +137,8 @@ def run_survey(
 
     for persona in tqdm(pending.itertuples(), total=len(pending), desc=f"Surveying [{country_code}]"):
         try:
-            conversation = [{"role": "system", "content": str(persona.biography)}]
+            system_prompt = f"{str(persona.biography)} \n {str(persona.events_interpretation)}"
+            conversation = [{"role": "system", "content": system_prompt}]
 
             district = getattr(persona, "state_cd", None) if country_code == "us" else None
 
