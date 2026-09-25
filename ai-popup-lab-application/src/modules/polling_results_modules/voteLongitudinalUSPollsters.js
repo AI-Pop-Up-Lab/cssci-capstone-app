@@ -60,7 +60,7 @@ function lookupColour(coloursObj, key) {
   return found ? coloursObj[found] : "#888";
 }
 
-function VoteLongitudinalUSPollsters({ country }) {
+function VoteLongitudinalUSPollsters({ country, countryData }) {
 
   const { t } = useTranslation();
 
@@ -79,8 +79,9 @@ function VoteLongitudinalUSPollsters({ country }) {
   const [chartData, setChartData] = useState(null);
   const [error, setError] = useState(null);
 
-  const [partyColours, setPartyColours] = useState(null);
-  const [partyColoursError, setPartyColoursError] = useState(null);
+  // Party colours come from the country data object fetched once by the
+  // parent page and passed down as a prop -- not fetched separately here.
+  const partyColours = countryData?.party_colours ?? null;
 
   const [rangeIdx, setRangeIdx] = useState(null);
 
@@ -89,7 +90,6 @@ function VoteLongitudinalUSPollsters({ country }) {
   const [pollsterRaw, setPollsterRaw] = useState(null);
   const [pollsterLoading, setPollsterLoading] = useState(false);
   const [pollsterError, setPollsterError] = useState(null);
-  const [usPartyColours, setUsPartyColours] = useState(null);
 
   // --- legend: series hidden via click-to-toggle ---
   const [hiddenSeries, setHiddenSeries] = useState(() => new Set());
@@ -117,31 +117,11 @@ function VoteLongitudinalUSPollsters({ country }) {
         .catch(err => setError(err.message));
   }
 
-  // fetch party colours
-  async function getPartyColours(countryName){
-    try {
-
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=${'usa'}`);
-
-      const response_data = response.data;
-
-      const partyColoursData = response_data.party_colours;
-
-      setPartyColours(partyColoursData);
-      setPartyColoursError(null);
-    } catch (err) {
-      setPartyColoursError(err.message);
-      setPartyColours(null);
-    }
-  };
-
   useEffect(() => {
 
     setChartData(null);
-    setPartyColours(null);
     setRangeIdx(null);
 
-    getPartyColours(country);
     getChartData(country);
 
   }, [country]);
@@ -168,16 +148,12 @@ function VoteLongitudinalUSPollsters({ country }) {
     setPollsterLoading(true);
     setPollsterError(null);
 
-    Promise.all([
-      axios.get(`${process.env.REACT_APP_API_URL}/api/longitudinal/us_pollster_predictions`, {
-        responseType: "text",
-      }),
-      axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=usa`),
-    ])
-      .then(([predRes, colourRes]) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/longitudinal/us_pollster_predictions`, {
+      responseType: "text",
+    })
+      .then(predRes => {
         const parsed = typeof predRes.data === "string" ? JSON.parse(predRes.data) : predRes.data;
         setPollsterRaw(parsed);
-        setUsPartyColours(colourRes.data.party_colours);
       })
       .catch(err => setPollsterError(err.message))
       .finally(() => setPollsterLoading(false));
@@ -331,13 +307,13 @@ function VoteLongitudinalUSPollsters({ country }) {
       ? visiblePollsterSeries.map(s => ({
           key: `pollster-${s.party}`,
           label: `${s.party.charAt(0).toUpperCase()}${s.party.slice(1)} (US pollster avg)`,
-          colour: lookupColour(usPartyColours, s.party),
+          colour: lookupColour(partyColours, s.party),
           dashed: true,
         }))
       : [];
 
     return [...baseItems, ...overlayItems];
-  }, [slicedData, partyColours, showPollsters, visiblePollsterSeries, usPartyColours]);
+  }, [slicedData, partyColours, showPollsters, visiblePollsterSeries]);
 
   useEffect(() => {
 
@@ -556,7 +532,7 @@ function VoteLongitudinalUSPollsters({ country }) {
           const key = `pollster-${series.party}`;
           if (hiddenSeries.has(key)) return;
 
-          const colour = lookupColour(usPartyColours, series.party);
+          const colour = lookupColour(partyColours, series.party);
 
           // CI ribbon
           g.append("path")
@@ -619,7 +595,7 @@ function VoteLongitudinalUSPollsters({ country }) {
     observer.observe(containerRef.current);
     return () => observer.disconnect();
 
-  }, [slicedData, partyColours, showPollsters, visiblePollsterSeries, usPartyColours, hiddenSeries, combinedWeeks]);
+  }, [slicedData, partyColours, showPollsters, visiblePollsterSeries, hiddenSeries, combinedWeeks]);
 
 
   return (
@@ -657,8 +633,8 @@ function VoteLongitudinalUSPollsters({ country }) {
         <p className="vlup-pollster-status vlup-pollster-status--error">{pollsterError}</p>
       )}
 
-      {(error || partyColoursError) ? (
-        <p className="vlup-pollster-status vlup-pollster-status--error">{error || partyColoursError}</p>
+      {error ? (
+        <p className="vlup-pollster-status vlup-pollster-status--error">{error}</p>
       ) : displayData && partyColours && rangeIdx ? (
         <>
           <div className="vlup-chart-wrapper" ref={containerRef}>

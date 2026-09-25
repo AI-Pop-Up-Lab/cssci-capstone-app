@@ -9,7 +9,7 @@ import Loader from '../loader';
 import { parseDemographicCsv, aggregateToSeries } from "../../utils/longitudinal_transformation";
 // import partyColours from '../../assets/partyColours';
 
-function VoteLongitudinalDemographics({ country }) {
+function VoteLongitudinalDemographics({ country, countryData }) {
 
   const { t } = useTranslation();
 
@@ -17,8 +17,9 @@ function VoteLongitudinalDemographics({ country }) {
   const tooltipRef = useRef();
   const containerRef = useRef();
 
-  const [partyColours, setPartyColours] = useState(null);
-  const [partyColoursError, setPartyColoursError] = useState(null); 
+  // Party colours come from the country data object fetched once by the
+  // parent page and passed down as a prop -- not fetched separately here.
+  const partyColours = countryData?.party_colours ?? null;
 
   const [rawRows, setRawRows] = useState(null);  
   const [filters, setFilters] = useState({});
@@ -48,31 +49,11 @@ function VoteLongitudinalDemographics({ country }) {
       .catch(err => setError(err.message));
   }
 
-  // fetch party colours
-  async function getPartyColours(countryName){
-    try {
-
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=${'usa'}`);
-      
-      const response_data = response.data;
-
-      const partyColoursData = response_data.party_colours;
-
-      setPartyColours(partyColoursData);
-      setPartyColoursError(null);
-    } catch (err) {
-      setPartyColoursError(err.message);
-      setPartyColours(null);
-    }
-  };
-
   useEffect(() => {
 
     setRawRows(null);
-    setPartyColours(null);
     setRangeIdx(null);
 
-    getPartyColours(country);
     getChartData(country);
 
   }, [country]);
@@ -303,8 +284,8 @@ function VoteLongitudinalDemographics({ country }) {
   return (
     <div className="VoteLongitudinalDemographics">
       <h3 className="vld-title">{t('pollingResults.voteLongitudinalDemographic.title')}</h3>
-      {(error || partyColoursError) ? (
-        <p className="vld-error">{error || partyColoursError}</p>
+      {error ? (
+        <p className="vld-error">{error}</p>
       ) : chartData && partyColours && rangeIdx ? (
         <>
 
