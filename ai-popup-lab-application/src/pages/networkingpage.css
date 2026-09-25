@@ -1,0 +1,805 @@
+.NetworkingPlatformPage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 6%;
+}
+
+#netplat-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#netplat-title{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 840px;
+}
+
+#netplat-title > h1{
+    width: 100%;
+    text-align: justify;
+    text-align-last: justify;
+    font-size: 80px;
+}
+
+#netplat-title > h1:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#netplat-title > h1:nth-child(1) > span{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #6B6D76;
+}
+
+#netplat-briefing{
+    margin-top: 20px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-size: 22px;
+}
+
+.netplat-header{
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.netplat-header::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2.5px;
+    background-color: #335058;
+    margin-top: 3px;
+}
+
+.header-underline-appear::after{
+    animation: header-underline 0.69420s ease-in-out forwards;
+}
+
+.netplat-sectiontext{
+    margin-bottom: 40px;
+    max-width: 1000px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.netplat-sectiontext > strong{
+    font-weight: 600;
+}
+
+/* numbered step bar */
+
+#netplat-steps{
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #C7CDCE;
+}
+
+.netplat-step{
+    display: flex;
+    align-items: center;
+    padding: 14px 30px 14px 14px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: inherit;
+    font-size: 18px;
+    color: #6B6D76;
+    cursor: pointer;
+}
+
+.netplat-step-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    height: 32px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-color: #E3E9E9;
+    font-size: 16px;
+}
+
+.netplat-step.is-active{
+    border-bottom-color: #335058;
+    color: #335058;
+}
+
+.netplat-step.is-active > .netplat-step-number{
+    background-color: #FCBFB7;
+}
+
+.netplat-step:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* one question per row, plain language label, grey hint */
+
+#netplat-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 620px;
+    margin-bottom: 100px;
+}
+
+.netplat-lead{
+    line-height: 1.5;
+    font-size: 18px;
+    color: #6B6D76;
+    margin-bottom: 40px;
+}
+
+.netplat-question{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.netplat-question-label{
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.netplat-question-hint{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #6B6D76;
+    margin-bottom: 10px;
+}
+
+.netplat-question input,
+.netplat-question select,
+.netplat-question textarea{
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #A9B2B4;
+    background-color: #FFFFFF;
+    font-family: inherit;
+    font-size: 18px;
+    color: #335058;
+}
+
+.netplat-question input:focus,
+.netplat-question select:focus,
+.netplat-question textarea:focus{
+    outline: none;
+    border-color: #335058;
+    box-shadow: 0 0 0 2px #FCBFB7;
+}
+
+.netplat-input-small{
+    max-width: 140px;
+}
+
+.netplat-question textarea{
+    resize: vertical;
+}
+
+/* big clickable cards instead of checkboxes */
+
+.netplat-choice-grid{
+    display: flex;
+    flex-direction: column;
+}
+
+.netplat-choice{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #A9B2B4;
+    background-color: #FFFFFF;
+    text-align: left;
+    font-family: inherit;
+    font-size: 18px;
+    color: #335058;
+    cursor: pointer;
+}
+
+.netplat-choice-mark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    height: 28px;
+    margin-right: 14px;
+    flex-shrink: 0;
+    border: 1px solid #A9B2B4;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.netplat-choice.is-picked{
+    border-color: #335058;
+    background-color: #FDECE9;
+}
+
+.netplat-choice.is-picked > .netplat-choice-mark{
+    background-color: #FCBFB7;
+    border-color: #FCBFB7;
+}
+
+/* inline messages, no alert() popups */
+
+.netplat-notice{
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 17px;
+    border-left: 4px solid #6B6D76;
+}
+
+.netplat-notice-good{
+    border-left-color: #335058;
+    background-color: #E3E9E9;
+}
+
+.netplat-notice-error{
+    border-left-color: #C1462F;
+    background-color: #FDECE9;
+}
+
+.netplat-button-primary{
+    align-self: flex-start;
+    padding: 16px 40px;
+    border: none;
+    background-color: #335058;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.netplat-button-secondary{
+    align-self: flex-start;
+    padding: 16px 40px;
+    border: 1px solid #335058;
+    background: none;
+    color: #335058;
+    font-family: inherit;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.netplat-button-primary:disabled,
+.netplat-button-secondary:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.netplat-calendar-count{
+    margin-top: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+/* availability calendar */
+
+#netplat-calendar{
+    display: flex;
+    flex-direction: column;
+    width: 520px;
+    max-width: 100%;
+    margin-bottom: 80px;
+}
+
+.netplat-calendar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.netplat-calendar-header > h2{
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.netplat-calendar-header > button{
+    aspect-ratio: 1;
+    height: 34px;
+    border: 1px solid #6B6D76;
+    border-radius: 50%;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.netplat-calendar-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.netplat-calendar-weekday{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6B6D76;
+}
+
+.netplat-calendar-cell{
+    aspect-ratio: 1;
+    border: 1px solid #6B6D76;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.netplat-calendar-cell.is-empty{
+    border: none;
+    cursor: default;
+}
+
+.netplat-calendar-cell.is-selected{
+    background-color: #FCBFB7;
+    border-color: #FCBFB7;
+}
+
+.netplat-calendar-cell:disabled{
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.netplat-calendar-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+/* matches */
+
+#netplat-matches{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 80px;
+    list-style: none;
+    padding: 0;
+}
+
+.netplat-match-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    margin-bottom: 100px;
+}
+
+.netplat-match-photo{
+    border-radius: 50%;
+    background-color: #FCBFB7;
+    aspect-ratio: 1;
+    height: 140px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 36px;
+}
+
+.netplat-match-text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.netplat-match-text > h3{
+    text-align: right;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.netplat-match-text > p{
+    text-align: right;
+    max-width: 350px;
+}
+
+.netplat-match-score{
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #6B6D76;
+}
+
+.netplat-match-item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.netplat-match-item:nth-child(even) > .netplat-match-text{
+    align-items: flex-start;
+}
+
+.netplat-match-item:nth-child(even) > .netplat-match-text > h3,
+.netplat-match-item:nth-child(even) > .netplat-match-text > p{
+    text-align: left;
+}
+
+.netplat-match-item:nth-child(even) > .netplat-match-photo{
+    margin-right: 0;
+    margin-left: 5px;
+}
+
+.netplat-match-item:nth-last-child(1){
+    margin-bottom: 100px;
+}
+
+.netplat-tag-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.netplat-match-item:nth-child(even) .netplat-tag-row{
+    justify-content: flex-start;
+}
+
+.netplat-tag{
+    padding: 3px 12px;
+    margin: 0 0 5px 5px;
+    border: 1px solid #6B6D76;
+    font-size: 13px;
+}
+
+.netplat-empty{
+    line-height: 1.5;
+    font-size: 16px;
+    color: #6B6D76;
+    margin-bottom: 80px;
+}
+
+/* who-are-you cards */
+
+#netplat-roles{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 100px;
+}
+
+.netplat-role-grid{
+    display: flex;
+    justify-content: space-between;
+}
+
+.netplat-role-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 48%;
+    padding: 35px 30px;
+    border: 1px solid #A9B2B4;
+    background-color: #FFFFFF;
+    text-align: left;
+    font-family: inherit;
+    color: #335058;
+    cursor: pointer;
+}
+
+.netplat-role-card:hover,
+.netplat-role-card:focus-visible{
+    outline: none;
+    border-color: #335058;
+    background-color: #FDECE9;
+}
+
+.netplat-role-title{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.netplat-role-text{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6B6D76;
+}
+
+/* consent, counter, back link */
+
+.netplat-consent{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.netplat-consent > input{
+    width: 22px;
+    height: 22px;
+    margin: 2px 12px 0 0;
+    flex-shrink: 0;
+    accent-color: #335058;
+}
+
+.netplat-counter{
+    align-self: flex-end;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #6B6D76;
+}
+
+.netplat-question > .netplat-notice{
+    margin: 10px 0 0;
+    font-size: 15px;
+}
+
+.netplat-notice-info{
+    border-left-color: #FCBFB7;
+    background-color: #FFFFFF;
+}
+
+.netplat-link{
+    align-self: flex-start;
+    padding: 0;
+    margin-bottom: 30px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: #335058;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.netplat-match-text > a{
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #335058;
+}
+
+.netplat-calendar-header > h3{
+    font-weight: 400;
+    font-size: 22px;
+}
+
+@keyframes header-underline{
+    0%{
+        width: 0;
+    }
+
+    100%{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 920px){
+    #netplat-title{
+        width: 630px;
+    }
+
+    #netplat-title > h1{
+        font-size: 60px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 16px;
+    }
+
+    #netplat-briefing{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 810px){
+
+    #netplat-title{
+        width: 480px;
+    }
+
+    #netplat-title > h1{
+        font-size: 46px;
+    }
+
+    #netplat-briefing{
+        font-size: 17px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 13px;
+    }
+
+    .netplat-header{
+        font-size: 26px;
+    }
+
+    .netplat-sectiontext{
+        font-size: 14px;
+    }
+
+    .netplat-tab{
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .netplat-field,
+    .netplat-checkbox{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .netplat-field > input,
+    .netplat-field > select,
+    .netplat-field > textarea{
+        font-size: 14px;
+    }
+
+    .netplat-button-primary{
+        font-size: 14px;
+    }
+
+    .netplat-calendar-cell,
+    .netplat-calendar-footer{
+        font-size: 14px;
+    }
+
+    .netplat-match-item{
+        margin-bottom: 40px;
+        padding: 5%;
+    }
+
+    .netplat-match-photo{
+        height: 100px;
+        font-size: 26px;
+    }
+
+    .netplat-match-text > p{
+        font-size: 14px;
+    }
+
+    .netplat-match-text > h3{
+        font-size: 20px;
+    }
+
+    .netplat-match-item:nth-last-child(1){
+        margin-bottom: 80px;
+    }
+
+    #netplat-matches{
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 540px){
+    #netplat-title{
+        width: 378px;
+    }
+
+    #netplat-title > h1{
+        font-size: 36px;
+    }
+
+    #netplat-briefing{
+        font-size: 14px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 10px;
+    }
+
+    #netplat-tabs{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    #netplat-title{
+        width: 273px;
+    }
+
+    #netplat-title > h1{
+        font-size: 26px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 7px;
+    }
+
+    #netplat-briefing{
+        font-size: 10px;
+    }
+
+    .netplat-header{
+        font-size: 18px;
+    }
+
+    .netplat-sectiontext{
+        font-size: 10px;
+    }
+
+    .netplat-tab{
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+    .netplat-field,
+    .netplat-checkbox,
+    .netplat-field > input,
+    .netplat-field > select,
+    .netplat-field > textarea,
+    .netplat-button-primary,
+    .netplat-calendar-cell,
+    .netplat-calendar-footer{
+        font-size: 10px;
+    }
+
+    .netplat-field > span,
+    .netplat-field > legend,
+    .netplat-calendar-weekday,
+    .netplat-match-score,
+    .netplat-tag{
+        font-size: 9px;
+    }
+
+    .netplat-match-item{
+        margin-bottom: 30px;
+    }
+
+    .netplat-match-photo{
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .netplat-match-text > p{
+        font-size: 10px;
+    }
+
+    .netplat-match-text > h3{
+        font-size: 14px;
+    }
+
+    .netplat-match-item:nth-last-child(1){
+        margin-bottom: 60px;
+    }
+
+    .netplat-empty{
+        font-size: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    #netplat-title{
+        width: 187px;
+    }
+
+    #netplat-title > h1{
+        font-size: 18px;
+    }
+
+    #netplat-title > h1:nth-child(1) > span{
+        font-size: 5px;
+    }
+
+    #netplat-briefing{
+        font-size: 8px;
+    }
+}

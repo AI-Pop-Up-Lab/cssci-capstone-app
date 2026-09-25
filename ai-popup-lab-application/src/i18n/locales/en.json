@@ -8,7 +8,8 @@
             "personas": "persona explorer",
             "about": "about us",
             "ethics": "ethics",
-            "datahub": "data hub"
+            "datahub": "data hub",
+            "team": "team"
         }
     },
     "footer": {
@@ -168,46 +169,182 @@
         }
     },
     "teamPage": {
-        "title": "OUR TEAM",
-        "description": "At Mechanical Pollster we have a continuous flow of contributors, each partaking in one of the many building blocks of the platform.",
-        "contact": "Contact",
-        "teams": {
-            "poliCog": {
-                "name": "Political Cognitive",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "humanBenchmark": {
-                "name": "Human Benchmarking",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "infrastructure": {
-                "name": "Infrastructure",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            }
-        },
-        "members": {
-            "dummy1": {
-                "highlights": [
-                    "Something 1",
-                    "Something 2",
-                    "Something 3"
-                ]
-            },
-            "dummy2": {
-                "highlights": [
-                    "Something 1",
-                    "Something 2",
-                    "Something 3"
-                ]
-            },
-            "dummy3": {
-                "highlights": [
-                    "Something 1",
-                    "Something 2",
-                    "Something 3"
-                ]
+        "title": "MEET THE TEAM",
+        "description": "This project is a collaboration between Computational Social Science and Cultural Data & AI students at the University of Amsterdam, under the supervision of Dr. Roberto Cerina.",
+        "coreTeam": {
+            "title": "Core Team",
+            "contact": "Contact",
+            "members": {
+                "policog": {
+                    "role": "Poli-Cog",
+                    "text": "Leads the political-cognition side of the project: how synthetic personae reason and talk about politics. Designs the behavioural guardrails of the chat pipeline so persona responses stay representative, grounded, and free of stereotype."
+                },
+                "personaSampling": {
+                    "role": "Persona Sampling",
+                    "text": "Builds the synthetic samples behind every poll. Draws representative personae from census-based stratification frames so each simulated respondent mirrors a real slice of the population."
+                },
+                "infrastructure": {
+                    "role": "Infrastructure",
+                    "text": "Builds and maintains the platform itself: the backend APIs, data pipelines, and deployment that carry every result from model to browser."
+                }
             }
         }
+    },
+    "networkingPage": {
+        "intro": {
+            "kicker": "for research teams",
+            "titleLine1": "Find a",
+            "titleLine2": "partner team",
+            "text": "Connect students and supervisors across borders to collaborate on research projects."
+        },
+        "role": {
+            "heading": "Who are you?",
+            "lead": "Choose the role that fits how you will use the platform.",
+            "back": "Choose a different role",
+            "supervisor": {
+                "title": "I am a supervisor",
+                "text": "Add your students and find student collaborators abroad."
+            },
+            "student": {
+                "title": "I am a student",
+                "text": "Share your availability and find peers to collaborate with."
+            }
+        },
+        "steps": {
+            "signup": "About you",
+            "calendar": "Your dates",
+            "matches": "Your matches",
+            "locked": "Finish step 1 first"
+        },
+        "countries": { "netherlands": "Netherlands", "denmark": "Denmark", "sweden": "Sweden" },
+        "fields": {
+            "politicalScience": "Political science",
+            "sociology": "Sociology",
+            "psychology": "Psychology",
+            "economics": "Economics",
+            "communication": "Communication science"
+        },
+        "experimentTypes": {
+            "doorToDoor": "Knocking on doors",
+            "phoneBank": "Calling people by phone",
+            "labInField": "Experiments on location",
+            "surveyExperiment": "Survey experiments",
+            "observational": "Watching and recording"
+        },
+        "weekdays": { "mon": "Mon", "tue": "Tue", "wed": "Wed", "thu": "Thu", "fri": "Fri", "sat": "Sat", "sun": "Sun" },
+        "signup": {
+            "heading": "First, tell us who you are",
+            "lead": "Six short questions. Takes about a minute.",
+            "name": "What is your name?",
+            "nameHint": "The name your colleagues would recognise.",
+            "email": "What is your work email address?",
+            "emailHint": "We only use it to put you in touch with a matched supervisor.",
+            "institution": "Where do you work?",
+            "institutionHint": "Your university, faculty or institute.",
+            "country": "Which country are your students in?",
+            "field": "What do you study?",
+            "studentCount": "How many students are joining?",
+            "studentCountHint": "A rough number is fine. You can change it later.",
+            "experimentTypes": "What kind of fieldwork can your students do?",
+            "experimentTypesHint": "Pick everything that applies. Click again to unpick.",
+            "notes": "Anything else a partner should know?",
+            "notesHint": "Optional. For example: your students only work in Dutch.",
+            "pickOneType": "Please pick at least one kind of fieldwork.",
+            "submit": "Save and pick your dates",
+            "update": "Save my changes",
+            "saving": "Saving...",
+            "saved": "Saved. Your details are up to date."
+        },
+        "supervisor": {
+            "heading": "Add your student group",
+            "lead": "Tell prospective collaborators about your students and the projects they can join.",
+            "name": "What is your name?",
+            "email": "What is your work email address?",
+            "emailHint": "We use this only to put you in touch with a collaborator.",
+            "affiliation": "Where do you work?",
+            "affiliationHint": "Your university, faculty, or institute.",
+            "profileUrl": "Where can collaborators learn more about you?",
+            "profileUrlHint": "Add a university profile or professional profile link.",
+            "linkedinNudge": "A university profile link can help students understand your research area.",
+            "country": "Which country is your institution in?",
+            "studentCount": "How many students are in your group?",
+            "studentCountHint": "Enter the total number of students you are including.",
+            "placements": "How many student places can you offer?",
+            "placementsHint": "Enter the number of students who can join a collaboration.",
+            "projectTypes": "Which project types can your students work on?",
+            "projectTypesHint": "Select every option that applies.",
+            "description": "What should collaborators know about your group?",
+            "descriptionHint": "Describe your students' interests, skills, or project ideas.",
+            "characters": "{{count}} of {{max}} characters",
+            "consent": "I agree that my submitted information may be shared with potential collaborators.",
+            "pickProjectTypes": "Select at least one project type.",
+            "submit": "Save my student group"
+        },
+        "student": {
+            "heading": "Tell us about yourself",
+            "lead": "Add your details, then choose the dates when you are available to collaborate.",
+            "name": "What is your name?",
+            "email": "What is your email address?",
+            "emailHint": "We use this only to put you in touch with a collaborator.",
+            "university": "Which university do you attend?",
+            "studyProgram": "What is your study programme?",
+            "studyProgramHint": "For example, political science or data science.",
+            "projectType": "What kind of project are you looking for?",
+            "projectTypeHint": "Choose the option that fits best.",
+            "projectTypeOther": "Describe the project type",
+            "projectTypeOtherHint": "Tell us what you are looking for.",
+            "consent": "I agree that my submitted information may be shared with potential collaborators.",
+            "pickProjectType": "Select a project type.",
+            "describeOther": "Describe the project type you are looking for."
+        },
+        "calendar": {
+            "supervisor": { "heading": "Student availability" },
+            "student": { "heading": "When are you available?" },
+            "heading": "Now mark the days your students are free",
+            "lead": "Click a day to mark it. Click it again to remove it. Grey days have already passed.",
+            "previous": "Show the month before",
+            "next": "Show the month after",
+            "count": "You have marked {{count}} day",
+            "count_other": "You have marked {{count}} days",
+            "countNone": "You have not marked any days yet",
+            "save": "Save my dates",
+            "saving": "Saving...",
+            "saved": "Your dates are saved. Have a look at your matches.",
+            "goToMatches": "See my matches"
+        },
+        "matches": {
+            "supervisor": {
+                "heading": "Student collaborators",
+                "lead": "Students whose project interests and availability fit your group.",
+                "request": "Invite to collaborate"
+            },
+            "student": {
+                "heading": "Supervisor teams",
+                "lead": "Teams that fit your project interests and availability.",
+                "request": "Request collaboration"
+            },
+            "heading": "Supervisors who fit your plans",
+            "lead": "These teams study something close to yours and are free on the same days.",
+            "loading": "Looking for supervisors...",
+            "empty": "No matches yet. Mark a few more free days, or pick more kinds of fieldwork, and check back.",
+            "score": "{{score}}% fit",
+            "students": "{{count}} student",
+            "students_other": "{{count}} students",
+            "sharedDays": "free on {{count}} of your days",
+            "sharedDays_other": "free on {{count}} of your days",
+            "request": "Ask to work together",
+            "requesting": "Sending...",
+            "requested": "Request sent. They will get an email.",
+            "requestError": "We could not send your request. Please try again.",
+            "loadError": "We could not load your matches. Please try again."
+        },
+        "projectTypes": {
+            "bachelorThesis": "Bachelor's thesis",
+            "masterThesis": "Master's thesis",
+            "otherGraded": "Other assessed project",
+            "somethingElse": "Something else"
+        },
+        "saveError": "Something went wrong while saving. Please check your answers and try again."
     },
     "datahubPage": {
         "codebook": "codebook",
