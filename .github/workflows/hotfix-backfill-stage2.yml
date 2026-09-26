@@ -25,7 +25,7 @@ jobs:
       id-token: write
       contents: read
     env:
-      MAX_CONTAINERS: 5
+      MAX_CONTAINERS: 11
       RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
       ACR_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
@@ -82,7 +82,7 @@ jobs:
               --registry-password "$ACR_PASSWORD" \
               --restart-policy Never \
               --location westeurope \
-              --cpu 2 \
+              --cpu 1 \
               --memory 4 \
               --command-line "python -m data_generation.hotfix_backfill_stage2_entry" \
               --environment-variables \
