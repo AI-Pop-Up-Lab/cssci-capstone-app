@@ -1,17 +1,27 @@
 name: Hotfix Backfill - Stage 2 (Vote Choice + Extended Frame)
 
-# USA only. Splits the given weeks round-robin into up to 5 groups and runs
-# one ACI container per non-empty group, all in parallel — this stage has
-# no week-to-week dependency (each week's stage-1 biography panel already
-# stands alone), unlike stage 1, so it's safe to fan out. Run
+# USA only. Splits the given weeks round-robin into up to MAX_CONTAINERS
+# groups and runs one ACI container per non-empty group, all in parallel —
+# this stage has no week-to-week dependency (each week's stage-1 biography
+# panel already stands alone), unlike stage 1, so it's safe to fan out. Run
 # hotfix-backfill-stage1.yml for these same weeks first; stage 2 will fail
-# fast for any week that doesn't have a stage-1 snapshot yet.
+# fast for any week that doesn't have a stage-1 snapshot yet (unless it is
+# resuming from a saved vote-choice panel).
+#
+# resume=true reuses each week's saved vote-choice panel and generates only
+# the rows whose vote is still empty, then runs the R MRP step. If a week has
+# no saved vote-choice panel it falls back to full generation from the
+# stage-1 biography panel.
 #
 # mrp_only=true skips the survey wave and runs just the R MRP step on each
 # week's already-saved vote-choice panel (it fails fast for any week whose
-# panel is missing or still incomplete). Container names include the run id,
-# so several runs can be in flight at once, e.g. an MRP-only run for the
-# finished weeks while a full run is still generating votes for the others.
+# panel is missing). If both mrp_only and resume are true, mrp_only wins.
+# Incomplete panels only log a warning — the completeness hard stop is
+# disabled in hotfix_backfill_stage2.py.
+#
+# Container names include the run id, so several runs can be in flight at
+# once, e.g. an MRP-only run for the finished weeks while a full run is still
+# generating votes for the others.
 
 on:
   workflow_dispatch:
@@ -25,6 +35,10 @@ on:
         default: 'false'
       mrp_only:
         description: 'Skip vote-choice generation; run only the R MRP step on each saved vote-choice panel (true/false)'
+        required: false
+        default: 'false'
+      resume:
+        description: 'Reuse each week''s saved vote-choice panel and generate only the rows still missing, then run MRP (falls back to full generation if no saved panel exists) (true/false)'
         required: false
         default: 'false'
 
@@ -48,6 +62,7 @@ jobs:
       COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
       HOTFIX_FORCE: ${{ github.event.inputs.force }}
       HOTFIX_MRP_ONLY: ${{ github.event.inputs.mrp_only }}
+      HOTFIX_RESUME: ${{ github.event.inputs.resume }}
       WEEKS_INPUT: ${{ github.event.inputs.weeks }}
     steps:
       - name: Log in to Azure
@@ -57,7 +72,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Split weeks into up to 5 groups
+      - name: Split weeks into up to MAX_CONTAINERS groups
         run: |
           IFS=',' read -ra WEEKS <<< "$WEEKS_INPUT"
           declare -a WEEK_GROUPS
@@ -102,6 +117,7 @@ jobs:
                 HOTFIX_WEEKS="$group" \
                 HOTFIX_FORCE="$HOTFIX_FORCE" \
                 HOTFIX_MRP_ONLY="$HOTFIX_MRP_ONLY" \
+                HOTFIX_RESUME="$HOTFIX_RESUME" \
                 BLOB_CONTAINER_NAME=generated-data \
               --secure-environment-variables \
                 AZURE_STORAGE_CONNECTION_STRING="$AZURE_STORAGE_CONNECTION_STRING" \

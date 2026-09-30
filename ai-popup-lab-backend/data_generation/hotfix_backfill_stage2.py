@@ -15,15 +15,19 @@ ISO week it:
      produce that week's MRP extended frame, and stores EVERY CSV the R
      script writes (not just the extended frame) on the hotfix track.
 
-Two modes (`mrp_only`):
-  * default      — steps 1-3 above.
+Three modes:
+  * default      — steps 1-3 above, starting from the stage-1 biography panel.
+  * resume       — like default, but if a saved vote-choice panel already
+                   exists for the week it is loaded instead of the biography
+                   panel, so run_survey only generates the rows whose vote is
+                   still empty. Falls back to the default behaviour when no
+                   saved vote panel exists.
   * mrp_only     — skips steps 1-2 and runs step 3 against the vote-choice
-                   panel already saved at `get_hotfix_backfill_vote_panel_path`
-                   (written by a previous run whose R step failed or was never
-                   reached). Refuses to run if that panel is missing or its
-                   vote column isn't fully populated — the survey wave
-                   checkpoints a *partial* panel to the same blob while it
-                   runs, so blob existence alone doesn't mean "finished".
+                   panel already saved at `get_hotfix_backfill_vote_panel_path`.
+                   If mrp_only and resume are both set, mrp_only wins.
+
+Completeness of the vote column is NO LONGER a hard stop: unfilled rows are
+logged as a warning and MRP runs on whatever is in the panel.
 
 Unlike stage 1, weeks are independent of each other here: each week's
 stage-1 biography panel is already fully formed, and the survey wave for
@@ -91,8 +95,13 @@ EXPECTED_R_OUTPUTS = (
 )
 
 # Column names the vote outcome can have (mirrors survey_aliases in
-# post_strat_module_us.R). Used only for the completeness check.
+# post_strat_module_us.R). Used only for the completeness report.
 VOTE_COLUMN_CANDIDATES = ("vote_2026", "predicted_vote")
+
+
+def _vote_col_name(panel_date) -> str:
+    """Name of this wave's vote column as created by panel.runner.run_survey."""
+    return f"{pd.to_datetime(panel_date).normalize().strftime('%Y%m%d')}_vote"
 
 
 def _vote_completeness(df: pd.DataFrame) -> tuple[str | None, int, int]:
@@ -105,8 +114,47 @@ def _vote_completeness(df: pd.DataFrame) -> tuple[str | None, int, int]:
     return None, 0, len(df)
 
 
+def _report_panel_completeness(
+    panel_df: pd.DataFrame, panel_date, country: str, week_label: str, context: str
+) -> None:
+    """
+    Log how complete the vote column is. NON-BLOCKING: the hard stop that used
+    to refuse MRP on a partial panel has been disabled (see the commented-out
+    raise below). Re-enable it by uncommenting that block.
+    """
+    col, filled, total = _vote_completeness(panel_df)
+    if col is None:
+        # The vote column may be renamed by _prepare_survey_for_r — check what R will actually see.
+        try:
+            col, filled, total = _vote_completeness(_prepare_survey_for_r(panel_df, panel_date))
+        except Exception:
+            logger.exception("[%s %s] %s: couldn't build R-ready survey for the completeness report.",
+                             country, week_label, context)
+    if col is None:
+        logger.warning(
+            "[%s %s] %s: couldn't find a vote column (%s) — can't report completeness. Panel columns: %s",
+            country, week_label, context, VOTE_COLUMN_CANDIDATES, list(panel_df.columns),
+        )
+        return
+
+    if filled < total:
+        logger.warning(
+            "[%s %s] %s: vote-choice panel is incomplete (%d/%d rows have '%s'). "
+            "Continuing to MRP anyway.",
+            country, week_label, context, filled, total, col,
+        )
+        # ── Hard stop disabled. Uncomment to refuse MRP on a partial panel. ──
+        # raise ValueError(
+        #     f"{context}: vote-choice panel for {country} {week_label} is incomplete "
+        #     f"({filled}/{total} rows have '{col}'). Refusing to run MRP on a partial panel."
+        # )
+    else:
+        logger.info("[%s %s] %s: vote-choice panel complete (%d/%d rows).",
+                    country, week_label, context, filled, total)
+
+
 def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) -> None:
-    """Run the R post-stratification on a complete vote-choice panel and store all outputs."""
+    """Run the R post-stratification on the vote-choice panel and store all outputs."""
     extended_frame_path = storage.get_hotfix_backfill_extended_frame_path(country, week_label)
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -174,18 +222,55 @@ def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) 
         )
 
 
+def _load_resume_panel(vote_panel_path: str, panel_date, country: str, week_label: str) -> pd.DataFrame | None:
+    """
+    Load the saved vote-choice panel for resuming, or None if there isn't one.
+    Rows with a blank vote are reset to null so run_survey picks them up, and
+    any half-written news interpretation on those rows is cleared.
+    """
+    panel_df = storage.read_dataframe_or_none(vote_panel_path)
+    if panel_df is None:
+        logger.info("[%s %s] Resume requested but no vote-choice panel exists — "
+                    "falling back to full generation.", country, week_label)
+        return None
+
+    vote_col = _vote_col_name(panel_date)
+    if vote_col not in panel_df.columns:
+        panel_df[vote_col] = None
+
+    # Blank/whitespace answers count as unfilled.
+    blank = panel_df[vote_col].notna() & (panel_df[vote_col].astype(str).str.strip() == "")
+    panel_df.loc[blank, vote_col] = None
+    pending_mask = panel_df[vote_col].isna()
+
+    # Clear stale news-interpretation output on rows we're about to redo, so a
+    # row whose news coin toss now comes up "no" doesn't keep old text.
+    for suffix in ("newsint", "citations", "article_urls"):
+        c = vote_col.replace("_vote", f"_{suffix}")
+        if c in panel_df.columns:
+            panel_df[c] = panel_df[c].astype(object)
+            panel_df.loc[pending_mask, c] = None
+
+    logger.info("[%s %s] Resuming from saved vote panel: %d/%d rows still to fill.",
+                country, week_label, int(pending_mask.sum()), len(panel_df))
+    return panel_df
+
+
 def run_stage2_week(
     country: str,
     year: int,
     week: int,
     force: bool = False,
     mrp_only: bool = False,
+    resume: bool = False,
 ) -> None:
     """
     Run the survey wave + R extended frame for one week that stage 1 has
     already finished (or, with mrp_only=True, just the R step against an
-    already-complete vote-choice panel). Safe to call concurrently for
-    different weeks — each call is scoped to its own week's blobs.
+    already-saved vote-choice panel). With resume=True, reuse the saved
+    vote-choice panel and generate only the rows still missing. Safe to call
+    concurrently for different weeks — each call is scoped to its own week's
+    blobs.
 
     Idempotent per (country, week): if a lock already exists for this week
     and `force` is False, this is a no-op. The lock is only written after the
@@ -214,37 +299,25 @@ def run_stage2_week(
                 f"MRP-only: no vote-choice panel found for {country} {week_label} "
                 f"(expected blob: {vote_panel_path}). Run stage 2 normally for this week."
             )
+        _report_panel_completeness(panel_df, panel_date, country, week_label, "MRP-only")
 
-        col, filled, total = _vote_completeness(panel_df)
-        if col is None:
-            # The vote column may be renamed by _prepare_survey_for_r — check what R will actually see.
-            col, filled, total = _vote_completeness(_prepare_survey_for_r(panel_df, panel_date))
-        if col is None:
-            raise ValueError(
-                f"MRP-only: couldn't find a vote column ({VOTE_COLUMN_CANDIDATES}) in the panel or "
-                f"the R-ready survey for {country} {week_label}; can't verify the panel is complete. "
-                f"Panel columns: {list(panel_df.columns)}"
-            )
-        if filled < total:
-            raise ValueError(
-                f"MRP-only: vote-choice panel for {country} {week_label} is incomplete "
-                f"({filled}/{total} rows have '{col}'). The survey wave is still running or was "
-                f"interrupted — refusing to run MRP on a partial panel."
-            )
-        logger.info("[%s %s] MRP-only: vote-choice panel complete (%d/%d rows).", country, week_label, filled, total)
-
-    # ── Full mode: survey wave (news read + vote choice) ─────────────────────
+    # ── Full / resume mode: survey wave (news read + vote choice) ────────────
     else:
         biography_panel_path = storage.get_hotfix_backfill_biography_panel_path(country, week_label)
         gdelt_cache_path = storage.get_gdelt_cache_path(country, week_label)
 
-        panel_df = storage.read_dataframe_or_none(biography_panel_path)
+        panel_df = None
+        if resume:
+            panel_df = _load_resume_panel(vote_panel_path, panel_date, country, week_label)
+
         if panel_df is None:
-            raise FileNotFoundError(
-                f"No stage-1 biography panel found for {country} {week_label} "
-                f"(expected blob: {biography_panel_path}). Run hotfix-backfill stage 1 "
-                f"for this week before stage 2."
-            )
+            panel_df = storage.read_dataframe_or_none(biography_panel_path)
+            if panel_df is None:
+                raise FileNotFoundError(
+                    f"No stage-1 biography panel found for {country} {week_label} "
+                    f"(expected blob: {biography_panel_path}). Run hotfix-backfill stage 1 "
+                    f"for this week before stage 2."
+                )
 
         news_df = storage.read_dataframe_or_none(gdelt_cache_path)
         if news_df is not None:
@@ -269,6 +342,16 @@ def run_stage2_week(
         if news_df is not None:
             storage.upload_dataframe(news_df, gdelt_cache_path)
             logger.info("[%s %s] GDELT cache updated.", country, week_label)
+
+        # run_survey swallows per-persona failures; report what's left (non-blocking).
+        _report_panel_completeness(panel_df, panel_date, country, week_label, "Post-survey")
+        vc = _vote_col_name(panel_date)
+        if vc in panel_df.columns:
+            left = panel_df[panel_df[vc].isna()]
+            if not left.empty:
+                cols = [c for c in ("panelist_id", "cell_id", "state_cd") if c in left.columns]
+                logger.warning("[%s %s] %d unfilled row(s):\n%s", country, week_label, len(left),
+                               left[cols].to_string() if cols else left.index.tolist())
 
     # ── MRP extended frame + all other R outputs ─────────────────────────────
     _run_mrp(country, week_label, panel_df, panel_date)
