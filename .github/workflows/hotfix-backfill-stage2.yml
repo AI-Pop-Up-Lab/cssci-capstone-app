@@ -36,6 +36,7 @@ jobs:
       contents: read
     env:
       MAX_CONTAINERS: 11
+      ACI_PREFIX: hotfix-s2-${{ github.run_id }}-${{ github.run_attempt }}
       RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
       ACR_LOGIN_SERVER: ${{ secrets.ACR_LOGIN_SERVER }}
       ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
@@ -94,7 +95,7 @@ jobs:
               --restart-policy Never \
               --location westeurope \
               --cpu 1 \
-              --memory 4 \
+              --memory 8 \
               --command-line "python -m data_generation.hotfix_backfill_stage2_entry" \
               --environment-variables \
                 ENV=production \
