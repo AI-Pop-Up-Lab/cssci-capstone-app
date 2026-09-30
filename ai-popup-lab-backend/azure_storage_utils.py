@@ -38,6 +38,9 @@ Country
             per-week snapshot after the survey wave / vote choice (stage 2 output)
         extended_frames
             per-week MRP extended frame (stage 2 output)
+        mrp_outputs
+            per-week folder holding every other CSV the R script writes
+            (point estimates, 95% CIs, share draws, CD-level, margins, ...)
     Job runs
         job type
             lock files
@@ -181,6 +184,16 @@ def get_hotfix_backfill_vote_panel_path(country, iso_week):
 def get_hotfix_backfill_extended_frame_path(country, iso_week):
     """Per-week MRP extended-frame output from hotfix-backfill stage 2."""
     return f"{country}/hotfix_backfill/extended_frames/{iso_week}_extended_frame.csv"
+
+
+def get_hotfix_backfill_mrp_output_path(country, iso_week, filename):
+    """
+    One of the auxiliary CSVs written by the R post-stratification script for
+    a hotfix-backfilled week (everything except the extended frame, which
+    keeps its own path via get_hotfix_backfill_extended_frame_path).
+    `filename` is the R output's file name, e.g. "mrp_point_estimates.csv".
+    """
+    return f"{country}/hotfix_backfill/mrp_outputs/{iso_week}/{filename}"
 
 
 def get_job_lock_path(country, job_type, iso_week):

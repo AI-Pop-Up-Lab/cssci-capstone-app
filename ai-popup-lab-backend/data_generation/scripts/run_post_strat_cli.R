@@ -4,7 +4,7 @@ if (length(args) < 4) {
   stop(
     paste(
       "Usage:",
-      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws] [area_shares_csv]"
+      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws] [area_shares_csv] [export_cell_draws]"
     )
   )
 }
@@ -52,6 +52,10 @@ compute_draws <- tolower(compute_draws_arg) %in% c("true", "1", "yes")
 # country module that doesn't take it.
 area_shares_path <- if (length(args) >= 7 && nzchar(args[[7]])) args[[7]] else NULL
 
+# Optional 8th arg: also write the raw per-cell draw matrix (mrp_cell_draws.csv).
+# Large -- rows = frame cells x parties, columns = n_sims draws.
+export_cell_draws <- length(args) >= 8 && tolower(args[[8]]) %in% c("true", "1", "yes")
+
 # Country-specific post-stratification module. The US module has its own
 # stickbreaking/multinomial structure and district-level output tailored to
 # US House races; every other country still uses the original shared
@@ -87,7 +91,8 @@ run_args <- list(
   config = list(
     verbose = TRUE,
     n_sims = n_sims,
-    compute_draws = compute_draws
+    compute_draws = compute_draws,
+    export_cell_draws = export_cell_draws
   )
 )
 
