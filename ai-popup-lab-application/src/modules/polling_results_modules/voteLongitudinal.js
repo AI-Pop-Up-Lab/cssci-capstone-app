@@ -9,7 +9,7 @@ import Loader from '../loader';
 import { parseBaselineCsv } from "../../utils/longitudinal_transformation";
 // import partyColours from '../../assets/partyColours';
 
-function VoteLongitudinal({ country }) {
+function VoteLongitudinal({ country, countryData }) {
 
   const { t } = useTranslation();
 
@@ -20,8 +20,9 @@ function VoteLongitudinal({ country }) {
   const [chartData, setChartData] = useState(null);
   const [error, setError] = useState(null);
 
-  const [partyColours, setPartyColours] = useState(null);
-  const [partyColoursError, setPartyColoursError] = useState(null); 
+  // Party colours come from the country data object fetched once by the
+  // parent page and passed down as a prop -- not fetched separately here.
+  const partyColours = countryData?.party_colours ?? null;
 
   const [rangeIdx, setRangeIdx] = useState(null);
 
@@ -36,31 +37,11 @@ function VoteLongitudinal({ country }) {
         .catch(err => setError(err.message));
   }
 
-  // fetch party colours
-  async function getPartyColours(countryName){
-    try {
-
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/party_colours?country=${'sweden'}`);
-      
-      const response_data = response.data;
-
-      const partyColoursData = response_data.party_colours;
-
-      setPartyColours(partyColoursData);
-      setPartyColoursError(null);
-    } catch (err) {
-      setPartyColoursError(err.message);
-      setPartyColours(null);
-    }
-  };
-
   useEffect(() => {
 
     setChartData(null);
-    setPartyColours(null);
     setRangeIdx(null);
 
-    getPartyColours(country);
     getChartData(country);
 
   }, [country]);
@@ -294,8 +275,8 @@ function VoteLongitudinal({ country }) {
   return (
     <div className="VoteLongitudinal">
       <h3 className="vl-title">{t('pollingResults.voteLongitudinal.title')}</h3>
-      {(error || partyColoursError) ? (
-        <p className="vl-error">{error || partyColoursError}</p>
+      {error ? (
+        <p className="vl-error">{error}</p>
       ) : chartData && partyColours && rangeIdx ? (
         <>
           <div className="vl-chart-wrapper" ref={containerRef}>

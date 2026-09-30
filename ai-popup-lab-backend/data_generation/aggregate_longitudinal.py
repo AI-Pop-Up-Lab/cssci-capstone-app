@@ -5,20 +5,18 @@ import logging
 from pathlib import Path
 
 import pandas as pd
+from azure.core.exceptions import ResourceNotFoundError
 
 logger = logging.getLogger(__name__)
 
-# ── blob name helpers ────────────────────────────────────────────────────────
-
-def _longitudinal_blob_name(country: str) -> str:
-    return f"{country}/longitudinal/{country}_vote_shares.csv"
-
-def _longitudinal_demographic_blob_name(country: str) -> str:
-    return f"{country}/longitudinal/{country}_vote_shares_demographic.csv"
+from azure_storage_utils import (
+    get_simple_frame_aggregate_path,
+    get_demographic_frame_aggregate_path,
+)
 
 # ── column config ────────────────────────────────────────────────────────────
 
-DEMOGRAPHIC_COLS = ["gender", "age_group", "municipality", "education_level", "state", "race", "state_cd"]
+DEMOGRAPHIC_COLS = ["age_group", "gender", "race", "state_abbrv", "education_level"]
 PARTY_COL        = "party"
 WEIGHT_COL       = "prob_raked"
 
@@ -28,9 +26,9 @@ def _download_csv_or_none(client, container: str, blob_name: str) -> pd.DataFram
     try:
         blob = client.get_container_client(container).get_blob_client(blob_name)
         data = blob.download_blob().readall().decode("utf-8")
-        return pd.read_csv(io.StringIO(data))
-    except Exception:
+    except ResourceNotFoundError:
         return None
+    return pd.read_csv(io.StringIO(data))
 
 
 def _upload_csv(client, container: str, blob_name: str, df: pd.DataFrame) -> None:
@@ -51,11 +49,19 @@ def _build_baseline_row(frame: pd.DataFrame, week: str) -> pd.DataFrame:
     
 
 def _build_demographic_rows(frame: pd.DataFrame, week: str) -> pd.DataFrame:
-    cols = [PARTY_COL, WEIGHT_COL] + [c for c in DEMOGRAPHIC_COLS if c in frame.columns]
-    out = frame[cols].copy()
-    out["week"] = week
-    out = out.rename(columns={PARTY_COL: "vote_choice", WEIGHT_COL: "weight"})
-    return out[["week", "vote_choice"] + [c for c in DEMOGRAPHIC_COLS if c in frame.columns] + ["weight"]]
+    demo_cols = [c for c in DEMOGRAPHIC_COLS if c in frame.columns]
+
+    # Sum weight across every raw extended-frame row (one per synthetic cell)
+    # that shares the same party + demographic combination. Without this the
+    # output has one row per input row -- i.e. the full synthetic population,
+    # not an aggregate -- and grows unboundedly week over week.
+    grouped = (
+        frame.groupby([PARTY_COL] + demo_cols, as_index=False, dropna=False)[WEIGHT_COL]
+        .sum()
+    )
+    grouped["week"] = week
+    grouped = grouped.rename(columns={PARTY_COL: "vote_choice", WEIGHT_COL: "weight"})
+    return grouped[["week", "vote_choice"] + demo_cols + ["weight"]]
 
 
 # ── public entry point ───────────────────────────────────────────────────────
@@ -69,8 +75,8 @@ def update_longitudinal_aggregates(
     container: str,
 ) -> None:
     week_label    = _week_label(year, week)
-    baseline_blob = _longitudinal_blob_name(country)
-    demo_blob     = _longitudinal_demographic_blob_name(country)
+    baseline_blob = get_simple_frame_aggregate_path(country)
+    demo_blob     = get_demographic_frame_aggregate_path(country)
 
     new_baseline_rows = _build_baseline_row(extended_frame, week_label)
     existing_baseline = _download_csv_or_none(blob_client, container, baseline_blob)

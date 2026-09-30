@@ -75,12 +75,12 @@ function PollPage() {
         <div id="poll-page-content">
           
           {selectedCountry === 'usa' ? (
-            <VoteLongitudinalUSPollsters />
+            <VoteLongitudinalUSPollsters country={selectedCountry} countryData={countryData} />
           ) : (
-            <VoteLongitudinal />
+            <VoteLongitudinal country={selectedCountry} countryData={countryData} />
           )}
 
-          <VoteLongitudinalDemographics />
+          <VoteLongitudinalDemographics country={selectedCountry} countryData={countryData} />
         </div>
       )}
 

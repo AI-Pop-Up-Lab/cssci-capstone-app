@@ -6,6 +6,12 @@ name: Hotfix Backfill - Stage 2 (Vote Choice + Extended Frame)
 # stands alone), unlike stage 1, so it's safe to fan out. Run
 # hotfix-backfill-stage1.yml for these same weeks first; stage 2 will fail
 # fast for any week that doesn't have a stage-1 snapshot yet.
+#
+# mrp_only=true skips the survey wave and runs just the R MRP step on each
+# week's already-saved vote-choice panel (it fails fast for any week whose
+# panel is missing or still incomplete). Container names include the run id,
+# so several runs can be in flight at once, e.g. an MRP-only run for the
+# finished weeks while a full run is still generating votes for the others.
 
 on:
   workflow_dispatch:
@@ -15,6 +21,10 @@ on:
         required: true
       force:
         description: 'Force rerun even if a week already has a stage-2 lock (true/false)'
+        required: false
+        default: 'false'
+      mrp_only:
+        description: 'Skip vote-choice generation; run only the R MRP step on each saved vote-choice panel (true/false)'
         required: false
         default: 'false'
 
@@ -36,6 +46,7 @@ jobs:
       AZURE_OPENAI_BASE_URL: ${{ secrets.AZURE_OPENAI_BASE_URL }}
       COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
       HOTFIX_FORCE: ${{ github.event.inputs.force }}
+      HOTFIX_MRP_ONLY: ${{ github.event.inputs.mrp_only }}
       WEEKS_INPUT: ${{ github.event.inputs.weeks }}
     steps:
       - name: Log in to Azure
@@ -64,7 +75,7 @@ jobs:
       - name: Delete existing ACIs if present
         run: |
           for i in $(seq 0 $((MAX_CONTAINERS - 1))); do
-            az container delete --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --yes || true
+            az container delete --resource-group "$RESOURCE_GROUP" --name "$ACI_PREFIX-$i" --yes || true
           done
 
       - name: Create ACI stage-2 workers (one per group, running in parallel)
@@ -76,7 +87,7 @@ jobs:
             echo "Launching container $i for weeks: $group"
             az container create \
               --resource-group "$RESOURCE_GROUP" \
-              --name "hotfix-backfill-stage2-aci-$i" \
+              --name "$ACI_PREFIX-$i" \
               --image "$ACR_LOGIN_SERVER/weekly-worker:latest" \
               --registry-username "$ACR_USERNAME" \
               --registry-password "$ACR_PASSWORD" \
@@ -89,6 +100,7 @@ jobs:
                 ENV=production \
                 HOTFIX_WEEKS="$group" \
                 HOTFIX_FORCE="$HOTFIX_FORCE" \
+                HOTFIX_MRP_ONLY="$HOTFIX_MRP_ONLY" \
                 BLOB_CONTAINER_NAME=generated-data \
               --secure-environment-variables \
                 AZURE_STORAGE_CONNECTION_STRING="$AZURE_STORAGE_CONNECTION_STRING" \
@@ -112,7 +124,7 @@ jobs:
           while [ -s /tmp/active_containers.txt ]; do
             : > /tmp/still_active.txt
             while read -r i; do
-              STATE=$(az container show --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --query "containers[0].instanceView.currentState.state" --output tsv)
+              STATE=$(az container show --resource-group "$RESOURCE_GROUP" --name "$ACI_PREFIX-$i" --query "containers[0].instanceView.currentState.state" --output tsv)
               echo "Container $i state: $STATE"
               if [ "$STATE" != "Terminated" ]; then
                 echo "$i" >> /tmp/still_active.txt
@@ -129,7 +141,7 @@ jobs:
             group_var="GROUP_$i"
             group="${!group_var}"
             if [ -z "$group" ]; then continue; fi
-            EXIT_CODE=$(az container show --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --query "containers[0].instanceView.currentState.exitCode" --output tsv)
+            EXIT_CODE=$(az container show --resource-group "$RESOURCE_GROUP" --name "$ACI_PREFIX-$i" --query "containers[0].instanceView.currentState.exitCode" --output tsv)
             echo "Container $i (weeks: $group) exit code: $EXIT_CODE"
             if [ "$EXIT_CODE" != "0" ]; then overall=1; fi
           done
@@ -142,13 +154,13 @@ jobs:
         if: always()
         run: |
           for i in $(seq 0 $((MAX_CONTAINERS - 1))); do
-            echo "=== Logs: hotfix-backfill-stage2-aci-$i ==="
-            az container logs --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" || true
+            echo "=== Logs: $ACI_PREFIX-$i ==="
+            az container logs --resource-group "$RESOURCE_GROUP" --name "$ACI_PREFIX-$i" || true
           done
 
       - name: Clean up ACIs
         if: always()
         run: |
           for i in $(seq 0 $((MAX_CONTAINERS - 1))); do
-            az container delete --resource-group "$RESOURCE_GROUP" --name "hotfix-backfill-stage2-aci-$i" --yes || true
+            az container delete --resource-group "$RESOURCE_GROUP" --name "$ACI_PREFIX-$i" --yes || true
           done

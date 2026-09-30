@@ -32,6 +32,7 @@ def run_extension_script(
     n_sims: int = 250,
     compute_draws: bool = True,
     area_shares_path: str | Path | None = None,
+    export_cell_draws: bool = False,
 ) -> Path:
     """
     run the frame extension R script on the given survey and frame files.
@@ -50,6 +51,13 @@ def run_extension_script(
             extended_frame, point_estimates, stage_diagnostics, and
             aggregate_counts are unaffected either way. Default True
             (full output, matches prior behavior).
+        area_shares_path: Path to the area-level vote shares CSV. REQUIRED for
+            country == "usa" (post_strat_module_us.R has no default for it);
+            passed to the R CLI as its 7th positional arg. Ignored for
+            countries whose module doesn't take it.
+        export_cell_draws: If True, the R script also writes the raw per-cell
+            draw matrix (mrp_cell_draws.csv) — 8th positional CLI arg. Large
+            and memory-heavy. Default False.
 
     Returns:
         Path to the output directory.
@@ -70,6 +78,15 @@ def run_extension_script(
     if not frame_path.exists():
         raise FileNotFoundError(f"Frame file not found: {frame_path}")
 
+    if country.lower() == "usa":
+        if area_shares_path is None:
+            raise ValueError(
+                "country == 'usa' requires area_shares_path (area-level vote shares CSV)."
+            )
+        area_shares_path = Path(area_shares_path).resolve()
+        if not area_shares_path.exists():
+            raise FileNotFoundError(f"Area-level vote shares file not found: {area_shares_path}")
+
     cmd = [
         R_EXECUTABLE,
         str(r_script),
@@ -80,6 +97,12 @@ def run_extension_script(
         str(n_sims),
         "true" if compute_draws else "false",
     ]
+    # 7th positional arg of run_post_strat_cli.R. Previously the parameter was
+    # accepted by this function but never appended, so the R CLI never saw it.
+    if area_shares_path is not None or export_cell_draws:
+        cmd.append(str(area_shares_path) if area_shares_path is not None else "")
+    if export_cell_draws:
+        cmd.append("true")
 
     logger.info("Running R script for country=%s (compute_draws=%s)", country, compute_draws)
     logger.info("Command: %s", " ".join(cmd))

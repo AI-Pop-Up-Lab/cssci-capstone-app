@@ -20,6 +20,10 @@ Env variables:
                    e.g. "2026-14,2026-19,2026-24"
     HOTFIX_FORCE   "true"/"false" — force rerun even if a week's stage-2
                    lock already exists (default: false)
+    HOTFIX_MRP_ONLY "true"/"false" — skip the survey wave and run only the R
+                   MRP step on each week's already-saved vote-choice panel
+                   (default: false). Fails that week if the panel is missing
+                   or incomplete.
 
 Each week in this container's subset must already have a stage-1
 biography-panel snapshot (see hotfix_backfill_stage1_entry.py) — this
@@ -62,18 +66,22 @@ def main() -> None:
     if not raw_weeks:
         raise ValueError("HOTFIX_WEEKS env var is required, e.g. '2026-14,2026-19'.")
     force = os.environ.get("HOTFIX_FORCE", "false").strip().lower() in ("true", "1", "yes")
+    mrp_only = os.environ.get("HOTFIX_MRP_ONLY", "false").strip().lower() in ("true", "1", "yes")
 
     check_r_available()
 
     weeks = _parse_weeks(raw_weeks)
-    logger.info("Hotfix backfill stage 2: %d week(s) assigned to this container: %s", len(weeks), weeks)
+    logger.info(
+        "Hotfix backfill stage 2 (%s): %d week(s) assigned to this container: %s",
+        "MRP only" if mrp_only else "survey + MRP", len(weeks), weeks,
+    )
 
     failed: list[str] = []
     for year, week in weeks:
         label = f"{year}-{week:02d}"
         logger.info("=== Stage 2: %s %s ===", COUNTRY, label)
         try:
-            run_stage2_week(COUNTRY, year, week, force=force)
+            run_stage2_week(COUNTRY, year, week, force=force, mrp_only=mrp_only)
         except Exception:
             logger.exception("Stage 2 failed for week %s — continuing with remaining weeks in this container.", label)
             failed.append(label)
