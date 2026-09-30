@@ -1,80 +1,134 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import logging
-from pathlib import Path
+import re
 
-import pandas as pd
+from azure.core.exceptions import ResourceNotFoundError
 
-from azure_storage_utils import get_blob_service_client, CONTAINER_NAME
-from .aggregate_longitudinal import update_longitudinal_aggregates
+from azure_storage_utils import (
+    get_blob_service_client,
+    read_dataframe,
+    CONTAINER_NAME,
+)
+from .aggregate_longitudinal import (
+    update_longitudinal_aggregates,
+    DEMOGRAPHIC_COLS,
+    PARTY_COL,
+    WEIGHT_COL,
+)
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s â€” %(message)s")
 logger = logging.getLogger(__name__)
 
+# frame column name -> pipeline column name
+COLUMN_RENAME = {
+    "vote_2026": PARTY_COL,
+    "expected_N": WEIGHT_COL,
+}
 
-def _extended_frame_blob_name(country: str, year: int, week: int) -> str:
-    """Same convention as store_frame(), but keyed by explicit year/week
-    instead of today's date â€” store_frame()'s get_file_suffix() always
-    uses today, which would silently mislabel a backfilled historical week."""
-    return f"extended-frames/{country}/{year}_{week:02d}_extended_frame.csv"
-
-
-def _parse_frame_arg(raw: str) -> tuple[int, int, Path]:
-    """Parse 'YYYY-WW:/path/to/frame.csv'."""
-    week_part, path_part = raw.split(":", 1)
-    year_str, week_str = week_part.split("-")
-    return int(year_str), int(week_str), Path(path_part)
+# Matches get_extended_frame_path: {country}/extended_frames/{YYYY}_{WW}_extended_frame.csv
+_FRAME_RE = re.compile(r"(\d{4})_(\d{2})_extended_frame\.csv$")
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--country", required=True)
-    parser.add_argument(
-        "--frame", action="append", required=True,
-        help="YYYY-WW:/local/path/to/extended_frame.csv â€” repeat per week",
-    )
-    args = parser.parse_args()
+def _list_frames(client, country: str) -> list[tuple[int, int, str]]:
+    """Return sorted (year, week, blob_name) for every extended frame of this country."""
+    container = client.get_container_client(CONTAINER_NAME)
+    frames = []
+    for blob in container.list_blobs(name_starts_with=f"{country}/extended_frames/"):
+        m = _FRAME_RE.search(blob.name)
+        if m:
+            frames.append((int(m[1]), int(m[2]), blob.name))
+    return sorted(frames)
 
-    blob_client = get_blob_service_client()
-    failed = []
 
-    for raw in args.frame:
-        year, week, local_path = _parse_frame_arg(raw)
-        label = f"{args.country} {year}-W{week:02d}"
+def parse_weeks(raw: str | None) -> set[tuple[int, int]] | None:
+    """'2026-14,2026-15' -> {(2026, 14), (2026, 15)}. Blank or 'all' -> None (every frame)."""
+    if raw is None or not raw.strip() or raw.strip().lower() == "all":
+        return None
+    out = set()
+    for token in raw.split(","):
+        token = token.strip()
+        if token:
+            year, week = token.split("-")
+            out.add((int(year), int(week)))
+    return out
+
+
+def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str]:
+    """
+    Rebuild the longitudinal aggregates for `country` from the extended frames
+    in Azure. `weeks=None` means every frame found. Returns labels of failed weeks.
+    """
+    client = get_blob_service_client()
+    frames = _list_frames(client, country)
+
+    if weeks is not None:
+        found = {(y, w) for y, w, _ in frames}
+        for y, w in sorted(weeks - found):
+            logger.error("[%s] No extended frame found for %d-W%02d", country, y, w)
+        frames = [f for f in frames if (f[0], f[1]) in weeks]
+        failed = [f"{country} {y}-W{w:02d}" for y, w in sorted(weeks - found)]
+    else:
+        failed = []
+
+    if not frames and not failed:
+        logger.error("No extended frames found for %s.", country)
+        return [f"{country} (no frames)"]
+
+    logger.info("[%s] Rebuilding from %d frame(s).", country, len(frames))
+
+    for year, week, blob_name in frames:
+        label = f"{country} {year}-W{week:02d}"
         try:
-            if not local_path.exists():
-                raise FileNotFoundError(f"Frame file not found: {local_path}")
+            try:
+                frame = read_dataframe(blob_name)
+            except ResourceNotFoundError as exc:
+                raise FileNotFoundError(f"Frame blob missing: {blob_name}") from exc
 
-            extended_frame = pd.read_csv(local_path)
+            frame = frame.rename(columns={k: v for k, v in COLUMN_RENAME.items() if k in frame.columns})
 
-            missing_cols = [c for c in ("party", "prob_raked") if c not in extended_frame.columns]
-            if missing_cols:
+            missing = [c for c in (PARTY_COL, WEIGHT_COL) if c not in frame.columns]
+            if missing:
                 raise ValueError(
-                    f"{label}: frame missing expected column(s) {missing_cols}. "
-                    f"Columns present: {list(extended_frame.columns)}"
+                    f"{label}: frame missing expected column(s) {missing}. "
+                    f"Columns present: {list(frame.columns)}"
                 )
 
-            blob_name = _extended_frame_blob_name(args.country, year, week)
-            blob = blob_client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
-            with open(local_path, "rb") as f:
-                blob.upload_blob(f, overwrite=True)
-            logger.info("[%s] Uploaded frame â†’ %s", label, blob_name)
+            missing_demo = [c for c in DEMOGRAPHIC_COLS if c not in frame.columns]
+            if missing_demo:
+                logger.warning(
+                    "[%s] Frame missing demographic column(s) %s -- omitted from the demographic aggregate.",
+                    label, missing_demo,
+                )
 
             update_longitudinal_aggregates(
-                country=args.country,
-                extended_frame=extended_frame,
+                country=country,
+                extended_frame=frame,
                 year=year,
                 week=week,
-                blob_client=blob_client,
+                blob_client=client,
                 container=CONTAINER_NAME,
             )
-            logger.info("[%s] Longitudinal aggregates updated.", label)
+            logger.info("[%s] Longitudinal aggregates updated from %s", label, blob_name)
 
         except Exception:
             logger.exception("Failed: %s", label)
             failed.append(label)
 
+    return failed
+
+
+def main() -> None:
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s - %(message)s")
+    logging.getLogger("azure").setLevel(logging.WARNING)
+    parser = argparse.ArgumentParser(
+        description="Rebuild longitudinal aggregates from the extended frames in Azure."
+    )
+    parser.add_argument("--country", required=True)
+    parser.add_argument("--weeks", help="Comma-separated YYYY-WW list. Default: every frame found.")
+    args = parser.parse_args()
+
+    failed = rebuild(args.country, parse_weeks(args.weeks))
     if failed:
         logger.error("Finished with failures: %s", failed)
         raise SystemExit(1)
