@@ -229,26 +229,31 @@ prepare_us_post_frame_data <- function(frame, survey_model, config) {
 }
 
 add_us_post_interactions <- function(dat,
-									 race_edu_levels = NULL,
 									 race_gender_levels = NULL,
-									 gender_edu_levels = NULL,
 									 race_age_levels = NULL,
+									 race_edu_levels = NULL,
+									 race_past_vote_levels = NULL,
+									 age_gender_levels = NULL,
+									 gender_edu_levels = NULL,
+									 gender_past_vote_levels = NULL,
 									 age_edu_levels = NULL,
-									 age_gender_levels = NULL) {
-	race_edu_raw <- interaction(dat$race, dat$education_level, drop = TRUE, sep = "___")
-	race_gender_raw <- interaction(dat$race, dat$gender, drop = TRUE, sep = "___")
-	gender_edu_raw <- interaction(dat$gender, dat$education_level, drop = TRUE, sep = "___")
-	race_age_raw <- interaction(dat$race, dat$age_group, drop = TRUE, sep = "___")
-	age_edu_raw <- interaction(dat$age_group, dat$education_level, drop = TRUE, sep = "___")
-	age_gender_raw <- interaction(dat$age_group, dat$gender, drop = TRUE, sep = "___")
+									 age_past_vote_levels = NULL,
+									 edu_past_vote_levels = NULL) {
+	make_interaction <- function(x, y, levels = NULL) {
+		raw <- interaction(x, y, drop = TRUE, sep = "___")
+		if (is.null(levels)) factor(raw) else factor(as.character(raw), levels = levels)
+	}
 
-	dat$race_edu <- if (is.null(race_edu_levels)) factor(race_edu_raw) else factor(as.character(race_edu_raw), levels = race_edu_levels)
-	dat$race_gender <- if (is.null(race_gender_levels)) factor(race_gender_raw) else factor(as.character(race_gender_raw), levels = race_gender_levels)
-	dat$gender_edu <- if (is.null(gender_edu_levels)) factor(gender_edu_raw) else factor(as.character(gender_edu_raw), levels = gender_edu_levels)
-	dat$race_age <- if (is.null(race_age_levels)) factor(race_age_raw) else factor(as.character(race_age_raw), levels = race_age_levels)
-	dat$age_edu <- if (is.null(age_edu_levels)) factor(age_edu_raw) else factor(as.character(age_edu_raw), levels = age_edu_levels)
-	dat$age_gender <- if (is.null(age_gender_levels)) factor(age_gender_raw) else factor(as.character(age_gender_raw), levels = age_gender_levels)
-
+	dat$race_gender <- make_interaction(dat$race, dat$gender, race_gender_levels)
+	dat$race_age <- make_interaction(dat$race, dat$age_group, race_age_levels)
+	dat$race_edu <- make_interaction(dat$race, dat$education_level, race_edu_levels)
+	dat$race_past_vote <- make_interaction(dat$race, dat$past_vote, race_past_vote_levels)
+	dat$age_gender <- make_interaction(dat$age_group, dat$gender, age_gender_levels)
+	dat$gender_edu <- make_interaction(dat$gender, dat$education_level, gender_edu_levels)
+	dat$gender_past_vote <- make_interaction(dat$gender, dat$past_vote, gender_past_vote_levels)
+	dat$age_edu <- make_interaction(dat$age_group, dat$education_level, age_edu_levels)
+	dat$age_past_vote <- make_interaction(dat$age_group, dat$past_vote, age_past_vote_levels)
+	dat$edu_past_vote <- make_interaction(dat$education_level, dat$past_vote, edu_past_vote_levels)
 	dat
 }
 
@@ -271,7 +276,8 @@ make_us_post_stage_data <- function(data, party_name, area_shares, config, stage
 	joined <- data %>%
 		select(-any_of(c(
 			"cong_share", "pres_share", "cong_share_scaled", "pres_share_scaled", 
-			"race_edu", "race_gender", "gender_edu", "race_age", "age_edu", "age_gender"
+			"race_edu", "race_gender", "gender_edu", "race_age", "age_edu", "age_gender",
+			"race_past_vote", "gender_past_vote", "age_past_vote", "edu_past_vote"
 		))) %>%
 		mutate(state_cd_chr = as.character(state_cd)) %>%
 		left_join(lookup_sub, by = "state_cd_chr") %>%
@@ -293,7 +299,11 @@ make_us_post_stage_data <- function(data, party_name, area_shares, config, stage
 			gender_edu_levels = stage_obj$gender_edu_levels,
 			race_age_levels = stage_obj$race_age_levels,
 			age_edu_levels = stage_obj$age_edu_levels,
-			age_gender_levels = stage_obj$age_gender_levels
+			age_gender_levels = stage_obj$age_gender_levels,
+			race_past_vote_levels = stage_obj$race_past_vote_levels,
+			gender_past_vote_levels = stage_obj$gender_past_vote_levels,
+			age_past_vote_levels = stage_obj$age_past_vote_levels,
+			edu_past_vote_levels = stage_obj$edu_past_vote_levels
 		)
 	} else {
 		add_us_post_interactions(joined)
@@ -331,29 +341,33 @@ fit_us_post_stage <- function(dat, party_name, config) {
 	}
 
 	formula_full <- if (use_interactions) {
-		y ~ v_s(cong_share) + v_s(pres_share) +
-			(1 | state_abbrv) +
-			(1 | state_cd) +
-			(1 | gender) +
-			(1 | race) +
-			(1 | age_group) +
-			(1 | education_level) +
-			(1 | race_edu) +
-			(1 | race_gender) +
-			(1 | gender_edu) +
-			(1 | race_age) +
-			(1 | age_edu) +
-			(1 | age_gender) +
-			(1 | past_vote)
+	y ~ v_s(cong_share) + v_s(pres_share) +
+		(1 | state_abbrv) +
+		(1 | state_cd) +
+		(1 | race) +
+		(1 | gender) +
+		(1 | age_group) +
+		(1 | education_level) +
+		(1 | past_vote) +
+		(1 | race_gender) +
+		(1 | race_age) +
+		(1 | race_edu) +
+		(1 | race_past_vote) +
+		(1 | age_gender) +
+		(1 | gender_edu) +
+		(1 | gender_past_vote) +
+		(1 | age_edu) +
+		(1 | age_past_vote) +
+		(1 | edu_past_vote)
 	} else {
-		y ~ v_s(cong_share) + v_s(pres_share) +
-			(1 | state_abbrv) +
-			(1 | state_cd) +
-			(1 | gender) +
-			(1 | race) +
-			(1 | age_group) +
-			(1 | education_level) +
-			(1 | past_vote)
+	y ~ v_s(cong_share) + v_s(pres_share) +
+		(1 | state_abbrv) +
+		(1 | state_cd) +
+		(1 | race) +
+		(1 | gender) +
+		(1 | age_group) +
+		(1 | education_level) +
+		(1 | past_vote)
 	}
 
 	fit_full <- tryCatch(
@@ -381,7 +395,11 @@ fit_us_post_stage <- function(dat, party_name, config) {
 			gender_edu_levels = levels(d$gender_edu),
 			race_age_levels = levels(d$race_age),
 			age_edu_levels = levels(d$age_edu),
-			age_gender_levels = levels(d$age_gender)
+			age_gender_levels = levels(d$age_gender),
+			race_past_vote_levels = levels(d$race_past_vote),
+			gender_past_vote_levels = levels(d$gender_past_vote),
+			age_past_vote_levels = levels(d$age_past_vote),
+			edu_past_vote_levels = levels(d$edu_past_vote)
 		))
 	}
 
