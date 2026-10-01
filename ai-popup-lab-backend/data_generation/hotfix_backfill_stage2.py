@@ -46,6 +46,7 @@ from __future__ import annotations
 
 import logging
 import tempfile
+import threading
 from pathlib import Path
 
 import pandas as pd
@@ -153,6 +154,50 @@ def _report_panel_completeness(
                     country, week_label, context, filled, total)
 
 
+def _read_first(*paths: str) -> str:
+    for p in paths:
+        try:
+            return Path(p).read_text().strip()
+        except Exception:
+            continue
+    return "n/a"
+
+
+def _cgroup_snapshot() -> str:
+    """One-line view of the memory limit/usage this container actually has (cgroup v2, then v1)."""
+    def mb(v: str) -> str:
+        try:
+            return f"{int(v) / 1024 ** 2:,.0f}MB"
+        except ValueError:
+            return v  # "max" (unlimited) or "n/a"
+
+    cur = _read_first("/sys/fs/cgroup/memory.current", "/sys/fs/cgroup/memory/memory.usage_in_bytes")
+    peak = _read_first("/sys/fs/cgroup/memory.peak", "/sys/fs/cgroup/memory/memory.max_usage_in_bytes")
+    limit = _read_first("/sys/fs/cgroup/memory.max", "/sys/fs/cgroup/memory/memory.limit_in_bytes")
+    total = "n/a"
+    try:
+        for line in Path("/proc/meminfo").read_text().splitlines():
+            if line.startswith("MemTotal:"):
+                total = f"{int(line.split()[1]) / 1024:,.0f}MB"
+                break
+    except Exception:
+        pass
+    return f"current={mb(cur)} peak={mb(peak)} cgroup_limit={mb(limit)} host_MemTotal={total}"
+
+
+def _cgroup_oom_events() -> str:
+    """Raw cgroup OOM counters; an `oom_kill` count above 0 confirms the kernel killed a process."""
+    return _read_first("/sys/fs/cgroup/memory.events", "/sys/fs/cgroup/memory/memory.oom_control").replace("\n", " | ")
+
+
+def _memory_sampler(stop: threading.Event, label: str, interval: float = 15.0) -> None:
+    while not stop.wait(interval):
+        try:
+            logger.info("[%s] container memory: %s", label, _cgroup_snapshot())
+        except Exception:
+            pass
+
+
 def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) -> None:
     """Run the R post-stratification on the vote-choice panel and store all outputs."""
     extended_frame_path = storage.get_hotfix_backfill_extended_frame_path(country, week_label)
@@ -184,15 +229,26 @@ def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) 
 
         output_dir = tmp_path / "output"
         output_dir.mkdir()
-        run_extension_script(
-            survey_path=survey_path,
-            frame_path=frame_path,
-            output_dir=output_dir,
-            country=country,
-            compute_draws=STAGE2_COMPUTE_DRAWS,
-            export_cell_draws=STAGE2_EXPORT_CELL_DRAWS,
-            area_shares_path=area_shares_path,
-        )
+        label = f"{country} {week_label}"
+        logger.info("[%s] container memory before R: %s", label, _cgroup_snapshot())
+        stop_sampler = threading.Event()
+        sampler = threading.Thread(target=_memory_sampler, args=(stop_sampler, label), daemon=True)
+        sampler.start()
+        try:
+            run_extension_script(
+                survey_path=survey_path,
+                frame_path=frame_path,
+                output_dir=output_dir,
+                country=country,
+                compute_draws=STAGE2_COMPUTE_DRAWS,
+                export_cell_draws=STAGE2_EXPORT_CELL_DRAWS,
+                area_shares_path=area_shares_path,
+            )
+        finally:
+            stop_sampler.set()
+            sampler.join(timeout=2)
+            logger.info("[%s] container memory after R: %s", label, _cgroup_snapshot())
+            logger.info("[%s] cgroup OOM counters: %s", label, _cgroup_oom_events())
 
         produced = {p.name: p for p in output_dir.glob("*.csv")}
         missing = [name for name in EXPECTED_R_OUTPUTS if name not in produced]
