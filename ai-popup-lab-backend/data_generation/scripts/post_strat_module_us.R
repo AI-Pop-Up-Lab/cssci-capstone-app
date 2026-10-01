@@ -679,8 +679,8 @@ build_us_post_share_draws_long <- function(share_draws) {
 # --- 1-WAY & 2-WAY MARGINAL AGGREGATIONS (WITH D-R MARGINS & 95% CIs) ---
 
 compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, config) {
-	margins_1way <- list("age_group", "education_level", "race", "gender")
-	margins_2way <- combn(c("age_group", "education_level", "race", "gender"), 2, simplify = FALSE)
+	margins_1way <- list("age_group", "education_level", "race", "gender", "past_vote")
+	margins_2way <- combn(c("age_group", "education_level", "race", "gender", "past_vote"), 2, simplify = FALSE)
 	all_margins <- c(margins_1way, margins_2way)
 	
 	dnv_party <- "Did not vote"
@@ -695,7 +695,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 	if (nrow(test_mat) == n_frame) { n_sims <- ncol(test_mat); transposed <- FALSE }
 	else { n_sims <- nrow(test_mat); transposed <- TRUE }
 	
-	draw_aggregations <- setNames(lapply(all_margins, function(x) vector("list", n_sims)), 
+	draw_aggregations <- setNames(lapply(all_margins, function(x) vector("list", n_sims)),
 								  sapply(all_margins, paste, collapse = "_"))
 	
 	# Loop through each MAVB simulation draw to build exact joint distributions
@@ -705,7 +705,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 		
 		df_s <- as_tibble(prob_s)
 		df_s$expected_N_raked <- frame_pred$expected_N_raked
-		for (v in c("age_group", "education_level", "race", "gender")) df_s[[v]] <- frame_pred[[v]]
+		for (v in c("age_group", "education_level", "race", "gender", "past_vote")) df_s[[v]] <- frame_pred[[v]]
 		
 		for (margin_vars in all_margins) {
 			margin_name <- paste(margin_vars, collapse = "_")
