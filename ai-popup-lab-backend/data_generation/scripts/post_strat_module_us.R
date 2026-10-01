@@ -15,10 +15,10 @@ default_us_post_strat_config <- function() {
 		seed = NULL,
 		drop_other_gender = TRUE,
 		export_cell_draws = FALSE,
-		dem_party_name = "Democratic",
+		dem_party_name = "Democrat",
 		rep_party_name = "Republican",
 		share_col_mapping = list(
-			"Democratic"   = c(cong = "dem_share",       pres = "state_pres_dem_share"),
+			"Democrat"   = c(cong = "dem_share",       pres = "state_pres_dem_share"),
 			"Republican"   = c(cong = "rep_share",       pres = "state_pres_rep_share"),
 			"Other"        = c(cong = "other_share",     pres = "state_pres_other_share"),
 			"Did not vote" = c(cong = "no_vote_share",   pres = "state_pres_no_vote_share")
