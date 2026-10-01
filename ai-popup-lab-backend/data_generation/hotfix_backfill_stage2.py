@@ -48,6 +48,7 @@ import logging
 import tempfile
 import threading
 from pathlib import Path
+import subprocess
 
 import pandas as pd
 
@@ -175,14 +176,15 @@ def _cgroup_snapshot() -> str:
     peak = _read_first("/sys/fs/cgroup/memory.peak", "/sys/fs/cgroup/memory/memory.max_usage_in_bytes")
     limit = _read_first("/sys/fs/cgroup/memory.max", "/sys/fs/cgroup/memory/memory.limit_in_bytes")
     total = "n/a"
+    shmem = "n/a"
     try:
-        for line in Path("/proc/meminfo").read_text().splitlines():
-            if line.startswith("MemTotal:"):
-                total = f"{int(line.split()[1]) / 1024:,.0f}MB"
+        for line in Path("/sys/fs/cgroup/memory.stat").read_text().splitlines():
+            if line.startswith("shmem "):
+                shmem = f"{int(line.split()[1]) / 1024 ** 2:,.0f}MB"
                 break
     except Exception:
         pass
-    return f"current={mb(cur)} peak={mb(peak)} cgroup_limit={mb(limit)} host_MemTotal={total}"
+    return f"current={mb(cur)} peak={mb(peak)} cgroup_limit={mb(limit)} host_MemTotal={total} shmem={shmem}"
 
 
 def _cgroup_oom_events() -> str:
@@ -231,6 +233,8 @@ def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) 
         output_dir.mkdir()
         label = f"{country} {week_label}"
         logger.info("[%s] container memory before R: %s", label, _cgroup_snapshot())
+        logger.info("[%s] /tmp mount: %s", label, subprocess.run(["df", "-T", str(tmp_path)], capture_output=True, text=True).stdout)
+        logger.info("[%s] container memory before R: %s", label, _cgroup_snapshot())
         stop_sampler = threading.Event()
         sampler = threading.Thread(target=_memory_sampler, args=(stop_sampler, label), daemon=True)
         sampler.start()
@@ -249,6 +253,7 @@ def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) 
             sampler.join(timeout=2)
             logger.info("[%s] container memory after R: %s", label, _cgroup_snapshot())
             logger.info("[%s] cgroup OOM counters: %s", label, _cgroup_oom_events())
+            logger.info("[%s] output dir: %s", label, [(f.name, f.stat().st_size) for f in output_dir.glob("*")])
 
         produced = {p.name: p for p in output_dir.glob("*.csv")}
         missing = [name for name in EXPECTED_R_OUTPUTS if name not in produced]

@@ -848,13 +848,20 @@ build_cell_draws_wide <- function(pi_draws, frame_pred, parties) {
 	res <- list()
 	for (p in parties) {
 		df <- as.data.frame(party_draws[[p]])
+		party_draws[[p]] <- NULL  # memory only: this party's list-of-vectors is no longer needed
 		colnames(df) <- paste0("draw_", seq_len(n_sims))
 		df <- as_tibble(df)
 		df$cell_id <- seq_len(n_frame)
 		df$vote_2026 <- p
 		res[[p]] <- df %>% select(cell_id, vote_2026, starts_with("draw_"))
+		rm(df)  # memory only
+		invisible(gc())
 	}
-	bind_rows(res)
+	rm(party_draws)  # memory only
+	out <- bind_rows(res)
+	rm(res)  # memory only
+	invisible(gc())
+	out
 }
 
 # --- MAIN POST-STRATIFICATION RUNNER ---
@@ -901,6 +908,10 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 	share_draws_ci <- build_us_post_share_draws_ci(share_draws, parties, mrp_estimates)
 	extended_frame <- build_us_post_extended_frame(prob_mat, frame_pred)
 	stage_diagnostics <- compute_us_post_stage_diagnostics(sb_fits, parties)
+	# memory only: sb_fits/survey_model/area_shares are not used again and are not part of the
+	# returned result; free them before the memory-heavy CD-draws, margins and cell-draws steps.
+	rm(sb_fits, survey_model, area_shares)
+	invisible(gc())
 	aggregate_counts <- compute_us_post_aggregate_counts(extended_frame)
 	cd_party_point <- compute_us_post_cd_point(prob_mat, frame_pred, parties)
 	cd_party_draws <- compute_us_post_cd_draws(pi_draws, frame_pred, parties)
@@ -915,6 +926,9 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 		config$msg("Exporting cell-level draws...")
 		cell_draws <- build_cell_draws_wide(pi_draws, frame_pred, parties)
 	}
+	# memory only: pi_draws is not part of the returned result; free it before outputs are written.
+	rm(pi_draws)
+	invisible(gc())
 
 	list(
 		point_estimates = mrp_estimates,
