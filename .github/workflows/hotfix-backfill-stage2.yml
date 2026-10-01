@@ -110,7 +110,7 @@ jobs:
               --restart-policy Never \
               --location westeurope \
               --cpu 1 \
-              --memory 16 \
+              --memory 32 \
               --command-line "python -m data_generation.hotfix_backfill_stage2_entry" \
               --environment-variables \
                 ENV=production \

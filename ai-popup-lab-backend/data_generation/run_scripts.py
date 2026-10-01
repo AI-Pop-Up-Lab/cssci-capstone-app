@@ -107,7 +107,7 @@ def run_extension_script(
     logger.info("Running R script for country=%s (compute_draws=%s)", country, compute_draws)
     logger.info("Command: %s", " ".join(cmd))
 
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=4500)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=7200)
 
     if result.stdout:
         logger.info("R stdout:\n%s", result.stdout)
