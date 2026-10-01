@@ -763,7 +763,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 	results <- list()
 	df_point <- as_tibble(prob_mat)
 	df_point$expected_N_raked <- frame_pred$expected_N_raked
-	for (v in c("age_group", "education_level", "race", "gender")) df_point[[v]] <- frame_pred[[v]]
+	for (v in c("age_group", "education_level", "race", "gender", "past_vote")) df_point[[v]] <- frame_pred[[v]]
 	
 	for (margin_vars in all_margins) {
 		margin_name <- paste(margin_vars, collapse = "_")
