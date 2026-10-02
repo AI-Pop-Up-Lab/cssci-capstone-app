@@ -499,3 +499,14 @@ header.header-scrolled #hamburger-right::after{
         font-size: 9px;
     }
 }
+/* Thank You page exemption */
+body:has(.ThankYouPage) header:not(.nav-menu-open) {
+    min-height: auto;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    background-color: #334E58;
+}
+
+body:has(.ThankYouPage) #header-left {
+    border: 1px solid rgba(209, 227, 221, 0.25);
+}
