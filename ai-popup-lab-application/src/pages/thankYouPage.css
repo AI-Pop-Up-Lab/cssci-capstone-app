@@ -1,0 +1,73 @@
+.ThankYouPage {
+  min-height: 650px;
+  background-color: #334E58;
+  position: relative;
+  overflow: hidden;              
+  padding: 40px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.thank-you-text {
+  position: relative;
+  z-index: 1;                    
+}
+
+.thank-you-text h1 {
+  font-size: clamp(40px, 9vw, 70px);
+  color: #D1E3DD;
+  margin: 0;
+}
+
+.thank-you-text h2 {
+  font-size: clamp(20px, 4.5vw, 36px);
+  font-weight: 300;
+  color: #D1E3DD;
+  margin: 0.3em 0;
+}
+
+.thank-you-text h3 {
+  font-size: clamp(24px, 6vw, 46px);
+  color: #FCBFB7;
+  margin: 0;
+}
+
+.spring {
+  position: absolute;
+  width: clamp(70px, 12vw, 150px);  
+  animation: rotate 8s linear infinite;
+  pointer-events: none;
+}
+
+.spring-top {
+  top: 10%;
+  right: 10%;
+}
+
+.spring-bottom {
+  bottom: 10%;
+  left: 10%;
+}
+@media (max-width: 600px) {
+  .ThankYouPage {
+    min-height: 500px;
+  }
+
+  .spring-top {
+    top: 20px;
+    right: 20px;
+  }
+
+  .spring-bottom {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
