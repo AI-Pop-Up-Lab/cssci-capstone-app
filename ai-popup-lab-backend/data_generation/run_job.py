@@ -44,6 +44,23 @@ COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if
 # What to run: "panel", "mrp", or "both"
 JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
 
+# If False (the default), skip the memory-heavy simulation-draws phase of
+# MRP entirely — quartile/uncertainty tables and CD-level breakdowns won't
+# be produced, but extended_frame (the file the rest of the pipeline
+# actually consumes right now) is computed earlier and unaffected. Flip to
+# true via env var when those other outputs are needed again, without a
+# code change.
+#
+# NOTE: as of the current post_strat_module_us.R, this no longer actually
+# skips anything for country == "usa" — that module always runs the full
+# draws phase regardless of what's passed here (its only remaining
+# draws-related toggle, config$export_cell_draws, just controls whether
+# the raw per-cell draw matrix gets written). Left in place — still passed
+# through to run_extension_script/the R CLI — in case a country module
+# reintroduces a real gate, but expect every USA MRP run to now take as
+# long as a "full draws" run used to, whatever this is set to.
+COMPUTE_MRP_DRAWS = os.environ.get("COMPUTE_MRP_DRAWS", "false").strip().lower() in ("true", "1", "yes")
+
 
 def _this_week() -> tuple[int, int]:
     """
@@ -153,13 +170,21 @@ def _prepare_survey_for_r(survey_df: pd.DataFrame, panel_date: str) -> pd.DataFr
 
 def _prepare_extended_frame_for_longitudinal(extended_frame: pd.DataFrame) -> pd.DataFrame:
     """
-    aggregate_longitudinal.py expects columns named `party` (outcome) and
-    `prob_raked` (weight) — but the US R module's extended-frame output
-    names these `vote_2026` and `expected_N`. Rename on a copy here rather
-    than upstream, so the blob uploaded to get_extended_frame_path keeps
-    the R script's native column names for any other consumer.
+    aggregate_longitudinal.py (and the frontend charts consuming its output)
+    expect columns named `party` (outcome), `prob_raked` (weight), and
+    `state` (demographic dimension) — but the US R module's extended-frame
+    output names these `vote_2026`, `expected_N`, and `state_abbrv`
+    respectively (the latter because the R module itself requires that
+    exact name with no alias fallback — see _prepare_frame_for_r). Rename
+    on a copy here rather than upstream, so the blob uploaded to
+    get_extended_frame_path keeps the R script's native column names for
+    any other consumer.
     """
-    return extended_frame.rename(columns={"vote_2026": "party", "expected_N": "prob_raked"})
+    return extended_frame.rename(columns={
+        "vote_2026": "party",
+        "expected_N": "prob_raked",
+        "state_abbrv": "state",
+    })
 
 
 def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: bool = False) -> None:
@@ -195,6 +220,23 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
         frame_df = _prepare_frame_for_r(frame_df)
         frame_df.to_csv(frame_path, index=False)
 
+        # Static per-country input the updated US vglmer formula requires
+        # (state-level presidential + district-level congressional vote
+        # shares). Only the US module takes this — post_strat_module_dk_se.R
+        # doesn't, so don't require it for other countries.
+        area_shares_path = None
+        if country.lower() == "usa":
+            area_shares_blob = storage.get_area_level_vote_shares_path(country)
+            area_shares_df = storage.read_dataframe_or_none(area_shares_blob)
+            if area_shares_df is None:
+                raise FileNotFoundError(
+                    f"No area-level vote shares file found for {country} "
+                    f"(expected blob: {area_shares_blob}). Upload it before running MRP — "
+                    f"post_strat_module_us.R's run_post_stratification() requires it."
+                )
+            area_shares_path = tmp_path / f"{country}_area_level_vote_shares.csv"
+            area_shares_df.to_csv(area_shares_path, index=False)
+
         survey_df = storage.read_dataframe_or_none(survey_blob_path)
         if survey_df is None:
             raise FileNotFoundError(
@@ -213,6 +255,8 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
             frame_path=frame_path,
             output_dir=output_dir,
             country=country,
+            compute_draws=COMPUTE_MRP_DRAWS,
+            area_shares_path=area_shares_path,
         )
 
         r_output_path = output_dir / "mrp_extended_frame_predictions.csv"
@@ -220,17 +264,30 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
             raise FileNotFoundError(f"Expected R output not found: {r_output_path}")
 
         extended_frame = pd.read_csv(r_output_path)
-        storage.upload_dataframe(extended_frame, storage.get_extended_frame_path(country, week_label))
+
+        extended_frame_path = (
+            storage.get_backfill_extended_frame_path(country, week_label)
+            if backfill else
+            storage.get_extended_frame_path(country, week_label)
+        )
+        storage.upload_dataframe(extended_frame, extended_frame_path)
         logger.info("[%s] Extended frame uploaded for %s.", country, week_label)
 
-        update_longitudinal_aggregates(
-            country=country,
-            extended_frame=_prepare_extended_frame_for_longitudinal(extended_frame),
-            year=year,
-            week=week,
-            blob_client=storage.get_blob_service_client(),
-            container=storage.CONTAINER_NAME,
-        )
+        if backfill:
+            logger.info(
+                "[%s] Skipping longitudinal aggregate update for %s — backfill runs never "
+                "touch production aggregates.",
+                country, week_label,
+            )
+        else:
+            update_longitudinal_aggregates(
+                country=country,
+                extended_frame=_prepare_extended_frame_for_longitudinal(extended_frame),
+                year=year,
+                week=week,
+                blob_client=storage.get_blob_service_client(),
+                container=storage.CONTAINER_NAME,
+            )
 
     storage.mark_job_ran(country, job_type, week_label)
     logger.info("MRP complete: %s %s (job_type=%s)", country, week_label, job_type)

@@ -13,6 +13,7 @@ panel.runner.run_survey).
 from __future__ import annotations
 
 import logging
+import re
 import time
 from typing import Callable, TypeVar
 
@@ -42,6 +43,7 @@ def retry_call(
     base_delay: float = BASE_DELAY_SECONDS,
     max_delay: float = MAX_DELAY_SECONDS,
     retry_on: tuple[type[BaseException], ...] = (Exception,),
+    should_retry: Callable[[BaseException], bool] | None = None,
     **kwargs,
 ) -> T:
     """
@@ -49,6 +51,12 @@ def retry_call(
     exponential backoff (base_delay * 2**attempt, capped at max_delay) on any
     exception matching `retry_on`. Raises RetryExhausted if every attempt
     fails.
+
+    `should_retry`, if given, is called with each caught exception; if it
+    returns False, the call fails immediately (as RetryExhausted) without
+    burning through the remaining attempts/backoff delay. Use this for
+    errors that are known to be permanent (e.g. HTTP 404/403) rather than
+    transient — retrying those wastes time for no chance of success.
     """
     last_exc: BaseException | None = None
     for attempt in range(1, max_attempts + 1):
@@ -56,6 +64,12 @@ def retry_call(
             return func(*args, **kwargs)
         except retry_on as exc:
             last_exc = exc
+            if should_retry is not None and not should_retry(exc):
+                logger.warning(
+                    "%s failed with a non-retryable error on attempt %d: %s — giving up immediately.",
+                    getattr(func, "__name__", repr(func)), attempt, exc,
+                )
+                break
             if attempt == max_attempts:
                 break
             delay = min(base_delay * (2 ** (attempt - 1)), max_delay)
@@ -65,7 +79,7 @@ def retry_call(
             )
             time.sleep(delay)
 
-    raise RetryExhausted(getattr(func, "__name__", repr(func)), max_attempts, last_exc)
+    raise RetryExhausted(getattr(func, "__name__", repr(func)), attempt, last_exc)
 
 
 def with_retry(
@@ -89,3 +103,34 @@ def with_retry(
         return wrapped
 
     return decorator
+
+
+_HTTP_STATUS_RE = re.compile(r"\b(\d{3})\s+Client Error\b")
+
+
+def is_permanent_http_error(exc: BaseException) -> bool:
+    """
+    should_retry predicate: returns False (don't retry) for HTTP 4xx errors
+    that are permanent — the request will never succeed no matter how many
+    times it's retried (404 Not Found, 403 Forbidden, 406 Not Acceptable,
+    410 Gone, etc). 429 (Too Many Requests) is excluded since that's rate
+    limiting, a transient condition worth retrying. Anything else (network
+    errors, timeouts, 5xx, or an exception whose message doesn't mention a
+    status code at all) returns True — retry as normal.
+
+    Matches on the exception's message text via regex rather than a
+    specific exception type/attribute, since requests.HTTPError and
+    newspaper3k's wrapped download exceptions don't share an exception
+    hierarchy, but both embed the status code in their message the same way
+    ("403 Client Error: ...", "404 Client Error: ...") — confirmed against
+    production logs.
+    """
+    match = _HTTP_STATUS_RE.search(str(exc))
+    if not match:
+        return True
+    status = int(match.group(1))
+    if status == 429:
+        return True
+    if 400 <= status < 500:
+        return False
+    return True

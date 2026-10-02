@@ -30,6 +30,17 @@ Country
             per-week result snapshot for each backfilled week
         backfill checkpoints
             in-progress checkpoint for the week currently being backfilled
+    hotfix_backfill (usa-only, split-stage backfill track — see below)
+        active panel (manually-seeded, week-(t-1) input; stage 1 advances this week by week)
+        biography_panels
+            per-week snapshot after attrition + biography/media_diet (stage 1 output, stage 2 input)
+        vote_choice_panels
+            per-week snapshot after the survey wave / vote choice (stage 2 output)
+        extended_frames
+            per-week MRP extended frame (stage 2 output)
+        mrp_outputs
+            per-week folder holding every other CSV the R script writes
+            (point estimates, 95% CIs, share draws, CD-level, margins, ...)
     Job runs
         job type
             lock files
@@ -41,31 +52,13 @@ Country
 import io
 import os
 import pandas as pd
-from azure.core.exceptions import ResourceNotFoundError
 from azure.storage.blob import BlobServiceClient
 
+CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
 CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
-# clients are created lazily so importing this module (e.g. from the API)
-# doesn't crash when AZURE_STORAGE_CONNECTION_STRING is unset
-_blob_service_client = None
-_container_client = None
-
-
-def _get_blob_service_client():
-    global _blob_service_client
-    if _blob_service_client is None:
-        _blob_service_client = BlobServiceClient.from_connection_string(
-            os.environ["AZURE_STORAGE_CONNECTION_STRING"]
-        )
-    return _blob_service_client
-
-
-def _get_container_client():
-    global _container_client
-    if _container_client is None:
-        _container_client = _get_blob_service_client().get_container_client(CONTAINER_NAME)
-    return _container_client
+_blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+_container_client = _blob_service_client.get_container_client(CONTAINER_NAME)
 
 
 '''----------------
@@ -132,9 +125,75 @@ def get_backfill_historical_panel_path(country, iso_week):
     return f"{country}/backfill_storage/historical_panels/{iso_week}_{country}_panel_results.csv"
 
 
+def get_backfill_extended_frame_path(country, iso_week):
+    """
+    Per-week MRP extended-frame output for a backfilled week. Mirrors
+    get_extended_frame_path but lives on the backfill track, so a backfill's
+    MRP output never overwrites the production extended frame for that week.
+    """
+    return f"{country}/backfill_storage/extended_frames/{iso_week}_extended_frame.csv"
+
+
 def get_backfill_panel_checkpoint_path(country, iso_week):
     """Scratch checkpoint for the week currently being backfilled. Never read as an input."""
     return f"{country}/backfill_storage/checkpoints/{iso_week}_panel_checkpoint.csv"
+
+def get_area_level_vote_shares_path(country):
+    """
+    Static per-country input required by post_strat_module_us.R's
+    run_post_stratification() (state-level presidential + district-level
+    congressional vote shares). USA-only currently.
+    """
+    return f"{country}/{country}_area_level_vote_shares.csv"
+
+
+# ── Hotfix backfill (split-stage: sequential attrition+bio, then parallel
+#    survey+MRP) — a second, independent backfill track alongside
+#    backfill_storage above. Kept entirely separate so this hotfix never
+#    reads or overwrites the (full-cycle, single-track) backfill_storage
+#    blobs or production state. ─────────────────────────────────────────────
+
+def get_hotfix_backfill_active_panel_path(country):
+    """
+    The manually-seeded 'current' active panel that hotfix-backfill stage 1
+    advances week by week (attrition + replacement only). Seed this with a
+    genuine week-(t-1) panel before the first week of a stage-1 run — stage 1
+    itself never seeds it. Stage 2 never reads this blob directly; it reads
+    the per-week snapshot in biography_panels instead, so multiple stage-2
+    containers running in parallel never contend over this single blob.
+    """
+    return f"{country}/hotfix_backfill/{country}_active_panel.csv"
+
+
+def get_hotfix_backfill_biography_panel_path(country, iso_week):
+    """
+    Per-week snapshot written by hotfix-backfill stage 1 once that week's
+    attrition + biography/media_diet generation is done — the full panel,
+    no vote-choice columns yet. This is what stage 2 reads as input for that
+    week, and stage 2 for different weeks reads different blobs here, which
+    is what lets those stage-2 runs happen in parallel with no contention.
+    """
+    return f"{country}/hotfix_backfill/biography_panels/{iso_week}_{country}_panel_biography.csv"
+
+
+def get_hotfix_backfill_vote_panel_path(country, iso_week):
+    """Per-week panel snapshot after hotfix-backfill stage 2's survey wave (vote choice included)."""
+    return f"{country}/hotfix_backfill/vote_choice_panels/{iso_week}_{country}_panel_votes.csv"
+
+
+def get_hotfix_backfill_extended_frame_path(country, iso_week):
+    """Per-week MRP extended-frame output from hotfix-backfill stage 2."""
+    return f"{country}/hotfix_backfill/extended_frames/{iso_week}_extended_frame.csv"
+
+
+def get_hotfix_backfill_mrp_output_path(country, iso_week, filename):
+    """
+    One of the auxiliary CSVs written by the R post-stratification script for
+    a hotfix-backfilled week (everything except the extended frame, which
+    keeps its own path via get_hotfix_backfill_extended_frame_path).
+    `filename` is the R output's file name, e.g. "mrp_point_estimates.csv".
+    """
+    return f"{country}/hotfix_backfill/mrp_outputs/{iso_week}/{filename}"
 
 
 def get_job_lock_path(country, job_type, iso_week):
@@ -152,7 +211,7 @@ def upload_dataframe(df, blob_path, overwrite=True):
     csv_buffer = io.StringIO()
     df.to_csv(csv_buffer, index=False)
 
-    blob_client = _get_container_client().get_blob_client(blob_path)
+    blob_client = _container_client.get_blob_client(blob_path)
     blob_client.upload_blob(csv_buffer.getvalue(), overwrite=overwrite)
 
 
@@ -160,14 +219,14 @@ def upload_file(local_path, blob_path, overwrite=True):
     '''
     Uploads a local file as-is to Azure Blob Storage at blob_path.
     '''
-    blob_client = _get_container_client().get_blob_client(blob_path)
+    blob_client = _container_client.get_blob_client(blob_path)
     with open(local_path, "rb") as f:
         blob_client.upload_blob(f, overwrite=overwrite)
 
 
 def mark_job_ran(country, job_type, iso_week):
     '''Writes a lock blob marking a job type as complete for a given country/week.'''
-    blob_client = _get_container_client().get_blob_client(get_job_lock_path(country, job_type, iso_week))
+    blob_client = _container_client.get_blob_client(get_job_lock_path(country, job_type, iso_week))
     blob_client.upload_blob(b"done", overwrite=True)
 
 
@@ -180,7 +239,7 @@ def read_dataframe(blob_path):
     Reads a CSV blob from Azure Blob Storage into a pandas DataFrame.
     Raises azure.core.exceptions.ResourceNotFoundError if blob_path doesn't exist.
     '''
-    blob_client = _get_container_client().get_blob_client(blob_path)
+    blob_client = _container_client.get_blob_client(blob_path)
     stream = blob_client.download_blob()
     return pd.read_csv(io.BytesIO(stream.readall()))
 
@@ -189,8 +248,7 @@ def read_dataframe_or_none(blob_path):
     '''Like read_dataframe, but returns None instead of raising if the blob is missing.'''
     try:
         return read_dataframe(blob_path)
-    except ResourceNotFoundError:
-        # only a genuinely missing blob becomes None; auth/network errors propagate unchanged
+    except Exception:
         return None
 
 
@@ -198,7 +256,7 @@ def blob_exists(blob_path):
     '''
     Returns True if a blob exists at blob_path, False otherwise.
     '''
-    return _get_container_client().get_blob_client(blob_path).exists()
+    return _container_client.get_blob_client(blob_path).exists()
 
 
 def already_ran(country, job_type, iso_week):
@@ -212,4 +270,4 @@ def get_blob_service_client():
     client rather than one of the path helpers above (e.g. aggregate_longitudinal.py,
     which takes a BlobServiceClient + container name directly).
     '''
-    return _get_blob_service_client()
+    return _blob_service_client
