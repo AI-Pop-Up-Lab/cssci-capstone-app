@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import logging
 import re
 
@@ -12,7 +13,9 @@ from azure_storage_utils import (
     CONTAINER_NAME,
 )
 from .aggregate_longitudinal import (
-    update_longitudinal_aggregates,
+    build_week_aggregates,
+    upload_longitudinal_aggregates,
+    _week_label,
     DEMOGRAPHIC_COLS,
     PARTY_COL,
     WEIGHT_COL,
@@ -77,8 +80,15 @@ def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str
 
     logger.info("[%s] Rebuilding from %d frame(s).", country, len(frames))
 
+    # Only the small per-week aggregates are kept; each full frame is released
+    # before the next one loads, and the CSVs are written once at the end.
+    baseline_parts: list = []
+    demographic_parts: list = []
+    done_weeks: list[str] = []
+
     for year, week, blob_name in frames:
         label = f"{country} {year}-W{week:02d}"
+        frame = None
         try:
             try:
                 frame = read_dataframe(blob_name)
@@ -101,19 +111,29 @@ def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str
                     label, missing_demo,
                 )
 
-            update_longitudinal_aggregates(
-                country=country,
-                extended_frame=frame,
-                year=year,
-                week=week,
-                blob_client=client,
-                container=CONTAINER_NAME,
-            )
-            logger.info("[%s] Longitudinal aggregates updated from %s", label, blob_name)
+            baseline_rows, demo_rows = build_week_aggregates(frame, year, week)
+            baseline_parts.append(baseline_rows)
+            demographic_parts.append(demo_rows)
+            done_weeks.append(_week_label(year, week))
+            logger.info("[%s] Aggregated from %s", label, blob_name)
 
         except Exception:
             logger.exception("Failed: %s", label)
             failed.append(label)
+        finally:
+            frame = None
+            gc.collect()
+
+    if done_weeks:
+        upload_longitudinal_aggregates(
+            country=country,
+            baseline_parts=baseline_parts,
+            demographic_parts=demographic_parts,
+            week_labels=done_weeks,
+            blob_client=client,
+            container=CONTAINER_NAME,
+        )
+        logger.info("[%s] Uploaded aggregates for %d week(s).", country, len(done_weeks))
 
     return failed
 

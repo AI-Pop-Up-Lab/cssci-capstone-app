@@ -64,7 +64,63 @@ def _build_demographic_rows(frame: pd.DataFrame, week: str) -> pd.DataFrame:
     return grouped[["week", "vote_choice"] + demo_cols + ["weight"]]
 
 
-# ── public entry point ───────────────────────────────────────────────────────
+def _merge_and_upload(
+    client,
+    container: str,
+    blob_name: str,
+    new_parts: list[pd.DataFrame],
+    week_labels: list[str],
+) -> pd.DataFrame:
+    """
+    Download the existing aggregate once, drop rows for the weeks being
+    replaced, append the new rows, sort, and upload once.
+    """
+    parts: list[pd.DataFrame] = []
+    existing = _download_csv_or_none(client, container, blob_name)
+    if existing is not None:
+        parts.append(existing[~existing["week"].isin(week_labels)])
+    parts.extend(new_parts)
+
+    merged = (
+        pd.concat(parts, ignore_index=True)
+        .sort_values(["week", "vote_choice"])
+        .reset_index(drop=True)
+    )
+    _upload_csv(client, container, blob_name, merged)
+    return merged
+
+
+# ── public entry points ──────────────────────────────────────────────────────
+
+def build_week_aggregates(
+    extended_frame: pd.DataFrame, year: int, week: int
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Aggregate one extended frame into (baseline_rows, demographic_rows). No I/O."""
+    label = _week_label(year, week)
+    return (
+        _build_baseline_row(extended_frame, label),
+        _build_demographic_rows(extended_frame, label),
+    )
+
+
+def upload_longitudinal_aggregates(
+    country: str,
+    baseline_parts: list[pd.DataFrame],
+    demographic_parts: list[pd.DataFrame],
+    week_labels: list[str],
+    blob_client,
+    container: str,
+) -> None:
+    """Merge any number of weeks' aggregate rows into the stored files with one download/upload each."""
+    baseline_blob = get_simple_frame_aggregate_path(country)
+    demo_blob     = get_demographic_frame_aggregate_path(country)
+
+    baseline = _merge_and_upload(blob_client, container, baseline_blob, baseline_parts, week_labels)
+    logger.info("[%s] Baseline longitudinal updated -> %s (%d rows)", country, baseline_blob, len(baseline))
+
+    demographic = _merge_and_upload(blob_client, container, demo_blob, demographic_parts, week_labels)
+    logger.info("[%s] Demographic longitudinal updated -> %s (%d rows)", country, demo_blob, len(demographic))
+
 
 def update_longitudinal_aggregates(
     country: str,
@@ -74,32 +130,13 @@ def update_longitudinal_aggregates(
     blob_client,
     container: str,
 ) -> None:
-    week_label    = _week_label(year, week)
-    baseline_blob = get_simple_frame_aggregate_path(country)
-    demo_blob     = get_demographic_frame_aggregate_path(country)
-
-    new_baseline_rows = _build_baseline_row(extended_frame, week_label)
-    existing_baseline = _download_csv_or_none(blob_client, container, baseline_blob)
-
-    if existing_baseline is not None:
-        existing_baseline = existing_baseline[existing_baseline["week"] != week_label]
-        baseline = pd.concat([existing_baseline, new_baseline_rows], ignore_index=True)
-    else:
-        baseline = new_baseline_rows
-
-    baseline = baseline.sort_values(["week", "vote_choice"]).reset_index(drop=True)
-    _upload_csv(blob_client, container, baseline_blob, baseline)
-    logger.info("[%s] Baseline longitudinal updated -> %s (%d rows)", country, baseline_blob, len(baseline))
-
-    new_demo_rows = _build_demographic_rows(extended_frame, week_label)
-    existing_demo = _download_csv_or_none(blob_client, container, demo_blob)
-
-    if existing_demo is not None:
-        existing_demo = existing_demo[existing_demo["week"] != week_label]
-        demographic = pd.concat([existing_demo, new_demo_rows], ignore_index=True)
-    else:
-        demographic = new_demo_rows
-
-    demographic = demographic.sort_values(["week", "vote_choice"]).reset_index(drop=True)
-    _upload_csv(blob_client, container, demo_blob, demographic)
-    logger.info("[%s] Demographic longitudinal updated -> %s (%d rows)", country, demo_blob, len(demographic))
+    """Single-week update used by the weekly pipeline (signature unchanged)."""
+    baseline_rows, demo_rows = build_week_aggregates(extended_frame, year, week)
+    upload_longitudinal_aggregates(
+        country,
+        [baseline_rows],
+        [demo_rows],
+        [_week_label(year, week)],
+        blob_client,
+        container,
+    )

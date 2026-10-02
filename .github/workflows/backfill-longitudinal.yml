@@ -42,8 +42,8 @@ jobs:
             --registry-password ${{ secrets.ACR_PASSWORD }} \
             --restart-policy Never \
             --location westeurope \
-            --cpu 1 \
-            --memory 2 \
+            --cpu 2 \
+            --memory 8 \
             --command-line "python -m data_generation.backfill_longitudinal_entry" \
             --environment-variables \
               ENV=production \
