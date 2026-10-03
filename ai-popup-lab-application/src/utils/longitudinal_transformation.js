@@ -29,6 +29,45 @@ export function lookupColour(coloursObj, key) {
 }
 
 /**
+ * ISO week key -> Date of that week's Monday (UTC).
+ * Accepts "2026-W36", "2026_36", "2026-36", "2026_W36".
+ * Returns null if the key can't be parsed.
+ */
+export function isoWeekToMonday(weekKey) {
+  const m = /^(\d{4})[-_ ]?W?(\d{1,2})$/i.exec(String(weekKey ?? "").trim());
+  if (!m) return null;
+  const year = Number(m[1]);
+  const week = Number(m[2]);
+  // ISO week 1 is the week containing 4 January
+  const jan4 = new Date(Date.UTC(year, 0, 4));
+  const jan4DayNr = (jan4.getUTCDay() + 6) % 7; // Mon=0 ... Sun=6
+  const week1Monday = Date.UTC(year, 0, 4 - jan4DayNr);
+  return new Date(week1Monday + (week - 1) * 7 * 86400000);
+}
+
+/**
+ * ISO week key -> "dd/mm/yyyy" of that week's Monday, e.g. 2026-W36 -> "31/08/2026".
+ * Falls back to the raw key if it can't be parsed.
+ */
+export function formatWeekDate(weekKey) {
+  const d = isoWeekToMonday(weekKey);
+  if (!d) return String(weekKey ?? "");
+  const dd = String(d.getUTCDate()).padStart(2, "0");
+  const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+  return `${dd}/${mm}/${d.getUTCFullYear()}`;
+}
+
+/**
+ * Calendar year of the week's Monday (as a string). Used for year-boundary
+ * markers so they agree with the dates shown on the axis (e.g. 2026-W01 starts
+ * on 29/12/2025, so its Monday is still in 2025).
+ */
+export function weekYear(weekKey) {
+  const d = isoWeekToMonday(weekKey);
+  return d ? String(d.getUTCFullYear()) : String(weekKey ?? "").slice(0, 4);
+}
+
+/**
  * parses the raw base CSV text into d3 series format.
  */
 export function parseBaselineCsv(csvText) {
