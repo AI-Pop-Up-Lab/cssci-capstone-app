@@ -1,12 +1,40 @@
 import * as d3 from "d3";
 
 /**
+ * Canonical party names, keyed by every spelling seen in the data
+ * (lowercased + trimmed). Add new aliases here as they turn up.
+ *
+ * The canonical value (right-hand side) should match the casing the rest of
+ * the app uses for party names (e.g. US_PARTIES in voteLongitudinalUSPollsters).
+ */
+const VOTE_CHOICE_ALIASES = {
+  democrat:   "Democrat",
+  democratic: "Democrat",
+};
+
+export function normaliseVoteChoice(raw) {
+  if (raw == null) return raw;
+  const trimmed = String(raw).trim();
+  return VOTE_CHOICE_ALIASES[trimmed.toLowerCase()] ?? trimmed;
+}
+
+/**
+ * Case-insensitive lookup into a party_colours object, so a casing
+ * difference between the data and the colour keys can't turn a line grey.
+ */
+export function lookupColour(coloursObj, key) {
+  if (!coloursObj || key == null) return "#888";
+  const found = Object.keys(coloursObj).find(k => k.toLowerCase() === String(key).toLowerCase());
+  return found ? coloursObj[found] : "#888";
+}
+
+/**
  * parses the raw base CSV text into d3 series format.
  */
 export function parseBaselineCsv(csvText) {
   const rows = d3.csvParse(csvText, d => ({
     week:        d.week,
-    vote_choice: d.vote_choice,
+    vote_choice: normaliseVoteChoice(d.vote_choice),
     share:       +d.share,
   }));
   return rowsToSeries(rows, "share");
@@ -30,7 +58,7 @@ export function parseBaselineCsv(csvText) {
 export function parseDemographicCsv(csvText) {
   return d3.csvParse(csvText, d => ({
     week:            d.week,
-    vote_choice:     d.vote_choice,
+    vote_choice:     normaliseVoteChoice(d.vote_choice),
     race:            d.race,
     gender:          d.gender,
     age_group:       d.age_group,

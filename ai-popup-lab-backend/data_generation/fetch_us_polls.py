@@ -155,7 +155,7 @@ def _validate(df: pd.DataFrame) -> None:
 
 
 # step 2: prepare data 
-def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict, dict, pd.DataFrame]:
     df = df.dropna(subset=["pollster", "startdate", "enddate", "samplesize", "dem", "rep"]).copy()
 
     df["start_date"] = pd.to_datetime(df["startdate"])
@@ -176,13 +176,6 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
     df["other"]      = df["samplesize"] - df["democrat"] - df["republican"]
 
     df["population"] = df["population"].str.strip().str.upper()
-    df["g"] = pd.factorize(df["population"])[0] + 1
-
-    population_lookup = (
-        df[["g", "population"]]
-        .drop_duplicates()
-        .sort_values("g")
-    )
 
     daily_rows = []
     count_cols = ["samplesize"] + PARTY_COLS
@@ -231,6 +224,13 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
     weekly_df["h"] = pd.factorize(weekly_df["pollster"])[0] + 1
     weekly_df["t"] = weekly_df["week"].map(week_to_t).astype(int)
     weekly_df["g"] = pd.factorize(weekly_df["population"])[0] + 1
+
+    # built from weekly_df (not df) so the g codes match the ones sent to Stan
+    population_lookup = (
+        weekly_df[["g", "population"]]
+        .drop_duplicates()
+        .sort_values("g")
+    )
 
     stan_data = {
         "N": len(weekly_df),
@@ -416,3 +416,7 @@ def fetch_and_store_us_polls(
 
     logger.info("US pollster pipeline doneeeeee.")
     return payload
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    fetch_and_store_us_polls()

@@ -6,7 +6,7 @@ import * as d3 from "d3";
 import './voteLongitudinalDemographics.css';
 import axios from "axios";
 import Loader from '../loader';
-import { parseDemographicCsv, aggregateToSeries } from "../../utils/longitudinal_transformation";
+import { parseDemographicCsv, aggregateToSeries, lookupColour } from "../../utils/longitudinal_transformation";
 // import partyColours from '../../assets/partyColours';
 
 function VoteLongitudinalDemographics({ country, countryData }) {
@@ -214,7 +214,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
       // One path + dots + end label per party
       slicedData.forEach(series => {
-        const colour = partyColours[series.party] ?? "#888";
+        const colour = lookupColour(partyColours, series.party);
 
         // Line
         g.append("path")
