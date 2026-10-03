@@ -7,8 +7,8 @@ fetch_us_polls.py
 
 Environment variables:
     AZURE_STORAGE_CONNECTION_STRING  — blob storage connection string
-    US_POLLS_BLOB_CONTAINER          — container name, e.g. "polling-data"
-    US_POLLS_OUTPUT_BLOB_NAME        — output blob, e.g. "us_polls_model_output.json"
+    US_POLLS_BLOB_CONTAINER          — container name, e.g. "us-pollster-data"
+    US_POLLS_OUTPUT_BLOB_NAME        — output blob, e.g. "us_pollster_model_output.json"
     US_POLLS_ARCHIVE                 — "true"/"false", whether to keep dated archive copies
 """
 
@@ -39,8 +39,8 @@ _CSV_URL = (
 )
 
 _CONNECTION_STRING = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
-_CONTAINER         = os.environ.get("US_POLLS_BLOB_CONTAINER", "polling-data")
-_OUTPUT_BLOB_NAME  = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_polls_model_output.json")
+_CONTAINER         = os.environ.get("US_POLLS_BLOB_CONTAINER", "us-pollster-data")
+_OUTPUT_BLOB_NAME  = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_pollster_model_output.json")
 _ARCHIVE           = os.environ.get("US_POLLS_ARCHIVE", "false").lower() == "true"
 _REQUEST_TIMEOUT   = 60
 

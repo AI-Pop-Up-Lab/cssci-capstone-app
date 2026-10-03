@@ -9,6 +9,14 @@ import Loader from '../loader';
 import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
 // import partyColours from '../../assets/partyColours';
 
+// Series that should not be drawn. Names are compared after lower-casing and
+// stripping everything except letters/digits, so "Did not vote", "Did Not Vote"
+// and "did_not_vote" all match "didnotvote". Add other spellings here if needed.
+const HIDDEN_SERIES = new Set(["didnotvote"]);
+const normaliseName = name => String(name ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+const buildVisibleSeries = (rows, filters) =>
+  aggregateToSeries(rows, filters).filter(s => !HIDDEN_SERIES.has(normaliseName(s.party)));
+
 function VoteLongitudinalDemographics({ country, countryData }) {
 
   const { t } = useTranslation();
@@ -26,7 +34,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
   const [error, setError] = useState(null);
 
   const demographicKeys = ["gender", "age_group", "education_level", "state", "race"];
-  const chartData = rawRows ? aggregateToSeries(rawRows, filters) : null;
+  const chartData = rawRows ? buildVisibleSeries(rawRows, filters) : null;
   const filterOptions = rawRows
   ? Object.fromEntries(
       demographicKeys.map(key => [
@@ -60,8 +68,9 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
   useEffect(() => {
     if (!rawRows) return;
-    const series = aggregateToSeries(rawRows, {});
-    setRangeIdx([0, chartData[0].values.length - 1]);
+    const series = buildVisibleSeries(rawRows, {});
+    if (!series[0]) return;
+    setRangeIdx([0, series[0].values.length - 1]);
   }, [rawRows]);
 
   // A filter can drop weeks, shrinking the series. Keep the slider range

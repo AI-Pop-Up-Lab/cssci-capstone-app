@@ -19,11 +19,23 @@ export function normaliseVoteChoice(raw) {
 }
 
 /**
+ * Colours that always win over whatever party_colours says, keyed by the
+ * lowercased party name. Used so "Other" is the same brown everywhere.
+ */
+const COLOUR_OVERRIDES = {
+  other: "#8B5E3C",
+};
+
+/**
  * Case-insensitive lookup into a party_colours object, so a casing
  * difference between the data and the colour keys can't turn a line grey.
+ * Overrides in COLOUR_OVERRIDES take precedence.
  */
 export function lookupColour(coloursObj, key) {
-  if (!coloursObj || key == null) return "#888";
+  if (key == null) return "#888";
+  const override = COLOUR_OVERRIDES[String(key).trim().toLowerCase()];
+  if (override) return override;
+  if (!coloursObj) return "#888";
   const found = Object.keys(coloursObj).find(k => k.toLowerCase() === String(key).toLowerCase());
   return found ? coloursObj[found] : "#888";
 }

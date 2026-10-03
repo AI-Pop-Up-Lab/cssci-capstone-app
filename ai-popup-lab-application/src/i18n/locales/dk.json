@@ -50,6 +50,21 @@
         },
         "demographicChart": {
             "title": "Stemmer fordelt på demografi"
+        },
+        "voteLongitudinal": {
+            "title": "Stemmeandel pr. parti over tid",
+            "selected": "Valgt",
+            "to": "til"
+        },
+        "voteLongitudinalDemographic": {
+            "title": "Stemmeandel pr. parti over tid opdelt efter demografiske grupper blandt sandsynlige vælgere",
+            "selected": "Valgt",
+            "to": "til"
+        },
+        "pollstersUS": {
+            "title": "Samlet national gennemsnitlig opbakning",
+            "selected": "Valgt",
+            "to": "til"
         }
     },
     "personaPage": {

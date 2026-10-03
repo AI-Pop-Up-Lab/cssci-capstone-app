@@ -48,6 +48,8 @@ jobs:
             --command-line "python -m data_generation.fetch_us_polls" \
             --environment-variables \
               ENV=production \
+              US_POLLS_BLOB_CONTAINER="us-pollster-data" \
+              US_POLLS_OUTPUT_BLOB_NAME="us_pollster_model_output.json" \
               US_POLLS_ARCHIVE="${{ github.event.inputs.archive }}" \
             --secure-environment-variables \
               AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \

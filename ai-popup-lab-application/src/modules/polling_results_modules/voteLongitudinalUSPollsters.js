@@ -8,7 +8,7 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseBaselineCsv, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
+import { parseBaselineCsv, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -52,12 +52,6 @@ function isoWeekInfo(date) {
 function toISOWeekKey(date) {
   const { year, week } = isoWeekInfo(date);
   return `${year}-W${String(week).padStart(2, "0")}`;
-}
-
-function lookupColour(coloursObj, key) {
-  if (!coloursObj) return "#888";
-  const found = Object.keys(coloursObj).find(k => k.toLowerCase() === key.toLowerCase());
-  return found ? coloursObj[found] : "#888";
 }
 
 function VoteLongitudinalUSPollsters({ country, countryData }) {
