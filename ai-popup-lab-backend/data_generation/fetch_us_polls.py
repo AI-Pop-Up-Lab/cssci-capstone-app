@@ -191,7 +191,12 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
 
     daily_df = pd.DataFrame(daily_rows)
 
-    first_date = daily_df["date"].min()
+    # Anchor week 0 to the MONDAY on/before the earliest poll date so every
+    # 7-day block is a Mon-Sun ISO week. Anchoring to the raw earliest date
+    # made blocks start on arbitrary weekdays, which misaligned them with the
+    # ISO weeks used by the frontend / main longitudinal data.
+    first_date = daily_df["date"].min().normalize()
+    first_date = first_date - pd.Timedelta(days=first_date.weekday())
     last_date  = daily_df["date"].max()
 
     daily_df["week"] = ((daily_df["date"] - first_date).dt.days // 7).astype(int)

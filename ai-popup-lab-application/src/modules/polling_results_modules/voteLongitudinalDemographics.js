@@ -1,4 +1,5 @@
-// d3.js chart which ____
+// d3.js chart which shows party vote share over time amongst likely voters,
+// broken down by demographic filters
 
 import { useRef, useEffect, useState } from "react";
 import { useTranslation, Trans } from 'react-i18next';
@@ -14,8 +15,32 @@ import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, i
 // and "did_not_vote" all match "didnotvote". Add other spellings here if needed.
 const HIDDEN_SERIES = new Set(["didnotvote"]);
 const normaliseName = name => String(name ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
-const buildVisibleSeries = (rows, filters) =>
-  aggregateToSeries(rows, filters).filter(s => !HIDDEN_SERIES.has(normaliseName(s.party)));
+
+// Drop the "did not vote" series, then renormalise what's left so the
+// remaining series sum to 100% for each week (i.e. amongst likely voters).
+// Each week is divided by the sum of the visible series for that week. When
+// the full set sums to 100 this equals the pollsters chart's
+// share / (100 - nonVoterShare) * 100, but it also stays correct if a
+// filter leaves the totals slightly off 100.
+const buildVisibleSeries = (rows, filters) => {
+  const all = aggregateToSeries(rows, filters);
+  const voters = all.filter(s => !HIDDEN_SERIES.has(normaliseName(s.party)));
+
+  const totalByWeek = new Map();
+  voters.forEach(s =>
+    s.values.forEach(v =>
+      totalByWeek.set(v.week, (totalByWeek.get(v.week) ?? 0) + v.share)
+    )
+  );
+
+  return voters.map(s => ({
+    ...s,
+    values: s.values.map(v => {
+      const total = totalByWeek.get(v.week) ?? 0;
+      return { ...v, share: total > 0 ? +(v.share / total * 100).toFixed(2) : 0 };
+    }),
+  }));
+};
 
 function VoteLongitudinalDemographics({ country, countryData }) {
 

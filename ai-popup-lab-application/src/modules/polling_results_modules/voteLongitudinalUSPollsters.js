@@ -243,7 +243,11 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
 
     const weekKeyByT = {};
     time_lookup.forEach(({ t, week_label }) => {
-      weekKeyByT[t] = toISOWeekKey(parseLabelStartDate(week_label));
+      // Key each block by the ISO week containing its midpoint (start + 3 days),
+      // not its start date. For Monday-anchored blocks this is identical, but it
+      // also stays correct for older outputs whose blocks began on any weekday.
+      const start = parseLabelStartDate(week_label);
+      weekKeyByT[t] = toISOWeekKey(new Date(start.getTime() + 3 * 86400000));
     });
 
     return US_PARTIES
