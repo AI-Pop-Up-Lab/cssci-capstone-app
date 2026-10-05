@@ -19,6 +19,7 @@ Country
     Aggregates
         Simple frame aggregate
         Demographic frame aggregate
+        District frame aggregate (week x congressional district x party, for seat projection)
         Panel aggregate
     gdelt cache
         gdelt cache for every week
@@ -91,6 +92,10 @@ def get_simple_frame_aggregate_path(country):
 
 def get_demographic_frame_aggregate_path(country):
     return f"{country}/aggregates/{country}_demographic_frame_aggregate.csv"
+
+
+def get_district_frame_aggregate_path(country):
+    return f"{country}/aggregates/{country}_district_frame_aggregate.csv"
 
 
 def get_panel_aggregate_path(country):

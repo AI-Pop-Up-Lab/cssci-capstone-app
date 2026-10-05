@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 from azure_storage_utils import (
     get_simple_frame_aggregate_path,
     get_demographic_frame_aggregate_path,
+    get_district_frame_aggregate_path,
 )
 
 # ── column config ────────────────────────────────────────────────────────────
@@ -19,6 +20,7 @@ from azure_storage_utils import (
 DEMOGRAPHIC_COLS = ["age_group", "gender", "race", "state_abbrv", "education_level"]
 PARTY_COL        = "party"
 WEIGHT_COL       = "prob_raked"
+DISTRICT_COL     = "state_cd"   # congressional district, e.g. "AK-1"
 
 # ── internal helpers ─────────────────────────────────────────────────────────
 
@@ -64,6 +66,28 @@ def _build_demographic_rows(frame: pd.DataFrame, week: str) -> pd.DataFrame:
     return grouped[["week", "vote_choice"] + demo_cols + ["weight"]]
 
 
+def _build_district_rows(frame: pd.DataFrame, week: str) -> pd.DataFrame:
+    """
+    Compact district-level aggregate: one row per week x district x party.
+    Kept separate from the demographic aggregate on purpose -- adding state_cd
+    to the demographic grouping would multiply its row count several times
+    over, whereas this file is only (districts x parties) rows per week.
+    Returns an empty frame if the frame has no state_cd column (non-US countries).
+    """
+    cols = ["week", "vote_choice", DISTRICT_COL, "weight"]
+    if DISTRICT_COL not in frame.columns:
+        return pd.DataFrame(columns=cols)
+
+    grouped = (
+        frame.groupby([PARTY_COL, DISTRICT_COL], as_index=False, dropna=True)[WEIGHT_COL]
+        .sum()
+    )
+    grouped["week"] = week
+    grouped = grouped.rename(columns={PARTY_COL: "vote_choice", WEIGHT_COL: "weight"})
+    grouped["weight"] = grouped["weight"].round(2)
+    return grouped[cols]
+
+
 def _merge_and_upload(
     client,
     container: str,
@@ -103,6 +127,14 @@ def build_week_aggregates(
     )
 
 
+def build_week_district_aggregate(
+    extended_frame: pd.DataFrame, year: int, week: int
+) -> pd.DataFrame:
+    """District-level rows (week, vote_choice, state_cd, weight) for one frame. No I/O.
+    Empty if the frame has no state_cd column."""
+    return _build_district_rows(extended_frame, _week_label(year, week))
+
+
 def upload_longitudinal_aggregates(
     country: str,
     baseline_parts: list[pd.DataFrame],
@@ -110,8 +142,14 @@ def upload_longitudinal_aggregates(
     week_labels: list[str],
     blob_client,
     container: str,
+    district_parts: list[pd.DataFrame] | None = None,
 ) -> None:
-    """Merge any number of weeks' aggregate rows into the stored files with one download/upload each."""
+    """Merge any number of weeks' aggregate rows into the stored files with one download/upload each.
+
+    `district_parts` is optional so existing callers keep working; empty parts
+    (frames without state_cd) are ignored and the district file is only touched
+    for the weeks that actually produced rows.
+    """
     baseline_blob = get_simple_frame_aggregate_path(country)
     demo_blob     = get_demographic_frame_aggregate_path(country)
 
@@ -120,6 +158,13 @@ def upload_longitudinal_aggregates(
 
     demographic = _merge_and_upload(blob_client, container, demo_blob, demographic_parts, week_labels)
     logger.info("[%s] Demographic longitudinal updated -> %s (%d rows)", country, demo_blob, len(demographic))
+
+    non_empty = [p for p in (district_parts or []) if not p.empty]
+    if non_empty:
+        district_weeks = sorted({w for p in non_empty for w in p["week"].unique()})
+        district_blob  = get_district_frame_aggregate_path(country)
+        district = _merge_and_upload(blob_client, container, district_blob, non_empty, district_weeks)
+        logger.info("[%s] District longitudinal updated -> %s (%d rows)", country, district_blob, len(district))
 
 
 def update_longitudinal_aggregates(
@@ -132,6 +177,7 @@ def update_longitudinal_aggregates(
 ) -> None:
     """Single-week update used by the weekly pipeline (signature unchanged)."""
     baseline_rows, demo_rows = build_week_aggregates(extended_frame, year, week)
+    district_rows = build_week_district_aggregate(extended_frame, year, week)
     upload_longitudinal_aggregates(
         country,
         [baseline_rows],
@@ -139,4 +185,5 @@ def update_longitudinal_aggregates(
         [_week_label(year, week)],
         blob_client,
         container,
+        district_parts=[district_rows],
     )

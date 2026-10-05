@@ -14,11 +14,13 @@ from azure_storage_utils import (
 )
 from .aggregate_longitudinal import (
     build_week_aggregates,
+    build_week_district_aggregate,
     upload_longitudinal_aggregates,
     _week_label,
     DEMOGRAPHIC_COLS,
     PARTY_COL,
     WEIGHT_COL,
+    DISTRICT_COL,
 )
 
 logger = logging.getLogger(__name__)
@@ -96,6 +98,7 @@ def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str
     # before the next one loads, and the CSVs are written once at the end.
     baseline_parts: list = []
     demographic_parts: list = []
+    district_parts: list = []
     done_weeks: list[str] = []
 
     for year, week, blob_name in frames:
@@ -123,9 +126,16 @@ def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str
                     label, missing_demo,
                 )
 
+            if DISTRICT_COL not in frame.columns:
+                logger.warning(
+                    "[%s] Frame has no '%s' column -- no district aggregate (seat projection) for this week.",
+                    label, DISTRICT_COL,
+                )
+
             baseline_rows, demo_rows = build_week_aggregates(frame, year, week)
             baseline_parts.append(baseline_rows)
             demographic_parts.append(demo_rows)
+            district_parts.append(build_week_district_aggregate(frame, year, week))
             done_weeks.append(_week_label(year, week))
             logger.info("[%s] Aggregated from %s", label, blob_name)
 
@@ -141,6 +151,7 @@ def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str
             country=country,
             baseline_parts=baseline_parts,
             demographic_parts=demographic_parts,
+            district_parts=district_parts,
             week_labels=done_weeks,
             blob_client=client,
             container=CONTAINER_NAME,
