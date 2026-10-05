@@ -236,7 +236,12 @@ function DataHubPage() {
             </p>
         
             <div className='datahub-data-buttonrow'>
-                <button className='datahub-download-button-dark'>{t('datahubPage.survey.title')}<img src={downloadIcon} alt="" /></button>
+                <button
+                  className='datahub-download-button-dark'
+                  onClick={() => downloadFieldworkData('main', 'survey', selectedCountry)}
+                >
+                  {t('datahubPage.survey.title')}<img src={downloadIcon} alt="" />
+                </button>
             </div>
         </div>
 
