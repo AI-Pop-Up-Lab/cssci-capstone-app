@@ -125,10 +125,6 @@
                     "content": "We share our methods, our version history, and our source data to ensure the project remains fully reproducible."
                 }
             }
-        },
-        "team": {
-            "title": "Our Team",
-            "content": "The Mechanical Pollster is a tool developed by the AI Pop-up Lab @ the University of Amsterdam, an academic, not-for-profit teaching and research hub within the Computational Social Science (CSSci) Programme. We teach, study, and build AI for public opinion research with a clear public purpose: to create tools that support democratic functioning for the benefit of the public.<br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi, and Xuan Miao."
         }
     },
     "ethicsPage": {
@@ -168,48 +164,95 @@
             }
         }
     },
-    "teamPage": {
-        "title": "OUR TEAM",
-        "description": "At Mechanical Pollster we have a continuous flow of contributors, each partaking in one of the many building blocks of the platform.",
-        "contact": "Contact",
-        "teams": {
-            "poliCog": {
-                "name": "Political Cognitive",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "humanBenchmark": {
-                "name": "Human Benchmarking",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            },
-            "infrastructure": {
-                "name": "Infrastructure",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            }
-        },
-        "members": {
-            "dummy1": {
-                "highlights": [
-                    "Something 1",
-                    "Something 2",
-                    "Something 3"
-                ]
-            },
-            "dummy2": {
-                "highlights": [
-                    "Something 1",
-                    "Something 2",
-                    "Something 3"
-                ]
-            },
-            "dummy3": {
-                "highlights": [
-                    "Something 1",
-                    "Something 2",
-                    "Something 3"
-                ]
-            }
-        }
+   "teamPage": {
+    "title": "OUR TEAM",
+    "description": "At Mechanical Pollster we have a continuous flow of contributors, each partaking in one of the many building blocks of the platform.",
+    "contact": "Contact",
+    "teams": {
+      "poliCog": {
+        "name": "Social Cognition Team",
+        "intro": "The Soc-Cog team focuses on two main areas:",
+        "areas": [
+          {
+            "title": "Cognitive architecture",
+            "text": "Refining the cognitive architecture of our personas by testing candidate approaches and incorporating advances from the literature on Cognitive Aspects of Survey Methodology (CASM) and social cognition. The goal is to achieve high levels of human fidelity in both thought processes and behaviour at the individual-level."
+          },
+          {
+            "title": "Synthetic panel design",
+            "text": "Developing our silicon panel to mirror traditional online-panel polling methods. We use statistical techniques — including regression and post-stratification and iterative proportional fitting — to generalise our findings to the relevant populations and subpopulations of interest."
+          }
+        ]
+      },
+      "humanBenchmark": {
+        "name": "Human Benchmarking Team",
+         "intro": "The Human-Bench team focuses on two main areas:",
+        "areas": [
+            {
+            "title": "Human data collection",
+            "text": "Designing interview protocols and managing and conducting interviews to capture human cognition during survey-taking, alongside behavioral and attitudinal benchmarks. This work requires close alignment with the synthetic-cognition pipeline developed by the Soc-Cog team to ensure that the resulting benchmarks are valid and comparable."
+          },
+          {
+            "title": "Data processing and privacy",
+            "text": "Transcribing interview recordings and ensuring compliance with the GDPR and other privacy and data-protection requirements."
+          }
+        ]
+      },
+      "infrastructure": {
+        "name": "Infrastructure Build Team",
+        "intro": "The Infra-Build team focuses on two main areas:",
+        "areas": [
+            {
+            "title": "Front-end development",
+            "text": "Building an informative, visually engaging, and user-friendly platform, while designing, testing, and refining the user experience across both the Chat and Polling tools."
+          },
+          {
+            "title": "Back-end development",
+            "text": "Designing and implementing systems for efficient data storage, processing, and platform responsiveness, while ensuring that data collection, storage, and retention comply with the GDPR."
+          }
+        ]
+      }
     },
+    "members": {
+      "member1": {
+        "text": "Headed the design and implementation of the survey pipeline"
+      },
+      "member2": {
+        "text": "Worked on a systematic ablation study of the pipeline"
+      },
+      "member3": {
+        "text": "Worked on the cognitive pipeline and the ablation study"
+      },
+      "member4": {
+        "text": "Tested and improved the persona cognitive pipeline"
+      },
+      "member5": {
+        "text": "Designed and developed the interview protocols and survey instruments used as the foundation of project's data collection methodology"
+      },
+      "member6": {
+        "text": "Designed and developed an individual-level validation and contributed to the MRP framework by constructing stratification frames"
+      },
+      "member7": {
+        "text": ""
+      },
+      "member8": {
+        "text": "Designed the website and developed the reference polling average pipeline"
+      },
+      "member9": {
+        "text": "Designed and set up the back-end infrastructure, as well as built the initial version of the website"
+      },
+      "member10": {
+        "text": "Worked on the website’s infastructure"
+      },
+      "member11": {
+        "text": "Worked on the front-end infrastructure of the website"
+      }
+    },
+    "pi": {
+      "label": "Supervised by",
+      "role": "Principal Investigator"
+    }
+  },
+
     "datahubPage": {
         "codebook": "codebook",
         "downloadError": "Download failed. The file may not be available yet — please try again later.",
@@ -354,5 +397,11 @@
       ]
     }
   }
+},"donationSection": {
+  "title": "SUPPORT",
+  "subtitle": "MECHANICAL POLLSTER",
+  "description": "The project is functioning on voluntarily basis, so we would appreciate any help to power the research and ameliorate the platform.",
+  "donationMessage": "We welcome support of any size, any time - whether you choose to give €1 or more.",
+  "button": "DONATE"
 }
 }

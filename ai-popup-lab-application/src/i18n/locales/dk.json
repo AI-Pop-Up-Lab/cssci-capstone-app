@@ -125,10 +125,6 @@
                     "content": "Vi deler vores metoder, vores versionshistorik og vores kildedata for at sikre, at projektet forbliver fuldt reproducerbart."
                 }
             }
-        },
-        "team": {
-            "title": "Vores team",
-            "content": "The Mechanical Pollster er et værktøj udviklet af AI Pop-up Lab ved Universitetet i Amsterdam, et akademisk, almennyttigt undervisnings- og forskningscenter under programmet Computational Social Science (CSSci). Vi underviser, studerer og udvikler AI til meningsmålinger med et klart samfundsmæssigt formål: at skabe værktøjer, der understøtter demokratiske processer til gavn for offentligheden. <br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi og Xuan Miao."
         }
     },
     "ethicsPage": {
@@ -167,29 +163,94 @@
                 "text": "Vores arbejde er ikke-kommercielt og kan bedst forstås som en form for digital aktivisme. Vi samarbejder med et udvalg af partnere, der hjælper os med at levere resultater til offentligheden."
             }
         }
+    },"teamPage": {
+    "title": "VORES TEAM",
+    "description": "Hos Mechanical Pollster har vi en konstant strøm af bidragydere, som hver især bidrager til en af platformens mange byggesten.",
+    "contact": "Kontakt",
+    "teams": {
+      "poliCog": {
+        "name": "Social Cognition Team",
+        "intro": "Soc-Cog-teamet fokuserer på to hovedområder:",
+        "areas": [
+          {
+            "title": "Kognitiv arkitektur",
+            "text": "Vi forfiner vores personers kognitive arkitektur ved at afprøve forskellige tilgange og inddrage de nyeste resultater fra litteraturen om kognitive aspekter af undersøgelsesmetodologi (CASM) og social kognition. Målet er at opnå en høj grad af troværdighed i forhold til menneskelige tankeprocesser og adfærd på individniveau."
+          },
+          {
+            "title": "Design af syntetiske paneler",
+            "text": "Vi udvikler vores siliciumpanel, så det afspejler traditionelle metoder til online-panelundersøgelser. Vi anvender statistiske metoder — herunder regression, poststratificering og iterativ proportional tilpasning — for at generalisere vores resultater til de relevante populationer og underpopulationer af interesse."
+          }
+        ]
+      },
+      "humanBenchmark": {
+        "name": "Human Benchmarking Team",
+         "intro": "Human-Bench-teamet fokuserer på to hovedområder:",
+        "areas": [
+            {
+            "title": "Indsamling af data om mennesker",
+            "text": "Udarbejdelse af interviewprotokoller samt styring og gennemførelse af interviews med henblik på at kortlægge menneskelig kognition under udfyldelsen af spørgeskemaer, sideløbende med adfærds- og holdningsmæssige referenceværdier. Dette arbejde kræver tæt samarbejde med den pipeline for syntetisk kognition, der er udviklet af Soc-Cog-teamet, for at sikre, at de resulterende referenceværdier er valide og sammenlignelige."
+          },
+          {
+            "title": "Databehandling og privatlivsbeskyttelse",
+            "text": "Transskribering af interviewoptagelser og sikring af overholdelse af GDPR og andre krav vedrørende privatliv og databeskyttelse."
+          }
+        ]
+      },
+      "infrastructure": {
+        "name": "Infrastructure Build Team",
+        "intro": "Infra-Build-teamet fokuserer på to hovedområder:",
+        "areas": [
+            {
+            "title": "Front-end development",
+            "text": "At opbygge en informativ, visuelt tiltalende og brugervenlig platform, samtidig med at brugeroplevelsen udformes, testes og finjusteres på tværs af både chat- og afstemningsværktøjerne."
+          },
+          {
+            "title": "Back-end development",
+            "text": "Udvikling og implementering af systemer til effektiv datalagring, databehandling og platformens reaktionsevne, samtidig med at det sikres, at indsamling, lagring og opbevaring af data overholder GDPR."
+          }
+        ]
+      }
     },
-    "teamPage": {
-        "title": "MØD HOLDET",
-        "description": "Dette projekt er et samarbejde mellem studerende fra Computational Social Science og Cultural Data & AI ved Amsterdams Universitet, under vejledning af dr. Roberto Cerina.",
-        "coreTeam": {
-            "title": "Kerneteam",
-            "contact": "Kontakt",
-            "members": {
-                "policog": {
-                    "role": "Poli-Cog",
-                    "text": "Leder projektets politisk-kognitive side: hvordan syntetiske personaer ræsonnerer og taler om politik. Designer chatpipelinens adfærdsregler, så svarene forbliver repræsentative, velfunderede og fri for stereotyper."
-                },
-                "personaSampling": {
-                    "role": "Persona Sampling",
-                    "text": "Bygger de syntetiske stikprøver bag hver måling. Udtrækker repræsentative personaer fra folketællingsbaserede stratifikationsrammer, så hver simuleret respondent afspejler et virkeligt udsnit af befolkningen."
-                },
-                "infrastructure": {
-                    "role": "Infrastruktur",
-                    "text": "Bygger og vedligeholder selve platformen: backend-API'er, datapipelines og deployment, der bringer hvert resultat fra model til browser."
-                }
-            }
-        }
+    "members": {
+      "member1": {
+        "text": "Stod i spidsen for udformningen og implementeringen af undersøgelsesprocessen"
+      },
+      "member2": {
+        "text": "Arbejdede med en systematisk ablationsundersøgelse af rørledningen"
+      },
+      "member3": {
+        "text": "Arbejdede med den kognitive pipeline og ablationsundersøgelsen"
+      },
+      "member4": {
+        "text": "Testet og forbedret den kognitive proces for personaer"
+      },
+      "member5": {
+        "text": "Udformede og udviklede de interviewprotokoller og spørgeskemaer, der dannede grundlaget for projektets metode til dataindsamling"
+      },
+      "member6": {
+        "text": "Har designet og udviklet en valideringsmetode på individniveau og bidraget til MRP-rammeværket ved at opstille stratificeringsrammer"
+      },
+      "member7": {
+        "text": ""
+      },
+      "member8": {
+        "text": "Har designet hjemmesiden og udviklet systemet til beregning af det gennemsnitlige meningsmålerresultat"
+      },
+      "member9": {
+        "text": "Jeg har designet og opsat backend-infrastrukturen samt udviklet den første version af hjemmesiden"
+      },
+      "member10": {
+        "text": "Arbejdede med hjemmesidens infrastruktur"
+      },
+      "member11": {
+        "text": "Arbejdede med hjemmesidens frontend-infrastruktur"
+      }
     },
+    "pi": {
+      "label": "Under vejledning af",
+      "role": "Principal Investigator"
+    }
+  },
     "datahubPage": {
         "codebook": "codebook",
         "downloadError": "Download mislykkedes. Filen er muligvis ikke tilgængelig endnu — prøv igen senere.",
@@ -334,6 +395,12 @@
       ]
     }
   }
+},"donationSection": {
+  "title": "STØT",
+  "subtitle": "MECHANICAL POLLSTER",
+  "description": "Projektet drives på frivillig basis, så vi vil sætte stor pris på enhver form for hjælp til at fremme forskningen og forbedre platformen.",
+  "donationMessage": "Vi tager imod bidrag i alle størrelser, når som helst - uanset om du vælger at donere 1 € eller mere.",
+  "button": "DONÉR"
 }
     
 }

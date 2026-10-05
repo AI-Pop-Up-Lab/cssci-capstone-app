@@ -125,10 +125,6 @@
                     "content": "We delen onze methoden, onze versiegeschiedenis en onze data bronnen om ervoor te zorgen dat het project volledig reproduceerbaar blijft."
                 }
             }
-        },
-        "team": {
-            "title": "Ons Team",
-            "content": "De Mechanical Pollster is een tool die is ontwikkeld door het AI Pop-up Lab @ de Universiteit van Amsterdam, een academisch, non-profit onderwijs- en onderzoekscentrum binnen het Computational Social Science (CSSci) programma. Wij doen onderzoek en ontwikkelen AI voor opinieonderzoek met een duidelijk maatschappelijk doel: het creëren van tools die het democratisch functioneren ondersteunen ten behoeve van het publiek. <br></br><br></br>Ava Ali, Alexandra Roskam, Roberto Cerina, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi en Xuan Miao."
         }
     },
     "ethicsPage": {
@@ -169,27 +165,93 @@
         }
     },
     "teamPage": {
-        "title": "ONTMOET HET TEAM",
-        "description": "Dit project is een samenwerking tussen studenten Computational Social Science en Cultural Data & AI aan de Universiteit van Amsterdam, onder begeleiding van dr. Roberto Cerina.",
-        "coreTeam": {
-            "title": "Kernteam",
-            "contact": "Contact",
-            "members": {
-                "policog": {
-                    "role": "Poli-Cog",
-                    "text": "Leidt de politiek-cognitieve kant van het project: hoe synthetische persona's redeneren en praten over politiek. Ontwerpt de gedragsregels van de chatpipeline zodat antwoorden representatief en onderbouwd blijven, zonder stereotypen."
-                },
-                "personaSampling": {
-                    "role": "Persona Sampling",
-                    "text": "Bouwt de synthetische steekproeven achter elke peiling. Trekt representatieve persona's uit op volkstellingen gebaseerde stratificatiekaders, zodat elke gesimuleerde respondent een echt deel van de bevolking weerspiegelt."
-                },
-                "infrastructure": {
-                    "role": "Infrastructuur",
-                    "text": "Bouwt en onderhoudt het platform zelf: de backend-API's, datapipelines en deployment die elk resultaat van model naar browser brengen."
-                }
-            }
-        }
+    "title": "ONS TEAM",
+    "description": "Bij Mechanical Pollster hebben we een gestage stroom van bijdragers, die elk een bijdrage leveren aan een van de vele bouwstenen van het platform.",
+    "contact": "Contact",
+    "teams": {
+      "poliCog": {
+        "name": "Social Cognition Team",
+        "intro": "Het Soc-Cog-team richt zich op twee hoofdgebieden:",
+        "areas": [
+          {
+            "title": "Cognitieve architectuur",
+            "text": "Het verfijnen van de cognitieve architectuur van onze persona’s door mogelijke benaderingen te testen en nieuwe inzichten uit de literatuur over cognitieve aspecten van enquêtemethodologie (CASM) en sociale cognitie te integreren. Het doel is om zowel in denkprocessen als in gedrag op individueel niveau een hoge mate van realiteitsgetrouwheid te bereiken."
+          },
+          {
+            "title": "Ontwerp van synthetische panelen",
+            "text": "We ontwikkelen ons siliciumpaneel zodat het een afspiegeling vormt van traditionele enquêtemethoden met onlinepanels. We maken gebruik van statistische technieken — waaronder regressie, poststratificatie en iteratieve proportionele aanpassing — om onze bevindingen te generaliseren naar de relevante doelgroepen en subgroepen die voor ons van belang zijn."
+          }
+        ]
+      },
+      "humanBenchmark": {
+        "name": "Human Benchmarking Team",
+         "intro": "Het Human-Bench-team richt zich op twee hoofdgebieden:",
+        "areas": [
+            {
+            "title": "Verzameling van gegevens over mensen",
+            "text": "Het opstellen van interviewprotocollen en het beheren en afnemen van interviews om inzicht te krijgen in de menselijke cognitie tijdens het invullen van enquêtes, in combinatie met gedrags- en attitudenormen. Dit werk vereist nauwe afstemming met de door het Soc-Cog-team ontwikkelde pijplijn voor synthetische cognitie, om te waarborgen dat de resulterende normen geldig en vergelijkbaar zijn."
+          },
+          {
+            "title": "Gegevensverwerking en privacy",
+            "text": "Het uittypen van interviewopnames en het waarborgen van de naleving van de AVG en andere voorschriften op het gebied van privacy en gegevensbescherming."
+          }
+        ]
+      },
+      "infrastructure": {
+        "name": "Infrastructure Build Team",
+        "intro": "Het Infra-Build-team richt zich op twee hoofdgebieden:",
+        "areas": [
+            {
+            "title": "Front-end development",
+            "text": "Het bouwen van een informatief, visueel aantrekkelijk en gebruiksvriendelijk platform, waarbij de gebruikerservaring voor zowel de chat- als de enquêtetools wordt ontworpen, getest en verfijnd."
+          },
+          {
+            "title": "Back-end development",
+            "text": "Het ontwerpen en implementeren van systemen voor efficiënte gegevensopslag, -verwerking en platformresponsiviteit, waarbij wordt gewaarborgd dat het verzamelen, opslaan en bewaren van gegevens in overeenstemming is met de AVG."
+          }
+        ]
+      }
     },
+    "members": {
+      "member1": {
+        "text": "Gaf leiding aan het ontwerp en de implementatie van de enquêtepijplijn"
+      },
+      "member2": {
+        "text": "Ik heb gewerkt aan een systematisch ablatieonderzoek naar de pijpleiding"
+      },
+      "member3": {
+        "text": "Ik heb gewerkt aan de cognitieve pijplijn en het ablatiestudie"
+      },
+      "member4": {
+        "text": "De cognitieve pijplijn voor persona’s getest en verbeterd"
+      },
+      "member5": {
+        "text": "Ontwerp en ontwikkeling van de interviewprotocollen en enquête-instrumenten die als basis dienden voor de methodologie voor gegevensverzameling van het project"
+      },
+      "member6": {
+        "text": "Een validatiemethode op individueel niveau ontworpen en ontwikkeld, en bijgedragen aan het MRP-raamwerk door stratificatiekaders op te stellen"
+      },
+      "member7": {
+        "text": ""
+      },
+      "member8": {
+        "text": "De website ontworpen en de verwerkingspijplijn voor het gemiddelde van de peilingen ontwikkeld"
+      },
+      "member9": {
+        "text": "De back-end-infrastructuur ontworpen en opgezet, en de eerste versie van de website gebouwd"
+      },
+      "member10": {
+        "text": "Ik heb gewerkt aan de infrastructuur van de website"
+      },
+      "member11": {
+        "text": "Ik heb gewerkt aan de front-end-infrastructuur van de website"
+      }
+    },
+    "pi": {
+      "label": "Onder begeleiding van",
+      "role": "Principal Investigator"
+    }
+  },
     "datahubPage": {
         "codebook": "codebook",
         "downloadError": "Downloaden mislukt. Het bestand is mogelijk nog niet beschikbaar — probeer het later opnieuw.",
@@ -334,5 +396,11 @@
       ]
     }
   }
+},"donationSection": {
+  "title": "ONDERSTEUNING",
+  "subtitle": "MECHANICAL POLLSTER",
+  "description": "Het project draait op vrijwillige basis, dus we stellen alle hulp zeer op prijs om het onderzoek te ondersteunen en het platform te verbeteren.",
+  "donationMessage": "We zijn blij met elke bijdrage, hoe groot of klein ook, en op elk moment - of je nu € 1 of meer doneert.",
+  "button": "DONEER"
 }
 }
