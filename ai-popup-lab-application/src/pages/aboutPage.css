@@ -171,6 +171,7 @@
 #about-commitments{
     display: flex;
     flex-direction: column;
+    margin-bottom: 80px;
 }
 
 #about-commitments > p{
@@ -184,10 +185,6 @@
     font-size: 22px;
     font-weight: 400;
     margin-right: 15px;
-}
-
-#about-team{
-    margin-bottom: 80px;
 }
 
 @keyframes header-underline{
