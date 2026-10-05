@@ -35,19 +35,19 @@
   margin: 0;
 }
 
-.spring {
+.gear {
   position: absolute;
   width: clamp(70px, 12vw, 150px);  
   animation: rotate 8s linear infinite;
   pointer-events: none;
 }
 
-.spring-top {
+.gear-top {
   top: 10%;
   right: 10%;
 }
 
-.spring-bottom {
+.gear-bottom {
   bottom: 10%;
   left: 10%;
 }
@@ -56,12 +56,12 @@
     min-height: 500px;
   }
 
-  .spring-top {
+  .gear-top {
     top: 20px;
     right: 20px;
   }
 
-  .spring-bottom {
+  .gear-bottom {
     bottom: 20px;
     left: 20px;
   }

@@ -1,11 +1,11 @@
 import './thankYouPage.css';
-import spring from '../assets/svgs/spring.svg';
+import gear from '../assets/svgs/gear.svg';
 
 function ThankYouPage() {
   return (
     <div className="ThankYouPage unbounded-weight300">
 
-      <img className="spring spring-top" src={spring} alt="" />
+      <img className="gear gear-top" src={gear} alt="" />
 
       <div className="thank-you-text">
         <h1>THANK YOU</h1>
@@ -13,7 +13,7 @@ function ThankYouPage() {
         <h3>MECHANICAL POLLSTER</h3>
       </div>
 
-      <img className="spring spring-bottom" src={spring} alt="" />
+      <img className="gear gear-bottom" src={gear} alt="" />
 
     </div>
   );
