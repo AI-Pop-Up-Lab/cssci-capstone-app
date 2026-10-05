@@ -1,25 +1,24 @@
 // page explaining the project, funding, motivations and team
-import { useInView } from "react-intersection-observer"
-import { useTranslation, Trans } from 'react-i18next';
+import { useInView } from "react-intersection-observer";
+import { useTranslation, Trans } from "react-i18next";
 
-import './aboutPage.css';
+import "./aboutPage.css";
 
 // importing svgs and logo png
-import personaGeneration from '../assets/svgs/personaGeneration.svg'
-import publicAccess from '../assets/svgs/publicAccess.svg'
-import scientificGrounding from '../assets/svgs/scientificGrounding.svg'
+import personaGeneration from "../assets/svgs/personaGeneration.svg";
+import publicAccess from "../assets/svgs/publicAccess.svg";
+import scientificGrounding from "../assets/svgs/scientificGrounding.svg";
 
-import popupLabLogo from '../assets/images/pop_up_logo.png' 
+import popupLabLogo from "../assets/images/pop_up_logo.png";
 
 function AboutPage() {
-
   const { t } = useTranslation();
 
   // using react useInView hook to trigger function when an element becomes visible
   const useInViewAnimation = (threshold = 1) => {
-    const [ref, inView] = useInView({ threshold, triggerOnce: true })
-    return [ref, inView]
-  }
+    const [ref, inView] = useInView({ threshold, triggerOnce: true });
+    return [ref, inView];
+  };
 
   // reference hooks to add to elements
   const [ref1, inView1] = useInViewAnimation();
@@ -28,7 +27,6 @@ function AboutPage() {
   const [ref4, inView4] = useInViewAnimation();
 
   // the inView variable(s) return true when in view, which is used in the react jsx below to add a class to headers triggering an animation
-
 
   return (
     <div className="AboutPage unbounded-weight300">
@@ -43,84 +41,99 @@ function AboutPage() {
       <h2>The team</h2>
       <p>Ava Ali, Alexandra Roskam, Brendan Corcoran, Danielius Jonaitis, Jelle Tuls, Maddy Müller, Shriya Agrawal, Shanella Bleekemolen, Nhu Truong, Wenyi Xi, and Xuan Miao.</p> 
       */}
-    
+
       <div id="about-intro">
-        <div id='about-title'>
-          <h1>DATA <span className='unbounded-weight300'>The AI Pop-Up Lab</span> AND</h1>
+        <div id="about-title">
+          <h1>
+            DATA <span className="unbounded-weight300">The AI Pop-Up Lab</span>{" "}
+            AND
+          </h1>
           <h1>TRANSPARENCY</h1>
           <h1>THROUGH AI</h1>
-          <div id='about-briefing'>{t('aboutPage.description')}</div>
+          <div id="about-briefing">{t("aboutPage.description")}</div>
         </div>
       </div>
-    
-      <h1 ref={ref1} className={`about-header ${inView1 ? 'header-underline-appear' : ''}`}>{t('aboutPage.mission.title')}</h1>
+
+      <h1
+        ref={ref1}
+        className={`about-header ${inView1 ? "header-underline-appear" : ""}`}
+      >
+        {t("aboutPage.mission.title")}
+      </h1>
       <div id="about-first-paragraph">
-        <p className='about-sectiontext'>
+        <p className="about-sectiontext">
           <Trans
-              i18nKey="aboutPage.mission.content"
-              components={{ br: <br/> }}
-            />
+            i18nKey="aboutPage.mission.content"
+            components={{ br: <br /> }}
+          />
         </p>
         <img src={popupLabLogo}></img>
       </div>
 
-      <h1 ref={ref2} className={`about-header ${inView2 ? 'header-underline-appear' : ''}`}>{t('aboutPage.whatwedo.title')}</h1>
-      <p className='about-sectiontext'>
+      <h1
+        ref={ref2}
+        className={`about-header ${inView2 ? "header-underline-appear" : ""}`}
+      >
+        {t("aboutPage.whatwedo.title")}
+      </h1>
+      <p className="about-sectiontext">
         <Trans
-              i18nKey="aboutPage.whatwedo.content"
-              components={{ strong: <strong/> }}
+          i18nKey="aboutPage.whatwedo.content"
+          components={{ strong: <strong /> }}
         />
       </p>
-      
-      <div id='about-whatwedo'>
-        <div className='about-whatwedo-item'>
-          <div className='whatwedo-item-photo'><img src={personaGeneration} alt='persona generation'></img></div>
-          <div className='whatwedo-item-text'>
-            <h2>{t('aboutPage.whatwedo.items.personaGeneration.title')}</h2>
-            <p>{t('aboutPage.whatwedo.items.personaGeneration.content')}</p>
+
+      <div id="about-whatwedo">
+        <div className="about-whatwedo-item">
+          <div className="whatwedo-item-photo">
+            <img src={personaGeneration} alt="persona generation"></img>
+          </div>
+          <div className="whatwedo-item-text">
+            <h2>{t("aboutPage.whatwedo.items.personaGeneration.title")}</h2>
+            <p>{t("aboutPage.whatwedo.items.personaGeneration.content")}</p>
           </div>
         </div>
-        <div className='about-whatwedo-item'>
-          <div className='whatwedo-item-photo'><img src={scientificGrounding} alt='scientific grounding'></img></div>
-          <div className='whatwedo-item-text'>
-            <h2>{t('aboutPage.whatwedo.items.scientificGrounding.title')}</h2>
-            <p>{t('aboutPage.whatwedo.items.scientificGrounding.content')}</p>
+        <div className="about-whatwedo-item">
+          <div className="whatwedo-item-photo">
+            <img src={scientificGrounding} alt="scientific grounding"></img>
+          </div>
+          <div className="whatwedo-item-text">
+            <h2>{t("aboutPage.whatwedo.items.scientificGrounding.title")}</h2>
+            <p>{t("aboutPage.whatwedo.items.scientificGrounding.content")}</p>
           </div>
         </div>
-        <div className='about-whatwedo-item'>
-          <div className='whatwedo-item-photo'><img src={publicAccess} alt='public access'></img></div>
-          <div className='whatwedo-item-text'>
-            <h2>{t('aboutPage.whatwedo.items.publicAccess.title')}</h2>
-            <p>{t('aboutPage.whatwedo.items.publicAccess.content')}</p>
+        <div className="about-whatwedo-item">
+          <div className="whatwedo-item-photo">
+            <img src={publicAccess} alt="public access"></img>
+          </div>
+          <div className="whatwedo-item-text">
+            <h2>{t("aboutPage.whatwedo.items.publicAccess.title")}</h2>
+            <p>{t("aboutPage.whatwedo.items.publicAccess.content")}</p>
           </div>
         </div>
       </div>
 
-      <h1 ref={ref4} className={`about-header ${inView4 ? 'header-underline-appear' : ''}`}>{t('aboutPage.commitments.title')}</h1>
-      
-      <div id='about-commitments'>
+      <h1
+        ref={ref4}
+        className={`about-header ${inView4 ? "header-underline-appear" : ""}`}
+      >
+        {t("aboutPage.commitments.title")}
+      </h1>
+
+      <div id="about-commitments">
         <p>
-          <span>{t('aboutPage.commitments.items.privacy.title')}</span>
-          {t('aboutPage.commitments.items.privacy.content')}
+          <span>{t("aboutPage.commitments.items.privacy.title")}</span>
+          {t("aboutPage.commitments.items.privacy.content")}
         </p>
         <p>
-          <span>{t('aboutPage.commitments.items.partisanship.title')}</span>
-          {t('aboutPage.commitments.items.partisanship.content')}
+          <span>{t("aboutPage.commitments.items.partisanship.title")}</span>
+          {t("aboutPage.commitments.items.partisanship.content")}
         </p>
         <p>
-          <span>{t('aboutPage.commitments.items.openScience.title')}</span>
-          {t('aboutPage.commitments.items.openScience.content')}
+          <span>{t("aboutPage.commitments.items.openScience.title")}</span>
+          {t("aboutPage.commitments.items.openScience.content")}
         </p>
       </div>
-
-      <h1 ref={ref3} className={`about-header ${inView3 ? 'header-underline-appear' : ''}`}>{t('aboutPage.team.title')}</h1>
-      <p id='about-team' className='about-sectiontext'>
-        <Trans
-              i18nKey="aboutPage.team.content"
-              components={{ br: <br/> }}
-            />
-      </p>
-
     </div>
   );
 }
