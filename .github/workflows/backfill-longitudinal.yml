@@ -1,4 +1,4 @@
-name: Backfill Longitudinal Aggregates (from staged frames)
+name: Backfill Longitudinal Aggregates
 
 on:
   workflow_dispatch:

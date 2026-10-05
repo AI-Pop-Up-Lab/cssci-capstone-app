@@ -21,7 +21,7 @@ const MEMBERS = [
   { id: 'member6', team: 'humanBenchmark', name: 'Shriya Agrawal', email: 'shriy.agra@gmail.com', linkedin: 'https://www.linkedin.com/in/shriya-agrawal17'},
   { id: 'member7', team: 'humanBenchmark', name: 'Madeleine Hoffman', email: 'madeleine.hoffman@student.uva.nl', linkedin: 'https://www.linkedin.com/in/madeleine-hoffman-3a97981b6' },
   { id: 'member8', team: 'infrastructure', name: 'Alexandra Roskam', email: 'a.m.i.roskam@uva.nl', linkedin: 'https://www.linkedin.com/in/alexandraroskam/'},
-  { id: 'member9', team: 'infrastructure', name: 'Brendan Corcoran', email: 'brendan.corcoran@mechanical-pollster.com'},
+  { id: 'member9', team: 'infrastructure', name: 'Brendan Corcoran', email: 'brendan.corcoran@mechanical-pollster.com', linkedin: 'https://www.linkedin.com/in/brendan-corcoran-a87b71237'},
   { id: 'member10', team: 'infrastructure', name: 'Lorijn van Leeuwen', linkedin: 'https://www.linkedin.com/in/lorijn-van-leeuwen-5a1355278/'},
   { id: 'member11', team: 'infrastructure', name: 'Oliwia Wolska', email: 'oliwia.wolska@student.uva.nl'},
 
