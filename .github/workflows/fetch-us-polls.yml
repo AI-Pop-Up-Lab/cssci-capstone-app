@@ -1,18 +1,19 @@
-name: Backfill Longitudinal Aggregates (from staged frames)
+name: Fetch US Polls (Stan model -> blob)
 
 on:
   workflow_dispatch:
     inputs:
-      country:
-        description: 'Country'
+      archive:
+        description: 'Also store a dated archive copy of the output'
         required: false
-        default: 'usa'
-      weeks:
-        description: 'Comma-separated ISO weeks whose frames are already staged (e.g. 2026-10,2026-11)'
-        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 jobs:
-  backfill-longitudinal:
+  fetch-us-polls:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -29,27 +30,27 @@ jobs:
         run: |
           az container delete \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name backfill-longitudinal \
+            --name fetch-us-polls \
             --yes || true
 
       - name: Create and run ACI worker
         run: |
           az container create \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name backfill-longitudinal \
+            --name fetch-us-polls \
             --image ${{ secrets.ACR_LOGIN_SERVER }}/weekly-worker:latest \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }} \
             --restart-policy Never \
             --location westeurope \
-            --cpu 2 \
+            --cpu 4 \
             --memory 8 \
-            --command-line "python -m data_generation.backfill_longitudinal_entry" \
+            --command-line "python -m data_generation.fetch_us_polls" \
             --environment-variables \
               ENV=production \
-              COUNTRY="${{ github.event.inputs.country }}" \
-              FRAMES="${{ github.event.inputs.weeks }}" \
-              BLOB_CONTAINER_NAME=generated-data \
+              US_POLLS_BLOB_CONTAINER="us-pollster-data" \
+              US_POLLS_OUTPUT_BLOB_NAME="us_pollster_model_output.json" \
+              US_POLLS_ARCHIVE="${{ github.event.inputs.archive }}" \
             --secure-environment-variables \
               AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
             --os-type Linux
@@ -59,7 +60,7 @@ jobs:
           while true; do
             STATE=$(az container show \
               --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-              --name backfill-longitudinal \
+              --name fetch-us-polls \
               --query "containers[0].instanceView.currentState.state" \
               --output tsv)
             echo "Container state: $STATE"
@@ -71,12 +72,12 @@ jobs:
         run: |
           EXIT_CODE=$(az container show \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name backfill-longitudinal \
+            --name fetch-us-polls \
             --query "containers[0].instanceView.currentState.exitCode" \
             --output tsv)
           echo "Exit code: $EXIT_CODE"
           if [ "$EXIT_CODE" != "0" ]; then
-            echo "Longitudinal backfill failed with exit code $EXIT_CODE"
+            echo "US polls fetch failed with exit code $EXIT_CODE"
             exit 1
           fi
 
@@ -85,12 +86,12 @@ jobs:
         run: |
           az container logs \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name backfill-longitudinal
+            --name fetch-us-polls
 
       - name: Clean up ACI
         if: always()
         run: |
           az container delete \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name backfill-longitudinal \
+            --name fetch-us-polls \
             --yes

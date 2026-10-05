@@ -5,8 +5,12 @@ from pathlib import Path
 import io
 import os
 
-from azure_storage_utils import get_blob_service_client, CONTAINER_NAME
-from data_generation.aggregate_longitudinal import _longitudinal_blob_name, _longitudinal_demographic_blob_name
+from azure_storage_utils import (
+    get_blob_service_client,
+    CONTAINER_NAME,
+    get_simple_frame_aggregate_path,
+    get_demographic_frame_aggregate_path,
+)
 
 router = APIRouter(prefix="/longitudinal")
 
@@ -24,11 +28,20 @@ def _stream_blob_as_csv(blob_name: str) -> StreamingResponse:
     client = get_blob_service_client()
     blob = client.get_blob_client(container=CONTAINER_NAME, blob=blob_name)
     try:
-        data = blob.download_blob().readall()
+        downloader = blob.download_blob()
     except Exception:
         raise HTTPException(status_code=404, detail="Longitudinal data not yet available.")
+
+    def iter_chunks():
+        # Yields each range-request chunk as it arrives from Azure instead of
+        # buffering the entire blob into memory first (readall()) -- keeps
+        # memory flat and starts sending bytes to the client immediately,
+        # rather than only after the full multi-hundred-MB download finishes.
+        for chunk in downloader.chunks():
+            yield chunk
+
     return StreamingResponse(
-        io.BytesIO(data),
+        iter_chunks(),
         media_type="text/csv",
         headers={"Content-Disposition": f"inline; filename={blob_name.split('/')[-1]}"}
     )
@@ -43,7 +56,7 @@ def country_longitudinal_aggregated_simple(country: str):
     if country not in root_keys:
         raise HTTPException(status_code=404, detail="Country not found in data.")
 
-    return _stream_blob_as_csv(_longitudinal_blob_name(country))
+    return _stream_blob_as_csv(get_simple_frame_aggregate_path(country))
 
 
 # GET endpoint to retrieve aggregated longitudinal data with all demographics for a country
@@ -53,7 +66,7 @@ def country_longitudinal_aggregated_demographics(country: str):
     if country not in root_keys:
         raise HTTPException(status_code=404, detail="Country not found in data.")
 
-    return _stream_blob_as_csv(_longitudinal_demographic_blob_name(country))
+    return _stream_blob_as_csv(get_demographic_frame_aggregate_path(country))
 
 
 @router.get("/us_pollster_predictions")

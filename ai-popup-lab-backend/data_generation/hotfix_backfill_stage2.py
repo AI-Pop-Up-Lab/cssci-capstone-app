@@ -12,7 +12,22 @@ ISO week it:
   2. Runs that week's survey wave: GDELT news read, Cohere RAG article
      interpretation, and vote-choice generation — panel.runner.run_survey.
   3. Runs the US post-stratification R script on the resulting panel to
-     produce that week's MRP extended frame.
+     produce that week's MRP extended frame, and stores EVERY CSV the R
+     script writes (not just the extended frame) on the hotfix track.
+
+Three modes:
+  * default      — steps 1-3 above, starting from the stage-1 biography panel.
+  * resume       — like default, but if a saved vote-choice panel already
+                   exists for the week it is loaded instead of the biography
+                   panel, so run_survey only generates the rows whose vote is
+                   still empty. Falls back to the default behaviour when no
+                   saved vote panel exists.
+  * mrp_only     — skips steps 1-2 and runs step 3 against the vote-choice
+                   panel already saved at `get_hotfix_backfill_vote_panel_path`.
+                   If mrp_only and resume are both set, mrp_only wins.
+
+Completeness of the vote column is NO LONGER a hard stop: unfilled rows are
+logged as a warning and MRP runs on whatever is in the panel.
 
 Unlike stage 1, weeks are independent of each other here: each week's
 stage-1 biography panel is already fully formed, and the survey wave for
@@ -31,7 +46,9 @@ from __future__ import annotations
 
 import logging
 import tempfile
+import threading
 from pathlib import Path
+import subprocess
 
 import pandas as pd
 
@@ -39,75 +56,154 @@ import azure_storage_utils as storage
 from .panel.runner import run_survey
 from .generate_panel_results import iso_week_label, isoweek_to_panel_date, _load_country_info
 from .run_scripts import run_extension_script
-from .run_job import _prepare_frame_for_r, _prepare_survey_for_r, COMPUTE_MRP_DRAWS
+from .run_job import _prepare_frame_for_r, _prepare_survey_for_r
 
 logger = logging.getLogger(__name__)
 
 STAGE2_JOB_TYPE = "hotfix_backfill_stage2"
 
+# The hotfix wants every output the R script can produce. (For country ==
+# "usa" the R module currently computes the simulation draws regardless of
+# this flag, but keep it True so the intent is explicit and nothing silently
+# changes if the module ever reintroduces a real gate.) Deliberately NOT
+# imported from run_job.COMPUTE_MRP_DRAWS, which is the production setting.
+STAGE2_COMPUTE_DRAWS = True
 
-def run_stage2_week(country: str, year: int, week: int, force: bool = False) -> None:
+# Also write the raw per-cell draw matrix (mrp_cell_draws.csv). Large: rows =
+# frame cells x parties, columns = n_sims draws — watch container memory.
+STAGE2_EXPORT_CELL_DRAWS = True
+
+EXTENDED_FRAME_FILENAME = "mrp_extended_frame_predictions.csv"
+
+# Files write_post_strat_outputs() always writes for the US module. Missing
+# any of these means the R run didn't finish cleanly, so we refuse to mark the
+# week done. (mrp_margin_*.csv are variable in number; mrp_cell_draws.csv
+# only appears with config$export_cell_draws, so it's listed only because
+# STAGE2_EXPORT_CELL_DRAWS is on — drop it from here if you turn that off.)
+EXPECTED_R_OUTPUTS = (
+    "mrp_point_estimates.csv",
+    "mrp_national_summary_95ci.csv",
+    EXTENDED_FRAME_FILENAME,
+    "mrp_stage_diagnostics.csv",
+    "mrp_aggregate_counts.csv",
+    "mrp_share_draws.csv",
+    "mrp_share_draws_long.csv",
+    "mrp_cell_party_probabilities.csv",
+    "mrp_stickbreaking_conditional_probs.csv",
+    "mrp_cd_party_point_estimates.csv",
+    "mrp_cd_party_draws_long.csv",
+    "mrp_cd_party_95ci.csv",
+    "mrp_cell_draws.csv",
+)
+
+# Column names the vote outcome can have (mirrors survey_aliases in
+# post_strat_module_us.R). Used only for the completeness report.
+VOTE_COLUMN_CANDIDATES = ("vote_2026", "predicted_vote")
+
+
+def _vote_col_name(panel_date) -> str:
+    """Name of this wave's vote column as created by panel.runner.run_survey."""
+    return f"{pd.to_datetime(panel_date).normalize().strftime('%Y%m%d')}_vote"
+
+
+def _vote_completeness(df: pd.DataFrame) -> tuple[str | None, int, int]:
+    """(column used, rows with a non-empty vote, total rows); column is None if not found."""
+    for col in VOTE_COLUMN_CANDIDATES:
+        if col in df.columns:
+            s = df[col]
+            filled = int((s.notna() & (s.astype(str).str.strip() != "")).sum())
+            return col, filled, len(df)
+    return None, 0, len(df)
+
+
+def _report_panel_completeness(
+    panel_df: pd.DataFrame, panel_date, country: str, week_label: str, context: str
+) -> None:
     """
-    Run the survey wave + R extended frame for one week that stage 1 has
-    already finished. Safe to call concurrently for different weeks — each
-    call is scoped to its own week's blobs (biography panel in, vote-choice
-    panel + extended frame out), plus the shared per-week GDELT cache.
-
-    Idempotent per (country, week): if a lock already exists for this week
-    and `force` is False, this is a no-op.
+    Log how complete the vote column is. NON-BLOCKING: the hard stop that used
+    to refuse MRP on a partial panel has been disabled (see the commented-out
+    raise below). Re-enable it by uncommenting that block.
     """
-    week_label = iso_week_label(year, week)
-
-    if not force and storage.already_ran(country, STAGE2_JOB_TYPE, week_label):
-        logger.info("[%s %s] Stage 2 already completed — skipping.", country, week_label)
-        return
-
-    info = _load_country_info(country)
-    question_id = info.get("question_id")
-    if not question_id:
-        logger.info("[%s] Panel not configured — skipping stage 2 for %s.", country, week_label)
-        return
-
-    panel_date = isoweek_to_panel_date(year, week)
-    biography_panel_path = storage.get_hotfix_backfill_biography_panel_path(country, week_label)
-    vote_panel_path = storage.get_hotfix_backfill_vote_panel_path(country, week_label)
-    extended_frame_path = storage.get_hotfix_backfill_extended_frame_path(country, week_label)
-    gdelt_cache_path = storage.get_gdelt_cache_path(country, week_label)
-
-    panel_df = storage.read_dataframe_or_none(biography_panel_path)
-    if panel_df is None:
-        raise FileNotFoundError(
-            f"No stage-1 biography panel found for {country} {week_label} "
-            f"(expected blob: {biography_panel_path}). Run hotfix-backfill stage 1 "
-            f"for this week before stage 2."
+    col, filled, total = _vote_completeness(panel_df)
+    if col is None:
+        # The vote column may be renamed by _prepare_survey_for_r — check what R will actually see.
+        try:
+            col, filled, total = _vote_completeness(_prepare_survey_for_r(panel_df, panel_date))
+        except Exception:
+            logger.exception("[%s %s] %s: couldn't build R-ready survey for the completeness report.",
+                             country, week_label, context)
+    if col is None:
+        logger.warning(
+            "[%s %s] %s: couldn't find a vote column (%s) — can't report completeness. Panel columns: %s",
+            country, week_label, context, VOTE_COLUMN_CANDIDATES, list(panel_df.columns),
         )
+        return
 
-    # ── Step 3: survey wave (news read + vote choice) ──────────────────────
-    news_df = storage.read_dataframe_or_none(gdelt_cache_path)
-    if news_df is not None:
-        logger.info("[%s %s] Loaded GDELT cache from blob (%d rows).", country, week_label, len(news_df))
+    if filled < total:
+        logger.warning(
+            "[%s %s] %s: vote-choice panel is incomplete (%d/%d rows have '%s'). "
+            "Continuing to MRP anyway.",
+            country, week_label, context, filled, total, col,
+        )
+        # ── Hard stop disabled. Uncomment to refuse MRP on a partial panel. ──
+        # raise ValueError(
+        #     f"{context}: vote-choice panel for {country} {week_label} is incomplete "
+        #     f"({filled}/{total} rows have '{col}'). Refusing to run MRP on a partial panel."
+        # )
     else:
-        logger.info("[%s %s] No GDELT cache found — runner will download from GDELT.", country, week_label)
+        logger.info("[%s %s] %s: vote-choice panel complete (%d/%d rows).",
+                    country, week_label, context, filled, total)
 
-    def survey_checkpoint(current_panel: pd.DataFrame) -> None:
-        storage.upload_dataframe(current_panel, vote_panel_path)
 
-    panel_df, news_df = run_survey(
-        question_id=question_id,
-        panel_df=panel_df,
-        panel_date=panel_date,
-        news_df=news_df,
-        on_checkpoint=survey_checkpoint,
-    )
+def _read_first(*paths: str) -> str:
+    for p in paths:
+        try:
+            return Path(p).read_text().strip()
+        except Exception:
+            continue
+    return "n/a"
 
-    storage.upload_dataframe(panel_df, vote_panel_path)
-    logger.info("[%s %s] Vote-choice panel uploaded to %s.", country, week_label, vote_panel_path)
 
-    if news_df is not None:
-        storage.upload_dataframe(news_df, gdelt_cache_path)
-        logger.info("[%s %s] GDELT cache updated.", country, week_label)
+def _cgroup_snapshot() -> str:
+    """One-line view of the memory limit/usage this container actually has (cgroup v2, then v1)."""
+    def mb(v: str) -> str:
+        try:
+            return f"{int(v) / 1024 ** 2:,.0f}MB"
+        except ValueError:
+            return v  # "max" (unlimited) or "n/a"
 
-    # ── Step 4: MRP extended frame via R ────────────────────────────────────
+    cur = _read_first("/sys/fs/cgroup/memory.current", "/sys/fs/cgroup/memory/memory.usage_in_bytes")
+    peak = _read_first("/sys/fs/cgroup/memory.peak", "/sys/fs/cgroup/memory/memory.max_usage_in_bytes")
+    limit = _read_first("/sys/fs/cgroup/memory.max", "/sys/fs/cgroup/memory/memory.limit_in_bytes")
+    total = "n/a"
+    shmem = "n/a"
+    try:
+        for line in Path("/sys/fs/cgroup/memory.stat").read_text().splitlines():
+            if line.startswith("shmem "):
+                shmem = f"{int(line.split()[1]) / 1024 ** 2:,.0f}MB"
+                break
+    except Exception:
+        pass
+    return f"current={mb(cur)} peak={mb(peak)} cgroup_limit={mb(limit)} host_MemTotal={total} shmem={shmem}"
+
+
+def _cgroup_oom_events() -> str:
+    """Raw cgroup OOM counters; an `oom_kill` count above 0 confirms the kernel killed a process."""
+    return _read_first("/sys/fs/cgroup/memory.events", "/sys/fs/cgroup/memory/memory.oom_control").replace("\n", " | ")
+
+
+def _memory_sampler(stop: threading.Event, label: str, interval: float = 15.0) -> None:
+    while not stop.wait(interval):
+        try:
+            logger.info("[%s] container memory: %s", label, _cgroup_snapshot())
+        except Exception:
+            pass
+
+
+def _run_mrp(country: str, week_label: str, panel_df: pd.DataFrame, panel_date) -> None:
+    """Run the R post-stratification on the vote-choice panel and store all outputs."""
+    extended_frame_path = storage.get_hotfix_backfill_extended_frame_path(country, week_label)
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
 
@@ -135,22 +231,191 @@ def run_stage2_week(country: str, year: int, week: int, force: bool = False) -> 
 
         output_dir = tmp_path / "output"
         output_dir.mkdir()
-        run_extension_script(
-            survey_path=survey_path,
-            frame_path=frame_path,
-            output_dir=output_dir,
-            country=country,
-            compute_draws=COMPUTE_MRP_DRAWS,
-            area_shares_path=area_shares_path,
-        )
+        label = f"{country} {week_label}"
+        logger.info("[%s] container memory before R: %s", label, _cgroup_snapshot())
+        logger.info("[%s] /tmp mount: %s", label, subprocess.run(["df", "-T", str(tmp_path)], capture_output=True, text=True).stdout)
+        logger.info("[%s] container memory before R: %s", label, _cgroup_snapshot())
+        stop_sampler = threading.Event()
+        sampler = threading.Thread(target=_memory_sampler, args=(stop_sampler, label), daemon=True)
+        sampler.start()
+        try:
+            run_extension_script(
+                survey_path=survey_path,
+                frame_path=frame_path,
+                output_dir=output_dir,
+                country=country,
+                compute_draws=STAGE2_COMPUTE_DRAWS,
+                export_cell_draws=STAGE2_EXPORT_CELL_DRAWS,
+                area_shares_path=area_shares_path,
+            )
+        finally:
+            stop_sampler.set()
+            sampler.join(timeout=2)
+            logger.info("[%s] container memory after R: %s", label, _cgroup_snapshot())
+            logger.info("[%s] cgroup OOM counters: %s", label, _cgroup_oom_events())
+            logger.info("[%s] output dir: %s", label, [(f.name, f.stat().st_size) for f in output_dir.glob("*")])
 
-        r_output_path = output_dir / "mrp_extended_frame_predictions.csv"
-        if not r_output_path.exists():
-            raise FileNotFoundError(f"Expected R output not found: {r_output_path}")
+        produced = {p.name: p for p in output_dir.glob("*.csv")}
+        missing = [name for name in EXPECTED_R_OUTPUTS if name not in produced]
+        if missing:
+            raise FileNotFoundError(
+                f"R finished but expected outputs are missing for {country} {week_label}: {missing}. "
+                f"Found: {sorted(produced)}"
+            )
 
-        extended_frame = pd.read_csv(r_output_path)
+        # Extended frame: same handling as before (pandas round-trip, which
+        # also normalises R's "NA" strings to empty cells) at its own path.
+        extended_frame = pd.read_csv(produced[EXTENDED_FRAME_FILENAME])
         storage.upload_dataframe(extended_frame, extended_frame_path)
         logger.info("[%s %s] Extended frame uploaded to %s.", country, week_label, extended_frame_path)
+
+        # Everything else the R script wrote, uploaded byte-for-byte.
+        for name, local_path in sorted(produced.items()):
+            if name == EXTENDED_FRAME_FILENAME:
+                continue
+            blob_path = storage.get_hotfix_backfill_mrp_output_path(country, week_label, name)
+            storage.upload_file(local_path, blob_path)
+            logger.info("[%s %s] Uploaded %s -> %s", country, week_label, name, blob_path)
+
+        logger.info(
+            "[%s %s] Stored %d R output file(s) (extended frame + %d auxiliary).",
+            country, week_label, len(produced), len(produced) - 1,
+        )
+
+
+def _load_resume_panel(vote_panel_path: str, panel_date, country: str, week_label: str) -> pd.DataFrame | None:
+    """
+    Load the saved vote-choice panel for resuming, or None if there isn't one.
+    Rows with a blank vote are reset to null so run_survey picks them up, and
+    any half-written news interpretation on those rows is cleared.
+    """
+    panel_df = storage.read_dataframe_or_none(vote_panel_path)
+    if panel_df is None:
+        logger.info("[%s %s] Resume requested but no vote-choice panel exists — "
+                    "falling back to full generation.", country, week_label)
+        return None
+
+    vote_col = _vote_col_name(panel_date)
+    if vote_col not in panel_df.columns:
+        panel_df[vote_col] = None
+
+    # Blank/whitespace answers count as unfilled.
+    blank = panel_df[vote_col].notna() & (panel_df[vote_col].astype(str).str.strip() == "")
+    panel_df.loc[blank, vote_col] = None
+    pending_mask = panel_df[vote_col].isna()
+
+    # Clear stale news-interpretation output on rows we're about to redo, so a
+    # row whose news coin toss now comes up "no" doesn't keep old text.
+    for suffix in ("newsint", "citations", "article_urls"):
+        c = vote_col.replace("_vote", f"_{suffix}")
+        if c in panel_df.columns:
+            panel_df[c] = panel_df[c].astype(object)
+            panel_df.loc[pending_mask, c] = None
+
+    logger.info("[%s %s] Resuming from saved vote panel: %d/%d rows still to fill.",
+                country, week_label, int(pending_mask.sum()), len(panel_df))
+    return panel_df
+
+
+def run_stage2_week(
+    country: str,
+    year: int,
+    week: int,
+    force: bool = False,
+    mrp_only: bool = False,
+    resume: bool = False,
+) -> None:
+    """
+    Run the survey wave + R extended frame for one week that stage 1 has
+    already finished (or, with mrp_only=True, just the R step against an
+    already-saved vote-choice panel). With resume=True, reuse the saved
+    vote-choice panel and generate only the rows still missing. Safe to call
+    concurrently for different weeks — each call is scoped to its own week's
+    blobs.
+
+    Idempotent per (country, week): if a lock already exists for this week
+    and `force` is False, this is a no-op. The lock is only written after the
+    R outputs have all been uploaded.
+    """
+    week_label = iso_week_label(year, week)
+
+    if not force and storage.already_ran(country, STAGE2_JOB_TYPE, week_label):
+        logger.info("[%s %s] Stage 2 already completed — skipping.", country, week_label)
+        return
+
+    info = _load_country_info(country)
+    question_id = info.get("question_id")
+    if not question_id:
+        logger.info("[%s] Panel not configured — skipping stage 2 for %s.", country, week_label)
+        return
+
+    panel_date = isoweek_to_panel_date(year, week)
+    vote_panel_path = storage.get_hotfix_backfill_vote_panel_path(country, week_label)
+
+    # ── MRP-only: reuse the saved vote-choice panel, skip the survey wave ────
+    if mrp_only:
+        panel_df = storage.read_dataframe_or_none(vote_panel_path)
+        if panel_df is None:
+            raise FileNotFoundError(
+                f"MRP-only: no vote-choice panel found for {country} {week_label} "
+                f"(expected blob: {vote_panel_path}). Run stage 2 normally for this week."
+            )
+        _report_panel_completeness(panel_df, panel_date, country, week_label, "MRP-only")
+
+    # ── Full / resume mode: survey wave (news read + vote choice) ────────────
+    else:
+        biography_panel_path = storage.get_hotfix_backfill_biography_panel_path(country, week_label)
+        gdelt_cache_path = storage.get_gdelt_cache_path(country, week_label)
+
+        panel_df = None
+        if resume:
+            panel_df = _load_resume_panel(vote_panel_path, panel_date, country, week_label)
+
+        if panel_df is None:
+            panel_df = storage.read_dataframe_or_none(biography_panel_path)
+            if panel_df is None:
+                raise FileNotFoundError(
+                    f"No stage-1 biography panel found for {country} {week_label} "
+                    f"(expected blob: {biography_panel_path}). Run hotfix-backfill stage 1 "
+                    f"for this week before stage 2."
+                )
+
+        news_df = storage.read_dataframe_or_none(gdelt_cache_path)
+        if news_df is not None:
+            logger.info("[%s %s] Loaded GDELT cache from blob (%d rows).", country, week_label, len(news_df))
+        else:
+            logger.info("[%s %s] No GDELT cache found — runner will download from GDELT.", country, week_label)
+
+        def survey_checkpoint(current_panel: pd.DataFrame) -> None:
+            storage.upload_dataframe(current_panel, vote_panel_path)
+
+        panel_df, news_df = run_survey(
+            question_id=question_id,
+            panel_df=panel_df,
+            panel_date=panel_date,
+            news_df=news_df,
+            on_checkpoint=survey_checkpoint,
+        )
+
+        storage.upload_dataframe(panel_df, vote_panel_path)
+        logger.info("[%s %s] Vote-choice panel uploaded to %s.", country, week_label, vote_panel_path)
+
+        if news_df is not None:
+            storage.upload_dataframe(news_df, gdelt_cache_path)
+            logger.info("[%s %s] GDELT cache updated.", country, week_label)
+
+        # run_survey swallows per-persona failures; report what's left (non-blocking).
+        _report_panel_completeness(panel_df, panel_date, country, week_label, "Post-survey")
+        vc = _vote_col_name(panel_date)
+        if vc in panel_df.columns:
+            left = panel_df[panel_df[vc].isna()]
+            if not left.empty:
+                cols = [c for c in ("panelist_id", "cell_id", "state_cd") if c in left.columns]
+                logger.warning("[%s %s] %d unfilled row(s):\n%s", country, week_label, len(left),
+                               left[cols].to_string() if cols else left.index.tolist())
+
+    # ── MRP extended frame + all other R outputs ─────────────────────────────
+    _run_mrp(country, week_label, panel_df, panel_date)
 
     # Hotfix-backfill track — like the existing MRP backfill path, this
     # never updates production's longitudinal aggregates.

@@ -15,10 +15,10 @@ default_us_post_strat_config <- function() {
 		seed = NULL,
 		drop_other_gender = TRUE,
 		export_cell_draws = FALSE,
-		dem_party_name = "Democratic",
+		dem_party_name = "Democrat",
 		rep_party_name = "Republican",
 		share_col_mapping = list(
-			"Democratic"   = c(cong = "dem_share",       pres = "state_pres_dem_share"),
+			"Democrat"   = c(cong = "dem_share",       pres = "state_pres_dem_share"),
 			"Republican"   = c(cong = "rep_share",       pres = "state_pres_rep_share"),
 			"Other"        = c(cong = "other_share",     pres = "state_pres_other_share"),
 			"Did not vote" = c(cong = "no_vote_share",   pres = "state_pres_no_vote_share")
@@ -229,26 +229,31 @@ prepare_us_post_frame_data <- function(frame, survey_model, config) {
 }
 
 add_us_post_interactions <- function(dat,
-									 race_edu_levels = NULL,
 									 race_gender_levels = NULL,
-									 gender_edu_levels = NULL,
 									 race_age_levels = NULL,
+									 race_edu_levels = NULL,
+									 race_past_vote_levels = NULL,
+									 age_gender_levels = NULL,
+									 gender_edu_levels = NULL,
+									 gender_past_vote_levels = NULL,
 									 age_edu_levels = NULL,
-									 age_gender_levels = NULL) {
-	race_edu_raw <- interaction(dat$race, dat$education_level, drop = TRUE, sep = "___")
-	race_gender_raw <- interaction(dat$race, dat$gender, drop = TRUE, sep = "___")
-	gender_edu_raw <- interaction(dat$gender, dat$education_level, drop = TRUE, sep = "___")
-	race_age_raw <- interaction(dat$race, dat$age_group, drop = TRUE, sep = "___")
-	age_edu_raw <- interaction(dat$age_group, dat$education_level, drop = TRUE, sep = "___")
-	age_gender_raw <- interaction(dat$age_group, dat$gender, drop = TRUE, sep = "___")
+									 age_past_vote_levels = NULL,
+									 edu_past_vote_levels = NULL) {
+	make_interaction <- function(x, y, levels = NULL) {
+		raw <- interaction(x, y, drop = TRUE, sep = "___")
+		if (is.null(levels)) factor(raw) else factor(as.character(raw), levels = levels)
+	}
 
-	dat$race_edu <- if (is.null(race_edu_levels)) factor(race_edu_raw) else factor(as.character(race_edu_raw), levels = race_edu_levels)
-	dat$race_gender <- if (is.null(race_gender_levels)) factor(race_gender_raw) else factor(as.character(race_gender_raw), levels = race_gender_levels)
-	dat$gender_edu <- if (is.null(gender_edu_levels)) factor(gender_edu_raw) else factor(as.character(gender_edu_raw), levels = gender_edu_levels)
-	dat$race_age <- if (is.null(race_age_levels)) factor(race_age_raw) else factor(as.character(race_age_raw), levels = race_age_levels)
-	dat$age_edu <- if (is.null(age_edu_levels)) factor(age_edu_raw) else factor(as.character(age_edu_raw), levels = age_edu_levels)
-	dat$age_gender <- if (is.null(age_gender_levels)) factor(age_gender_raw) else factor(as.character(age_gender_raw), levels = age_gender_levels)
-
+	dat$race_gender <- make_interaction(dat$race, dat$gender, race_gender_levels)
+	dat$race_age <- make_interaction(dat$race, dat$age_group, race_age_levels)
+	dat$race_edu <- make_interaction(dat$race, dat$education_level, race_edu_levels)
+	dat$race_past_vote <- make_interaction(dat$race, dat$past_vote, race_past_vote_levels)
+	dat$age_gender <- make_interaction(dat$age_group, dat$gender, age_gender_levels)
+	dat$gender_edu <- make_interaction(dat$gender, dat$education_level, gender_edu_levels)
+	dat$gender_past_vote <- make_interaction(dat$gender, dat$past_vote, gender_past_vote_levels)
+	dat$age_edu <- make_interaction(dat$age_group, dat$education_level, age_edu_levels)
+	dat$age_past_vote <- make_interaction(dat$age_group, dat$past_vote, age_past_vote_levels)
+	dat$edu_past_vote <- make_interaction(dat$education_level, dat$past_vote, edu_past_vote_levels)
 	dat
 }
 
@@ -271,7 +276,8 @@ make_us_post_stage_data <- function(data, party_name, area_shares, config, stage
 	joined <- data %>%
 		select(-any_of(c(
 			"cong_share", "pres_share", "cong_share_scaled", "pres_share_scaled", 
-			"race_edu", "race_gender", "gender_edu", "race_age", "age_edu", "age_gender"
+			"race_edu", "race_gender", "gender_edu", "race_age", "age_edu", "age_gender",
+			"race_past_vote", "gender_past_vote", "age_past_vote", "edu_past_vote"
 		))) %>%
 		mutate(state_cd_chr = as.character(state_cd)) %>%
 		left_join(lookup_sub, by = "state_cd_chr") %>%
@@ -293,7 +299,11 @@ make_us_post_stage_data <- function(data, party_name, area_shares, config, stage
 			gender_edu_levels = stage_obj$gender_edu_levels,
 			race_age_levels = stage_obj$race_age_levels,
 			age_edu_levels = stage_obj$age_edu_levels,
-			age_gender_levels = stage_obj$age_gender_levels
+			age_gender_levels = stage_obj$age_gender_levels,
+			race_past_vote_levels = stage_obj$race_past_vote_levels,
+			gender_past_vote_levels = stage_obj$gender_past_vote_levels,
+			age_past_vote_levels = stage_obj$age_past_vote_levels,
+			edu_past_vote_levels = stage_obj$edu_past_vote_levels
 		)
 	} else {
 		add_us_post_interactions(joined)
@@ -331,29 +341,33 @@ fit_us_post_stage <- function(dat, party_name, config) {
 	}
 
 	formula_full <- if (use_interactions) {
-		y ~ v_s(cong_share) + v_s(pres_share) +
-			(1 | state_abbrv) +
-			(1 | state_cd) +
-			(1 | gender) +
-			(1 | race) +
-			(1 | age_group) +
-			(1 | education_level) +
-			(1 | race_edu) +
-			(1 | race_gender) +
-			(1 | gender_edu) +
-			(1 | race_age) +
-			(1 | age_edu) +
-			(1 | age_gender) +
-			(1 | past_vote)
+	y ~ v_s(cong_share) + v_s(pres_share) +
+		(1 | state_abbrv) +
+		(1 | state_cd) +
+		(1 | race) +
+		(1 | gender) +
+		(1 | age_group) +
+		(1 | education_level) +
+		(1 | past_vote) +
+		(1 | race_gender) +
+		(1 | race_age) +
+		(1 | race_edu) +
+		(1 | race_past_vote) +
+		(1 | age_gender) +
+		(1 | gender_edu) +
+		(1 | gender_past_vote) +
+		(1 | age_edu) +
+		(1 | age_past_vote) +
+		(1 | edu_past_vote)
 	} else {
-		y ~ v_s(cong_share) + v_s(pres_share) +
-			(1 | state_abbrv) +
-			(1 | state_cd) +
-			(1 | gender) +
-			(1 | race) +
-			(1 | age_group) +
-			(1 | education_level) +
-			(1 | past_vote)
+	y ~ v_s(cong_share) + v_s(pres_share) +
+		(1 | state_abbrv) +
+		(1 | state_cd) +
+		(1 | race) +
+		(1 | gender) +
+		(1 | age_group) +
+		(1 | education_level) +
+		(1 | past_vote)
 	}
 
 	fit_full <- tryCatch(
@@ -381,7 +395,11 @@ fit_us_post_stage <- function(dat, party_name, config) {
 			gender_edu_levels = levels(d$gender_edu),
 			race_age_levels = levels(d$race_age),
 			age_edu_levels = levels(d$age_edu),
-			age_gender_levels = levels(d$age_gender)
+			age_gender_levels = levels(d$age_gender),
+			race_past_vote_levels = levels(d$race_past_vote),
+			gender_past_vote_levels = levels(d$gender_past_vote),
+			age_past_vote_levels = levels(d$age_past_vote),
+			edu_past_vote_levels = levels(d$edu_past_vote)
 		))
 	}
 
@@ -661,8 +679,8 @@ build_us_post_share_draws_long <- function(share_draws) {
 # --- 1-WAY & 2-WAY MARGINAL AGGREGATIONS (WITH D-R MARGINS & 95% CIs) ---
 
 compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, config) {
-	margins_1way <- list("age_group", "education_level", "race", "gender")
-	margins_2way <- combn(c("age_group", "education_level", "race", "gender"), 2, simplify = FALSE)
+	margins_1way <- list("age_group", "education_level", "race", "gender", "past_vote")
+	margins_2way <- combn(c("age_group", "education_level", "race", "gender", "past_vote"), 2, simplify = FALSE)
 	all_margins <- c(margins_1way, margins_2way)
 	
 	dnv_party <- "Did not vote"
@@ -677,7 +695,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 	if (nrow(test_mat) == n_frame) { n_sims <- ncol(test_mat); transposed <- FALSE }
 	else { n_sims <- nrow(test_mat); transposed <- TRUE }
 	
-	draw_aggregations <- setNames(lapply(all_margins, function(x) vector("list", n_sims)), 
+	draw_aggregations <- setNames(lapply(all_margins, function(x) vector("list", n_sims)),
 								  sapply(all_margins, paste, collapse = "_"))
 	
 	# Loop through each MAVB simulation draw to build exact joint distributions
@@ -687,7 +705,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 		
 		df_s <- as_tibble(prob_s)
 		df_s$expected_N_raked <- frame_pred$expected_N_raked
-		for (v in c("age_group", "education_level", "race", "gender")) df_s[[v]] <- frame_pred[[v]]
+		for (v in c("age_group", "education_level", "race", "gender", "past_vote")) df_s[[v]] <- frame_pred[[v]]
 		
 		for (margin_vars in all_margins) {
 			margin_name <- paste(margin_vars, collapse = "_")
@@ -745,7 +763,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 	results <- list()
 	df_point <- as_tibble(prob_mat)
 	df_point$expected_N_raked <- frame_pred$expected_N_raked
-	for (v in c("age_group", "education_level", "race", "gender")) df_point[[v]] <- frame_pred[[v]]
+	for (v in c("age_group", "education_level", "race", "gender", "past_vote")) df_point[[v]] <- frame_pred[[v]]
 	
 	for (margin_vars in all_margins) {
 		margin_name <- paste(margin_vars, collapse = "_")
@@ -830,13 +848,20 @@ build_cell_draws_wide <- function(pi_draws, frame_pred, parties) {
 	res <- list()
 	for (p in parties) {
 		df <- as.data.frame(party_draws[[p]])
+		party_draws[[p]] <- NULL  # memory only: this party's list-of-vectors is no longer needed
 		colnames(df) <- paste0("draw_", seq_len(n_sims))
 		df <- as_tibble(df)
 		df$cell_id <- seq_len(n_frame)
 		df$vote_2026 <- p
 		res[[p]] <- df %>% select(cell_id, vote_2026, starts_with("draw_"))
+		rm(df)  # memory only
+		invisible(gc())
 	}
-	bind_rows(res)
+	rm(party_draws)  # memory only
+	out <- bind_rows(res)
+	rm(res)  # memory only
+	invisible(gc())
+	out
 }
 
 # --- MAIN POST-STRATIFICATION RUNNER ---
@@ -883,6 +908,10 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 	share_draws_ci <- build_us_post_share_draws_ci(share_draws, parties, mrp_estimates)
 	extended_frame <- build_us_post_extended_frame(prob_mat, frame_pred)
 	stage_diagnostics <- compute_us_post_stage_diagnostics(sb_fits, parties)
+	# memory only: sb_fits/survey_model/area_shares are not used again and are not part of the
+	# returned result; free them before the memory-heavy CD-draws, margins and cell-draws steps.
+	rm(sb_fits, survey_model, area_shares)
+	invisible(gc())
 	aggregate_counts <- compute_us_post_aggregate_counts(extended_frame)
 	cd_party_point <- compute_us_post_cd_point(prob_mat, frame_pred, parties)
 	cd_party_draws <- compute_us_post_cd_draws(pi_draws, frame_pred, parties)
@@ -897,6 +926,9 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 		config$msg("Exporting cell-level draws...")
 		cell_draws <- build_cell_draws_wide(pi_draws, frame_pred, parties)
 	}
+	# memory only: pi_draws is not part of the returned result; free it before outputs are written.
+	rm(pi_draws)
+	invisible(gc())
 
 	list(
 		point_estimates = mrp_estimates,

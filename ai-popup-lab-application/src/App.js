@@ -1,23 +1,31 @@
-import { React, useEffect } from 'react';
+import { React, useEffect } from "react";
 // eslint-disable-next-line
-import { BrowserRouter as Router, Route, Routes, Link, useLocation  } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useLocation,
+} from "react-router-dom";
 
-import './App.css';
-import HeaderAndNavigation from './modules/headerAndNavigation';
-import PopupDisclaimer from './modules/popupDisclaimer';
-import Footer from './modules/footer.js';
+import "./App.css";
+import HeaderAndNavigation from "./modules/headerAndNavigation";
+import PopupDisclaimer from "./modules/popupDisclaimer";
+import Footer from "./modules/footer.js";
+//import DonationSection from "./modules/donationSection.js";
 
 // other pages to route to
-import LandingPage from './pages/landingPage';
-import AboutPage from './pages/aboutPage';
-import MethodsPage from './pages/methodsPage.js'
-import PersonaPage from './pages/personaPage.js'
-import EthicsPage from './pages/ethicsPage.js'
-import PollPage from './pages/pollPage.js';
-import DataHubPage from './pages/dataHubPage.js'
-import TeamPage from './pages/teamPage.js'
-import NetworkingPlatformPage from './pages/networkingpage';
-import TermsPage from './pages/termsPage.js'
+import LandingPage from "./pages/landingPage";
+import AboutPage from "./pages/aboutPage";
+import MethodsPage from "./pages/methodsPage.js";
+import PersonaPage from "./pages/personaPage.js";
+import EthicsPage from "./pages/ethicsPage.js";
+import PollPage from "./pages/pollPage.js";
+import DataHubPage from "./pages/dataHubPage.js";
+import TeamPage from "./pages/teamPage.js";
+import NetworkingPlatformPage from "./pages/networkingpage";
+import TermsPage from "./pages/termsPage.js";
+import ThankYouPage from "./pages/thankYouPage.js";
 
 // function to scroll to top of browser window, gets called when the pathname changes (user changes page on site)
 function ScrollToTop() {
@@ -30,19 +38,28 @@ function ScrollToTop() {
   return null;
 }
 
+//WIP donation section 
+// function DonationSectionWrapper() {
+//   const { pathname } = useLocation();
+
+//   if (pathname === "/thank-you") {
+//     return null;
+//   }
+
+//   return <DonationSection />;
+// }
 
 // main App component, holds the router and routes for each page, returning each page when the url route matches
 // Also includes the header above the pages returned so it does not need to be included in every page
 // and footer beneath
 // and the anthropomorphisation disclaimer popup
 function App() {
-
   return (
     <Router>
       <ScrollToTop />
 
       <HeaderAndNavigation />
-      <PopupDisclaimer /> 
+      <PopupDisclaimer />
       {/* Comment PopupDisclaimer out if it gets annoying in dev */}
 
       <Routes>
@@ -56,8 +73,9 @@ function App() {
         <Route path="/team" element={<TeamPage />} />
         <Route path="/networking" element={<NetworkingPlatformPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
       </Routes>
-
+      {/*<DonationSectionWrapper />*/}
       <Footer />
     </Router>
   );

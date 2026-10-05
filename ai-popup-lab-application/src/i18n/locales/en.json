@@ -16,7 +16,8 @@
         "tagline": "Estimating public opinion from synthetic personae",
         "links": {
             "about": "About Us",
-            "ethics": "Ethics"
+            "ethics": "Ethics",
+            "terms": "Terms and Conditions"
         }
     },
     "landingPage": {
@@ -57,7 +58,7 @@
             "to": "to"
         },
         "voteLongitudinalDemographic": {
-            "title": "Vote share per party over time, by demographic",
+            "title": "Vote share per party over time by demographic, amongst likely voters",
             "selected": "Selected",
             "to": "to"
         },
