@@ -50,6 +50,21 @@
         },
         "demographicChart": {
             "title": "Röstning efter demografisk grupp"
+        },
+        "voteLongitudinal": {
+            "title": "Röstfördelning per parti över tid",
+            "selected": "Valt",
+            "to": "till"
+        },
+        "voteLongitudinalDemographic": {
+            "title": "Röstandel per parti över tid uppdelat efter demografiska faktorer, bland troliga väljare",
+            "selected": "Valt",
+            "to": "till"
+        },
+        "pollstersUS": {
+            "title": "Aggregerat nationellt genomsnittligt stöd",
+            "selected": "Valt",
+            "to": "till"
         }
     },
     "personaPage": {

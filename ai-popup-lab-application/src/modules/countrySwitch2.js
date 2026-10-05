@@ -10,10 +10,12 @@ import { COUNTRY_INFO } from '../utils/common_vars'
 
 function CountrySwitch2({setCountry, selectedCountry}) {
 
+  const countryOptions = Object.entries(COUNTRY_INFO).filter(([name]) => name === "usa");
+
   // maps the country options to buttons, and uses its name to retrieve the flag from the assets folder
   return (
     <div className="CountrySwitch2">
-      {Object.entries(COUNTRY_INFO).map(([name, { country_code, flag_image, abbreviation }]) => (
+      {countryOptions.map(([name, { flag_image, abbreviation }]) => (
         <button
           key={name}
           type="button"

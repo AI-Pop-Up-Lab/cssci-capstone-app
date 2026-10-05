@@ -50,6 +50,21 @@
         },
         "demographicChart": {
             "title": "Stemmen per demografische groep"
+        },
+        "voteLongitudinal": {
+            "title": "Stemmenaandeel per partij in de loop van de tijd",
+            "selected": "Geselecteerd",
+            "to": "to"
+        },
+        "voteLongitudinalDemographic": {
+            "title": "Stemmenaandeel per partij in de loop van de tijd per demografische groep, onder waarschijnlijke kiezers",
+            "selected": "Geselecteerd",
+            "to": "to"
+        },
+        "pollstersUS": {
+            "title": "Geaggregeerde nationale gemiddelde steun",
+            "selected": "Geselecteerd",
+            "to": "to"
         }
     },
     "personaPage": {

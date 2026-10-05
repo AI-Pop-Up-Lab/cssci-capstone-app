@@ -57,7 +57,7 @@
             "to": "to"
         },
         "voteLongitudinalDemographic": {
-            "title": "Vote share per party over time, by demographic",
+            "title": "Vote share per party over time by demographic, amongst likely voters",
             "selected": "Selected",
             "to": "to"
         },

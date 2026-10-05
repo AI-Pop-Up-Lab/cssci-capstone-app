@@ -1,4 +1,5 @@
-// d3.js chart which ____
+// d3.js chart which shows party vote share over time amongst likely voters,
+// broken down by demographic filters
 
 import { useRef, useEffect, useState } from "react";
 import { useTranslation, Trans } from 'react-i18next';
@@ -6,8 +7,40 @@ import * as d3 from "d3";
 import './voteLongitudinalDemographics.css';
 import axios from "axios";
 import Loader from '../loader';
-import { parseDemographicCsv, aggregateToSeries } from "../../utils/longitudinal_transformation";
+import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
 // import partyColours from '../../assets/partyColours';
+
+// Series that should not be drawn. Names are compared after lower-casing and
+// stripping everything except letters/digits, so "Did not vote", "Did Not Vote"
+// and "did_not_vote" all match "didnotvote". Add other spellings here if needed.
+const HIDDEN_SERIES = new Set(["didnotvote"]);
+const normaliseName = name => String(name ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+// Drop the "did not vote" series, then renormalise what's left so the
+// remaining series sum to 100% for each week (i.e. amongst likely voters).
+// Each week is divided by the sum of the visible series for that week. When
+// the full set sums to 100 this equals the pollsters chart's
+// share / (100 - nonVoterShare) * 100, but it also stays correct if a
+// filter leaves the totals slightly off 100.
+const buildVisibleSeries = (rows, filters) => {
+  const all = aggregateToSeries(rows, filters);
+  const voters = all.filter(s => !HIDDEN_SERIES.has(normaliseName(s.party)));
+
+  const totalByWeek = new Map();
+  voters.forEach(s =>
+    s.values.forEach(v =>
+      totalByWeek.set(v.week, (totalByWeek.get(v.week) ?? 0) + v.share)
+    )
+  );
+
+  return voters.map(s => ({
+    ...s,
+    values: s.values.map(v => {
+      const total = totalByWeek.get(v.week) ?? 0;
+      return { ...v, share: total > 0 ? +(v.share / total * 100).toFixed(2) : 0 };
+    }),
+  }));
+};
 
 function VoteLongitudinalDemographics({ country, countryData }) {
 
@@ -26,7 +59,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
   const [error, setError] = useState(null);
 
   const demographicKeys = ["gender", "age_group", "education_level", "state", "race"];
-  const chartData = rawRows ? aggregateToSeries(rawRows, filters) : null;
+  const chartData = rawRows ? buildVisibleSeries(rawRows, filters) : null;
   const filterOptions = rawRows
   ? Object.fromEntries(
       demographicKeys.map(key => [
@@ -60,9 +93,24 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
   useEffect(() => {
     if (!rawRows) return;
-    const series = aggregateToSeries(rawRows, {});
-    setRangeIdx([0, chartData[0].values.length - 1]);
+    const series = buildVisibleSeries(rawRows, {});
+    if (!series[0]) return;
+    setRangeIdx([0, series[0].values.length - 1]);
   }, [rawRows]);
+
+  // A filter can drop weeks, shrinking the series. Keep the slider range
+  // inside the new length so the slice can't run out of bounds.
+  const seriesLen = chartData?.[0]?.values.length ?? 0;
+  useEffect(() => {
+    if (!seriesLen) return;
+    setRangeIdx(prev => {
+      if (!prev) return prev;
+      const max = seriesLen - 1;
+      const hi = Math.min(prev[1], max);
+      const lo = Math.min(prev[0], Math.max(0, hi - 1));
+      return lo === prev[0] && hi === prev[1] ? prev : [lo, hi];
+    });
+  }, [seriesLen]);
 
   const slicedData = chartData && rangeIdx
     ? chartData.map(series => ({
@@ -97,13 +145,20 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
       const weeks = slicedData[0].values.map(v => v.week);
 
-      // x — band scale, one slot per week; use bandwidth() midpoint for line/dot x position
-      const x = d3.scaleBand()
-        .domain(weeks)
-        .range([0, width])
-        .padding(0.2);
+      // x — time scale. Each week is placed at its Monday, so a gap of N weeks
+      // between data points takes up N weeks' worth of horizontal space.
+      const DAY = 86400000;
+      const dates = weeks.map(isoWeekToMonday).filter(Boolean);
+      const minDate = d3.min(dates);
+      const maxDate = d3.max(dates);
+      const x = d3.scaleUtc()
+        .domain([new Date(minDate.getTime() - 3 * DAY), new Date(maxDate.getTime() + 3 * DAY)])
+        .range([0, width]);
 
-      const xMid = week => x(week) + x.bandwidth() / 2;
+      const xMid = week => {
+        const d = isoWeekToMonday(week);
+        return d ? x(d) : null;
+      };
 
       // y — linear, padded around actual data range
       const allShares = slicedData.flatMap(d => d.values.map(v => v.share));
@@ -127,10 +182,17 @@ function VoteLongitudinalDemographics({ country, countryData }) {
         )
         .select(".domain").remove();
 
-      // With many weeks, showing every tick label would overlap — thin them out
-      // to roughly one label per ~8 weeks, but always keep the very first week.
-      const labelStride = Math.max(1, Math.ceil(weeks.length / 14));
-      const tickValues = weeks.filter((_, i) => i % labelStride === 0);
+      // X axis ticks: one label every `stride` weeks, always starting at the
+      // first week of data and always landing on a Monday (the same dates the
+      // data points sit on). Full dd/mm/yyyy labels are ~85px wide, so size the
+      // stride to the chart width.
+      const maxTicks = Math.max(2, Math.floor(width / 95));
+      const spanWeeks = Math.round((maxDate - minDate) / (7 * DAY));
+      const stride = Math.max(1, Math.ceil(spanWeeks / (maxTicks - 1)));
+      const tickValues = [];
+      for (let t = minDate.getTime(); t <= maxDate.getTime(); t += stride * 7 * DAY) {
+        tickValues.push(new Date(t));
+      }
 
       // X axis
       const xAxis = g.append("g")
@@ -140,7 +202,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
           d3.axisBottom(x)
             .tickValues(tickValues)
             .tickSize(0)
-            .tickFormat(w => w.replace(/^\d{4}-/, ""))
+            .tickFormat(d3.utcFormat("%d/%m/%Y"))
         );
 
       xAxis.select(".domain").remove();
@@ -150,28 +212,15 @@ function VoteLongitudinalDemographics({ country, countryData }) {
         .attr("fill", "#111")
         .attr("dy", "1.2em");
 
-      // --- Year-boundary markers ---
-      // Find every week index where the year changes from the previous week
-      // (e.g. "...-W52"/"...-W53" -> "...-W01") and draw a vertical divider
-      // there, labelled with the new year, so multi-year trends are easy to
-      // read at a glance.
-      const yearOf = w => w.slice(0, 4);
-      const yearBoundaries = [];
-      for (let i = 1; i < weeks.length; i++) {
-        if (yearOf(weeks[i]) !== yearOf(weeks[i - 1])) {
-          yearBoundaries.push({ index: i, year: yearOf(weeks[i]) });
-        }
-      }
-
-      // Place the divider in the gap immediately before the boundary week's band,
-      // i.e. halfway between the end of last year's last band and the start of
-      // this year's first band.
-      const dividerX = boundary => x(weeks[boundary.index]) - (x.step() - x.bandwidth()) / 2;
-
+      // --- Year-boundary markers: a divider at 1 January for every year
+      // boundary that falls inside the visible range ---
+      const [d0, d1] = x.domain();
       const yearG = g.append("g").attr("class", "vp-year-markers");
 
-      yearBoundaries.forEach(boundary => {
-        const lineX = dividerX(boundary);
+      for (let yr = d0.getUTCFullYear() + 1; yr <= d1.getUTCFullYear(); yr++) {
+        const jan1 = new Date(Date.UTC(yr, 0, 1));
+        if (jan1 <= d0 || jan1 >= d1) continue;
+        const lineX = x(jan1);
 
         yearG.append("line")
           .attr("x1", lineX)
@@ -189,8 +238,8 @@ function VoteLongitudinalDemographics({ country, countryData }) {
           .attr("font-size", "12px")
           .attr("font-weight", "700")
           .attr("fill", "#666")
-          .text(boundary.year);
-      });
+          .text(yr);
+      }
 
       // Y axis
       g.append("g")
@@ -214,7 +263,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
       // One path + dots + end label per party
       slicedData.forEach(series => {
-        const colour = partyColours[series.party] ?? "#888";
+        const colour = lookupColour(partyColours, series.party);
 
         // Line
         g.append("path")
@@ -239,7 +288,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
             .on("mouseover", (event, d) => {
               tooltip
                 .style("opacity", 1)
-                .html(`<strong>${series.party}</strong><br/>${d.week}: ${d.share.toFixed(1)}%`);
+                .html(`<strong>${series.party}</strong><br/>${formatWeekDate(d.week)}: ${d.share.toFixed(1)}%`);
             })
             .on("mousemove", event => {
               tooltip
@@ -346,7 +395,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
           </div>
 
           <div className="vld-slider-labels">
-            <p>{t('pollingResults.voteLongitudinalDemographic.selected')}: <span>{chartData[0].values[rangeIdx[0]]?.week}</span> {t('pollingResults.voteLongitudinalDemographic.to')} <span>{chartData[0].values[rangeIdx[1]]?.week}</span></p>
+            <p>{t('pollingResults.voteLongitudinalDemographic.selected')}: <span>{formatWeekDate(chartData[0].values[rangeIdx[0]]?.week)}</span> {t('pollingResults.voteLongitudinalDemographic.to')} <span>{formatWeekDate(chartData[0].values[rangeIdx[1]]?.week)}</span></p>
           </div>
         </>
       ) : (

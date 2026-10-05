@@ -8,7 +8,7 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseBaselineCsv } from "../../utils/longitudinal_transformation";
+import { parseBaselineCsv, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -52,12 +52,6 @@ function isoWeekInfo(date) {
 function toISOWeekKey(date) {
   const { year, week } = isoWeekInfo(date);
   return `${year}-W${String(week).padStart(2, "0")}`;
-}
-
-function lookupColour(coloursObj, key) {
-  if (!coloursObj) return "#888";
-  const found = Object.keys(coloursObj).find(k => k.toLowerCase() === key.toLowerCase());
-  return found ? coloursObj[found] : "#888";
 }
 
 function VoteLongitudinalUSPollsters({ country, countryData }) {
@@ -249,7 +243,11 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
 
     const weekKeyByT = {};
     time_lookup.forEach(({ t, week_label }) => {
-      weekKeyByT[t] = toISOWeekKey(parseLabelStartDate(week_label));
+      // Key each block by the ISO week containing its midpoint (start + 3 days),
+      // not its start date. For Monday-anchored blocks this is identical, but it
+      // also stays correct for older outputs whose blocks began on any weekday.
+      const start = parseLabelStartDate(week_label);
+      weekKeyByT[t] = toISOWeekKey(new Date(start.getTime() + 3 * 86400000));
     });
 
     return US_PARTIES
@@ -341,15 +339,19 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
 
       const weeks = combinedWeeks;
 
-      // x — band scale, one slot per week across base + (optionally) pollster weeks
-      const x = d3.scaleBand()
-        .domain(weeks)
-        .range([0, width])
-        .padding(0.2);
+      // x — time scale. Each week is placed at its Monday, so a gap of N weeks
+      // between data points takes up N weeks' worth of horizontal space.
+      const DAY = 86400000;
+      const dates = weeks.map(isoWeekToMonday).filter(Boolean);
+      const minDate = d3.min(dates);
+      const maxDate = d3.max(dates);
+      const x = d3.scaleUtc()
+        .domain([new Date(minDate.getTime() - 3 * DAY), new Date(maxDate.getTime() + 3 * DAY)])
+        .range([0, width]);
 
       const xMid = week => {
-        const pos = x(week);
-        return pos === undefined ? null : pos + x.bandwidth() / 2;
+        const d = isoWeekToMonday(week);
+        return d ? x(d) : null;
       };
 
       // y — linear, padded around the *visible* data range (base + overlay if
@@ -397,10 +399,17 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
         )
         .select(".domain").remove();
 
-      // With many weeks, showing every tick label would overlap — thin them out
-      // to roughly one label per ~8 weeks, but always keep the very first week.
-      const labelStride = Math.max(1, Math.ceil(weeks.length / 14));
-      const tickValues = weeks.filter((_, i) => i % labelStride === 0);
+      // X axis ticks: one label every `stride` weeks, always starting at the
+      // first week of data and always landing on a Monday (the same dates the
+      // data points sit on). Full dd/mm/yyyy labels are ~85px wide, so size the
+      // stride to the chart width.
+      const maxTicks = Math.max(2, Math.floor(width / 95));
+      const spanWeeks = Math.round((maxDate - minDate) / (7 * DAY));
+      const stride = Math.max(1, Math.ceil(spanWeeks / (maxTicks - 1)));
+      const tickValues = [];
+      for (let t = minDate.getTime(); t <= maxDate.getTime(); t += stride * 7 * DAY) {
+        tickValues.push(new Date(t));
+      }
 
       // X axis
       const xAxis = g.append("g")
@@ -410,7 +419,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
           d3.axisBottom(x)
             .tickValues(tickValues)
             .tickSize(0)
-            .tickFormat(w => w.replace(/^\d{4}-/, ""))
+            .tickFormat(d3.utcFormat("%d/%m/%Y"))
         );
 
       xAxis.select(".domain").remove();
@@ -420,21 +429,15 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
         .attr("fill", "#111")
         .attr("dy", "1.2em");
 
-      // --- Year-boundary markers ---
-      const yearOf = w => w.slice(0, 4);
-      const yearBoundaries = [];
-      for (let i = 1; i < weeks.length; i++) {
-        if (yearOf(weeks[i]) !== yearOf(weeks[i - 1])) {
-          yearBoundaries.push({ index: i, year: yearOf(weeks[i]) });
-        }
-      }
-
-      const dividerX = boundary => x(weeks[boundary.index]) - (x.step() - x.bandwidth()) / 2;
-
+      // --- Year-boundary markers: a divider at 1 January for every year
+      // boundary that falls inside the visible range ---
+      const [d0, d1] = x.domain();
       const yearG = g.append("g").attr("class", "vp-year-markers");
 
-      yearBoundaries.forEach(boundary => {
-        const lineX = dividerX(boundary);
+      for (let yr = d0.getUTCFullYear() + 1; yr <= d1.getUTCFullYear(); yr++) {
+        const jan1 = new Date(Date.UTC(yr, 0, 1));
+        if (jan1 <= d0 || jan1 >= d1) continue;
+        const lineX = x(jan1);
 
         yearG.append("line")
           .attr("x1", lineX)
@@ -452,8 +455,8 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
           .attr("font-size", "12px")
           .attr("font-weight", "700")
           .attr("fill", "#666")
-          .text(boundary.year);
-      });
+          .text(yr);
+      }
 
       // Y axis
       g.append("g")
@@ -502,7 +505,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
             .on("mouseover", (event, d) => {
               tooltip
                 .style("opacity", 1)
-                .html(`<strong>${series.party}</strong><br/>${d.week}: ${d.share.toFixed(1)}%`);
+                .html(`<strong>${series.party}</strong><br/>${formatWeekDate(d.week)}: ${d.share.toFixed(1)}%`);
             })
             .on("mousemove", event => {
               tooltip
@@ -566,7 +569,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
               .on("mouseover", (event, d) => {
                 tooltip
                   .style("opacity", 1)
-                  .html(`<strong>${series.party} (US pollster avg)</strong><br/>${d.weekKey}: ${d.mean.toFixed(1)}%<br/><span style="font-size:11px">CI: ${d.low.toFixed(1)}–${d.high.toFixed(1)}%</span>`);
+                  .html(`<strong>${series.party} (US pollster avg)</strong><br/>${formatWeekDate(d.weekKey)}: ${d.mean.toFixed(1)}%<br/><span style="font-size:11px">CI: ${d.low.toFixed(1)}–${d.high.toFixed(1)}%</span>`);
               })
               .on("mousemove", event => {
                 tooltip
@@ -695,7 +698,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
           </div>
 
           <div className="vlup-slider-labels">
-            <p>{t('pollingResults.voteLongitudinal.selected')}: <span>{displayData[0].values[rangeIdx[0]]?.week}</span> {t('pollingResults.voteLongitudinal.to')} <span>{displayData[0].values[rangeIdx[1]]?.week}</span></p>
+            <p>{t('pollingResults.voteLongitudinal.selected')}: <span>{formatWeekDate(displayData[0].values[rangeIdx[0]]?.week)}</span> {t('pollingResults.voteLongitudinal.to')} <span>{formatWeekDate(displayData[0].values[rangeIdx[1]]?.week)}</span></p>
           </div>
 
           <div className="vlup-export unbounded-weight300">

@@ -7,8 +7,8 @@ fetch_us_polls.py
 
 Environment variables:
     AZURE_STORAGE_CONNECTION_STRING  — blob storage connection string
-    US_POLLS_BLOB_CONTAINER          — container name, e.g. "polling-data"
-    US_POLLS_OUTPUT_BLOB_NAME        — output blob, e.g. "us_polls_model_output.json"
+    US_POLLS_BLOB_CONTAINER          — container name, e.g. "us-pollster-data"
+    US_POLLS_OUTPUT_BLOB_NAME        — output blob, e.g. "us_pollster_model_output.json"
     US_POLLS_ARCHIVE                 — "true"/"false", whether to keep dated archive copies
 """
 
@@ -39,8 +39,8 @@ _CSV_URL = (
 )
 
 _CONNECTION_STRING = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
-_CONTAINER         = os.environ.get("US_POLLS_BLOB_CONTAINER", "polling-data")
-_OUTPUT_BLOB_NAME  = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_polls_model_output.json")
+_CONTAINER         = os.environ.get("US_POLLS_BLOB_CONTAINER", "us-pollster-data")
+_OUTPUT_BLOB_NAME  = os.environ.get("US_POLLS_OUTPUT_BLOB_NAME", "us_pollster_model_output.json")
 _ARCHIVE           = os.environ.get("US_POLLS_ARCHIVE", "false").lower() == "true"
 _REQUEST_TIMEOUT   = 60
 
@@ -155,7 +155,7 @@ def _validate(df: pd.DataFrame) -> None:
 
 
 # step 2: prepare data 
-def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict]:
+def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, dict, dict, pd.DataFrame]:
     df = df.dropna(subset=["pollster", "startdate", "enddate", "samplesize", "dem", "rep"]).copy()
 
     df["start_date"] = pd.to_datetime(df["startdate"])
@@ -176,13 +176,6 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
     df["other"]      = df["samplesize"] - df["democrat"] - df["republican"]
 
     df["population"] = df["population"].str.strip().str.upper()
-    df["g"] = pd.factorize(df["population"])[0] + 1
-
-    population_lookup = (
-        df[["g", "population"]]
-        .drop_duplicates()
-        .sort_values("g")
-    )
 
     daily_rows = []
     count_cols = ["samplesize"] + PARTY_COLS
@@ -198,7 +191,12 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
 
     daily_df = pd.DataFrame(daily_rows)
 
-    first_date = daily_df["date"].min()
+    # Anchor week 0 to the MONDAY on/before the earliest poll date so every
+    # 7-day block is a Mon-Sun ISO week. Anchoring to the raw earliest date
+    # made blocks start on arbitrary weekdays, which misaligned them with the
+    # ISO weeks used by the frontend / main longitudinal data.
+    first_date = daily_df["date"].min().normalize()
+    first_date = first_date - pd.Timedelta(days=first_date.weekday())
     last_date  = daily_df["date"].max()
 
     daily_df["week"] = ((daily_df["date"] - first_date).dt.days // 7).astype(int)
@@ -231,6 +229,13 @@ def _prepare_stan_data(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, di
     weekly_df["h"] = pd.factorize(weekly_df["pollster"])[0] + 1
     weekly_df["t"] = weekly_df["week"].map(week_to_t).astype(int)
     weekly_df["g"] = pd.factorize(weekly_df["population"])[0] + 1
+
+    # built from weekly_df (not df) so the g codes match the ones sent to Stan
+    population_lookup = (
+        weekly_df[["g", "population"]]
+        .drop_duplicates()
+        .sort_values("g")
+    )
 
     stan_data = {
         "N": len(weekly_df),
@@ -416,3 +421,7 @@ def fetch_and_store_us_polls(
 
     logger.info("US pollster pipeline doneeeeee.")
     return payload
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    fetch_and_store_us_polls()

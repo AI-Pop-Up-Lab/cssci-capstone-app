@@ -30,17 +30,26 @@ COLUMN_RENAME = {
 }
 
 # Matches get_extended_frame_path: {country}/extended_frames/{YYYY}_{WW}_extended_frame.csv
-_FRAME_RE = re.compile(r"(\d{4})_(\d{2})_extended_frame\.csv$")
+# Applied with fullmatch to the part of the blob name AFTER the extended_frames/ prefix,
+# so blobs in subfolders (e.g. backup_old_pipeline/...) can never match.
+_FRAME_RE = re.compile(r"(\d{4})_(\d{2})_extended_frame\.csv")
 
 
 def _list_frames(client, country: str) -> list[tuple[int, int, str]]:
-    """Return sorted (year, week, blob_name) for every extended frame of this country."""
+    """
+    Return sorted (year, week, blob_name) for every extended frame of this country
+    that sits directly in {country}/extended_frames/. Blob storage has no real
+    folders, so subfolder blobs share the prefix and must be excluded explicitly.
+    """
     container = client.get_container_client(CONTAINER_NAME)
+    prefix = f"{country}/extended_frames/"
     frames = []
-    for blob in container.list_blobs(name_starts_with=f"{country}/extended_frames/"):
-        m = _FRAME_RE.search(blob.name)
+    for blob in container.list_blobs(name_starts_with=prefix):
+        m = _FRAME_RE.fullmatch(blob.name[len(prefix):])
         if m:
             frames.append((int(m[1]), int(m[2]), blob.name))
+        else:
+            logger.debug("[%s] Skipping non-frame blob: %s", country, blob.name)
     return sorted(frames)
 
 
@@ -78,7 +87,10 @@ def rebuild(country: str, weeks: set[tuple[int, int]] | None = None) -> list[str
         logger.error("No extended frames found for %s.", country)
         return [f"{country} (no frames)"]
 
-    logger.info("[%s] Rebuilding from %d frame(s).", country, len(frames))
+    logger.info(
+        "[%s] Rebuilding from %d frame(s): %s",
+        country, len(frames), ", ".join(_week_label(y, w) for y, w, _ in frames),
+    )
 
     # Only the small per-week aggregates are kept; each full frame is released
     # before the next one loads, and the CSVs are written once at the end.
