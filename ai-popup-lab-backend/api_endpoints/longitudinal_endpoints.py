@@ -10,6 +10,7 @@ from azure_storage_utils import (
     CONTAINER_NAME,
     get_simple_frame_aggregate_path,
     get_demographic_frame_aggregate_path,
+    get_district_frame_aggregate_path,
 )
 
 router = APIRouter(prefix="/longitudinal")
@@ -67,6 +68,17 @@ def country_longitudinal_aggregated_demographics(country: str):
         raise HTTPException(status_code=404, detail="Country not found in data.")
 
     return _stream_blob_as_csv(get_demographic_frame_aggregate_path(country))
+
+
+# GET endpoint to retrieve the district-level aggregate (week x congressional
+# district x party) used by the frontend to project House seats
+@router.get("/country_longitudinal_aggregated_districts")
+def country_longitudinal_aggregated_districts(country: str):
+
+    if country not in root_keys:
+        raise HTTPException(status_code=404, detail="Country not found in data.")
+
+    return _stream_blob_as_csv(get_district_frame_aggregate_path(country))
 
 
 @router.get("/us_pollster_predictions")

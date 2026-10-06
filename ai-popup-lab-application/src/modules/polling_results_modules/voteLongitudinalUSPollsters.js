@@ -8,7 +8,7 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseBaselineCsv, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
+import { parseBaselineCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -73,6 +73,11 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
   const [chartData, setChartData] = useState(null);
   const [error, setError] = useState(null);
 
+  // District-level aggregate (week x congressional district x party), used to
+  // project House seats for the tooltips. Optional: if it fails to load or
+  // doesn't exist for this country, the chart works as before without seats.
+  const [districtRows, setDistrictRows] = useState(null);
+
   // Party colours come from the country data object fetched once by the
   // parent page and passed down as a prop -- not fetched separately here.
   const partyColours = countryData?.party_colours ?? null;
@@ -111,14 +116,34 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
         .catch(err => setError(err.message));
   }
 
+  // Fetch the district-level aggregate used for seat projection. Failures are
+  // swallowed on purpose: seats are an extra on the tooltip, not core data.
+  async function getDistrictData(countryName){
+    setDistrictRows(null);
+    axios.get(`${process.env.REACT_APP_API_URL}/api/longitudinal/country_longitudinal_aggregated_districts?country=${countryName}`, {
+      responseType: "text",
+    })
+      .then(res => setDistrictRows(parseDistrictCsv(res.data)))
+      .catch(() => setDistrictRows(null));
+  }
+
   useEffect(() => {
 
     setChartData(null);
     setRangeIdx(null);
 
     getChartData(country);
+    getDistrictData(country);
 
   }, [country]);
+
+  // Projected House seats per week (Map<week, {democrat, republican, other, districts}>).
+  // Independent of the likely-voters toggle: seats are always decided among
+  // voters, so non-voters are ignored inside computeSeatsByWeek.
+  const seatsByWeek = useMemo(
+    () => (districtRows && districtRows.length ? computeSeatsByWeek(districtRows) : null),
+    [districtRows]
+  );
 
   // The US pollster-average overlay is a reference for likely voters only —
   // force it off if the user switches to the unconditional (all-adults) view.
@@ -503,9 +528,16 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
             .attr("r", 2)
             .attr("fill",         colour)
             .on("mouseover", (event, d) => {
+              // House seats this party would win that week (not shown for non-voters)
+              const seats = seatsByWeek?.get(d.week)?.[series.party.toLowerCase()];
+              const seatsHtml = seats
+                ? `<br/><span style="font-size:11px">Projected House seats: <strong>${seats.seats}</strong>` +
+                  (seats.seats > 0 || seats.hi > 0 ? ` (90% range ${seats.lo}–${seats.hi})` : "") +
+                  `</span>`
+                : "";
               tooltip
                 .style("opacity", 1)
-                .html(`<strong>${series.party}</strong><br/>${formatWeekDate(d.week)}: ${d.share.toFixed(1)}%`);
+                .html(`<strong>${series.party}</strong><br/>${formatWeekDate(d.week)}: ${d.share.toFixed(1)}%${seatsHtml}`);
             })
             .on("mousemove", event => {
               tooltip
@@ -598,7 +630,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
     observer.observe(containerRef.current);
     return () => observer.disconnect();
 
-  }, [slicedData, partyColours, showPollsters, visiblePollsterSeries, hiddenSeries, combinedWeeks]);
+  }, [slicedData, partyColours, showPollsters, visiblePollsterSeries, hiddenSeries, combinedWeeks, seatsByWeek]);
 
 
   return (

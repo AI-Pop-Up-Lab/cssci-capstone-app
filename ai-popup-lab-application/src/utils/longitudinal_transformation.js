@@ -173,3 +173,126 @@ function rowsToSeries(rows, shareCol) {
       .sort((a, b) => a.week.localeCompare(b.week)),
   }));
 }
+
+// ======================================================================
+// House seat projection
+// ======================================================================
+//
+// Input: the district-level aggregate (week, vote_choice, state_cd, weight),
+// where `weight` is the expected number of voters for that party in that
+// congressional district. "Did not vote" rows are ignored: seats are decided
+// by those who vote, and only the Democratic/Republican contest is modelled.
+// "Other" is shown as 0 seats (third parties/independents win ~none).
+//
+// Method (a "nowcast": the seats each party would win if the election were
+// held with that week's vote shares):
+//   1. In each district take the Democratic share of the two-party vote.
+//   2. Win probability: P(D wins) = Phi((dShare - 0.5 + s) / districtSd)
+//      - districtSd: district-level noise in the MRP estimate
+//      - s: a national shock shared by ALL districts, ~ N(0, nationalSd^2)
+//        (this is what stops district errors averaging out and gives a
+//        realistic seat range)
+//   3. Expected D seats = sum of win probabilities, averaged over the shock.
+//      The 90% range comes from the law of total variance (Poisson-binomial
+//      variance within a shock level + variance of the mean across shocks).
+//   4. Republican seats = (number of districts) - Democratic seats.
+//
+// districtSd and nationalSd are assumptions, not fitted values - tune them.
+
+export const DEFAULT_SEAT_PARAMS = { districtSd: 0.04, nationalSd: 0.02 };
+
+// Abramowitz & Stegun 7.1.26 (|error| < 1.5e-7) - plenty for this purpose.
+function erf(x) {
+  const sign = x < 0 ? -1 : 1;
+  const ax = Math.abs(x);
+  const t = 1 / (1 + 0.3275911 * ax);
+  const poly = ((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592;
+  return sign * (1 - poly * t * Math.exp(-ax * ax));
+}
+const normCdf = x => 0.5 * (1 + erf(x / Math.SQRT2));
+
+// Fixed quadrature over the national shock: z in [-3, 3], weighted by the
+// standard normal density and normalised to sum to 1.
+const SHOCK_Z = d3.range(-3, 3.0001, 0.5);
+const SHOCK_W = (() => {
+  const raw = SHOCK_Z.map(z => Math.exp(-0.5 * z * z));
+  const total = d3.sum(raw);
+  return raw.map(w => w / total);
+})();
+
+/**
+ * parses the raw district-level CSV text into flat rows.
+ */
+export function parseDistrictCsv(csvText) {
+  return d3.csvParse(csvText, d => ({
+    week:        d.week,
+    vote_choice: normaliseVoteChoice(d.vote_choice),
+    state_cd:    d.state_cd,
+    weight:      +d.weight,
+  }));
+}
+
+/**
+ * Projects House seats for every week in the district rows.
+ * Returns Map<week, { democrat, republican, other, districts }> where each
+ * party entry is { seats, lo, hi } (lo/hi = 90% range) and `districts` is the
+ * number of districts that went into the calculation.
+ */
+export function computeSeatsByWeek(rows, params = {}) {
+  const { districtSd, nationalSd } = { ...DEFAULT_SEAT_PARAMS, ...params };
+
+  // week -> district -> { d, r } expected voters
+  const byWeek = new Map();
+  for (const row of rows) {
+    const party = String(row.vote_choice ?? "").toLowerCase();
+    if (party !== "democrat" && party !== "republican") continue;
+    if (!row.state_cd || !Number.isFinite(row.weight)) continue;
+
+    let districts = byWeek.get(row.week);
+    if (!districts) byWeek.set(row.week, (districts = new Map()));
+    let cell = districts.get(row.state_cd);
+    if (!cell) districts.set(row.state_cd, (cell = { d: 0, r: 0 }));
+    if (party === "democrat") cell.d += row.weight; else cell.r += row.weight;
+  }
+
+  const out = new Map();
+  for (const [week, districts] of byWeek) {
+    // Democratic two-party share minus 0.5, one entry per district with votes
+    const margins = [];
+    for (const { d, r } of districts.values()) {
+      const total = d + r;
+      if (total > 0) margins.push(d / total - 0.5);
+    }
+    const n = margins.length;
+    if (!n) continue;
+
+    let meanOfMean = 0;   // E_s[ mu(s) ]
+    let meanOfSq   = 0;   // E_s[ mu(s)^2 ]
+    let meanOfVar  = 0;   // E_s[ sum p(1-p) ]
+    for (let k = 0; k < SHOCK_Z.length; k++) {
+      const shock = nationalSd * SHOCK_Z[k];
+      let mu = 0, variance = 0;
+      for (const m of margins) {
+        const p = normCdf((m + shock) / districtSd);
+        mu += p;
+        variance += p * (1 - p);
+      }
+      meanOfMean += SHOCK_W[k] * mu;
+      meanOfSq   += SHOCK_W[k] * mu * mu;
+      meanOfVar  += SHOCK_W[k] * variance;
+    }
+
+    const sd = Math.sqrt(Math.max(0, meanOfVar + (meanOfSq - meanOfMean * meanOfMean)));
+    const dSeats = Math.round(meanOfMean);
+    const dLo = Math.max(0, Math.round(meanOfMean - 1.645 * sd));
+    const dHi = Math.min(n, Math.round(meanOfMean + 1.645 * sd));
+
+    out.set(week, {
+      districts: n,
+      democrat:   { seats: dSeats,     lo: dLo,     hi: dHi },
+      republican: { seats: n - dSeats, lo: n - dHi, hi: n - dLo },
+      other:      { seats: 0,          lo: 0,       hi: 0 },
+    });
+  }
+  return out;
+}
