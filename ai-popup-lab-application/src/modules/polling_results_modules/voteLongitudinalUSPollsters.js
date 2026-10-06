@@ -8,7 +8,7 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseBaselineCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, isoWeekToMonday } from "../../utils/longitudinal_transformation";
+import { parseBaselineCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, isoWeekToMonday, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -261,6 +261,8 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
       }))
     : null;
 
+  const hasOldPipelinePoints = !!slicedData && slicedData.some(s => s.values.some(v => isOldPipelineWeek(v.week)));
+
   // pollster mean/low/high converted to 0-100 scale + ISO week keys
   const pollsterSeries = useMemo(() => {
     if (!pollsterRaw) return null;
@@ -503,48 +505,75 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
         .y(d => y(d.share))
         .curve(d3.curveMonotoneX);
 
-      // --- Base series: one path + dots per party ---
+      // Triangle marker for old-pipeline points
+      const triangle = d3.symbol().type(d3.symbolTriangle).size(36);
+
+      // --- Base series: one path + markers per party. Each series is split at
+      // the pipeline cutoff: old-pipeline weeks (triangles) and updated-model
+      // weeks (circles) are drawn as separate paths so they never connect. ---
       slicedData.forEach(series => {
         if (hiddenSeries.has(series.party)) return;
 
         const colour = lookupColour(partyColours, series.party);
+        const { old: oldVals, current: newVals } = splitByPipeline(series.values);
 
-        g.append("path")
-          .datum(series.values)
-          .attr("fill", "none")
-          .attr("stroke", colour)
-          .attr("stroke-width", 2.5)
-          .attr("stroke-linejoin", "round")
-          .attr("stroke-linecap", "round")
-          .attr("d", lineGen);
+        [oldVals, newVals].forEach(segment => {
+          if (!segment.length) return;
+          g.append("path")
+            .datum(segment)
+            .attr("fill", "none")
+            .attr("stroke", colour)
+            .attr("stroke-width", 2.5)
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-linecap", "round")
+            .attr("d", lineGen);
+        });
 
-        const safeClass = `dot-${series.party.replace(/[^a-zA-Z0-9]/g, "-")}`;
+        const attachTooltip = (sel, isOld) => sel
+          .on("mouseover", (event, d) => {
+            // House seats this party would win that week (not shown for non-voters)
+            const seats = seatsByWeek?.get(d.week)?.[series.party.toLowerCase()];
+            const seatsHtml = seats
+              ? `<br/><span style="font-size:11px">Projected House seats: <strong>${seats.seats}</strong>` +
+                (seats.seats > 0 || seats.hi > 0 ? ` (90% range ${seats.lo}–${seats.hi})` : "") +
+                `</span>`
+              : "";
+            const oldHtml = isOld
+              ? `<br/><span style="font-size:11px">Old pipeline (incorrect)</span>`
+              : "";
+            tooltip
+              .style("opacity", 1)
+              .html(`<strong>${series.party}</strong><br/>${formatWeekDate(d.week)}: ${d.share.toFixed(1)}%${seatsHtml}${oldHtml}`);
+          })
+          .on("mousemove", event => {
+            tooltip
+              .style("left", `${event.clientX + 12}px`)
+              .style("top",  `${event.clientY + 12}px`);
+          })
+          .on("mouseout", () => tooltip.style("opacity", 0));
 
-        g.selectAll(`.${safeClass}`)
-          .data(series.values)
-          .join("circle")
-            .attr("cx", d => xMid(d.week))
-            .attr("cy", d => y(d.share))
-            .attr("r", 2)
-            .attr("fill",         colour)
-            .on("mouseover", (event, d) => {
-              // House seats this party would win that week (not shown for non-voters)
-              const seats = seatsByWeek?.get(d.week)?.[series.party.toLowerCase()];
-              const seatsHtml = seats
-                ? `<br/><span style="font-size:11px">Projected House seats: <strong>${seats.seats}</strong>` +
-                  (seats.seats > 0 || seats.hi > 0 ? ` (90% range ${seats.lo}–${seats.hi})` : "") +
-                  `</span>`
-                : "";
-              tooltip
-                .style("opacity", 1)
-                .html(`<strong>${series.party}</strong><br/>${formatWeekDate(d.week)}: ${d.share.toFixed(1)}%${seatsHtml}`);
-            })
-            .on("mousemove", event => {
-              tooltip
-                .style("left", `${event.clientX + 12}px`)
-                .style("top",  `${event.clientY + 12}px`);
-            })
-            .on("mouseout", () => tooltip.style("opacity", 0));
+        // Updated model: circles
+        attachTooltip(
+          g.selectAll(null)
+            .data(newVals)
+            .join("circle")
+              .attr("cx", d => xMid(d.week))
+              .attr("cy", d => y(d.share))
+              .attr("r", 2)
+              .attr("fill", colour),
+          false
+        );
+
+        // Old pipeline: triangles
+        attachTooltip(
+          g.selectAll(null)
+            .data(oldVals)
+            .join("path")
+              .attr("d", triangle())
+              .attr("transform", d => `translate(${xMid(d.week)},${y(d.share)})`)
+              .attr("fill", colour),
+          true
+        );
       });
 
       // --- US pollster-average overlay: dashed mean line + CI ribbon ---
@@ -676,6 +705,12 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
             <svg ref={svgRef} />
             <div ref={tooltipRef} className="chart-tooltip" />
           </div>
+
+          {hasOldPipelinePoints && (
+            <p className="vlup-footnote" style={{ fontSize: "12px", color: "#666", margin: "6px 0 0" }}>
+              {t('pollingResults.voteLongitudinal.oldPipelineFootnote', '▲ Triangle-marked parts of the series are from the old pipeline and are incorrect.')}
+            </p>
+          )}
 
           {/* legend where u can click an item to toggle  series */}
           <div className="vlup-legend">

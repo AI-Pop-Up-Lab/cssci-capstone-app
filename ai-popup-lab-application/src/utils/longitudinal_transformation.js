@@ -70,6 +70,35 @@ export function formatWeekDate(weekKey) {
 }
 
 /**
+ * Pipeline cutoff. Weeks up to and INCLUDING this one come from the old
+ * (incorrect) model pipeline; anything after it is from the updated model.
+ * The two parts of each series must never be joined by a line.
+ */
+export const OLD_PIPELINE_LAST_WEEK = "2026_23";
+
+/**
+ * True if the week belongs to the old pipeline (on or before the cutoff week).
+ * Compares by date rather than string so it works for any key format that
+ * isoWeekToMonday accepts ("2026_23", "2026-W23", ...).
+ */
+export function isOldPipelineWeek(weekKey) {
+  const d = isoWeekToMonday(weekKey);
+  const cutoff = isoWeekToMonday(OLD_PIPELINE_LAST_WEEK);
+  return !!d && !!cutoff && d.getTime() <= cutoff.getTime();
+}
+
+/**
+ * Splits a series' values into { old, current } at the pipeline cutoff.
+ * Each half keeps its original order.
+ */
+export function splitByPipeline(values) {
+  const old = [];
+  const current = [];
+  for (const v of values) (isOldPipelineWeek(v.week) ? old : current).push(v);
+  return { old, current };
+}
+
+/**
  * Calendar year of the week's Monday (as a string). Used for year-boundary
  * markers so they agree with the dates shown on the axis (e.g. 2026-W01 starts
  * on 29/12/2025, so its Monday is still in 2025).
