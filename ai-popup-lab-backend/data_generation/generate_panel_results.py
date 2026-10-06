@@ -9,7 +9,11 @@ Pipeline order per cycle:
   2. Biography generation (panel.biography) — only for this cycle's new
      joiners; existing panellists keep their existing biography + media_diet.
   3. Survey wave (panel.runner) — run on the full panel (existing + new
-     joiners together).
+     joiners together). Two passes when the country has a turnout question
+     in questions.csv (e.g. us_midterms_turnout): a turnout pass over the
+     whole panel, then a vote pass over everyone who didn't opt out;
+     opt-outs are recorded as "Did not vote". Each pass checkpoints and
+     resumes from its own column (`_turnout` / `_vote`) in the active panel.
 
 Two entry points share this core cycle but read/write different Azure
 storage tracks:
@@ -37,6 +41,17 @@ from .panel.biography import populate_panel
 from .panel.runner import run_survey
 
 logger = logging.getLogger(__name__)
+
+# Largest share of respondents allowed to be left without a vote answer
+# (failed after retries, or skipped for bad data like an unresolvable
+# state_cd) before the wave is treated as incomplete. Above this, the week is
+# NOT locked and no historical snapshot is written, so a rerun retries it.
+MAX_MISSING_FRACTION = 0.01
+
+
+class IncompleteWaveError(RuntimeError):
+    """Raised when too many respondents have no vote answer after a survey wave."""
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 COUNTRY_INFO_PATH = BASE_DIR / "country_data" / "country_data_info.json"
@@ -101,6 +116,10 @@ def _run_panel_cycle(
     survey checkpoints are written straight to `active_panel_path` itself
     (not a separate scratch blob) specifically so a restart's initial read
     sees that partial progress.
+
+    Raises IncompleteWaveError (after saving progress) if more than
+    MAX_MISSING_FRACTION of respondents have no vote answer, so the callers'
+    job lock is only set for waves that actually finished.
     """
     label = f"{country} {iso_week_label(year, week)}"
     week_label = iso_week_label(year, week)
@@ -166,6 +185,29 @@ def _run_panel_cycle(
         )
 
         # ── 4. Persist outputs ─────────────────────────────────────────────
+        # Completeness check: respondents who failed (or were skipped) are left
+        # without a vote answer. If too many are missing, keep the progress but
+        # don't write the historical snapshot, and raise so the caller doesn't
+        # mark the week as done — a rerun resumes from the active panel.
+        vote_col = f"{panel_date}_vote"
+        missing_votes = int(panel_df[vote_col].isna().sum())
+        missing_fraction = missing_votes / max(len(panel_df), 1)
+
+        if missing_fraction > MAX_MISSING_FRACTION:
+            storage.upload_dataframe(panel_df, active_panel_path)
+            if news_df is not None:
+                storage.upload_dataframe(news_df, gdelt_cache_path)
+            raise IncompleteWaveError(
+                f"[{label}] {missing_votes}/{len(panel_df)} respondents ({missing_fraction:.1%}) have no "
+                f"vote answer (limit {MAX_MISSING_FRACTION:.1%}). Progress saved to the active panel; "
+                "no snapshot written and week not locked — rerun to retry."
+            )
+        if missing_votes:
+            logger.warning(
+                "[%s] %d respondents (%.2f%%) have no vote answer — within tolerance, proceeding.",
+                label, missing_votes, missing_fraction * 100,
+            )
+
         storage.upload_dataframe(panel_df, historical_panel_path)
         logger.info("[%s] Results snapshot uploaded to %s", label, historical_panel_path)
 
