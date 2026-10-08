@@ -46,7 +46,7 @@ logger = logging.getLogger(__name__)
 # (failed after retries, or skipped for bad data like an unresolvable
 # state_cd) before the wave is treated as incomplete. Above this, the week is
 # NOT locked and no historical snapshot is written, so a rerun retries it.
-MAX_MISSING_FRACTION = 0.01
+MAX_MISSING_FRACTION = 0.002
 
 
 class IncompleteWaveError(RuntimeError):

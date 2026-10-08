@@ -169,16 +169,18 @@ def _interview_persona(
     source_common_name: str,
     panel_date: str,
     effort: float,
+    news_col_prefix: str,
 ) -> str:
     """
     One full conversation for one respondent on one question: system prompt ->
     initial question -> (optional) news reading -> final question. Returns the
     final answer text. News interpretation/citations/urls are written onto
-    panel_df (the vote pass runs last, so its news columns are the ones kept).
+    panel_df under `{news_col_prefix}_newsint` / `_citations` / `_article_urls`, so each
+    pass keeps its own (turnout: '<date>_turnout_*', vote: '<date>_*').
     """
-    newsint_col   = f"{panel_date}_newsint"
-    citations_col = f"{panel_date}_citations"
-    urls_col      = f"{panel_date}_article_urls"
+    newsint_col   = f"{news_col_prefix}_newsint"
+    citations_col = f"{news_col_prefix}_citations"
+    urls_col      = f"{news_col_prefix}_article_urls"
 
     system_prompt = f"{str(persona.biography)} \n {str(persona.events_interpretation)}"
     conversation = [{"role": "system", "content": system_prompt}]
@@ -257,6 +259,7 @@ def _run_pass(
     pass_name: str,
     question_id: str,
     answer_col: str,
+    news_col_prefix: str,
     rows: pd.DataFrame,
     panel_df: pd.DataFrame,
     news_df: pd.DataFrame,
@@ -294,6 +297,7 @@ def _run_pass(
                 source_common_name=source_common_name,
                 panel_date=panel_date,
                 effort=effort,
+                news_col_prefix=news_col_prefix,
             )
             panel_df.at[persona.Index, answer_col] = answer
             done += 1
@@ -385,9 +389,10 @@ def run_survey(
     citations_col = f"{panel_date}_citations"
     urls_col      = f"{panel_date}_article_urls"
 
+    turnout_news_cols = [f"{turnout_col}_newsint", f"{turnout_col}_citations", f"{turnout_col}_article_urls"]
     wave_cols = [vote_col, newsint_col, citations_col, urls_col]
     if turnout_question_id:
-        wave_cols.insert(0, turnout_col)
+        wave_cols = [turnout_col, *turnout_news_cols] + wave_cols
     for col in wave_cols:
         if col not in panel_df.columns:
             panel_df[col] = None
@@ -420,6 +425,7 @@ def run_survey(
                 pass_name="turnout",
                 question_id=turnout_question_id,
                 answer_col=turnout_col,
+                news_col_prefix=turnout_col,
                 rows=pending_turnout,
                 **pass_kwargs,
             )
@@ -456,6 +462,7 @@ def run_survey(
         pass_name="vote",
         question_id=question_id,
         answer_col=vote_col,
+        news_col_prefix=panel_date,
         rows=pending_vote,
         **pass_kwargs,
     )
