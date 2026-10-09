@@ -57,12 +57,25 @@ Country
 import io
 import os
 import pandas as pd
+from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 
-CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
+CONNECTION_STRING = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
+STORAGE_ACCOUNT_URL = os.environ.get("AZURE_STORAGE_ACCOUNT_URL")
 CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
-_blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+if CONNECTION_STRING:
+    _blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+elif STORAGE_ACCOUNT_URL:
+    _blob_service_client = BlobServiceClient(
+        account_url=STORAGE_ACCOUNT_URL,
+        credential=DefaultAzureCredential(),
+    )
+else:
+    raise RuntimeError(
+        "Set AZURE_STORAGE_CONNECTION_STRING or AZURE_STORAGE_ACCOUNT_URL."
+    )
+
 _container_client = _blob_service_client.get_container_client(CONTAINER_NAME)
 
 

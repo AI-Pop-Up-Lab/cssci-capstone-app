@@ -3,11 +3,19 @@ endpoints for
 sending files for the not yet finished and deployed 'data hub' for users to download
 '''
 from fastapi import APIRouter, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 import json
+import io
 from pathlib import Path
 import pandas as pd
+from azure.core.exceptions import ResourceNotFoundError
+
+from azure_storage_utils import (
+    CONTAINER_NAME,
+    get_blob_service_client,
+    get_stratification_frame_path,
+)
 
 router = APIRouter(prefix="/download")
 
@@ -27,22 +35,30 @@ root_keys = list(country_data.keys())
 @router.get("/country_frame_raw")
 def country_frame_raw(country: str):
 
-    # checking if requested country is in data
     if country not in root_keys:
         raise HTTPException(status_code=404, detail="Country not found in data.")
 
-    country_frame_filename = country_data[country]['stratification_frame_filename']
-    if country_frame_filename is None:
-        raise HTTPException(status_code=404, detail=f"Stratification frame not available for {country}.")
+    blob_path = get_stratification_frame_path(country)
+    blob_client = get_blob_service_client().get_blob_client(
+        container=CONTAINER_NAME,
+        blob=blob_path,
+    )
 
-    country_frame_path = base_dir / "country_data" / 'stratification_frames' / country_frame_filename
-    if not country_frame_path.exists():
-        raise HTTPException(status_code=404, detail=f"Stratification frame file missing for {country}.")
+    try:
+        data = blob_client.download_blob().readall()
+    except ResourceNotFoundError as error:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Stratification frame not available for {country}.",
+        ) from error
 
-    return FileResponse(
-        path=country_frame_path,
+    return StreamingResponse(
+        io.BytesIO(data),
         media_type='text/csv',
-        filename=f"{country}_stratification_frame.csv"
+        headers={
+            "Content-Disposition": f'attachment; filename="{country}_stratification_frame.csv"',
+            "Access-Control-Expose-Headers": "Content-Disposition",
+        },
     )
 
 
