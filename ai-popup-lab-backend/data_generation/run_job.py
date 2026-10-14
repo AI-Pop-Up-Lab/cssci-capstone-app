@@ -27,7 +27,7 @@ import pandas as pd
 
 from .generate_panel_results import generate_panel_results, iso_week_label, isoweek_to_panel_date
 from .run_scripts import check_r_available, run_extension_script
-from .aggregate_longitudinal import update_longitudinal_aggregates
+from .aggregate_longitudinal import update_longitudinal_aggregates, update_longitudinal_national_summary
 from .fetch_us_polls import fetch_and_store_us_polls
 
 import azure_storage_utils as storage
@@ -60,6 +60,11 @@ JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
 # reintroduces a real gate, but expect every USA MRP run to now take as
 # long as a "full draws" run used to, whatever this is set to.
 COMPUTE_MRP_DRAWS = os.environ.get("COMPUTE_MRP_DRAWS", "false").strip().lower() in ("true", "1", "yes")
+
+
+# File the R script writes that gets archived (per week) alongside the
+# extended frame. Change this one constant if the R output is renamed.
+NATIONAL_SUMMARY_R_FILENAME = "mrp_national_summary_95ci.csv"
 
 
 def _this_week() -> tuple[int, int]:
@@ -273,25 +278,20 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
         storage.upload_dataframe(extended_frame, extended_frame_path)
         logger.info("[%s] Extended frame uploaded for %s.", country, week_label)
 
-        # National point estimates + 95% CIs, stored as the R script wrote them,
-        # in the sibling folder of the extended frames. The US module writes this
-        # unconditionally, so for usa a missing file means the R output changed —
-        # fail loudly rather than leave a silent gap in the weekly series.
-        summary_path = output_dir / "mrp_national_summary_95ci.csv"
-        point_estimates_path = (
-            storage.get_backfill_point_estimates_path(country, week_label)
-            if backfill else
-            storage.get_point_estimates_path(country, week_label)
-        )
-        if summary_path.exists():
-            storage.upload_file(summary_path, point_estimates_path)
-            logger.info("[%s] Point estimates (95%% CI) uploaded for %s.", country, week_label)
-        elif country.lower() == "usa":
-            raise FileNotFoundError(f"Expected R output not found: {summary_path}")
+        national_summary_r_path = output_dir / NATIONAL_SUMMARY_R_FILENAME
+        national_summary_exists = national_summary_r_path.exists()
+        if national_summary_exists:
+            national_summary_blob_path = (
+                storage.get_backfill_national_summary_path(country, week_label)
+                if backfill else
+                storage.get_national_summary_path(country, week_label)
+            )
+            storage.upload_file(national_summary_r_path, national_summary_blob_path)
+            logger.info("[%s] National summary uploaded for %s.", country, week_label)
         else:
             logger.warning(
-                "[%s] %s not produced by this country's R module — skipping point-estimates upload.",
-                country, summary_path.name,
+                "[%s] %s not found in R output for %s — national summary not uploaded.",
+                country, NATIONAL_SUMMARY_R_FILENAME, week_label,
             )
 
         if backfill:
@@ -309,6 +309,20 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
                 blob_client=storage.get_blob_service_client(),
                 container=storage.CONTAINER_NAME,
             )
+            if national_summary_exists:
+                update_longitudinal_national_summary(
+                    country=country,
+                    year=year,
+                    week=week,
+                    blob_client=storage.get_blob_service_client(),
+                    container=storage.CONTAINER_NAME,
+                    summary_df=pd.read_csv(national_summary_r_path),
+                )
+            else:
+                logger.warning(
+                    "[%s] No national summary for %s — national summary aggregate not updated.",
+                    country, week_label,
+                )
 
     storage.mark_job_ran(country, job_type, week_label)
     logger.info("MRP complete: %s %s (job_type=%s)", country, week_label, job_type)

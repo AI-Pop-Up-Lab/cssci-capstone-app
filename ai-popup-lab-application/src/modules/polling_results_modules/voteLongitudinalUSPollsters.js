@@ -1,5 +1,6 @@
-// d3.js chart which shows party vote share over time, with an optional
-// overlay of US pollster-average predictions (dotted mean line + CI band)
+// d3.js chart which shows party vote share over time (weekly MRP median with a
+// 95% interval band), with an optional overlay of US pollster-average
+// predictions (dotted mean line + CI band)
 
 import { useRef, useEffect, useState, useMemo } from "react";
 import { useTranslation } from 'react-i18next';
@@ -8,7 +9,7 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseBaselineCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, formatWeekRange, formatRangeEndingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
+import { parseNationalSummaryCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, formatWeekRange, formatRangeEndingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -102,17 +103,18 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
   };
 
   // fetch chart data
-  // The endpoint always returns the unconditional-on-turnout dataset (i.e.
+  // The national summary aggregate (week x vote_choice: lower_95 / median /
+  // upper_95, from the MRP output) is always unconditional on turnout (i.e.
   // it includes the non-voter category as an extra `vote_choice`). We fetch
   // it once per country and derive the "amongst likely voters" view from it
   // client-side (see `displayData` below) rather than refetching on toggle.
   async function getChartData(countryName){
     setChartData(null);
       setError(null);
-      axios.get(`${process.env.REACT_APP_API_URL}/api/longitudinal/country_longitudinal_aggregated_simple?country=${countryName}`, {
+      axios.get(`${process.env.REACT_APP_API_URL}/api/longitudinal/country_longitudinal_aggregated_national_summary?country=${countryName}`, {
         responseType: "text",
       })
-        .then(res => setChartData(parseBaselineCsv(res.data)))
+        .then(res => setChartData(parseNationalSummaryCsv(res.data)))
         .catch(err => setError(err.message));
   }
 
@@ -141,8 +143,10 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
   // Independent of the likely-voters toggle: seats are always decided among
   // voters, so non-voters are ignored inside computeSeatsByWeek.
   const seatsByWeek = useMemo(
-    () => (districtRows && districtRows.length ? computeSeatsByWeek(districtRows) : null),
-    [districtRows]
+    () => (districtRows && districtRows.length
+      ? computeSeatsByWeek(districtRows, { nationalSummary: chartData })
+      : null),
+    [districtRows, chartData]
   );
 
   // The US pollster-average overlay is a reference for likely voters only —
@@ -207,12 +211,20 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
     const endWeek = slicedData[0].values[slicedData[0].values.length - 1]?.week;
  
     // --- Main series: always exports every party regardless of hiddenSeries,
-    // in wide format (one column per party), clipped to the selected timeframe ---
+    // in wide format (median + 95% interval bounds per party), clipped to the
+    // selected timeframe ---
     const weeks = slicedData[0].values.map(v => v.week);
-    const mainHeader = ["week", ...slicedData.map(s => s.party)];
+    const mainHeader = [
+      "week",
+      ...slicedData.flatMap(s => [`${s.party} median`, `${s.party} lower_95`, `${s.party} upper_95`]),
+    ];
     const mainRows = weeks.map((week, i) => [
       week,
-      ...slicedData.map(s => s.values[i]?.share ?? ""),
+      ...slicedData.flatMap(s => [
+        s.values[i]?.share ?? "",
+        s.values[i]?.low ?? "",
+        s.values[i]?.high ?? "",
+      ]),
     ]);
     downloadCsv(`vote_share_${country}_${startWeek}_to_${endWeek}.csv`, [mainHeader, ...mainRows]);
  
@@ -227,28 +239,35 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
     }
   };
 
-  // "Amongst likely voters" view: drop the non-voter series and renormalise
-  // the remaining shares per week so they sum back to 100%. When the toggle
-  // is off, pass the unconditional dataset straight through (it already
-  // includes the non-voter category and already sums to 100%).
+  // "Amongst likely voters" view: drop the non-voter series and rescale the
+  // remaining parties so their medians sum back to 100% for each week. The
+  // same per-week factor is applied to the interval bounds, so the band keeps
+  // its shape relative to the median. (This is an approximation: it carries
+  // no uncertainty about turnout itself -- that would need the share draws.)
+  // When the toggle is off, pass the unconditional data straight through.
   const displayData = useMemo(() => {
     if (!chartData) return null;
     if (!likelyVotersOnly) return chartData;
 
-    const nonVoterSeries = chartData.find(s => isNonVoterSeries(s.party));
     const voterSeries = chartData.filter(s => !isNonVoterSeries(s.party));
-    if (!nonVoterSeries) return voterSeries;
+    if (voterSeries.length === chartData.length) return chartData; // no non-voter series to remove
 
-    const nonVoterShareByWeek = new Map(nonVoterSeries.values.map(v => [v.week, v.share]));
+    const totalByWeek = new Map();
+    voterSeries.forEach(s =>
+      s.values.forEach(v => totalByWeek.set(v.week, (totalByWeek.get(v.week) ?? 0) + v.share))
+    );
 
+    const round2 = n => +n.toFixed(2);
     return voterSeries.map(series => ({
       ...series,
       values: series.values.map(v => {
-        const nonVoterShare = nonVoterShareByWeek.get(v.week) ?? 0;
-        const denom = 100 - nonVoterShare;
+        const total = totalByWeek.get(v.week) ?? 0;
+        const scale = total > 0 ? 100 / total : 0;
         return {
           ...v,
-          share: denom > 0 ? +(v.share / denom * 100).toFixed(2) : 0,
+          share: round2(v.share * scale),
+          low:   round2(v.low   * scale),
+          high:  round2(v.high  * scale),
         };
       }),
     }));
@@ -392,7 +411,9 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
       // This is what lets the axis tighten up when e.g. "Other" is hidden,
       // instead of always reserving room for series that aren't drawn.
       const visibleBaseSeries = slicedData.filter(d => !hiddenSeries.has(d.party));
-      const baseShares = visibleBaseSeries.flatMap(d => d.values.map(v => v.share));
+      // include the interval bounds so the bands are never clipped
+      const baseShares = visibleBaseSeries.flatMap(d => d.values.flatMap(v => [v.share, v.low, v.high]))
+        .filter(Number.isFinite);
 
       const visibleOverlaySeries = (showPollsters && visiblePollsterSeries)
         ? visiblePollsterSeries.filter(s => !hiddenSeries.has(`pollster-${s.party}`))
@@ -405,7 +426,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
       // return undefined and produce a NaN domain, breaking the chart).
       if (!allShares.length) {
         allShares = [
-          ...slicedData.flatMap(d => d.values.map(v => v.share)),
+          ...slicedData.flatMap(d => d.values.flatMap(v => [v.share, v.low, v.high])).filter(Number.isFinite),
           ...(showPollsters && visiblePollsterSeries
             ? visiblePollsterSeries.flatMap(s => s.values.flatMap(v => [v.mean, v.low, v.high]))
             : []),
@@ -506,8 +527,34 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
         .y(d => y(d.share))
         .curve(d3.curveMonotoneX);
 
+      // 95% interval band (base series). Weeks without usable bounds are
+      // skipped, which just leaves a gap in the band.
+      const bandGen = d3.area()
+        .defined(d => Number.isFinite(d.low) && Number.isFinite(d.high))
+        .x(d => xMid(d.week))
+        .y0(d => y(d.low))
+        .y1(d => y(d.high))
+        .curve(d3.curveMonotoneX);
+
       // Triangle marker for old-pipeline points
       const triangle = d3.symbol().type(d3.symbolTriangle).size(36);
+
+      // --- Interval bands first, so every line and point sits on top of all
+      // of them. Split at the pipeline cutoff like the lines are. ---
+      slicedData.forEach(series => {
+        if (hiddenSeries.has(series.party)) return;
+        const colour = lookupColour(partyColours, series.party);
+        const { old: oldVals, current: newVals } = splitByPipeline(series.values);
+        [oldVals, newVals].forEach(segment => {
+          if (!segment.length) return;
+          g.append("path")
+            .datum(segment)
+            .attr("fill", colour)
+            .attr("opacity", 0.15)
+            .attr("stroke", "none")
+            .attr("d", bandGen);
+        });
+      });
 
       // --- Base series: one path + markers per party. Each series is split at
       // the pipeline cutoff: old-pipeline weeks (triangles) and updated-model
@@ -536,15 +583,19 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
             const seats = seatsByWeek?.get(d.week)?.[series.party.toLowerCase()];
             const seatsHtml = seats
               ? `<br/><span style="font-size:11px">Projected House seats: <strong>${seats.seats}</strong>` +
-                (seats.seats > 0 || seats.hi > 0 ? ` (90% range ${seats.lo}–${seats.hi})` : "") +
+                ` (95% CI ${seats.lo}–${seats.hi})` +
                 `</span>`
+              : "";
+            // "48.3% (95% CI 46.8–50.1%)"; just the percentage if no bounds
+            const ciHtml = Number.isFinite(d.low) && Number.isFinite(d.high)
+              ? ` (95% CI ${d.low.toFixed(1)}–${d.high.toFixed(1)}%)`
               : "";
             const oldHtml = isOld
               ? `<br/><span style="font-size:11px">Old pipeline (incorrect)</span>`
               : "";
             tooltip
               .style("opacity", 1)
-              .html(`<strong>${series.party}</strong><br/>${formatWeekRange(d.week)}: ${d.share.toFixed(1)}%${seatsHtml}${oldHtml}`);
+              .html(`<strong>${series.party}</strong><br/>${formatWeekRange(d.week)}: ${d.share.toFixed(1)}%${ciHtml}${seatsHtml}${oldHtml}`);
           })
           .on("mousemove", event => {
             tooltip
@@ -706,6 +757,11 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
             <svg ref={svgRef} />
             <div ref={tooltipRef} className="chart-tooltip" />
           </div>
+
+          <p className="vlup-footnote">
+            {t('pollingResults.voteLongitudinal.intervalFootnote', 'Points are weekly medians; shaded bands show the 95% interval.')}
+            {likelyVotersOnly && ` ${t('pollingResults.voteLongitudinal.likelyVotersIntervalFootnote', 'Amongst likely voters, intervals are rescaled and do not include uncertainty about turnout.')}`}
+          </p>
 
           {hasOldPipelinePoints && (
             <p className="vlup-footnote">

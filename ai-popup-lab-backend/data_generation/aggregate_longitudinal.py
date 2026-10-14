@@ -13,6 +13,8 @@ from azure_storage_utils import (
     get_simple_frame_aggregate_path,
     get_demographic_frame_aggregate_path,
     get_district_frame_aggregate_path,
+    get_national_summary_path,
+    get_national_summary_aggregate_path,
 )
 
 # ── column config ────────────────────────────────────────────────────────────
@@ -21,6 +23,11 @@ DEMOGRAPHIC_COLS = ["age_group", "gender", "race", "state_abbrv", "education_lev
 PARTY_COL        = "party"
 WEIGHT_COL       = "prob_raked"
 DISTRICT_COL     = "state_cd"   # congressional district, e.g. "AK-1"
+
+# National summary (R output, one file per week): vote_2026, point_estimate,
+# lower_95, median, upper_95. point_estimate is intentionally not carried over.
+NATIONAL_SUMMARY_PARTY_COL  = "vote_2026"
+NATIONAL_SUMMARY_VALUE_COLS = ["lower_95", "median", "upper_95"]
 
 # ── internal helpers ─────────────────────────────────────────────────────────
 
@@ -88,6 +95,24 @@ def _build_district_rows(frame: pd.DataFrame, week: str) -> pd.DataFrame:
     return grouped[cols]
 
 
+def _build_national_summary_rows(summary: pd.DataFrame, week: str) -> pd.DataFrame:
+    """
+    One week's national summary -> rows of (week, vote_choice, lower_95, median, upper_95).
+    Values stay as fractions (0.46, not 46). point_estimate is dropped.
+    """
+    summary = summary.rename(columns={NATIONAL_SUMMARY_PARTY_COL: "vote_choice"})
+    required = ["vote_choice"] + NATIONAL_SUMMARY_VALUE_COLS
+    missing = [c for c in required if c not in summary.columns]
+    if missing:
+        raise ValueError(
+            f"{week}: national summary missing expected column(s) {missing}. "
+            f"Columns present: {list(summary.columns)}"
+        )
+    rows = summary[required].copy()
+    rows["week"] = week
+    return rows[["week"] + required]
+
+
 def _merge_and_upload(
     client,
     container: str,
@@ -133,6 +158,13 @@ def build_week_district_aggregate(
     """District-level rows (week, vote_choice, state_cd, weight) for one frame. No I/O.
     Empty if the frame has no state_cd column."""
     return _build_district_rows(extended_frame, _week_label(year, week))
+
+
+def build_week_national_summary_aggregate(
+    summary_df: pd.DataFrame, year: int, week: int
+) -> pd.DataFrame:
+    """National-summary rows (week, vote_choice, lower_95, median, upper_95) for one week. No I/O."""
+    return _build_national_summary_rows(summary_df, _week_label(year, week))
 
 
 def upload_longitudinal_aggregates(
@@ -186,4 +218,49 @@ def update_longitudinal_aggregates(
         blob_client,
         container,
         district_parts=[district_rows],
+    )
+
+
+def upload_longitudinal_national_summary(
+    country: str,
+    summary_parts: list[pd.DataFrame],
+    week_labels: list[str],
+    blob_client,
+    container: str,
+) -> None:
+    """Merge any number of weeks' national-summary rows into the stored file with one download/upload."""
+    blob_name = get_national_summary_aggregate_path(country)
+    merged = _merge_and_upload(blob_client, container, blob_name, summary_parts, week_labels)
+    logger.info("[%s] National summary longitudinal updated -> %s (%d rows)", country, blob_name, len(merged))
+
+
+def update_longitudinal_national_summary(
+    country: str,
+    year: int,
+    week: int,
+    blob_client,
+    container: str,
+    summary_df: pd.DataFrame | None = None,
+) -> None:
+    """
+    Single-week update of the national-summary aggregate.
+
+    Pass `summary_df` when the week's national summary is already in hand (the
+    weekly job has the R output locally). Otherwise it is read from
+    {country}/national_summary/{YYYY}_{WW}_national_summary_95ci.csv in Azure.
+    Re-running a week replaces that week's rows rather than duplicating them.
+    """
+    if summary_df is None:
+        blob_name = get_national_summary_path(country, f"{year}_{week:02d}")
+        summary_df = _download_csv_or_none(blob_client, container, blob_name)
+        if summary_df is None:
+            raise FileNotFoundError(f"National summary blob missing: {blob_name}")
+
+    label = _week_label(year, week)
+    upload_longitudinal_national_summary(
+        country,
+        [_build_national_summary_rows(summary_df, label)],
+        [label],
+        blob_client,
+        container,
     )

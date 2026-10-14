@@ -1,16 +1,19 @@
 from fastapi import APIRouter, HTTPException
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, Response
 import json
 from pathlib import Path
 import io
 import os
+import re
 
 from azure_storage_utils import (
     get_blob_service_client,
+    read_dataframe,
     CONTAINER_NAME,
     get_simple_frame_aggregate_path,
     get_demographic_frame_aggregate_path,
     get_district_frame_aggregate_path,
+    get_national_summary_aggregate_path,
 )
 
 router = APIRouter(prefix="/longitudinal")
@@ -79,6 +82,57 @@ def country_longitudinal_aggregated_districts(country: str):
         raise HTTPException(status_code=404, detail="Country not found in data.")
 
     return _stream_blob_as_csv(get_district_frame_aggregate_path(country))
+
+
+# GET endpoint to retrieve the weekly national summary aggregate (week x vote
+# choice: lower_95 / median / upper_95) used by the frontend for the main
+# longitudinal graph
+@router.get("/country_longitudinal_aggregated_national_summary")
+def country_longitudinal_aggregated_national_summary(country: str):
+
+    if country not in root_keys:
+        raise HTTPException(status_code=404, detail="Country not found in data.")
+
+    return _stream_blob_as_csv(get_national_summary_aggregate_path(country))
+
+
+_WEEK_RE = re.compile(r"^(\d{4})[-_ ]?W?(\d{1,2})$", re.IGNORECASE)
+
+
+def _week_sort_key(week) -> tuple[int, int]:
+    """'2026-W30' / '2026_30' -> (2026, 30), so weeks compare numerically
+    rather than as strings. Unparseable labels sort first and so never win."""
+    m = _WEEK_RE.match(str(week).strip())
+    return (int(m.group(1)), int(m.group(2))) if m else (-1, -1)
+
+
+# GET endpoint to retrieve ONLY the most recent week of the national summary
+# aggregate (same columns as the full aggregate: week, vote_choice, lower_95,
+# median, upper_95), used by the landing page bar chart. The latest week is
+# simply the highest ISO week present in the aggregate, so it needs no
+# configuration and updates itself whenever the weekly job adds a week.
+# Production aggregate only -- never reads backfill_storage / hotfix_backfill.
+@router.get("/country_latest_national_summary")
+def country_latest_national_summary(country: str):
+
+    if country not in root_keys:
+        raise HTTPException(status_code=404, detail="Country not found in data.")
+
+    try:
+        df = read_dataframe(get_national_summary_aggregate_path(country))
+    except Exception:
+        raise HTTPException(status_code=404, detail="National summary not yet available.")
+
+    if df.empty or "week" not in df.columns:
+        raise HTTPException(status_code=404, detail="National summary not yet available.")
+
+    latest = max(df["week"].dropna().unique(), key=_week_sort_key)
+    latest_rows = df[df["week"] == latest]
+
+    return Response(
+        content=latest_rows.to_csv(index=False),
+        media_type="text/csv",
+    )
 
 
 @router.get("/us_pollster_predictions")

@@ -227,6 +227,39 @@ export function parseBaselineCsv(csvText) {
 }
 
 /**
+ * parses the national summary aggregate CSV (week, vote_choice, lower_95,
+ * median, upper_95 -- values are fractions, e.g. 0.48) into d3 series format.
+ *
+ * Each value is { week, share, low, high } on a 0-100 scale, where `share` is
+ * the MEDIAN (so anything that already reads `share` keeps working) and
+ * low/high are the 95% interval bounds. Rows with no usable median are
+ * dropped; a missing bound becomes NaN and is simply not drawn.
+ */
+export function parseNationalSummaryCsv(csvText) {
+  const toPct = v => {
+    const n = parseFloat(v);
+    return Number.isFinite(n) ? +(n * 100).toFixed(2) : NaN;
+  };
+
+  const rows = d3.csvParse(csvText, d => ({
+    week:        d.week,
+    vote_choice: normaliseVoteChoice(d.vote_choice),
+    share:       toPct(d.median),
+    low:         toPct(d.lower_95),
+    high:        toPct(d.upper_95),
+  })).filter(r => Number.isFinite(r.share));
+
+  const parties = [...new Set(rows.map(r => r.vote_choice))];
+  return parties.map(party => ({
+    party,
+    values: rows
+      .filter(r => r.vote_choice === party)
+      .map(({ week, share, low, high }) => ({ week, share, low, high }))
+      .sort((a, b) => a.week.localeCompare(b.week)),
+  }));
+}
+
+/**
  * parses the raw demographic CSV text into flat rows.
  */
 // export function parseDemographicCsv(csvText) {
@@ -328,13 +361,52 @@ function rowsToSeries(rows, shareCol) {
 //        (this is what stops district errors averaging out and gives a
 //        realistic seat range)
 //   3. Expected D seats = sum of win probabilities, averaged over the shock.
-//      The 90% range comes from the law of total variance (Poisson-binomial
+//      The 95% range comes from the law of total variance (Poisson-binomial
 //      variance within a shock level + variance of the mean across shocks).
 //   4. Republican seats = (number of districts) - Democratic seats.
 //
-// districtSd and nationalSd are assumptions, not fitted values - tune them.
+// The seat estimate itself is always district-based (state_cd): district
+// margins are used exactly as given, never shifted to match the national
+// median. The national summary (when passed as `nationalSummary`) is used
+// ONLY to size the national shock for that week: nationalSd is derived from
+// the width of the 95% interval on the Democratic two-party share, in place
+// of the fixed assumption. Weeks with no national summary fall back to the
+// default nationalSd.
+//
+// districtSd (and the fallback nationalSd) are assumptions, not fitted values.
 
 export const DEFAULT_SEAT_PARAMS = { districtSd: 0.04, nationalSd: 0.02 };
+
+// z for the 95% range reported on seats
+const RANGE_Z = 1.96;
+
+/**
+ * national summary series (from parseNationalSummaryCsv) ->
+ * Map<week, nationalSd> : the sd of the Democratic two-party share implied by
+ * that week's 95% intervals. D/(D+R) is lowest at (D low, R high) and highest
+ * at (D high, R low); using those extremes is deliberately conservative
+ * (it treats D and R as moving in perfect opposition). Weeks where the
+ * bounds are missing or inconsistent are left out.
+ */
+function nationalSdByWeek(series) {
+  const find = name => series.find(s => String(s.party).trim().toLowerCase() === name);
+  const dem = find("democrat");
+  const rep = find("republican");
+  const out = new Map();
+  if (!dem || !rep) return out;
+
+  const repByWeek = new Map(rep.values.map(v => [v.week, v]));
+  for (const d of dem.values) {
+    const r = repByWeek.get(d.week);
+    if (!r) continue;
+    const lo = d.low  / (d.low  + r.high);
+    const hi = d.high / (d.high + r.low);
+    if (Number.isFinite(lo) && Number.isFinite(hi) && hi >= lo) {
+      out.set(d.week, (hi - lo) / (2 * RANGE_Z));
+    }
+  }
+  return out;
+}
 
 // Abramowitz & Stegun 7.1.26 (|error| < 1.5e-7) - plenty for this purpose.
 function erf(x) {
@@ -370,11 +442,12 @@ export function parseDistrictCsv(csvText) {
 /**
  * Projects House seats for every week in the district rows.
  * Returns Map<week, { democrat, republican, other, districts }> where each
- * party entry is { seats, lo, hi } (lo/hi = 90% range) and `districts` is the
+ * party entry is { seats, lo, hi } (lo/hi = 95% range) and `districts` is the
  * number of districts that went into the calculation.
  */
 export function computeSeatsByWeek(rows, params = {}) {
-  const { districtSd, nationalSd } = { ...DEFAULT_SEAT_PARAMS, ...params };
+  const { districtSd, nationalSd: fallbackNationalSd, nationalSummary } = { ...DEFAULT_SEAT_PARAMS, ...params };
+  const nationalSdMap = nationalSummary ? nationalSdByWeek(nationalSummary) : new Map();
 
   // week -> district -> { d, r } expected voters
   const byWeek = new Map();
@@ -401,6 +474,9 @@ export function computeSeatsByWeek(rows, params = {}) {
     const n = margins.length;
     if (!n) continue;
 
+    // national shock size for this week: from the 95% interval if we have one
+    const nationalSd = nationalSdMap.get(week) ?? fallbackNationalSd;
+
     let meanOfMean = 0;   // E_s[ mu(s) ]
     let meanOfSq   = 0;   // E_s[ mu(s)^2 ]
     let meanOfVar  = 0;   // E_s[ sum p(1-p) ]
@@ -419,8 +495,8 @@ export function computeSeatsByWeek(rows, params = {}) {
 
     const sd = Math.sqrt(Math.max(0, meanOfVar + (meanOfSq - meanOfMean * meanOfMean)));
     const dSeats = Math.round(meanOfMean);
-    const dLo = Math.max(0, Math.round(meanOfMean - 1.645 * sd));
-    const dHi = Math.min(n, Math.round(meanOfMean + 1.645 * sd));
+    const dLo = Math.max(0, Math.round(meanOfMean - RANGE_Z * sd));
+    const dHi = Math.min(n, Math.round(meanOfMean + RANGE_Z * sd));
 
     out.set(week, {
       districts: n,

@@ -18,6 +18,7 @@ import PersonaChatExample from '../modules/personaChatExample';
 import CountrySwitch from '../modules/countrySwitch';
 import Loader from "../modules/loader";
 import VoteProjection from "../modules/polling_results_modules/voteProjection";
+import LatestNationalSummary from "../modules/polling_results_modules/latestNationalSummary";
 import CountrySwitch2 from "../modules/countrySwitch2";
 
 import { getCountryData } from '../utils/fetch_data';
@@ -128,7 +129,7 @@ function LandingPage() {
       </div>
 
       <div id="landingVoteProjContainer">
-        <p>Coming soon...</p>
+        <LatestNationalSummary country={selectedCountry} countryData={countryData} />
         {/* {data ? <VoteProjection pollingData={responseData} country={selectedCountry} /> : <Loader />} */}
         <Link to={`/polling`}><button className='unbounded-weight300'>{t('landingPage.explorePolls')}<img alt='right facing arrow' src={linkArrow}></img></button></Link>
       </div>
