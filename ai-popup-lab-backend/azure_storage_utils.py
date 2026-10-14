@@ -16,6 +16,8 @@ Country
             Latest checkpoint for every and current week
     Extended frames
         Extended frame for every week
+    Point estimates
+        National point estimates + 95% CIs for every week (sibling of Extended frames)
     Aggregates
         Simple frame aggregate
         Demographic frame aggregate
@@ -29,6 +31,8 @@ Country
         backfill active panel (manually-seeded, week-(t-1) input for a backfill run)
         backfill historical panels
             per-week result snapshot for each backfilled week
+        backfill point estimates
+            per-week national point estimates + 95% CIs (sibling of backfill extended frames)
         backfill checkpoints
             in-progress checkpoint for the week currently being backfilled
     hotfix_backfill (usa-only, split-stage backfill track — see below)
@@ -53,12 +57,25 @@ Country
 import io
 import os
 import pandas as pd
+from azure.identity import DefaultAzureCredential
 from azure.storage.blob import BlobServiceClient
 
-CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
+CONNECTION_STRING = os.environ.get("AZURE_STORAGE_CONNECTION_STRING")
+STORAGE_ACCOUNT_URL = os.environ.get("AZURE_STORAGE_ACCOUNT_URL")
 CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
-_blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+if CONNECTION_STRING:
+    _blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+elif STORAGE_ACCOUNT_URL:
+    _blob_service_client = BlobServiceClient(
+        account_url=STORAGE_ACCOUNT_URL,
+        credential=DefaultAzureCredential(),
+    )
+else:
+    raise RuntimeError(
+        "Set AZURE_STORAGE_CONNECTION_STRING or AZURE_STORAGE_ACCOUNT_URL."
+    )
+
 _container_client = _blob_service_client.get_container_client(CONTAINER_NAME)
 
 
@@ -84,6 +101,15 @@ def get_panel_checkpoint_path(country, iso_week):
 
 def get_extended_frame_path(country, iso_week):
     return f"{country}/extended_frames/{iso_week}_extended_frame.csv"
+
+
+def get_point_estimates_path(country, iso_week):
+    """
+    Per-week national point estimates with 95% CIs (the R script's
+    mrp_national_summary_95ci.csv, stored as-is). Sibling folder of
+    extended_frames.
+    """
+    return f"{country}/point_estimates/{iso_week}_point_estimates_95ci.csv"
 
 
 def get_simple_frame_aggregate_path(country):
@@ -137,6 +163,15 @@ def get_backfill_extended_frame_path(country, iso_week):
     MRP output never overwrites the production extended frame for that week.
     """
     return f"{country}/backfill_storage/extended_frames/{iso_week}_extended_frame.csv"
+
+
+def get_backfill_point_estimates_path(country, iso_week):
+    """
+    Per-week national point estimates + 95% CIs for a backfilled week.
+    Mirrors get_point_estimates_path on the backfill track, so a backfill
+    never overwrites the production file for that week.
+    """
+    return f"{country}/backfill_storage/point_estimates/{iso_week}_point_estimates_95ci.csv"
 
 
 def get_backfill_panel_checkpoint_path(country, iso_week):

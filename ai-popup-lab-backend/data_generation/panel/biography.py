@@ -70,9 +70,15 @@ def _biography_prompt(row, country: str) -> str:
         Gender: {row['gender']}
         State: {row['state']}
         Education Level: {row['education_level']}
-        Past vote: {row['past_vote']}
+        2024 house vote: {row['past_vote']}
 
         Please provide a short biography for yourself, in the range of 300-600 words. The biography should be consistent with the demographic characteristics provided, and should provide some additional context about your life, interests, and values. The biography should be written in a way that is engaging and informative, and should provide a sense of who you are as a person. Please do not include any information that is not consistent with the demographic characteristics provided. Write in the first person, and do not include a name. Always write in English. A number of people might deem your biography as not socially acceptable, that is perfectly fine and should reflect exactly what your demographic characteristics are. Explicitly specify in the biography how politically engaged you are as a person, do not overestimate this, be realistic. Be as realistic as person, this means do not try to make yourself more socially acceptable than you would actually be. This is only internal, and will not be shown to anyone.
+
+        Turnout is not fixed, it fluctuates depending on the issues at play and depending on whether it is a presidential election, like 2024 or 2020, or a midterm. Turnout is reliably lower in a midterm than in the presidential election before it, because there is no presidential race pulling in casual or low-salience voters. Turnout can still spike for specific groups when an issue hits close to home, so do not assume someone's behaviour repeats automatically from one election to the next.
+
+        You voted {row['past_vote']} in the 2024 House election. Using this as your anchor, invent a plausible voting history for yourself across past elections, with some noise. Real people are not perfectly consistent: some who voted in 2024 skipped past midterms, some who did not vote in 2024 have voted before when something felt personally relevant to them. Invent this history yourself, and let it feel like something a specific real person would have, not a clean repeating pattern.
+
+        Consider what personality traits are associated with your voting behaviour and your invented history. What is your likely trust in institutions and your power to change things? What is the degree to which you think parties reflect issues that are close to you? What is your general level of engagement politically? This should all be reflected in your biography, as a genuine personal trait, not a mechanical restatement of your voting record. Do not state or imply what you will do in the upcoming election, that will be determined separately.
         """
 
 

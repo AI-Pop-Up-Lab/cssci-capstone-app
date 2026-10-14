@@ -273,6 +273,27 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
         storage.upload_dataframe(extended_frame, extended_frame_path)
         logger.info("[%s] Extended frame uploaded for %s.", country, week_label)
 
+        # National point estimates + 95% CIs, stored as the R script wrote them,
+        # in the sibling folder of the extended frames. The US module writes this
+        # unconditionally, so for usa a missing file means the R output changed —
+        # fail loudly rather than leave a silent gap in the weekly series.
+        summary_path = output_dir / "mrp_national_summary_95ci.csv"
+        point_estimates_path = (
+            storage.get_backfill_point_estimates_path(country, week_label)
+            if backfill else
+            storage.get_point_estimates_path(country, week_label)
+        )
+        if summary_path.exists():
+            storage.upload_file(summary_path, point_estimates_path)
+            logger.info("[%s] Point estimates (95%% CI) uploaded for %s.", country, week_label)
+        elif country.lower() == "usa":
+            raise FileNotFoundError(f"Expected R output not found: {summary_path}")
+        else:
+            logger.warning(
+                "[%s] %s not produced by this country's R module — skipping point-estimates upload.",
+                country, summary_path.name,
+            )
+
         if backfill:
             logger.info(
                 "[%s] Skipping longitudinal aggregate update for %s — backfill runs never "
