@@ -35,6 +35,12 @@
   font-family: "Unbounded", sans-serif;
 }
 
+.vld-footnote{
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #335058;
+}
+
 .vld-chart-wrapper svg text {
   fill: #111 !important;
   font-family: "Unbounded", sans-serif;

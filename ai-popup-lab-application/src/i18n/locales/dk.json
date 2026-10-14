@@ -25,7 +25,7 @@
         "msg2": "Vælg et land for at udforske stemmerne:",
         "msg3": "Du kan også chatte med en af de syntetisk genererede personaer for at finde ud af begrundelsen bag deres stemme.",
         "msg4": "Her er et eksempel:",
-        "explorePolls": "UDFORSK FLERE AFSTEMNINGER"
+        "explorePolls": "UDFORSK FORUDSIGELSER"
     },
     "personaChatExample": {
         "exampleName": "Syntetisk persona",
@@ -55,12 +55,15 @@
         "voteLongitudinal": {
             "title": "Stemmeandel pr. parti over tid",
             "selected": "Valgt",
-            "to": "til"
+            "to": "til",
+            "oldPipelineFootnote": "Prognoser markeret med ▲ er udarbejdet ved hjælp af en forældet metode."
         },
         "voteLongitudinalDemographic": {
             "title": "Stemmeandel pr. parti over tid opdelt efter demografiske grupper blandt sandsynlige vælgere",
             "selected": "Valgt",
-            "to": "til"
+            "to": "til",
+            "oldPipelineFootnote": "Prognoser markeret med ▲ er udarbejdet ved hjælp af en forældet metode.",
+            "intervalsFootnote": "Intervaller er ikke medtaget i det demografiske diagram."
         },
         "pollstersUS": {
             "title": "Samlet national gennemsnitlig opbakning",

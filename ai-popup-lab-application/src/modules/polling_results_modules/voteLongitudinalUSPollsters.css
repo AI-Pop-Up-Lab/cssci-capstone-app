@@ -35,6 +35,12 @@
   font-family: "Unbounded", sans-serif;
 }
 
+.vlup-footnote{
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #335058;
+}
+
 .vlup-chart-wrapper svg text {
   fill: #111 !important;
   font-family: "Unbounded", sans-serif;

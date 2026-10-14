@@ -23,6 +23,9 @@ import CountrySwitch2 from "../modules/countrySwitch2";
 import { getCountryData } from '../utils/fetch_data';
 import { getChosenCountry, setChosenCountry } from '../utils/set_country';
 
+// keeps a bubble in the layout (so nothing jumps) but invisible until typing has started
+const bubbleStyle = (text) => ({ visibility: text ? 'visible' : 'hidden' });
+
 function LandingPage() {
 
   const [selectedCountry, setSelectedCountry] = useState(() => getChosenCountry() ?? "usa");
@@ -118,8 +121,8 @@ function LandingPage() {
       <div className="landingPageTop">
         <img className='pollie' src={pollie}></img>
         <div className="landingPageMessageSection">
-          <p className="landingPageMessage">{typed1}</p>
-          <p className="landingPageMessage">{typed2}&nbsp;</p>
+          <p className="landingPageMessage" style={bubbleStyle(typed1)}>{typed1 || '\u00A0'}</p>
+          <p className="landingPageMessage" style={bubbleStyle(typed2)}>{typed2 || '\u00A0'}</p>
           <CountrySwitch2 selectedCountry={selectedCountry} setCountry={handleCountryChange}/>
         </div>
       </div>
@@ -133,8 +136,8 @@ function LandingPage() {
       <div id="landingPageBottomMessages">
         <img className='pollie' src={pollie}></img>
         <div className="landingPageMessageSection" ref={bottomRef}>
-          <p className="landingPageMessage">{typed3}</p>
-          <p className="landingPageMessage">{typed4}&nbsp;</p>
+          <p className="landingPageMessage" style={bubbleStyle(typed3)}>{typed3 || '\u00A0'}</p>
+          <p className="landingPageMessage" style={bubbleStyle(typed4)}>{typed4 || '\u00A0'}</p>
         </div>
       </div>
 

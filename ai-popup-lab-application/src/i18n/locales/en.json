@@ -25,7 +25,7 @@
         "msg2": "Choose a country to explore the votes:",
         "msg3": "You can also chat with one of synthetically generated personae to discover the reasoning behind their vote.",
         "msg4": "Here is an example:",
-        "explorePolls": "EXPLORE MORE POLLS"
+        "explorePolls": "EXPLORE PREDICTIONS"
     },
     "personaChatExample": {
         "exampleName": "Synthetic Persona",
@@ -55,12 +55,15 @@
         "voteLongitudinal": {
             "title": "Vote share per party over time",
             "selected": "Selected",
-            "to": "to"
+            "to": "to",
+            "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology."
         },
         "voteLongitudinalDemographic": {
             "title": "Vote share per party over time by demographic, amongst likely voters",
             "selected": "Selected",
-            "to": "to"
+            "to": "to",
+            "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology.",
+            "intervalsFootnote": "Intervals are not included in the demographic chart."
         },
         "pollstersUS": {
             "title": "Aggregated national average support",

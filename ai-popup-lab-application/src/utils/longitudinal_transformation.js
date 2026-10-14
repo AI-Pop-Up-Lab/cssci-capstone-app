@@ -57,16 +57,122 @@ export function isoWeekToMonday(weekKey) {
   return new Date(week1Monday + (week - 1) * 7 * 86400000);
 }
 
+// ======================================================================
+// Week anchoring and date ranges
+// ======================================================================
+//
+// Each ISO week key represents the polling for the 7 days BEFORE its anchor
+// date, e.g. 2026-W30 is anchored on 20/07/2026 and covers 13/07/2026 -
+// 20/07/2026. Charts plot each week at its anchor date and label it with the
+// range.
+//
+// Which weekday is the anchor can change over time. Edit WEEK_ANCHOR_SCHEDULE
+// to change it:
+//   - from:    the first week the rule applies to. Either an ISO week key
+//              ("2026-W40" / "2026_40") or a date ("2026-10-01" or a Date).
+//              A date means "the ISO week containing that date".
+//   - weekday: ISO weekday of the anchor, 1 = Monday ... 7 = Sunday. The anchor
+//              is 00:00 UTC of that weekday, so Thursday (4) is the midnight
+//              between Wednesday and Thursday.
+// Each week uses the latest entry whose `from` is on or before it. Entries can
+// be in any order.
+export const WEEK_ANCHOR_SCHEDULE = [
+  { from: "2000-W01", weekday: 1 }, // Monday: original behaviour
+  { from: "2026-W40", weekday: 4 }, // Thursday: US predictions generated Wed midnight -> Thu (from October 2026)
+];
+
+const DAY_MS = 86400000;
+
+// Monday (00:00 UTC) of the ISO week containing `date`.
+function mondayOf(date) {
+  const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+  return new Date(d.getTime() - ((d.getUTCDay() + 6) % 7) * DAY_MS);
+}
+
+// Schedule `from` (ISO week key | "YYYY-MM-DD" | Date) -> Monday of that week.
+function resolveScheduleFrom(from) {
+  if (from instanceof Date) return mondayOf(from);
+  const s = String(from ?? "").trim();
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (m) return mondayOf(new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]))));
+  return isoWeekToMonday(s);
+}
+
+const RESOLVED_ANCHOR_SCHEDULE = WEEK_ANCHOR_SCHEDULE
+  .map(r => ({ monday: resolveScheduleFrom(r.from), weekday: Number(r.weekday) }))
+  .filter(r => r.monday && r.weekday >= 1 && r.weekday <= 7)
+  .sort((a, b) => a.monday - b.monday);
+
+// Anchor date for the ISO week starting on `monday`.
+function anchorFromMonday(monday) {
+  let weekday = 1;
+  for (const r of RESOLVED_ANCHOR_SCHEDULE) {
+    if (r.monday.getTime() <= monday.getTime()) weekday = r.weekday;
+  }
+  return new Date(monday.getTime() + (weekday - 1) * DAY_MS);
+}
+
 /**
- * ISO week key -> "dd/mm/yyyy" of that week's Monday, e.g. 2026-W36 -> "31/08/2026".
- * Falls back to the raw key if it can't be parsed.
+ * ISO week key -> anchor Date (UTC): the END of the 7-day range the week
+ * represents. Returns null if the key can't be parsed.
  */
-export function formatWeekDate(weekKey) {
-  const d = isoWeekToMonday(weekKey);
-  if (!d) return String(weekKey ?? "");
+export function weekAnchorDate(weekKey) {
+  const monday = isoWeekToMonday(weekKey);
+  return monday ? anchorFromMonday(monday) : null;
+}
+
+const fmtDate = d => {
   const dd = String(d.getUTCDate()).padStart(2, "0");
   const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
   return `${dd}/${mm}/${d.getUTCFullYear()}`;
+};
+
+/**
+ * ISO week key -> "dd/mm/yyyy" of the week's anchor date (end of its range),
+ * e.g. 2026-W30 -> "20/07/2026". Falls back to the raw key if unparseable.
+ */
+export function formatWeekDate(weekKey) {
+  const d = weekAnchorDate(weekKey);
+  return d ? fmtDate(d) : String(weekKey ?? "");
+}
+
+/**
+ * Date -> "dd/mm/yyyy – dd/mm/yyyy", the 7 days ending on that date.
+ */
+export function formatRangeEndingAt(endDate) {
+  return `${fmtDate(new Date(endDate.getTime() - 7 * DAY_MS))} – ${fmtDate(endDate)}`;
+}
+
+/**
+ * ISO week key -> date range label, e.g. 2026-W30 -> "13/07/2026 – 20/07/2026".
+ * Falls back to the raw key if unparseable.
+ */
+export function formatWeekRange(weekKey) {
+  const d = weekAnchorDate(weekKey);
+  return d ? formatRangeEndingAt(d) : String(weekKey ?? "");
+}
+
+/**
+ * Tick dates (anchor dates) for a time x-axis: one tick every `stride` weeks
+ * starting at the first week, each landing on a real anchor date even if the
+ * anchor weekday changes part-way through. `pitchPx` is the minimum horizontal
+ * space allowed per tick (tilted labels need much less than flat ones).
+ */
+export function buildWeekTicks(weeks, width, pitchPx = 30, thin = 2) {
+  const mondays = weeks.map(isoWeekToMonday).filter(Boolean);
+  if (!mondays.length) return [];
+  const first = d3.min(mondays).getTime();
+  const last  = d3.max(mondays).getTime();
+  const maxTicks  = Math.max(2, Math.floor(width / pitchPx));
+  const spanWeeks = Math.round((last - first) / (7 * DAY_MS));
+  // `thin` multiplies the stride: 2 = label every other week (or every other
+  // slot when the chart is too narrow for every week), 1 = no thinning.
+  const stride    = Math.max(1, Math.ceil(spanWeeks / (maxTicks - 1))) * thin;
+  const ticks = [];
+  for (let t = first; t <= last; t += stride * 7 * DAY_MS) {
+    ticks.push(anchorFromMonday(new Date(t)));
+  }
+  return ticks;
 }
 
 /**
