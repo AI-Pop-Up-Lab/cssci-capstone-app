@@ -25,7 +25,12 @@
         "msg2": "Välj ett land för att se rösterna:",
         "msg3": "Du kan också chatta med en av de datorgenererade profilerna för att ta reda på varför de röstade som de gjorde.",
         "msg4": "Här är ett exempel:",
-        "explorePolls": "UTFORSKA PROGNOSER"
+        "explorePolls": "UTFORSKA PROGNOSER",
+        "latestResults": {
+          "title": "Seneste meningsmålingsresultat",
+          "period": "Målingsperiode",
+          "footnote": "Søjlerne viser den ugentlige median af stemmeandelen blandt sandsynlige vælgere; fejlsøjlerne viser 95 %-intervallet."
+        }
     },
     "personaChatExample": {
         "exampleName": "Syntetisk Persona",
@@ -56,14 +61,24 @@
             "title": "Röstfördelning per parti över tid",
             "selected": "Valt",
             "to": "till",
-            "oldPipelineFootnote": "Prognoser markerade med ▲ har tagits fram med hjälp av en metod som inte längre rekommenderas."
+            "oldPipelineFootnote": "Prognoser markerade med ▲ har tagits fram med hjälp av en metod som inte längre rekommenderas.",
+            "intervalFootnote": "Punkterne er ugentlige medianer; de skraverede bånd viser 95 %-intervallet.",
+            "likelyVotersIntervalFootnote": "Blandt sandsynlige vælgere er intervallerne skaleret om og inkluderer ikke usikkerhed om valgdeltagelsen.",
+            "export": {
+              "title": "Eksportér data inden for den valgte tidsperiode:",
+              "description": "(Hvis 'blandt sandsynlige vælgere' er markeret, downloades de normaliserede data uden ikke-vælgere. Hvis amerikanske gennemsnit fra meningsmålingsinstitutter er aktiveret, downloades disse separat.)"
+            }
         },
         "voteLongitudinalDemographic": {
-            "title": "Röstandel per parti över tid uppdelat efter demografiska faktorer, bland troliga väljare",
+            "title": "Röstandel per parti över tid uppdelat efter demografiska faktorer",
             "selected": "Valt",
             "to": "till",
             "oldPipelineFootnote": "Prognoser markerade med ▲ har tagits fram med hjälp av en metod som inte längre rekommenderas.",
-            "intervalsFootnote": "Intervall ingår inte i den demografiska tabellen."
+            "intervalsFootnote": "Intervall ingår inte i den demografiska tabellen.",
+            "export": {
+              "title": "Eksportér data inden for den valgte tidsperiode:",
+              "description": "(Uanset eventuelle demografiske filtre eller indstillingen 'blandt sandsynlige vælgere'.)"
+            }
         },
         "pollstersUS": {
             "title": "Aggregerat nationellt genomsnittligt stöd",

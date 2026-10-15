@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import { useTranslation, Trans } from 'react-i18next';
 import * as d3 from "d3";
 import './voteLongitudinalDemographics.css';
+import exportIcon from '../../assets/images/export.png';
 import axios from "axios";
 import Loader from '../loader';
 import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, formatWeekRange, formatRangeEndingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
@@ -13,17 +14,22 @@ import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, f
 // Series that should not be drawn. Names are compared after lower-casing and
 // stripping everything except letters/digits, so "Did not vote", "Did Not Vote"
 // and "did_not_vote" all match "didnotvote". Add other spellings here if needed.
-const HIDDEN_SERIES = new Set(["didnotvote"]);
+// Covers the same labels as the pollsters chart ("did not vote", "will not
+// vote", "non-voter(s)").
+const HIDDEN_SERIES = new Set(["didnotvote", "willnotvote", "nonvoter", "nonvoters"]);
 const normaliseName = name => String(name ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
 
-// Drop the "did not vote" series, then renormalise what's left so the
-// remaining series sum to 100% for each week (i.e. amongst likely voters).
-// Each week is divided by the sum of the visible series for that week. When
-// the full set sums to 100 this equals the pollsters chart's
-// share / (100 - nonVoterShare) * 100, but it also stays correct if a
-// filter leaves the totals slightly off 100.
-const buildVisibleSeries = (rows, filters) => {
+// When likelyVotersOnly is true: drop the "did not vote" series, then
+// renormalise what's left so the remaining series sum to 100% for each week
+// (i.e. amongst likely voters). Each week is divided by the sum of the
+// visible series for that week. When the full set sums to 100 this equals the
+// pollsters chart's share / (100 - nonVoterShare) * 100, but it also stays
+// correct if a filter leaves the totals slightly off 100.
+// When false: the unconditional series (including "did not vote") are
+// returned untouched.
+const buildVisibleSeries = (rows, filters, likelyVotersOnly = true) => {
   const all = aggregateToSeries(rows, filters);
+  if (!likelyVotersOnly) return all;
   const voters = all.filter(s => !HIDDEN_SERIES.has(normaliseName(s.party)));
 
   const totalByWeek = new Map();
@@ -42,6 +48,27 @@ const buildVisibleSeries = (rows, filters) => {
   }));
 };
 
+// Builds a CSV from an array of rows and triggers a browser download.
+function downloadCsv(filename, rows) {
+  const csvContent = rows
+    .map(row => row.map(cell => {
+      const str = String(cell ?? "");
+      // quote any cell containing a comma, quote, or newline, escaping embedded quotes
+      return /[",\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
+    }).join(","))
+    .join("\n");
+
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+
 function VoteLongitudinalDemographics({ country, countryData }) {
 
   const { t } = useTranslation();
@@ -56,10 +83,13 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
   const [rawRows, setRawRows] = useState(null);  
   const [filters, setFilters] = useState({});
+  // 'Amongst likely voters' toggle (default on): drops "did not vote" and
+  // renormalises the remaining parties to 100%. Purely client-side, no refetch.
+  const [likelyVotersOnly, setLikelyVotersOnly] = useState(true);
   const [error, setError] = useState(null);
 
   const demographicKeys = ["gender", "age_group", "education_level", "state", "race"];
-  const chartData = rawRows ? buildVisibleSeries(rawRows, filters) : null;
+  const chartData = rawRows ? buildVisibleSeries(rawRows, filters, likelyVotersOnly) : null;
   const filterOptions = rawRows
   ? Object.fromEntries(
       demographicKeys.map(key => [
@@ -93,7 +123,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
   useEffect(() => {
     if (!rawRows) return;
-    const series = buildVisibleSeries(rawRows, {});
+    const series = buildVisibleSeries(rawRows, {}, true);
     if (!series[0]) return;
     setRangeIdx([0, series[0].values.length - 1]);
   }, [rawRows]);
@@ -118,6 +148,30 @@ function VoteLongitudinalDemographics({ country, countryData }) {
         values: series.values.slice(rangeIdx[0], rangeIdx[1] + 1),
       }))
     : null;
+
+  // Export the raw rows received from the backend (every demographic cell,
+  // including "did not vote"), clipped to the week range currently selected
+  // on the slider. Demographic dropdowns and the "amongst likely voters"
+  // toggle are deliberately ignored. The slider indexes into the (possibly
+  // filtered) series, so we translate it to start/end weeks and clip by week
+  // key (ISO week keys like "2025-W01" sort correctly as strings).
+  const handleExport = () => {
+    if (!rawRows || !rawRows.length || !slicedData || !slicedData.length || !slicedData[0].values.length) return;
+
+    const startWeek = slicedData[0].values[0]?.week;
+    const endWeek = slicedData[0].values[slicedData[0].values.length - 1]?.week;
+
+    const rows = rawRows.filter(r => r.week >= startWeek && r.week <= endWeek);
+    if (!rows.length) return;
+
+    // Header = every column present in the raw rows, in original order
+    const columns = [...new Set(rows.flatMap(r => Object.keys(r)))];
+
+    downloadCsv(
+      `vote_share_demographics_raw_${country}_${startWeek}_to_${endWeek}.csv`,
+      [columns, ...rows.map(r => columns.map(c => r[c] ?? ""))]
+    );
+  };
 
   const hasOldPipelinePoints = !!slicedData && slicedData.some(s => s.values.some(v => isOldPipelineWeek(v.week)));
 
@@ -289,7 +343,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
             tooltip
               .style("opacity", 1)
               .html(`<strong>${series.party}</strong><br/>${formatWeekRange(d.week)}: ${d.share.toFixed(1)}%` +
-                (isOld ? `<br/><span style="font-size:11px">Old pipeline (incorrect)</span>` : ""));
+                (isOld ? `<br/><span style="font-size:11px">Deprecated methodology</span>` : ""));
           })
           .on("mousemove", event => {
             tooltip
@@ -356,7 +410,20 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
   return (
     <div className="VoteLongitudinalDemographics">
-      <h3 className="vld-title">{t('pollingResults.voteLongitudinalDemographic.title')}</h3>
+      <div className="vld-header-row">
+        <h3 className="vld-title">{t('pollingResults.voteLongitudinalDemographic.title')}</h3>
+
+        {chartData && partyColours && rangeIdx && !error && (
+          <label className="vld-likely-toggle">
+            <input
+              type="checkbox"
+              checked={likelyVotersOnly}
+              onChange={e => setLikelyVotersOnly(e.target.checked)}
+            />
+            {t('pollingResults.voteLongitudinal.likelyVotersOnly', 'Amongst likely voters')}
+          </label>
+        )}
+      </div>
       {error ? (
         <p className="vld-error">{error}</p>
       ) : chartData && partyColours && rangeIdx ? (
@@ -398,7 +465,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
           )}
 
           <p className="vld-footnote">
-            {t('pollingResults.voteLongitudinalDemographic.intervalsFootnote', 'Intervals are not included in the demographic chart.')}
+            {t('pollingResults.voteLongitudinalDemographic.intervalsFootnote', 'Chart derived from cell-level point estimates ignoring uncertainty for computational expediency. Point estimates of aggregates may differ from those derived under the full posterior as above.')}
           </p>
 
           {/* time range slider */}
@@ -430,6 +497,16 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
           <div className="vld-slider-labels">
             <p>{t('pollingResults.voteLongitudinalDemographic.selected')}: <span>{formatWeekDate(chartData[0].values[rangeIdx[0]]?.week)}</span> {t('pollingResults.voteLongitudinalDemographic.to')} <span>{formatWeekDate(chartData[0].values[rangeIdx[1]]?.week)}</span></p>
+          </div>
+
+          <div className="vld-export unbounded-weight300">
+            <p>{t('pollingResults.voteLongitudinalDemographic.export.title')}</p>
+            <br></br>
+            <p>{t('pollingResults.voteLongitudinalDemographic.export.description')}</p>
+            <button onClick={handleExport}>
+              <p>Export</p>
+              <img src={exportIcon}></img>
+            </button>
           </div>
         </>
       ) : (

@@ -273,7 +273,7 @@ function LatestNationalSummary({ country, countryData }) {
       </div>
 
       <p className="lns-footnote">
-        {t('landingPage.latestResults.footnote', 'Bars show the weekly median vote share amongst likely voters; whiskers show the 95% interval. Intervals are rescaled and do not include uncertainty about turnout.')}
+        {t('landingPage.latestResults.footnote', 'Bars show the weekly median vote share amongst likely voters; whiskers show the 95% interval.')}
       </p>
     </div>
   );

@@ -107,6 +107,109 @@
   font-weight: 500;
 }
 
+.vld-header-row{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vld-likely-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 300;
+
+  margin-top: 10px;
+}
+
+.vld-likely-toggle:hover{
+  cursor: pointer;
+}
+
+.vld-likely-toggle > input[type="checkbox"]{
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+
+  margin-right: 5px;
+  border: 2px solid #1a3a42;
+  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: #00000015;
+
+  transition: background-color 0.2s ease-in-out;
+  transition: border-radius 0.2s ease-in-out;
+
+  display: grid;
+  place-content: center;
+}
+
+.vld-likely-toggle > input[type="checkbox"]:hover, .vld-likely-toggle > input[type="checkbox"]:checked{
+  background-color: #00000022;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.vld-likely-toggle > input[type="checkbox"]::before{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #1a3a42;
+  border-radius: 3px;
+  transform: scale(0);
+}
+
+.vld-likely-toggle > input[type="checkbox"]:checked::before{
+  transform: scale(1);
+}
+
+.vld-export{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.vld-export > p{
+  color: #334E58;
+  font-size: 16px;
+}
+
+.vld-export > button{
+  background-color: #334E58;
+  border: none;
+  border-radius: 34px;
+  padding: 12px 30px;
+  transition: background-color 0.2s;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 5px;
+}
+
+.vld-export > button > p{
+  color: #FCBFB7;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'unbounded';
+}
+
+.vld-export > button > img{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  filter: invert(76%) sepia(11%) saturate(871%) hue-rotate(318deg) brightness(105%) contrast(98%);
+}
+
+.vld-export > button:hover{
+  cursor: pointer;
+  background-color: #2b4149;
+}
+
 /* css for the dropdowns */
 
 .vld-demographic-choices{

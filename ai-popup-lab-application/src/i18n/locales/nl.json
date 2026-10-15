@@ -25,7 +25,12 @@
         "msg2": "Kies een land om de stemmen te bekijken:",
         "msg3": "Je kunt ook een gesprek voeren met een van de kunstmatig gegenereerde personae om te ontdekken waarom ze zo hebben gestemd.",
         "msg4": "Hier is een voorbeeld:",
-        "explorePolls": "ONTDEK DE VOORSPELLINGEN"
+        "explorePolls": "ONTDEK DE VOORSPELLINGEN",
+        "latestResults": {
+          "title": "Laatste peilingresultaat",
+          "period": "Peilingperiode",
+          "footnote": "De balken tonen het wekelijkse mediane stemaandeel onder waarschijnlijke kiezers; de foutbalken tonen het 95%-interval."
+        }
     },
     "personaChatExample": {
         "exampleName": "Synthetische Persona",
@@ -56,14 +61,24 @@
             "title": "Stemmenaandeel per partij in de loop van de tijd",
             "selected": "Geselecteerd",
             "to": "to",
-            "oldPipelineFootnote": "Voorspellingen gemarkeerd met ▲ zijn gemaakt met behulp van een verouderde methode."
+            "intervalFootnote": "Punten zijn wekelijkse medianen; de gearceerde banden tonen het 95%-interval.",
+            "likelyVotersIntervalFootnote": "Onder waarschijnlijke kiezers zijn de intervallen herschaald en omvatten ze geen onzekerheid over de opkomst.",
+            "oldPipelineFootnote": "Voorspellingen gemarkeerd met ▲ zijn gemaakt met behulp van een verouderde methode.",
+            "export": {
+              "title": "Exporteer gegevens binnen het gekozen tijdsbestek:",
+              "description": "(Als 'onder waarschijnlijke kiezers' is aangevinkt, worden de genormaliseerde gegevens zonder niet-stemmers gedownload. Als gemiddelden van Amerikaanse peilingbureaus zijn ingeschakeld, worden deze apart gedownload.)"
+            }
         },
         "voteLongitudinalDemographic": {
-            "title": "Stemmenaandeel per partij in de loop van de tijd per demografische groep, onder waarschijnlijke kiezers",
+            "title": "Stemmenaandeel per partij in de loop van de tijd per demografische groep",
             "selected": "Geselecteerd",
             "to": "to",
             "oldPipelineFootnote": "Voorspellingen gemarkeerd met ▲ zijn gemaakt met behulp van een verouderde methode.",
-            "intervalsFootnote": "Intervallen zijn niet opgenomen in de demografische grafiek."
+            "intervalsFootnote": "Intervallen zijn niet opgenomen in de demografische grafiek.",
+            "export": {
+              "title": "Exporteer gegevens binnen het gekozen tijdsbestek:",
+              "description": "(Ongeacht eventuele demografische filters of de instelling 'onder waarschijnlijke kiezers'.)"
+            }
         },
         "pollstersUS": {
             "title": "Geaggregeerde nationale gemiddelde steun",

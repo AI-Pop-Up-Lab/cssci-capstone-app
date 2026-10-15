@@ -44,6 +44,13 @@
     margin-left: 0;
 }
 
+.countryswitch2-sublabel {
+  font-size: 0.65em;
+  opacity: 0.8;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 450px){
     .countrySwitch2Item > img{
         height: 18px;

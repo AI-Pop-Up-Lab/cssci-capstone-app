@@ -10,6 +10,7 @@ import * as d3 from "d3";
 const VOTE_CHOICE_ALIASES = {
   democrat:   "Democrat",
   democratic: "Democrat",
+  "did not vote": "Will not vote",
 };
 
 export function normaliseVoteChoice(raw) {
@@ -36,7 +37,11 @@ export function lookupColour(coloursObj, key) {
   const override = COLOUR_OVERRIDES[String(key).trim().toLowerCase()];
   if (override) return override;
   if (!coloursObj) return "#888";
-  const found = Object.keys(coloursObj).find(k => k.toLowerCase() === String(key).toLowerCase());
+  const wanted = String(key).trim().toLowerCase();
+  // "Will not vote" is the display name for what the data/colour map may
+  // still call "Did not vote", so accept either spelling when matching colours.
+  const wantedKeys = wanted === "will not vote" ? [wanted, "did not vote"] : [wanted];
+  const found = Object.keys(coloursObj).find(k => wantedKeys.includes(k.trim().toLowerCase()));
   return found ? coloursObj[found] : "#888";
 }
 
@@ -281,8 +286,11 @@ export function parseDemographicCsv(csvText) {
     race:            d.race,
     gender:          d.gender,
     age_group:       d.age_group,
-    state:           d.state,
-    state_cd:        d.state_cd,
+    // The backend demographic aggregate names this column `state_abbrv`
+    // (see DEMOGRAPHIC_COLS in aggregate_longitudinal.py). Fall back to
+    // `state` in case older files used that name. state_cd is not part of
+    // this file (it lives in the separate district aggregate).
+    state:           d.state_abbrv ?? d.state,
     education_level: d.education_level,
     weight:          +d.weight,
   }));
@@ -348,7 +356,7 @@ function rowsToSeries(rows, shareCol) {
 //
 // Input: the district-level aggregate (week, vote_choice, state_cd, weight),
 // where `weight` is the expected number of voters for that party in that
-// congressional district. "Did not vote" rows are ignored: seats are decided
+// congressional district. "Will not vote" rows are ignored: seats are decided
 // by those who vote, and only the Democratic/Republican contest is modelled.
 // "Other" is shown as 0 seats (third parties/independents win ~none).
 //

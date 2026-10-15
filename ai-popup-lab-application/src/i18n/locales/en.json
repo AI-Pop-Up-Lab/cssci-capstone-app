@@ -25,7 +25,12 @@
         "msg2": "Choose a country to explore the votes:",
         "msg3": "You can also chat with one of synthetically generated personae to discover the reasoning behind their vote.",
         "msg4": "Here is an example:",
-        "explorePolls": "EXPLORE PREDICTIONS"
+        "explorePolls": "EXPLORE PREDICTIONS",
+        "latestResults": {
+          "title": "Latest polling result",
+          "period": "Polling period",
+          "footnote": "Bars show the weekly median vote share amongst likely voters; whiskers show the 95% interval."
+        }
     },
     "personaChatExample": {
         "exampleName": "Synthetic Persona",
@@ -56,14 +61,24 @@
             "title": "Vote share per party over time",
             "selected": "Selected",
             "to": "to",
-            "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology."
+            "intervalFootnote": "Points are weekly medians; shaded bands show the 95% interval.",
+            "likelyVotersIntervalFootnote": "Amongst likely voters, intervals are rescaled and do not include uncertainty about turnout.",
+            "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology.",
+            "export": {
+              "title": "Export data within chosen timeframe:",
+              "description": "(If 'amongst likely voters' is checked, the normalised data without non-voters is downloaded. If US pollster averages are enabled, this will be downloaded separately)"
+            }
         },
         "voteLongitudinalDemographic": {
             "title": "Vote share per party over time by demographic, amongst likely voters",
             "selected": "Selected",
             "to": "to",
             "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology.",
-            "intervalsFootnote": "Intervals are not included in the demographic chart."
+            "intervalsFootnote": "Intervals are not included in the demographic chart.",
+            "export": {
+              "title": "Export data within chosen timeframe:",
+              "description": "(Regardless of any demographic filters or the 'amongst likely voters' setting.)"
+            }
         },
         "pollstersUS": {
             "title": "Aggregated national average support",

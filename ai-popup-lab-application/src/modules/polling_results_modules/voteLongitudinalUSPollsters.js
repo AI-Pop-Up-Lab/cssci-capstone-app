@@ -211,20 +211,34 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
     const endWeek = slicedData[0].values[slicedData[0].values.length - 1]?.week;
  
     // --- Main series: always exports every party regardless of hiddenSeries,
-    // in wide format (median + 95% interval bounds per party), clipped to the
-    // selected timeframe ---
+    // in wide format (median + 95% interval bounds per party, plus projected
+    // House seats + 95% range for parties that have a seat projection),
+    // clipped to the selected timeframe ---
     const weeks = slicedData[0].values.map(v => v.week);
+
+    // Seat projections are only defined for voting parties (not the non-voter
+    // series), and only once the district data has loaded.
+    const hasSeats = s => !!seatsByWeek && !isNonVoterSeries(s.party);
+    const seatsFor = (s, week) => seatsByWeek?.get(week)?.[s.party.toLowerCase()];
+
     const mainHeader = [
       "week",
-      ...slicedData.flatMap(s => [`${s.party} median`, `${s.party} lower_95`, `${s.party} upper_95`]),
+      ...slicedData.flatMap(s => [
+        `${s.party} median`, `${s.party} lower_95`, `${s.party} upper_95`,
+        ...(hasSeats(s) ? [`${s.party} seats`, `${s.party} seats_lower_95`, `${s.party} seats_upper_95`] : []),
+      ]),
     ];
     const mainRows = weeks.map((week, i) => [
       week,
-      ...slicedData.flatMap(s => [
-        s.values[i]?.share ?? "",
-        s.values[i]?.low ?? "",
-        s.values[i]?.high ?? "",
-      ]),
+      ...slicedData.flatMap(s => {
+        const seats = hasSeats(s) ? seatsFor(s, week) : null;
+        return [
+          s.values[i]?.share ?? "",
+          s.values[i]?.low ?? "",
+          s.values[i]?.high ?? "",
+          ...(hasSeats(s) ? [seats?.seats ?? "", seats?.lo ?? "", seats?.hi ?? ""] : []),
+        ];
+      }),
     ]);
     downloadCsv(`vote_share_${country}_${startWeek}_to_${endWeek}.csv`, [mainHeader, ...mainRows]);
  
@@ -591,7 +605,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
               ? ` (95% CI ${d.low.toFixed(1)}–${d.high.toFixed(1)}%)`
               : "";
             const oldHtml = isOld
-              ? `<br/><span style="font-size:11px">Old pipeline (incorrect)</span>`
+              ? `<br/><span style="font-size:11px">Deprecated methodology</span>`
               : "";
             tooltip
               .style("opacity", 1)
@@ -826,7 +840,9 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
           </div>
 
           <div className="vlup-export unbounded-weight300">
-            <p>Export data within chosen timeframe (if US pollster averages are enabled, this will be downloaded separately):</p>
+            <p>{t('pollingResults.voteLongitudinal.export.title', 'Export data within chosen timeframe:')}</p>
+            <br></br>
+            <p>{t('pollingResults.voteLongitudinal.export.description')}</p>
             <button onClick={handleExport}>
               <p>Export</p>
               <img src={exportIcon}></img>
