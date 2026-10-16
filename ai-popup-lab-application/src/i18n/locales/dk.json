@@ -74,7 +74,7 @@
             "selected": "Valgt",
             "to": "til",
             "oldPipelineFootnote": "Prognoser markeret med ▲ er udarbejdet ved hjælp af en forældet metode.",
-            "intervalsFootnote": "Intervaller er ikke medtaget i det demografiske diagram.",
+            "intervalsFootnote": "Diagrammet er udarbejdet på baggrund af punktestimater på celleniveau, hvor usikkerheden er udeladt af hensyn til beregningsmæssig effektivitet. Punktestimaterne for de samlede størrelser kan afvige fra dem, der er udledt på baggrund af den fulde posteriorfordeling som ovenfor.",
             "export": {
               "title": "Exportera data inom vald tidsperiod:",
               "description": "(Oavsett eventuella demografiska filter eller inställningen 'bland sannolika väljare'.)"

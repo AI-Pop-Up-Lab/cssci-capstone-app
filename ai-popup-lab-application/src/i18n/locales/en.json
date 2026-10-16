@@ -74,7 +74,7 @@
             "selected": "Selected",
             "to": "to",
             "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology.",
-            "intervalsFootnote": "Intervals are not included in the demographic chart.",
+            "intervalsFootnote": "Chart derived from cell-level point estimates ignoring uncertainty for computational expediency. Point estimates of aggregates may differ from those derived under the full posterior as above.",
             "export": {
               "title": "Export data within chosen timeframe:",
               "description": "(Regardless of any demographic filters or the 'amongst likely voters' setting.)"

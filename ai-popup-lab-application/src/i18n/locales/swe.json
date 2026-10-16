@@ -74,7 +74,7 @@
             "selected": "Valt",
             "to": "till",
             "oldPipelineFootnote": "Prognoser markerade med ▲ har tagits fram med hjälp av en metod som inte längre rekommenderas.",
-            "intervalsFootnote": "Intervall ingår inte i den demografiska tabellen.",
+            "intervalsFootnote": "Diagrammet är framtaget utifrån punktuppskattningar på cellnivå, där osäkerheten har bortsetts från av beräkningsskäl. Punktuppskattningarna för aggregerade värden kan skilja sig från de som härleds utifrån den fullständiga a posteriori-fördelningen enligt ovan.",
             "export": {
               "title": "Eksportér data inden for den valgte tidsperiode:",
               "description": "(Uanset eventuelle demografiske filtre eller indstillingen 'blandt sandsynlige vælgere'.)"
