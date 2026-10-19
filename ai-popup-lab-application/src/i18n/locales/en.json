@@ -1,5 +1,5 @@
 {
-    "disclaimerPopup": "This platform uses AI-simulated personae based on public census data. These personae are not real humans, and no personal data of individuals is used.",
+    "disclaimerPopup": "This platform uses AI-simulated personae based on public census and survey data. These personae are not real humans, and no personal data of specific individuals is used.",
     "header": {
         "tagline": "Estimating public opinion from synthetic personae",
         "links": {

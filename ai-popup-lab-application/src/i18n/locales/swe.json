@@ -1,5 +1,5 @@
 {
-    "disclaimerPopup": "Denna plattform använder AI-simulerade profiler som baseras på offentliga folkräkningsuppgifter. Dessa profiler föreställer inte verkliga personer, och inga personuppgifter om enskilda individer används.",
+    "disclaimerPopup": "Denna plattform använder AI-simulerade personprofiler som baseras på offentliga folkräknings- och undersökningsdata. Dessa personprofiler är inte riktiga människor, och inga personuppgifter om specifika individer används.",
     "header": {
         "tagline": "Estimating public opinion from synthetic personae",
         "links": {

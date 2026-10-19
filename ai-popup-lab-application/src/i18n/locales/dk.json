@@ -1,5 +1,5 @@
 {
-    "disclaimerPopup": "Denne platform bruger AI-simulerede personaer baseret på offentlige folketællingsdata. Disse personaer er ikke rigtige mennesker, og der anvendes ingen personoplysninger om enkeltpersoner.",
+    "disclaimerPopup": "Denne platform anvender AI-simulerede personaer, der er baseret på offentlige folketællings- og undersøgelsesdata. Disse personaer er ikke virkelige mennesker, og der anvendes ingen personoplysninger om bestemte personer.",
     "header": {
         "tagline": "Estimating public opinion from synthetic personae",
         "links": {
