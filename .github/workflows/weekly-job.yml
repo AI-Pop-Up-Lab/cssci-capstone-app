@@ -1,5 +1,10 @@
 name: Weekly Data Generation
 
+# This workflow only STARTS the run. A small orchestrator container in Azure
+# (JOB_TYPE=orchestrate, see data_generation/orchestrator.py) launches and
+# supervises the prepare -> parallel shards -> finalize containers itself, so
+# nothing here depends on this job (or its Azure login) outliving ~1 hour.
+
 on:
   schedule:
     - cron: '0 0 * * 3'            # Wednesday 00:00 (start of Wednesday)
@@ -23,8 +28,13 @@ on:
         required: false
         default: 'false'
 
+env:
+  # Parallel survey containers (1 vCPU each). 10 vCPU quota - 1 vCPU for the
+  # orchestrator itself = 9. Raise only if your vCPU quota is raised.
+  NUM_SHARDS: 9
+
 jobs:
-  run-weekly-job:
+  start-orchestrator:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -37,35 +47,48 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Delete existing ACI if present
+      # NOTE: re-running while a previous orchestrator is still going deletes it.
+      # That's safe: every stage resumes from blob-storage checkpoints/locks.
+      - name: Delete existing orchestrator if present
         run: |
           az container delete \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name weekly-worker-aci \
+            --name weekly-orchestrator-aci \
             --yes || true
 
-      - name: Create and run ACI worker
+      - name: Create orchestrator ACI
         run: |
           az container create \
             --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name weekly-worker-aci \
+            --name weekly-orchestrator-aci \
             --image ${{ secrets.ACR_LOGIN_SERVER }}/weekly-worker:latest \
             --registry-username ${{ secrets.ACR_USERNAME }} \
             --registry-password ${{ secrets.ACR_PASSWORD }} \
+            --assign-identity ${{ secrets.ORCH_IDENTITY_ID }} \
             --restart-policy Never \
             --location westeurope \
-            --cpu 4 \
-            --memory 16 \
+            --cpu 1 \
+            --memory 2 \
             --environment-variables \
               ENV=production \
+              JOB_TYPE=orchestrate \
+              PIPELINE_JOB_TYPE="${{ github.event.inputs.job_type || 'both' }}" \
               COUNTRIES="${{ github.event.inputs.countries || 'usa' }}" \
-              JOB_TYPE="${{ github.event.inputs.job_type || 'both' }}" \
               TARGET_WEEK="${{ github.event.inputs.target_week }}" \
+              NUM_SHARDS="${{ env.NUM_SHARDS }}" \
               COMPUTE_MRP_DRAWS="${{ github.event.inputs.compute_mrp_draws || 'false' }}" \
               BLOB_CONTAINER_NAME=generated-data \
               US_POLLS_BLOB_CONTAINER="polling-data" \
               US_POLLS_OUTPUT_BLOB_NAME="us_polls_model_output.json" \
+              AZURE_SUBSCRIPTION_ID="${{ secrets.AZURE_SUBSCRIPTION_ID }}" \
+              AZURE_RESOURCE_GROUP="${{ secrets.AZURE_RESOURCE_GROUP }}" \
+              ACI_LOCATION=westeurope \
+              WORKER_IMAGE="${{ secrets.ACR_LOGIN_SERVER }}/weekly-worker:latest" \
+              ACR_LOGIN_SERVER="${{ secrets.ACR_LOGIN_SERVER }}" \
+              ACR_USERNAME="${{ secrets.ACR_USERNAME }}" \
+              ORCH_IDENTITY_CLIENT_ID="${{ secrets.ORCH_IDENTITY_CLIENT_ID }}" \
             --secure-environment-variables \
+              ACR_PASSWORD="${{ secrets.ACR_PASSWORD }}" \
               AZURE_STORAGE_CONNECTION_STRING="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
               AZURE_OPENAI_API_KEY="${{ secrets.AZURE_OPENAI_API_KEY }}" \
               AZURE_OPENAI_MODEL="${{ secrets.AZURE_OPENAI_MODEL }}" \
@@ -73,44 +96,32 @@ jobs:
               COHERE_API_KEY="${{ secrets.COHERE_API_KEY }}" \
             --os-type Linux
 
-      - name: Wait for ACI to finish
-        timeout-minutes: 360
+      # Bounded watch (40 min, well inside the ~1h Azure login lifetime): gives fast
+      # feedback if the orchestrator dies early (bad config, permissions), then
+      # hands off. The run itself carries on in Azure regardless of this job.
+      - name: Watch briefly, then hand off
+        timeout-minutes: 50
         run: |
-          while true; do
+          for i in $(seq 1 80); do
             STATE=$(az container show \
               --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-              --name weekly-worker-aci \
+              --name weekly-orchestrator-aci \
               --query "containers[0].instanceView.currentState.state" \
-              --output tsv)
-            echo "Container state: $STATE"
-            if [ "$STATE" = "Terminated" ]; then break; fi
+              --output tsv || echo unknown)
+            echo "Orchestrator state: $STATE"
+            if [ "$STATE" = "Terminated" ]; then
+              EXIT_CODE=$(az container show \
+                --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+                --name weekly-orchestrator-aci \
+                --query "containers[0].instanceView.currentState.exitCode" \
+                --output tsv)
+              az container logs \
+                --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
+                --name weekly-orchestrator-aci
+              echo "Exit code: $EXIT_CODE"
+              [ "$EXIT_CODE" = "0" ] && exit 0 || exit 1
+            fi
             sleep 30
           done
-
-      - name: Check exit code
-        run: |
-          EXIT_CODE=$(az container show \
-            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name weekly-worker-aci \
-            --query "containers[0].instanceView.currentState.exitCode" \
-            --output tsv)
-          echo "Exit code: $EXIT_CODE"
-          if [ "$EXIT_CODE" != "0" ]; then
-            echo "Worker failed with exit code $EXIT_CODE"
-            exit 1
-          fi
-
-      - name: Print container logs
-        if: always()
-        run: |
-          az container logs \
-            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name weekly-worker-aci
-
-      - name: Clean up ACI
-        if: always()
-        run: |
-          az container delete \
-            --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} \
-            --name weekly-worker-aci \
-            --yes
+          echo "Orchestrator still running after 40 min — it continues in Azure."
+          echo "Follow it with: az container logs -g <rg> -n weekly-orchestrator-aci --follow"

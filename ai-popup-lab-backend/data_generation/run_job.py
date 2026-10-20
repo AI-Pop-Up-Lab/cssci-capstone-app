@@ -7,7 +7,19 @@ Run locally (no Docker):
 
 Env variables:
     COUNTRIES  comma-separated country names, e.g. "usa" or "usa,sweden"
-    JOB_TYPE   panel | mrp | both  (default: panel)
+    JOB_TYPE   comma-separated stages (default: panel). One or more of:
+                 orchestrate    start/supervise the sharded run's containers inside Azure
+                                (what the GitHub workflow launches; see orchestrator.py)
+                 panel_prepare  sharded run, stage 1: attrition + one GDELT download
+                 panel_shard    sharded run, stage 2: one shard (needs SHARD_INDEX, NUM_SHARDS)
+                 panel_merge    sharded run, stage 3: merge shards -> snapshot + active panel
+                 mrp            MRP extended frame + longitudinal aggregates
+                 panel          legacy single-container panel cycle (no sharding)
+                 both           legacy: panel + mrp
+    PIPELINE_JOB_TYPE  mrp | panel | both — what `orchestrate` should run (default: both)
+    SHARD_INDEX / NUM_SHARDS   used by panel_shard (index 0..NUM_SHARDS-1) and panel_merge
+    TARGET_WEEK  optional YYYY-WW override (weekly-job.yml always passes one so every
+                 stage of a run agrees on the week)
 
 Countries are processed one after another in a simple loop — the pipeline
 runs identically regardless of how many countries are listed, so adding a
@@ -26,6 +38,7 @@ from pathlib import Path
 import pandas as pd
 
 from .generate_panel_results import generate_panel_results, iso_week_label, isoweek_to_panel_date
+from .generate_panel_sharded import prepare_panel_shards, run_panel_shard, merge_panel_shards
 from .run_scripts import check_r_available, run_extension_script
 from .aggregate_longitudinal import update_longitudinal_aggregates, update_longitudinal_national_summary
 from .fetch_us_polls import fetch_and_store_us_polls
@@ -41,8 +54,17 @@ logger = logging.getLogger(__name__)
 # Comma-separated list of country names, e.g. "usa" or "usa,sweden"
 COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if c.strip()]
 
-# What to run: "panel", "mrp", or "both"
+# What to run: one or more comma-separated stages (see module docstring).
 JOB_TYPE = os.environ.get("JOB_TYPE", "panel").lower()
+JOB_TYPES = {t.strip() for t in JOB_TYPE.split(",") if t.strip()}
+if "both" in JOB_TYPES:
+    JOB_TYPES |= {"panel", "mrp"}
+
+# Sharded panel run. NUM_SHARDS must be identical across the prepare / shard /
+# merge stages of one run (it is baked into the checkpoint blob names).
+NUM_SHARDS = int(os.environ.get("NUM_SHARDS", "9"))
+PIPELINE_JOB_TYPE = os.environ.get("PIPELINE_JOB_TYPE", "both").strip().lower()
+SHARD_INDEX = int(os.environ.get("SHARD_INDEX", "0"))
 
 # If False (the default), skip the memory-heavy simulation-draws phase of
 # MRP entirely — quartile/uncertainty tables and CD-level breakdowns won't
@@ -335,29 +357,62 @@ def run_country_job(country: str, year: int, week: int) -> None:
     _run_mrp above), so this function is just sequencing, not lock
     bookkeeping.
     """
-    if JOB_TYPE in ("panel", "both"):
+    if "panel" in JOB_TYPES:
         logger.info("[%s] Running panel cycle (%d-W%02d)...", country, year, week)
         generate_panel_results(country=country, year=year, week=week, force=False)
         logger.info("[%s] Panel cycle done.", country)
 
-    if JOB_TYPE in ("mrp", "both"):
+    if "panel_prepare" in JOB_TYPES:
+        logger.info("[%s] Preparing sharded panel run (%d-W%02d)...", country, year, week)
+        prepare_panel_shards(country=country, year=year, week=week)
+        logger.info("[%s] Prepare done.", country)
+
+    if "panel_shard" in JOB_TYPES:
+        logger.info("[%s] Running shard %d/%d (%d-W%02d)...", country, SHARD_INDEX + 1, NUM_SHARDS, year, week)
+        run_panel_shard(country=country, year=year, week=week, shard_index=SHARD_INDEX, num_shards=NUM_SHARDS)
+        logger.info("[%s] Shard done.", country)
+
+    if "panel_merge" in JOB_TYPES:
+        logger.info("[%s] Merging %d shards (%d-W%02d)...", country, NUM_SHARDS, year, week)
+        merge_panel_shards(country=country, year=year, week=week, num_shards=NUM_SHARDS, force=False)
+        logger.info("[%s] Merge done.", country)
+
+    if "mrp" in JOB_TYPES:
         logger.info("[%s] Running MRP...", country)
         _run_mrp(country=country, year=year, week=week, backfill=False, force=False)
         logger.info("[%s] MRP done.", country)
 
 
 def main() -> None:
-    if JOB_TYPE in ("mrp", "both"):
+    year, week = _this_week()
+
+    # Orchestrator container: starts and supervises the prepare / shard /
+    # finalize containers via the ACI API, then exits. Does no pipeline work itself.
+    if "orchestrate" in JOB_TYPES:
+        from .orchestrator import run_orchestrator
+        try:
+            run_orchestrator(
+                countries=COUNTRIES, year=year, week=week,
+                pipeline_job_type=PIPELINE_JOB_TYPE, num_shards=NUM_SHARDS,
+            )
+        except Exception:
+            logger.exception("Orchestration failed")
+            sys.exit(1)
+        return
+
+    if "mrp" in JOB_TYPES:
         check_r_available()
 
-    year, week = _this_week()
     failed: list[str] = []
 
-    try:
-        fetch_and_store_us_polls()
-    except Exception:
-        logger.exception("US polls pipeline failed")
-        failed.append("usa_pollsters_download")
+    # Runs once per workflow, in the final stage — not in the prepare/shard
+    # containers, where it would run 1 + NUM_SHARDS redundant times.
+    if JOB_TYPES & {"panel", "panel_merge", "mrp"}:
+        try:
+            fetch_and_store_us_polls()
+        except Exception:
+            logger.exception("US polls pipeline failed")
+            failed.append("usa_pollsters_download")
 
     for country in COUNTRIES:
         logger.info("Processing country: %s", country)

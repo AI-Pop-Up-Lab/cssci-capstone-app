@@ -2,6 +2,8 @@
 python-dotenv==1.2.2
 azure-identity==1.25.1
 azure-storage-blob==12.29.0
+# orchestrator: starts/supervises the stage containers via the ACI API
+azure-mgmt-containerinstance>=10.1.0,<11
 
 # panel survey dependencies
 openai>=1.30.0,<2

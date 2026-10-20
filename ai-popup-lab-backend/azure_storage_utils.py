@@ -14,6 +14,12 @@ Country
         Historical panels
         Checkpoints
             Latest checkpoint for every and current week
+            {iso_week}/ (sharded weekly run)
+                shard_XX_of_NN_checkpoint.csv — each parallel shard container's
+                    own in-progress panel slice; also its final output, which the
+                    merge stage reads. One blob per shard, so shards never contend.
+                shard_XX_of_NN_news_text.csv — article text each shard scraped,
+                    folded back into the week's gdelt cache by the merge stage
     Extended frames
         Extended frame for every week
     National summary
@@ -85,6 +91,28 @@ def get_historical_panel_path(country, iso_week):
 
 def get_panel_checkpoint_path(country, iso_week):
     return f"{country}/panels/checkpoints/{iso_week}_panel_checkpoint.csv"
+
+
+def get_panel_shard_checkpoint_path(country, iso_week, shard_index, num_shards):
+    """
+    One parallel shard's checkpoint blob for a given week. Each shard owns
+    exactly one of these (so concurrent containers never write the same blob),
+    and it doubles as the shard's final output that the merge stage reads.
+    num_shards is part of the name so a changed shard count can never pick up
+    a checkpoint cut for a different split.
+    """
+    return (
+        f"{country}/panels/checkpoints/{iso_week}/"
+        f"shard_{shard_index:02d}_of_{num_shards:02d}_checkpoint.csv"
+    )
+
+
+def get_panel_shard_news_path(country, iso_week, shard_index, num_shards):
+    """Article text one shard scraped this week (DocumentIdentifier/title/authors/text rows only)."""
+    return (
+        f"{country}/panels/checkpoints/{iso_week}/"
+        f"shard_{shard_index:02d}_of_{num_shards:02d}_news_text.csv"
+    )
 
 
 def get_extended_frame_path(country, iso_week):

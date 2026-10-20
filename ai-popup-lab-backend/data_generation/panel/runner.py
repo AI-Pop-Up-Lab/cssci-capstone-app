@@ -55,7 +55,9 @@ from .survey import (
 from .news import download_weekly_news, fetch_article
 from .retry_utils import RetryExhausted
 
-CHECKPOINT_INTERVAL = 50
+# Respondents per checkpoint upload (per pass). In the sharded pipeline each
+# shard container uploads its own checkpoint blob every this many respondents.
+CHECKPOINT_INTERVAL = 100
 
 US_NEWS_DOMAINS = [
     "yahoo.com", "aol.com", "cnn.com", "forbes.com", "foxnews.com",
@@ -319,6 +321,32 @@ def _run_pass(
                 on_checkpoint(panel_df)
 
 
+def load_wave_news(question_id: str, panel_date: str) -> pd.DataFrame:
+    """
+    Download this wave's GDELT news (7 days up to `panel_date`) for the
+    question's country. Split out of run_survey so the sharded pipeline can
+    download once in the prepare stage and have every shard container read
+    the same cached copy from blob storage. Raises if nothing is found.
+    """
+    panel_date = pd.to_datetime(panel_date).normalize().strftime("%Y%m%d")
+    panel_end_date = pd.to_datetime(panel_date)
+    # Local survey-logic code (e.g. "us"), NOT the storage country key ("usa").
+    country_code = question_id.split("_")[0]
+
+    # per-country domain filter: the news question filters on sources like 'dn.se',
+    # which can never appear in a .com-only download
+    domain = US_NEWS_DOMAINS if country_code == "us" else f".{country_code}"
+    news_df = download_weekly_news(
+        start_date=panel_end_date - pd.Timedelta(days=7),
+        end_date=panel_end_date,
+        domain=domain,
+        save_csv=False,
+    )
+    if news_df is None:
+        raise RuntimeError(f"No GDELT news data available for '{country_code}' around {panel_date}.")
+    return news_df
+
+
 def run_survey(
     question_id: str,
     panel_df: pd.DataFrame,
@@ -359,29 +387,15 @@ def run_survey(
     source_common_name = str(question_row["news"]).strip().lower()
     turnout_question_id = _find_turnout_question_id(questions_df, question_id)
 
-    # per-country domain filter: the news question filters on sources like 'dn.se',
-    # which can never appear in a .com-only download
     if news_df is None:
-        if country_code == "us":
-            news_df = download_weekly_news(
-                start_date=panel_end_date - pd.Timedelta(days=7),
-                end_date=panel_end_date,
-                domain=US_NEWS_DOMAINS,
-                save_csv=False,
-            )
-        else:
-            news_df = download_weekly_news(
-                start_date=panel_end_date - pd.Timedelta(days=7),
-                end_date=panel_end_date,
-                domain=f".{country_code}",
-                save_csv=False,
-            )
-    if news_df is None:
-        raise RuntimeError(f"No GDELT news data available for '{country_code}' around {panel_date}.")
+        news_df = load_wave_news(question_id, panel_date)
 
     for col in ("title", "authors", "text"):
         if col not in news_df.columns:
             news_df[col] = pd.NA
+        # all-empty columns come back from CSV as float64; force object so
+        # scraped article strings can be written into them
+        news_df[col] = news_df[col].astype(object)
 
     turnout_col   = f"{panel_date}_turnout"
     vote_col      = f"{panel_date}_vote"
