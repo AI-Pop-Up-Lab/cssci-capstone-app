@@ -50,6 +50,7 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s — %(message)s",
 )
 logger = logging.getLogger(__name__)
+logging.getLogger("azure").setLevel(logging.WARNING)  # SDK logs every HTTP request/response at INFO
 
 # Comma-separated list of country names, e.g. "usa" or "usa,sweden"
 COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if c.strip()]

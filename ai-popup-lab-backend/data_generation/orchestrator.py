@@ -42,10 +42,14 @@ import azure_storage_utils as storage
 from .generate_panel_results import iso_week_label, _load_country_info
 
 logger = logging.getLogger(__name__)
+# The Azure SDK logs every request/response (headers and all) at INFO, which
+# buried the orchestrator's own messages — one block per poll, per shard.
+logging.getLogger("azure").setLevel(logging.WARNING)
 
 CONTAINER_NAME = "worker"
 POLL_SECONDS = 30
 MAX_SHARD_ATTEMPTS = 3
+PROGRESS_REPORT_SECONDS = 600
 
 # Forwarded to child containers as plain env vars / secure env vars.
 PLAIN_ENV_KEYS = [
@@ -173,6 +177,7 @@ def _run_single_stage(aci, name, res, env, secure_env, deadline, created: set) -
         if state in ("Terminated", "Missing"):
             break
         if time.time() > deadline:
+            logger.error("%s hit the deadline. Last log lines:\n%s", name, aci.tail_logs(name))
             raise TimeoutError(f"{name} did not finish before the orchestrator deadline.")
         time.sleep(POLL_SECONDS)
     if state != "Terminated" or code != 0:
@@ -199,8 +204,15 @@ def _run_shards(aci, num_shards, shard_env, secure_env, deadline, created: set) 
         launch(i)
 
     finished = 0
+    started = last_report = time.time()
     while running:
         time.sleep(POLL_SECONDS)
+        if time.time() - last_report >= PROGRESS_REPORT_SECONDS:
+            last_report = time.time()
+            logger.info(
+                "Shards after %.1f h: %d finished, running=%s, failed=%s",
+                (last_report - started) / 3600, finished, sorted(running), sorted(failed),
+            )
         for i, name in list(running.items()):
             state, code = aci.poll(name)
             if state not in ("Terminated", "Missing"):
@@ -219,6 +231,10 @@ def _run_shards(aci, num_shards, shard_env, secure_env, deadline, created: set) 
                 aci.delete(name)
                 failed.append(i)
         if running and time.time() > deadline:
+            # The cleanup in run_orchestrator deletes these containers (and their
+            # logs) — capture what they were doing first.
+            for i, name in sorted(running.items()):
+                logger.error("Shard %d was still running at the deadline. Last log lines:\n%s", i + 1, aci.tail_logs(name, 40))
             raise TimeoutError(f"Shards {sorted(running)} did not finish before the orchestrator deadline.")
 
     if failed:
@@ -270,7 +286,7 @@ def run_orchestrator(
     aci = aci or _Aci()
     base_env = {k: os.environ[k] for k in PLAIN_ENV_KEYS if os.environ.get(k)}
     base_env.update({"TARGET_WEEK": target_week, "NUM_SHARDS": str(num_shards)})
-    deadline = time.time() + float(os.environ.get("ORCH_TIMEOUT_HOURS", "8")) * 3600
+    deadline = time.time() + float(os.environ.get("ORCH_TIMEOUT_HOURS", "72")) * 3600
     created: set[str] = set()
 
     try:

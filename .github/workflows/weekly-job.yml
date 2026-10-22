@@ -32,6 +32,10 @@ env:
   # Parallel survey containers (1 vCPU each). 10 vCPU quota - 1 vCPU for the
   # orchestrator itself = 9. Raise only if your vCPU quota is raised.
   NUM_SHARDS: 9
+  # Safety cap on the whole orchestrated run (hours). The survey stages are slow;
+  # shards checkpoint and resume, so hitting the cap loses little, but a hung
+  # container would otherwise run forever.
+  ORCH_TIMEOUT_HOURS: 72
 
 jobs:
   start-orchestrator:
@@ -76,6 +80,7 @@ jobs:
               COUNTRIES="${{ github.event.inputs.countries || 'usa' }}" \
               TARGET_WEEK="${{ github.event.inputs.target_week }}" \
               NUM_SHARDS="${{ env.NUM_SHARDS }}" \
+              ORCH_TIMEOUT_HOURS="${{ env.ORCH_TIMEOUT_HOURS }}" \
               COMPUTE_MRP_DRAWS="${{ github.event.inputs.compute_mrp_draws || 'false' }}" \
               BLOB_CONTAINER_NAME=generated-data \
               US_POLLS_BLOB_CONTAINER="polling-data" \
