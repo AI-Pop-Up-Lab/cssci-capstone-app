@@ -26,6 +26,17 @@ def test_system_prompt_fills_in_the_persona():
     assert "{{" not in prompt
 
 
+def test_system_prompt_injects_recent_events():
+    events = {
+        "national": ["Federal Reserve cuts interest rates by 25 bps."],
+        "state": {"FL": ["Hurricane recovery efforts continue in coastal counties."]},
+    }
+    prompt = build_system_prompt(PERSONA, load_base_prompt(str(DEFAULT_BASE_PROMPT_PATH)), events_data=events)
+    assert "Federal Reserve cuts interest rates" in prompt
+    assert "Hurricane recovery efforts continue" in prompt
+    assert "{{" not in prompt
+
+
 def test_persona_is_appended_if_placeholders_are_missing():
     prompt = build_system_prompt(PERSONA, "Be nice.")
     assert prompt.startswith("Be nice.")

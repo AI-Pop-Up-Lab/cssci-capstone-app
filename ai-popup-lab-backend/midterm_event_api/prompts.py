@@ -16,6 +16,7 @@ from midterm_event_api.personas import Persona, strip_comments
 
 FACTS_PLACEHOLDER = "{{PERSONA_FACTS}}"
 PROFILE_PLACEHOLDER = "{{PERSONA_PROFILE}}"
+EVENTS_PLACEHOLDER = "{{RECENT_EVENTS}}"
 
 
 @lru_cache(maxsize=4)
@@ -30,14 +31,36 @@ def persona_facts(persona: Persona) -> str:
     )
 
 
-def build_system_prompt(persona: Persona, base_prompt: str) -> str:
+def format_recent_events(state: str | None = None, events_data: dict | None = None) -> str:
+    """Format recent national and state events into a brief briefing if available."""
+    if not events_data:
+        return ""
+    lines = []
+    national = events_data.get("national", [])
+    if national:
+        lines.append("**National headlines leading up to today:**")
+        for item in national:
+            lines.append(f"- {item}")
+    if state and "state" in events_data and state in events_data["state"]:
+        state_events = events_data["state"][state]
+        if state_events:
+            lines.append(f"\n**Recent local/state news in {state}:**")
+            for item in state_events:
+                lines.append(f"- {item}")
+    return "\n".join(lines).strip()
+
+
+def build_system_prompt(persona: Persona, base_prompt: str, events_data: dict | None = None) -> str:
     prompt = base_prompt
+    events_text = format_recent_events(persona.attributes.get("state"), events_data)
+
     for placeholder, content in (
         (FACTS_PLACEHOLDER, persona_facts(persona)),
         (PROFILE_PLACEHOLDER, persona.profile),
+        (EVENTS_PLACEHOLDER, events_text),
     ):
         if placeholder in prompt:
             prompt = prompt.replace(placeholder, content)
-        else:
+        elif placeholder != EVENTS_PLACEHOLDER:
             prompt = f"{prompt}\n\n{content}"
-    return prompt
+    return prompt.strip()
