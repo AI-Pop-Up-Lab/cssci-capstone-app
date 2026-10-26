@@ -8,7 +8,7 @@ import './voteLongitudinalDemographics.css';
 import exportIcon from '../../assets/images/export.png';
 import axios from "axios";
 import Loader from '../loader';
-import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, formatWeekRange, formatRangeEndingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
+import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, formatWeekRange, formatRangeStartingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
 // import partyColours from '../../assets/partyColours';
 
 // Series that should not be drawn. Names are compared after lower-casing and
@@ -203,7 +203,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
 
       const weeks = slicedData[0].values.map(v => v.week);
 
-      // x — time scale. Each week is placed at its anchor date (the end of the
+      // x — time scale. Each week is placed at its anchor date (the start of the
       // 7-day range it represents), so a gap of N weeks between data points
       // takes up N weeks' worth of horizontal space.
       const DAY = 86400000;
@@ -254,7 +254,7 @@ function VoteLongitudinalDemographics({ country, countryData }) {
           d3.axisBottom(x)
             .tickValues(tickValues)
             .tickSize(0)
-            .tickFormat(formatRangeEndingAt)
+            .tickFormat(formatRangeStartingAt)
         );
 
       xAxis.select(".domain").remove();

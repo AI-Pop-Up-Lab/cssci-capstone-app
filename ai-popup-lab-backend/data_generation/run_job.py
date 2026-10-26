@@ -253,6 +253,7 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
         # shares). Only the US module takes this — post_strat_module_dk_se.R
         # doesn't, so don't require it for other countries.
         area_shares_path = None
+        candidates_path = None
         if country.lower() == "usa":
             area_shares_blob = storage.get_area_level_vote_shares_path(country)
             area_shares_df = storage.read_dataframe_or_none(area_shares_blob)
@@ -264,6 +265,19 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
                 )
             area_shares_path = tmp_path / f"{country}_area_level_vote_shares.csv"
             area_shares_df.to_csv(area_shares_path, index=False)
+
+            # Ballot access by district (who is actually running) — the US
+            # module uses it to mask parties not on a district's ballot.
+            candidates_blob = storage.get_house_candidates_path(country)
+            candidates_df = storage.read_dataframe_or_none(candidates_blob)
+            if candidates_df is None:
+                raise FileNotFoundError(
+                    f"No house candidates file found for {country} "
+                    f"(expected blob: {candidates_blob}). Upload it before running MRP — "
+                    f"it supplies the ballot-access mask for post_strat_module_us.R."
+                )
+            candidates_path = tmp_path / f"{country}_house_candidates.csv"
+            candidates_df.to_csv(candidates_path, index=False)
 
         survey_df = storage.read_dataframe_or_none(survey_blob_path)
         if survey_df is None:
@@ -285,6 +299,7 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
             country=country,
             compute_draws=COMPUTE_MRP_DRAWS,
             area_shares_path=area_shares_path,
+            candidates_path=candidates_path,
         )
 
         r_output_path = output_dir / "mrp_extended_frame_predictions.csv"

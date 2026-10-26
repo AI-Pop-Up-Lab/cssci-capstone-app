@@ -9,7 +9,7 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseNationalSummaryCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, formatWeekRange, formatRangeEndingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
+import { parseNationalSummaryCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, formatWeekRange, formatRangeStartingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -404,7 +404,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
 
       const weeks = combinedWeeks;
 
-      // x — time scale. Each week is placed at its anchor date (the end of the
+      // x — time scale. Each week is placed at its anchor date (the start of the
       // 7-day range it represents), so a gap of N weeks between data points
       // takes up N weeks' worth of horizontal space.
       const DAY = 86400000;
@@ -480,7 +480,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
           d3.axisBottom(x)
             .tickValues(tickValues)
             .tickSize(0)
-            .tickFormat(formatRangeEndingAt)
+            .tickFormat(formatRangeStartingAt)
         );
 
       xAxis.select(".domain").remove();

@@ -4,7 +4,7 @@ if (length(args) < 4) {
   stop(
     paste(
       "Usage:",
-      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws] [area_shares_csv] [export_cell_draws]"
+      "Rscript scripts/run_post_strat_cli.R <survey_csv> <frame_csv> <output_dir> <country> [n_sims] [compute_draws] [area_shares_csv] [export_cell_draws] [candidates_csv]"
     )
   )
 }
@@ -56,6 +56,11 @@ area_shares_path <- if (length(args) >= 7 && nzchar(args[[7]])) args[[7]] else N
 # Large -- rows = frame cells x parties, columns = n_sims draws.
 export_cell_draws <- length(args) >= 8 && tolower(args[[8]]) %in% c("true", "1", "yes")
 
+# Optional 9th arg: house candidates CSV (ballot access by district). Only the
+# US module's run_post_stratification() accepts `candidates`; when omitted,
+# every party is treated as running in every district.
+candidates_path <- if (length(args) >= 9 && nzchar(args[[9]])) args[[9]] else NULL
+
 # Country-specific post-stratification module. The US module has its own
 # stickbreaking/multinomial structure and district-level output tailored to
 # US House races; every other country still uses the original shared
@@ -98,6 +103,14 @@ run_args <- list(
 
 if (!is.null(area_shares_path)) {
   run_args$area_level_vote_shares <- readr::read_csv(area_shares_path, show_col_types = FALSE)
+}
+
+if (!is.null(candidates_path)) {
+  if (tolower(country) != "usa") {
+    warning("candidates CSV supplied but country is not 'usa'; ignoring.")
+  } else {
+    run_args$candidates <- readr::read_csv(candidates_path, show_col_types = FALSE)
+  }
 }
 
 result <- do.call(run_post_stratification, run_args)

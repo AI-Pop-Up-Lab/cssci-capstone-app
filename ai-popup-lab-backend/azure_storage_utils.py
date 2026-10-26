@@ -9,6 +9,7 @@ STRUCTURE OF DATA IN AZURE
 
 Country
     Stratification frame
+    House candidates (ballot access by district; usa-only, input to the post-strat module)
     Panels
         Active panel
         Historical panels
@@ -200,6 +201,15 @@ def get_area_level_vote_shares_path(country):
     congressional vote shares). USA-only currently.
     """
     return f"{country}/{country}_area_level_vote_shares.csv"
+
+
+def get_house_candidates_path(country):
+    """
+    Static per-country input for post_strat_module_us.R's run_post_stratification()
+    `candidates` argument (who is on the ballot in each House district, used to
+    build the ballot mask). USA-only currently.
+    """
+    return f"{country}/{country}_house_candidates.csv"
 
 
 # ── Hotfix backfill (split-stage: sequential attrition+bio, then parallel

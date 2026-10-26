@@ -66,10 +66,10 @@ export function isoWeekToMonday(weekKey) {
 // Week anchoring and date ranges
 // ======================================================================
 //
-// Each ISO week key represents the polling for the 7 days BEFORE its anchor
-// date, e.g. 2026-W30 is anchored on 20/07/2026 and covers 13/07/2026 -
-// 20/07/2026. Charts plot each week at its anchor date and label it with the
-// range.
+// Each ISO week key is anchored on a date, and its range runs FORWARD from
+// that anchor for 7 days (anchor to anchor + 6), e.g. 2026-W36 is anchored on
+// Monday 31/08/2026 and covers 31/08/2026 - 06/09/2026. Charts plot each week
+// at its anchor date and label it with the range.
 //
 // Which weekday is the anchor can change over time. Edit WEEK_ANCHOR_SCHEDULE
 // to change it:
@@ -118,7 +118,7 @@ function anchorFromMonday(monday) {
 }
 
 /**
- * ISO week key -> anchor Date (UTC): the END of the 7-day range the week
+ * ISO week key -> anchor Date (UTC): the START of the 7-day range the week
  * represents. Returns null if the key can't be parsed.
  */
 export function weekAnchorDate(weekKey) {
@@ -133,7 +133,7 @@ const fmtDate = d => {
 };
 
 /**
- * ISO week key -> "dd/mm/yyyy" of the week's anchor date (end of its range),
+ * ISO week key -> "dd/mm/yyyy" of the week's anchor date (start of its range),
  * e.g. 2026-W30 -> "20/07/2026". Falls back to the raw key if unparseable.
  */
 export function formatWeekDate(weekKey) {
@@ -142,19 +142,20 @@ export function formatWeekDate(weekKey) {
 }
 
 /**
- * Date -> "dd/mm/yyyy – dd/mm/yyyy", the 7 days ending on that date.
+ * Date -> "dd/mm/yyyy – dd/mm/yyyy", the 7 days starting on that date
+ * (start to start + 6), e.g. 31/08/2026 -> "31/08/2026 – 06/09/2026".
  */
-export function formatRangeEndingAt(endDate) {
-  return `${fmtDate(new Date(endDate.getTime() - 7 * DAY_MS))} – ${fmtDate(endDate)}`;
+export function formatRangeStartingAt(startDate) {
+  return `${fmtDate(startDate)} – ${fmtDate(new Date(startDate.getTime() + 6 * DAY_MS))}`;
 }
 
 /**
- * ISO week key -> date range label, e.g. 2026-W30 -> "13/07/2026 – 20/07/2026".
+ * ISO week key -> date range label, e.g. 2026-W36 -> "31/08/2026 – 06/09/2026".
  * Falls back to the raw key if unparseable.
  */
 export function formatWeekRange(weekKey) {
   const d = weekAnchorDate(weekKey);
-  return d ? formatRangeEndingAt(d) : String(weekKey ?? "");
+  return d ? formatRangeStartingAt(d) : String(weekKey ?? "");
 }
 
 /**

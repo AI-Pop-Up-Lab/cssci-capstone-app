@@ -33,6 +33,7 @@ def run_extension_script(
     compute_draws: bool = True,
     area_shares_path: str | Path | None = None,
     export_cell_draws: bool = False,
+    candidates_path: str | Path | None = None,
 ) -> Path:
     """
     run the frame extension R script on the given survey and frame files.
@@ -58,6 +59,10 @@ def run_extension_script(
         export_cell_draws: If True, the R script also writes the raw per-cell
             draw matrix (mrp_cell_draws.csv) — 8th positional CLI arg. Large
             and memory-heavy. Default False.
+        candidates_path: Path to the house candidates CSV (ballot access by
+            district). Passed to the R CLI as its 9th positional arg; the US
+            module uses it to mask parties that aren't on a district's ballot.
+            Optional — if omitted, all parties are treated as running everywhere.
 
     Returns:
         Path to the output directory.
@@ -87,6 +92,11 @@ def run_extension_script(
         if not area_shares_path.exists():
             raise FileNotFoundError(f"Area-level vote shares file not found: {area_shares_path}")
 
+    if candidates_path is not None:
+        candidates_path = Path(candidates_path).resolve()
+        if not candidates_path.exists():
+            raise FileNotFoundError(f"House candidates file not found: {candidates_path}")
+
     cmd = [
         R_EXECUTABLE,
         str(r_script),
@@ -97,12 +107,13 @@ def run_extension_script(
         str(n_sims),
         "true" if compute_draws else "false",
     ]
-    # 7th positional arg of run_post_strat_cli.R. Previously the parameter was
-    # accepted by this function but never appended, so the R CLI never saw it.
-    if area_shares_path is not None or export_cell_draws:
+    # Positional args 7-9 of run_post_strat_cli.R: area_shares, export_cell_draws,
+    # candidates. Later args force earlier ones to be filled ("" / "false").
+    if area_shares_path is not None or export_cell_draws or candidates_path is not None:
         cmd.append(str(area_shares_path) if area_shares_path is not None else "")
-    if export_cell_draws:
-        cmd.append("true")
+        cmd.append("true" if export_cell_draws else "false")
+        if candidates_path is not None:
+            cmd.append(str(candidates_path))
 
     logger.info("Running R script for country=%s (compute_draws=%s)", country, compute_draws)
     logger.info("Command: %s", " ".join(cmd))
