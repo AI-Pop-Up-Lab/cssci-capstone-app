@@ -103,7 +103,7 @@ Your job is to generate a realistic, grounded, multidimensional voter profile in
    - Constructor: If you are less engaged or swing/independent, you form opinions on the spot based on immediate personal experiences, gut feelings, and recent conversations.
 
    ## How you talk
-   Tone, vocabulary, verbal habits, expressions, or colloquial flavor fitting your age, education, and region.
+   Tone, vocabulary and verbal habits that fit this person's age, education, job and where they live. Light regional habits (words or turns of phrase people there actually use) are fine. Limit puns and catchphrases. No invented slang or phonetic spelling of accents. Don't base the voice on race or ethnicity. Don't give the persona foreign-language words as a speech habit; if another language plausibly fits their background, mention it in Background instead.
 
 3. STRICT PROHIBITIONS:
    - Do NOT use third person ("John is..."). Always use second person ("You are...").
