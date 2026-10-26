@@ -5,7 +5,7 @@ and balanced, diverse demographic distributions.
 
 import csv
 import random
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 # Paths
@@ -23,6 +23,11 @@ ALLOWED_AGE_GROUPS = [
 ]
 ALLOWED_EDUCATIONS = ["No HS", "HS grad", "Some college", "2-year", "4-year", "Post-grad"]
 ALLOWED_RACES = ["Asian", "Black", "Hispanic", "Native American", "Other/Multi", "White"]
+
+# recall vs construction: chance of being a recaller rises with education
+# (education is the strongest predictor of political knowledge, delli carpini & keeter 1996)
+# placeholder values, set these from the literature
+RECALL_SHARE = {"No HS": 0.25, "HS grad": 0.30, "Some college": 0.35, "2-year": 0.35, "4-year": 0.45, "Post-grad": 0.50}
 
 # Map education column if needed
 def clean_education(val: str) -> str:
@@ -53,6 +58,7 @@ def sample_past_vote(votes_and_probs, rng: random.Random) -> str:
 
 def main():
     rng = random.Random(20261103)  # deterministic seed (election day 2026)
+    style_rng = random.Random(1)  # separate seed so opinion style doesn't change which cells are sampled
 
     print(f"Reading frame from {FRAME_PATH}...")
     
@@ -140,6 +146,7 @@ def main():
             for cid in selected_cids:
                 cell = cells[cid]
                 sampled_vote = sample_past_vote(cell["votes"], rng)
+                opinion_style = "Recaller" if style_rng.random() < RECALL_SHARE[cell["education"]] else "Constructor"
                 pid = f"us_{persona_counter:04d}"
                 persona_counter += 1
                 
@@ -152,12 +159,13 @@ def main():
                     "race": cell["race"],
                     "state_cd": cell["state_cd"],
                     "past_vote": sampled_vote,
+                    "opinion_style": opinion_style,
                 })
 
     print(f"Sampled {len(sampled_records)} personas.")
     
     # Write to CSV
-    fieldnames = ["id", "gender", "age_group", "education", "state", "race", "state_cd", "past_vote"]
+    fieldnames = ["id", "gender", "age_group", "education", "state", "race", "state_cd", "past_vote", "opinion_style"]
     with open(OUTPUT_PATH, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -188,6 +196,7 @@ def main():
     print(f"Education: {dict(edu_counts)}")
     print(f"Race: {dict(race_counts)}")
     print(f"Past Vote: {dict(vote_counts)}")
+    print(f"Opinion style: {dict(Counter(r['opinion_style'] for r in sampled_records))}")
     print(f"Age groups covered: {len(age_counts)} / {len(ALLOWED_AGE_GROUPS)}")
 
 

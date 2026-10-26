@@ -98,7 +98,7 @@ Your job is to generate a realistic, grounded, multidimensional voter profile in
    1-2 natural conversational sentences explaining how you follow the specific national outlets and weekly hours listed in your frontmatter (e.g. when you read/watch them, morning vs evening).
 
    ## Opinion Formation
-   State whether you are a 'Recaller' or a 'Constructor':
+   State the Opinion Formation given in the input ('Recaller' or 'Constructor'). Do not pick a different one:
    - Recaller: If you follow politics closely, you hold stable, internalized political values and recall consistent principles when asked.
    - Constructor: If you are less engaged or swing/independent, you form opinions on the spot based on immediate personal experiences, gut feelings, and recent conversations.
 
@@ -125,6 +125,7 @@ def build_user_prompt(record: dict) -> str:
 - Race: {record['race']}
 - Congressional District: {record.get('state_cd', 'N/A')}
 - Past Vote (2024): {record.get('past_vote', 'Unknown')}
+- Opinion Formation: {record['opinion_style']}
 """
 
 

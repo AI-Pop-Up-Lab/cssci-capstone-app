@@ -1,501 +1,501 @@
-id,gender,age_group,education,state,race,state_cd,past_vote
-us_0001,Female,43-47,Post-grad,AK,Asian,AK-1,Did not vote
-us_0002,Female,53-57,HS grad,AK,Hispanic,AK-1,Democratic
-us_0003,Female,83+,Some college,AK,Native American,AK-1,Republican
-us_0004,Female,28-32,4-year,AK,Black,AK-1,Did not vote
-us_0005,Female,38-42,2-year,AK,Hispanic,AK-1,Did not vote
-us_0006,Male,53-57,HS grad,AK,White,AK-1,Democratic
-us_0007,Male,78-82,No HS,AK,Hispanic,AK-1,Did not vote
-us_0008,Male,33-37,2-year,AK,White,AK-1,Did not vote
-us_0009,Male,68-72,Post-grad,AK,Black,AK-1,Democratic
-us_0010,Male,58-62,Some college,AK,White,AK-1,Democratic
-us_0011,Female,48-52,4-year,AL,Other/Multi,AL-7,Did not vote
-us_0012,Female,28-32,2-year,AL,Other/Multi,AL-6,Democratic
-us_0013,Female,68-72,Some college,AL,Asian,AL-4,Did not vote
-us_0014,Female,38-42,Post-grad,AL,Asian,AL-1,Republican
-us_0015,Female,83+,No HS,AL,Black,AL-7,Republican
-us_0016,Male,58-62,HS grad,AL,Hispanic,AL-5,Did not vote
-us_0017,Male,38-42,No HS,AL,Hispanic,AL-1,Did not vote
-us_0018,Male,63-67,4-year,AL,Black,AL-5,Did not vote
-us_0019,Male,43-47,Post-grad,AL,White,AL-7,Did not vote
-us_0020,Male,53-57,2-year,AL,Black,AL-7,Democratic
-us_0021,Female,68-72,HS grad,AR,White,AR-1,Democratic
-us_0022,Female,53-57,Post-grad,AR,Black,AR-2,Democratic
-us_0023,Female,63-67,Some college,AR,White,AR-1,Did not vote
-us_0024,Female,73-77,4-year,AR,Black,AR-1,Democratic
-us_0025,Female,18-22,2-year,AR,Other/Multi,AR-4,Democratic
-us_0026,Male,18-22,No HS,AR,Hispanic,AR-1,Did not vote
-us_0027,Male,23-27,Some college,AR,Hispanic,AR-2,Democratic
-us_0028,Male,63-67,Post-grad,AR,Native American,AR-3,Did not vote
-us_0029,Male,38-42,4-year,AR,Other/Multi,AR-1,Republican
-us_0030,Male,28-32,2-year,AR,Native American,AR-3,Did not vote
-us_0031,Female,33-37,2-year,AZ,Black,AZ-4,Did not vote
-us_0032,Female,53-57,HS grad,AZ,Black,AZ-7,Did not vote
-us_0033,Female,73-77,4-year,AZ,Black,AZ-7,Democratic
-us_0034,Female,63-67,No HS,AZ,Native American,AZ-2,Did not vote
-us_0035,Female,83+,Some college,AZ,Hispanic,AZ-2,Democratic
-us_0036,Male,48-52,No HS,AZ,Black,AZ-9,Did not vote
-us_0037,Male,58-62,Post-grad,AZ,Asian,AZ-2,Democratic
-us_0038,Male,38-42,2-year,AZ,Asian,AZ-2,Republican
-us_0039,Male,68-72,Some college,AZ,Asian,AZ-8,Did not vote
-us_0040,Male,78-82,4-year,AZ,Black,AZ-6,Republican
-us_0041,Female,83+,HS grad,CA,Hispanic,CA-23,Republican
-us_0042,Female,58-62,Some college,CA,Native American,CA-37,Did not vote
-us_0043,Female,38-42,2-year,CA,Native American,CA-13,Other
-us_0044,Female,43-47,4-year,CA,Other/Multi,CA-39,Democratic
-us_0045,Female,68-72,Post-grad,CA,Hispanic,CA-24,Did not vote
-us_0046,Male,78-82,Post-grad,CA,Asian,CA-51,Democratic
-us_0047,Male,63-67,Some college,CA,White,CA-14,Democratic
-us_0048,Male,23-27,No HS,CA,Hispanic,CA-9,Did not vote
-us_0049,Male,53-57,HS grad,CA,White,CA-15,Did not vote
-us_0050,Male,33-37,2-year,CA,Other/Multi,CA-13,Republican
-us_0051,Female,23-27,Post-grad,CO,Other/Multi,CO-3,Did not vote
-us_0052,Female,38-42,Some college,CO,White,CO-2,Democratic
-us_0053,Female,78-82,HS grad,CO,Other/Multi,CO-3,Republican
-us_0054,Female,73-77,4-year,CO,White,CO-8,Democratic
-us_0055,Female,28-32,2-year,CO,White,CO-2,Republican
-us_0056,Male,83+,HS grad,CO,Native American,CO-4,Republican
-us_0057,Male,48-52,No HS,CO,White,CO-6,Did not vote
-us_0058,Male,78-82,Some college,CO,Other/Multi,CO-8,Republican
-us_0059,Male,38-42,Post-grad,CO,Black,CO-8,Democratic
-us_0060,Male,28-32,2-year,CO,Hispanic,CO-2,Democratic
-us_0061,Female,23-27,Post-grad,CT,Asian,CT-3,Democratic
-us_0062,Female,63-67,HS grad,CT,Asian,CT-3,Republican
-us_0063,Female,58-62,2-year,CT,Other/Multi,CT-3,Republican
-us_0064,Female,48-52,4-year,CT,Other/Multi,CT-2,Democratic
-us_0065,Female,53-57,No HS,CT,Black,CT-3,Did not vote
-us_0066,Male,18-22,Some college,CT,Asian,CT-3,Democratic
-us_0067,Male,43-47,No HS,CT,White,CT-4,Did not vote
-us_0068,Male,68-72,HS grad,CT,White,CT-1,Did not vote
-us_0069,Male,63-67,4-year,CT,White,CT-4,Republican
-us_0070,Male,28-32,2-year,CT,Asian,CT-5,Did not vote
-us_0071,Female,43-47,No HS,DE,Other/Multi,DE-1,Did not vote
-us_0072,Female,53-57,2-year,DE,Black,DE-1,Democratic
-us_0073,Female,83+,Post-grad,DE,Black,DE-1,Democratic
-us_0074,Female,23-27,HS grad,DE,Black,DE-1,Did not vote
-us_0075,Female,48-52,4-year,DE,Other/Multi,DE-1,Did not vote
-us_0076,Male,63-67,2-year,DE,Other/Multi,DE-1,Democratic
-us_0077,Male,18-22,Some college,DE,Other/Multi,DE-1,Democratic
-us_0078,Male,48-52,HS grad,DE,Native American,DE-1,Did not vote
-us_0079,Male,68-72,4-year,DE,Other/Multi,DE-1,Republican
-us_0080,Male,78-82,No HS,DE,Other/Multi,DE-1,Republican
-us_0081,Female,43-47,Some college,FL,Hispanic,FL-10,Did not vote
-us_0082,Female,48-52,2-year,FL,White,FL-11,Did not vote
-us_0083,Female,38-42,HS grad,FL,Hispanic,FL-3,Did not vote
-us_0084,Female,58-62,Post-grad,FL,Asian,FL-17,Republican
-us_0085,Female,33-37,No HS,FL,Other/Multi,FL-11,Did not vote
-us_0086,Male,28-32,HS grad,FL,Hispanic,FL-22,Republican
-us_0087,Male,68-72,2-year,FL,Hispanic,FL-3,Democratic
-us_0088,Male,58-62,Some college,FL,Asian,FL-15,Democratic
-us_0089,Male,63-67,Post-grad,FL,Native American,FL-13,Republican
-us_0090,Male,78-82,4-year,FL,White,FL-25,Democratic
-us_0091,Female,53-57,2-year,GA,Black,GA-4,Did not vote
-us_0092,Female,18-22,Some college,GA,Native American,GA-3,Republican
-us_0093,Female,63-67,4-year,GA,Asian,GA-3,Democratic
-us_0094,Female,48-52,No HS,GA,Other/Multi,GA-12,Did not vote
-us_0095,Female,43-47,HS grad,GA,Asian,GA-9,Republican
-us_0096,Male,38-42,Some college,GA,Hispanic,GA-1,Republican
-us_0097,Male,68-72,Post-grad,GA,White,GA-9,Republican
-us_0098,Male,33-37,HS grad,GA,Black,GA-14,Did not vote
-us_0099,Male,43-47,4-year,GA,White,GA-10,Republican
-us_0100,Male,23-27,No HS,GA,Asian,GA-5,Did not vote
-us_0101,Female,73-77,Some college,HI,Asian,HI-2,Did not vote
-us_0102,Female,78-82,2-year,HI,White,HI-2,Republican
-us_0103,Female,48-52,4-year,HI,Hispanic,HI-1,Democratic
-us_0104,Female,63-67,HS grad,HI,Asian,HI-1,Did not vote
-us_0105,Female,28-32,No HS,HI,Native American,HI-1,Did not vote
-us_0106,Male,68-72,4-year,HI,Other/Multi,HI-2,Democratic
-us_0107,Male,53-57,Some college,HI,White,HI-1,Did not vote
-us_0108,Male,43-47,No HS,HI,Other/Multi,HI-1,Did not vote
-us_0109,Male,63-67,Post-grad,HI,Asian,HI-1,Democratic
-us_0110,Male,23-27,2-year,HI,Hispanic,HI-1,Did not vote
-us_0111,Female,38-42,4-year,IA,Other/Multi,IA-1,Did not vote
-us_0112,Female,63-67,Some college,IA,Other/Multi,IA-2,Republican
-us_0113,Female,58-62,Post-grad,IA,White,IA-2,Democratic
-us_0114,Female,43-47,HS grad,IA,Black,IA-4,Did not vote
-us_0115,Female,28-32,No HS,IA,White,IA-1,Democratic
-us_0116,Male,83+,4-year,IA,Other/Multi,IA-4,Republican
-us_0117,Male,53-57,HS grad,IA,Asian,IA-4,Republican
-us_0118,Male,48-52,2-year,IA,Asian,IA-3,Did not vote
-us_0119,Male,63-67,Post-grad,IA,Other/Multi,IA-4,Democratic
-us_0120,Male,28-32,No HS,IA,White,IA-4,Did not vote
-us_0121,Female,53-57,No HS,ID,Asian,ID-1,Did not vote
-us_0122,Female,58-62,4-year,ID,White,ID-1,Republican
-us_0123,Female,28-32,Some college,ID,Native American,ID-1,Did not vote
-us_0124,Female,38-42,HS grad,ID,Other/Multi,ID-1,Did not vote
-us_0125,Female,43-47,2-year,ID,Native American,ID-1,Republican
-us_0126,Male,28-32,HS grad,ID,Black,ID-1,Did not vote
-us_0127,Male,73-77,4-year,ID,White,ID-1,Republican
-us_0128,Male,68-72,Some college,ID,Black,ID-1,Republican
-us_0129,Male,78-82,No HS,ID,Other/Multi,ID-1,Republican
-us_0130,Male,38-42,Post-grad,ID,Other/Multi,ID-1,Republican
-us_0131,Female,23-27,Post-grad,IL,Other/Multi,IL-16,Republican
-us_0132,Female,43-47,4-year,IL,White,IL-4,Democratic
-us_0133,Female,58-62,Some college,IL,Hispanic,IL-13,Republican
-us_0134,Female,53-57,HS grad,IL,White,IL-14,Democratic
-us_0135,Female,33-37,2-year,IL,White,IL-4,Did not vote
-us_0136,Male,23-27,HS grad,IL,Hispanic,IL-11,Democratic
-us_0137,Male,68-72,Post-grad,IL,Hispanic,IL-9,Democratic
-us_0138,Male,53-57,Some college,IL,White,IL-17,Democratic
-us_0139,Male,48-52,4-year,IL,Black,IL-14,Did not vote
-us_0140,Male,28-32,No HS,IL,Hispanic,IL-4,Did not vote
-us_0141,Female,58-62,2-year,IN,Other/Multi,IN-6,Republican
-us_0142,Female,43-47,No HS,IN,Black,IN-5,Did not vote
-us_0143,Female,18-22,Some college,IN,Hispanic,IN-8,Did not vote
-us_0144,Female,33-37,HS grad,IN,Other/Multi,IN-3,Did not vote
-us_0145,Female,28-32,Post-grad,IN,Other/Multi,IN-6,Did not vote
-us_0146,Male,58-62,4-year,IN,Hispanic,IN-7,Republican
-us_0147,Male,68-72,Some college,IN,White,IN-4,Republican
-us_0148,Male,83+,HS grad,IN,White,IN-7,Democratic
-us_0149,Male,78-82,No HS,IN,Asian,IN-3,Did not vote
-us_0150,Male,48-52,Post-grad,IN,Black,IN-8,Republican
-us_0151,Female,78-82,4-year,KS,White,KS-2,Republican
-us_0152,Female,63-67,2-year,KS,Asian,KS-1,Did not vote
-us_0153,Female,18-22,HS grad,KS,Native American,KS-2,Republican
-us_0154,Female,68-72,No HS,KS,Hispanic,KS-1,Did not vote
-us_0155,Female,33-37,Post-grad,KS,Black,KS-2,Did not vote
-us_0156,Male,73-77,Post-grad,KS,Other/Multi,KS-2,Democratic
-us_0157,Male,83+,HS grad,KS,Black,KS-1,Democratic
-us_0158,Male,53-57,4-year,KS,Black,KS-1,Did not vote
-us_0159,Male,58-62,No HS,KS,Native American,KS-1,Did not vote
-us_0160,Male,48-52,2-year,KS,White,KS-3,Did not vote
-us_0161,Female,18-22,2-year,KY,Asian,KY-3,Did not vote
-us_0162,Female,28-32,4-year,KY,White,KY-3,Did not vote
-us_0163,Female,33-37,HS grad,KY,White,KY-3,Did not vote
-us_0164,Female,63-67,No HS,KY,Black,KY-1,Did not vote
-us_0165,Female,53-57,Some college,KY,Hispanic,KY-2,Republican
-us_0166,Male,63-67,2-year,KY,Hispanic,KY-3,Did not vote
-us_0167,Male,18-22,Some college,KY,Native American,KY-6,Did not vote
-us_0168,Male,43-47,Post-grad,KY,Asian,KY-6,Democratic
-us_0169,Male,73-77,4-year,KY,Black,KY-3,Republican
-us_0170,Male,53-57,No HS,KY,White,KY-6,Did not vote
-us_0171,Female,48-52,Some college,LA,Hispanic,LA-2,Democratic
-us_0172,Female,33-37,4-year,LA,Native American,LA-5,Republican
-us_0173,Female,28-32,Post-grad,LA,Native American,LA-3,Democratic
-us_0174,Female,23-27,HS grad,LA,Hispanic,LA-2,Democratic
-us_0175,Female,43-47,2-year,LA,Asian,LA-4,Did not vote
-us_0176,Male,38-42,2-year,LA,White,LA-1,Did not vote
-us_0177,Male,83+,No HS,LA,White,LA-2,Did not vote
-us_0178,Male,48-52,HS grad,LA,Native American,LA-6,Democratic
-us_0179,Male,43-47,Some college,LA,Black,LA-2,Did not vote
-us_0180,Male,68-72,4-year,LA,Asian,LA-1,Republican
-us_0181,Female,33-37,Some college,MA,Hispanic,MA-4,Did not vote
-us_0182,Female,23-27,2-year,MA,Other/Multi,MA-1,Democratic
-us_0183,Female,53-57,Post-grad,MA,Hispanic,MA-9,Democratic
-us_0184,Female,83+,HS grad,MA,Other/Multi,MA-5,Democratic
-us_0185,Female,43-47,No HS,MA,Asian,MA-8,Did not vote
-us_0186,Male,83+,4-year,MA,Other/Multi,MA-2,Other
-us_0187,Male,78-82,No HS,MA,Other/Multi,MA-8,Did not vote
-us_0188,Male,28-32,HS grad,MA,Asian,MA-9,Did not vote
-us_0189,Male,73-77,Some college,MA,Other/Multi,MA-3,Democratic
-us_0190,Male,33-37,Post-grad,MA,White,MA-1,Other
-us_0191,Female,23-27,4-year,MD,Asian,MD-3,Democratic
-us_0192,Female,38-42,Post-grad,MD,Hispanic,MD-7,Democratic
-us_0193,Female,28-32,No HS,MD,Asian,MD-4,Democratic
-us_0194,Female,78-82,Some college,MD,Other/Multi,MD-6,Democratic
-us_0195,Female,53-57,2-year,MD,White,MD-8,Democratic
-us_0196,Male,43-47,HS grad,MD,Native American,MD-1,Did not vote
-us_0197,Male,78-82,2-year,MD,White,MD-7,Democratic
-us_0198,Male,63-67,Some college,MD,Native American,MD-4,Democratic
-us_0199,Male,28-32,4-year,MD,Other/Multi,MD-8,Did not vote
-us_0200,Male,48-52,No HS,MD,Asian,MD-2,Did not vote
-us_0201,Female,38-42,Post-grad,ME,Other/Multi,ME-1,Did not vote
-us_0202,Female,48-52,HS grad,ME,Other/Multi,ME-1,Republican
-us_0203,Female,18-22,No HS,ME,Native American,ME-2,Did not vote
-us_0204,Female,53-57,4-year,ME,Other/Multi,ME-2,Republican
-us_0205,Female,28-32,Some college,ME,Asian,ME-1,Did not vote
-us_0206,Male,73-77,4-year,ME,Hispanic,ME-2,Republican
-us_0207,Male,48-52,Some college,ME,Other/Multi,ME-1,Did not vote
-us_0208,Male,53-57,2-year,ME,Asian,ME-2,Democratic
-us_0209,Male,23-27,No HS,ME,Hispanic,ME-2,Republican
-us_0210,Male,33-37,HS grad,ME,Black,ME-1,Did not vote
-us_0211,Female,38-42,No HS,MI,Asian,MI-13,Did not vote
-us_0212,Female,83+,HS grad,MI,Asian,MI-9,Democratic
-us_0213,Female,48-52,2-year,MI,Hispanic,MI-2,Republican
-us_0214,Female,43-47,4-year,MI,White,MI-12,Democratic
-us_0215,Female,73-77,Some college,MI,White,MI-12,Democratic
-us_0216,Male,18-22,No HS,MI,Hispanic,MI-13,Did not vote
-us_0217,Male,83+,Some college,MI,Black,MI-2,Democratic
-us_0218,Male,73-77,2-year,MI,Other/Multi,MI-2,Did not vote
-us_0219,Male,58-62,4-year,MI,White,MI-10,Democratic
-us_0220,Male,28-32,Post-grad,MI,White,MI-5,Democratic
-us_0221,Female,83+,Post-grad,MN,Other/Multi,MN-2,Republican
-us_0222,Female,63-67,4-year,MN,White,MN-7,Republican
-us_0223,Female,18-22,HS grad,MN,Hispanic,MN-3,Did not vote
-us_0224,Female,38-42,2-year,MN,Black,MN-1,Democratic
-us_0225,Female,33-37,No HS,MN,Native American,MN-2,Did not vote
-us_0226,Male,33-37,2-year,MN,Asian,MN-1,Democratic
-us_0227,Male,38-42,4-year,MN,White,MN-5,Democratic
-us_0228,Male,63-67,Some college,MN,Black,MN-8,Republican
-us_0229,Male,58-62,No HS,MN,White,MN-6,Republican
-us_0230,Male,53-57,HS grad,MN,Asian,MN-1,Democratic
-us_0231,Female,83+,Post-grad,MO,Black,MO-6,Democratic
-us_0232,Female,78-82,4-year,MO,Black,MO-6,Democratic
-us_0233,Female,18-22,Some college,MO,Other/Multi,MO-7,Democratic
-us_0234,Female,68-72,HS grad,MO,Native American,MO-3,Did not vote
-us_0235,Female,58-62,No HS,MO,Asian,MO-5,Did not vote
-us_0236,Male,63-67,HS grad,MO,Black,MO-1,Democratic
-us_0237,Male,38-42,No HS,MO,Black,MO-8,Did not vote
-us_0238,Male,18-22,4-year,MO,White,MO-3,Democratic
-us_0239,Male,73-77,Some college,MO,Native American,MO-7,Did not vote
-us_0240,Male,68-72,Post-grad,MO,Asian,MO-7,Democratic
-us_0241,Female,63-67,Post-grad,MS,Other/Multi,MS-1,Republican
-us_0242,Female,18-22,HS grad,MS,White,MS-1,Did not vote
-us_0243,Female,33-37,4-year,MS,Black,MS-1,Democratic
-us_0244,Female,48-52,No HS,MS,White,MS-4,Did not vote
-us_0245,Female,83+,Some college,MS,Other/Multi,MS-3,Republican
-us_0246,Male,68-72,2-year,MS,Black,MS-2,Democratic
-us_0247,Male,73-77,Some college,MS,Other/Multi,MS-2,Republican
-us_0248,Male,83+,No HS,MS,Native American,MS-3,Republican
-us_0249,Male,18-22,HS grad,MS,Hispanic,MS-4,Did not vote
-us_0250,Male,48-52,Post-grad,MS,Hispanic,MS-1,Did not vote
-us_0251,Female,48-52,Some college,MT,Black,MT-1,Did not vote
-us_0252,Female,83+,No HS,MT,Native American,MT-1,Republican
-us_0253,Female,53-57,Post-grad,MT,Native American,MT-2,Republican
-us_0254,Female,68-72,4-year,MT,White,MT-1,Democratic
-us_0255,Female,43-47,HS grad,MT,Hispanic,MT-2,Did not vote
-us_0256,Male,53-57,2-year,MT,White,MT-2,Republican
-us_0257,Male,28-32,4-year,MT,Other/Multi,MT-1,Republican
-us_0258,Male,48-52,HS grad,MT,Native American,MT-2,Did not vote
-us_0259,Male,23-27,No HS,MT,Other/Multi,MT-1,Did not vote
-us_0260,Male,78-82,Some college,MT,Native American,MT-1,Republican
-us_0261,Female,38-42,Some college,NC,Black,NC-4,Democratic
-us_0262,Female,23-27,HS grad,NC,Native American,NC-1,Did not vote
-us_0263,Female,63-67,Post-grad,NC,Black,NC-9,Democratic
-us_0264,Female,73-77,No HS,NC,Hispanic,NC-7,Republican
-us_0265,Female,83+,2-year,NC,Asian,NC-7,Did not vote
-us_0266,Male,28-32,2-year,NC,Black,NC-12,Democratic
-us_0267,Male,63-67,4-year,NC,Other/Multi,NC-12,Did not vote
-us_0268,Male,73-77,Post-grad,NC,White,NC-4,Democratic
-us_0269,Male,53-57,HS grad,NC,Hispanic,NC-6,Other
-us_0270,Male,18-22,Some college,NC,Black,NC-2,Democratic
-us_0271,Female,83+,2-year,ND,Other/Multi,ND-1,Republican
-us_0272,Female,38-42,4-year,ND,Other/Multi,ND-1,Did not vote
-us_0273,Female,48-52,HS grad,ND,Hispanic,ND-1,Did not vote
-us_0274,Female,23-27,No HS,ND,Other/Multi,ND-1,Did not vote
-us_0275,Female,68-72,Post-grad,ND,Asian,ND-1,Did not vote
-us_0276,Male,43-47,Post-grad,ND,Other/Multi,ND-1,Democratic
-us_0277,Male,33-37,HS grad,ND,Other/Multi,ND-1,Did not vote
-us_0278,Male,38-42,No HS,ND,Hispanic,ND-1,Did not vote
-us_0279,Male,73-77,2-year,ND,Other/Multi,ND-1,Republican
-us_0280,Male,68-72,Some college,ND,White,ND-1,Did not vote
-us_0281,Female,68-72,HS grad,NE,Other/Multi,NE-1,Democratic
-us_0282,Female,63-67,No HS,NE,Asian,NE-1,Republican
-us_0283,Female,43-47,2-year,NE,Hispanic,NE-3,Did not vote
-us_0284,Female,38-42,4-year,NE,White,NE-1,Democratic
-us_0285,Female,78-82,Post-grad,NE,Hispanic,NE-3,Republican
-us_0286,Male,33-37,Some college,NE,Native American,NE-2,Did not vote
-us_0287,Male,43-47,Post-grad,NE,Other/Multi,NE-3,Republican
-us_0288,Male,18-22,HS grad,NE,Other/Multi,NE-3,Did not vote
-us_0289,Male,68-72,2-year,NE,Native American,NE-1,Republican
-us_0290,Male,28-32,4-year,NE,Black,NE-1,Democratic
-us_0291,Female,78-82,HS grad,NH,White,NH-1,Democratic
-us_0292,Female,58-62,Some college,NH,Other/Multi,NH-1,Democratic
-us_0293,Female,53-57,2-year,NH,White,NH-2,Republican
-us_0294,Female,33-37,Post-grad,NH,Black,NH-1,Did not vote
-us_0295,Female,18-22,No HS,NH,White,NH-1,Did not vote
-us_0296,Male,83+,HS grad,NH,Hispanic,NH-2,Democratic
-us_0297,Male,38-42,4-year,NH,Black,NH-1,Republican
-us_0298,Male,33-37,Some college,NH,Native American,NH-2,Republican
-us_0299,Male,53-57,No HS,NH,White,NH-1,Democratic
-us_0300,Male,23-27,Post-grad,NH,Asian,NH-2,Did not vote
-us_0301,Female,23-27,HS grad,NJ,Other/Multi,NJ-6,Did not vote
-us_0302,Female,63-67,No HS,NJ,Native American,NJ-11,Did not vote
-us_0303,Female,28-32,Post-grad,NJ,White,NJ-2,Republican
-us_0304,Female,18-22,4-year,NJ,Hispanic,NJ-11,Democratic
-us_0305,Female,73-77,Some college,NJ,Asian,NJ-7,Democratic
-us_0306,Male,33-37,No HS,NJ,Other/Multi,NJ-4,Republican
-us_0307,Male,68-72,HS grad,NJ,Native American,NJ-6,Did not vote
-us_0308,Male,23-27,Some college,NJ,Other/Multi,NJ-7,Did not vote
-us_0309,Male,78-82,2-year,NJ,Black,NJ-6,Democratic
-us_0310,Male,58-62,4-year,NJ,Asian,NJ-6,Other
-us_0311,Female,53-57,Post-grad,NM,Native American,NM-1,Republican
-us_0312,Female,83+,2-year,NM,Native American,NM-1,Republican
-us_0313,Female,23-27,Some college,NM,Asian,NM-2,Democratic
-us_0314,Female,38-42,4-year,NM,Hispanic,NM-2,Republican
-us_0315,Female,73-77,No HS,NM,White,NM-3,Did not vote
-us_0316,Male,23-27,4-year,NM,Native American,NM-3,Did not vote
-us_0317,Male,28-32,HS grad,NM,Asian,NM-3,Did not vote
-us_0318,Male,38-42,No HS,NM,White,NM-3,Did not vote
-us_0319,Male,63-67,2-year,NM,White,NM-3,Democratic
-us_0320,Male,48-52,Some college,NM,Hispanic,NM-2,Democratic
-us_0321,Female,33-37,4-year,NV,Asian,NV-2,Republican
-us_0322,Female,38-42,2-year,NV,Hispanic,NV-4,Did not vote
-us_0323,Female,23-27,Some college,NV,White,NV-1,Democratic
-us_0324,Female,53-57,Post-grad,NV,Asian,NV-1,Democratic
-us_0325,Female,78-82,HS grad,NV,Hispanic,NV-2,Did not vote
-us_0326,Male,53-57,4-year,NV,Black,NV-4,Democratic
-us_0327,Male,38-42,No HS,NV,Asian,NV-1,Did not vote
-us_0328,Male,48-52,Post-grad,NV,Hispanic,NV-3,Republican
-us_0329,Male,43-47,Some college,NV,Black,NV-4,Democratic
-us_0330,Male,58-62,2-year,NV,Other/Multi,NV-2,Republican
-us_0331,Female,73-77,4-year,NY,Hispanic,NY-11,Did not vote
-us_0332,Female,78-82,HS grad,NY,Other/Multi,NY-10,Did not vote
-us_0333,Female,48-52,2-year,NY,Hispanic,NY-14,Did not vote
-us_0334,Female,53-57,No HS,NY,Asian,NY-16,Did not vote
-us_0335,Female,68-72,Post-grad,NY,White,NY-8,Democratic
-us_0336,Male,53-57,Some college,NY,Other/Multi,NY-25,Did not vote
-us_0337,Male,58-62,4-year,NY,Black,NY-3,Democratic
-us_0338,Male,63-67,2-year,NY,Asian,NY-11,Did not vote
-us_0339,Male,43-47,HS grad,NY,Native American,NY-9,Did not vote
-us_0340,Male,83+,Post-grad,NY,Asian,NY-17,Republican
-us_0341,Female,68-72,Post-grad,OH,Hispanic,OH-6,Republican
-us_0342,Female,53-57,Some college,OH,Asian,OH-3,Did not vote
-us_0343,Female,43-47,HS grad,OH,Hispanic,OH-4,Democratic
-us_0344,Female,23-27,4-year,OH,Asian,OH-13,Did not vote
-us_0345,Female,48-52,No HS,OH,Native American,OH-3,Did not vote
-us_0346,Male,53-57,4-year,OH,Hispanic,OH-12,Republican
-us_0347,Male,33-37,No HS,OH,Asian,OH-11,Did not vote
-us_0348,Male,48-52,Some college,OH,White,OH-4,Did not vote
-us_0349,Male,38-42,Post-grad,OH,Black,OH-6,Did not vote
-us_0350,Male,78-82,HS grad,OH,Other/Multi,OH-10,Republican
-us_0351,Female,38-42,4-year,OK,Asian,OK-3,Did not vote
-us_0352,Female,78-82,Some college,OK,Hispanic,OK-1,Republican
-us_0353,Female,18-22,HS grad,OK,White,OK-4,Did not vote
-us_0354,Female,48-52,No HS,OK,Hispanic,OK-1,Did not vote
-us_0355,Female,68-72,2-year,OK,Native American,OK-4,Did not vote
-us_0356,Male,43-47,Post-grad,OK,Black,OK-5,Democratic
-us_0357,Male,63-67,No HS,OK,White,OK-3,Did not vote
-us_0358,Male,18-22,Some college,OK,Black,OK-5,Did not vote
-us_0359,Male,28-32,2-year,OK,Black,OK-1,Did not vote
-us_0360,Male,23-27,HS grad,OK,Hispanic,OK-5,Did not vote
-us_0361,Female,68-72,2-year,OR,Black,OR-5,Democratic
-us_0362,Female,33-37,No HS,OR,Native American,OR-5,Did not vote
-us_0363,Female,73-77,Some college,OR,Hispanic,OR-5,Republican
-us_0364,Female,43-47,4-year,OR,Hispanic,OR-5,Republican
-us_0365,Female,28-32,HS grad,OR,Native American,OR-2,Did not vote
-us_0366,Male,48-52,No HS,OR,Native American,OR-6,Did not vote
-us_0367,Male,78-82,HS grad,OR,Other/Multi,OR-5,Republican
-us_0368,Male,28-32,Some college,OR,Asian,OR-5,Did not vote
-us_0369,Male,33-37,4-year,OR,Hispanic,OR-2,Democratic
-us_0370,Male,68-72,2-year,OR,Asian,OR-2,Did not vote
-us_0371,Female,18-22,4-year,PA,Asian,PA-1,Republican
-us_0372,Female,78-82,2-year,PA,Black,PA-3,Democratic
-us_0373,Female,63-67,HS grad,PA,White,PA-13,Republican
-us_0374,Female,28-32,Post-grad,PA,Asian,PA-11,Did not vote
-us_0375,Female,48-52,Some college,PA,Black,PA-1,Democratic
-us_0376,Male,68-72,Post-grad,PA,Other/Multi,PA-13,Republican
-us_0377,Male,23-27,Some college,PA,Native American,PA-5,Republican
-us_0378,Male,63-67,2-year,PA,Black,PA-15,Democratic
-us_0379,Male,28-32,HS grad,PA,Native American,PA-2,Did not vote
-us_0380,Male,58-62,4-year,PA,Hispanic,PA-6,Republican
-us_0381,Female,53-57,Post-grad,RI,White,RI-1,Republican
-us_0382,Female,43-47,No HS,RI,Other/Multi,RI-2,Democratic
-us_0383,Female,18-22,2-year,RI,Asian,RI-2,Did not vote
-us_0384,Female,58-62,HS grad,RI,Black,RI-2,Democratic
-us_0385,Female,33-37,Some college,RI,Asian,RI-1,Did not vote
-us_0386,Male,43-47,Post-grad,RI,Hispanic,RI-2,Republican
-us_0387,Male,48-52,2-year,RI,Black,RI-1,Democratic
-us_0388,Male,78-82,HS grad,RI,White,RI-2,Republican
-us_0389,Male,73-77,No HS,RI,Hispanic,RI-2,Did not vote
-us_0390,Male,18-22,Some college,RI,Hispanic,RI-2,Democratic
-us_0391,Female,78-82,Some college,SC,Asian,SC-4,Republican
-us_0392,Female,68-72,No HS,SC,Hispanic,SC-6,Did not vote
-us_0393,Female,58-62,Post-grad,SC,Asian,SC-5,Democratic
-us_0394,Female,48-52,2-year,SC,White,SC-5,Did not vote
-us_0395,Female,43-47,4-year,SC,Black,SC-6,Did not vote
-us_0396,Male,63-67,4-year,SC,Native American,SC-4,Other
-us_0397,Male,58-62,2-year,SC,Other/Multi,SC-3,Republican
-us_0398,Male,68-72,Post-grad,SC,Black,SC-5,Did not vote
-us_0399,Male,48-52,HS grad,SC,Asian,SC-2,Republican
-us_0400,Male,73-77,Some college,SC,Hispanic,SC-4,Republican
-us_0401,Female,18-22,Some college,SD,White,SD-1,Did not vote
-us_0402,Female,78-82,HS grad,SD,Other/Multi,SD-1,Republican
-us_0403,Female,58-62,Post-grad,SD,Native American,SD-1,Did not vote
-us_0404,Female,53-57,4-year,SD,Native American,SD-1,Republican
-us_0405,Female,23-27,No HS,SD,Native American,SD-1,Did not vote
-us_0406,Male,68-72,Some college,SD,White,SD-1,Republican
-us_0407,Male,23-27,No HS,SD,Native American,SD-1,Republican
-us_0408,Male,38-42,Post-grad,SD,White,SD-1,Republican
-us_0409,Male,53-57,HS grad,SD,Asian,SD-1,Republican
-us_0410,Male,83+,4-year,SD,White,SD-1,Republican
-us_0411,Female,83+,4-year,TN,White,TN-3,Republican
-us_0412,Female,53-57,No HS,TN,Hispanic,TN-9,Did not vote
-us_0413,Female,38-42,HS grad,TN,White,TN-9,Democratic
-us_0414,Female,43-47,2-year,TN,Black,TN-8,Did not vote
-us_0415,Female,73-77,Some college,TN,Native American,TN-7,Republican
-us_0416,Male,33-37,HS grad,TN,Hispanic,TN-3,Republican
-us_0417,Male,48-52,2-year,TN,White,TN-8,Republican
-us_0418,Male,63-67,Some college,TN,Native American,TN-8,Republican
-us_0419,Male,58-62,No HS,TN,Asian,TN-5,Did not vote
-us_0420,Male,78-82,4-year,TN,Black,TN-2,Democratic
-us_0421,Female,73-77,Some college,TX,White,TX-31,Republican
-us_0422,Female,63-67,2-year,TX,White,TX-21,Republican
-us_0423,Female,83+,No HS,TX,Asian,TX-32,Did not vote
-us_0424,Female,48-52,Post-grad,TX,Other/Multi,TX-2,Did not vote
-us_0425,Female,53-57,4-year,TX,White,TX-10,Did not vote
-us_0426,Male,83+,HS grad,TX,Hispanic,TX-13,Republican
-us_0427,Male,68-72,No HS,TX,Hispanic,TX-14,Democratic
-us_0428,Male,33-37,Some college,TX,Native American,TX-36,Republican
-us_0429,Male,78-82,Post-grad,TX,Native American,TX-27,Republican
-us_0430,Male,18-22,4-year,TX,Black,TX-11,Democratic
-us_0431,Female,18-22,2-year,UT,Hispanic,UT-4,Did not vote
-us_0432,Female,78-82,HS grad,UT,Other/Multi,UT-4,Republican
-us_0433,Female,33-37,4-year,UT,Black,UT-3,Democratic
-us_0434,Female,53-57,No HS,UT,Native American,UT-3,Did not vote
-us_0435,Female,43-47,Post-grad,UT,Asian,UT-3,Did not vote
-us_0436,Male,73-77,HS grad,UT,Hispanic,UT-4,Republican
-us_0437,Male,23-27,Some college,UT,Asian,UT-4,Did not vote
-us_0438,Male,48-52,4-year,UT,Black,UT-1,Did not vote
-us_0439,Male,83+,No HS,UT,White,UT-3,Did not vote
-us_0440,Male,78-82,Post-grad,UT,Hispanic,UT-3,Republican
-us_0441,Female,53-57,4-year,VA,Black,VA-2,Republican
-us_0442,Female,38-42,HS grad,VA,Native American,VA-10,Did not vote
-us_0443,Female,63-67,No HS,VA,Native American,VA-10,Did not vote
-us_0444,Female,48-52,Post-grad,VA,Hispanic,VA-7,Did not vote
-us_0445,Female,78-82,Some college,VA,Native American,VA-1,Republican
-us_0446,Male,33-37,4-year,VA,White,VA-1,Republican
-us_0447,Male,23-27,No HS,VA,Other/Multi,VA-8,Did not vote
-us_0448,Male,53-57,Post-grad,VA,Native American,VA-1,Republican
-us_0449,Male,48-52,2-year,VA,Black,VA-7,Democratic
-us_0450,Male,78-82,Some college,VA,Native American,VA-5,Did not vote
-us_0451,Female,73-77,HS grad,VT,Other/Multi,VT-1,Democratic
-us_0452,Female,53-57,4-year,VT,Asian,VT-1,Other
-us_0453,Female,83+,Some college,VT,White,VT-1,Democratic
-us_0454,Female,18-22,2-year,VT,Asian,VT-1,Did not vote
-us_0455,Female,38-42,No HS,VT,Asian,VT-1,Did not vote
-us_0456,Male,58-62,HS grad,VT,Other/Multi,VT-1,Other
-us_0457,Male,83+,Some college,VT,Other/Multi,VT-1,Democratic
-us_0458,Male,33-37,No HS,VT,Other/Multi,VT-1,Other
-us_0459,Male,63-67,Post-grad,VT,White,VT-1,Democratic
-us_0460,Male,48-52,2-year,VT,Other/Multi,VT-1,Did not vote
-us_0461,Female,68-72,HS grad,WA,Asian,WA-2,Did not vote
-us_0462,Female,63-67,No HS,WA,Other/Multi,WA-5,Did not vote
-us_0463,Female,23-27,Post-grad,WA,Hispanic,WA-9,Democratic
-us_0464,Female,78-82,Some college,WA,Other/Multi,WA-7,Democratic
-us_0465,Female,48-52,2-year,WA,Hispanic,WA-2,Did not vote
-us_0466,Male,48-52,2-year,WA,Other/Multi,WA-1,Republican
-us_0467,Male,73-77,HS grad,WA,Native American,WA-8,Republican
-us_0468,Male,53-57,Some college,WA,Asian,WA-4,Republican
-us_0469,Male,28-32,No HS,WA,Black,WA-4,Did not vote
-us_0470,Male,58-62,Post-grad,WA,Hispanic,WA-6,Did not vote
-us_0471,Female,18-22,Some college,WI,Hispanic,WI-8,Did not vote
-us_0472,Female,63-67,2-year,WI,Other/Multi,WI-1,Did not vote
-us_0473,Female,48-52,Post-grad,WI,Other/Multi,WI-7,Did not vote
-us_0474,Female,28-32,4-year,WI,Black,WI-4,Did not vote
-us_0475,Female,38-42,HS grad,WI,Asian,WI-5,Did not vote
-us_0476,Male,18-22,No HS,WI,Hispanic,WI-5,Did not vote
-us_0477,Male,53-57,2-year,WI,Hispanic,WI-5,Democratic
-us_0478,Male,73-77,Some college,WI,Black,WI-8,Democratic
-us_0479,Male,43-47,HS grad,WI,Black,WI-6,Democratic
-us_0480,Male,68-72,Post-grad,WI,Native American,WI-3,Republican
-us_0481,Female,68-72,No HS,WV,Asian,WV-1,Did not vote
-us_0482,Female,33-37,Some college,WV,White,WV-2,Did not vote
-us_0483,Female,48-52,4-year,WV,Hispanic,WV-1,Republican
-us_0484,Female,78-82,Post-grad,WV,Hispanic,WV-1,Democratic
-us_0485,Female,28-32,2-year,WV,White,WV-2,Democratic
-us_0486,Male,23-27,4-year,WV,Black,WV-1,Republican
-us_0487,Male,73-77,2-year,WV,Other/Multi,WV-2,Republican
-us_0488,Male,48-52,Post-grad,WV,Asian,WV-1,Democratic
-us_0489,Male,33-37,Some college,WV,White,WV-2,Republican
-us_0490,Male,63-67,HS grad,WV,Hispanic,WV-2,Republican
-us_0491,Female,28-32,2-year,WY,Other/Multi,WY-1,Republican
-us_0492,Female,63-67,4-year,WY,White,WY-1,Republican
-us_0493,Female,83+,No HS,WY,Black,WY-1,Democratic
-us_0494,Female,33-37,HS grad,WY,Other/Multi,WY-1,Republican
-us_0495,Female,68-72,Post-grad,WY,White,WY-1,Republican
-us_0496,Male,33-37,2-year,WY,Native American,WY-1,Republican
-us_0497,Male,63-67,Post-grad,WY,Hispanic,WY-1,Did not vote
-us_0498,Male,43-47,Some college,WY,Hispanic,WY-1,Did not vote
-us_0499,Male,38-42,HS grad,WY,White,WY-1,Did not vote
-us_0500,Male,78-82,No HS,WY,White,WY-1,Did not vote
+id,gender,age_group,education,state,race,state_cd,past_vote,opinion_style
+us_0001,Female,43-47,Post-grad,AK,Asian,AK-1,Did not vote,Recaller
+us_0002,Female,53-57,HS grad,AK,Hispanic,AK-1,Democratic,Constructor
+us_0003,Female,83+,Some college,AK,Native American,AK-1,Republican,Constructor
+us_0004,Female,28-32,4-year,AK,Black,AK-1,Did not vote,Recaller
+us_0005,Female,38-42,2-year,AK,Hispanic,AK-1,Did not vote,Constructor
+us_0006,Male,53-57,HS grad,AK,White,AK-1,Democratic,Constructor
+us_0007,Male,78-82,No HS,AK,Hispanic,AK-1,Did not vote,Constructor
+us_0008,Male,33-37,2-year,AK,White,AK-1,Did not vote,Constructor
+us_0009,Male,68-72,Post-grad,AK,Black,AK-1,Democratic,Recaller
+us_0010,Male,58-62,Some college,AK,White,AK-1,Democratic,Recaller
+us_0011,Female,48-52,4-year,AL,Other/Multi,AL-7,Did not vote,Constructor
+us_0012,Female,28-32,2-year,AL,Other/Multi,AL-6,Democratic,Constructor
+us_0013,Female,68-72,Some college,AL,Asian,AL-4,Did not vote,Constructor
+us_0014,Female,38-42,Post-grad,AL,Asian,AL-1,Republican,Recaller
+us_0015,Female,83+,No HS,AL,Black,AL-7,Republican,Constructor
+us_0016,Male,58-62,HS grad,AL,Hispanic,AL-5,Did not vote,Constructor
+us_0017,Male,38-42,No HS,AL,Hispanic,AL-1,Did not vote,Recaller
+us_0018,Male,63-67,4-year,AL,Black,AL-5,Did not vote,Constructor
+us_0019,Male,43-47,Post-grad,AL,White,AL-7,Did not vote,Constructor
+us_0020,Male,53-57,2-year,AL,Black,AL-7,Democratic,Recaller
+us_0021,Female,68-72,HS grad,AR,White,AR-1,Democratic,Recaller
+us_0022,Female,53-57,Post-grad,AR,Black,AR-2,Democratic,Constructor
+us_0023,Female,63-67,Some college,AR,White,AR-1,Did not vote,Constructor
+us_0024,Female,73-77,4-year,AR,Black,AR-1,Democratic,Recaller
+us_0025,Female,18-22,2-year,AR,Other/Multi,AR-4,Democratic,Recaller
+us_0026,Male,18-22,No HS,AR,Hispanic,AR-1,Did not vote,Constructor
+us_0027,Male,23-27,Some college,AR,Hispanic,AR-2,Democratic,Recaller
+us_0028,Male,63-67,Post-grad,AR,Native American,AR-3,Did not vote,Recaller
+us_0029,Male,38-42,4-year,AR,Other/Multi,AR-1,Republican,Recaller
+us_0030,Male,28-32,2-year,AR,Native American,AR-3,Did not vote,Constructor
+us_0031,Female,33-37,2-year,AZ,Black,AZ-4,Did not vote,Recaller
+us_0032,Female,53-57,HS grad,AZ,Black,AZ-7,Did not vote,Recaller
+us_0033,Female,73-77,4-year,AZ,Black,AZ-7,Democratic,Recaller
+us_0034,Female,63-67,No HS,AZ,Native American,AZ-2,Did not vote,Constructor
+us_0035,Female,83+,Some college,AZ,Hispanic,AZ-2,Democratic,Recaller
+us_0036,Male,48-52,No HS,AZ,Black,AZ-9,Did not vote,Recaller
+us_0037,Male,58-62,Post-grad,AZ,Asian,AZ-2,Democratic,Constructor
+us_0038,Male,38-42,2-year,AZ,Asian,AZ-2,Republican,Constructor
+us_0039,Male,68-72,Some college,AZ,Asian,AZ-8,Did not vote,Constructor
+us_0040,Male,78-82,4-year,AZ,Black,AZ-6,Republican,Recaller
+us_0041,Female,83+,HS grad,CA,Hispanic,CA-23,Republican,Constructor
+us_0042,Female,58-62,Some college,CA,Native American,CA-37,Did not vote,Constructor
+us_0043,Female,38-42,2-year,CA,Native American,CA-13,Other,Recaller
+us_0044,Female,43-47,4-year,CA,Other/Multi,CA-39,Democratic,Recaller
+us_0045,Female,68-72,Post-grad,CA,Hispanic,CA-24,Did not vote,Constructor
+us_0046,Male,78-82,Post-grad,CA,Asian,CA-51,Democratic,Constructor
+us_0047,Male,63-67,Some college,CA,White,CA-14,Democratic,Constructor
+us_0048,Male,23-27,No HS,CA,Hispanic,CA-9,Did not vote,Constructor
+us_0049,Male,53-57,HS grad,CA,White,CA-15,Did not vote,Constructor
+us_0050,Male,33-37,2-year,CA,Other/Multi,CA-13,Republican,Constructor
+us_0051,Female,23-27,Post-grad,CO,Other/Multi,CO-3,Did not vote,Recaller
+us_0052,Female,38-42,Some college,CO,White,CO-2,Democratic,Constructor
+us_0053,Female,78-82,HS grad,CO,Other/Multi,CO-3,Republican,Constructor
+us_0054,Female,73-77,4-year,CO,White,CO-8,Democratic,Constructor
+us_0055,Female,28-32,2-year,CO,White,CO-2,Republican,Constructor
+us_0056,Male,83+,HS grad,CO,Native American,CO-4,Republican,Constructor
+us_0057,Male,48-52,No HS,CO,White,CO-6,Did not vote,Recaller
+us_0058,Male,78-82,Some college,CO,Other/Multi,CO-8,Republican,Recaller
+us_0059,Male,38-42,Post-grad,CO,Black,CO-8,Democratic,Constructor
+us_0060,Male,28-32,2-year,CO,Hispanic,CO-2,Democratic,Constructor
+us_0061,Female,23-27,Post-grad,CT,Asian,CT-3,Democratic,Recaller
+us_0062,Female,63-67,HS grad,CT,Asian,CT-3,Republican,Constructor
+us_0063,Female,58-62,2-year,CT,Other/Multi,CT-3,Republican,Constructor
+us_0064,Female,48-52,4-year,CT,Other/Multi,CT-2,Democratic,Constructor
+us_0065,Female,53-57,No HS,CT,Black,CT-3,Did not vote,Constructor
+us_0066,Male,18-22,Some college,CT,Asian,CT-3,Democratic,Constructor
+us_0067,Male,43-47,No HS,CT,White,CT-4,Did not vote,Constructor
+us_0068,Male,68-72,HS grad,CT,White,CT-1,Did not vote,Constructor
+us_0069,Male,63-67,4-year,CT,White,CT-4,Republican,Constructor
+us_0070,Male,28-32,2-year,CT,Asian,CT-5,Did not vote,Constructor
+us_0071,Female,43-47,No HS,DE,Other/Multi,DE-1,Did not vote,Constructor
+us_0072,Female,53-57,2-year,DE,Black,DE-1,Democratic,Recaller
+us_0073,Female,83+,Post-grad,DE,Black,DE-1,Democratic,Recaller
+us_0074,Female,23-27,HS grad,DE,Black,DE-1,Did not vote,Constructor
+us_0075,Female,48-52,4-year,DE,Other/Multi,DE-1,Did not vote,Constructor
+us_0076,Male,63-67,2-year,DE,Other/Multi,DE-1,Democratic,Constructor
+us_0077,Male,18-22,Some college,DE,Other/Multi,DE-1,Democratic,Constructor
+us_0078,Male,48-52,HS grad,DE,Native American,DE-1,Did not vote,Recaller
+us_0079,Male,68-72,4-year,DE,Other/Multi,DE-1,Republican,Constructor
+us_0080,Male,78-82,No HS,DE,Other/Multi,DE-1,Republican,Constructor
+us_0081,Female,43-47,Some college,FL,Hispanic,FL-10,Did not vote,Constructor
+us_0082,Female,48-52,2-year,FL,White,FL-11,Did not vote,Constructor
+us_0083,Female,38-42,HS grad,FL,Hispanic,FL-3,Did not vote,Constructor
+us_0084,Female,58-62,Post-grad,FL,Asian,FL-17,Republican,Recaller
+us_0085,Female,33-37,No HS,FL,Other/Multi,FL-11,Did not vote,Constructor
+us_0086,Male,28-32,HS grad,FL,Hispanic,FL-22,Republican,Constructor
+us_0087,Male,68-72,2-year,FL,Hispanic,FL-3,Democratic,Constructor
+us_0088,Male,58-62,Some college,FL,Asian,FL-15,Democratic,Constructor
+us_0089,Male,63-67,Post-grad,FL,Native American,FL-13,Republican,Recaller
+us_0090,Male,78-82,4-year,FL,White,FL-25,Democratic,Constructor
+us_0091,Female,53-57,2-year,GA,Black,GA-4,Did not vote,Constructor
+us_0092,Female,18-22,Some college,GA,Native American,GA-3,Republican,Recaller
+us_0093,Female,63-67,4-year,GA,Asian,GA-3,Democratic,Constructor
+us_0094,Female,48-52,No HS,GA,Other/Multi,GA-12,Did not vote,Constructor
+us_0095,Female,43-47,HS grad,GA,Asian,GA-9,Republican,Constructor
+us_0096,Male,38-42,Some college,GA,Hispanic,GA-1,Republican,Constructor
+us_0097,Male,68-72,Post-grad,GA,White,GA-9,Republican,Constructor
+us_0098,Male,33-37,HS grad,GA,Black,GA-14,Did not vote,Constructor
+us_0099,Male,43-47,4-year,GA,White,GA-10,Republican,Constructor
+us_0100,Male,23-27,No HS,GA,Asian,GA-5,Did not vote,Constructor
+us_0101,Female,73-77,Some college,HI,Asian,HI-2,Did not vote,Recaller
+us_0102,Female,78-82,2-year,HI,White,HI-2,Republican,Constructor
+us_0103,Female,48-52,4-year,HI,Hispanic,HI-1,Democratic,Constructor
+us_0104,Female,63-67,HS grad,HI,Asian,HI-1,Did not vote,Recaller
+us_0105,Female,28-32,No HS,HI,Native American,HI-1,Did not vote,Constructor
+us_0106,Male,68-72,4-year,HI,Other/Multi,HI-2,Democratic,Constructor
+us_0107,Male,53-57,Some college,HI,White,HI-1,Did not vote,Constructor
+us_0108,Male,43-47,No HS,HI,Other/Multi,HI-1,Did not vote,Constructor
+us_0109,Male,63-67,Post-grad,HI,Asian,HI-1,Democratic,Constructor
+us_0110,Male,23-27,2-year,HI,Hispanic,HI-1,Did not vote,Constructor
+us_0111,Female,38-42,4-year,IA,Other/Multi,IA-1,Did not vote,Constructor
+us_0112,Female,63-67,Some college,IA,Other/Multi,IA-2,Republican,Constructor
+us_0113,Female,58-62,Post-grad,IA,White,IA-2,Democratic,Recaller
+us_0114,Female,43-47,HS grad,IA,Black,IA-4,Did not vote,Recaller
+us_0115,Female,28-32,No HS,IA,White,IA-1,Democratic,Recaller
+us_0116,Male,83+,4-year,IA,Other/Multi,IA-4,Republican,Constructor
+us_0117,Male,53-57,HS grad,IA,Asian,IA-4,Republican,Constructor
+us_0118,Male,48-52,2-year,IA,Asian,IA-3,Did not vote,Constructor
+us_0119,Male,63-67,Post-grad,IA,Other/Multi,IA-4,Democratic,Constructor
+us_0120,Male,28-32,No HS,IA,White,IA-4,Did not vote,Constructor
+us_0121,Female,53-57,No HS,ID,Asian,ID-1,Did not vote,Constructor
+us_0122,Female,58-62,4-year,ID,White,ID-1,Republican,Constructor
+us_0123,Female,28-32,Some college,ID,Native American,ID-1,Did not vote,Constructor
+us_0124,Female,38-42,HS grad,ID,Other/Multi,ID-1,Did not vote,Recaller
+us_0125,Female,43-47,2-year,ID,Native American,ID-1,Republican,Recaller
+us_0126,Male,28-32,HS grad,ID,Black,ID-1,Did not vote,Recaller
+us_0127,Male,73-77,4-year,ID,White,ID-1,Republican,Constructor
+us_0128,Male,68-72,Some college,ID,Black,ID-1,Republican,Recaller
+us_0129,Male,78-82,No HS,ID,Other/Multi,ID-1,Republican,Recaller
+us_0130,Male,38-42,Post-grad,ID,Other/Multi,ID-1,Republican,Constructor
+us_0131,Female,23-27,Post-grad,IL,Other/Multi,IL-16,Republican,Recaller
+us_0132,Female,43-47,4-year,IL,White,IL-4,Democratic,Recaller
+us_0133,Female,58-62,Some college,IL,Hispanic,IL-13,Republican,Recaller
+us_0134,Female,53-57,HS grad,IL,White,IL-14,Democratic,Constructor
+us_0135,Female,33-37,2-year,IL,White,IL-4,Did not vote,Recaller
+us_0136,Male,23-27,HS grad,IL,Hispanic,IL-11,Democratic,Recaller
+us_0137,Male,68-72,Post-grad,IL,Hispanic,IL-9,Democratic,Constructor
+us_0138,Male,53-57,Some college,IL,White,IL-17,Democratic,Constructor
+us_0139,Male,48-52,4-year,IL,Black,IL-14,Did not vote,Recaller
+us_0140,Male,28-32,No HS,IL,Hispanic,IL-4,Did not vote,Constructor
+us_0141,Female,58-62,2-year,IN,Other/Multi,IN-6,Republican,Recaller
+us_0142,Female,43-47,No HS,IN,Black,IN-5,Did not vote,Constructor
+us_0143,Female,18-22,Some college,IN,Hispanic,IN-8,Did not vote,Constructor
+us_0144,Female,33-37,HS grad,IN,Other/Multi,IN-3,Did not vote,Recaller
+us_0145,Female,28-32,Post-grad,IN,Other/Multi,IN-6,Did not vote,Recaller
+us_0146,Male,58-62,4-year,IN,Hispanic,IN-7,Republican,Constructor
+us_0147,Male,68-72,Some college,IN,White,IN-4,Republican,Constructor
+us_0148,Male,83+,HS grad,IN,White,IN-7,Democratic,Recaller
+us_0149,Male,78-82,No HS,IN,Asian,IN-3,Did not vote,Constructor
+us_0150,Male,48-52,Post-grad,IN,Black,IN-8,Republican,Constructor
+us_0151,Female,78-82,4-year,KS,White,KS-2,Republican,Recaller
+us_0152,Female,63-67,2-year,KS,Asian,KS-1,Did not vote,Recaller
+us_0153,Female,18-22,HS grad,KS,Native American,KS-2,Republican,Recaller
+us_0154,Female,68-72,No HS,KS,Hispanic,KS-1,Did not vote,Constructor
+us_0155,Female,33-37,Post-grad,KS,Black,KS-2,Did not vote,Recaller
+us_0156,Male,73-77,Post-grad,KS,Other/Multi,KS-2,Democratic,Constructor
+us_0157,Male,83+,HS grad,KS,Black,KS-1,Democratic,Constructor
+us_0158,Male,53-57,4-year,KS,Black,KS-1,Did not vote,Constructor
+us_0159,Male,58-62,No HS,KS,Native American,KS-1,Did not vote,Recaller
+us_0160,Male,48-52,2-year,KS,White,KS-3,Did not vote,Constructor
+us_0161,Female,18-22,2-year,KY,Asian,KY-3,Did not vote,Constructor
+us_0162,Female,28-32,4-year,KY,White,KY-3,Did not vote,Constructor
+us_0163,Female,33-37,HS grad,KY,White,KY-3,Did not vote,Recaller
+us_0164,Female,63-67,No HS,KY,Black,KY-1,Did not vote,Constructor
+us_0165,Female,53-57,Some college,KY,Hispanic,KY-2,Republican,Constructor
+us_0166,Male,63-67,2-year,KY,Hispanic,KY-3,Did not vote,Constructor
+us_0167,Male,18-22,Some college,KY,Native American,KY-6,Did not vote,Recaller
+us_0168,Male,43-47,Post-grad,KY,Asian,KY-6,Democratic,Constructor
+us_0169,Male,73-77,4-year,KY,Black,KY-3,Republican,Recaller
+us_0170,Male,53-57,No HS,KY,White,KY-6,Did not vote,Constructor
+us_0171,Female,48-52,Some college,LA,Hispanic,LA-2,Democratic,Constructor
+us_0172,Female,33-37,4-year,LA,Native American,LA-5,Republican,Constructor
+us_0173,Female,28-32,Post-grad,LA,Native American,LA-3,Democratic,Recaller
+us_0174,Female,23-27,HS grad,LA,Hispanic,LA-2,Democratic,Constructor
+us_0175,Female,43-47,2-year,LA,Asian,LA-4,Did not vote,Recaller
+us_0176,Male,38-42,2-year,LA,White,LA-1,Did not vote,Constructor
+us_0177,Male,83+,No HS,LA,White,LA-2,Did not vote,Constructor
+us_0178,Male,48-52,HS grad,LA,Native American,LA-6,Democratic,Constructor
+us_0179,Male,43-47,Some college,LA,Black,LA-2,Did not vote,Recaller
+us_0180,Male,68-72,4-year,LA,Asian,LA-1,Republican,Recaller
+us_0181,Female,33-37,Some college,MA,Hispanic,MA-4,Did not vote,Constructor
+us_0182,Female,23-27,2-year,MA,Other/Multi,MA-1,Democratic,Recaller
+us_0183,Female,53-57,Post-grad,MA,Hispanic,MA-9,Democratic,Constructor
+us_0184,Female,83+,HS grad,MA,Other/Multi,MA-5,Democratic,Constructor
+us_0185,Female,43-47,No HS,MA,Asian,MA-8,Did not vote,Constructor
+us_0186,Male,83+,4-year,MA,Other/Multi,MA-2,Other,Recaller
+us_0187,Male,78-82,No HS,MA,Other/Multi,MA-8,Did not vote,Constructor
+us_0188,Male,28-32,HS grad,MA,Asian,MA-9,Did not vote,Constructor
+us_0189,Male,73-77,Some college,MA,Other/Multi,MA-3,Democratic,Constructor
+us_0190,Male,33-37,Post-grad,MA,White,MA-1,Other,Constructor
+us_0191,Female,23-27,4-year,MD,Asian,MD-3,Democratic,Recaller
+us_0192,Female,38-42,Post-grad,MD,Hispanic,MD-7,Democratic,Recaller
+us_0193,Female,28-32,No HS,MD,Asian,MD-4,Democratic,Recaller
+us_0194,Female,78-82,Some college,MD,Other/Multi,MD-6,Democratic,Constructor
+us_0195,Female,53-57,2-year,MD,White,MD-8,Democratic,Constructor
+us_0196,Male,43-47,HS grad,MD,Native American,MD-1,Did not vote,Recaller
+us_0197,Male,78-82,2-year,MD,White,MD-7,Democratic,Recaller
+us_0198,Male,63-67,Some college,MD,Native American,MD-4,Democratic,Constructor
+us_0199,Male,28-32,4-year,MD,Other/Multi,MD-8,Did not vote,Recaller
+us_0200,Male,48-52,No HS,MD,Asian,MD-2,Did not vote,Constructor
+us_0201,Female,38-42,Post-grad,ME,Other/Multi,ME-1,Did not vote,Recaller
+us_0202,Female,48-52,HS grad,ME,Other/Multi,ME-1,Republican,Constructor
+us_0203,Female,18-22,No HS,ME,Native American,ME-2,Did not vote,Constructor
+us_0204,Female,53-57,4-year,ME,Other/Multi,ME-2,Republican,Recaller
+us_0205,Female,28-32,Some college,ME,Asian,ME-1,Did not vote,Recaller
+us_0206,Male,73-77,4-year,ME,Hispanic,ME-2,Republican,Recaller
+us_0207,Male,48-52,Some college,ME,Other/Multi,ME-1,Did not vote,Constructor
+us_0208,Male,53-57,2-year,ME,Asian,ME-2,Democratic,Constructor
+us_0209,Male,23-27,No HS,ME,Hispanic,ME-2,Republican,Constructor
+us_0210,Male,33-37,HS grad,ME,Black,ME-1,Did not vote,Recaller
+us_0211,Female,38-42,No HS,MI,Asian,MI-13,Did not vote,Constructor
+us_0212,Female,83+,HS grad,MI,Asian,MI-9,Democratic,Constructor
+us_0213,Female,48-52,2-year,MI,Hispanic,MI-2,Republican,Constructor
+us_0214,Female,43-47,4-year,MI,White,MI-12,Democratic,Recaller
+us_0215,Female,73-77,Some college,MI,White,MI-12,Democratic,Constructor
+us_0216,Male,18-22,No HS,MI,Hispanic,MI-13,Did not vote,Constructor
+us_0217,Male,83+,Some college,MI,Black,MI-2,Democratic,Constructor
+us_0218,Male,73-77,2-year,MI,Other/Multi,MI-2,Did not vote,Constructor
+us_0219,Male,58-62,4-year,MI,White,MI-10,Democratic,Recaller
+us_0220,Male,28-32,Post-grad,MI,White,MI-5,Democratic,Constructor
+us_0221,Female,83+,Post-grad,MN,Other/Multi,MN-2,Republican,Recaller
+us_0222,Female,63-67,4-year,MN,White,MN-7,Republican,Recaller
+us_0223,Female,18-22,HS grad,MN,Hispanic,MN-3,Did not vote,Constructor
+us_0224,Female,38-42,2-year,MN,Black,MN-1,Democratic,Recaller
+us_0225,Female,33-37,No HS,MN,Native American,MN-2,Did not vote,Constructor
+us_0226,Male,33-37,2-year,MN,Asian,MN-1,Democratic,Constructor
+us_0227,Male,38-42,4-year,MN,White,MN-5,Democratic,Constructor
+us_0228,Male,63-67,Some college,MN,Black,MN-8,Republican,Constructor
+us_0229,Male,58-62,No HS,MN,White,MN-6,Republican,Constructor
+us_0230,Male,53-57,HS grad,MN,Asian,MN-1,Democratic,Recaller
+us_0231,Female,83+,Post-grad,MO,Black,MO-6,Democratic,Constructor
+us_0232,Female,78-82,4-year,MO,Black,MO-6,Democratic,Constructor
+us_0233,Female,18-22,Some college,MO,Other/Multi,MO-7,Democratic,Constructor
+us_0234,Female,68-72,HS grad,MO,Native American,MO-3,Did not vote,Constructor
+us_0235,Female,58-62,No HS,MO,Asian,MO-5,Did not vote,Recaller
+us_0236,Male,63-67,HS grad,MO,Black,MO-1,Democratic,Constructor
+us_0237,Male,38-42,No HS,MO,Black,MO-8,Did not vote,Recaller
+us_0238,Male,18-22,4-year,MO,White,MO-3,Democratic,Recaller
+us_0239,Male,73-77,Some college,MO,Native American,MO-7,Did not vote,Recaller
+us_0240,Male,68-72,Post-grad,MO,Asian,MO-7,Democratic,Constructor
+us_0241,Female,63-67,Post-grad,MS,Other/Multi,MS-1,Republican,Constructor
+us_0242,Female,18-22,HS grad,MS,White,MS-1,Did not vote,Constructor
+us_0243,Female,33-37,4-year,MS,Black,MS-1,Democratic,Recaller
+us_0244,Female,48-52,No HS,MS,White,MS-4,Did not vote,Constructor
+us_0245,Female,83+,Some college,MS,Other/Multi,MS-3,Republican,Constructor
+us_0246,Male,68-72,2-year,MS,Black,MS-2,Democratic,Constructor
+us_0247,Male,73-77,Some college,MS,Other/Multi,MS-2,Republican,Constructor
+us_0248,Male,83+,No HS,MS,Native American,MS-3,Republican,Recaller
+us_0249,Male,18-22,HS grad,MS,Hispanic,MS-4,Did not vote,Recaller
+us_0250,Male,48-52,Post-grad,MS,Hispanic,MS-1,Did not vote,Recaller
+us_0251,Female,48-52,Some college,MT,Black,MT-1,Did not vote,Constructor
+us_0252,Female,83+,No HS,MT,Native American,MT-1,Republican,Constructor
+us_0253,Female,53-57,Post-grad,MT,Native American,MT-2,Republican,Constructor
+us_0254,Female,68-72,4-year,MT,White,MT-1,Democratic,Constructor
+us_0255,Female,43-47,HS grad,MT,Hispanic,MT-2,Did not vote,Recaller
+us_0256,Male,53-57,2-year,MT,White,MT-2,Republican,Constructor
+us_0257,Male,28-32,4-year,MT,Other/Multi,MT-1,Republican,Constructor
+us_0258,Male,48-52,HS grad,MT,Native American,MT-2,Did not vote,Recaller
+us_0259,Male,23-27,No HS,MT,Other/Multi,MT-1,Did not vote,Constructor
+us_0260,Male,78-82,Some college,MT,Native American,MT-1,Republican,Recaller
+us_0261,Female,38-42,Some college,NC,Black,NC-4,Democratic,Recaller
+us_0262,Female,23-27,HS grad,NC,Native American,NC-1,Did not vote,Constructor
+us_0263,Female,63-67,Post-grad,NC,Black,NC-9,Democratic,Recaller
+us_0264,Female,73-77,No HS,NC,Hispanic,NC-7,Republican,Recaller
+us_0265,Female,83+,2-year,NC,Asian,NC-7,Did not vote,Constructor
+us_0266,Male,28-32,2-year,NC,Black,NC-12,Democratic,Constructor
+us_0267,Male,63-67,4-year,NC,Other/Multi,NC-12,Did not vote,Recaller
+us_0268,Male,73-77,Post-grad,NC,White,NC-4,Democratic,Recaller
+us_0269,Male,53-57,HS grad,NC,Hispanic,NC-6,Other,Recaller
+us_0270,Male,18-22,Some college,NC,Black,NC-2,Democratic,Constructor
+us_0271,Female,83+,2-year,ND,Other/Multi,ND-1,Republican,Recaller
+us_0272,Female,38-42,4-year,ND,Other/Multi,ND-1,Did not vote,Constructor
+us_0273,Female,48-52,HS grad,ND,Hispanic,ND-1,Did not vote,Constructor
+us_0274,Female,23-27,No HS,ND,Other/Multi,ND-1,Did not vote,Constructor
+us_0275,Female,68-72,Post-grad,ND,Asian,ND-1,Did not vote,Constructor
+us_0276,Male,43-47,Post-grad,ND,Other/Multi,ND-1,Democratic,Recaller
+us_0277,Male,33-37,HS grad,ND,Other/Multi,ND-1,Did not vote,Recaller
+us_0278,Male,38-42,No HS,ND,Hispanic,ND-1,Did not vote,Constructor
+us_0279,Male,73-77,2-year,ND,Other/Multi,ND-1,Republican,Recaller
+us_0280,Male,68-72,Some college,ND,White,ND-1,Did not vote,Constructor
+us_0281,Female,68-72,HS grad,NE,Other/Multi,NE-1,Democratic,Recaller
+us_0282,Female,63-67,No HS,NE,Asian,NE-1,Republican,Recaller
+us_0283,Female,43-47,2-year,NE,Hispanic,NE-3,Did not vote,Constructor
+us_0284,Female,38-42,4-year,NE,White,NE-1,Democratic,Recaller
+us_0285,Female,78-82,Post-grad,NE,Hispanic,NE-3,Republican,Constructor
+us_0286,Male,33-37,Some college,NE,Native American,NE-2,Did not vote,Constructor
+us_0287,Male,43-47,Post-grad,NE,Other/Multi,NE-3,Republican,Recaller
+us_0288,Male,18-22,HS grad,NE,Other/Multi,NE-3,Did not vote,Recaller
+us_0289,Male,68-72,2-year,NE,Native American,NE-1,Republican,Constructor
+us_0290,Male,28-32,4-year,NE,Black,NE-1,Democratic,Constructor
+us_0291,Female,78-82,HS grad,NH,White,NH-1,Democratic,Constructor
+us_0292,Female,58-62,Some college,NH,Other/Multi,NH-1,Democratic,Recaller
+us_0293,Female,53-57,2-year,NH,White,NH-2,Republican,Recaller
+us_0294,Female,33-37,Post-grad,NH,Black,NH-1,Did not vote,Constructor
+us_0295,Female,18-22,No HS,NH,White,NH-1,Did not vote,Constructor
+us_0296,Male,83+,HS grad,NH,Hispanic,NH-2,Democratic,Constructor
+us_0297,Male,38-42,4-year,NH,Black,NH-1,Republican,Constructor
+us_0298,Male,33-37,Some college,NH,Native American,NH-2,Republican,Constructor
+us_0299,Male,53-57,No HS,NH,White,NH-1,Democratic,Constructor
+us_0300,Male,23-27,Post-grad,NH,Asian,NH-2,Did not vote,Constructor
+us_0301,Female,23-27,HS grad,NJ,Other/Multi,NJ-6,Did not vote,Constructor
+us_0302,Female,63-67,No HS,NJ,Native American,NJ-11,Did not vote,Recaller
+us_0303,Female,28-32,Post-grad,NJ,White,NJ-2,Republican,Recaller
+us_0304,Female,18-22,4-year,NJ,Hispanic,NJ-11,Democratic,Recaller
+us_0305,Female,73-77,Some college,NJ,Asian,NJ-7,Democratic,Constructor
+us_0306,Male,33-37,No HS,NJ,Other/Multi,NJ-4,Republican,Constructor
+us_0307,Male,68-72,HS grad,NJ,Native American,NJ-6,Did not vote,Constructor
+us_0308,Male,23-27,Some college,NJ,Other/Multi,NJ-7,Did not vote,Constructor
+us_0309,Male,78-82,2-year,NJ,Black,NJ-6,Democratic,Constructor
+us_0310,Male,58-62,4-year,NJ,Asian,NJ-6,Other,Recaller
+us_0311,Female,53-57,Post-grad,NM,Native American,NM-1,Republican,Recaller
+us_0312,Female,83+,2-year,NM,Native American,NM-1,Republican,Recaller
+us_0313,Female,23-27,Some college,NM,Asian,NM-2,Democratic,Recaller
+us_0314,Female,38-42,4-year,NM,Hispanic,NM-2,Republican,Constructor
+us_0315,Female,73-77,No HS,NM,White,NM-3,Did not vote,Constructor
+us_0316,Male,23-27,4-year,NM,Native American,NM-3,Did not vote,Recaller
+us_0317,Male,28-32,HS grad,NM,Asian,NM-3,Did not vote,Constructor
+us_0318,Male,38-42,No HS,NM,White,NM-3,Did not vote,Constructor
+us_0319,Male,63-67,2-year,NM,White,NM-3,Democratic,Constructor
+us_0320,Male,48-52,Some college,NM,Hispanic,NM-2,Democratic,Constructor
+us_0321,Female,33-37,4-year,NV,Asian,NV-2,Republican,Recaller
+us_0322,Female,38-42,2-year,NV,Hispanic,NV-4,Did not vote,Recaller
+us_0323,Female,23-27,Some college,NV,White,NV-1,Democratic,Recaller
+us_0324,Female,53-57,Post-grad,NV,Asian,NV-1,Democratic,Recaller
+us_0325,Female,78-82,HS grad,NV,Hispanic,NV-2,Did not vote,Constructor
+us_0326,Male,53-57,4-year,NV,Black,NV-4,Democratic,Recaller
+us_0327,Male,38-42,No HS,NV,Asian,NV-1,Did not vote,Recaller
+us_0328,Male,48-52,Post-grad,NV,Hispanic,NV-3,Republican,Constructor
+us_0329,Male,43-47,Some college,NV,Black,NV-4,Democratic,Recaller
+us_0330,Male,58-62,2-year,NV,Other/Multi,NV-2,Republican,Constructor
+us_0331,Female,73-77,4-year,NY,Hispanic,NY-11,Did not vote,Constructor
+us_0332,Female,78-82,HS grad,NY,Other/Multi,NY-10,Did not vote,Constructor
+us_0333,Female,48-52,2-year,NY,Hispanic,NY-14,Did not vote,Recaller
+us_0334,Female,53-57,No HS,NY,Asian,NY-16,Did not vote,Constructor
+us_0335,Female,68-72,Post-grad,NY,White,NY-8,Democratic,Constructor
+us_0336,Male,53-57,Some college,NY,Other/Multi,NY-25,Did not vote,Recaller
+us_0337,Male,58-62,4-year,NY,Black,NY-3,Democratic,Constructor
+us_0338,Male,63-67,2-year,NY,Asian,NY-11,Did not vote,Recaller
+us_0339,Male,43-47,HS grad,NY,Native American,NY-9,Did not vote,Constructor
+us_0340,Male,83+,Post-grad,NY,Asian,NY-17,Republican,Constructor
+us_0341,Female,68-72,Post-grad,OH,Hispanic,OH-6,Republican,Constructor
+us_0342,Female,53-57,Some college,OH,Asian,OH-3,Did not vote,Recaller
+us_0343,Female,43-47,HS grad,OH,Hispanic,OH-4,Democratic,Recaller
+us_0344,Female,23-27,4-year,OH,Asian,OH-13,Did not vote,Constructor
+us_0345,Female,48-52,No HS,OH,Native American,OH-3,Did not vote,Constructor
+us_0346,Male,53-57,4-year,OH,Hispanic,OH-12,Republican,Recaller
+us_0347,Male,33-37,No HS,OH,Asian,OH-11,Did not vote,Constructor
+us_0348,Male,48-52,Some college,OH,White,OH-4,Did not vote,Recaller
+us_0349,Male,38-42,Post-grad,OH,Black,OH-6,Did not vote,Constructor
+us_0350,Male,78-82,HS grad,OH,Other/Multi,OH-10,Republican,Recaller
+us_0351,Female,38-42,4-year,OK,Asian,OK-3,Did not vote,Recaller
+us_0352,Female,78-82,Some college,OK,Hispanic,OK-1,Republican,Constructor
+us_0353,Female,18-22,HS grad,OK,White,OK-4,Did not vote,Constructor
+us_0354,Female,48-52,No HS,OK,Hispanic,OK-1,Did not vote,Constructor
+us_0355,Female,68-72,2-year,OK,Native American,OK-4,Did not vote,Constructor
+us_0356,Male,43-47,Post-grad,OK,Black,OK-5,Democratic,Constructor
+us_0357,Male,63-67,No HS,OK,White,OK-3,Did not vote,Constructor
+us_0358,Male,18-22,Some college,OK,Black,OK-5,Did not vote,Recaller
+us_0359,Male,28-32,2-year,OK,Black,OK-1,Did not vote,Constructor
+us_0360,Male,23-27,HS grad,OK,Hispanic,OK-5,Did not vote,Recaller
+us_0361,Female,68-72,2-year,OR,Black,OR-5,Democratic,Constructor
+us_0362,Female,33-37,No HS,OR,Native American,OR-5,Did not vote,Constructor
+us_0363,Female,73-77,Some college,OR,Hispanic,OR-5,Republican,Recaller
+us_0364,Female,43-47,4-year,OR,Hispanic,OR-5,Republican,Recaller
+us_0365,Female,28-32,HS grad,OR,Native American,OR-2,Did not vote,Constructor
+us_0366,Male,48-52,No HS,OR,Native American,OR-6,Did not vote,Constructor
+us_0367,Male,78-82,HS grad,OR,Other/Multi,OR-5,Republican,Constructor
+us_0368,Male,28-32,Some college,OR,Asian,OR-5,Did not vote,Constructor
+us_0369,Male,33-37,4-year,OR,Hispanic,OR-2,Democratic,Constructor
+us_0370,Male,68-72,2-year,OR,Asian,OR-2,Did not vote,Constructor
+us_0371,Female,18-22,4-year,PA,Asian,PA-1,Republican,Recaller
+us_0372,Female,78-82,2-year,PA,Black,PA-3,Democratic,Recaller
+us_0373,Female,63-67,HS grad,PA,White,PA-13,Republican,Recaller
+us_0374,Female,28-32,Post-grad,PA,Asian,PA-11,Did not vote,Recaller
+us_0375,Female,48-52,Some college,PA,Black,PA-1,Democratic,Constructor
+us_0376,Male,68-72,Post-grad,PA,Other/Multi,PA-13,Republican,Recaller
+us_0377,Male,23-27,Some college,PA,Native American,PA-5,Republican,Constructor
+us_0378,Male,63-67,2-year,PA,Black,PA-15,Democratic,Recaller
+us_0379,Male,28-32,HS grad,PA,Native American,PA-2,Did not vote,Constructor
+us_0380,Male,58-62,4-year,PA,Hispanic,PA-6,Republican,Recaller
+us_0381,Female,53-57,Post-grad,RI,White,RI-1,Republican,Recaller
+us_0382,Female,43-47,No HS,RI,Other/Multi,RI-2,Democratic,Constructor
+us_0383,Female,18-22,2-year,RI,Asian,RI-2,Did not vote,Constructor
+us_0384,Female,58-62,HS grad,RI,Black,RI-2,Democratic,Constructor
+us_0385,Female,33-37,Some college,RI,Asian,RI-1,Did not vote,Constructor
+us_0386,Male,43-47,Post-grad,RI,Hispanic,RI-2,Republican,Constructor
+us_0387,Male,48-52,2-year,RI,Black,RI-1,Democratic,Recaller
+us_0388,Male,78-82,HS grad,RI,White,RI-2,Republican,Recaller
+us_0389,Male,73-77,No HS,RI,Hispanic,RI-2,Did not vote,Constructor
+us_0390,Male,18-22,Some college,RI,Hispanic,RI-2,Democratic,Constructor
+us_0391,Female,78-82,Some college,SC,Asian,SC-4,Republican,Constructor
+us_0392,Female,68-72,No HS,SC,Hispanic,SC-6,Did not vote,Constructor
+us_0393,Female,58-62,Post-grad,SC,Asian,SC-5,Democratic,Constructor
+us_0394,Female,48-52,2-year,SC,White,SC-5,Did not vote,Constructor
+us_0395,Female,43-47,4-year,SC,Black,SC-6,Did not vote,Recaller
+us_0396,Male,63-67,4-year,SC,Native American,SC-4,Other,Constructor
+us_0397,Male,58-62,2-year,SC,Other/Multi,SC-3,Republican,Constructor
+us_0398,Male,68-72,Post-grad,SC,Black,SC-5,Did not vote,Recaller
+us_0399,Male,48-52,HS grad,SC,Asian,SC-2,Republican,Constructor
+us_0400,Male,73-77,Some college,SC,Hispanic,SC-4,Republican,Constructor
+us_0401,Female,18-22,Some college,SD,White,SD-1,Did not vote,Constructor
+us_0402,Female,78-82,HS grad,SD,Other/Multi,SD-1,Republican,Constructor
+us_0403,Female,58-62,Post-grad,SD,Native American,SD-1,Did not vote,Recaller
+us_0404,Female,53-57,4-year,SD,Native American,SD-1,Republican,Constructor
+us_0405,Female,23-27,No HS,SD,Native American,SD-1,Did not vote,Recaller
+us_0406,Male,68-72,Some college,SD,White,SD-1,Republican,Recaller
+us_0407,Male,23-27,No HS,SD,Native American,SD-1,Republican,Constructor
+us_0408,Male,38-42,Post-grad,SD,White,SD-1,Republican,Constructor
+us_0409,Male,53-57,HS grad,SD,Asian,SD-1,Republican,Recaller
+us_0410,Male,83+,4-year,SD,White,SD-1,Republican,Constructor
+us_0411,Female,83+,4-year,TN,White,TN-3,Republican,Constructor
+us_0412,Female,53-57,No HS,TN,Hispanic,TN-9,Did not vote,Constructor
+us_0413,Female,38-42,HS grad,TN,White,TN-9,Democratic,Constructor
+us_0414,Female,43-47,2-year,TN,Black,TN-8,Did not vote,Constructor
+us_0415,Female,73-77,Some college,TN,Native American,TN-7,Republican,Constructor
+us_0416,Male,33-37,HS grad,TN,Hispanic,TN-3,Republican,Constructor
+us_0417,Male,48-52,2-year,TN,White,TN-8,Republican,Constructor
+us_0418,Male,63-67,Some college,TN,Native American,TN-8,Republican,Constructor
+us_0419,Male,58-62,No HS,TN,Asian,TN-5,Did not vote,Constructor
+us_0420,Male,78-82,4-year,TN,Black,TN-2,Democratic,Constructor
+us_0421,Female,73-77,Some college,TX,White,TX-31,Republican,Constructor
+us_0422,Female,63-67,2-year,TX,White,TX-21,Republican,Constructor
+us_0423,Female,83+,No HS,TX,Asian,TX-32,Did not vote,Recaller
+us_0424,Female,48-52,Post-grad,TX,Other/Multi,TX-2,Did not vote,Recaller
+us_0425,Female,53-57,4-year,TX,White,TX-10,Did not vote,Recaller
+us_0426,Male,83+,HS grad,TX,Hispanic,TX-13,Republican,Constructor
+us_0427,Male,68-72,No HS,TX,Hispanic,TX-14,Democratic,Constructor
+us_0428,Male,33-37,Some college,TX,Native American,TX-36,Republican,Recaller
+us_0429,Male,78-82,Post-grad,TX,Native American,TX-27,Republican,Constructor
+us_0430,Male,18-22,4-year,TX,Black,TX-11,Democratic,Constructor
+us_0431,Female,18-22,2-year,UT,Hispanic,UT-4,Did not vote,Recaller
+us_0432,Female,78-82,HS grad,UT,Other/Multi,UT-4,Republican,Constructor
+us_0433,Female,33-37,4-year,UT,Black,UT-3,Democratic,Recaller
+us_0434,Female,53-57,No HS,UT,Native American,UT-3,Did not vote,Constructor
+us_0435,Female,43-47,Post-grad,UT,Asian,UT-3,Did not vote,Recaller
+us_0436,Male,73-77,HS grad,UT,Hispanic,UT-4,Republican,Constructor
+us_0437,Male,23-27,Some college,UT,Asian,UT-4,Did not vote,Constructor
+us_0438,Male,48-52,4-year,UT,Black,UT-1,Did not vote,Constructor
+us_0439,Male,83+,No HS,UT,White,UT-3,Did not vote,Constructor
+us_0440,Male,78-82,Post-grad,UT,Hispanic,UT-3,Republican,Constructor
+us_0441,Female,53-57,4-year,VA,Black,VA-2,Republican,Constructor
+us_0442,Female,38-42,HS grad,VA,Native American,VA-10,Did not vote,Recaller
+us_0443,Female,63-67,No HS,VA,Native American,VA-10,Did not vote,Constructor
+us_0444,Female,48-52,Post-grad,VA,Hispanic,VA-7,Did not vote,Constructor
+us_0445,Female,78-82,Some college,VA,Native American,VA-1,Republican,Constructor
+us_0446,Male,33-37,4-year,VA,White,VA-1,Republican,Constructor
+us_0447,Male,23-27,No HS,VA,Other/Multi,VA-8,Did not vote,Constructor
+us_0448,Male,53-57,Post-grad,VA,Native American,VA-1,Republican,Constructor
+us_0449,Male,48-52,2-year,VA,Black,VA-7,Democratic,Constructor
+us_0450,Male,78-82,Some college,VA,Native American,VA-5,Did not vote,Constructor
+us_0451,Female,73-77,HS grad,VT,Other/Multi,VT-1,Democratic,Constructor
+us_0452,Female,53-57,4-year,VT,Asian,VT-1,Other,Recaller
+us_0453,Female,83+,Some college,VT,White,VT-1,Democratic,Recaller
+us_0454,Female,18-22,2-year,VT,Asian,VT-1,Did not vote,Recaller
+us_0455,Female,38-42,No HS,VT,Asian,VT-1,Did not vote,Recaller
+us_0456,Male,58-62,HS grad,VT,Other/Multi,VT-1,Other,Constructor
+us_0457,Male,83+,Some college,VT,Other/Multi,VT-1,Democratic,Constructor
+us_0458,Male,33-37,No HS,VT,Other/Multi,VT-1,Other,Recaller
+us_0459,Male,63-67,Post-grad,VT,White,VT-1,Democratic,Constructor
+us_0460,Male,48-52,2-year,VT,Other/Multi,VT-1,Did not vote,Constructor
+us_0461,Female,68-72,HS grad,WA,Asian,WA-2,Did not vote,Recaller
+us_0462,Female,63-67,No HS,WA,Other/Multi,WA-5,Did not vote,Constructor
+us_0463,Female,23-27,Post-grad,WA,Hispanic,WA-9,Democratic,Recaller
+us_0464,Female,78-82,Some college,WA,Other/Multi,WA-7,Democratic,Constructor
+us_0465,Female,48-52,2-year,WA,Hispanic,WA-2,Did not vote,Recaller
+us_0466,Male,48-52,2-year,WA,Other/Multi,WA-1,Republican,Recaller
+us_0467,Male,73-77,HS grad,WA,Native American,WA-8,Republican,Constructor
+us_0468,Male,53-57,Some college,WA,Asian,WA-4,Republican,Recaller
+us_0469,Male,28-32,No HS,WA,Black,WA-4,Did not vote,Constructor
+us_0470,Male,58-62,Post-grad,WA,Hispanic,WA-6,Did not vote,Constructor
+us_0471,Female,18-22,Some college,WI,Hispanic,WI-8,Did not vote,Constructor
+us_0472,Female,63-67,2-year,WI,Other/Multi,WI-1,Did not vote,Recaller
+us_0473,Female,48-52,Post-grad,WI,Other/Multi,WI-7,Did not vote,Recaller
+us_0474,Female,28-32,4-year,WI,Black,WI-4,Did not vote,Constructor
+us_0475,Female,38-42,HS grad,WI,Asian,WI-5,Did not vote,Recaller
+us_0476,Male,18-22,No HS,WI,Hispanic,WI-5,Did not vote,Constructor
+us_0477,Male,53-57,2-year,WI,Hispanic,WI-5,Democratic,Recaller
+us_0478,Male,73-77,Some college,WI,Black,WI-8,Democratic,Constructor
+us_0479,Male,43-47,HS grad,WI,Black,WI-6,Democratic,Constructor
+us_0480,Male,68-72,Post-grad,WI,Native American,WI-3,Republican,Constructor
+us_0481,Female,68-72,No HS,WV,Asian,WV-1,Did not vote,Constructor
+us_0482,Female,33-37,Some college,WV,White,WV-2,Did not vote,Constructor
+us_0483,Female,48-52,4-year,WV,Hispanic,WV-1,Republican,Constructor
+us_0484,Female,78-82,Post-grad,WV,Hispanic,WV-1,Democratic,Constructor
+us_0485,Female,28-32,2-year,WV,White,WV-2,Democratic,Constructor
+us_0486,Male,23-27,4-year,WV,Black,WV-1,Republican,Constructor
+us_0487,Male,73-77,2-year,WV,Other/Multi,WV-2,Republican,Constructor
+us_0488,Male,48-52,Post-grad,WV,Asian,WV-1,Democratic,Recaller
+us_0489,Male,33-37,Some college,WV,White,WV-2,Republican,Recaller
+us_0490,Male,63-67,HS grad,WV,Hispanic,WV-2,Republican,Constructor
+us_0491,Female,28-32,2-year,WY,Other/Multi,WY-1,Republican,Recaller
+us_0492,Female,63-67,4-year,WY,White,WY-1,Republican,Constructor
+us_0493,Female,83+,No HS,WY,Black,WY-1,Democratic,Constructor
+us_0494,Female,33-37,HS grad,WY,Other/Multi,WY-1,Republican,Constructor
+us_0495,Female,68-72,Post-grad,WY,White,WY-1,Republican,Constructor
+us_0496,Male,33-37,2-year,WY,Native American,WY-1,Republican,Constructor
+us_0497,Male,63-67,Post-grad,WY,Hispanic,WY-1,Did not vote,Recaller
+us_0498,Male,43-47,Some college,WY,Hispanic,WY-1,Did not vote,Constructor
+us_0499,Male,38-42,HS grad,WY,White,WY-1,Did not vote,Constructor
+us_0500,Male,78-82,No HS,WY,White,WY-1,Did not vote,Constructor
