@@ -74,7 +74,7 @@ Your job is to generate a realistic, grounded, multidimensional voter profile in
    state: <state>
    race: <race>
    display_name: <First Name only, e.g. Marcus, Brenda, or Jim>
-   media_hours: <integer between 1 and 20>
+   media_hours: <the Media Hours given in the input, exactly>
    media_outlets:
      - <domain 1>
      - <domain 2>
@@ -126,6 +126,7 @@ def build_user_prompt(record: dict) -> str:
 - Congressional District: {record.get('state_cd', 'N/A')}
 - Past Vote (2024): {record.get('past_vote', 'Unknown')}
 - Opinion Formation: {record['opinion_style']}
+- Media Hours (per week): {record['media_hours']}
 """
 
 

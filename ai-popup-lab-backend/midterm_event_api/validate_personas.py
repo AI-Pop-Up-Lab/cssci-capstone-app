@@ -18,6 +18,7 @@ from pathlib import Path
 
 from midterm_event_api import attributes
 from midterm_event_api.config import DEFAULT_PERSONAS_DIR
+from midterm_event_api.generation.sample_personas import media_hours_range
 from midterm_event_api.personas import load_personas
 
 
@@ -40,6 +41,18 @@ def main(argv=None) -> int:
         return 0
 
     result = load_personas(Path(args.directory))
+
+    # warn when media_hours doesn't fit the persona's age and education
+    for persona in result.personas.values():
+        hours = persona.extra.get("media_hours")
+        if hours is None:
+            continue
+        low, high = media_hours_range(persona.attributes["age_group"], persona.attributes["education"])
+        if not isinstance(hours, int) or not low <= hours <= high:
+            result.warnings.append(
+                f"{persona.source_file}: media_hours is {hours}, expected {low}-{high} for "
+                f"age {persona.attributes['age_group']} and {persona.attributes['education']}"
+            )
 
     if result.problems:
         print(f"PROBLEMS ({len(result.problems)} file(s) will be skipped by the API):")

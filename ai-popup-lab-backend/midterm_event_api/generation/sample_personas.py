@@ -32,6 +32,25 @@ RECALL_SHARE = {"No HS": 0.25, "HS grad": 0.30, "Some college": 0.35, "2-year": 
 # personas per gender per state (10 + 10 = 20 per state, 1000 total)
 PER_GENDER = 10
 
+
+# weekly news hours: older and more educated people follow the news more (pew research)
+# placeholder ranges, set these from the literature
+def media_hours_range(age_group: str, education: str) -> tuple:
+    age = int(age_group[:2])  # "43-47" -> 43, "83+" -> 83
+    if age < 28:
+        low, high = 1, 4
+    elif age < 43:
+        low, high = 2, 6
+    elif age < 63:
+        low, high = 3, 8
+    else:
+        low, high = 4, 12
+    if education in ("4-year", "Post-grad"):
+        high += 1
+    if education == "No HS":
+        high -= 1
+    return low, high
+
 # Map education column if needed
 def clean_education(val: str) -> str:
     val = val.strip()
@@ -62,6 +81,7 @@ def sample_past_vote(votes_and_probs, rng: random.Random) -> str:
 def main():
     rng = random.Random(20261103)  # deterministic seed (election day 2026)
     style_rng = random.Random(1)  # separate seed so opinion style doesn't change which cells are sampled
+    media_rng = random.Random(2)  # separate seed so media hours don't change which cells are sampled
 
     print(f"Reading frame from {FRAME_PATH}...")
     
@@ -150,6 +170,7 @@ def main():
                 cell = cells[cid]
                 sampled_vote = sample_past_vote(cell["votes"], rng)
                 opinion_style = "Recaller" if style_rng.random() < RECALL_SHARE[cell["education"]] else "Constructor"
+                media_hours = media_rng.randint(*media_hours_range(cell["age_group"], cell["education"]))
                 pid = f"us_{persona_counter:04d}"
                 persona_counter += 1
                 
@@ -163,12 +184,13 @@ def main():
                     "state_cd": cell["state_cd"],
                     "past_vote": sampled_vote,
                     "opinion_style": opinion_style,
+                    "media_hours": media_hours,
                 })
 
     print(f"Sampled {len(sampled_records)} personas.")
     
     # Write to CSV
-    fieldnames = ["id", "gender", "age_group", "education", "state", "race", "state_cd", "past_vote", "opinion_style"]
+    fieldnames = ["id", "gender", "age_group", "education", "state", "race", "state_cd", "past_vote", "opinion_style", "media_hours"]
     with open(OUTPUT_PATH, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
