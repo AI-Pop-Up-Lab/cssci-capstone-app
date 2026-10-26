@@ -203,7 +203,7 @@ class PersonaStore:
         Pick the persona that best fits the visitor's choices.
 
         `filters` maps attribute -> canonical value, leaving out attributes set to "all".
-        With ~500 personas most full combinations of the five attributes have no exact
+        With ~1000 personas most full combinations of the five attributes have no exact
         match, so this ranks personas by:
           1. how many chosen attributes match exactly, then
           2. how close age group and education are (e.g. 48-52 is closer to 43-47 than 83+)

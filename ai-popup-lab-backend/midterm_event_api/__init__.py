@@ -1,7 +1,7 @@
 """
 Persona chat API for the AI Pop-Up Lab's US midterms election-night event (3 November 2026).
 
-Visitors pick demographic attributes, get matched to one of ~500 pre-written personas
+Visitors pick demographic attributes, get matched to one of ~1000 pre-written personas
 (markdown files in `personas/`), and chat with it. See README.md in this folder for how
 it works and PERSONA_GUIDE.md for how to write persona files.
 

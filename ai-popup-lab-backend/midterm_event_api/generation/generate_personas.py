@@ -1,6 +1,6 @@
 """
 Batch generator for midterm event personas.
-Reads sampled_personas_500.csv and calls Azure OpenAI (using backend .env credentials)
+Reads sampled_personas_1000.csv and calls Azure OpenAI (using backend .env credentials)
 to write validated persona markdown files into midterm_event_api/personas/.
 """
 
@@ -18,7 +18,7 @@ MIDTERM_DIR = CURRENT_DIR.parent
 BACKEND_DIR = MIDTERM_DIR.parent
 PERSONAS_DIR = MIDTERM_DIR / "personas"
 DATA_DIR = CURRENT_DIR / "data"
-SAMPLED_CSV = DATA_DIR / "sampled_personas_500.csv"
+SAMPLED_CSV = DATA_DIR / "sampled_personas_1000.csv"
 
 # Ensure backend root is on sys.path
 if str(BACKEND_DIR) not in sys.path:
