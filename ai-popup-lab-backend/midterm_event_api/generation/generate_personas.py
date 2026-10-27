@@ -1,6 +1,6 @@
 """
 Batch generator for midterm event personas.
-Reads sampled_personas_500.csv and calls Azure OpenAI (using backend .env credentials)
+Reads sampled_personas_1000.csv and calls Azure OpenAI (using backend .env credentials)
 to write validated persona markdown files into midterm_event_api/personas/.
 """
 
@@ -18,7 +18,7 @@ MIDTERM_DIR = CURRENT_DIR.parent
 BACKEND_DIR = MIDTERM_DIR.parent
 PERSONAS_DIR = MIDTERM_DIR / "personas"
 DATA_DIR = CURRENT_DIR / "data"
-SAMPLED_CSV = DATA_DIR / "sampled_personas_500.csv"
+SAMPLED_CSV = DATA_DIR / "sampled_personas_1000.csv"
 
 # Ensure backend root is on sys.path
 if str(BACKEND_DIR) not in sys.path:
@@ -74,7 +74,7 @@ Your job is to generate a realistic, grounded, multidimensional voter profile in
    state: <state>
    race: <race>
    display_name: <First Name only, e.g. Marcus, Brenda, or Jim>
-   media_hours: <integer between 1 and 20>
+   media_hours: <the Media Hours given in the input, exactly>
    media_outlets:
      - <domain 1>
      - <domain 2>
@@ -98,12 +98,12 @@ Your job is to generate a realistic, grounded, multidimensional voter profile in
    1-2 natural conversational sentences explaining how you follow the specific national outlets and weekly hours listed in your frontmatter (e.g. when you read/watch them, morning vs evening).
 
    ## Opinion Formation
-   State whether you are a 'Recaller' or a 'Constructor':
+   State the Opinion Formation given in the input ('Recaller' or 'Constructor'). Do not pick a different one:
    - Recaller: If you follow politics closely, you hold stable, internalized political values and recall consistent principles when asked.
    - Constructor: If you are less engaged or swing/independent, you form opinions on the spot based on immediate personal experiences, gut feelings, and recent conversations.
 
    ## How you talk
-   Tone, vocabulary, verbal habits, expressions, or colloquial flavor fitting your age, education, and region.
+   Tone, vocabulary and verbal habits that fit this person's age, education, job and where they live. Light regional habits (words or turns of phrase people there actually use) are fine. Limit puns and catchphrases. No invented slang or phonetic spelling of accents. Don't base the voice on race or ethnicity. Don't give the persona foreign-language words as a speech habit; if another language plausibly fits their background, mention it in Background instead.
 
 3. STRICT PROHIBITIONS:
    - Do NOT use third person ("John is..."). Always use second person ("You are...").
@@ -125,6 +125,8 @@ def build_user_prompt(record: dict) -> str:
 - Race: {record['race']}
 - Congressional District: {record.get('state_cd', 'N/A')}
 - Past Vote (2024): {record.get('past_vote', 'Unknown')}
+- Opinion Formation: {record['opinion_style']}
+- Media Hours (per week): {record['media_hours']}
 """
 
 

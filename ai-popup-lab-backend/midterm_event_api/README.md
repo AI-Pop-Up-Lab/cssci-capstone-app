@@ -1,7 +1,7 @@
 # `midterm_event_api`
 
 Persona chat API for the AI Pop-Up Lab's **US midterms election-night watch party (3 November 2026)**.
-Visitors pick demographic attributes on the website, get matched to one of ~500 pre-written synthetic
+Visitors pick demographic attributes on the website, get matched to one of ~1000 pre-written synthetic
 voter personas, and chat with it.
 
 This is a demo for the event. It is separate from the older `_persona_chat` package and its
@@ -11,7 +11,7 @@ renamed later.
 | Part | Status |
 |---|---|
 | Persona files, matching, chat with the model | Working (tested with the model mocked) |
-| Persona files | **1 sample only** (`personas/us_0001.md`). The real ~500 are being written separately, see [PERSONA_GUIDE.md](PERSONA_GUIDE.md) |
+| Persona files | **1 sample only** (`personas/us_0001.md`). The real ~1000 are being written separately, see [PERSONA_GUIDE.md](PERSONA_GUIDE.md) |
 | Content moderation (`moderation.py`) | **Placeholder: lets everything through.** To be built separately |
 | Message limit (`limits.py`) | **Effectively off (10,000 a day per IP), on purpose.** See [Design decisions](#design-decisions) |
 | Frontend | Not part of this folder. See [Notes for the frontend](#notes-for-the-frontend) |
@@ -118,7 +118,7 @@ isn't allowed returns `422` with the allowed values in the message.
 }
 ```
 
-With ~500 personas and about 50,000 possible combinations of the five attributes, most full
+With ~1000 personas and about 50,000 possible combinations of the five attributes, most full
 combinations will have **no exact match**. So `/match` never comes back empty-handed: it picks the
 persona that matches the most chosen attributes, then the closest age group and education level
 (48-52 is closer to 43-47 than 83+ is). If several are equally good, it picks one at random, so two
@@ -181,7 +181,7 @@ Set in `ai-popup-lab-backend/.env` locally, and in the App Service's environment
 
 ## Design decisions
 
-**Personas are pre-written files, not generated per chat.** With a fixed set of ~500, there's no
+**Personas are pre-written files, not generated per chat.** With a fixed set of ~1000, there's no
 biography generation while visitors wait, and each message is a single model call. This keeps replies
 fast and cheap. The old `_persona_chat` "guardrailed" flow made several model calls per message.
 

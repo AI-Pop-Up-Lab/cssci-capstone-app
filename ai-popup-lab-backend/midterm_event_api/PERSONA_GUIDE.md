@@ -1,11 +1,11 @@
 # Writing persona files
 
-This guide is for whoever writes the ~500 personas for the election-night chat. No coding needed:
+This guide is for whoever writes the ~1000 personas for the election-night chat. No coding needed:
 each persona is one text file.
 
 ## In short
 
-1. Copy [`personas/_TEMPLATE.md`](personas/_TEMPLATE.md) and name the copy `us_0001.md`, `us_0002.md`, … `us_0500.md`.
+1. Copy [`personas/_TEMPLATE.md`](personas/_TEMPLATE.md) and name the copy `us_0001.md`, `us_0002.md`, … `us_1000.md`.
 2. At the top, set the persona's five attributes, using exactly the values listed below.
 3. Underneath, write the persona's profile: who they are, how they vote and why, how they talk.
 4. Run the checker (or ask someone on the API side to run it) and fix anything it reports.
@@ -108,7 +108,7 @@ A visitor picks values in the dropdowns (any of them can be left on "all") and g
 matches the most of their choices. If several match equally well, one is picked at random. When
 nothing matches exactly, the closest age group and education level win.
 
-With ~500 personas and about 50,000 possible combinations, most combinations won't have an exact match.
+With ~1000 personas and about 50,000 possible combinations, most combinations won't have an exact match.
 So it's worth spreading personas across states, age groups, education levels and races, so every
 dropdown choice has at least a few personas. The checker lists any value that has no personas at all.
 
