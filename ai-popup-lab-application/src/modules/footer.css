@@ -60,6 +60,24 @@
     text-align: right;
 }
 
+#footer-social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#footer-social img {
+  width: 20px;
+  height: 20px;
+  display: inline;
+  filter: invert(93%) sepia(99%) saturate(63%) hue-rotate(81deg) brightness(93%) contrast(90%);
+}
+
+#footer-social a:hover img{
+  filter: invert(87%) sepia(7%) saturate(297%) hue-rotate(106deg) brightness(90%) contrast(95%);
+}
+
 @media screen and (max-width: 810px) {
     #footer-name{
         font-size: 30px;
