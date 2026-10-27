@@ -424,6 +424,9 @@ function VoteLongitudinalDemographics({ country, countryData }) {
           </label>
         )}
       </div>
+      <p className="vld-footnote">
+        {t('voteLongitudinal.slowLoadNote', 'Please note: loading may take a while')}
+      </p>
       {error ? (
         <p className="vld-error">{error}</p>
       ) : chartData && partyColours && rangeIdx ? (

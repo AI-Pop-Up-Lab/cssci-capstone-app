@@ -70,11 +70,12 @@
             }
         },
         "voteLongitudinalDemographic": {
-            "title": "Vote share per party over time by demographic, amongst likely voters",
+            "title": "Vote share per party over time by demographic",
             "selected": "Selected",
             "to": "to",
             "oldPipelineFootnote": "Predictions denoted ▲ made with deprecated methodology.",
             "intervalsFootnote": "Chart derived from cell-level point estimates ignoring uncertainty for computational expediency. Point estimates of aggregates may differ from those derived under the full posterior as above.",
+            "slowLoadNote": "Please note: loading may take a while",
             "export": {
               "title": "Export data within chosen timeframe:",
               "description": "(Regardless of any demographic filters or the 'amongst likely voters' setting.)"

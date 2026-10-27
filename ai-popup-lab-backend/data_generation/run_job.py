@@ -52,6 +52,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 logging.getLogger("azure").setLevel(logging.WARNING)  # SDK logs every HTTP request/response at INFO
 
+# Ballot access by district (US House). Static repo data shipped in the image
+# under country_data/ (a sibling of this package), not blob storage.
+HOUSE_CANDIDATES_PATH = Path(__file__).resolve().parent.parent / "country_data" / "wikipedia" / "house_candidates.csv"
+
 # Comma-separated list of country names, e.g. "usa" or "usa,sweden"
 COUNTRIES = [c.strip() for c in os.environ.get("COUNTRIES", "usa").split(",") if c.strip()]
 
@@ -268,16 +272,13 @@ def _run_mrp(country: str, year: int, week: int, backfill: bool = False, force: 
 
             # Ballot access by district (who is actually running) — the US
             # module uses it to mask parties not on a district's ballot.
-            candidates_blob = storage.get_house_candidates_path(country)
-            candidates_df = storage.read_dataframe_or_none(candidates_blob)
-            if candidates_df is None:
+            if not HOUSE_CANDIDATES_PATH.exists():
                 raise FileNotFoundError(
                     f"No house candidates file found for {country} "
-                    f"(expected blob: {candidates_blob}). Upload it before running MRP — "
-                    f"it supplies the ballot-access mask for post_strat_module_us.R."
+                    f"(expected path: {HOUSE_CANDIDATES_PATH}). It ships in the image under "
+                    f"country_data/wikipedia/ and supplies the ballot-access mask for post_strat_module_us.R."
                 )
-            candidates_path = tmp_path / f"{country}_house_candidates.csv"
-            candidates_df.to_csv(candidates_path, index=False)
+            candidates_path = HOUSE_CANDIDATES_PATH
 
         survey_df = storage.read_dataframe_or_none(survey_blob_path)
         if survey_df is None:
