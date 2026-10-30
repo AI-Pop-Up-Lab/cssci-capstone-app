@@ -8,6 +8,7 @@ import argparse
 import asyncio
 import csv
 import os
+import random
 import re
 import sys
 from pathlib import Path
@@ -61,10 +62,20 @@ CANONICAL_NATIONAL_OUTLETS = [
 ]
 
 # System prompt for the persona writer
-WRITER_SYSTEM_PROMPT = f"""You are an expert political ethnographer generating realistic synthetic American voter personas for an educational election-night chat demo.
+WRITER_SYSTEM_PROMPT = f"""You are a synthetic persona in a synthetic survey panel. You live in the United States. It is 2026.
 
-You will be given demographic attributes, a congressional district, and a 2024 past vote choice for a synthetic American voter.
-Your job is to generate a realistic, grounded, multidimensional voter profile in markdown format.
+You will be given demographic attributes, a congressional district, and a 2024 past vote choice.
+Your job is to generate a realistic, grounded voter profile in markdown format.
+This is only internal and will not be shown to anyone.
+
+### VOICE AND REALISM:
+- Write in the first person ("I am...", "I live in...", "I voted..."), always in English, with no name in the profile body (the frontmatter display_name is the only exception).
+- Be consistent with the demographic characteristics provided, and include nothing that contradicts them.
+- Be realistic, not socially polished. Some people might deem your profile not socially acceptable. That is fine and should reflect what your demographic characteristics imply. Don't make yourself more acceptable, informed or balanced than you would actually be.
+- Build the person on lived experience (job, household, place, routine), not on stereotypes of a demographic group. No single attribute (race, gender, party) should define them.
+- Write in this person's plain register, not an essayist's or a professional's. Prefer small concrete details (what you do, spend, put up with) over summaries of values and issues. Don't close paragraphs with a balanced takeaway.
+- Knowledge ends where daily life and work end. Don't write the person as fluent in adjacent expert topics (an environmental consultant is not an energy policy expert). Give languages and skills only where the background makes them plausible.
+- Real people are inconsistent. Allow ambivalence and gaps. The depth of your opinions should match your actual engagement, which you state explicitly and don't overestimate.
 
 ### REQUIREMENTS:
 1. FRONTMATTER: Must begin and end with '---'. Must contain exact attributes:
@@ -82,35 +93,28 @@ Your job is to generate a realistic, grounded, multidimensional voter profile in
 
    IMPORTANT for media_outlets: Choose 2 to 4 realistic national news domains from this canonical list:
    {', '.join(CANONICAL_NATIONAL_OUTLETS)}
-   Select outlets matching the voter's age, education, and political leaning.
+   Select outlets matching your age, education, and political leaning.
 
-2. PROFILE SECTIONS:
-   Written in the second person ("You are...", "You live in...", "You voted...").
-   Keep total profile length between 180 and 320 words (concise, grounded, punchy).
+2. PROFILE SECTIONS (500-800 words total):
 
    ## Background
-   Give an exact age fitting the age group band, occupation matching the education level, specific town/area in the state/district, family, and daily life.
+   Give an exact age fitting the age group band, an occupation matching the education level, a specific town/area in the state/district, family, and daily life.
 
    ## Politics and this election
-   Explain why you voted as indicated in the past (e.g. 2024). Explain how you feel about the 2026 midterm election, whether you are voting or abstaining and why, your top 1-2 concerns (e.g. rent, childcare, local jobs, property taxes), and your view of the political parties.
+   Explain why you voted as indicated in the past (e.g. 2024). Explain how you feel about the 2026 midterm, whether you are voting or abstaining and why (state it plainly, "I'm voting" / "I'm not voting", not as a vague plan), your top 1-2 concerns (e.g. rent, childcare, local jobs, property taxes), and your view of the political parties. That view does not need to be balanced or symmetric; real people are often lopsided, vague, or mostly annoyed at one side.
 
    ## Media Diet
-   1-2 natural conversational sentences explaining how you follow the specific national outlets and weekly hours listed in your frontmatter (e.g. when you read/watch them, morning vs evening).
+   1-2 natural conversational sentences on how you follow the outlets and weekly hours in your frontmatter (e.g. morning vs evening).
 
    ## Opinion Formation
-   State the Opinion Formation given in the input ('Recaller' or 'Constructor'). Do not pick a different one:
-   - Recaller: If you follow politics closely, you hold stable, internalized political values and recall consistent principles when asked.
-   - Constructor: If you are less engaged or swing/independent, you form opinions on the spot based on immediate personal experiences, gut feelings, and recent conversations.
-
-   ## How you talk
-   Tone, vocabulary and verbal habits that fit this person's age, education, job and where they live. Light regional habits (words or turns of phrase people there actually use) are fine. Limit puns and catchphrases. No invented slang or phonetic spelling of accents. Don't base the voice on race or ethnicity. Don't give the persona foreign-language words as a speech habit; if another language plausibly fits their background, mention it in Background instead.
+   State the Opinion Formation given in the input ('Recaller' or 'Constructor') and do not pick a different one. Recaller: follows politics closely, holds stable internalized values. Constructor: less engaged or swing/independent, forms opinions on the spot from personal experience, gut feeling and recent conversations. Don't restate these definitions. Show it with one short concrete example from your own life, consistent with the engagement you describe elsewhere.
 
 3. STRICT PROHIBITIONS:
-   - Do NOT use third person ("John is..."). Always use second person ("You are...").
-   - Do NOT include generic AI phrases ("As an AI...", "I don't have opinions...").
-   - Do NOT include markdown code blocks around the whole output (output raw markdown text starting with ---).
-   - Do NOT write general election-night rules (e.g. no slurs, no voting locations) — these are already in the base prompt.
-   - Do NOT include local or regional news outlets — outlets must be selected from the canonical national domain list.
+   - No second or third person ("You are...", "John is...").
+   - No generic AI phrases ("As an AI...", "I don't have opinions...").
+   - No markdown code blocks around the output (raw markdown starting with ---).
+   - No general election-night rules (e.g. no slurs, no voting locations); the base prompt covers them.
+   - No local or regional news outlets; use only the canonical national list.
    - Use diverse, unique first names; avoid repeating common names across personas.
 """
 
@@ -160,7 +164,6 @@ def validate_generated_text(text: str, persona_id: str):
         "## Politics and this election",
         "## Media Diet",
         "## Opinion Formation",
-        "## How you talk",
     ]
     missing = [sec for sec in required_sections if sec.lower() not in persona.profile.lower()]
     if missing:
@@ -174,14 +177,14 @@ def validate_generated_text(text: str, persona_id: str):
 
     # Check for truncated text / ending mid-sentence
     stripped = persona.profile.strip()
-    if not stripped.endswith((".", "!", "?", '"', "'")):
+    if not stripped.endswith((".", "!", "?", '"', "'", "”", "’", ")")):
         raise ValueError("Profile appears truncated (does not end with terminal punctuation)")
 
     word_count = len(persona.profile.split())
-    if word_count < 100:
-        raise ValueError(f"Profile is too short ({word_count} words; aim for 180-320)")
-    if word_count > 450:
-        raise ValueError(f"Profile is too long ({word_count} words; limit is 400)")
+    if word_count < 500:
+        raise ValueError(f"Profile is too short ({word_count} words; aim for 500-800)")
+    if word_count > 800:
+        raise ValueError(f"Profile is too long ({word_count} words; limit is 800)")
     return persona, word_count
 
 
@@ -215,6 +218,8 @@ async def main():
     parser = argparse.ArgumentParser(description="Generate persona markdown files using OpenAI or Azure OpenAI.")
     parser.add_argument("--limit", type=int, default=5, help="Number of personas to generate (default 5 for pilot)")
     parser.add_argument("--start", type=str, default="us_0001", help="Starting persona ID (default us_0001)")
+    parser.add_argument("--random", action="store_true", help="Sample random rows from sampled_personas_1000.csv")
+    parser.add_argument("--seed", type=int, default=None, help="Random seed for sampling")
     parser.add_argument("--dry-run", action="store_true", help="Print prompt without making LLM calls")
     parser.add_argument("--force", action="store_true", help="Overwrite existing files in personas/")
     args = parser.parse_args()
@@ -227,15 +232,21 @@ async def main():
     with open(SAMPLED_CSV, mode="r", encoding="utf-8") as f:
         records = list(csv.DictReader(f))
 
-    # Filter records based on start and limit
-    start_idx = 0
-    for idx, r in enumerate(records):
-        if r["id"] == args.start:
-            start_idx = idx
-            break
+    if args.random:
+        available = [r for r in records if args.force or not (PERSONAS_DIR / f"{r['id']}.md").exists()]
+        rng = random.Random(args.seed)
+        target_records = rng.sample(available, min(args.limit, len(available)))
+        print(f"Randomly selected {len(target_records)} personas from {len(available)} available rows.")
+    else:
+        # Filter records based on start and limit
+        start_idx = 0
+        for idx, r in enumerate(records):
+            if r["id"] == args.start:
+                start_idx = idx
+                break
 
-    target_records = records[start_idx : start_idx + args.limit]
-    print(f"Targeting {len(target_records)} personas starting from {args.start} (limit={args.limit}).")
+        target_records = records[start_idx : start_idx + args.limit]
+        print(f"Targeting {len(target_records)} personas starting from {args.start} (limit={args.limit}).")
 
     if args.dry_run:
         print("\n--- DRY RUN: Sample Prompt ---")
@@ -246,20 +257,25 @@ async def main():
 
     from openai import AsyncOpenAI
 
-    api_key = os.getenv("AZURE_OPENAI_API_KEY")
-    base_url = os.getenv("AZURE_OPENAI_BASE_URL")
-    model = os.getenv("MIDTERM_MODEL") or os.getenv("AZURE_OPENAI_MODEL") or "gpt-oss-120b"
+    api_key = os.getenv("AZURE_OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+    base_url = os.getenv("AZURE_OPENAI_BASE_URL") or os.getenv("OPENAI_BASE_URL")
+    if base_url:
+        model = os.getenv("MIDTERM_MODEL") or os.getenv("AZURE_OPENAI_MODEL") or "gpt-oss-120b"
+    else:
+        model = os.getenv("MIDTERM_MODEL") or os.getenv("OPENAI_MODEL") or "gpt-4o-mini"
 
-    if not api_key or not base_url:
-        print("\n[!] Missing Azure OpenAI credentials in ai-popup-lab-backend/.env")
-        print("Please ensure the following are set:")
-        print("  AZURE_OPENAI_API_KEY=...")
-        print("  AZURE_OPENAI_BASE_URL=...")
-        print(f"  AZURE_OPENAI_MODEL={model}")
+    if not api_key:
+        print("\n[!] Missing API key in ai-popup-lab-backend/.env")
+        print("Please configure AZURE_OPENAI_API_KEY (and AZURE_OPENAI_BASE_URL) or OPENAI_API_KEY.")
         sys.exit(1)
 
-    client = AsyncOpenAI(api_key=api_key.strip(), base_url=base_url.strip(), timeout=45.0, max_retries=2)
-    print(f"Using Azure OpenAI API ({base_url}) with model: {model}")
+    client_kwargs = {"api_key": api_key.strip(), "timeout": 45.0, "max_retries": 2}
+    if base_url and base_url.strip():
+        client_kwargs["base_url"] = base_url.strip()
+
+    client = AsyncOpenAI(**client_kwargs)
+    endpoint_desc = base_url if base_url else "OpenAI default endpoint"
+    print(f"Using API ({endpoint_desc}) with model: {model}")
     
     # Run generations sequentially or in small concurrency
     successes = 0
