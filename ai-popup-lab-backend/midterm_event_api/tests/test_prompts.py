@@ -56,3 +56,14 @@ def test_messages_keep_only_recent_history(monkeypatch):
 
     assert [m["role"] for m in messages] == ["system", "user", "assistant", "user"]
     assert [m["content"] for m in messages[1:]] == ["three", "four", "five"]
+
+
+def test_news_digest_only_used_when_events_path_is_set(monkeypatch, tmp_path):
+    digest = tmp_path / "news_digests.json"
+    digest.write_text('{"us_0001": ["Gas went up again this week."]}')
+
+    monkeypatch.delenv("MIDTERM_EVENTS_PATH", raising=False)
+    assert "Gas went up" not in build_messages(PERSONA, "hi", [], get_settings())[0]["content"]
+
+    monkeypatch.setenv("MIDTERM_EVENTS_PATH", str(digest))
+    assert "Gas went up again this week." in build_messages(PERSONA, "hi", [], get_settings())[0]["content"]

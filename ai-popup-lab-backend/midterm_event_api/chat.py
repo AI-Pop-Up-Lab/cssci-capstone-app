@@ -15,9 +15,12 @@ The result is a sequence of ReplyEvents that the endpoint turns into server-sent
 Chats are not stored. Logs contain the persona ID, reply mode, timing and errors, never message text.
 """
 
+import json
 import logging
 import time
 from dataclasses import dataclass
+from functools import lru_cache
+from pathlib import Path
 
 from midterm_event_api import llm, moderation
 from midterm_event_api.config import Settings
@@ -36,8 +39,20 @@ class ReplyEvent:
     text: str
 
 
+@lru_cache(maxsize=4)
+def load_news_digests(path: str) -> dict:
+    # {persona_id: [news points]} from generation/digest_news.py
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
 def build_messages(persona: Persona, user_message: str, history: list, settings: Settings) -> list:
-    system_prompt = build_system_prompt(persona, load_base_prompt(str(settings.base_prompt_path)))
+    # news only goes in once MIDTERM_EVENTS_PATH is set (election day)
+    events_data = None
+    if settings.events_path:
+        points = load_news_digests(str(settings.events_path)).get(persona.id, [])
+        events_data = {"national": points}
+
+    system_prompt = build_system_prompt(persona, load_base_prompt(str(settings.base_prompt_path)), events_data)
 
     # only the most recent turns are sent, which keeps long chats fast and cheap
     recent = history[-settings.max_history_messages:] if settings.max_history_messages > 0 else []

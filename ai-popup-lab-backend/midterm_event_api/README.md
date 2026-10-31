@@ -175,7 +175,7 @@ Set in `ai-popup-lab-backend/.env` locally, and in the App Service's environment
 | `MIDTERM_MAX_HISTORY_MESSAGES` | `20` | How many earlier messages are sent to the model |
 | `MIDTERM_DAILY_MESSAGE_LIMIT` | `10000` | Messages per IP address per day. **Effectively off**, see below |
 | `MIDTERM_TEMPERATURE` | `0.7` | Model randomness. Set to `none` if the model rejects it (reasoning models do) |
-| `MIDTERM_MAX_REPLY_TOKENS` | `300` | Upper bound on reply length (about 225 words). `none` to leave it out |
+| `MIDTERM_MAX_REPLY_TOKENS` | `450` | Upper bound on reply tokens, including the model's hidden reasoning (300 cut some replies off in testing). `none` to leave it out |
 | `MIDTERM_LLM_TIMEOUT_SECONDS` | `30` | Give up on a model call after this long (retried twice) |
 | `MIDTERM_PERSONAS_DIR`, `MIDTERM_BASE_PROMPT_PATH` | this folder | Use persona files or a base prompt from somewhere else |
 
