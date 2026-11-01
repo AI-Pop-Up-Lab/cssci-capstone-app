@@ -36,6 +36,8 @@ class Settings:
     reply_mode: str
     personas_dir: Path
     base_prompt_path: Path
+    # per-persona news digest (generation/digest_news.py), None until election day
+    events_path: Path | None
     max_message_chars: int
     max_history_messages: int
     daily_message_limit: int
@@ -97,18 +99,21 @@ def get_settings() -> Settings:
 
     personas_dir = _env_str("MIDTERM_PERSONAS_DIR")
     base_prompt_path = _env_str("MIDTERM_BASE_PROMPT_PATH")
+    events_path = _env_str("MIDTERM_EVENTS_PATH")
 
     return Settings(
         chat_enabled=_env_bool("MIDTERM_CHAT_ENABLED", True),
         reply_mode=reply_mode,
         personas_dir=Path(personas_dir) if personas_dir else DEFAULT_PERSONAS_DIR,
         base_prompt_path=Path(base_prompt_path) if base_prompt_path else DEFAULT_BASE_PROMPT_PATH,
+        events_path=Path(events_path) if events_path else None,
         max_message_chars=_env_int("MIDTERM_MAX_MESSAGE_CHARS", 1000),
         max_history_messages=_env_int("MIDTERM_MAX_HISTORY_MESSAGES", 20),
         # FLAG: effectively no limit, on purpose (in-person event, see limits.py)
         daily_message_limit=_env_int("MIDTERM_DAILY_MESSAGE_LIMIT", 10000),
         temperature=_env_optional_number("MIDTERM_TEMPERATURE", 0.7, float),
-        max_reply_tokens=_env_optional_number("MIDTERM_MAX_REPLY_TOKENS", 300, int),
+        # includes the model's hidden reasoning: replies used 94-364 tokens in testing, 300 cut some off
+        max_reply_tokens=_env_optional_number("MIDTERM_MAX_REPLY_TOKENS", 450, int),
         llm_timeout_seconds=float(_env_int("MIDTERM_LLM_TIMEOUT_SECONDS", 30)),
         azure_api_key=_env_str("AZURE_OPENAI_API_KEY"),
         azure_base_url=_env_str("AZURE_OPENAI_BASE_URL"),

@@ -35,30 +35,19 @@ except ImportError:
 from midterm_event_api import attributes
 from midterm_event_api.personas import parse_persona_text, PersonaFileError
 
-# Predefined list of canonical national news domains for GDELT matching
+# national outlets for the midterm event, names must match gdelt's SourceCommonName
+# checked 2026-10-30: in gdelt and full article text scrapes (no paywall or bot block)
+# first 5 are from the paper's list, last 4 added for balance now that fox and cnn are unusable
 CANONICAL_NATIONAL_OUTLETS = [
-    "apnews.com",
-    "reuters.com",
-    "usatoday.com",
-    "thehill.com",
-    "politico.com",
-    "axios.com",
-    "nytimes.com",
-    "washingtonpost.com",
-    "cnn.com",
-    "msnbc.com",
-    "npr.org",
-    "cbsnews.com",
-    "abcnews.go.com",
-    "nbcnews.com",
-    "vox.com",
-    "wsj.com",
-    "foxnews.com",
+    "aol.com",
     "nypost.com",
-    "nationalreview.com",
-    "washingtonexaminer.com",
     "breitbart.com",
-    "dailycaller.com",
+    "newsweek.com",
+    "cbsnews.com",
+    "abcnews.com",
+    "npr.org",
+    "nbcnews.com",
+    "cnbc.com",
 ]
 
 # System prompt for the persona writer
