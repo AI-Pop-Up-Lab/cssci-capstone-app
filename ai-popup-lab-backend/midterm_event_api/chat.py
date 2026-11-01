@@ -45,14 +45,52 @@ def load_news_digests(path: str) -> dict:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
-def build_messages(persona: Persona, user_message: str, history: list, settings: Settings) -> list:
-    # news only goes in once MIDTERM_EVENTS_PATH is set (election day)
-    events_data = None
-    if settings.events_path:
-        points = load_news_digests(str(settings.events_path)).get(persona.id, [])
-        events_data = {"national": points}
+@lru_cache(maxsize=4)
+def load_salient_events(path: str) -> dict:
+    # {national_context: {...}} from generation/fetch_salient_events.py
+    return json.loads(Path(path).read_text(encoding="utf-8"))
 
-    system_prompt = build_system_prompt(persona, load_base_prompt(str(settings.base_prompt_path)), events_data)
+
+@lru_cache(maxsize=4)
+def load_state_events(path: str) -> dict:
+    # {"AK": [...], "AL": [...]} for all 50 states from generation/fetch_state_events.py
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def build_messages(persona: Persona, user_message: str, history: list, settings: Settings) -> list:
+    events_data = {}
+
+    # 1. Macro salient events & 2025-2026 context (shared national reality)
+    if settings.salient_events_path and Path(settings.salient_events_path).exists():
+        try:
+            events_data.update(load_salient_events(str(settings.salient_events_path)))
+        except Exception as e:
+            logger.warning("Failed to load salient events: %s", e)
+
+    # 2. State-specific events: inject ONLY this persona's state from the 50-state database
+    if settings.state_events_path and Path(settings.state_events_path).exists():
+        try:
+            states_dict = load_state_events(str(settings.state_events_path))
+            p_state = persona.attributes.get("state")
+            if p_state and p_state in states_dict:
+                events_data["state_highlights"] = {p_state: states_dict[p_state]}
+        except Exception as e:
+            logger.warning("Failed to load state events: %s", e)
+
+    # 3. Individual persona GDELT media digest points (from digest_news.py)
+    if settings.events_path and Path(settings.events_path).exists():
+        try:
+            points = load_news_digests(str(settings.events_path)).get(persona.id, [])
+            if points:
+                events_data["media_diet_points"] = points
+        except Exception as e:
+            logger.warning("Failed to load news digests: %s", e)
+
+    system_prompt = build_system_prompt(
+        persona,
+        load_base_prompt(str(settings.base_prompt_path)),
+        events_data if events_data else None,
+    )
 
     # only the most recent turns are sent, which keeps long chats fast and cheap
     recent = history[-settings.max_history_messages:] if settings.max_history_messages > 0 else []

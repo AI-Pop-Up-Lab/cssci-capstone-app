@@ -129,7 +129,10 @@ def main():
         digests[persona_id] = write_digest(client, model, persona, articles)
         DIGEST_PATH.write_text(json.dumps(digests, indent=1))
         for point in digests[persona_id]:
-            print(f"  * {point}")
+            try:
+                print(f"  * {point}")
+            except Exception:
+                pass
 
 
 if __name__ == "__main__":

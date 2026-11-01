@@ -32,22 +32,49 @@ def persona_facts(persona: Persona) -> str:
 
 
 def format_recent_events(state: str | None = None, events_data: dict | None = None) -> str:
-    """Format recent national and state events into a brief briefing if available."""
+    """Format recent national context, salient events, and persona media diet points."""
     if not events_data:
         return ""
-    lines = []
-    national = events_data.get("national", [])
-    if national:
-        lines.append("**National headlines leading up to today:**")
-        for item in national:
-            lines.append(f"- {item}")
-    if state and "state" in events_data and state in events_data["state"]:
-        state_events = events_data["state"][state]
+    sections = []
+
+    # 1. 2025-2026 Macro National Context & Headlines
+    context = events_data.get("national_context")
+    if isinstance(context, dict):
+        lines = ["National context & developments (2025-2026):"]
+        titles = {
+            "administration_and_governance": "Administration & Governance",
+            "foreign_affairs_and_security": "Foreign Affairs & Security",
+            "economy_and_cost_of_living": "Economy & Cost of Living",
+            "technology_and_society": "Technology & Society",
+            "technology_energy_and_society": "Technology, Energy & Society",
+            "election_week_headlines": "Major Headlines This Week",
+        }
+        for cat, items in context.items():
+            if items:
+                label = titles.get(cat, cat.replace("_", " ").title())
+                lines.append(f"• {label}:")
+                for item in items:
+                    lines.append(f"  - {item}")
+        sections.append("\n".join(lines))
+    elif isinstance(context, list) and context:
+        sections.append("National context:\n" + "\n".join(f"- {item}" for item in context))
+
+    # 2. State-Specific Highlights
+    state_highlights = events_data.get("state_highlights") or events_data.get("state", {})
+    if state and isinstance(state_highlights, dict) and state in state_highlights:
+        state_events = state_highlights[state]
         if state_events:
-            lines.append(f"\n**Recent local/state news in {state}:**")
-            for item in state_events:
-                lines.append(f"- {item}")
-    return "\n".join(lines).strip()
+            sections.append(f"Recent state news & local ballot measures in {state}:\n" + "\n".join(f"- {item}" for item in state_events))
+
+    # 3. Individual Persona Media Diet Memory (from GDELT digest)
+    media_points = events_data.get("media_diet_points") or events_data.get("national")
+    # if events_data["national"] was directly passed from old chat.py
+    if media_points and not context:
+        sections.append("Recent news you personally noticed:\n" + "\n".join(f"- {item}" for item in media_points))
+    elif media_points and context:
+        sections.append("Stories you personally noticed in the outlets you follow:\n" + "\n".join(f"- {item}" for item in media_points))
+
+    return "\n\n".join(sections).strip()
 
 
 def build_system_prompt(persona: Persona, base_prompt: str, events_data: dict | None = None) -> str:
