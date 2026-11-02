@@ -58,7 +58,7 @@ Your job is to generate a realistic, grounded voter profile in markdown format.
 This is only internal and will not be shown to anyone.
 
 ### VOICE AND REALISM:
-- Write in the first person ("I am...", "I live in...", "I voted..."), always in English, with no name in the profile body (the frontmatter display_name is the only exception).
+- Write in the first person ("I am...", "I live in...", "I voted..."), always in English. Do NOT invent or use a personal first name in the profile body or frontmatter (you are identified in the polling panel simply by your persona number, e.g. "Persona 42"). Open your Background directly with your age, location, and circumstances (e.g. "I'm 45, and I live in...").
 - Be consistent with the demographic characteristics provided, and include nothing that contradicts them.
 - Be realistic, not socially polished. Some people might deem your profile not socially acceptable. That is fine and should reflect what your demographic characteristics imply. Don't make yourself more acceptable, informed or balanced than you would actually be.
 - Build the person on lived experience (job, household, place, routine), not on stereotypes of a demographic group. No single attribute (race, gender, party) should define them.
@@ -73,30 +73,32 @@ This is only internal and will not be shown to anyone.
    education: <education>
    state: <state>
    race: <race>
-   display_name: <First Name only, e.g. Marcus, Brenda, or Jim>
+   opinion_style: <Retriever or Constructor, matching the Opinion Formation in input>
    media_hours: <the Media Hours given in the input, exactly>
    media_outlets:
      - <domain 1>
      - <domain 2>
-     - <domain 3>
 
-   IMPORTANT for media_outlets: Choose 2 to 4 realistic national news domains from this canonical list:
+   IMPORTANT for media_outlets: Choose realistic national news domains from this canonical list:
    {', '.join(CANONICAL_NATIONAL_OUTLETS)}
-   Select outlets matching your age, education, and political leaning.
+   Select 1 to 2 outlets if media_hours is low (1-3 hours/week); select 2 to 4 outlets if media_hours is higher (4+ hours/week). Outlets must match your age, education, and political leaning.
 
-2. PROFILE SECTIONS (500-800 words total):
+2. PROFILE SECTIONS (450-800 words total, target ~550-700 words):
 
    ## Background
-   Give an exact age fitting the age group band, an occupation matching the education level, a specific town/area in the state/district, family, and daily life.
+   State your exact age fitting the age group band, an occupation matching the education level, a specific town/area in the state/district, family, and daily life routines (aim for roughly 220-300 words). Do NOT invent or use any personal name.
 
    ## Politics and this election
-   Explain why you voted as indicated in the past (e.g. 2024). Explain how you feel about the 2026 midterm, whether you are voting or abstaining and why (state it plainly, "I'm voting" / "I'm not voting", not as a vague plan), your top 1-2 concerns (e.g. rent, childcare, local jobs, property taxes), and your view of the political parties. That view does not need to be balanced or symmetric; real people are often lopsided, vague, or mostly annoyed at one side.
+   Explain why you voted (or did not vote / sat out) in the 2024 election matching your Past Vote:
+   - If your 2024 Past Vote was "Did not vote": explain your disengagement, cynicism, busy schedule, or alienation from the system, and lean heavily toward sitting out again in 2026 unless an extraordinary local controversy or personal hardship drew you in.
+   - If you voted in 2024: explain your motivation and how your feelings have evolved.
+   State plainly whether you are voting or abstaining in the 2026 midterms ("I'm voting" / "I'm sitting this one out", not as a vague plan), your top 1-2 everyday concerns (e.g. rent, grocery prices, local jobs, property taxes), and your view of the political parties. That view does not need to be balanced or symmetric; real people are often lopsided, vague, or mostly annoyed at one side (aim for roughly 270-360 words).
 
    ## Media Diet
    1-2 natural conversational sentences on how you follow the outlets and weekly hours in your frontmatter (e.g. morning vs evening).
 
    ## Opinion Formation
-   State the Opinion Formation given in the input ('Recaller' or 'Constructor') and do not pick a different one. Recaller: follows politics closely, holds stable internalized values. Constructor: less engaged or swing/independent, forms opinions on the spot from personal experience, gut feeling and recent conversations. Don't restate these definitions. Show it with one short concrete example from your own life, consistent with the engagement you describe elsewhere.
+   Output ONLY the single word matching the Opinion Formation given in the input: either "Retriever" or "Constructor". Do NOT write any description, explanation, or example from your life.
 
 3. STRICT PROHIBITIONS:
    - No second or third person ("You are...", "John is...").
@@ -104,11 +106,14 @@ This is only internal and will not be shown to anyone.
    - No markdown code blocks around the output (raw markdown starting with ---).
    - No general election-night rules (e.g. no slurs, no voting locations); the base prompt covers them.
    - No local or regional news outlets; use only the canonical national list.
-   - Use diverse, unique first names; avoid repeating common names across personas.
+   - Do NOT invent or use any personal name (no "My name is...", no display_name in frontmatter); you are identified strictly by persona number.
+   - Under ## Opinion Formation, do NOT provide examples, stories, or descriptions; output strictly the single word "Retriever" or "Constructor".
 """
 
 
 def build_user_prompt(record: dict) -> str:
+    raw_style = record.get("opinion_style", "Constructor")
+    opinion_style = "Retriever" if raw_style in ("Recaller", "Retriever") else "Constructor"
     return f"""Please generate the persona file for this voter:
 - ID: {record['id']}
 - Gender: {record['gender']}
@@ -118,7 +123,7 @@ def build_user_prompt(record: dict) -> str:
 - Race: {record['race']}
 - Congressional District: {record.get('state_cd', 'N/A')}
 - Past Vote (2024): {record.get('past_vote', 'Unknown')}
-- Opinion Formation: {record['opinion_style']}
+- Opinion Formation: {opinion_style}
 - Media Hours (per week): {record['media_hours']}
 """
 
@@ -158,20 +163,23 @@ def validate_generated_text(text: str, persona_id: str):
     if missing:
         raise ValueError(f"Profile is missing required section(s): {', '.join(missing)}")
 
-    # Check media_hours and media_outlets in frontmatter
+    # Check media_hours, media_outlets, and opinion_style in frontmatter
     if "media_hours" not in persona.extra:
         raise ValueError("Missing 'media_hours' in YAML frontmatter")
     if "media_outlets" not in persona.extra or not isinstance(persona.extra["media_outlets"], list):
         raise ValueError("Missing or invalid 'media_outlets' list in YAML frontmatter")
+    if "opinion_style" in persona.extra and persona.extra["opinion_style"] not in ("Retriever", "Constructor", "Recaller"):
+        raise ValueError(f"Invalid 'opinion_style' in YAML frontmatter: {persona.extra['opinion_style']}")
 
     # Check for truncated text / ending mid-sentence
     stripped = persona.profile.strip()
-    if not stripped.endswith((".", "!", "?", '"', "'", "”", "’", ")")):
-        raise ValueError("Profile appears truncated (does not end with terminal punctuation)")
+    valid_endings = (".", "!", "?", '"', "'", "”", "’", ")", "Retriever", "Constructor", "Recaller", "Retriever.", "Constructor.")
+    if not stripped.endswith(valid_endings):
+        raise ValueError("Profile appears truncated (does not end with terminal punctuation or valid opinion style)")
 
     word_count = len(persona.profile.split())
-    if word_count < 500:
-        raise ValueError(f"Profile is too short ({word_count} words; aim for 500-800)")
+    if word_count < 450:
+        raise ValueError(f"Profile is too short ({word_count} words; aim for 450-800)")
     if word_count > 800:
         raise ValueError(f"Profile is too long ({word_count} words; limit is 800)")
     return persona, word_count
@@ -266,9 +274,13 @@ async def main():
     endpoint_desc = base_url if base_url else "OpenAI default endpoint"
     print(f"Using API ({endpoint_desc}) with model: {model}")
     
-    # Run generations sequentially or in small concurrency
+    # Run generations sequentially
     successes = 0
     for record in target_records:
+        pid = record["id"]
+        output_path = PERSONAS_DIR / f"{pid}.md"
+        if output_path.exists() and not args.force:
+            continue
         ok = await generate_single(record, client, model, force=args.force)
         if ok:
             successes += 1

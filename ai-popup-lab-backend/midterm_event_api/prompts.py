@@ -25,10 +25,14 @@ def load_base_prompt(path: str) -> str:
 
 
 def persona_facts(persona: Persona) -> str:
-    return "\n".join(
+    lines = []
+    if persona.display_name and not persona.display_name.startswith("Persona "):
+        lines.append(f"- Name: {persona.display_name}")
+    lines.extend(
         f"- {attributes.LABELS[name]}: {attributes.describe(name, persona.attributes[name])}"
         for name in attributes.ATTRIBUTES
     )
+    return "\n".join(lines)
 
 
 def format_recent_events(state: str | None = None, events_data: dict | None = None) -> str:
