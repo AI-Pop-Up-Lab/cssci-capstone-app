@@ -1,89 +1,125 @@
 // renders and is parent of all personae that match chosen filters. 
 // if no personae match, it shows text explaining so
 
-import { useState, useEffect, memo, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 
 import './personaChooser.css';
 
 import Loader from "../loader";
 import PersonaDetailCard from "./personaDetailCard";
 
+const INITIAL_BATCH_SIZE = 120;
+const BATCH_INCREMENT = 60;
 
-function PersonaChooser({ data, chosenDemographic, countryName, relevantColumns }) {
+function getAttributeValue(row, column) {
+  if (row.attributes && row.attributes[column] !== undefined) {
+    return row.attributes[column];
+  }
+  return row[column];
+}
+
+function normalizePersona(persona, idx) {
+  const personaId = persona.id || `us_${String((persona.index ?? idx) + 1).padStart(4, '0')}`;
+  const rawDigits = personaId.replace(/\D+/g, '');
+  const numericIndex = rawDigits ? parseInt(rawDigits, 10) - 1 : (persona.index ?? idx);
+  const displayName = persona.display_name || `Persona ${numericIndex + 1}`;
+
+  const attrs = persona.attributes ? { ...persona.attributes } : {};
+  // Copy top-level props if not in attributes
+  for (const [key, value] of Object.entries(persona)) {
+    if (!['attributes', 'extra', 'profile', 'source_file', 'opinion_style'].includes(key) && attrs[key] === undefined) {
+      attrs[key] = value;
+    }
+  }
+
+  return {
+    ...attrs,
+    id: personaId,
+    index: numericIndex,
+    display_name: displayName,
+    // Keep opinion_style and extra internal for LLM chat only
+    _extra: persona.extra || {},
+  };
+}
+
+function PersonaChooser({ data = [], chosenDemographic, countryName, relevantColumns }) {
 
   const { t } = useTranslation();
 
   const [filteredData, setFilteredData] = useState([]);
+  const [displayLimit, setDisplayLimit] = useState(INITIAL_BATCH_SIZE);
   const [isLoading, setIsLoading] = useState(false);
-
-  const [error, setError] = useState(null);
 
   // filter data through chosen demographics
   useEffect(() => {
-
-    if (!chosenDemographic || Object.keys(chosenDemographic).length === 0) return; // skips if data isn't ready yet
+    if (!chosenDemographic || Object.keys(chosenDemographic).length === 0) return;
 
     setIsLoading(true);
 
-    const timeout = setTimeout(() => { // small timeout of 0ms lets the render of the loader take place
-      const result = data.filter(row =>
-        Object.entries(chosenDemographic).every(([column, filterValue]) =>
-          filterValue === 'all' || row[column] === filterValue
-        )
+    const timeout = setTimeout(() => {
+      const result = (data || []).filter((row) =>
+        Object.entries(chosenDemographic).every(([column, filterValue]) => {
+          if (!filterValue || filterValue === 'all') return true;
+          const val = getAttributeValue(row, column);
+          return val === filterValue;
+        })
       );
       setFilteredData(result);
+      setDisplayLimit(INITIAL_BATCH_SIZE);
       setIsLoading(false);
     }, 0);
 
-    return () => clearTimeout(timeout); // cleanup if chosenDemographic changes mid-filter, gets called if data or chosenDemographic updates
+    return () => clearTimeout(timeout);
   }, [data, chosenDemographic]);
 
-
-  // async function getRelevantColumns(){
-  //   try {
-
-  //     // FastAPI in testing is running on 127.0.0.1:8000
-  //     const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
-
-
-  //     setRelevantColumns(response.data.relevant_columns);
-  //     setError(null);
-  //   } catch (err) {
-  //     setError(err.message);
-  //     setRelevantColumns(null);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   setFilteredData([]);
-  // }, [countryName]);
+  const visiblePersonas = useMemo(() => {
+    return filteredData.slice(0, displayLimit).map((persona, i) => normalizePersona(persona, i));
+  }, [filteredData, displayLimit]);
 
   const cards = useMemo(() =>
-    filteredData.map((persona) => (
+    visiblePersonas.map((persona) => (
       <PersonaDetailCard
-        key={`${countryName}_${persona.index}`}
+        key={`${countryName}_${persona.id || persona.index}`}
         personaDetails={persona}
         relevantColumnsToShow={relevantColumns}
         personaCountry={countryName}
       />
     )),
-    [filteredData, relevantColumns, countryName]
+    [visiblePersonas, relevantColumns, countryName]
   );
 
+  const handleLoadMore = () => {
+    setDisplayLimit((prev) => Math.min(prev + BATCH_INCREMENT, filteredData.length));
+  };
+
   return (
-    <div className="PersonaChooser">
-      {!isLoading && 
-      
-        <>
-        {cards}
-        </>
-      
-      }
-      {(isLoading || data.length === 0) && <Loader />}
-      {filteredData.length < 1 && !isLoading && data.length > 0 && (
-        <h2 className="unbounded-weight300">{t('personaPage.noPersonaMatch')}</h2>
+    <div className="PersonaChooserContainer">
+      {!isLoading && filteredData.length > 0 && (
+        <p className="persona-results-summary unbounded-weight300">
+          Showing {visiblePersonas.length} of {filteredData.length} matching personas
+          {data.length > filteredData.length ? ` (filtered from ${data.length} total)` : ''}
+        </p>
+      )}
+
+      <div className="PersonaChooser">
+        {!isLoading && cards}
+        {(isLoading || (data && data.length === 0)) && <Loader />}
+        {filteredData.length < 1 && !isLoading && data && data.length > 0 && (
+          <h2 className="unbounded-weight300">{t('personaPage.noPersonaMatch')}</h2>
+        )}
+      </div>
+
+      {!isLoading && displayLimit < filteredData.length && (
+        <div className="load-more-container">
+          <button
+            type="button"
+            className="load-more-button unbounded-weight300"
+            onClick={handleLoadMore}
+          >
+            LOAD MORE (+{Math.min(BATCH_INCREMENT, filteredData.length - displayLimit)})
+          </button>
+        </div>
       )}
     </div>
   );

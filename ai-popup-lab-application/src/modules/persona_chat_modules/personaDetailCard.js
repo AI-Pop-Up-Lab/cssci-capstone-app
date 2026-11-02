@@ -19,25 +19,25 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
 
   const [index, setIndex] = useState(personaDetails.index);
   const [filteredPersona, setFilteredPersona] = useState(
-
     filterColumns(personaDetails, relevantColumnsToShow)
-
-    // relevantColumnsToShow
-    //   ? Object.fromEntries(Object.entries(personaDetails).filter(([key]) => relevantColumnsToShow.includes(key)))
-    //   : {}
   );
 
   const [showPersonaChat, setShowPersonaChat] = useState(false);
 
-  function filterColumns(persona, relCol){
-
-    if(!relCol){
-      return {}
-    }
-
-    relCol.push('vote_2030');
-    return Object.fromEntries(Object.entries(persona).filter(([key]) => relCol.includes(key)))
-
+  function filterColumns(persona, relCol) {
+    if (!persona) return {};
+    const cols = relCol ? [...relCol] : Object.keys(persona);
+    return Object.fromEntries(
+      Object.entries(persona).filter(([key, val]) => {
+        if (['id', 'index', 'display_name', '_extra', 'opinion_style', 'profile', 'source_file', 'extra'].includes(key)) {
+          return false;
+        }
+        if (relCol && !cols.includes(key)) {
+          return false;
+        }
+        return val !== null && val !== undefined && val !== '';
+      })
+    );
   }
 
   const formatKey = (key) => {
@@ -45,13 +45,10 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
     return withSpaces.charAt(0).toUpperCase() + withSpaces.slice(1);
   };
 
-  // useEffect(() => {
-  //   console.log(relevantColumnsToShow)
-  // }, [relevantColumnsToShow]);
-
   useEffect(() => {
+    setIndex(personaDetails.index);
     setFilteredPersona(filterColumns(personaDetails, relevantColumnsToShow));
-  }, [relevantColumnsToShow]);
+  }, [personaDetails, relevantColumnsToShow]);
 
   function randomSvgPFP(){
     const randNum = Math.random();
@@ -105,7 +102,12 @@ function PersonaDetailCard({ personaDetails, relevantColumnsToShow, personaCount
       </div>
 
       {showPersonaChat && <PersonaChat 
-          personaDetails={{ ...filteredPersona, index: index }}
+          personaDetails={{
+            ...filteredPersona,
+            index: index,
+            id: personaDetails.id,
+            display_name: personaDetails.display_name,
+          }}
           personaCountry={personaCountry}
           showChat={setShowPersonaChat}
         />}

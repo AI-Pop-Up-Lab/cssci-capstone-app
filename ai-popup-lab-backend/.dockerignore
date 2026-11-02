@@ -20,3 +20,5 @@ data_generation/output/
 
 # docs
 *.md
+# midterm event persona files and prompts are read at runtime, keep them in the image
+!midterm_event_api/**/*.md

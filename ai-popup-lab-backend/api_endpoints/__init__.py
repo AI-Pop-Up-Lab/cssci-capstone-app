@@ -9,3 +9,4 @@ from .admin_endpoints import router as admin_router
 from .download_endpoints import router as download_router
 from .longitudinal_endpoints import router as longitudinal_router
 from .country_data_endpoints import router as country_data_router
+from .midterm_event_endpoints import router as midterm_event_router

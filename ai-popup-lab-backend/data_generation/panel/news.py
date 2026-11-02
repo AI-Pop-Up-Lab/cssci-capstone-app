@@ -119,6 +119,7 @@ def _download_and_parse_gkg(url: str) -> pd.DataFrame:
             df = pd.read_csv(
                 f, sep="\t", header=None,
                 names=GKG_COLUMNS, dtype=str,
+                encoding="latin-1",
                 low_memory=False, on_bad_lines="skip",
             )
     return df
@@ -128,7 +129,10 @@ def download_and_filter(url: str, domains: list[str]) -> pd.DataFrame | None:
     try:
         df = retry_call(_download_and_parse_gkg, url, should_retry=is_permanent_http_error)
     except RetryExhausted as exc:
-        print(f"  ✗ {url.split('/')[-1]} — giving up: {exc}")
+        try:
+            print(f"  [x] {url.split('/')[-1]} - giving up: {exc}")
+        except Exception:
+            pass
         return None
 
     names = df["SourceCommonName"].fillna("").str.lower()
@@ -196,11 +200,14 @@ def download_weekly_news(
         combined.to_csv(output_path, index=False)
 
     elapsed = time.time() - t0
-    print(f"\n✓ Done in {elapsed:.1f}s")
-    print(f"  Unique articles  : {len(combined):,}")
-    print(f"  Unique sources   : {combined['SourceCommonName'].nunique():,}")
-    print(f"\nTop 10 {normalized_domains} sources:")
-    print(combined["SourceCommonName"].value_counts().head(10).to_string())
+    try:
+        print(f"\nDone in {elapsed:.1f}s")
+        print(f"  Unique articles  : {len(combined):,}")
+        print(f"  Unique sources   : {combined['SourceCommonName'].nunique():,}")
+        print(f"\nTop 10 {normalized_domains} sources:")
+        print(combined["SourceCommonName"].value_counts().head(10).to_string())
+    except Exception:
+        pass
 
     return combined
 
