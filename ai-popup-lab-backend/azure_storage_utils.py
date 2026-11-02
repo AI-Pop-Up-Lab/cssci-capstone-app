@@ -66,11 +66,11 @@ import os
 import pandas as pd
 from azure.storage.blob import BlobServiceClient
 
-CONNECTION_STRING = os.environ["AZURE_STORAGE_CONNECTION_STRING"]
+CONNECTION_STRING = os.environ.get("AZURE_STORAGE_CONNECTION_STRING", "")
 CONTAINER_NAME = os.environ.get("BLOB_CONTAINER_NAME", "generated-data")
 
-_blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
-_container_client = _blob_service_client.get_container_client(CONTAINER_NAME)
+_blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING) if CONNECTION_STRING else None
+_container_client = _blob_service_client.get_container_client(CONTAINER_NAME) if _blob_service_client else None
 
 
 '''----------------
