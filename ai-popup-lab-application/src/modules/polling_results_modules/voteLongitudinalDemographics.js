@@ -9,6 +9,7 @@ import exportIcon from '../../assets/images/export.png';
 import axios from "axios";
 import Loader from '../loader';
 import { parseDemographicCsv, aggregateToSeries, lookupColour, formatWeekDate, formatWeekRange, formatRangeStartingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
+import { positionTooltip } from "../../utils/tooltip_position";
 // import partyColours from '../../assets/partyColours';
 
 // Series that should not be drawn. Names are compared after lower-casing and
@@ -344,12 +345,9 @@ function VoteLongitudinalDemographics({ country, countryData }) {
               .style("opacity", 1)
               .html(`<strong>${series.party}</strong><br/>${formatWeekRange(d.week)}: ${d.share.toFixed(1)}%` +
                 (isOld ? `<br/><span style="font-size:11px">Deprecated methodology</span>` : ""));
+            positionTooltip(tooltipRef.current, event);
           })
-          .on("mousemove", event => {
-            tooltip
-              .style("left", `${event.clientX + 12}px`)
-              .style("top",  `${event.clientY + 12}px`);
-          })
+          .on("mousemove", event => positionTooltip(tooltipRef.current, event))
           .on("mouseout", () => tooltip.style("opacity", 0));
 
         // Dots (updated model): circles
