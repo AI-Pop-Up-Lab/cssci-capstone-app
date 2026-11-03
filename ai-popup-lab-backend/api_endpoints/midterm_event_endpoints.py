@@ -5,6 +5,7 @@ full API description: midterm_event_api/README.md
 '''
 
 import json
+from pathlib import Path
 from typing import Literal
 
 from fastapi import APIRouter, HTTPException, Request
@@ -166,4 +167,10 @@ def status():
         "persona_file_problems": store.problems,
         "model_configured": bool(settings.azure_api_key and settings.azure_base_url and settings.model),
         "daily_message_limit": settings.daily_message_limit,
+        "events": {
+            "salient_events_loaded": bool(settings.salient_events_path and Path(settings.salient_events_path).exists()),
+            "state_events_loaded": bool(settings.state_events_path and Path(settings.state_events_path).exists()),
+            "news_digests_loaded": bool(settings.events_path and Path(settings.events_path).exists()),
+            "events_path": str(settings.events_path) if settings.events_path else None,
+        },
     }

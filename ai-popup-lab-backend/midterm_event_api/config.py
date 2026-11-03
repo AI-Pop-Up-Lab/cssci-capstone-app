@@ -101,7 +101,11 @@ def get_settings() -> Settings:
 
     personas_dir = _env_str("MIDTERM_PERSONAS_DIR")
     base_prompt_path = _env_str("MIDTERM_BASE_PROMPT_PATH")
-    events_path = _env_str("MIDTERM_EVENTS_PATH")
+    events_path = _env_str("MIDTERM_EVENTS_PATH") or (
+        str(PACKAGE_DIR / "generation" / "data" / "news_digests.json")
+        if (PACKAGE_DIR / "generation" / "data" / "news_digests.json").exists()
+        else None
+    )
     salient_events_path = _env_str("MIDTERM_SALIENT_EVENTS_PATH") or (
         str(PACKAGE_DIR / "generation" / "data" / "salient_events.json")
         if (PACKAGE_DIR / "generation" / "data" / "salient_events.json").exists()

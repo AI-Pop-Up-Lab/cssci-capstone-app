@@ -200,6 +200,10 @@ def test_status(client):
     assert data["personas_loaded"] == 3
     assert data["model_configured"] is True
     assert data["daily_message_limit"] == 10000
+    assert "events" in data
+    assert data["events"]["salient_events_loaded"] is True
+    assert data["events"]["state_events_loaded"] is True
+    assert data["events"]["news_digests_loaded"] is True
 
 
 def test_main_app_includes_the_routes():
