@@ -1,47 +1,11 @@
 """
-Daily message limit per visitor: EFFECTIVELY DISABLED FOR THE EVENT.
+Identifies the visitor for the persona chat's user limiting.
 
-FLAG: the limit defaults to 10,000 messages per IP address per day (MIDTERM_DAILY_MESSAGE_LIMIT),
-which in practice means no limit. This is deliberate: the chat is for an in-person event, and
-everyone on the venue Wi-Fi shares one public IP address, so a realistic per-IP limit (the old
-chat used 25 a day) would block the whole room after a few messages.
-
-If this API stays public after the event, lower MIDTERM_DAILY_MESSAGE_LIMIT, ideally together
-with a per-browser session ID so people sharing a network don't share a limit.
-
-The counts are kept in memory: they reset at midnight UTC and when the app restarts. This does
-not use the old chat's file-based limiter in user_limiting/.
+The limiting itself (one request at a time, daily limit per visitor, daily limit across
+all visitors) lives in chat_guard.py. This file only works out who the visitor is.
 """
 
-from datetime import date, datetime, timezone
-
 from fastapi import Request
-
-
-class DailyLimiter:
-    def __init__(self):
-        self._day = None
-        self._counts = {}
-
-    def allow(self, client_key: str, limit: int, today: date | None = None) -> bool:
-        """Count one message for `client_key`; return False if they are over today's limit."""
-        today = today or datetime.now(timezone.utc).date()
-        if today != self._day:
-            self._day = today
-            self._counts = {}
-
-        count = self._counts.get(client_key, 0)
-        if count >= limit:
-            return False
-        self._counts[client_key] = count + 1
-        return True
-
-    def reset(self):
-        self._day = None
-        self._counts = {}
-
-
-limiter = DailyLimiter()
 
 
 def client_key(request: Request) -> str:

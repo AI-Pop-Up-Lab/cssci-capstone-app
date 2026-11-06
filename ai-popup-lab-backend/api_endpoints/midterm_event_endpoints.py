@@ -13,14 +13,17 @@ from pydantic import BaseModel, Field
 
 from midterm_event_api import attributes
 from midterm_event_api.chat import ReplyEvent, reply_events
+from midterm_event_api.chat_guard import BUSY, GLOBAL_LIMIT, IP_LIMIT, OK, guard
 from midterm_event_api.config import get_settings
-from midterm_event_api.limits import client_key, limiter
+from midterm_event_api.limits import client_key
 from midterm_event_api.personas import get_store
 
 router = APIRouter(prefix="/midterm_event")
 
 CHAT_PAUSED_MESSAGE = "The persona chat is paused right now. Please try again in a few minutes."
 LIMIT_REACHED_MESSAGE = "Sorry, you have reached the message limit for today."
+GLOBAL_LIMIT_REACHED_MESSAGE = "Sorry, the persona chat has reached its message limit for today. Please try again tomorrow."
+REQUEST_ONGOING_MESSAGE = "Message request already ongoing."
 EMPTY_MESSAGE = "Please type a message first."
 
 
@@ -59,6 +62,16 @@ def _single_message(text: str, event: str = "error") -> StreamingResponse:
         yield ReplyEvent(event, text)
 
     return _sse_response(events())
+
+
+async def _release_when_done(events, key: str):
+    # frees the client's "request in progress" slot when the reply finishes, fails,
+    # or the visitor closes the tab mid-stream
+    try:
+        async for item in events:
+            yield item
+    finally:
+        guard.finish(key)
 
 
 def _persona_or_404(persona_id: str):
@@ -146,12 +159,22 @@ async def chat(request: Request, request_body: ChatRequest):
             f"That message is too long. Please keep it under {settings.max_message_chars} characters."
         )
 
-    # FLAG: limit is 10,000/day by default, i.e. effectively off for the event (see limits.py)
-    if not limiter.allow(client_key(request), settings.daily_message_limit):
-        return _single_message(LIMIT_REACHED_MESSAGE)
-
+    # build everything that could raise BEFORE reserving a slot, so a slot can't leak
+    key = client_key(request)
     history = [turn.model_dump() for turn in request_body.chat_history]
-    return _sse_response(reply_events(persona, message, history, settings))
+
+    # user limiting (chat_guard.py): one request at a time per client,
+    # 25 messages/day per client, 1000 messages/day across all clients
+    verdict = guard.try_start(key)
+    if verdict == BUSY:
+        return _single_message(REQUEST_ONGOING_MESSAGE)
+    if verdict == IP_LIMIT:
+        return _single_message(LIMIT_REACHED_MESSAGE)
+    if verdict == GLOBAL_LIMIT:
+        return _single_message(GLOBAL_LIMIT_REACHED_MESSAGE)
+    assert verdict == OK
+
+    return _sse_response(_release_when_done(reply_events(persona, message, history, settings), key))
 
 
 # GET a quick health check for the event: is the chat on, are personas and the model configured
@@ -165,5 +188,5 @@ def status():
         "personas_loaded": len(store.personas),
         "persona_file_problems": store.problems,
         "model_configured": bool(settings.azure_api_key and settings.azure_base_url and settings.model),
-        "daily_message_limit": settings.daily_message_limit,
+        "limits": guard.snapshot(),
     }
