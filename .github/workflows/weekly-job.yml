@@ -6,9 +6,10 @@ name: Weekly Data Generation
 # nothing here depends on this job (or its Azure login) outliving ~1 hour.
 
 on:
-  schedule:
-    - cron: '0 0 * * 3'            # Wednesday 00:00 (start of Wednesday)
-      timezone: 'Europe/Amsterdam'  # IANA zone; GitHub handles CET/CEST changes
+  # DISABLED TO NOT WASTE CREDITS
+  # schedule: 
+  #   - cron: '0 0 * * 3'            # Wednesday 00:00 (start of Wednesday)
+  #     timezone: 'Europe/Amsterdam'  # IANA zone; GitHub handles CET/CEST changes
   workflow_dispatch:
     inputs:
       countries:
