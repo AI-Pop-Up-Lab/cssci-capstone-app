@@ -12,7 +12,7 @@ import "./App.css";
 import HeaderAndNavigation from "./modules/headerAndNavigation";
 import PopupDisclaimer from "./modules/popupDisclaimer";
 import Footer from "./modules/footer.js";
-//import DonationSection from "./modules/donationSection.js";
+import DonationSection from "./modules/donationSection.js";
 
 // other pages to route to
 import LandingPage from "./pages/landingPage";
@@ -38,16 +38,16 @@ function ScrollToTop() {
   return null;
 }
 
-//WIP donation section 
-// function DonationSectionWrapper() {
-//   const { pathname } = useLocation();
+// donation section wrapper - doesn't displayes the sonation section for thank you page
+ function DonationSectionWrapper() {
+   const { pathname } = useLocation();
 
-//   if (pathname === "/thank-you") {
-//     return null;
-//   }
+   if (pathname === "/thank-you") {
+     return null;
+   }
 
-//   return <DonationSection />;
-// }
+   return <DonationSection />;
+ }
 
 // main App component, holds the router and routes for each page, returning each page when the url route matches
 // Also includes the header above the pages returned so it does not need to be included in every page
@@ -75,7 +75,7 @@ function App() {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
       </Routes>
-      {/*<DonationSectionWrapper />*/}
+      {<DonationSectionWrapper />}
       <Footer />
     </Router>
   );
