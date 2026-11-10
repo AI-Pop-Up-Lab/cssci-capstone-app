@@ -8,6 +8,7 @@ import './demographicChooserForPersona.css';
 
 import Loader from '../loader';
 import DemographicChoiceDropdown from './demographicChoiceDropdown';
+import { getMidtermAttributes } from '../../utils/fetch_data';
 
 function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns, country}) {
 
@@ -24,13 +25,9 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
 
   async function getColumnToRename(countryName){
     try {
-
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dynamicdata/nextGE_col_name?country=${countryName}`);
-      
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/dynamicdata/nextGE_col_name?country=${countryName}`);
       const response_data = response.data;
-
       const next_GE_colname = response_data.column_to_rename;
-
       setColumnToRename(next_GE_colname);
       setColumnToRenameError(null);
     } catch (err) {
@@ -43,8 +40,7 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
   async function getColumnsAndUniqueVals(countryName){
     setLoading(true);   
     try {
-      // FastAPI in testing is running on 127.0.0.1:8000
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/samples/columns_and_uniques?country=${countryName}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/api/samples/columns_and_uniques?country=${countryName}`);
       
       const modifiedData = {
         ...response.data,
@@ -83,6 +79,66 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
       setLoading(false);   
     }
   };
+
+  async function loadDemographics(countryName) {
+    setData(null);
+    setSelectedValues({});
+    setRelevantColumns(null);
+    setColumnToRename(null);
+    setLoading(true);
+
+    if (countryName === "usa") {
+      try {
+        const attrData = await getMidtermAttributes();
+        const stateNames = attrData.state_names || {};
+        const column_unique_vals = {};
+
+        attrData.attributes.forEach((col) => {
+          const vals = attrData.values[col] || [];
+          if (col === "state") {
+            column_unique_vals[col] = [
+              "all",
+              ...vals.map((st) => ({
+                value: st,
+                label: stateNames[st] ? `${st} - ${stateNames[st]}` : st,
+              })),
+            ];
+          } else {
+            column_unique_vals[col] = ["all", ...vals];
+          }
+        });
+
+        const initialValues = {};
+        attrData.attributes.forEach((col) => {
+          initialValues[col] = "all";
+        });
+
+        setSelectedValues(initialValues);
+        setChosenDemographic(initialValues);
+        setRelevantColumns([...attrData.attributes]);
+        setData({
+          relevant_columns: [...attrData.attributes],
+          column_unique_vals,
+        });
+        setColumnToRename("none");
+        setDataCountry(countryName);
+        setError(null);
+      } catch (err) {
+        console.error("Failed to load midterm attributes:", err);
+        setError(err.message);
+        setRelevantColumns(null);
+        setData(null);
+        setDataCountry(null);
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // fallback for other legacy countries
+    getColumnToRename(countryName);
+    getColumnsAndUniqueVals(countryName);
+  }
   
   function handleDropdownChange(column, value) {
     if (selectedValues[column] === value) return; 
@@ -93,12 +149,7 @@ function DemographicChooserForPersona({setChosenDemographic, setRelevantColumns,
   }
 
   useEffect(() => {
-    setData(null);
-    setSelectedValues({});
-    setRelevantColumns(null);
-    setColumnToRename(null);
-    getColumnsAndUniqueVals(country);
-    getColumnToRename(country);
+    loadDemographics(country);
   }, [country]);
 
   const allNotNull = (...args) => args.every(v => v != null);

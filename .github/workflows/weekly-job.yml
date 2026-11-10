@@ -18,7 +18,7 @@ on:
       job_type:
         description: 'Job type: mrp, panel, or both'
         required: false
-        default: 'both'
+        default: 'panel'
       target_week:
         description: 'Optional: target a specific ISO week (YYYY-WW, e.g. 2026-35) instead of the current week — for retrying a step (e.g. MRP) against a week whose panel/survey has already completed'
         required: false

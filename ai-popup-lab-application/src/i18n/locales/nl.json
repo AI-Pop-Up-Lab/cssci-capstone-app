@@ -75,6 +75,7 @@
             "to": "to",
             "oldPipelineFootnote": "Voorspellingen gemarkeerd met ▲ zijn gemaakt met behulp van een verouderde methode.",
             "intervalsFootnote": "Grafiek afgeleid van puntschattingen op celniveau, waarbij omwille van de rekenkracht geen rekening is gehouden met onzekerheid. Puntschattingen van aggregaten kunnen afwijken van die welke zijn afgeleid op basis van de volledige posterieure verdeling, zoals hierboven beschreven.",
+            "slowLoadNote": "Let op: laden kan even duren",
             "export": {
               "title": "Exporteer gegevens binnen het gekozen tijdsbestek:",
               "description": "(Ongeacht eventuele demografische filters of de instelling 'onder waarschijnlijke kiezers'.)"

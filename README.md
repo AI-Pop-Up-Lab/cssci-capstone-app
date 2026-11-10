@@ -29,6 +29,7 @@ Found in `ai-popup-lab-backend/`.
 - `/user_limiting`: functions which limits requests to the persona chat feature/endpoint
 - `/country_data`: All data used for data generation and application functionality.
 - `/data_generation`: Functions and processes for running weekly data generation to make new AI Personae polling responses
+- `/midterm_event_api`: Persona chat for the US midterms election-night event (3 Nov 2026), separate from the older `/_persona_chat`. See its README.md, and PERSONA_GUIDE.md for writing persona files.
 
 ### GitHub Actions and Azure
 `.github/workflows/` has workflow files which do multiple things:

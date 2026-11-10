@@ -109,3 +109,57 @@ export function clearCountryDataCache(country) {
     .filter((key) => key.startsWith(CACHE_PREFIX))
     .forEach((key) => localStorage.removeItem(key));
 }
+
+const MIDTERM_PERSONAS_CACHE_KEY = 'midterm_personas';
+const MIDTERM_ATTRIBUTES_CACHE_KEY = 'midterm_attributes';
+
+/**
+ * gets the 1,000 midterm personas list from /api/midterm_event/personas
+ * with ISO-week localStorage caching.
+ */
+export async function getMidtermPersonas(options = {}) {
+  const { forceRefresh = false } = options;
+  const currentWeek = getCurrentIsoWeek();
+
+  if (!forceRefresh) {
+    const cached = readCache(MIDTERM_PERSONAS_CACHE_KEY);
+    if (cached && !isWeekStale(cached.isoWeek, currentWeek)) {
+      return cached.data;
+    }
+  }
+
+  const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+  const res = await fetch(`${baseUrl}/api/midterm_event/personas`);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch midterm personas: ${res.status} ${res.statusText}`);
+  }
+  const json = await res.json();
+  const personas = json.personas || [];
+  writeCache(MIDTERM_PERSONAS_CACHE_KEY, personas);
+  return personas;
+}
+
+/**
+ * gets the midterm attribute definitions and allowed values from /api/midterm_event/attributes
+ * with ISO-week localStorage caching.
+ */
+export async function getMidtermAttributes(options = {}) {
+  const { forceRefresh = false } = options;
+  const currentWeek = getCurrentIsoWeek();
+
+  if (!forceRefresh) {
+    const cached = readCache(MIDTERM_ATTRIBUTES_CACHE_KEY);
+    if (cached && !isWeekStale(cached.isoWeek, currentWeek)) {
+      return cached.data;
+    }
+  }
+
+  const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+  const res = await fetch(`${baseUrl}/api/midterm_event/attributes`);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch midterm attributes: ${res.status} ${res.statusText}`);
+  }
+  const data = await res.json();
+  writeCache(MIDTERM_ATTRIBUTES_CACHE_KEY, data);
+  return data;
+}

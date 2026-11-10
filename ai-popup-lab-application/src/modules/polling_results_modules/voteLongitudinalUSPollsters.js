@@ -9,7 +9,8 @@ import './voteLongitudinalUSPollsters.css';
 import exportIcon from '../../assets/images/export.png'
 import axios from "axios";
 import Loader from '../loader';
-import { parseNationalSummaryCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, formatWeekRange, formatRangeEndingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
+import { parseNationalSummaryCsv, parseDistrictCsv, computeSeatsByWeek, lookupColour, formatWeekDate, formatWeekRange, formatRangeStartingAt, weekAnchorDate, buildWeekTicks, splitByPipeline, isOldPipelineWeek } from "../../utils/longitudinal_transformation";
+import { positionTooltip } from "../../utils/tooltip_position";
 
 const US_PARTIES = ["democrat", "republican", "other"];
 
@@ -242,14 +243,19 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
     ]);
     downloadCsv(`vote_share_${country}_${startWeek}_to_${endWeek}.csv`, [mainHeader, ...mainRows]);
  
-    // --- US pollster averages, clipped to the same timeframe, downloaded as a
-    // separate file since it's a distinct dataset on its own (possibly sparser) weeks ---
+    // --- US pollster averages, exported exactly as shown on the chart (starts at
+    // our window's start; runs to the end of the pollster data when our window
+    // reaches the end of ours), as a separate file since it's a distinct dataset ---
     if (showPollsters && visiblePollsterSeries && visiblePollsterSeries.length) {
       const pollsterHeader = ["week", "party", "mean", "low", "high"];
       const pollsterRows = visiblePollsterSeries.flatMap(series =>
         series.values.map(v => [v.weekKey, series.party, v.mean, v.low, v.high])
       );
-      downloadCsv(`us_pollster_averages_${startWeek}_to_${endWeek}.csv`, [pollsterHeader, ...pollsterRows]);
+      const pollsterWeeks = pollsterRows.map(r => r[0]).sort();
+      downloadCsv(
+        `us_pollster_averages_${pollsterWeeks[0] ?? startWeek}_to_${pollsterWeeks.at(-1) ?? endWeek}.csv`,
+        [pollsterHeader, ...pollsterRows]
+      );
     }
   };
 
@@ -335,16 +341,23 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
     return [d3.min(baseWeeks), d3.max(baseWeeks)];
   }, [slicedData]);
 
-  // pollster series, restricted to the base timeframe — recomputes whenever
-  // the range sliders move
+  // pollster series: starts at the beginning of the selected window of our data
+  // (nothing is drawn before it), but is NOT cut off at the end of our data --
+  // it runs to the end of its own data. The exception is when the user has
+  // narrowed the right-hand slider handle: then the overlay is clipped to the
+  // selected window too, so the slider still zooms the whole chart.
   const visiblePollsterSeries = useMemo(() => {
     if (!pollsterSeries || !baseWeekRange) return null;
     const [minWeek, maxWeek] = baseWeekRange;
+    const atEndOfOurData = !!displayData && !!rangeIdx
+      && rangeIdx[1] >= displayData[0].values.length - 1;
     return pollsterSeries.map(series => ({
         ...series,
-        values: series.values.filter(v => v.weekKey >= minWeek && v.weekKey <= maxWeek),
+        values: series.values.filter(v =>
+          v.weekKey >= minWeek && (atEndOfOurData || v.weekKey <= maxWeek)
+        ),
     }));
-  }, [pollsterSeries, baseWeekRange]);
+  }, [pollsterSeries, baseWeekRange, displayData, rangeIdx]);
 
   // combined x-axis domain: base weeks ∪ pollster weeks (when overlay is on)
   const combinedWeeks = useMemo(() => {
@@ -404,7 +417,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
 
       const weeks = combinedWeeks;
 
-      // x — time scale. Each week is placed at its anchor date (the end of the
+      // x — time scale. Each week is placed at its anchor date (the start of the
       // 7-day range it represents), so a gap of N weeks between data points
       // takes up N weeks' worth of horizontal space.
       const DAY = 86400000;
@@ -480,7 +493,7 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
           d3.axisBottom(x)
             .tickValues(tickValues)
             .tickSize(0)
-            .tickFormat(formatRangeEndingAt)
+            .tickFormat(formatRangeStartingAt)
         );
 
       xAxis.select(".domain").remove();
@@ -610,12 +623,9 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
             tooltip
               .style("opacity", 1)
               .html(`<strong>${series.party}</strong><br/>${formatWeekRange(d.week)}: ${d.share.toFixed(1)}%${ciHtml}${seatsHtml}${oldHtml}`);
+            positionTooltip(tooltipRef.current, event);
           })
-          .on("mousemove", event => {
-            tooltip
-              .style("left", `${event.clientX + 12}px`)
-              .style("top",  `${event.clientY + 12}px`);
-          })
+          .on("mousemove", event => positionTooltip(tooltipRef.current, event))
           .on("mouseout", () => tooltip.style("opacity", 0));
 
         // Updated model: circles
@@ -697,12 +707,9 @@ function VoteLongitudinalUSPollsters({ country, countryData }) {
                 tooltip
                   .style("opacity", 1)
                   .html(`<strong>${series.party} (US pollster avg)</strong><br/>${d.weekLabel ?? formatWeekRange(d.weekKey)}: ${d.mean.toFixed(1)}%<br/><span style="font-size:11px">CI: ${d.low.toFixed(1)}–${d.high.toFixed(1)}%</span>`);
+                positionTooltip(tooltipRef.current, event);
               })
-              .on("mousemove", event => {
-                tooltip
-                  .style("left", `${event.clientX + 12}px`)
-                  .style("top",  `${event.clientY + 12}px`);
-              })
+              .on("mousemove", event => positionTooltip(tooltipRef.current, event))
               .on("mouseout", () => tooltip.style("opacity", 0));
         });
       }

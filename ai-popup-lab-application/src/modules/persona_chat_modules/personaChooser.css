@@ -1,6 +1,42 @@
-.PersonaChooser{
+.PersonaChooserContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.persona-results-summary {
+    width: 100%;
+    margin: 15px 0 25px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.PersonaChooser {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+}
+
+.load-more-container {
+    margin: 20px 0 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.load-more-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.load-more-button:hover {
+    background-color: #333;
 }

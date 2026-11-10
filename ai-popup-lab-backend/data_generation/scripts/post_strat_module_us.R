@@ -23,6 +23,9 @@ default_us_post_strat_config <- function() {
 			"Other"        = c(cong = "other_share",     pres = "state_pres_other_share"),
 			"Did not vote" = c(cong = "no_vote_share",   pres = "state_pres_no_vote_share")
 		),
+		dem_aligned_party_pattern = "^(DFL|Democratic.*)$",
+		other_party_name = "Other",
+		stay_home_party_name = "Did not vote",
 		survey_aliases = list(
 			age_group = c("age_cat"),
 			gender = c("gender_cat"),
@@ -521,7 +524,7 @@ normalize_us_post_probability_matrix <- function(prob_mat) {
 	prob_mat / row_sums
 }
 
-build_us_post_probability_matrix <- function(pi_components, parties) {
+build_us_post_probability_matrix <- function(pi_components, parties, ballot_mask = NULL, stay_home = "Did not vote") {
 	n_rows <- nrow(pi_components[[1]])
 	n_parties <- length(parties)
 	prob_mat <- matrix(0, nrow = n_rows, ncol = n_parties)
@@ -534,7 +537,9 @@ build_us_post_probability_matrix <- function(pi_components, parties) {
 	}
 
 	prob_mat[, n_parties] <- remaining_mass
-	normalize_us_post_probability_matrix(prob_mat)
+	apply_us_post_ballot_mask(
+		normalize_us_post_probability_matrix(prob_mat), ballot_mask, stay_home
+	)
 }
 
 compute_us_post_national_point_estimates <- function(prob_mat, weights) {
@@ -545,13 +550,13 @@ compute_us_post_national_point_estimates <- function(prob_mat, weights) {
 		arrange(desc(point_estimate))
 }
 
-compute_us_post_share_draws <- function(pi_draws, parties, weights) {
+compute_us_post_share_draws <- function(pi_draws, parties, weights, ballot_mask = NULL) {
 	share_draws <- matrix(NA_real_, nrow = ncol(pi_draws[[1]]), ncol = length(parties))
 	colnames(share_draws) <- parties
 
 	for (s in seq_len(ncol(pi_draws[[1]]))) {
 		pi_components_s <- lapply(pi_draws, function(draw_mat) draw_mat[, s, drop = FALSE])
-		prob_mat_s <- build_us_post_probability_matrix(pi_components_s, parties)
+		prob_mat_s <- build_us_post_probability_matrix(pi_components_s, parties, ballot_mask)
 		share_draws[s, ] <- apply(prob_mat_s, 2, weighted.mean, w = weights, na.rm = TRUE)
 	}
 	share_draws
@@ -622,7 +627,7 @@ compute_us_post_cd_point <- function(prob_mat, frame_pred, parties) {
 		)
 }
 
-compute_us_post_cd_draws <- function(pi_draws, frame_pred, parties) {
+compute_us_post_cd_draws <- function(pi_draws, frame_pred, parties, ballot_mask = NULL) {
 	cd_col <- intersect(c("state_cd", "cd", "CD", "district_id", "district"), colnames(frame_pred))[1]
 	if (is.na(cd_col)) cd_col <- colnames(frame_pred)[grepl("cd|district", colnames(frame_pred), ignore.case = TRUE)][1]
 	if (is.na(cd_col) || !cd_col %in% colnames(frame_pred)) stop("Error: Could not find Congressional District column.")
@@ -638,7 +643,10 @@ compute_us_post_cd_draws <- function(pi_draws, frame_pred, parties) {
 		pi_components_s <- lapply(pi_draws, function(draw_mat) {
 			if (transposed) matrix(draw_mat[s, valid_rows], ncol = 1) else matrix(draw_mat[valid_rows, s], ncol = 1)
 		})
-		prob_mat_s <- build_us_post_probability_matrix(pi_components_s, parties)
+		prob_mat_s <- build_us_post_probability_matrix(
+			pi_components_s, parties,
+			if (is.null(ballot_mask)) NULL else ballot_mask[valid_rows, , drop = FALSE]
+		)
 		
 		prob_df <- as_tibble(prob_mat_s)
 		prob_df[[cd_col]] <- as.character(frame_pred[[cd_col]][valid_rows])
@@ -678,7 +686,7 @@ build_us_post_share_draws_long <- function(share_draws) {
 
 # --- 1-WAY & 2-WAY MARGINAL AGGREGATIONS (WITH D-R MARGINS & 95% CIs) ---
 
-compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, config) {
+compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, config, ballot_mask = NULL) {
 	margins_1way <- list("age_group", "education_level", "race", "gender", "past_vote")
 	margins_2way <- combn(c("age_group", "education_level", "race", "gender", "past_vote"), 2, simplify = FALSE)
 	all_margins <- c(margins_1way, margins_2way)
@@ -701,7 +709,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 	# Loop through each MAVB simulation draw to build exact joint distributions
 	for (s in seq_len(n_sims)) {
 		pi_s <- lapply(pi_draws, function(m) if (transposed) matrix(m[s, ], ncol = 1) else matrix(m[, s], ncol = 1))
-		prob_s <- build_us_post_probability_matrix(pi_s, parties)
+		prob_s <- build_us_post_probability_matrix(pi_s, parties, ballot_mask)
 		
 		df_s <- as_tibble(prob_s)
 		df_s$expected_N_raked <- frame_pred$expected_N_raked
@@ -829,7 +837,7 @@ compute_us_post_margins <- function(pi_draws, prob_mat, frame_pred, parties, con
 	results
 }
 
-build_cell_draws_wide <- function(pi_draws, frame_pred, parties) {
+build_cell_draws_wide <- function(pi_draws, frame_pred, parties, ballot_mask = NULL) {
 	test_mat <- pi_draws[[1]]
 	n_frame <- nrow(frame_pred)
 	if (nrow(test_mat) == n_frame) { n_sims <- ncol(test_mat); transposed <- FALSE }
@@ -839,7 +847,7 @@ build_cell_draws_wide <- function(pi_draws, frame_pred, parties) {
 	
 	for (s in seq_len(n_sims)) {
 		pi_s <- lapply(pi_draws, function(m) if (transposed) matrix(m[s, ], ncol = 1) else matrix(m[, s], ncol = 1))
-		prob_s <- build_us_post_probability_matrix(pi_s, parties)
+		prob_s <- build_us_post_probability_matrix(pi_s, parties, ballot_mask)
 		for (p in parties) {
 			party_draws[[p]][[s]] <- prob_s[, p]
 		}
@@ -864,9 +872,136 @@ build_cell_draws_wide <- function(pi_draws, frame_pred, parties) {
 	out
 }
 
+# --- BALLOT ACCESS: WHO ACTUALLY RAN IN EACH DISTRICT ---
+
+normalize_us_post_district_key <- function(x) {
+	x <- toupper(trimws(as.character(x)))
+	x <- sub("-AT-LARGE$", "-1", x)
+	x <- sub("^([A-Z]{2})-0+([0-9]+)$", "\\1-\\2", x)
+	x
+}
+
+us_post_has_candidates <- function(x) {
+	!is.na(x) & grepl("[A-Za-z]", as.character(x))
+}
+
+us_post_extract_third_party_parties <- function(x) {
+	x <- as.character(x)
+	x[is.na(x)] <- "[]"
+	regmatches(x, gregexpr("[\"']party[\"']\\s*:\\s*[\"']([^\"']*)[\"']", x, perl = TRUE)) %>%
+		lapply(function(m) sub("^[\"']party[\"']\\s*:\\s*[\"']([^\"']*)[\"']$", "\\1", m, perl = TRUE))
+}
+
+prepare_us_post_candidates <- function(candidates, config) {
+	candidates <- drop_us_post_index_columns(candidates)
+	validate_us_post_required_columns(
+		candidates,
+		c("District", "Democratic_Candidates", "Republican_Candidates", "Independent_ThirdParty"),
+		"candidates"
+	)
+
+	dem_aligned_pattern <- config$dem_aligned_party_pattern
+	tp_parties <- us_post_extract_third_party_parties(candidates$Independent_ThirdParty)
+	tp_has_dem_label <- vapply(tp_parties, function(p) any(grepl(dem_aligned_pattern, p, ignore.case = TRUE)), logical(1))
+	tp_has_other <- vapply(tp_parties, function(p) any(!grepl(dem_aligned_pattern, p, ignore.case = TRUE)), logical(1))
+
+	out <- tibble(
+		state_cd_key = normalize_us_post_district_key(candidates$District),
+		dem_runs = us_post_has_candidates(candidates$Democratic_Candidates) | tp_has_dem_label,
+		rep_runs = us_post_has_candidates(candidates$Republican_Candidates),
+		other_runs = tp_has_other
+	) %>%
+		filter(grepl("^[A-Z]{2}-[0-9]+$", state_cd_key)) %>%
+		group_by(state_cd_key) %>%
+		summarise(
+			dem_runs = any(dem_runs),
+			rep_runs = any(rep_runs),
+			other_runs = any(other_runs),
+			.groups = "drop"
+		)
+
+	empty_ballots <- out %>% filter(!dem_runs & !rep_runs & !other_runs)
+	if (nrow(empty_ballots) > 0) {
+		config$msg("Districts with no parsed candidates (treated as all parties running): ",
+			paste(empty_ballots$state_cd_key, collapse = ", "))
+		out <- out %>%
+			mutate(
+				all_empty = !dem_runs & !rep_runs & !other_runs,
+				dem_runs = dem_runs | all_empty,
+				rep_runs = rep_runs | all_empty,
+				other_runs = other_runs | all_empty
+			) %>%
+			select(-all_empty)
+	}
+	out
+}
+
+build_us_post_ballot_mask <- function(frame_pred, ballot_table, parties, config) {
+	frame_key <- normalize_us_post_district_key(frame_pred$state_cd)
+	idx <- match(frame_key, ballot_table$state_cd_key)
+
+	missing_keys <- sort(unique(frame_key[is.na(idx)]))
+	if (length(missing_keys) > 0) {
+		config$msg("Districts in frame but not in candidates file (all parties kept): ",
+			paste(missing_keys, collapse = ", "))
+	}
+
+	runs <- list()
+	runs[[config$dem_party_name]] <- ballot_table$dem_runs[idx]
+	runs[[config$rep_party_name]] <- ballot_table$rep_runs[idx]
+	runs[[config$other_party_name]] <- ballot_table$other_runs[idx]
+
+	mask <- matrix(1, nrow = nrow(frame_pred), ncol = length(parties))
+	colnames(mask) <- parties
+	for (p in intersect(names(runs), parties)) {
+		r <- runs[[p]]
+		r[is.na(r)] <- TRUE
+		mask[, p] <- as.numeric(r)
+	}
+	mask[, colnames(mask) %in% config$stay_home_party_name] <- 1
+	mask
+}
+
+apply_us_post_ballot_mask <- function(prob_mat, ballot_mask, stay_home = "Did not vote") {
+	if (is.null(ballot_mask)) return(prob_mat)
+	if (!identical(dim(ballot_mask), dim(prob_mat))) {
+		stop("ballot_mask dimensions (", paste(dim(ballot_mask), collapse = "x"),
+			") do not match probability matrix (", paste(dim(prob_mat), collapse = "x"), ").")
+	}
+	ballot_mask <- ballot_mask[, colnames(prob_mat), drop = FALSE]
+
+	fixed_cols <- colnames(prob_mat) %in% stay_home
+	free_cols <- !fixed_cols
+	fixed_mass <- if (any(fixed_cols)) rowSums(prob_mat[, fixed_cols, drop = FALSE]) else rep(0, nrow(prob_mat))
+	voter_mass <- 1 - fixed_mass
+
+	runs <- ballot_mask[, free_cols, drop = FALSE] > 0
+	raw <- prob_mat[, free_cols, drop = FALSE] * runs
+	raw_sum <- rowSums(raw)
+	n_running <- rowSums(runs)
+
+	if (any(n_running == 0)) stop("At least one frame row has no party on the ballot after masking.")
+
+	weights <- raw / ifelse(raw_sum > 0, raw_sum, 1)
+	no_mass <- raw_sum <= 0
+	if (any(no_mass)) weights[no_mass, ] <- runs[no_mass, , drop = FALSE] / n_running[no_mass]
+
+	out <- prob_mat
+	out[, free_cols] <- weights * voter_mass
+	out
+}
+
+check_us_post_ballot_mask <- function(prob_mat, ballot_mask, config) {
+	if (is.null(ballot_mask)) return(invisible(NULL))
+	leak <- prob_mat * (1 - ballot_mask[, colnames(prob_mat), drop = FALSE])
+	config$msg("Ballot mask check | max prob on non-running party: ", signif(max(leak), 3),
+		" | max |rowSum-1|: ", signif(max(abs(rowSums(prob_mat) - 1)), 3))
+	invisible(NULL)
+}
+
 # --- MAIN POST-STRATIFICATION RUNNER ---
 
-run_post_stratification <- function(survey, frame, area_level_vote_shares, config = list()) {
+run_post_stratification <- function(survey, frame, area_level_vote_shares, config = list(), candidates = NULL) {
 	config <- resolve_us_post_strat_config(config)
 	metadata_config <- config
 	metadata_config$msg <- NULL
@@ -889,7 +1024,14 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 	}
 
 	pi_components <- lapply(seq_len(ncol(pi_mat)), function(k) pi_mat[, k, drop = FALSE])
-	prob_mat <- build_us_post_probability_matrix(pi_components, parties)
+	ballot_mask <- NULL
+	ballot_table <- NULL
+	if (!is.null(candidates)) {
+		ballot_table <- prepare_us_post_candidates(candidates, config)
+		ballot_mask <- build_us_post_ballot_mask(frame_pred, ballot_table, parties, config)
+	}
+	prob_mat <- build_us_post_probability_matrix(pi_components, parties, ballot_mask, config$stay_home_party_name)
+	check_us_post_ballot_mask(prob_mat, ballot_mask, config)
 	weights <- frame_pred$expected_N_raked
 	mrp_estimates <- compute_us_post_national_point_estimates(prob_mat, weights)
 
@@ -904,7 +1046,7 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 		gc()
 	}
 
-	share_draws <- compute_us_post_share_draws(pi_draws, parties, weights)
+	share_draws <- compute_us_post_share_draws(pi_draws, parties, weights, ballot_mask)
 	share_draws_ci <- build_us_post_share_draws_ci(share_draws, parties, mrp_estimates)
 	extended_frame <- build_us_post_extended_frame(prob_mat, frame_pred)
 	stage_diagnostics <- compute_us_post_stage_diagnostics(sb_fits, parties)
@@ -914,17 +1056,17 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 	invisible(gc())
 	aggregate_counts <- compute_us_post_aggregate_counts(extended_frame)
 	cd_party_point <- compute_us_post_cd_point(prob_mat, frame_pred, parties)
-	cd_party_draws <- compute_us_post_cd_draws(pi_draws, frame_pred, parties)
+	cd_party_draws <- compute_us_post_cd_draws(pi_draws, frame_pred, parties, ballot_mask)
 	cd_party_ci <- compute_us_post_cd_ci(cd_party_draws, cd_party_point)
 	share_draws_long <- build_us_post_share_draws_long(share_draws)
 	
 	config$msg("Computing 1-way and 2-way marginal shares & D-R margins with 95% CIs...")
-	margin_summaries <- compute_us_post_margins(pi_draws, prob_mat, frame_pred, parties, config)
+	margin_summaries <- compute_us_post_margins(pi_draws, prob_mat, frame_pred, parties, config, ballot_mask)
 	
 	cell_draws <- NULL
 	if (isTRUE(config$export_cell_draws)) {
 		config$msg("Exporting cell-level draws...")
-		cell_draws <- build_cell_draws_wide(pi_draws, frame_pred, parties)
+		cell_draws <- build_cell_draws_wide(pi_draws, frame_pred, parties, ballot_mask)
 	}
 	# memory only: pi_draws is not part of the returned result; free it before outputs are written.
 	rm(pi_draws)
@@ -945,7 +1087,7 @@ run_post_stratification <- function(survey, frame, area_level_vote_shares, confi
 		cd_party_ci = cd_party_ci,
 		margin_summaries = margin_summaries,
 		cell_draws = cell_draws,
-		metadata = list(parties = parties, config = metadata_config)
+		metadata = list(parties = parties, config = metadata_config, ballot_table = ballot_table)
 	)
 }
 

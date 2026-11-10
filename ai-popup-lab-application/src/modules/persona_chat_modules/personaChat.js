@@ -29,13 +29,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
-import axios from "axios";
 
 import './personaChat.css';
 import closeCross from '../../assets/images/closeCross.png'
 import sendArrow from '../../assets/images/sendArrow.png'
 
-import Loader from "../loader";
 import ReceivedMessage from "./receivedMessage";
 import UserMessage from "./userMessage";
 import AwaitingMessage from "./awaitingMessage";
@@ -46,7 +44,6 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
 
   // below code is for sending and retrieving messages
 
-  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [waitingForResponse, setWaitingForResponse] = useState(false);
   const [closeAgreementSection, setCloseAgreementSection] = useState(false);
@@ -65,15 +62,29 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
   // function to post message and receive message from backend
   async function sendAndReceiveMessage(persona, country, message, chatHistory) {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/chat/chat_message`, {
+      const isUsaMidterm = country === "usa" || (persona.id && persona.id.startsWith("us_"));
+      const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:8000";
+      const endpoint = isUsaMidterm
+        ? `${baseUrl}/api/midterm_event/chat`
+        : `${baseUrl}/api/chat/chat_message`;
+
+      const requestBody = isUsaMidterm
+        ? {
+            persona_id: persona.id || `us_${String((persona.index ?? 0) + 1).padStart(4, "0")}`,
+            message: message,
+            chat_history: chatHistory,
+          }
+        : {
+            message: message,
+            persona_details: persona,
+            persona_country: country,
+            chat_history: chatHistory,
+          };
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: message,
-          persona_details: persona,
-          persona_country: country,
-          chat_history: chatHistory
-        })
+        body: JSON.stringify(requestBody),
       });
 
       const reader = response.body.getReader();
@@ -166,7 +177,7 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
 
   function addMessage(messageType, text=null){
 
-    if(messageType=="awaiting"){
+    if(messageType === "awaiting"){
       setMessages(prev => [...prev, {id: 'awaitingTemporary', type: messageType, text: text}])
       return
     }
@@ -224,31 +235,27 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
             <div id="persona-chat-header">
                 <p id="chat-with-text" className="unbounded-weight300">{t('personaPage.chat.chatWith')}</p>
                 <div id="persona-name" className="unbounded-weight400">
-                    Persona {index + 1}
+                    {personaDetails.display_name || `Persona ${index + 1}`}
                     <div id="anthro-warning">
                         <p className="unbounded-weight400">!</p>
                     </div>
                     <p className="unbounded-weight400" id="chat-not-real-warning">{t('personaPage.chat.notreal')}</p>
                 </div>
                 <div id="persona-chat-attributes">
-                    {Object.entries(personaWithoutIndex).map(([key, value]) => (
-                        <p key={key} className="persona-chat-attributes-single unbounded-weight300">#{value}</p>
-                    ))}
+                    {Object.entries(personaWithoutIndex)
+                        .filter(([k]) => !['id', 'display_name', '_extra', 'opinion_style', 'profile', 'source_file', 'extra'].includes(k))
+                        .map(([key, value]) => (
+                            <p key={key} className="persona-chat-attributes-single unbounded-weight300">#{value}</p>
+                        ))}
                 </div>
             </div>
 
             <div id="persona-chat-history">
-              {/* {messages.map((message) => (
-                message.type === "user"
-                  ? <UserMessage key={message.id} text={message.text} />
-                  : <ReceivedMessage key={message.id} text={message.text} />
-              ))} */}
+              {error && <div className="unbounded-weight300" style={{color: "#ff8888", padding: "8px 12px", textAlign: "center", fontSize: "14px"}}>{error}</div>}
               {messages.map((message) => {
                 const Component = messageTypes[message.type];
                 return <Component key={message.id} text={message.text} />;
-              })
-
-              }
+              })}
               <div ref={chatBottomRef} /> {/* reference to scroll to when a new message is sent */}
             </div>
 
@@ -267,8 +274,8 @@ function PersonaChat({ personaDetails, personaCountry, showChat }) {
                 <div><img onClick={handleSubmit} src={sendArrow} alt="Arrow to send text"></img></div>
             </div>
                 
-            <div id="chat-close" onClick={() => showChat(false)} src={closeCross} alt="Cross button to close chat window">
-              <img id="chat-close-cross" src={closeCross}></img>
+            <div id="chat-close" onClick={() => showChat(false)} title="Close chat">
+              <img id="chat-close-cross" src={closeCross} alt="Close chat"></img>
             </div>
 
         </div>
