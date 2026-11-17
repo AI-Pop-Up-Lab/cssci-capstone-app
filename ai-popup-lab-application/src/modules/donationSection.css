@@ -1,0 +1,55 @@
+.DonationSection {
+    padding: 90px 20px;
+    text-align: center;
+    background: transparent;
+}
+
+.donation-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.donation-pollie {
+    width: 85px;
+}
+
+.donation-title {
+    text-align: center;
+
+}
+
+.donation-title h1 {
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.donation-title h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #6B6D76;
+}
+
+.donation-text {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.donation-text p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.donation-link button {
+    padding: 15px 60px;
+    background-color: #FCBFB7;
+    border: 2px solid #334E58;
+    border-radius: 25px;
+    color: #334E58;
+    font: inherit;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+}
