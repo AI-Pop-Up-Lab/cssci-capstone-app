@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_NAME: pollstercontainers  
+  ACR_NAME: mechanicalpollstercontainers  
   IMAGE_NAME: weekly-worker
 
 jobs:

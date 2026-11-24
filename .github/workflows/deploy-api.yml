@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  ACR_NAME: pollstercontainers
+  ACR_NAME: mechanicalpollstercontainers
   API_IMAGE: fastapi-backend
 
 jobs:

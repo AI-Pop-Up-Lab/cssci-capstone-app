@@ -64,7 +64,8 @@ origins = [
     # production urls
     # "https://ai-pollster.vercel.app", oldie but not goldie
     "https://www.mechanical-pollster.com",
-    "https://delightful-bay-00709f403.6.azurestaticapps.net"
+    "https://delightful-bay-00709f403.6.azurestaticapps.net" #old azure static web app url
+    "https://calm-mud-0b2c4e403.8.azurestaticapps.net" # new azure SWA url
 ]
 
 # configuring CORS middleware to allow requests from the above origins allowing all methods & headers
