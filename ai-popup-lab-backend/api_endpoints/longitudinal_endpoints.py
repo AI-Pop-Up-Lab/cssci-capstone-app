@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse, Response
 import json
+import logging
 from pathlib import Path
 import io
 import os
@@ -15,6 +16,10 @@ from azure_storage_utils import (
     get_district_frame_aggregate_path,
     get_national_summary_aggregate_path,
 )
+
+# Errors logged here go to stderr, which App Service captures for the Log stream.
+# Never log the storage connection string or keys -- only container/blob names.
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/longitudinal")
 
@@ -34,6 +39,11 @@ def _stream_blob_as_csv(blob_name: str) -> StreamingResponse:
     try:
         downloader = blob.download_blob()
     except Exception:
+        # logger.exception records the full traceback, which names the real cause
+        # (blob not found vs. auth failure vs. firewall/network error).
+        logger.exception(
+            "Failed to download blob '%s' from container '%s'", blob_name, CONTAINER_NAME
+        )
         raise HTTPException(status_code=404, detail="Longitudinal data not yet available.")
 
     def iter_chunks():
@@ -118,12 +128,29 @@ def country_latest_national_summary(country: str):
     if country not in root_keys:
         raise HTTPException(status_code=404, detail="Country not found in data.")
 
+    path = None  # set inside the try so a failure there can still be logged with it
     try:
-        df = read_dataframe(get_national_summary_aggregate_path(country))
+        path = get_national_summary_aggregate_path(country)
+        df = read_dataframe(path)
     except Exception:
+        logger.exception(
+            "Failed to read national summary aggregate for country '%s' (path: %s, container: %s)",
+            country, path, CONTAINER_NAME,
+        )
         raise HTTPException(status_code=404, detail="National summary not yet available.")
 
-    if df.empty or "week" not in df.columns:
+    if df.empty:
+        logger.error(
+            "National summary aggregate for country '%s' was read but is empty (path: %s)",
+            country, path,
+        )
+        raise HTTPException(status_code=404, detail="National summary not yet available.")
+
+    if "week" not in df.columns:
+        logger.error(
+            "National summary aggregate for country '%s' has no 'week' column (path: %s, columns: %s)",
+            country, path, list(df.columns),
+        )
         raise HTTPException(status_code=404, detail="National summary not yet available.")
 
     latest = max(df["week"].dropna().unique(), key=_week_sort_key)
@@ -148,6 +175,10 @@ def us_pollster_predictions():
     try:
         data = blob.download_blob().readall()
     except Exception:
+        logger.exception(
+            "Failed to download US pollster predictions blob '%s' from container '%s'",
+            blob_name, container,
+        )
         raise HTTPException(status_code=404, detail="US pollster predictions not yet available.")
 
     return StreamingResponse(
